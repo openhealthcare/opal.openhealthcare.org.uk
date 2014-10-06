@@ -1,0 +1,14 @@
+{% include head.html %}
+<body class="{{ body_class }}">
+
+    <div class="wrapper">
+      {% include header.html %}
+        {{ content }}
+    </div>
+
+    {% include footer.html %}
+    {% include after_footer.html %}
+
+  </body>
+
+</html>
