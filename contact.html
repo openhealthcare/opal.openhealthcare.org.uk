@@ -11,7 +11,7 @@ body_class: contact-page
       <div class="item col-md-8 col-sm-12 col-xs-12">
         <div class="row text-center">                
           <div class="contact-form">
-            <form class="form">                
+            <form class="form" id="contactform">                
               <div class="form-group name">
                 <label class="sr-only" for="name">Your name</label>
                 <input id="name" type="text" class="form-control" placeholder="Your name">
@@ -24,7 +24,7 @@ body_class: contact-page
                 <label class="sr-only" for="message">Your message</label>
                 <textarea id="message" class="form-control" rows="8" placeholder="Your message"></textarea>
               </div><!--//form-group-->
-              <button type="submit" class="btn btn-block btn-cta-primary">Send Message</button>
+              <button type="submit" class="btn btn-block btn-cta-primary" onclick="contactform()">Send Message</button>
             </form><!--//form-->                 
           </div><!--//contact-form-->
         </div><!--//row-->

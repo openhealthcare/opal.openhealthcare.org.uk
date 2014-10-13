@@ -6,7 +6,8 @@ layout: default
   <div class="container">
     <div class="row">
       <div class="features-intro col-md-5 col-sm-6 col-xs-12">
-        <h2 class="title">OPAL <br />Manage your ward your way</h2>
+        <img src="assets/images/opallogo.png" />
+        <h2 class="title">Manage your ward your way</h2>
         <ul class="list-unstyled features-list">
           <li><i class="fa fa-check"></i>Endlessly customisable</li>
           <li><i class="fa fa-check"></i>Designed by you for your own service</li>
@@ -20,9 +21,9 @@ layout: default
         <p class="summary">Get in touch to see what OPAL could do for you.</p>
         <form class="signup-form">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Enter your email address">
+            <input type="text" class="form-control" id="indexheader" placeholder="Enter your email address">
           </div>
-          <button type="submit" class="btn btn-cta btn-cta-primary">Get Started</button>
+          <button type="submit" class="btn btn-cta btn-cta-primary" onclick="get_started('indexheader')">Get Started</button>
         </form><!--//signup-form-->
       </div>
     </div><!--//row-->
@@ -33,7 +34,7 @@ layout: default
 <section id="why" class="why section">
   <div class="container">
     <h2 class="title text-center">OPAL</h2>
-    <p class="intro text-center">An Open Source framework for building clinical applications</p>
+    <p class="intro text-center">A highly customisable framework for building clinical applications</p>
     <div class="row">
       <div class="benefits col-md-7 col-sm-6 col-xs-12">                    
         
@@ -186,9 +187,9 @@ layout: default
     <p class="summary">Get in touch to see what OPAL could do for you.</p>
     <form class="signup-form">
       <div class="form-group">
-        <input type="text" class="form-control" placeholder="Enter your email address">
+        <input type="text" class="form-control" placeholder="Enter your email address" id="indexsignup">
       </div>
-      <button type="submit" class="btn btn-cta btn-cta-primary">Get Started</button>
+      <button type="submit" class="btn btn-cta btn-cta-primary" onclick="get_started('indexsignup')">Get Started</button>
     </form><!--//signup-form-->
   </div>
 </section><!--//signup-->

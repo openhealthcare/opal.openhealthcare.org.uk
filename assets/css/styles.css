@@ -545,7 +545,8 @@ blockquote {
 .promo {
   position: relative;
   /* background: #6dbd63 url('../images/background/promo-bg.jpg') no-repeat center center; */
-  background: #6dbd63 url('../images/background/wood2.bg.jpeg') no-repeat center center;
+  background: #6dbd63 url('../images/wood-snake.jpeg') 
+  no-repeat center -260px;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -580,6 +581,8 @@ blockquote {
   max-width: 680px;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
   margin-bottom: 66px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 6px 6px;
 }
 .promo .fixed-container {
   position: absolute;
@@ -810,7 +813,7 @@ blockquote {
 .hireus .summary {
   color: #fff;
   font-size: 18px;
-  max-width: 360px;
+  max-width: 660px;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
   margin-bottom: 15px;
 }
@@ -913,7 +916,7 @@ blockquote {
 /* ======= Feature Promo Section ======= */
 .features-promo {
   position: relative;
-  background: #6dbd63 url('../images/background/lemon-bg.jpeg') no-repeat center bottom;
+  background: #6dbd63 url('../images/background/lemon-bg.jpeg') no-repeat center top;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

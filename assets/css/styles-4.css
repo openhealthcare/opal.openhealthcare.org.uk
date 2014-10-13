@@ -915,6 +915,11 @@ blockquote {
 .features-promo.spark {
     background: #eea303 url('../images/background/spark.bg.jpeg') no-repeat center top;
 }
+.features-promo.library {
+    background: #eea303 url('../images/background/library.jpg') no-repeat 0px -400px;
+    background-size: 100%
+}
+
 .features-promo .bg-mask {
   background: #eea303;
   -webkit-opacity: 0.6;

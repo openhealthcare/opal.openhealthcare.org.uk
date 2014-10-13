@@ -1,5 +1,6 @@
 ---
 layout: default
+name: specialities
 ---
 <!-- ******FEATURES PROMO****** --> 
 <section id="specialities" class="features-promo section spark">
@@ -17,12 +18,12 @@ layout: default
       </div><!--//intro-->
       <div class="features-intro col-md-4 col-md-offset-3 col-sm-6 col-xs-12 col-xs-offset-0">
         <h2 class="title">Get OPAL for your organisation</h2>
-        <p class="summary">Get in touch to see what OPAL could do for you.</p>
+        <!-- <p class="summary">Get in touch to see what OPAL could do for you.</p> -->
         <form class="signup-form">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Enter your email address">
+            <input type="text" class="form-control" placeholder="Enter your email address" id="specheader">
           </div>
-          <button type="submit" class="btn btn-cta btn-cta-primary">Get Started</button>
+          <button type="submit" class="btn btn-cta btn-cta-primary" onclick="get_started('specheader')">Get Started</button>
         </form><!--//signup-form-->
       </div>
     </div><!--//row-->
@@ -49,39 +50,46 @@ layout: default
         </div>
       </div><!--//content-->
       <div class="figure col-md-6 col-sm-6 col-xs-12 from-left">
-        <img class="img-responsive" src="assets/images/features/resp.rate.graph.png" alt="" />
+        <img class="img-responsive" src="assets/images/features/infection.jpg" alt="" />
       </div><!--//figure-->
     </div><!--//item-->
     
     <hr />
     
-    <div class="item row">
-      <div class="content col-md-5 col-sm-5 col-xs-12 from-left">
-        <h3 class="title">Acute</h3>
-        <div class="details">
-          <p>
-            OPAL Acute is an OPAL implementation for the acute medicine environment. 
-          </p>
-        </div>
-      </div><!--//content-->
-      <div class="figure col-md-6 col-sm-6 col-xs-12 col-md-offset-1 col-sm-offset-1 col-xs-offset-0 from-right">
-        <img class="img-responsive" src="assets/images/features/opat.png" alt="" />
-      </div><!--//figure-->
-    </div><!--//item-->
+    <!-- <div class="item row"> -->
+    <!--   <div class="content col-md-5 col-sm-5 col-xs-12 from-left"> -->
+    <!--     <h3 class="title">Acute</h3> -->
+    <!--     <div class="details"> -->
+    <!--       <p> -->
+    <!--         OPAL Acute is an OPAL implementation for the acute medicine environment.  -->
+    <!--       </p> -->
+    <!--     </div> -->
+    <!--   </div><\!--//content-\-> -->
+    <!--   <div class="figure col-md-6 col-sm-6 col-xs-12 col-md-offset-1 col-sm-offset-1 col-xs-offset-0 from-right"> -->
+    <!--     <img class="img-responsive" src="assets/images/features/opat.png" alt="" /> -->
+    <!--   </div><\!--//figure-\-> -->
+    <!-- </div><\!--//item-\-> -->
     
-    <hr />
+    <!-- <hr /> -->
     
     <div class="item row">
       <div class="content col-md-5 col-sm-5 col-xs-12 pull-right col-md-offset-1 col-sm-offset-1 col-xs-offset-0 from-right">
         <h3 class="title">Respiratory</h3>
         <div class="details">
           <p>
-            The OPAL respiratory implementation helps people who are into breathing good.
+            The OPAL respiratory implementation has been developed in consultation with 
+            experts in the field to focus on workflows and data capture specific to respiratory
+            medicine.
+          </p>
+          <p>
+            With support for importing and graphing spirometry data as well as annotating with
+            occupational lung disease metadata, we can help you with your day to day respiratory care.
           </p>
         </div>
       </div><!--//content-->
       <div class="figure col-md-6 col-sm-6 col-xs-12 from-left">
-        <img class="img-responsive" src="assets/images/features/wardround.png" alt="" />
+        <img class="img-responsive" src="assets/images/features/lungs.jpg" alt="" />
+        <small><a href="https://www.flickr.com/photos/liverpoolhls">Image source</a></small>
       </div><!--//figure-->
     </div><!--//item-->
     
@@ -106,9 +114,9 @@ layout: default
     <p class="summary">Get in touch to see what OPAL could do for you.</p>
     <form class="signup-form">
       <div class="form-group">
-        <input type="text" class="form-control" placeholder="Enter your email address">
+        <input type="text" class="form-control" placeholder="Enter your email address" id="specsignup">
       </div>
-      <button type="submit" class="btn btn-cta btn-cta-primary">Get Started</button>
+      <button type="submit" class="btn btn-cta btn-cta-primary" onclick="get_started('specsignup')">Get Started</button>
     </form><!--//signup-form-->
   </div>
 </section><!--//signup-->
