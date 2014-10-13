@@ -6,7 +6,7 @@ function get_started(what){
         z_requester: email,
         z_subject: 'OPAL website quick form',
         z_description: 'More information about OPAL'
-    });
+    }, function(){ window.location = window.location.href});
     return false;
 }
 
