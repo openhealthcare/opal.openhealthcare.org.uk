@@ -19,6 +19,6 @@ function contactform(){
         z_requester: $('#email').val(),
         z_subject: 'OPAL website contact form',
         z_description: $('#message').val(),
-    });
+    }, function(){ window.location = window.location.href});
     return false;
 }

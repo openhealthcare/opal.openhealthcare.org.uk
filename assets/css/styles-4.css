@@ -913,7 +913,7 @@ blockquote {
     background: #eea303 url('../images/background/wood.bg.jpeg') no-repeat center top;
 }
 .features-promo.spark {
-    background: #eea303 url('../images/background/spark.bg.jpeg') no-repeat center top;
+    background: #eea303 url('../images/background/workshop.jpg')     no-repeat -160px -424px;
 }
 .features-promo.library {
     background: #eea303 url('../images/background/library.jpg') no-repeat 0px -400px;
