@@ -1,4 +1,4 @@
----
+n---
 layout: default
 ---
 <!-- ******FEATURES PROMO****** --> 
@@ -23,7 +23,8 @@ layout: default
           <div class="form-group">
             <input type="text" class="form-control" id="indexheader" placeholder="Enter your email address">
           </div>
-          <button type="submit" class="btn btn-cta btn-cta-primary" onclick="get_started('indexheader')">Get Started</button>
+          <button type="submit" class="btn btn-cta btn-cta-primary" 
+                  onclick="get_started(event, 'indexheader')">Get Started</button>
         </form><!--//signup-form-->
       </div>
     </div><!--//row-->
@@ -189,7 +190,8 @@ layout: default
       <div class="form-group">
         <input type="text" class="form-control" placeholder="Enter your email address" id="indexsignup">
       </div>
-      <button type="submit" class="btn btn-cta btn-cta-primary" onclick="get_started('indexsignup')">Get Started</button>
+      <button type="submit" class="btn btn-cta btn-cta-primary" 
+              onclick="get_started(event, 'indexsignup')">Get Started</button>
     </form><!--//signup-form-->
   </div>
 </section><!--//signup-->

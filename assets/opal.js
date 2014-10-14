@@ -1,4 +1,4 @@
-function get_started(what){
+function get_started(event, what){
     event.preventDefault();
     email = $('#'+what).val()
     $.post('http://ohcucontakt.deadpansincerity.com/former.php', {
@@ -11,7 +11,7 @@ function get_started(what){
 }
 
 
-function contactform(){
+function contactform(event){
     event.preventDefault();
     
     $.post('http://ohcucontakt.deadpansincerity.com/former.php', {

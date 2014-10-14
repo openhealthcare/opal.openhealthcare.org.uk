@@ -21,7 +21,8 @@ layout: default
           <div class="form-group">
             <input type="text" class="form-control" placeholder="Enter your email address" id="modulesheader">
           </div>
-          <button type="submit" class="btn btn-cta btn-cta-primary" onclick="get_started('modulesheader')">Get Started</button>
+          <button type="submit" class="btn btn-cta btn-cta-primary" 
+                  onclick="get_started(event, 'modulesheader')">Get Started</button>
         </form><!--//signup-form-->
       </div>
     </div><!--//row-->
@@ -119,7 +120,8 @@ layout: default
       <div class="form-group">
         <input type="text" class="form-control" placeholder="Enter your email address" id="modulessignup">
       </div>
-      <button type="submit" class="btn btn-cta btn-cta-primary" onclick="get_started('modulessignup')">Get Started</button>
+      <button type="submit" class="btn btn-cta btn-cta-primary" 
+              onclick="get_started(event, 'modulessignup')">Get Started</button>
     </form><!--//signup-form-->
   </div>
 </section><!--//signup-->
