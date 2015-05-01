@@ -109,6 +109,11 @@
                     
                 </li>
             
+                <li class="toctree-l1 ">
+                    <a class="" href="../../guides/plugins">Plugins</a>
+                    
+                </li>
+            
         
 
     
@@ -132,10 +137,17 @@
                         
                             <li class="toctree-l2"><a href="#form-helpers">Form Helpers</a></li>
                             
+                                <li><a class="toctree-l3" href="#checkbox">{% checkbox ... %}</a></li>
+                            
                                 <li><a class="toctree-l3" href="#radio">{% radio ... %}</a></li>
                             
                         
                         </ul>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../javascript_helpers">Javascript helpers</a>
                     
                 </li>
             
@@ -173,8 +185,17 @@
             <div class="section">
               <h1 id="form-helpers">Form Helpers</h1>
 <p>OPAL comes with a selection of templatetags that can help you with the
-repetitive task of generating Bootstrap + OPAL compatible markup for
+repetitive task of generating Bootstrap and OPAL compatible markup for
 your forms.</p>
+<h3 id="checkbox">{% checkbox ... %}</h3>
+<p>Generates a checkbox</p>
+<p>Keywords:</p>
+<ul>
+<li><code>label</code> The Label with which to describe this input</li>
+<li><code>model</code> The model which we are editing (This is a string that references an in-scope Angular variable)</li>
+<li><code>width</code> Bootstrap small column width of the checkbox</li>
+<li><code>labelwidth</code> Bootstrap small column width of the label</li>
+</ul>
 <h3 id="radio">{% radio ... %}</h3>
 <p>Generates an inline radio input</p>
 <p>Keywords: </p>
@@ -191,6 +212,8 @@ your forms.</p>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../javascript_helpers" class="btn btn-neutral float-right" title="Javascript helpers"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../opal_application" class="btn btn-neutral" title="OpalApplication"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -220,7 +243,7 @@ your forms.</p>
     <span class="rst-current-version" data-toggle="rst-current-version">
         
       <span><a href="../opal_application" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      <span style="margin-left: 15px"><a href="" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span style="margin-left: 15px"><a href="../javascript_helpers" style="color: #fcfcfc">Next &raquo;</a></span>
     </span>
 </div>
 </body>

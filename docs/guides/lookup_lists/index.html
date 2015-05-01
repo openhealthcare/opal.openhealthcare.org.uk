@@ -116,6 +116,11 @@
                     
                 </li>
             
+                <li class="toctree-l1 ">
+                    <a class="" href="../plugins">Plugins</a>
+                    
+                </li>
+            
         
 
     
@@ -134,6 +139,11 @@
             
                 <li class="toctree-l1 ">
                     <a class="" href="../../reference/form_templatetags">Form helpers</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../reference/javascript_helpers">Javascript helpers</a>
                     
                 </li>
             
@@ -171,7 +181,7 @@
             <div class="section">
               <h1 id="adding-a-lookup-list">Adding a lookup list</h1>
 <p>Lookup lists are subclasses of opal.utils.models.LookupList which have a generic relation to Synonym and define a foreign key on the calling model.</p>
-<p>You can define them yourself, or use the helper function <code>opal.utils.models.lookup_list</code></p>
+<p>You can define them yourself, or use the helper function <code>opal.core.lookuplists.lookup_list</code></p>
 <pre><code>ColourLookupList = type(*lookup_list('colour', module=__name__))
 </code></pre>
 <p>You can then reference the list in a django model by using a ForeignKeyOrFreeTextField 

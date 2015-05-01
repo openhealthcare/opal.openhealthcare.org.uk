@@ -120,6 +120,11 @@
                     
                 </li>
             
+                <li class="toctree-l1 ">
+                    <a class="" href="../plugins">Plugins</a>
+                    
+                </li>
+            
         
 
     
@@ -138,6 +143,11 @@
             
                 <li class="toctree-l1 ">
                     <a class="" href="../../reference/form_templatetags">Form helpers</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../reference/javascript_helpers">Javascript helpers</a>
                     
                 </li>
             
@@ -183,8 +193,14 @@ Django templatetag library that understands the context of common patterns with
 OPAL for creating forms and modals. </p>
 <p>It provides helpers for various input types that will allow you to render consistent
 forms, with less verbose templates.</p>
-<p>For full documentation of the options, please see opal/templatetags/forms.py
-For example usage please see elcid/elcid/templates/*_modal.html</p>
+<pre><code>{% load forms %}
+&lt;form class="form-horizontal"&gt;
+  {% input "autofocus" label="Destination" model="editing.destination" lookuplist="destination_list" %}
+  {% datepicker label="Date" model="editing.date" %}
+  {% checkbox label="Alone?" model="editing.alone" %}
+&lt;/form&gt;
+</code></pre>
+<p>For full documentation of the options, please see the <a href="../..//reference/form_templatetags/">Form templatetags reference material</a></p>
 
             </div>
           </div>
