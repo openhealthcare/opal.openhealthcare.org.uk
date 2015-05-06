@@ -126,6 +126,16 @@
                 </li>
             
                 <li class="toctree-l1 ">
+                    <a class="" href="../episode">The Episode model</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../subrecords">Subrecords</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
                     <a class="" href="../opal_application">OpalApplication</a>
                     
                 </li>
@@ -138,6 +148,10 @@
                             <li class="toctree-l2"><a href="#form-helpers">Form Helpers</a></li>
                             
                                 <li><a class="toctree-l3" href="#checkbox">{% checkbox ... %}</a></li>
+                            
+                                <li><a class="toctree-l3" href="#datepicker">{% datepicker ... %}</a></li>
+                            
+                                <li><a class="toctree-l3" href="#input">{% input ... %}</a></li>
                             
                                 <li><a class="toctree-l3" href="#radio">{% radio ... %}</a></li>
                             
@@ -191,10 +205,33 @@ your forms.</p>
 <p>Generates a checkbox</p>
 <p>Keywords:</p>
 <ul>
-<li><code>label</code> The Label with which to describe this input</li>
+<li><code>label</code> The Label with which to describe this field</li>
 <li><code>model</code> The model which we are editing (This is a string that references an in-scope Angular variable)</li>
 <li><code>width</code> Bootstrap small column width of the checkbox</li>
 <li><code>labelwidth</code> Bootstrap small column width of the label</li>
+<li><code>disabled</code> If this exists, we use this as the expression for the ng-disabled directive</li>
+</ul>
+<h3 id="datepicker">{% datepicker ... %}</h3>
+<p>Generates a datepicker</p>
+<p>Keywords: </p>
+<ul>
+<li><code>label</code> The Label with which to describe this field</li>
+<li><code>model</code> The model which we are editing (This is a string that references an in-scope Angular variable)</li>
+<li><code>show</code>  A string that contains an Angular expression for the ng-show directive</li>
+<li><code>hide</code>  A string that contains an Angular expression for the ng-hide directive</li>
+<li><code>required</code> Label to show when we're required</li>
+<li><code>mindate</code> Expression to use to set the minimum possible date</li>
+</ul>
+<h3 id="input">{% input ... %}</h3>
+<p>Generates an Input</p>
+<p>Keywords: </p>
+<ul>
+<li><code>label</code> The Label with which to describe this field</li>
+<li><code>model</code> The model which we are editing (This is a string that references an in-scope Angular variable)</li>
+<li><code>show</code>  A string that contains an Angular expression for the ng-show directive</li>
+<li><code>hide</code>  A string that contains an Angular expression for the ng-hide directive</li>
+<li><code>lookuplist</code> an Angular expression that evaluates to an array containing the lookuplist values</li>
+<li><code>required</code> Label to show when we're required</li>
 </ul>
 <h3 id="radio">{% radio ... %}</h3>
 <p>Generates an inline radio input</p>

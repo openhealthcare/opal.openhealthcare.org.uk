@@ -118,8 +118,6 @@
                             
                                 <li><a class="toctree-l3" href="#getting-started-with-your-plugin">Getting started with your plugin</a></li>
                             
-                                <li><a class="toctree-l3" href="#defining-models">Defining models</a></li>
-                            
                                 <li><a class="toctree-l3" href="#defining-lookup-lists">Defining Lookup lists</a></li>
                             
                                 <li><a class="toctree-l3" href="#defining-teams">Defining teams</a></li>
@@ -131,6 +129,8 @@
                                 <li><a class="toctree-l3" href="#adding-urls">Adding URLS</a></li>
                             
                                 <li><a class="toctree-l3" href="#adding-javascript">Adding Javascript</a></li>
+                            
+                                <li><a class="toctree-l3" href="#adding-apis">Adding APIs</a></li>
                             
                                 <li><a class="toctree-l3" href="#adding-actions-to-the-sidebar">Adding Actions to the sidebar</a></li>
                             
@@ -151,6 +151,16 @@
             
                 <li class="toctree-l1 ">
                     <a class="" href="../../reference/reference_guides">Index</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../reference/episode">The Episode model</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../reference/subrecords">Subrecords</a>
                     
                 </li>
             
@@ -205,11 +215,11 @@
 <p>OPAL Plugins are Django apps on the server side, and collections of angular.js
 models for the client. </p>
 <h2 id="getting-started-with-your-plugin">Getting started with your plugin</h2>
-<p>Plugins should subclass opal.core.plugins.OpalPlugin</p>
-<h2 id="defining-models">Defining models</h2>
-<p>Define in your models.py - just as you would for an implementation.</p>
+<p>The OPAL commandline tool will bootstrap your plugin for you - just run: </p>
+<pre><code>$ opal startplugin yourcoolplugin
+</code></pre>
 <h2 id="defining-lookup-lists">Defining Lookup lists</h2>
-<p>See Defining lookup lists in "Your Implementation.</p>
+<p>// TODO</p>
 <h2 id="defining-teams">Defining teams</h2>
 <p>As a signal is fine.
 Data migrations might work.</p>
@@ -228,11 +238,33 @@ flows() method of the plugin class.</p>
 <h2 id="adding-javascript">Adding Javascript</h2>
 <p>add to static, then add to your plugin class as YourPlugin.javascripts</p>
 <p>There are some restricted namespaces for these...</p>
+<h2 id="adding-apis">Adding APIs</h2>
+<p>OPAL uses Django Rest Framweork to provide APIs, and you may add to these from your plugin.
+By convention, APIs live in <code>yourplugin/api.py</code>. You are expected to provide a
+<code>rest_framework.viewsets.ViewSet</code> subclass, which you then detail as the <code>.apis</code> attribute
+of your plugin.</p>
+<pre><code># yourplugin/api.py
+from rest_framework.viewsets import ViewSet
+from rest_framework.response import Response
+
+class PingViewSet(ViewSet):
+    def list(self, request): return Response('pong')
+
+# yourplugin/__init__.py
+from opal.core.plugins import OpalPlugin
+from yourplugin import api
+
+class YourPlugin(OpalPlugin):
+    apis = [
+        ('ping', api.PingViewSet)
+    ]
+</code></pre>
+<p>These APIs will then be available and self-documenting fom the standard OPAL url <code>/api/v0.1/</code></p>
 <h2 id="adding-actions-to-the-sidebar">Adding Actions to the sidebar</h2>
 <p>Actions can be added to the sidebar by setting the <code>actions</code> attribute of your plugin.
 Actions is expected to be an iterable of strings which are templates to be included in
 the sidebar. By convention, actions will live in <code>./templates/actions/</code> .</p>
-<pre><code># plugin.py:
+<pre><code># __init__.py:
 class Plugin(OpalPlugin):
     actions = ('actions/javascript_alert.html', 'actions/dummy_button.html')
 </code></pre>

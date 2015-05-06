@@ -101,6 +101,10 @@
                         
                             <li class="toctree-l2"><a href="#forms">Forms</a></li>
                             
+                                <li><a class="toctree-l3" href="#editing-records">Editing Records</a></li>
+                            
+                                <li><a class="toctree-l3" href="#modal-template-selection">Modal template selection</a></li>
+                            
                                 <li><a class="toctree-l3" href="#client-side-validation">Client side Validation</a></li>
                             
                                 <li><a class="toctree-l3" href="#helpers">Helpers</a></li>
@@ -133,6 +137,16 @@
             
                 <li class="toctree-l1 ">
                     <a class="" href="../../reference/reference_guides">Index</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../reference/episode">The Episode model</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../reference/subrecords">Subrecords</a>
                     
                 </li>
             
@@ -184,6 +198,19 @@
           <div role="main">
             <div class="section">
               <h2 id="forms">Forms</h2>
+<h3 id="editing-records">Editing Records</h3>
+<p>The editing of records is a key component of any OPAL application. A key pattern is to edit
+or create an individual record in a modal containing the form for just that record. OPAL provides
+the Angular Controller <code>opal.controllers.EditItemCtrl</code> for doing just this</p>
+<h3 id="modal-template-selection">Modal template selection</h3>
+<p>Modal templates live in <code>./templates/modals/*</code>. For the Demographics subrecord we would
+look in <code>./templates/modals/demographics_modal.html</code> - which is also available from the URL
+<code>/templates/modals/demographics_modal.html</code>. Modal or form templates can be customised per
+team or sub-team, with template selection handled by the <code>.get_form_template</code> classmethod of your
+Subrecord.</p>
+<p>Team customised subrecords are retrieved from the url e.g.
+<code>/templates/modals/demographics_modal.html/team/subteam/</code> and will look for templates in 
+<code>./templates/modals/team/subteam/demographics_modal.html</code></p>
 <h3 id="client-side-validation">Client side Validation</h3>
 <p>Client side validation for forms requires a pattern and a help block &amp;&amp; uses ng-pattern, ng-disabled (https://docs.angularjs.org/api/ng/directive/input)</p>
 <h3 id="helpers">Helpers</h3>

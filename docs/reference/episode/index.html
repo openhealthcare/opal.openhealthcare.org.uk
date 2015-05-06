@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Javascript helpers - OPAL</title>
+  <title>The Episode model - OPAL</title>
   
 
   
@@ -125,8 +125,39 @@
                     
                 </li>
             
-                <li class="toctree-l1 ">
-                    <a class="" href="../episode">The Episode model</a>
+                <li class="toctree-l1 current">
+                    <a class="current" href=".">The Episode model</a>
+                    
+                        <ul>
+                        
+                            <li class="toctree-l2"><a href="#fields">Fields</a></li>
+                            
+                                <li><a class="toctree-l3" href="#episodecategory">Episode.category</a></li>
+                            
+                                <li><a class="toctree-l3" href="#episodepatient">Episode.patient</a></li>
+                            
+                                <li><a class="toctree-l3" href="#episodeactive">Episode.active</a></li>
+                            
+                                <li><a class="toctree-l3" href="#episodedate_of_admission">Episode.date_of_admission</a></li>
+                            
+                                <li><a class="toctree-l3" href="#episodedischarge_date">Episode.discharge_date</a></li>
+                            
+                                <li><a class="toctree-l3" href="#episodedate_of_episode">Episode.date_of_episode</a></li>
+                            
+                                <li><a class="toctree-l3" href="#episodeconsistency_token">Episode.consistency_token</a></li>
+                            
+                        
+                            <li class="toctree-l2"><a href="#methods">Methods</a></li>
+                            
+                                <li><a class="toctree-l3" href="#episodeto_dict">Episode.to_dict</a></li>
+                            
+                        
+                            <li class="toctree-l2"><a href="#manager">Manager</a></li>
+                            
+                                <li><a class="toctree-l3" href="#episodeobjectsserialised">Episode.objects.serialised()</a></li>
+                            
+                        
+                        </ul>
                     
                 </li>
             
@@ -145,24 +176,8 @@
                     
                 </li>
             
-                <li class="toctree-l1 current">
-                    <a class="current" href=".">Javascript helpers</a>
-                    
-                        <ul>
-                        
-                            <li class="toctree-l2"><a href="#rootscope-methods">$rootScope methods</a></li>
-                            
-                                <li><a class="toctree-l3" href="#open_modal">open_modal</a></li>
-                            
-                        
-                            <li class="toctree-l2"><a href="#angular-filters">Angular Filters</a></li>
-                            
-                                <li><a class="toctree-l3" href="#shortdate">shortDate</a></li>
-                            
-                                <li><a class="toctree-l3" href="#hhmm">hhmm</a></li>
-                            
-                        
-                        </ul>
+                <li class="toctree-l1 ">
+                    <a class="" href="../javascript_helpers">Javascript helpers</a>
                     
                 </li>
             
@@ -189,7 +204,7 @@
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../..">Docs</a> &raquo;</li>
-    <li>Javascript helpers</li>
+    <li>The Episode model</li>
       <li class="wy-breadcrumbs-aside">
         
       </li>
@@ -198,20 +213,56 @@
 </div>
           <div role="main">
             <div class="section">
-              <h2 id="rootscope-methods">$rootScope methods</h2>
-<p>OPAL provides some methods on the Angular $rootScope object.</p>
-<h3 id="open_modal">open_modal</h3>
-<pre><code>$rootScope.open_modal(controller, template, size, {episode: episode})
+              <p>The <code>opal.models.Episode</code> class represents an episode of care for a patient. This can be either 
+an inpatient stay, an outpatient treatment, a telephone liaison, an appointment at a clinic, 
+or any other arbitrarially defined period of care.</p>
+<h2 id="fields">Fields</h2>
+<h3 id="episodecategory">Episode.category</h3>
+<p>The category of this episode - e.g. inpatient, outpatient et cetera.
+This defaults to whatever is set on your application's subclass of 
+<code>opal.core.application.OpalApplication</code> - which itseflf defaults to 'inpatient'.</p>
+<h3 id="episodepatient">Episode.patient</h3>
+<p>A foreign key relationship to the patient for whom this episode concerns.</p>
+<h3 id="episodeactive">Episode.active</h3>
+<p>A boolean to provide a quick lookup for whether this is an active or closed episode.</p>
+<h3 id="episodedate_of_admission">Episode.date_of_admission</h3>
+<p>If this is an inpatient episode, the date of admission.</p>
+<h3 id="episodedischarge_date">Episode.discharge_date</h3>
+<p>If this is an inpatient episode, the date of discharge.</p>
+<h3 id="episodedate_of_episode">Episode.date_of_episode</h3>
+<p>If this is an episode that occurs on one date (like a clinic visit or telephone liaison), the 
+date of that event.</p>
+<h3 id="episodeconsistency_token">Episode.consistency_token</h3>
+<p>A (automatically generated) hash of the above fields. This is used for detecting concurrent edits.</p>
+<h2 id="methods">Methods</h2>
+<p>The Episode model has the following methods: </p>
+<h3 id="episodeto_dict">Episode.to_dict</h3>
+<p>Return a dictionary of field value pairs for this episode</p>
+<pre><code>episode.to_dict(user)
 </code></pre>
-<p>Open an arbitrary controller in a modal, passing in the name of the controller,
-the url for the template, the size of the modal window (either 'sm' or 'lg').</p>
-<p>You may also pass through a dictionary of items to resolve.</p>
-<h2 id="angular-filters">Angular Filters</h2>
-<p>OPAL provides some buit-in Angular filters for your project to use.</p>
-<h3 id="shortdate">shortDate</h3>
-<p>Displays a date as DD/MM if it's this year, else DD/MM/YYYY</p>
-<h3 id="hhmm">hhmm</h3>
-<p>Displays the hours &amp; minutes portion of a javascript Date object as HH:MM</p>
+<p>Arguments: </p>
+<ul>
+<li><code>user</code> The User for whom we want to serialise this episode</li>
+</ul>
+<p>Keywords: </p>
+<ul>
+<li><code>shallow</code> Boolean to indicate whether we want just this episode, or also a sorted set of previous and subsequent episodes</li>
+</ul>
+<h2 id="manager">Manager</h2>
+<p>The custom manager for Episodes has the following methods:</p>
+<h3 id="episodeobjectsserialised">Episode.objects.serialised()</h3>
+<p>Return a set of serialised episodes.</p>
+<pre><code>Episode.objects.serialised(User, [episode, ...], historic_tags=False)
+</code></pre>
+<p>Arguments:</p>
+<ul>
+<li><code>user</code> The User for whom we want to serialise this episode</li>
+<li><code>episodes</code> An iterable of Episode instances</li>
+</ul>
+<p>Keywords: </p>
+<ul>
+<li><code>historic_tags</code> A boolean to indicate whether the user desires historic or just current tags to be serialised</li>
+</ul>
 
             </div>
           </div>
@@ -219,8 +270,10 @@ the url for the template, the size of the modal window (either 'sm' or 'lg').</p
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="../subrecords" class="btn btn-neutral float-right" title="Subrecords"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
-        <a href="../form_templatetags" class="btn btn-neutral" title="Form helpers"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+        <a href="../reference_guides" class="btn btn-neutral" title="Index"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -246,8 +299,8 @@ the url for the template, the size of the modal window (either 'sm' or 'lg').</p
 <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
         
-      <span><a href="../form_templatetags" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      <span style="margin-left: 15px"><a href="" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../reference_guides" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      <span style="margin-left: 15px"><a href="../subrecords" style="color: #fcfcfc">Next &raquo;</a></span>
     </span>
 </div>
 </body>
