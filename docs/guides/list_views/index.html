@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Flow - OPAL</title>
+  <title>Patient List Views - OPAL</title>
   
 
   
@@ -79,15 +79,8 @@
                     
                 </li>
             
-                <li class="toctree-l1 current">
-                    <a class="current" href=".">Flow</a>
-                    
-                        <ul>
-                        
-                            <li class="toctree-l2"><a href="#flow">Flow</a></li>
-                            
-                        
-                        </ul>
+                <li class="toctree-l1 ">
+                    <a class="" href="../flow">Flow</a>
                     
                 </li>
             
@@ -116,8 +109,21 @@
                     
                 </li>
             
-                <li class="toctree-l1 ">
-                    <a class="" href="../list_views">Patient List Views</a>
+                <li class="toctree-l1 current">
+                    <a class="current" href=".">Patient List Views</a>
+                    
+                        <ul>
+                        
+                            <li class="toctree-l2"><a href="#opal-patient-list-views">OPAL Patient List views</a></li>
+                            
+                                <li><a class="toctree-l3" href="#registering-a-list">Registering a list</a></li>
+                            
+                                <li><a class="toctree-l3" href="#registering-a-list-via-a-plugin">Registering a list via a plugin</a></li>
+                            
+                                <li><a class="toctree-l3" href="#template-selection">Template selection</a></li>
+                            
+                        
+                        </ul>
                     
                 </li>
             
@@ -185,7 +191,7 @@
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../..">Docs</a> &raquo;</li>
-    <li>Flow</li>
+    <li>Patient List Views</li>
       <li class="wy-breadcrumbs-aside">
         
       </li>
@@ -194,9 +200,42 @@
 </div>
           <div role="main">
             <div class="section">
-              <h1 id="flow">Flow</h1>
-<p>TBD.</p>
-<p>See https://github.com/openhealthcare/opal/issues/214</p>
+              <h1 id="opal-patient-list-views">OPAL Patient List views</h1>
+<p>OPAL core provides support for displaying spreadsheet-style lists of patients.</p>
+<p>A list is comprised of a set of record types to display, and their ordering.</p>
+<h3 id="registering-a-list">Registering a list</h3>
+<p>Your application will have a <code>schema_module</code> defined in its object. This is expected
+to be a python module with a <code>list_schemas</code> object. The <code>list_schemas</code> object should
+be a dictionary of team/subteam names that point to lists of models.</p>
+<p>If you are using the OPAL scaffolding commands from the command line interface, this
+will have been generated for you.</p>
+<pre><code>list_columns = [models.Demographics, models.Diagnosis]
+list_columns_micro = [models.Demographics, models.Diagnosis, models.Antimicrobial]
+list_columns_id_liaison = [models.Demographics, models.Diagnosis, models.Travel]
+
+list_schemas = {
+    'default': list_columns,
+    'microbiology': {
+        'default': list_columns_micro,
+    },
+    'infectious_diseases': {
+        'id_liaison': list_columns_id_liaison
+    }
+}
+</code></pre>
+<h3 id="registering-a-list-via-a-plugin">Registering a list via a plugin</h3>
+<p>Plugins may register their own schemas by returning dictionaries of similar structure
+to the above from the <code>OpalPlugin.list_schemas()</code> <a href="../plugins">method</a>.</p>
+<h3 id="template-selection">Template selection</h3>
+<p>The list view is constructed by rendering a column for each record, in the order 
+defined in the schema, and a row for each episode in the list.</p>
+<p>The template for each cell should live in <code>./templates/records/*</code>. In order to 
+select the appropriate template for a given episode, OPAL looks in the following
+locations:</p>
+<pre><code>records/{record_name}.html
+records/{team}/{record_name}.html
+records/{team}/{subteam}/{record_name}.html
+</code></pre>
 
             </div>
           </div>
@@ -204,10 +243,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../roles_and_permissions" class="btn btn-neutral float-right" title="Roles & Permissions"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../plugins" class="btn btn-neutral float-right" title="Plugins"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../datamodel" class="btn btn-neutral" title="Data Model"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../episode_detail_views" class="btn btn-neutral" title="Episode Detail Views"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -233,8 +272,8 @@
 <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
         
-      <span><a href="../datamodel" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      <span style="margin-left: 15px"><a href="../roles_and_permissions" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../episode_detail_views" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      <span style="margin-left: 15px"><a href="../plugins" style="color: #fcfcfc">Next &raquo;</a></span>
     </span>
 </div>
 </body>

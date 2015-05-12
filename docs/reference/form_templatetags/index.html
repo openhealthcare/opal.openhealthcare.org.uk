@@ -110,6 +110,11 @@
                 </li>
             
                 <li class="toctree-l1 ">
+                    <a class="" href="../../guides/list_views">Patient List Views</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
                     <a class="" href="../../guides/plugins">Plugins</a>
                     
                 </li>
@@ -207,8 +212,6 @@ your forms.</p>
 <ul>
 <li><code>label</code> The Label with which to describe this field</li>
 <li><code>model</code> The model which we are editing (This is a string that references an in-scope Angular variable)</li>
-<li><code>width</code> Bootstrap small column width of the checkbox</li>
-<li><code>labelwidth</code> Bootstrap small column width of the label</li>
 <li><code>disabled</code> If this exists, we use this as the expression for the ng-disabled directive</li>
 </ul>
 <h3 id="datepicker">{% datepicker ... %}</h3>
@@ -232,6 +235,7 @@ your forms.</p>
 <li><code>hide</code>  A string that contains an Angular expression for the ng-hide directive</li>
 <li><code>lookuplist</code> an Angular expression that evaluates to an array containing the lookuplist values</li>
 <li><code>required</code> Label to show when we're required</li>
+<li><code>enter</code> expression to evaluate if the user presses return when in this input</li>
 </ul>
 <h3 id="radio">{% radio ... %}</h3>
 <p>Generates an inline radio input</p>

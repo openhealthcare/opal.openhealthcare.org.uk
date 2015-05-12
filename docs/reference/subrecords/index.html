@@ -110,6 +110,11 @@
                 </li>
             
                 <li class="toctree-l1 ">
+                    <a class="" href="../../guides/list_views">Patient List Views</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
                     <a class="" href="../../guides/plugins">Plugins</a>
                     
                 </li>
@@ -136,6 +141,8 @@
                         <ul>
                         
                             <li class="toctree-l2"><a href="#methods">Methods</a></li>
+                            
+                                <li><a class="toctree-l3" href="#subrecordget_display_template">Subrecord.get_display_template()</a></li>
                             
                                 <li><a class="toctree-l3" href="#subrecordget_form_template">Subrecord.get_form_template()</a></li>
                             
@@ -194,12 +201,20 @@
               <p>OPAL Subrecords are models that relate to either Patients or Episodes, and inherit from
 <code>opal.models.Subrecord</code></p>
 <h2 id="methods">Methods</h2>
+<h3 id="subrecordget_display_template">Subrecord.get_display_template()</h3>
+<p>Classmethod to locate the active display templte for our record.</p>
+<p>Returns the name of the template or None.</p>
+<p>Keywords:</p>
+<ul>
+<li><code>team</code> Optional team to check for form customisations</li>
+<li><code>subteam</code> Optional subteam to check for form customisations</li>
+</ul>
 <h3 id="subrecordget_form_template">Subrecord.get_form_template()</h3>
 <p>Classmethod to locate the active template for our record. Returns the name of a template or None.</p>
 <p>Keywords: </p>
 <ul>
 <li><code>team</code> Optional team to check for form customisations</li>
-<li><code>sub   team</code> Optional subteam to check for form customisations</li>
+<li><code>subteam</code> Optional subteam to check for form customisations</li>
 </ul>
 
             </div>

@@ -110,6 +110,11 @@
                 </li>
             
                 <li class="toctree-l1 ">
+                    <a class="" href="../../guides/list_views">Patient List Views</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
                     <a class="" href="../../guides/plugins">Plugins</a>
                     
                 </li>
@@ -153,6 +158,8 @@
                             
                         
                             <li class="toctree-l2"><a href="#manager">Manager</a></li>
+                            
+                                <li><a class="toctree-l3" href="#episodeobjectsever_taggedteam">Episode.objects.ever_tagged(team)</a></li>
                             
                                 <li><a class="toctree-l3" href="#episodeobjectsserialised">Episode.objects.serialised()</a></li>
                             
@@ -246,10 +253,17 @@ date of that event.</p>
 </ul>
 <p>Keywords: </p>
 <ul>
-<li><code>shallow</code> Boolean to indicate whether we want just this episode, or also a sorted set of previous and subsequent episodes</li>
+<li><code>shallow</code> Boolean to indicate whether we want just this episode, or also a sorted set of 
+previous and subsequent episodes</li>
 </ul>
 <h2 id="manager">Manager</h2>
 <p>The custom manager for Episodes has the following methods:</p>
+<h3 id="episodeobjectsever_taggedteam">Episode.objects.ever_tagged(team)</h3>
+<p>Return a list of episodes ever tagged to <code>team</code></p>
+<p>Arguments:</p>
+<ul>
+<li><code>team</code> The <code>Team.name</code> of the team you are interested in.</li>
+</ul>
 <h3 id="episodeobjectsserialised">Episode.objects.serialised()</h3>
 <p>Return a set of serialised episodes.</p>
 <pre><code>Episode.objects.serialised(User, [episode, ...], historic_tags=False)
@@ -261,7 +275,8 @@ date of that event.</p>
 </ul>
 <p>Keywords: </p>
 <ul>
-<li><code>historic_tags</code> A boolean to indicate whether the user desires historic or just current tags to be serialised</li>
+<li><code>historic_tags</code> A boolean to indicate whether the user desires historic or just current tags to 
+be serialised</li>
 </ul>
 
             </div>
