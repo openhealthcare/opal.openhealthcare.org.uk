@@ -270,7 +270,6 @@ implement a Demograpics <code>Subrecord</code> as follows:</p>
     hospital_number  = models.CharField(max_length=255, blank=True)
     nhs_number       = models.CharField(max_length=255, blank=True, null=True)
     date_of_birth    = models.DateField(null=True, blank=True)
-    country_of_birth = ForeignKeyOrFreeText(DestinationLookupList)
     ethnicity        = models.CharField(max_length=255, blank=True, null=True)
     gender           = models.CharField(max_length=255, blank=True, null=True)
 </code></pre>
@@ -319,7 +318,7 @@ display or structure, which are documented in the
 
 <!--
 MkDocs version  : 0.12.1
-Docs Build Date : 2015-05-21 11:32:57.916176
+Docs Build Date : 2015-05-21 11:42:26.000818
 -->
 </body>
 </html>
