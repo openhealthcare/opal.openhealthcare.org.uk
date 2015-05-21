@@ -75,7 +75,7 @@
 
     
         
-            <span>Guides</span>
+            <span>Data & Flow Guides</span>
             
                 <li class="toctree-l2 ">
                     <a class="" href="../../guides/topic-guides/">Index</a>
@@ -103,6 +103,17 @@
                 </li>
             
                 <li class="toctree-l2 ">
+                    <a class="" href="../../guides/json_api/">JSON API</a>
+                    
+                </li>
+            
+        
+
+    
+        
+            <span>Presentation & Templating Guides</span>
+            
+                <li class="toctree-l2 ">
                     <a class="" href="../../guides/forms/">Forms</a>
                     
                 </li>
@@ -122,8 +133,24 @@
                     
                 </li>
             
+        
+
+    
+        
+            <span>OPAL Guides</span>
+            
+                <li class="toctree-l2 ">
+                    <a class="" href="../../guides/components_overview/">Component Overview</a>
+                    
+                </li>
+            
                 <li class="toctree-l2 ">
                     <a class="" href="../../guides/plugins/">Plugins</a>
+                    
+                </li>
+            
+                <li class="toctree-l2 ">
+                    <a class="" href="../../guides/plugins_list/">Plugin List</a>
                     
                 </li>
             
@@ -147,6 +174,19 @@
                     <a class="current" href="./">Subrecords</a>
                     
                         <ul>
+                        
+                            <li class="toctree-l3"><a href="#properties">Properties</a></li>
+                            
+                                <li><a class="toctree-l4" href="#subrecord_icon">Subrecord._icon</a></li>
+                            
+                                <li><a class="toctree-l4" href="#subrecord_is_singleton">Subrecord._is_singleton</a></li>
+                            
+                                <li><a class="toctree-l4" href="#subrecord_modal">Subrecord._modal</a></li>
+                            
+                                <li><a class="toctree-l4" href="#subrecord_sort">Subrecord._sort</a></li>
+                            
+                                <li><a class="toctree-l4" href="#subrecord_title">Subrecord._title</a></li>
+                            
                         
                             <li class="toctree-l3"><a href="#methods">Methods</a></li>
                             
@@ -212,7 +252,38 @@
           <div role="main">
             <div class="section">
               <p>OPAL Subrecords are models that relate to either Patients or Episodes, and inherit from
-<code>opal.models.Subrecord</code></p>
+base classes <code>opal.models.PatientSubrecord</code> or <code>opal.models.EpisodeSubrecord</code></p>
+<h2 id="properties">Properties</h2>
+<h3 id="subrecord_icon">Subrecord._icon</h3>
+<p>String that provides the name of the icon to use for forms, column headings etc.</p>
+<pre><code>class Demographics(PatientSubrecord):
+    _icon = 'fa fa-user'
+</code></pre>
+<h3 id="subrecord_is_singleton">Subrecord._is_singleton</h3>
+<p>Boolean that determines whether this subrecord is a singleton.
+There may only be one of each singleton Subrecord, which is created whth the parent.</p>
+<pre><code>class Demographics(PatientSubrecord):
+    _is_singleton = True
+</code></pre>
+<p>For this case, when a <code>Patient</code> is created, an empty <code>Demographics</code> instance will 
+automatically be created.</p>
+<h3 id="subrecord_modal">Subrecord._modal</h3>
+<p>String to indicate a non-default modal size to be used for editing this <code>Subrecord</code>.
+Valid options are: 'lg', 'sm'. Typically used for complex forms or the display of
+additional contextually sensitive information when editing or entering data.</p>
+<pre><code>class Antimicrobial(EpisodeSubrecord):
+    _modal = 'lg'
+</code></pre>
+<h3 id="subrecord_sort">Subrecord._sort</h3>
+<p>Name of the field by which we want to sort these records when displaying.</p>
+<pre><code>class Antimicrobial(EpisodeSubrecord):
+    _sort = 'start_date'
+</code></pre>
+<h3 id="subrecord_title">Subrecord._title</h3>
+<p>String we would like to use for user-facing display of this record type.</p>
+<pre><code>class Antimicrobial(EpisodeSubrecord):
+    _title = 'Abx'
+</code></pre>
 <h2 id="methods">Methods</h2>
 <h3 id="subrecordget_display_template">Subrecord.get_display_template()</h3>
 <p>Classmethod to locate the active display templte for our record.</p>
@@ -271,7 +342,7 @@
 
 <!--
 MkDocs version  : 0.12.1
-Docs Build Date : 2015-05-18 21:21:38.911735
+Docs Build Date : 2015-05-21 11:32:58.036279
 -->
 </body>
 </html>

@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Teams - OPAL</title>
+  <title>Plugin List - OPAL</title>
   
 
   <link rel="shortcut icon" href="../../img/favicon.ico">
@@ -97,15 +97,8 @@
                     
                 </li>
             
-                <li class="toctree-l2 current">
-                    <a class="current" href="./">Teams</a>
-                    
-                        <ul>
-                        
-                            <li class="toctree-l3"><a href="#teams">Teams</a></li>
-                            
-                        
-                        </ul>
+                <li class="toctree-l2 ">
+                    <a class="" href="../teams/">Teams</a>
                     
                 </li>
             
@@ -156,8 +149,45 @@
                     
                 </li>
             
-                <li class="toctree-l2 ">
-                    <a class="" href="../plugins_list/">Plugin List</a>
+                <li class="toctree-l2 current">
+                    <a class="current" href="./">Plugin List</a>
+                    
+                        <ul>
+                        
+                            <li class="toctree-l3"><a href="#opalcoresearch">opal.core.search</a></li>
+                            
+                        
+                            <li class="toctree-l3"><a href="#opalcorecollaborative">opal.core.collaborative</a></li>
+                            
+                        
+                            <li class="toctree-l3"><a href="#opal-opat">opal-opat</a></li>
+                            
+                        
+                            <li class="toctree-l3"><a href="#opal-research">opal-research</a></li>
+                            
+                        
+                            <li class="toctree-l3"><a href="#opal-walk-in">opal-walk-in</a></li>
+                            
+                        
+                            <li class="toctree-l3"><a href="#opal-wardround">opal-wardround</a></li>
+                            
+                        
+                            <li class="toctree-l3"><a href="#opal-dischargesummary">opal-dischargesummary</a></li>
+                            
+                        
+                            <li class="toctree-l3"><a href="#opal-referral">opal-referral</a></li>
+                            
+                        
+                            <li class="toctree-l3"><a href="#opal-dashboard">opal-dashboard</a></li>
+                            
+                        
+                            <li class="toctree-l3"><a href="#opal-observations">opal-observations</a></li>
+                            
+                        
+                            <li class="toctree-l3"><a href="#opal-analytics">opal-analytics</a></li>
+                            
+                        
+                        </ul>
                     
                 </li>
             
@@ -222,10 +252,10 @@
     <li><a href="../..">Docs</a> &raquo;</li>
     
       
-        <li>Data & Flow Guides &raquo;</li>
+        <li>OPAL Guides &raquo;</li>
       
     
-    <li>Teams</li>
+    <li>Plugin List</li>
       <li class="wy-breadcrumbs-aside">
         
       </li>
@@ -234,26 +264,56 @@
 </div>
           <div role="main">
             <div class="section">
-              <h1 id="teams">Teams</h1>
-<p>Episodes of care are assigned to n teams - broadly a tab in the list view.</p>
-<p>Teams are a two level hierarchy currently used to define both clinical services, and stages within a
-clinical service.</p>
-<p>The common case is that a team represents a clincal service e.g. <code>Infectious Disieases</code> or <code>Renal</code>, 
-while a sub-team might represent e.g. Infectious Diseases <code>Inpatients</code> or <code>Outpatients</code>.</p>
-<p>Teams may be inactive, in which case they are not displayed.</p>
-<p>Teams may be restricted in which they only appear for a subset of users.</p>
-<p>The logic for showing restricted teams is implemented via plugins.</p>
-<p>Teams are assigned to episodes via a <code>Tagging</code></p>
+              <p>The OPAL ecosystem has a rich array of re-usable Open Source plugins that can be used as composable
+units of functionality to build your application. This page lists some of the best available:</p>
+<h3 id="opalcoresearch">opal.core.search</h3>
+<p>The Search plugin bundled with OPAL core provides a default database based search implementation 
+for your application, and is scheduled to provide hooks for e.g. using Elastic Search as your 
+serach backend.</p>
+<h3 id="opalcorecollaborative">opal.core.collaborative</h3>
+<p>The Collaborative plugin bundled with OPAL core provides a mechanism for providing realtime
+collaborative editing of patient data within lists, by providing a streaming websocket link
+of updates from other open sessions. (Requires <a href="https://github.com/openhealthcare/glossolalia">Glossolalia</a> ).</p>
+<h3 id="opal-opat">opal-opat</h3>
+<p>The <a href="https://github.com/openhealthcare/opal-opat">OPAT</a> plugin provides a set of teams, flows
+and record types for running a BSAC OPAT clinic.</p>
+<h3 id="opal-research">opal-research</h3>
+<p>The <a href="https://github.com/openhealthcare/opal-research">Research</a> plugin allows an OPAL application to be used as the
+data collection method for multiple concurrent research studies, including researcher blinding, a 
+structured role &amp; permission framework.</p>
+<h3 id="opal-walk-in">opal-walk-in</h3>
+<p>The <a href="https://github.com/openhealthcare/opal-walk-in">Walk In</a> plugin supports the operation of 
+drop in services within your institution, including registration, triage, escalation &amp; 
+discharge summaries.</p>
+<h3 id="opal-wardround">opal-wardround</h3>
+<p>The <a href="https://github.com/openhealthcare/opal-wardround">Wardround</a> plugin provides structured virtual
+ward rounds - sequential subsets of patients matching arbitrary criteria that the user may step 
+through in order.</p>
+<h3 id="opal-dischargesummary">opal-dischargesummary</h3>
+<p>The <a href="https://github.com/openhealthcare/opal-dischargesummary">Discharge Summary</a> plugin allows the
+user to generate templated letters from the data concerning an episode already held in the Application.</p>
+<h3 id="opal-referral">opal-referral</h3>
+<p>The <a href="https://github.com/openhealthcare/opal-referral">Referral</a> plugin provides the plumbing for 
+building complex inter-team referrals within an institution.</p>
+<h3 id="opal-dashboard">opal-dashboard</h3>
+<p>The <a href="https://github.com/openhealthcare/opal-dashboard">Dashboard</a> plugin allows for realtime clinical 
+dashboards featuring arbitrary metrics, displayed within your application.</p>
+<h3 id="opal-observations">opal-observations</h3>
+<p>The <a href="https://github.com/openhealthcare/opal-observations">Observations</a> plugin caters for the recording and
+display of electronic observations data.</p>
+<h3 id="opal-analytics">opal-analytics</h3>
+<p>The <a href="https://github.com/openhealthcare/opal-analytics">Analytics</a> plugin allows you to integrate
+your application with Google or Piwik Analytics with a minimum of fuss.</p>
             </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../json_api/" class="btn btn-neutral float-right" title="JSON API"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../reference/reference_guides/" class="btn btn-neutral float-right" title="Index"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../roles_and_permissions/" class="btn btn-neutral" title="Roles & Permissions"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../plugins/" class="btn btn-neutral" title="Plugins"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -279,14 +339,14 @@ while a sub-team might represent e.g. Infectious Diseases <code>Inpatients</code
 <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
         
-      <span><a href="../roles_and_permissions/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      <span style="margin-left: 15px"><a href="../json_api/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../plugins/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      <span style="margin-left: 15px"><a href="../../reference/reference_guides/" style="color: #fcfcfc">Next &raquo;</a></span>
     </span>
 </div>
 
 <!--
 MkDocs version  : 0.12.1
-Docs Build Date : 2015-05-21 11:32:57.927233
+Docs Build Date : 2015-05-21 11:32:58.007957
 -->
 </body>
 </html>

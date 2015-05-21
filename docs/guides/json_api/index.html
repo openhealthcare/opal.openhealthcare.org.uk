@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Teams - OPAL</title>
+  <title>JSON API - OPAL</title>
   
 
   <link rel="shortcut icon" href="../../img/favicon.ico">
@@ -97,20 +97,17 @@
                     
                 </li>
             
-                <li class="toctree-l2 current">
-                    <a class="current" href="./">Teams</a>
-                    
-                        <ul>
-                        
-                            <li class="toctree-l3"><a href="#teams">Teams</a></li>
-                            
-                        
-                        </ul>
+                <li class="toctree-l2 ">
+                    <a class="" href="../teams/">Teams</a>
                     
                 </li>
             
-                <li class="toctree-l2 ">
-                    <a class="" href="../json_api/">JSON API</a>
+                <li class="toctree-l2 current">
+                    <a class="current" href="./">JSON API</a>
+                    
+                        <ul>
+                        
+                        </ul>
                     
                 </li>
             
@@ -225,7 +222,7 @@
         <li>Data & Flow Guides &raquo;</li>
       
     
-    <li>Teams</li>
+    <li>JSON API</li>
       <li class="wy-breadcrumbs-aside">
         
       </li>
@@ -234,26 +231,21 @@
 </div>
           <div role="main">
             <div class="section">
-              <h1 id="teams">Teams</h1>
-<p>Episodes of care are assigned to n teams - broadly a tab in the list view.</p>
-<p>Teams are a two level hierarchy currently used to define both clinical services, and stages within a
-clinical service.</p>
-<p>The common case is that a team represents a clincal service e.g. <code>Infectious Disieases</code> or <code>Renal</code>, 
-while a sub-team might represent e.g. Infectious Diseases <code>Inpatients</code> or <code>Outpatients</code>.</p>
-<p>Teams may be inactive, in which case they are not displayed.</p>
-<p>Teams may be restricted in which they only appear for a subset of users.</p>
-<p>The logic for showing restricted teams is implemented via plugins.</p>
-<p>Teams are assigned to episodes via a <code>Tagging</code></p>
+              <p>OPAL features a rich, self documenting set of open JSON APIs.</p>
+<p>OPAL applications are generally simply a collection of Browser-based clients
+for these APIs.</p>
+<p>OPAL uses Django Rest Framework to provide it's APIs.</p>
+<p>You may examine the API of any running OPAL application by navigating to the url <code>/api/v0.1/</code></p>
             </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../json_api/" class="btn btn-neutral float-right" title="JSON API"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../forms/" class="btn btn-neutral float-right" title="Forms"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../roles_and_permissions/" class="btn btn-neutral" title="Roles & Permissions"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../teams/" class="btn btn-neutral" title="Teams"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -279,14 +271,14 @@ while a sub-team might represent e.g. Infectious Diseases <code>Inpatients</code
 <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
         
-      <span><a href="../roles_and_permissions/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      <span style="margin-left: 15px"><a href="../json_api/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../teams/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      <span style="margin-left: 15px"><a href="../forms/" style="color: #fcfcfc">Next &raquo;</a></span>
     </span>
 </div>
 
 <!--
 MkDocs version  : 0.12.1
-Docs Build Date : 2015-05-21 11:32:57.927233
+Docs Build Date : 2015-05-21 11:32:57.932734
 -->
 </body>
 </html>

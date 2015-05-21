@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Teams - OPAL</title>
+  <title>Component Overview - OPAL</title>
   
 
   <link rel="shortcut icon" href="../../img/favicon.ico">
@@ -97,15 +97,8 @@
                     
                 </li>
             
-                <li class="toctree-l2 current">
-                    <a class="current" href="./">Teams</a>
-                    
-                        <ul>
-                        
-                            <li class="toctree-l3"><a href="#teams">Teams</a></li>
-                            
-                        
-                        </ul>
+                <li class="toctree-l2 ">
+                    <a class="" href="../teams/">Teams</a>
                     
                 </li>
             
@@ -146,8 +139,24 @@
         
             <span>OPAL Guides</span>
             
-                <li class="toctree-l2 ">
-                    <a class="" href="../components_overview/">Component Overview</a>
+                <li class="toctree-l2 current">
+                    <a class="current" href="./">Component Overview</a>
+                    
+                        <ul>
+                        
+                            <li class="toctree-l3"><a href="#core-opal-framework">Core OPAL framework</a></li>
+                            
+                        
+                            <li class="toctree-l3"><a href="#plugins">Plugins</a></li>
+                            
+                        
+                            <li class="toctree-l3"><a href="#applications">Applications</a></li>
+                            
+                        
+                            <li class="toctree-l3"><a href="#opinionated-but-pluggable">Opinionated but Pluggable</a></li>
+                            
+                        
+                        </ul>
                     
                 </li>
             
@@ -222,10 +231,10 @@
     <li><a href="../..">Docs</a> &raquo;</li>
     
       
-        <li>Data & Flow Guides &raquo;</li>
+        <li>OPAL Guides &raquo;</li>
       
     
-    <li>Teams</li>
+    <li>Component Overview</li>
       <li class="wy-breadcrumbs-aside">
         
       </li>
@@ -234,26 +243,60 @@
 </div>
           <div role="main">
             <div class="section">
-              <h1 id="teams">Teams</h1>
-<p>Episodes of care are assigned to n teams - broadly a tab in the list view.</p>
-<p>Teams are a two level hierarchy currently used to define both clinical services, and stages within a
-clinical service.</p>
-<p>The common case is that a team represents a clincal service e.g. <code>Infectious Disieases</code> or <code>Renal</code>, 
-while a sub-team might represent e.g. Infectious Diseases <code>Inpatients</code> or <code>Outpatients</code>.</p>
-<p>Teams may be inactive, in which case they are not displayed.</p>
-<p>Teams may be restricted in which they only appear for a subset of users.</p>
-<p>The logic for showing restricted teams is implemented via plugins.</p>
-<p>Teams are assigned to episodes via a <code>Tagging</code></p>
+              <p>The OPAL ecosystem comprises several types of components - let's take a look at how they all
+hang together.</p>
+<h3 id="core-opal-framework">Core OPAL framework</h3>
+<p>The core OPAL framework provides common patterns for writing clinical facing transactional 
+applications. It is an opinionated approach, and amongst many other things, it gives you 
+authentication and login mechanisms, hooks for integration with other clinical systems, a 
+foundational <a href="../datamodel/">Clinical Data Model</a>, self-documenting, open JSON APIs for your 
+data, a <a href="../roles_and_permissions/">Permission framework</a> and a pattern library for UX 
+components.</p>
+<p>In addition to this, OPAL also provides some very common functionality as part of the core
+framework, such as Search, rendering lists of patients, viewing the detail and history of
+episodes of care, as well as multi-user realtime updates.</p>
+<h3 id="plugins">Plugins</h3>
+<p>OPAL plugins are intended to provide high quality generic, composable, re-usable chunks of 
+functionality that can be "dropped in" to an application. For example, installing the 
+<a href="https://github.com/openhealthcare/opal-analytics">Analytics</a> plugin allows you to integrate
+your application with Google or Piwik Analytics with a minimum of fuss. The 
+<a href="https://github.com/openhealthcare/opal-referral">Referral</a> plugin provides the plumbing for 
+building complex inter-team referrals within an institution.</p>
+<p>Plugins have a <a href="../plugins/">rich plugin API</a> they can hook into to aid the seamlessness, and
+many examples can be found by inspecting the source of <a href="../plugins_list/">existing plugins</a>. 
+This includes defining patient Flows through the system, adding to the core JSON API, ovrerriding
+templates, adding patient Actions, as well as much more.</p>
+<p>TODO: Write the Plugin Tutorial</p>
+<h3 id="applications">Applications</h3>
+<p>An application is the collection of configuration and bespoke functionality that would be 
+provided to an individual institution - e.g. it's the thing that you would look to deploy.</p>
+<p>Example applications include <a href="https://github.com/openhealthcare/elcid">elCID</a> - a for managing
+infection patients, or <a href="https://github.com/openhealthcare/opal-renal">OPAL-Renal</a> - an MDT &amp; 
+handover tool for Renal wards. </p>
+<p>A hospital might have multiple services running on one <code>Application</code>, or multiple <code>Applications</code>
+that integrate with one another.</p>
+<h2 id="opinionated-but-pluggable">Opinionated but Pluggable</h2>
+<p>OPAL is an Opinionated Framework. It expects the developer to structure functionality in a 
+certain way. </p>
+<p>OPAL expects features to be implemented as single page Angular.js applications, with the server
+mostly figuring as an API endpoint for reading and writing data.</p>
+<p>TODO: Expand on this</p>
+<p>That said, the technology stack of Django, Angular &amp; Bootstrap allows the confident user a huge
+degree of flexibility when writing their own applications and plugins. </p>
+<p>For instance, there is nothing to <em>stop</em> a developer from implementing a part of the functionality 
+in some other Javascript framework, and simply calling the <a href="../json_api/">JSON API</a>. However, by
+doing so, the developer will lose a large collection of pre-existing libraries, conventions et cetera.
+While possible, this approach is not likely to be officially supported in the medium term..</p>
             </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../json_api/" class="btn btn-neutral float-right" title="JSON API"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../plugins/" class="btn btn-neutral float-right" title="Plugins"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../roles_and_permissions/" class="btn btn-neutral" title="Roles & Permissions"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../list_views/" class="btn btn-neutral" title="Patient List Views"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -279,14 +322,14 @@ while a sub-team might represent e.g. Infectious Diseases <code>Inpatients</code
 <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
         
-      <span><a href="../roles_and_permissions/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      <span style="margin-left: 15px"><a href="../json_api/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../list_views/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      <span style="margin-left: 15px"><a href="../plugins/" style="color: #fcfcfc">Next &raquo;</a></span>
     </span>
 </div>
 
 <!--
 MkDocs version  : 0.12.1
-Docs Build Date : 2015-05-21 11:32:57.927233
+Docs Build Date : 2015-05-21 11:32:57.982512
 -->
 </body>
 </html>

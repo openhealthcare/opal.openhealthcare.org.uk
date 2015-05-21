@@ -75,7 +75,7 @@
 
     
         
-            <span>Guides</span>
+            <span>Data & Flow Guides</span>
             
                 <li class="toctree-l2 ">
                     <a class="" href="../topic-guides/">Index</a>
@@ -97,10 +97,19 @@
                     
                         <ul>
                         
-                            <li class="toctree-l3"><a href="#users">Users</a></li>
+                            <li class="toctree-l3"><a href="#the-userprofile-model">The UserProfile model</a></li>
                             
-                        
-                            <li class="toctree-l3"><a href="#teams">Teams</a></li>
+                                <li><a class="toctree-l4" href="#userproflie_can_extract">UserProflie._can_extract</a></li>
+                            
+                                <li><a class="toctree-l4" href="#userproflie_force_password_change">UserProflie._force_password_change</a></li>
+                            
+                                <li><a class="toctree-l4" href="#userprofile_readonly">UserProfile._readonly</a></li>
+                            
+                                <li><a class="toctree-l4" href="#userprofile_restricted_only">UserProfile._restricted_only</a></li>
+                            
+                                <li><a class="toctree-l4" href="#userprofileget_roles">UserProfile.get_roles()</a></li>
+                            
+                                <li><a class="toctree-l4" href="#userprofileget_teams">UserProfile.get_teams()</a></li>
                             
                         
                             <li class="toctree-l3"><a href="#roles">Roles</a></li>
@@ -114,6 +123,17 @@
                     <a class="" href="../teams/">Teams</a>
                     
                 </li>
+            
+                <li class="toctree-l2 ">
+                    <a class="" href="../json_api/">JSON API</a>
+                    
+                </li>
+            
+        
+
+    
+        
+            <span>Presentation & Templating Guides</span>
             
                 <li class="toctree-l2 ">
                     <a class="" href="../forms/">Forms</a>
@@ -135,8 +155,24 @@
                     
                 </li>
             
+        
+
+    
+        
+            <span>OPAL Guides</span>
+            
+                <li class="toctree-l2 ">
+                    <a class="" href="../components_overview/">Component Overview</a>
+                    
+                </li>
+            
                 <li class="toctree-l2 ">
                     <a class="" href="../plugins/">Plugins</a>
+                    
+                </li>
+            
+                <li class="toctree-l2 ">
+                    <a class="" href="../plugins_list/">Plugin List</a>
                     
                 </li>
             
@@ -201,7 +237,7 @@
     <li><a href="../..">Docs</a> &raquo;</li>
     
       
-        <li>Guides &raquo;</li>
+        <li>Data & Flow Guides &raquo;</li>
       
     
     <li>Roles & Permissions</li>
@@ -214,15 +250,36 @@
           <div role="main">
             <div class="section">
               <p>There are various levels of Roles &amp; Permissions provided within OPAL.</p>
-<h1 id="users">Users</h1>
-<p>Users have various settings:</p>
-<p>Can extract
-Readonly
-Only restricted teams</p>
-<h1 id="teams">Teams</h1>
-<p>A user may be a member of a team</p>
+<h1 id="the-userprofile-model">The UserProfile model</h1>
+<p>Some global properties about Users are set in the <code>opal.models.UserProfile</code>
+model.</p>
+<h3 id="userproflie_can_extract">UserProflie._can_extract</h3>
+<p>Boolean flag to determine whether this user is allowed to download data extracts
+from the system</p>
+<h3 id="userproflie_force_password_change">UserProflie._force_password_change</h3>
+<p>Boolean flag to determine whether we would like to force this user to change
+their password on their next login. This defaults to <code>True</code> when the <code>User</code> is 
+first created.</p>
+<h3 id="userprofile_readonly">UserProfile._readonly</h3>
+<p>Boolean flag to determine whether this user has readonly access.</p>
+<h3 id="userprofile_restricted_only">UserProfile._restricted_only</h3>
+<p>Boolean flag to determine whether this user should be only shown <a href="../teams/">teams</a> for which they
+have explicitly been given permission to view or whether they should also see the list of
+general access teams.</p>
+<h3 id="userprofileget_roles">UserProfile.get_roles()</h3>
+<p>Return a dictionary of roles in various contexts for our user</p>
+<pre><code>profile.get_roles() # -&gt;
+{
+    'default': ['doctor'],
+    'some_research_study': ['Clinical Lead']
+}
+</code></pre>
+<h3 id="userprofileget_teams">UserProfile.get_teams()</h3>
+<p>Return a list of <code>Team</code> objects that this user should be allowed to see.</p>
 <h1 id="roles">Roles</h1>
-<p>A user may be given a particular role.</p>
+<p>A user may be given a particular role. These can be either global - in which case they are 
+returned in the 'default' section of the roles dict from <code>get_roles()</code>, or specific to 
+a <a href="../teams/">team</a>.</p>
             </div>
           </div>
           <footer>
@@ -265,7 +322,7 @@ Only restricted teams</p>
 
 <!--
 MkDocs version  : 0.12.1
-Docs Build Date : 2015-05-18 21:21:38.861732
+Docs Build Date : 2015-05-21 11:32:57.923932
 -->
 </body>
 </html>

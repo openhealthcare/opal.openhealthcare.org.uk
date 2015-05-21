@@ -75,7 +75,7 @@
 
     
         
-            <span>Guides</span>
+            <span>Data & Flow Guides</span>
             
                 <li class="toctree-l2 ">
                     <a class="" href="../topic-guides/">Index</a>
@@ -92,6 +92,8 @@
                                 <li><a class="toctree-l4" href="#patients">Patients</a></li>
                             
                                 <li><a class="toctree-l4" href="#episodes">Episodes</a></li>
+                            
+                                <li><a class="toctree-l4" href="#sub-records">Sub Records</a></li>
                             
                         
                         </ul>
@@ -114,6 +116,17 @@
                 </li>
             
                 <li class="toctree-l2 ">
+                    <a class="" href="../json_api/">JSON API</a>
+                    
+                </li>
+            
+        
+
+    
+        
+            <span>Presentation & Templating Guides</span>
+            
+                <li class="toctree-l2 ">
                     <a class="" href="../forms/">Forms</a>
                     
                 </li>
@@ -133,8 +146,24 @@
                     
                 </li>
             
+        
+
+    
+        
+            <span>OPAL Guides</span>
+            
+                <li class="toctree-l2 ">
+                    <a class="" href="../components_overview/">Component Overview</a>
+                    
+                </li>
+            
                 <li class="toctree-l2 ">
                     <a class="" href="../plugins/">Plugins</a>
+                    
+                </li>
+            
+                <li class="toctree-l2 ">
+                    <a class="" href="../plugins_list/">Plugin List</a>
                     
                 </li>
             
@@ -199,7 +228,7 @@
     <li><a href="../..">Docs</a> &raquo;</li>
     
       
-        <li>Guides &raquo;</li>
+        <li>Data & Flow Guides &raquo;</li>
       
     
     <li>Data Model</li>
@@ -212,17 +241,42 @@
           <div role="main">
             <div class="section">
               <h1 id="the-opal-data-model">The OPAL Data model</h1>
-<p>The basic data model in OPAL consists of the following hierarchy </p>
-<p>// TODO: Diagram please</p>
-<p>Patients have many episodes of care. 
-Patients may have sub-records (such as demographics) which follow them across 
-multiple episodes.
-Episodes also have sub-records (such as diagnosis).</p>
-<p>Sub records may either be a 1-1 relationship with their parent, or 1-many.
-(e.g. a patient may have exactly one demographics, but many allergies).</p>
+<p>The OPAL data model allows for patients to have multiple sequential or concurrent
+<code>Episodes of care</code>. Some information is linked to an <code>Episode</code>, some is linked to
+a <code>Patient</code>.</p>
+<p><img alt="Datamodel" src="../../img/OPAL.datamodel.png" /></p>
 <h3 id="patients">Patients</h3>
+<p>A <code>Patient</code> may have many <code>Episodes</code>. An <code>Episode</code> is something like an Inpatient admission, 
+a Telephone Liaison, care under an outpatient clinic, an appointment at a drop in clinic.
+Applications or plugins may define their own <code>Episode</code> types, and a common pattern is to 
+alter the display or available functionality by episode type. (e.g. You may associate 
+templates for discharge summaries with particular episode types)</p>
+<p>A <code>Patient</code> will have <code>Subrecords</code> (such as e.g. Demographics) which follow them across multiple 
+episodes. These are information linked to a particular person, and should be implemented as
+Django models that inherit from the <code>opal.models.PatientSubrecord</code> base class.</p>
 <h3 id="episodes">Episodes</h3>
-<p>Each episode has a category (e.g. Inpatient/Outpatient/Phone Consultation).</p>
+<p>An <code>Episode</code> is linked to a <code>Patient</code>, and will contain some metadata about the type and date 
+of the episode. The field <code>Episode.category</code> stores the type of episode ('Inpatient', 'Outpatient', ...)
+while the fields <code>Episode.date_of_admission</code>, <code>Episode.discharge_date</code>, and <code>Episode.date_of_episode</code> 
+store information about when the <code>Episode</code> occurrs.</p>
+<p>An <code>Episode</code> will have <code>Subrecords</code> (such as e.g. Diagnosis) which are linked to this episode of
+care. These should be implemented as Django models that inherit from the <code>opal.models.EpisodeSubRecord</code>
+base class.</p>
+<h3 id="sub-records">Sub Records</h3>
+<p>A <code>Subrecord</code> consists of a collection of fields that constitute a record. For example, one could 
+implement a Demograpics <code>Subrecord</code> as follows:</p>
+<pre><code>class Demographics(PatientSubrecord):
+    name             = models.CharField(max_length=255, blank=True)
+    hospital_number  = models.CharField(max_length=255, blank=True)
+    nhs_number       = models.CharField(max_length=255, blank=True, null=True)
+    date_of_birth    = models.DateField(null=True, blank=True)
+    country_of_birth = ForeignKeyOrFreeText(DestinationLookupList)
+    ethnicity        = models.CharField(max_length=255, blank=True, null=True)
+    gender           = models.CharField(max_length=255, blank=True, null=True)
+</code></pre>
+<p>Subrecords also define various properties that will provide metadata about their
+display or structure, which are documented in the 
+(Subrecord reference material)[../reference/subrecords.md]</p>
             </div>
           </div>
           <footer>
@@ -265,7 +319,7 @@ Episodes also have sub-records (such as diagnosis).</p>
 
 <!--
 MkDocs version  : 0.12.1
-Docs Build Date : 2015-05-18 21:21:38.851757
+Docs Build Date : 2015-05-21 11:32:57.916176
 -->
 </body>
 </html>
