@@ -75,12 +75,18 @@
 
     
         
-            <span>Data & Flow Guides</span>
+            <span>Guides</span>
             
                 <li class="toctree-l2 ">
                     <a class="" href="../topic-guides/">Index</a>
                     
                 </li>
+            
+        
+
+    
+        
+            <span>Data & Flow Guides</span>
             
                 <li class="toctree-l2 ">
                     <a class="" href="../datamodel/">Data Model</a>
@@ -114,6 +120,16 @@
             <span>Presentation & Templating Guides</span>
             
                 <li class="toctree-l2 ">
+                    <a class="" href="../templates/">Templates</a>
+                    
+                </li>
+            
+                <li class="toctree-l2 ">
+                    <a class="" href="../static_files/">Static Files</a>
+                    
+                </li>
+            
+                <li class="toctree-l2 ">
                     <a class="" href="../forms/">Forms</a>
                     
                 </li>
@@ -131,6 +147,10 @@
                             <li class="toctree-l3"><a href="#opal-episode-detail-views">Opal Episode Detail Views</a></li>
                             
                                 <li><a class="toctree-l4" href="#template-selection">Template selection</a></li>
+                            
+                                <li><a class="toctree-l4" href="#extending-detaildetail_basehtml">Extending detail/detail_base.html</a></li>
+                            
+                                <li><a class="toctree-l4" href="#rendering-record-panels">Rendering Record Panels</a></li>
                             
                         
                         </ul>
@@ -242,7 +262,31 @@
 <p>Episode detail templates live in <code>./templates/detail/*</code>. In order to select the appropriate
 template for a given episode, OPAL looks first for the template for the episode category - so
 for <code>inpatient</code> episodes, that would be  <code>detail/inpatient.html</code>.</p>
-<p>The default template is <code>detail/default.html</code>.</p>
+<h3 id="extending-detaildetail_basehtml">Extending detail/detail_base.html</h3>
+<p>There is a base template for detail views which you can inherit from -  <code>detail/detail_base.html</code>.
+This template has the following blocks: </p>
+<h5 id="block-heading">{% block heading %}</h5>
+<p>The main page heading. Will default to the name of the patient.</p>
+<h5 id="block-subheading">{% block subheading %}</h5>
+<p>The page subheading. Will default to the hospital number and DOB of the patient.</p>
+<h5 id="block-sidebar_panels">{% block sidebar_panels %}</h5>
+<p>Add your own panels to the sidebar</p>
+<h5 id="block-left_column">{% block left_column %}</h5>
+<p>The left hand column of the main view.</p>
+<h5 id="block-right_column">{% block right_column %}</h5>
+<p>The right hand column of the main view.</p>
+<h3 id="rendering-record-panels">Rendering Record Panels</h3>
+<p>A frequent pattern when constructing detail views is to render a panel for a particular <code>Subrecord</code> 
+type. The panels templatetag library contains some useful helpers for rendering panels based on 
+models.</p>
+<pre><code>{% load panels %}
+{% record_panel Diagnosis %}
+</code></pre>
+<p>The above code will render a panel for your episode, including the <code>Subrecord</code> detail template for
+each instance, and allowing editing, deletion and creation of instances of your <code>Subrecord</code>. </p>
+<p>The record panel template expects the relevant Angular <code>$scope</code> to have <code>newNamedItem(name, index)</code>, 
+<code>editNamedItem(name, index)</code> and <code>deleteNamedItem(name, index)</code> methods implemented. Default 
+implementations of these are available from the <code>EpisodeDetailMixin</code>.</p>
             </div>
           </div>
           <footer>
@@ -285,7 +329,7 @@ for <code>inpatient</code> episodes, that would be  <code>detail/inpatient.html<
 
 <!--
 MkDocs version  : 0.12.1
-Docs Build Date : 2015-05-21 11:42:26.029784
+Docs Build Date : 2015-05-23 21:08:57.816377
 -->
 </body>
 </html>
