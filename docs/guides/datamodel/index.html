@@ -99,7 +99,9 @@
                             
                                 <li><a class="toctree-l4" href="#episodes">Episodes</a></li>
                             
-                                <li><a class="toctree-l4" href="#sub-records">Sub Records</a></li>
+                                <li><a class="toctree-l4" href="#records">Records</a></li>
+                            
+                                <li><a class="toctree-l4" href="#lookup-lists">Lookup Lists</a></li>
                             
                         
                         </ul>
@@ -126,6 +128,11 @@
                     
                 </li>
             
+                <li class="toctree-l2 ">
+                    <a class="" href="../lookup_lists/">Lookup Lists</a>
+                    
+                </li>
+            
         
 
     
@@ -144,11 +151,6 @@
             
                 <li class="toctree-l2 ">
                     <a class="" href="../forms/">Forms</a>
-                    
-                </li>
-            
-                <li class="toctree-l2 ">
-                    <a class="" href="../lookup_lists/">Lookup Lists</a>
                     
                 </li>
             
@@ -283,7 +285,7 @@ store information about when the <code>Episode</code> occurrs.</p>
 <p>An <code>Episode</code> will have <code>Subrecords</code> (such as e.g. Diagnosis) which are linked to this episode of
 care. These should be implemented as Django models that inherit from the <code>opal.models.EpisodeSubRecord</code>
 base class.</p>
-<h3 id="sub-records">Sub Records</h3>
+<h3 id="records">Records</h3>
 <p>A <code>Subrecord</code> consists of a collection of fields that constitute a record. For example, one could 
 implement a Demograpics <code>Subrecord</code> as follows:</p>
 <pre><code>class Demographics(PatientSubrecord):
@@ -297,6 +299,11 @@ implement a Demograpics <code>Subrecord</code> as follows:</p>
 <p>Subrecords also define various properties that will provide metadata about their
 display or structure, which are documented in the 
 (Subrecord reference material)[../reference/subrecords.md]</p>
+<h3 id="lookup-lists">Lookup Lists</h3>
+<p>OPAL comes with a set of clinical terminology data models out of the box. - we often
+want to link our records to one of these - for example to record a type of condition
+a patient might have, or a drug they are taking.</p>
+<p>Full documentation of these is available in the <a href="../lookup_lists/">Lookup lists</a> documentation.</p>
             </div>
           </div>
           <footer>
@@ -339,7 +346,7 @@ display or structure, which are documented in the
 
 <!--
 MkDocs version  : 0.12.1
-Docs Build Date : 2015-05-26 12:08:58.274706
+Docs Build Date : 2015-05-26 17:42:30.640806
 -->
 </body>
 </html>
