@@ -3,6 +3,7 @@ task :setupdocs do
 end
 
 task :docs do
+  sh "git pull origin gh-pages"
   sh "cd _opalsrc; git pull origin master"
   sh "cd _opalsrc/doc; mkdocs clean; mkdocs build"
   sh "rm -rf docs/"
