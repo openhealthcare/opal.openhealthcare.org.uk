@@ -1,270 +1,227 @@
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Javascript helpers - OPAL</title>
-  
-
-  <link rel="shortcut icon" href="../../img/favicon.ico">
-
-  
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
-
-  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="../../css/highlight.css">
-
-  <script src="../../js/jquery-2.1.1.min.js"></script>
-  <script src="../../js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
-  <script src="../../js/theme.js"></script> 
-
-  
-</head>
-
-<body class="wy-body-for-nav" role="document">
-
-  <div class="wy-grid-for-nav">
-
-    
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-      <div class="wy-side-nav-search">
-        <a href="../.." class="icon icon-home"> OPAL</a>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-      </div>
-
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-      <ul class="current">
-    
         
-            <li class="toctree-l1 ">
-                <a class="" href="../..">Home</a>
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+	<title>Javascript helpers - OPAL</title>
+
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link href="../../opaldocs.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../..">
+              <img src="http://opal.openhealthcare.org.uk/assets/images/opallogo.png" height="30"/>
+            </a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="../..">Home</a>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../../installation/">Installation</a>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../../tutorial/">Tutorial</a>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../../guides/topic-guides/">Guides</a>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../reference_guides/">Reference</a>
+                </li>
+            
+            
+            
+                <!-- <li class="dropdown"> -->
+                <!--     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Topic Guides <b class="caret"></b></a> -->
+                <!--     <ul class="dropdown-menu"> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/components_overview/">Component Overview</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/command_line_tool/">Command Line tool</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/plugins/">Plugins</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/plugins_list/">Plugin List</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/datamodel/">Data Model</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/flow/">Flow</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/roles_and_permissions/">Roles & Permissions</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/teams/">Teams</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/json_api/">JSON API</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/lookup_lists/">Lookup Lists</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/templates/">Templates</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/static_files/">Static Files</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/forms/">Forms</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/episode_detail_views/">Episode Detail Views</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/list_views/">Patient List Views</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--     </ul> -->
+                <!-- </li> -->
+            
+            
+            
+                <!-- <li class="dropdown active"> -->
+                <!--     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reference <b class="caret"></b></a> -->
+                <!--     <ul class="dropdown-menu"> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../episode/">The Episode model</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../subrecords/">Subrecords</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../opal_application/">OpalApplication</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../form_templatetags/">Form helpers</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li class="active"> -->
+                <!--             <a href="./">Javascript helpers</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--     </ul> -->
+                <!-- </li> -->
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                <!-- <li > -->
+                <!--     <a rel="next" href="../form_templatetags/"> -->
+                <!--         <i class="fa fa-arrow-left"></i> Previous -->
+                <!--     </a> -->
+                <!-- </li> -->
+                <!-- <li class="disabled"> -->
+                <!--     <a rel="prev" > -->
+                <!--         Next <i class="fa fa-arrow-right"></i> -->
+                <!--     </a> -->
+                <!-- </li> -->
                 
-            </li>
-        
-
-    
-        
-            <li class="toctree-l1 ">
-                <a class="" href="../../overview/">Overview</a>
-                
-            </li>
-        
-
-    
-        
-            <li class="toctree-l1 ">
-                <a class="" href="../../installation/">Installation</a>
-                
-            </li>
-        
-
-    
-        
-            <span>Tutorials</span>
-            
-                <li class="toctree-l2 ">
-                    <a class="" href="../../tutorial/">Your first OPAL App</a>
-                    
-                </li>
-            
-        
-
-    
-        
-            <span>Guides</span>
-            
-                <li class="toctree-l2 ">
-                    <a class="" href="../../guides/topic-guides/">Index</a>
-                    
-                </li>
-            
-        
-
-    
-        
-            <span>Data & Flow Guides</span>
-            
-                <li class="toctree-l2 ">
-                    <a class="" href="../../guides/datamodel/">Data Model</a>
-                    
-                </li>
-            
-                <li class="toctree-l2 ">
-                    <a class="" href="../../guides/flow/">Flow</a>
-                    
-                </li>
-            
-                <li class="toctree-l2 ">
-                    <a class="" href="../../guides/roles_and_permissions/">Roles & Permissions</a>
-                    
-                </li>
-            
-                <li class="toctree-l2 ">
-                    <a class="" href="../../guides/teams/">Teams</a>
-                    
-                </li>
-            
-                <li class="toctree-l2 ">
-                    <a class="" href="../../guides/json_api/">JSON API</a>
-                    
-                </li>
-            
-                <li class="toctree-l2 ">
-                    <a class="" href="../../guides/lookup_lists/">Lookup Lists</a>
-                    
-                </li>
-            
-        
-
-    
-        
-            <span>Presentation & Templating Guides</span>
-            
-                <li class="toctree-l2 ">
-                    <a class="" href="../../guides/templates/">Templates</a>
-                    
-                </li>
-            
-                <li class="toctree-l2 ">
-                    <a class="" href="../../guides/static_files/">Static Files</a>
-                    
-                </li>
-            
-                <li class="toctree-l2 ">
-                    <a class="" href="../../guides/forms/">Forms</a>
-                    
-                </li>
-            
-                <li class="toctree-l2 ">
-                    <a class="" href="../../guides/episode_detail_views/">Episode Detail Views</a>
-                    
-                </li>
-            
-                <li class="toctree-l2 ">
-                    <a class="" href="../../guides/list_views/">Patient List Views</a>
-                    
-                </li>
-            
-        
-
-    
-        
-            <span>OPAL Guides</span>
-            
-                <li class="toctree-l2 ">
-                    <a class="" href="../../guides/components_overview/">Component Overview</a>
-                    
-                </li>
-            
-                <li class="toctree-l2 ">
-                    <a class="" href="../../guides/command_line_tool/">Command Line tool</a>
-                    
-                </li>
-            
-                <li class="toctree-l2 ">
-                    <a class="" href="../../guides/plugins/">Plugins</a>
-                    
-                </li>
-            
-                <li class="toctree-l2 ">
-                    <a class="" href="../../guides/plugins_list/">Plugin List</a>
-                    
-                </li>
-            
-        
-
-    
-        
-            <span>Reference</span>
-            
-                <li class="toctree-l2 ">
-                    <a class="" href="../reference_guides/">Index</a>
-                    
-                </li>
-            
-                <li class="toctree-l2 ">
-                    <a class="" href="../episode/">The Episode model</a>
-                    
-                </li>
-            
-                <li class="toctree-l2 ">
-                    <a class="" href="../subrecords/">Subrecords</a>
-                    
-                </li>
-            
-                <li class="toctree-l2 ">
-                    <a class="" href="../opal_application/">OpalApplication</a>
-                    
-                </li>
-            
-                <li class="toctree-l2 ">
-                    <a class="" href="../form_templatetags/">Form helpers</a>
-                    
-                </li>
-            
-                <li class="toctree-l2 current">
-                    <a class="current" href="./">Javascript helpers</a>
-                    
-                        <ul>
-                        
-                            <li class="toctree-l3"><a href="#rootscope-methods">$rootScope methods</a></li>
-                            
-                                <li><a class="toctree-l4" href="#open_modal">open_modal</a></li>
-                            
-                        
-                            <li class="toctree-l3"><a href="#angular-filters">Angular Filters</a></li>
-                            
-                                <li><a class="toctree-l4" href="#shortdate">shortDate</a></li>
-                            
-                                <li><a class="toctree-l4" href="#hhmm">hhmm</a></li>
-                            
-                        
-                        </ul>
-                    
-                </li>
-            
-        
-
-    
-</ul>
-
-      </div>
-      &nbsp;
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../..">OPAL</a>
-      </nav>
-
-      
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="../..">Docs</a> &raquo;</li>
-    
-      
-        <li>Reference &raquo;</li>
-      
-    
-    <li>Javascript helpers</li>
-      <li class="wy-breadcrumbs-aside">
-        
-      </li>
-  </ul>
-  <hr/>
+            </ul>
+        </div>
+    </div>
 </div>
-          <div role="main">
-            <div class="section">
-              <h2 id="rootscope-methods">$rootScope methods</h2>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+  <h3>Contents</h3>
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#rootscope-methods">$rootScope methods</a></li>
+        
+            <li><a href="#open_modal">open_modal</a></li>
+        
+    
+        <li class="main "><a href="#angular-filters">Angular Filters</a></li>
+        
+            <li><a href="#shortdate">shortDate</a></li>
+        
+            <li><a href="#hhmm">hhmm</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h2 id="rootscope-methods">$rootScope methods</h2>
 <p>OPAL provides some methods on the Angular $rootScope object.</p>
 <h3 id="open_modal">open_modal</h3>
 <pre><code>$rootScope.open_modal(controller, template, size, {episode: episode})
@@ -277,48 +234,22 @@ the url for the template, the size of the modal window (either 'sm' or 'lg').</p
 <h3 id="shortdate">shortDate</h3>
 <p>Displays a date as DD/MM if it's this year, else DD/MM/YYYY</p>
 <h3 id="hhmm">hhmm</h3>
-<p>Displays the hours &amp; minutes portion of a javascript Date object as HH:MM</p>
-            </div>
-          </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-      
-        <a href="../form_templatetags/" class="btn btn-neutral" title="Form helpers"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
-    </div>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>
-    <!-- Copyright etc -->
-    </p>
-  </div>
-
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-</footer>
-	  
+<p>Displays the hours &amp; minutes portion of a javascript Date object as HH:MM</p></div>
         </div>
-      </div>
 
-    </section>
+        <footer class="col-md-12">
+            <hr>
+            <img src="http://opal.openhealthcare.org.uk/assets/images/opallogo.png" class="pull-left"/>
+            <center>
+              <br />
+              OPAL is an Open Source framework for building clinical applications from 
+              <a href="http://openhealthcare.org.uk" target="_blank">Open Health Care UK</i></a>.
+            </center>
+        </footer>
 
-  </div>
-
-<div class="rst-versions" role="note" style="cursor: pointer">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-        
-      <span><a href="../form_templatetags/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      <span style="margin-left: 15px"><a href="" style="color: #fcfcfc">Next &raquo;</a></span>
-    </span>
-</div>
-
-<!--
-MkDocs version  : 0.12.1
-Docs Build Date : 2015-05-26 17:42:30.844158
--->
-</body>
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script src="../../js/base.js"></script>
+    </body>
 </html>
