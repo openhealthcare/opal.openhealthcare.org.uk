@@ -8,6 +8,7 @@ task :docs do
   sh "cd _opalsrc/doc; mkdocs clean; mkdocs build"
   sh "rm -rf docs/"
   sh "mv _opalsrc/doc/site docs"
+  sh "cp -r docs/img img"
   sh "git add ."
   sh "git commit -a -m 'Rake:: Add newly generated docs to site.'"
   sh "git push origin gh-pages"
