@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>Subrecords - OPAL</title>
+	<title>Team - OPAL</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -164,12 +164,12 @@
                 <!--             <a href="../patient/">Patient</a> -->
                 <!--         </li> -->
                 <!--      -->
-                <!--         <li class="active"> -->
-                <!--             <a href="./">Subrecords</a> -->
+                <!--         <li > -->
+                <!--             <a href="../subrecords/">Subrecords</a> -->
                 <!--         </li> -->
                 <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../team/">Team</a> -->
+                <!--         <li class="active"> -->
+                <!--             <a href="./">Team</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -193,12 +193,12 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
                 <!-- <li > -->
-                <!--     <a rel="next" href="../patient/"> -->
+                <!--     <a rel="next" href="../subrecords/"> -->
                 <!--         <i class="fa fa-arrow-left"></i> Previous -->
                 <!--     </a> -->
                 <!-- </li> -->
                 <!-- <li > -->
-                <!--     <a rel="prev" href="../team/"> -->
+                <!--     <a rel="prev" href="../opal_application/"> -->
                 <!--         Next <i class="fa fa-arrow-right"></i> -->
                 <!--     </a> -->
                 <!-- </li> -->
@@ -213,74 +213,50 @@
   <h3>Contents</h3>
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#opal-subrecords">OPAL Subrecords</a></li>
+        <li class="main active"><a href="#opalmodelsteam">opal.models.Team</a></li>
+        
+            <li><a href="#fields">Fields</a></li>
+        
+            <li><a href="#class-methods">Class Methods</a></li>
         
             <li><a href="#properties">Properties</a></li>
-        
-            <li><a href="#methods">Methods</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h2 id="opal-subrecords">OPAL Subrecords</h2>
-<p>OPAL Subrecords are models that relate to either Patients or Episodes, and inherit from
-base classes <code>opal.models.PatientSubrecord</code> or <code>opal.models.EpisodeSubrecord</code></p>
+<h2 id="opalmodelsteam">opal.models.Team</h2>
+<h3 id="fields">Fields</h3>
+<h4 id="name">name</h4>
+<p>The slug version of the team name to be used in urls and schemas.</p>
+<p>Should only have letters and underscores</p>
+<h4 id="title">title</h4>
+<p>The human facing title of this Team</p>
+<h4 id="parent">parent</h4>
+<p>ForeignKey to this Team's parent if one exists</p>
+<h4 id="active">active</h4>
+<p>Boolean to determine whether this Team is active.</p>
+<p>Default = True</p>
+<h4 id="order">order</h4>
+<p>Integer that allows admin users to set the ordering of teams.</p>
+<h4 id="restricted">restricted</h4>
+<p>Boolean field to indicate that this team is restricted to only a subset of users.</p>
+<p>Default = False</p>
+<h4 id="direct_add">direct_add</h4>
+<p>Boolean field to indicate whether we should show this field in the Teams modal.</p>
+<h3 id="class-methods">Class Methods</h3>
+<h4 id="restricted_teams">restricted_teams</h4>
+<p>Given a user, return the restricted teams this user can access.</p>
+<pre><code>Team.restricted_teams(user)
+</code></pre>
+<h4 id="for_user">for_user</h4>
+<p>Return the set of teams this user has access to.</p>
+<pre><code>Team.for_user(user)
+</code></pre>
 <h3 id="properties">Properties</h3>
-<h4 id="subrecord_icon">Subrecord._icon</h4>
-<p>String that provides the name of the icon to use for forms, column headings etc.</p>
-<pre><code>class Demographics(PatientSubrecord):
-    _icon = 'fa fa-user'
-</code></pre>
-<h4 id="subrecord_is_singleton">Subrecord._is_singleton</h4>
-<p>Boolean that determines whether this subrecord is a singleton.
-There may only be one of each singleton Subrecord, which is created whth the parent.</p>
-<pre><code>class Demographics(PatientSubrecord):
-    _is_singleton = True
-</code></pre>
-<p>For this case, when a <code>Patient</code> is created, an empty <code>Demographics</code> instance will 
-automatically be created.</p>
-<h4 id="subrecord_list_limit">Subrecord._list_limit</h4>
-<p>Integer to indicate the maximum number of entries to display in list view for this
-model. Useful for record types where many entries will accrue, or where display is
-particularly verbose.</p>
-<pre><code>class BloodPressureReading(EpisodeSubrecord):
-    _list_limit = 3
-</code></pre>
-<h4 id="subrecord_modal">Subrecord._modal</h4>
-<p>String to indicate a non-default modal size to be used for editing this <code>Subrecord</code>.
-Valid options are: 'lg', 'sm'. Typically used for complex forms or the display of
-additional contextually sensitive information when editing or entering data.</p>
-<pre><code>class Antimicrobial(EpisodeSubrecord):
-    _modal = 'lg'
-</code></pre>
-<h4 id="subrecord_sort">Subrecord._sort</h4>
-<p>Name of the field by which we want to sort these records when displaying.</p>
-<pre><code>class Antimicrobial(EpisodeSubrecord):
-    _sort = 'start_date'
-</code></pre>
-<h4 id="subrecord_title">Subrecord._title</h4>
-<p>String we would like to use for user-facing display of this record type.</p>
-<pre><code>class Antimicrobial(EpisodeSubrecord):
-    _title = 'Abx'
-</code></pre>
-<h3 id="methods">Methods</h3>
-<h4 id="subrecordget_display_template">Subrecord.get_display_template()</h4>
-<p>Classmethod to locate the active display templte for our record.</p>
-<p>Returns the name of the template or None.</p>
-<p>Keywords:</p>
-<ul>
-<li><code>team</code> Optional team to check for form customisations</li>
-<li><code>subteam</code> Optional subteam to check for form customisations</li>
-</ul>
-<h4 id="subrecordget_form_template">Subrecord.get_form_template()</h4>
-<p>Classmethod to locate the active template for our record. Returns the name of a template or None.</p>
-<p>Keywords: </p>
-<ul>
-<li><code>team</code> Optional team to check for form customisations</li>
-<li><code>subteam</code> Optional subteam to check for form customisations</li>
-</ul></div>
+<h4 id="has_subteams">has_subteams</h4>
+<p>Boolean that is True if this Team has Subteams.</p></div>
         </div>
 
         <footer class="col-md-12">

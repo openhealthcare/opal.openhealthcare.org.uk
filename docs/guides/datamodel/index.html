@@ -43,7 +43,7 @@
 
             <!-- Main title -->
             <a class="navbar-brand" href="../..">
-              <img src="http://opal.openhealthcare.org.uk/assets/images/opallogo.png" height="30"/>
+              <img src="/img/opallogo.png" height="30"/>
             </a>
         </div>
 
@@ -161,7 +161,15 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../reference/patient/">Patient</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../reference/subrecords/">Subrecords</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/team/">Team</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -248,14 +256,17 @@ implement a Demograpics <code>Subrecord</code> as follows:</p>
 <pre><code>class Demographics(PatientSubrecord):
     name             = models.CharField(max_length=255, blank=True)
     hospital_number  = models.CharField(max_length=255, blank=True)
-    nhs_number       = models.CharField(max_length=255, blank=True, null=True)
+    nhs_number       = models.CharField(max_length=255, blank=True,
+                                        null=True)
     date_of_birth    = models.DateField(null=True, blank=True)
-    ethnicity        = models.CharField(max_length=255, blank=True, null=True)
-    gender           = models.CharField(max_length=255, blank=True, null=True)
+    ethnicity        = models.CharField(max_length=255, blank=True,
+                                        null=True)
+    gender           = models.CharField(max_length=255, blank=True, 
+                                        null=True)
 </code></pre>
 <p>Subrecords also define various properties that will provide metadata about their
 display or structure, which are documented in the 
-(Subrecord reference material)[../reference/subrecords.md]</p>
+<a href="../../reference/subrecords/">Subrecord reference material</a></p>
 <h3 id="lookup-lists">Lookup Lists</h3>
 <p>OPAL comes with a set of clinical terminology data models out of the box. - we often
 want to link our records to one of these - for example to record a type of condition
@@ -265,7 +276,7 @@ a patient might have, or a drug they are taking.</p>
 
         <footer class="col-md-12">
             <hr>
-            <img src="http://opal.openhealthcare.org.uk/assets/images/opallogo.png" class="pull-left"/>
+            <img src="/img/opallogo.png" class="pull-left"/>
             <center>
               <br />
               OPAL is an Open Source framework for building clinical applications from 

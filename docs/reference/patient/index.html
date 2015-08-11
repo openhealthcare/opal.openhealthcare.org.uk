@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>Subrecords - OPAL</title>
+	<title>Patient - OPAL</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -160,12 +160,12 @@
                 <!--             <a href="../episode/">The Episode model</a> -->
                 <!--         </li> -->
                 <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../patient/">Patient</a> -->
+                <!--         <li class="active"> -->
+                <!--             <a href="./">Patient</a> -->
                 <!--         </li> -->
                 <!--      -->
-                <!--         <li class="active"> -->
-                <!--             <a href="./">Subrecords</a> -->
+                <!--         <li > -->
+                <!--             <a href="../subrecords/">Subrecords</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -193,12 +193,12 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
                 <!-- <li > -->
-                <!--     <a rel="next" href="../patient/"> -->
+                <!--     <a rel="next" href="../episode/"> -->
                 <!--         <i class="fa fa-arrow-left"></i> Previous -->
                 <!--     </a> -->
                 <!-- </li> -->
                 <!-- <li > -->
-                <!--     <a rel="prev" href="../team/"> -->
+                <!--     <a rel="prev" href="../subrecords/"> -->
                 <!--         Next <i class="fa fa-arrow-right"></i> -->
                 <!--     </a> -->
                 <!-- </li> -->
@@ -213,74 +213,23 @@
   <h3>Contents</h3>
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#opal-subrecords">OPAL Subrecords</a></li>
+        <li class="main active"><a href="#opalmodelspatient">opal.models.Patient</a></li>
         
-            <li><a href="#properties">Properties</a></li>
-        
-            <li><a href="#methods">Methods</a></li>
+            <li><a href="#methods">methods</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h2 id="opal-subrecords">OPAL Subrecords</h2>
-<p>OPAL Subrecords are models that relate to either Patients or Episodes, and inherit from
-base classes <code>opal.models.PatientSubrecord</code> or <code>opal.models.EpisodeSubrecord</code></p>
-<h3 id="properties">Properties</h3>
-<h4 id="subrecord_icon">Subrecord._icon</h4>
-<p>String that provides the name of the icon to use for forms, column headings etc.</p>
-<pre><code>class Demographics(PatientSubrecord):
-    _icon = 'fa fa-user'
-</code></pre>
-<h4 id="subrecord_is_singleton">Subrecord._is_singleton</h4>
-<p>Boolean that determines whether this subrecord is a singleton.
-There may only be one of each singleton Subrecord, which is created whth the parent.</p>
-<pre><code>class Demographics(PatientSubrecord):
-    _is_singleton = True
-</code></pre>
-<p>For this case, when a <code>Patient</code> is created, an empty <code>Demographics</code> instance will 
-automatically be created.</p>
-<h4 id="subrecord_list_limit">Subrecord._list_limit</h4>
-<p>Integer to indicate the maximum number of entries to display in list view for this
-model. Useful for record types where many entries will accrue, or where display is
-particularly verbose.</p>
-<pre><code>class BloodPressureReading(EpisodeSubrecord):
-    _list_limit = 3
-</code></pre>
-<h4 id="subrecord_modal">Subrecord._modal</h4>
-<p>String to indicate a non-default modal size to be used for editing this <code>Subrecord</code>.
-Valid options are: 'lg', 'sm'. Typically used for complex forms or the display of
-additional contextually sensitive information when editing or entering data.</p>
-<pre><code>class Antimicrobial(EpisodeSubrecord):
-    _modal = 'lg'
-</code></pre>
-<h4 id="subrecord_sort">Subrecord._sort</h4>
-<p>Name of the field by which we want to sort these records when displaying.</p>
-<pre><code>class Antimicrobial(EpisodeSubrecord):
-    _sort = 'start_date'
-</code></pre>
-<h4 id="subrecord_title">Subrecord._title</h4>
-<p>String we would like to use for user-facing display of this record type.</p>
-<pre><code>class Antimicrobial(EpisodeSubrecord):
-    _title = 'Abx'
-</code></pre>
-<h3 id="methods">Methods</h3>
-<h4 id="subrecordget_display_template">Subrecord.get_display_template()</h4>
-<p>Classmethod to locate the active display templte for our record.</p>
-<p>Returns the name of the template or None.</p>
-<p>Keywords:</p>
-<ul>
-<li><code>team</code> Optional team to check for form customisations</li>
-<li><code>subteam</code> Optional subteam to check for form customisations</li>
-</ul>
-<h4 id="subrecordget_form_template">Subrecord.get_form_template()</h4>
-<p>Classmethod to locate the active template for our record. Returns the name of a template or None.</p>
-<p>Keywords: </p>
-<ul>
-<li><code>team</code> Optional team to check for form customisations</li>
-<li><code>subteam</code> Optional subteam to check for form customisations</li>
-</ul></div>
+<h2 id="opalmodelspatient">opal.models.Patient</h2>
+<h3 id="methods">methods</h3>
+<h4 id="create_episode">create_episode</h4>
+<p>Returns a new <code>Episode</code> for this patient.</p>
+<h4 id="to_dict">to_dict</h4>
+<p>Return the dictionary representation of this patient - suitable for serialization.</p>
+<pre><code>patient.to_dict(user)
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">
