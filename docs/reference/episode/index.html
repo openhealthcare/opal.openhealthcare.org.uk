@@ -271,6 +271,24 @@ date of that event.</p>
 <li><code>shallow</code> Boolean to indicate whether we want just this episode, or also a sorted set of 
 previous and subsequent episodes</li>
 </ul>
+<h5 id="episodeget_tag_names">Episode.get_tag_names</h5>
+<p>Arguments:</p>
+<ul>
+<li><code>user</code> The user for whom we want the tag names.</li>
+</ul>
+<p>Return the current active tag names for this Episode as strings.</p>
+<pre><code>episode.get_tag_names(user)
+# ['mine', 'infectioncontrol']
+</code></pre>
+<h5 id="episodeset_tag_names">Episode.set_tag_names</h5>
+<p>Arguments:</p>
+<ul>
+<li><code>tag_names</code> The list of tags that we want to be active for this Episode.</li>
+<li><code>user</code> The user for whom we want the tag names.</li>
+</ul>
+<p>Return the current active tag names for this Episode as strings.</p>
+<pre><code>episode.set_tag_names(['mine', 'infectioncontrol'], user)
+</code></pre>
 <h3 id="manager">Manager</h3>
 <p>The custom manager for Episodes has the following methods:</p>
 <h4 id="episodeobjectsever_taggedteam">Episode.objects.ever_tagged(team)</h4>
