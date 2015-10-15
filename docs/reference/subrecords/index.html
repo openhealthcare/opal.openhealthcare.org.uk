@@ -184,6 +184,14 @@
                 <!--             <a href="../javascript_helpers/">Javascript helpers</a> -->
                 <!--         </li> -->
                 <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../schemas/">Schemas</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../search_queries/">Search Queries</a> -->
+                <!--         </li> -->
+                <!--      -->
                 <!--     </ul> -->
                 <!-- </li> -->
             
@@ -265,6 +273,9 @@ additional contextually sensitive information when editing or entering data.</p>
 <pre><code>class Antimicrobial(EpisodeSubrecord):
     _title = 'Abx'
 </code></pre>
+<h4 id="subrecordpid_fields">Subrecord.pid_fields</h4>
+<p>An iterable of strings that correspond to fieldnames that contain Patient Identifiable Data (PID).</p>
+<p>This is used when creating data extracts to exclude PID from e.g. CSV downloads.</p>
 <h3 id="methods">Methods</h3>
 <h4 id="subrecordget_display_template">Subrecord.get_display_template()</h4>
 <p>Classmethod to locate the active display templte for our record.</p>
