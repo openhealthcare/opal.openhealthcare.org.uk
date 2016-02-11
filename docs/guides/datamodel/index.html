@@ -177,7 +177,23 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../reference/episode_service/">Episode service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/item_service/">Item service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/patient_summary_service/">Patient summary service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../reference/form_templatetags/">Form helpers</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/record_panel_templatetag/">Record panel templatetag</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -223,6 +239,8 @@
     
         <li class="main active"><a href="#the-opal-data-model">The OPAL Data model</a></li>
         
+            <li><a href="#location-and-trackedmodel-abstract-models">Location and TrackedModel abstract models</a></li>
+        
             <li><a href="#patients">Patients</a></li>
         
             <li><a href="#episodes">Episodes</a></li>
@@ -241,25 +259,32 @@
 <code>Episodes of care</code>. Some information is linked to an <code>Episode</code>, some is linked to
 a <code>Patient</code>.</p>
 <p><img alt="Datamodel" src="../../img/OPAL.datamodel.png" /></p>
+<h3 id="location-and-trackedmodel-abstract-models">Location and TrackedModel abstract models</h3>
+<p>Location provides all the fields you might need to location a specific bed in a hospital
+i.e. category, hospital, ward, bed</p>
+<p>TrackedModel provides some basic audit fields created_by, created, updated_by, updated
+the presumption is that these will be set by the update_to_dict model or manually in your
+view this is so backend modification can happen without having to worry about corrupting
+the audit trail.</p>
 <h3 id="patients">Patients</h3>
-<p>A <code>Patient</code> may have many <code>Episodes</code>. An <code>Episode</code> is something like an Inpatient admission, 
+<p>A <code>Patient</code> may have many <code>Episodes</code>. An <code>Episode</code> is something like an Inpatient admission,
 a Telephone Liaison, care under an outpatient clinic, an appointment at a drop in clinic.
-Applications or plugins may define their own <code>Episode</code> types, and a common pattern is to 
-alter the display or available functionality by episode type. (e.g. You may associate 
+Applications or plugins may define their own <code>Episode</code> types, and a common pattern is to
+alter the display or available functionality by episode type. (e.g. You may associate
 templates for discharge summaries with particular episode types)</p>
-<p>A <code>Patient</code> will have <code>Subrecords</code> (such as e.g. Demographics) which follow them across multiple 
+<p>A <code>Patient</code> will have <code>Subrecords</code> (such as e.g. Demographics) which follow them across multiple
 episodes. These are information linked to a particular person, and should be implemented as
 Django models that inherit from the <code>opal.models.PatientSubrecord</code> base class.</p>
 <h3 id="episodes">Episodes</h3>
-<p>An <code>Episode</code> is linked to a <code>Patient</code>, and will contain some metadata about the type and date 
+<p>An <code>Episode</code> is linked to a <code>Patient</code>, and will contain some metadata about the type and date
 of the episode. The field <code>Episode.category</code> stores the type of episode ('Inpatient', 'Outpatient', ...)
-while the fields <code>Episode.date_of_admission</code>, <code>Episode.discharge_date</code>, and <code>Episode.date_of_episode</code> 
+while the fields <code>Episode.date_of_admission</code>, <code>Episode.discharge_date</code>, and <code>Episode.date_of_episode</code>
 store information about when the <code>Episode</code> occurrs.</p>
 <p>An <code>Episode</code> will have <code>Subrecords</code> (such as e.g. Diagnosis) which are linked to this episode of
 care. These should be implemented as Django models that inherit from the <code>opal.models.EpisodeSubRecord</code>
 base class.</p>
 <h3 id="records">Records</h3>
-<p>A <code>Subrecord</code> consists of a collection of fields that constitute a record. For example, one could 
+<p>A <code>Subrecord</code> consists of a collection of fields that constitute a record. For example, one could
 implement a Demograpics <code>Subrecord</code> as follows:</p>
 <pre><code>class Demographics(PatientSubrecord):
     name             = models.CharField(max_length=255, blank=True)
@@ -269,11 +294,11 @@ implement a Demograpics <code>Subrecord</code> as follows:</p>
     date_of_birth    = models.DateField(null=True, blank=True)
     ethnicity        = models.CharField(max_length=255, blank=True,
                                         null=True)
-    gender           = models.CharField(max_length=255, blank=True, 
+    gender           = models.CharField(max_length=255, blank=True,
                                         null=True)
 </code></pre>
 <p>Subrecords also define various properties that will provide metadata about their
-display or structure, which are documented in the 
+display or structure, which are documented in the
 <a href="../../reference/subrecords/">Subrecord reference material</a></p>
 <h3 id="lookup-lists">Lookup Lists</h3>
 <p>OPAL comes with a set of clinical terminology data models out of the box. - we often

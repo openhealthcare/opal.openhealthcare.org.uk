@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>Patient - OPAL</title>
+	<title>Episode service - OPAL</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -160,8 +160,8 @@
                 <!--             <a href="../episode/">The Episode model</a> -->
                 <!--         </li> -->
                 <!--      -->
-                <!--         <li class="active"> -->
-                <!--             <a href="./">Patient</a> -->
+                <!--         <li > -->
+                <!--             <a href="../patient/">Patient</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -176,8 +176,8 @@
                 <!--             <a href="../opal_application/">OpalApplication</a> -->
                 <!--         </li> -->
                 <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../episode_service/">Episode service</a> -->
+                <!--         <li class="active"> -->
+                <!--             <a href="./">Episode service</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -217,12 +217,12 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
                 <!-- <li > -->
-                <!--     <a rel="next" href="../episode/"> -->
+                <!--     <a rel="next" href="../opal_application/"> -->
                 <!--         <i class="fa fa-arrow-left"></i> Previous -->
                 <!--     </a> -->
                 <!-- </li> -->
                 <!-- <li > -->
-                <!--     <a rel="prev" href="../subrecords/"> -->
+                <!--     <a rel="prev" href="../item_service/"> -->
                 <!--         Next <i class="fa fa-arrow-right"></i> -->
                 <!--     </a> -->
                 <!-- </li> -->
@@ -237,22 +237,46 @@
   <h3>Contents</h3>
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#opalmodelspatient">opal.models.Patient</a></li>
+        <li class="main active"><a href="#the-episode-service">The Episode service</a></li>
         
-            <li><a href="#methods">methods</a></li>
+            <li><a href="#constructor">Constructor</a></li>
+        
+            <li><a href="#methods">Methods</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h2 id="opalmodelspatient">opal.models.Patient</h2>
-<h3 id="methods">methods</h3>
-<h4 id="create_episode">create_episode</h4>
-<p>Returns a new <code>Episode</code> for this patient.</p>
-<h4 id="to_dict">to_dict</h4>
-<p>Return the dictionary representation of this patient - suitable for serialization.</p>
-<pre><code>patient.to_dict(user)
+<h2 id="the-episode-service">The Episode service</h2>
+<p>The <code>Episode</code> service in <code>opal.services</code> provides us with core functionality related
+to interacting with episodes in the client.</p>
+<h3 id="constructor">Constructor</h3>
+<p>The Episode service is instantiated with the Episode data that comes back from the
+Episode JSON API.</p>
+<pre><code>var episode = new Episode(json_data);
+</code></pre>
+<h3 id="methods">Methods</h3>
+<h4 id="episodegettags">Episode.getTags</h4>
+<p>Return a list of the current tags this episode has as strings.</p>
+<pre><code>episode.getTags();
+// ['mine', 'infectioncontrol']
+</code></pre>
+<h4 id="episodehastag">Episode.hasTag</h4>
+<p>Predicate function that determines whether the episode is tagged with a given tag.</p>
+<p>Arguments:</p>
+<ul>
+<li><code>tag</code>: The tag you are interested in.</li>
+</ul>
+<h4 id="episodenewitem">Episode.newItem</h4>
+<p>Instantiate a new subrecord for this episode of a given type.</p>
+<p>Arguments: </p>
+<ul>
+<li><code>recordName</code>: The name of the type of record you want to instantiate.</li>
+</ul>
+<p>Example usage: </p>
+<pre><code>episode.newItem('diagnosis');
+// item (an Item() instance.
 </code></pre></div>
         </div>
 

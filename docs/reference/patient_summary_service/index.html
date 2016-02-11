@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>Patient - OPAL</title>
+	<title>Patient summary service - OPAL</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -160,8 +160,8 @@
                 <!--             <a href="../episode/">The Episode model</a> -->
                 <!--         </li> -->
                 <!--      -->
-                <!--         <li class="active"> -->
-                <!--             <a href="./">Patient</a> -->
+                <!--         <li > -->
+                <!--             <a href="../patient/">Patient</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -184,8 +184,8 @@
                 <!--             <a href="../item_service/">Item service</a> -->
                 <!--         </li> -->
                 <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../patient_summary_service/">Patient summary service</a> -->
+                <!--         <li class="active"> -->
+                <!--             <a href="./">Patient summary service</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -217,12 +217,12 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
                 <!-- <li > -->
-                <!--     <a rel="next" href="../episode/"> -->
+                <!--     <a rel="next" href="../item_service/"> -->
                 <!--         <i class="fa fa-arrow-left"></i> Previous -->
                 <!--     </a> -->
                 <!-- </li> -->
                 <!-- <li > -->
-                <!--     <a rel="prev" href="../subrecords/"> -->
+                <!--     <a rel="prev" href="../form_templatetags/"> -->
                 <!--         Next <i class="fa fa-arrow-right"></i> -->
                 <!--     </a> -->
                 <!-- </li> -->
@@ -237,22 +237,22 @@
   <h3>Contents</h3>
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#opalmodelspatient">opal.models.Patient</a></li>
+        <li class="main active"><a href="#the-patientsummary-service">The PatientSummary service</a></li>
         
-            <li><a href="#methods">methods</a></li>
+            <li><a href="#constructor">Constructor</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h2 id="opalmodelspatient">opal.models.Patient</h2>
-<h3 id="methods">methods</h3>
-<h4 id="create_episode">create_episode</h4>
-<p>Returns a new <code>Episode</code> for this patient.</p>
-<h4 id="to_dict">to_dict</h4>
-<p>Return the dictionary representation of this patient - suitable for serialization.</p>
-<pre><code>patient.to_dict(user)
+<h2 id="the-patientsummary-service">The PatientSummary service</h2>
+<p>The <code>PatientSummary</code> service in <code>opal.services</code> provides us with core
+functionality related to interacting with patient search results in the client.</p>
+<h3 id="constructor">Constructor</h3>
+<p>The PatientSummary service is instantiated with the Patient search result data
+that comes back from the Patient search JSON API.</p>
+<pre><code>var patient_summary = new PatientSummary(json_data);
 </code></pre></div>
         </div>
 

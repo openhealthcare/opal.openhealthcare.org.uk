@@ -177,7 +177,23 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../reference/episode_service/">Episode service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/item_service/">Item service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/patient_summary_service/">Patient summary service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../reference/form_templatetags/">Form helpers</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/record_panel_templatetag/">Record panel templatetag</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -233,9 +249,9 @@
         
             <li><a href="#add-your-own-data-models">Add your own data models</a></li>
         
-            <li><a href="#set-an-icon-for-your-model">Set an Icon for your model</a></li>
+            <li><a href="#tweaking-the-default-scaffolding">Tweaking the default scaffolding</a></li>
         
-            <li><a href="#json-apis">JSON APIs</a></li>
+            <li><a href="#some-other-batteries-included">Some other batteries included</a></li>
         
             <li><a href="#what-next">What next?</a></li>
         
@@ -254,16 +270,16 @@ So that I can treat them effectively and safely.
 </p></blockquote>
 
 <h3 id="bootstrapping-a-new-project">Bootstrapping a new project</h3>
-<p>We assume that you've already <a href="../installation/">Installed OPAL</a>. You can tell which version of opal is installed 
+<p>We assume that you've already <a href="../installation/">Installed OPAL</a>. You can tell which version of opal is installed
 by running this command</p>
 <pre><code>$ opal --version
 </code></pre>
 <p>At the start a new project, OPAL will bootstrap the initial project structure, including
 a Djano project, some core datamodels (complete with JSON APIs) and a general application structure.</p>
-<p>From the commandline: </p>
+<p>From the commandline:</p>
 <pre><code>$ opal startproject mynewapp
 </code></pre>
-<p>This will create a mynewap directory where your new project lives. </p>
+<p>This will create a mynewap directory where your new project lives.</p>
 <p>Let's have a look at what that created for you:</p>
 <pre><code>mynewapp/                   # Your project directory
     LICENSE                 # A dummy LICENSE file
@@ -277,7 +293,7 @@ a Djano project, some core datamodels (complete with JSON APIs) and a general ap
     mynewapp/               # The actual python package for your application
          __init__.py
         flow.py             # How patients move through your services
-        models.py           # Data models for your application 
+        models.py           # Data models for your application
         schema.py           # The list schemas for your application
         settings.py         # Helpfully tweaked Django settings
         tests.py            # Dummy unittests
@@ -295,7 +311,7 @@ python manage.py runserver
 </code></pre>
 <p>If you now visit <code>http://localhost:8000</code> in your browser, you should see the standard login screen:</p>
 <p><img src="/img/tutorial-login.png" style="margin: 12px auto; border: 1px solid black;"/></p>
-<p>The scaffolding step created you a superuser, so try logging in with the credentials: </p>
+<p>The scaffolding step created you a superuser, so try logging in with the credentials:</p>
 <ul>
 <li>Username: <em>super</em></li>
 <li>Password:  <em>super1</em></li>
@@ -336,11 +352,11 @@ looks a lot like this:</p>
 This is a custom field type that we use with OPAL when we want to use a
 <a href="../guides/lookup_lists/">Lookup List</a>.</p>
 <p>Lookup Lists allow us to reference canonical lists of available terminology as a foreign key, while
-also allowing synonymous terms, and a free text override. That means that we can ensure that 
+also allowing synonymous terms, and a free text override. That means that we can ensure that
 we record high quality coded data, while allowing users an easy way to enter unusual edge
 cases.</p>
 <p>You'll need to import the data for a terminology before you can start to take advantage of that.
-For now, let's use the reference data from elCID: </p>
+For now, let's use the reference data from elCID (An OPAL application maintained by Open Health Care):</p>
 <pre><code>wget https://raw.githubusercontent.com/openhealthcare/elcid/master/data/lookuplists/lookuplists.json -P data/lookuplists
 </code></pre>
 <blockquote><small>
@@ -350,36 +366,36 @@ By convention, we store data in the <code>./data/lookuplists</code> directory of
 <p>Now let's import the data:</p>
 <pre><code>python manage.py load_lookup_lists -f data/lookuplists/lookuplists.json
 </code></pre>
-<p>Now try adding a new diagnosis to your patient - as you start to type in the condition field,
-you'l see that the conditions we just imported appear as suggestions: </p>
+<p>Now refresh your application and try adding a new diagnosis to your patient. As you start to type in
+the condition field, you'l see that the conditions we just imported appear as suggestions:</p>
 <p><img src="/img/tutorial-conditions.png" style="margin: 12px auto; border: 1px solid black;"/></p>
 <h3 id="add-your-own-data-models">Add your own data models</h3>
-<p>So far we've begun to get a sense of the batteries-included parts of OPAL, 
+<p>So far we've begun to get a sense of the batteries-included parts of OPAL,
 but before long, you're going to need to create models for your own needs.</p>
 <p>Most OPAL models are <a href="../guides/datamodel/">Subrecords</a> - they relate to either a patient, or
 an episode (an episode is for example, an admission to hospital).</p>
 <p>Let's see how that works by creating a TODO list model that is assigned to
-episodes of care. In your <code>mynewapp/models.py</code> : </p>
+episodes of care. In your <code>mynewapp/models.py</code> :</p>
 <pre><code>class TODOItem(models.EpisodeSubrecord):
     job       = fields.CharField(max_length=200)
     due_date  = fields.DateField(blank=True, null=True)
     details   = fields.TextField(blank=True, null=True)
     completed = fields.BooleanField(default=False)
 </code></pre>
-<p>This is simply a Django model, apart from the parent class <code>models.EpisodeSubrecord</code> 
-which provides us with some extra functionality: </p>
+<p>This is simply a Django model, apart from the parent class <code>models.EpisodeSubrecord</code>
+which provides us with some extra functionality:</p>
 <ul>
 <li>A relationship to an episode, linked to a patient</li>
 <li>JSON APIs for creating, retrieving and updating it</li>
 <li>Ensuring that the OPAL Angular layer knows it exists</li>
 </ul>
 <p>Next, we're going to let OPAL take care of the boilerplate that we'll need to use this
-model in our application. From the commandline: </p>
+model in our application. From the commandline:</p>
 <pre><code>$ opal scaffold mynewapp
 </code></pre>
-<p>Let's take a look at what that did: </p>
+<p>Let's take a look at what that did:</p>
 <ul>
-<li>It created a south migration (Migrations live in <code>mynewapp/migrations</code>)</li>
+<li>It created a Django migration</li>
 <li>It created a detail template <code>mynewapp/templates/records/todo_item.html</code></li>
 <li>It created a form template <code>mynewapp/templates/modals/todo_item_modal.html</code></li>
 </ul>
@@ -407,7 +423,7 @@ It uses the OPAL form helpers templatetag library.</p>
 </code></pre>
 <h4 id="adding-todos-to-our-team-lists">Adding TODOs to our Team Lists</h4>
 <p>Now let's add our TODO list model as a column in the Spreadsheet-like list view.</p>
-<p>The columns for team lists are set in <code>mynewapp/schemas.py</code> as a list of models.</p>
+<p>The columns for team lists are set in <code>mynewapp/schema.py</code> as a list of models.</p>
 <p>Open mynewapp/schemas.py and edit the <code>list_columns</code> variable to add <code>models.TODOItem</code> as
 the final item:</p>
 <pre><code>list_columns = [
@@ -424,14 +440,35 @@ the final item:</p>
 <p>Refresh the lists page in your browser, and you'll see your new column on the end - add a
 TODO item, noting how we automatically get appropriate form types like datepickers and
 checkboxes.</p>
-<h3 id="set-an-icon-for-your-model">Set an Icon for your model</h3>
+<h3 id="tweaking-the-default-scaffolding">Tweaking the default scaffolding</h3>
+<p>The scaffolding templates are only really supposed to get you started - you'll often
+need to tweak the templates they generate with whatever logic makes sense for your
+application.</p>
+<p>For us, you'll notice that the value of <code>TODOItem.completed</code> simply displays as false -
+which is not particularly useful. So let's update that using the OPAL
+<a href="../reference/javascript_helpers/">Boxed filter</a>. In <code>mynewapp/templates/records/todo_item.html</code>
+change the last line to look like this:</p>
+<pre><code>&lt;span ng-show="item.completed"&gt;[[ item.completed | boxed ]] &lt;br /&gt;&lt;/span&gt;
+</code></pre>
+<h4 id="set-an-icon-for-your-model">Set an Icon for your model</h4>
 <p>You'll notice that your new column is the only one without an icon - we set the icon by
-adding the following property to your <code>TODOItem</code> class: </p>
+adding the following property to your <code>TODOItem</code> class:</p>
 <pre><code>    _icon = 'fa fa-th-list'
 </code></pre>
-<h3 id="json-apis">JSON APIs</h3>
+<h3 id="some-other-batteries-included">Some other batteries included</h3>
+<p>Let's take a look at some of the other core functionality that we now have out of the box:</p>
+<h4 id="search">Search</h4>
+<p>By default, we also enable the search module, which allows you to search by patient name
+or unique identifier:</p>
+<p><img src="/img/search.png" style="margin: 12px auto; border: 1px solid black;"/></p>
+<h4 id="detail-views">Detail views</h4>
+<p>We also have a detail view for our patients, which you can access via search results. This
+view will typically allow for a more detailed display and editing of all the events
+comprising an activity of care than is available on the list page.</p>
+<p><img src="/img/detail.png" style="margin: 12px auto; border: 1px solid black; width: 600px;"/></p>
+<h4 id="json-apis">JSON APIs</h4>
 <p>OPAL automatically creates self-documenting JSON APIs for your interacting with the data
-in your application. You can inspect these APIs interactively at the url: </p>
+in your application. You can inspect these APIs interactively at the url:</p>
 <pre><code>http://localhost:8000/api/v0.1/
 </code></pre>
 <p><img src="/img/tutorial-api.png" style="margin: 12px auto; border: 1px solid black;"/></p>

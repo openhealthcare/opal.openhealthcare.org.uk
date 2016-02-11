@@ -177,7 +177,23 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../episode_service/">Episode service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../item_service/">Item service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../patient_summary_service/">Patient summary service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../form_templatetags/">Form helpers</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../record_panel_templatetag/">Record panel templatetag</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li class="active"> -->
@@ -201,7 +217,7 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
                 <!-- <li > -->
-                <!--     <a rel="next" href="../form_templatetags/"> -->
+                <!--     <a rel="next" href="../record_panel_templatetag/"> -->
                 <!--         <i class="fa fa-arrow-left"></i> Previous -->
                 <!--     </a> -->
                 <!-- </li> -->
@@ -246,7 +262,11 @@ the url for the template, the size of the modal window (either 'sm' or 'lg').</p
 <h4 id="shortdate">shortDate</h4>
 <p>Displays a date as DD/MM if it's this year, else DD/MM/YYYY</p>
 <h4 id="hhmm">hhmm</h4>
-<p>Displays the hours &amp; minutes portion of a javascript Date object as HH:MM</p></div>
+<p>Displays the hours &amp; minutes portion of a javascript Date object as HH:MM</p>
+<h4 id="boxed">boxed</h4>
+<p>Displays Boolean fields as a checkbox (e.g. either [ ] or [X])</p>
+<pre><code>[[ item.boolean_field | boxed]]
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">
