@@ -216,6 +216,11 @@
 
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
+              <li>
+                <a href="https://github.com/openhealthcare/opal/tree/v0.5.4" target="_blank">
+                  <i class="fa fa-github"></i> v0.5.4
+                </a>
+              </li>
                 <!-- <li > -->
                 <!--     <a rel="next" href="../installation/"> -->
                 <!--         <i class="fa fa-arrow-left"></i> Previous -->
@@ -303,6 +308,8 @@ a Djano project, some core datamodels (complete with JSON APIs) and a general ap
         assets/             # Your static files directory
         templates/          # Your template directory
         migrations/         # Your Database migrations directory
+
+        opal.sqlite         # The Sqlite development database
 </code></pre>
 <h3 id="test-it-out">Test it out</h3>
 <p>The scaffolding step has generated you a working project - so let's check that out</p>
@@ -440,6 +447,7 @@ the final item:</p>
 <p>Refresh the lists page in your browser, and you'll see your new column on the end - add a
 TODO item, noting how we automatically get appropriate form types like datepickers and
 checkboxes.</p>
+<p>You can edit any entry in the list view by double clicking on it.</p>
 <h3 id="tweaking-the-default-scaffolding">Tweaking the default scaffolding</h3>
 <p>The scaffolding templates are only really supposed to get you started - you'll often
 need to tweak the templates they generate with whatever logic makes sense for your
