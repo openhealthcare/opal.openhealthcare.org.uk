@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>Patient - OPAL</title>
+	<title>Upgrading - OPAL</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -160,8 +160,8 @@
                 <!--             <a href="../episode/">The Episode model</a> -->
                 <!--         </li> -->
                 <!--      -->
-                <!--         <li class="active"> -->
-                <!--             <a href="./">Patient</a> -->
+                <!--         <li > -->
+                <!--             <a href="../patient/">Patient</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -208,8 +208,8 @@
                 <!--             <a href="../search_queries/">Search Queries</a> -->
                 <!--         </li> -->
                 <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../upgrading/">Upgrading</a> -->
+                <!--         <li class="active"> -->
+                <!--             <a href="./">Upgrading</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--     </ul> -->
@@ -226,12 +226,12 @@
                 </a>
               </li>
                 <!-- <li > -->
-                <!--     <a rel="next" href="../episode/"> -->
+                <!--     <a rel="next" href="../search_queries/"> -->
                 <!--         <i class="fa fa-arrow-left"></i> Previous -->
                 <!--     </a> -->
                 <!-- </li> -->
-                <!-- <li > -->
-                <!--     <a rel="prev" href="../subrecords/"> -->
+                <!-- <li class="disabled"> -->
+                <!--     <a rel="prev" > -->
                 <!--         Next <i class="fa fa-arrow-right"></i> -->
                 <!--     </a> -->
                 <!-- </li> -->
@@ -246,23 +246,57 @@
   <h3>Contents</h3>
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#opalmodelspatient">opal.models.Patient</a></li>
+        <li class="main active"><a href="#upgrading-your-opal-application">Upgrading Your OPAL Application</a></li>
         
-            <li><a href="#methods">methods</a></li>
+            <li><a href="#4x-5x">4.X -&gt; 5.x</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h2 id="opalmodelspatient">opal.models.Patient</h2>
-<h3 id="methods">methods</h3>
-<h4 id="create_episode">create_episode</h4>
-<p>Returns a new <code>Episode</code> for this patient.</p>
-<h4 id="to_dict">to_dict</h4>
-<p>Return the dictionary representation of this patient - suitable for serialization.</p>
-<pre><code>patient.to_dict(user)
-</code></pre></div>
+<h2 id="upgrading-your-opal-application">Upgrading Your OPAL Application</h2>
+<p>This document provides instructions for specific steps required to upgrading your OPAL
+application to a later version where there are extra steps required.</p>
+<h3 id="4x-5x">4.X -&gt; 5.x</h3>
+<h4 id="migrations">Migrations</h4>
+<p>Before upgrading from 4.x to 5.x you should ensure that you have upgraded from South
+to Djangomigrations.</p>
+<pre><code>$ rm yourapp/migrations/*
+$ python manage.py makemigrations yourapp
+$ python manage.py migrate yourapp --fake-initial
+</code></pre>
+<h4 id="opal">OPAL</h4>
+<p>Next you will need to upgrade the OPAL version itself.</p>
+<p>How you do this depends on how you have configured your application, but updating your
+requirements.txt to update the version should work. This will also update FFS and Django
+Axes as well as adding Python Dateutil.</p>
+<pre><code>-e git://github.com/openhealthcare/opal.git@v0.5.6#egg=opal
+</code></pre>
+<h4 id="migrations_1">Migrations.</h4>
+<p>OPAL has fresh migrations in 0.5.x, which we should run. There are also changes to the
+base abstract model classes (to add created/updated timestamps) so you'll need to create
+fresh migrations for your own application.</p>
+<pre><code>$ python manage.py migrate
+$ python manage.py makemigrations yourapp
+$ python manage.py migrate yourapp
+</code></pre>
+<p>At this stage you'll want to commit your new migrations, as well as any changes to your
+application's requirements file.</p>
+<h4 id="tags">Tags</h4>
+<p>As of 0.5.5, old tags in OPAL are stored directly on the Tagging model rather than via
+Djano Reversion. We can import those old tags by doing the following.</p>
+<pre><code>$ python manage.py shell
+
+&gt;&gt;&gt; from opal.models import Tagging
+&gt;&gt;&gt; Tagging.import_from_reversion()
+</code></pre>
+<h4 id="deployment">Deployment</h4>
+<p>The first time you deploy your upgraded application you'll need to run the following
+commands to upgrade your database:</p>
+<pre><code>$ python manage.py migrate --fake-initial
+</code></pre>
+<p>You'll also have to repeat the Tagging step once for each deployment.</p></div>
         </div>
 
         <footer class="col-md-12">
