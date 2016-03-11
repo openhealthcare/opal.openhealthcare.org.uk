@@ -256,13 +256,13 @@
             <div class="col-md-9" role="main">
 
 <h2 id="opalmodelsepisode">opal.models.Episode</h2>
-<p>The <code>opal.models.Episode</code> class represents an episode of care for a patient. This can be either 
-an inpatient stay, an outpatient treatment, a telephone liaison, an appointment at a clinic, 
+<p>The <code>opal.models.Episode</code> class represents an episode of care for a patient. This can be either
+an inpatient stay, an outpatient treatment, a telephone liaison, an appointment at a clinic,
 or any other arbitrarially defined period of care.</p>
 <h3 id="fields">Fields</h3>
 <h4 id="episodecategory">Episode.category</h4>
 <p>The category of this episode - e.g. inpatient, outpatient et cetera.
-This defaults to whatever is set on your application's subclass of 
+This defaults to whatever is set on your application's subclass of
 <code>opal.core.application.OpalApplication</code> - which itseflf defaults to 'inpatient'.</p>
 <h4 id="episodepatient">Episode.patient</h4>
 <p>A foreign key relationship to the patient for whom this episode concerns.</p>
@@ -273,23 +273,23 @@ This defaults to whatever is set on your application's subclass of
 <h4 id="episodedischarge_date">Episode.discharge_date</h4>
 <p>If this is an inpatient episode, the date of discharge.</p>
 <h4 id="episodedate_of_episode">Episode.date_of_episode</h4>
-<p>If this is an episode that occurs on one date (like a clinic visit or telephone liaison), the 
+<p>If this is an episode that occurs on one date (like a clinic visit or telephone liaison), the
 date of that event.</p>
 <h4 id="episodeconsistency_token">Episode.consistency_token</h4>
 <p>A (automatically generated) hash of the above fields. This is used for detecting concurrent edits.</p>
 <h3 id="methods">Methods</h3>
-<p>The Episode model has the following methods: </p>
+<p>The Episode model has the following methods:</p>
 <h4 id="episodeto_dict">Episode.to_dict</h4>
 <p>Return a dictionary of field value pairs for this episode</p>
 <pre><code>episode.to_dict(user)
 </code></pre>
-<p>Arguments: </p>
+<p>Arguments:</p>
 <ul>
 <li><code>user</code> The User for whom we want to serialise this episode</li>
 </ul>
-<p>Keywords: </p>
+<p>Keywords:</p>
 <ul>
-<li><code>shallow</code> Boolean to indicate whether we want just this episode, or also a sorted set of 
+<li><code>shallow</code> Boolean to indicate whether we want just this episode, or also a sorted set of
 previous and subsequent episodes</li>
 </ul>
 <h4 id="episodeget_tag_names">Episode.get_tag_names</h4>
@@ -312,12 +312,6 @@ previous and subsequent episodes</li>
 </code></pre>
 <h3 id="manager">Manager</h3>
 <p>The custom manager for Episodes has the following methods:</p>
-<h4 id="episodeobjectsever_taggedteam">Episode.objects.ever_tagged(team)</h4>
-<p>Return a list of episodes ever tagged to <code>team</code></p>
-<p>Arguments:</p>
-<ul>
-<li><code>team</code> The <code>Team.name</code> of the team you are interested in.</li>
-</ul>
 <h4 id="episodeobjectsserialised">Episode.objects.serialised()</h4>
 <p>Return a set of serialised episodes.</p>
 <pre><code>Episode.objects.serialised(User, [episode, ...], historic_tags=False)
@@ -327,9 +321,9 @@ previous and subsequent episodes</li>
 <li><code>user</code> The User for whom we want to serialise this episode</li>
 <li><code>episodes</code> An iterable of Episode instances</li>
 </ul>
-<p>Keywords: </p>
+<p>Keywords:</p>
 <ul>
-<li><code>historic_tags</code> A boolean to indicate whether the user desires historic or just current tags to 
+<li><code>historic_tags</code> A boolean to indicate whether the user desires historic or just current tags to
 be serialised</li>
 </ul></div>
         </div>
