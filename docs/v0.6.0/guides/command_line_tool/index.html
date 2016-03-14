@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+	<title>Command Line tool - OPAL</title>
+
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link href="../../opaldocs.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../..">
+              <img src="/img/opallogo.png" height="30"/>
+            </a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="../..">Home</a>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../../installation/">Installation</a>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../../tutorial/">Tutorial</a>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../topic-guides/">Guides</a>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../../reference/reference_guides/">Reference</a>
+                </li>
+            
+            
+            
+                <!-- <li class="dropdown active"> -->
+                <!--     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Topic Guides <b class="caret"></b></a> -->
+                <!--     <ul class="dropdown-menu"> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../components_overview/">Component Overview</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li class="active"> -->
+                <!--             <a href="./">Command Line tool</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../plugins/">Plugins</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../plugins_list/">Plugin List</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../datamodel/">Data Model</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../flow/">Flow</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../roles_and_permissions/">Roles & Permissions</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../teams/">Teams</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../json_api/">JSON API</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../lookup_lists/">Lookup Lists</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../templates/">Templates</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../static_files/">Static Files</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../forms/">Forms</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../patient_detail_views/">Patient Detail Views</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../list_views/">Patient List Views</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../discoverable/">Discoverable Features</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../search/">Search Overview</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--     </ul> -->
+                <!-- </li> -->
+            
+            
+            
+                <!-- <li class="dropdown"> -->
+                <!--     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reference <b class="caret"></b></a> -->
+                <!--     <ul class="dropdown-menu"> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/episode/">The Episode model</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/episode_types/">Episode Types</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/patient/">Patient</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/subrecords/">Subrecords</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/team/">Team</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/opal_application/">OpalApplication</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/episode_service/">Episode service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/item_service/">Item service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/patient_summary_service/">Patient summary service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/form_templatetags/">Form helpers</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/panels_templatetags/">Panel Template tags</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/javascript_helpers/">Javascript helpers</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/schemas/">Schemas</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/search_queries/">Search Queries</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/detail_views/">Detail Views</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/patient_list/">Patient Lists</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--     </ul> -->
+                <!-- </li> -->
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <a href="https://github.com/openhealthcare/opal/tree/v0.6.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.6.0
+                </a>
+              </li>
+                <!-- <li > -->
+                <!--     <a rel="next" href="../components_overview/"> -->
+                <!--         <i class="fa fa-arrow-left"></i> Previous -->
+                <!--     </a> -->
+                <!-- </li> -->
+                <!-- <li > -->
+                <!--     <a rel="prev" href="../plugins/"> -->
+                <!--         Next <i class="fa fa-arrow-right"></i> -->
+                <!--     </a> -->
+                <!-- </li> -->
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+  <h3>Contents</h3>
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#the-opal-command-line-tool">The OPAL Command line tool</a></li>
+        
+            <li><a href="#startproject-name">startproject &lt;name&gt;</a></li>
+        
+            <li><a href="#startplugin-name">startplugin &lt;name&gt;</a></li>
+        
+            <li><a href="#scaffold-appname">scaffold &lt;appname&gt;</a></li>
+        
+            <li><a href="#test-what">test &lt;what&gt;</a></li>
+        
+            <li><a href="#checkout">checkout</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h2 id="the-opal-command-line-tool">The OPAL Command line tool</h2>
+<p>OPAL ships with a helpful command line tool that helps with administrative tasks.</p>
+<p>The <code>opal</code> script should be on your system path if you installed OPAL via setup.py or
+pip. You can check whether it is available by running this command:</p>
+<pre><code>$ opal -v
+</code></pre>
+<h3 id="startproject-name">startproject &lt;name&gt;</h3>
+<p>Creates a new OPAL project.</p>
+<p>This creates boilerplate and a default configuration for your new project, including
+creating a new underlying Django project, updating default settings to be compatible
+with OPAL, creating directories and code boilerplate, and running initial migrations.</p>
+<h3 id="startplugin-name">startplugin &lt;name&gt;</h3>
+<p>Creates boilerplate code, and directory structures for a new OPAL plugin.</p>
+<h3 id="scaffold-appname">scaffold &lt;appname&gt;</h3>
+<p>Use with new record models.</p>
+<p>Creates and runs automatic migrations, creates display and form (modal) templates.</p>
+<h3 id="test-what">test &lt;what&gt;</h3>
+<p>Run our tests suites.</p>
+<p>Defaults to running both Python and Javascript tests.</p>
+<p>If specified, will only run one specific kind of test.</p>
+<p>$ opal test py
+   $ opal test js</p>
+<p>When running Python tests, the <code>-t</code> or <code>--test</code> option allows the user to specify a single
+test module, case or method to run.</p>
+<p>$ opal test py -t opal.tests.test_models</p>
+<h3 id="checkout">checkout</h3>
+<p>Ensure that all of our application plugins and packages are on the correct branch.</p>
+<p>This is particularly useful when working on OPAL itself, or when you have multiple
+projects that use different versions of OPAL or plugins. It will assume that github
+based requirements will be installed in development via <code>python setup.py develop</code>.</p>
+<p>This command will parse your project's <code>requirements.txt</code>, and then ensure that any
+Github sources are checked out loclaly to the branch specified therein.</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <img src="/img/opallogo.png" class="pull-left"/>
+            <center>
+              <br />
+              OPAL is an Open Source framework for building clinical applications from 
+              <a href="http://openhealthcare.org.uk" target="_blank">Open Health Care UK</i></a>.
+            </center>
+        </footer>
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script src="../../js/base.js"></script>
+    </body>
+</html>
