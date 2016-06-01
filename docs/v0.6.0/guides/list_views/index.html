@@ -116,7 +116,7 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../teams/">Teams</a> -->
+                <!--             <a href="../tagging/">Tagging</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -129,6 +129,10 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../templates/">Templates</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../context_processors/">Context Processors</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -181,10 +185,6 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../../reference/team/">Team</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
                 <!--             <a href="../../reference/opal_application/">OpalApplication</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -213,6 +213,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../reference/javascript_dependencies/">Javascript dependencies</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../reference/schemas/">Schemas</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -226,6 +230,14 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../../reference/patient_list/">Patient Lists</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/search_js_services/">Search JS Services</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/upgrading/">Upgrading</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--     </ul> -->
@@ -268,6 +280,8 @@
         
             <li><a href="#schemas">Schemas</a></li>
         
+            <li><a href="#template-selection">Template selection</a></li>
+        
             <li><a href="#querysets">Querysets</a></li>
         
             <li><a href="#ordering-lists">Ordering Lists</a></li>
@@ -277,6 +291,10 @@
             <li><a href="#templates">Templates</a></li>
         
             <li><a href="#tagged-patient-lists">Tagged Patient Lists</a></li>
+        
+            <li><a href="#invalid-tagged-patient-lists">Invalid Tagged Patient Lists</a></li>
+        
+            <li><a href="#direct-add">Direct Add</a></li>
         
             <li><a href="#access-control">Access Control</a></li>
         
@@ -288,9 +306,9 @@
 <h1 id="opal-patient-list-views">OPAL Patient List views</h1>
 <p>OPAL provides support for displaying lists of patients, both via a spreadsheet like view,
 and with a card based view.</p>
-<h2 id="defining-lists">Defining lists</h2>
-<p>OPAL patient lists are subclasses of <code>opal.core.patient_lists.PatientList</code>. Typically these
-are found in a <code>patient_lists.py</code> module of your application or plugin. (Lists <em>can</em> be
+<h3 id="defining-lists">Defining lists</h3>
+<p>OPAL patient lists are subclasses of <code>opal.core.patient_lists.PatientList</code>.</p>
+<p>Typically these are found in a <code>patient_lists.py</code> module of your application or plugin. (Lists <em>can</em> be
 defined elsewhere, but may not be autodiscovered.)</p>
 <p>A basic list needs only define it's <code>display_name</code> a <code>queryset</code> of episodes to display, and
 a <code>schema</code> of subrecords to show for each episode.</p>
@@ -314,7 +332,7 @@ class AlphabetListA(patient_lists.PatientList):
 </code></pre>
 <p>The <code>display_name</code> property is the human readable name for our list - which is displayed as
 link text to our list.</p>
-<h2 id="schemas">Schemas</h2>
+<h3 id="schemas">Schemas</h3>
 <p>Schemas are lists of Subrecords that we would like to display in our list. By default we
 render the subrecord display_template, and allow editing and addition of each subrecord in
 place.</p>
@@ -324,11 +342,12 @@ defined in the schema, and a row for each episode in the list.</p>
 <p>The template for each cell should live in <code>./templates/records/*</code>. In order to
 select the appropriate template for a given episode, OPAL looks in the following
 locations:</p>
-<pre><code>records/{record_name}.html
-records/{team}/{record_name}.html
-records/{team}/{subteam}/{record_name}.html
+<pre><code>records/{episode_type}/{list slug}/{record_name}.html
+records/{list_slug}/{record_name}.html
+records/{episode_type}/{record_name}.html
+records/{record_name}.html
 </code></pre>
-<h2 id="querysets">Querysets</h2>
+<h3 id="querysets">Querysets</h3>
 <p>The queryset property of your list should contain all of the episodes for this particular
 list. On occasion we require a more dynamic queryset, in which case we can ovreride the
 <code>get_queryset</code> method.</p>
@@ -342,10 +361,15 @@ class MyWeeklyList(patient_lists.PatientList):
         one_week_ago = datetime.date.today() - datetime.timedelta(days=1)
         return Episode.objects.filter(date_of_admission__gte=one_week_ago)
 </code></pre>
-<h2 id="ordering-lists">Ordering Lists</h2>
-<h2 id="slug">Slug</h2>
-<h2 id="templates">Templates</h2>
-<h2 id="tagged-patient-lists">Tagged Patient Lists</h2>
+<h3 id="ordering-lists">Ordering Lists</h3>
+<p>As a <a href="../discoverable/">discoverable.SortableFeature</a> lists may be ordered by setting the
+<code>order</code> property to an integer. Lists will display in drop-downs, tables et cetera, in
+this order.</p>
+<h3 id="slug">Slug</h3>
+<p>As a <a href="../discoverable/">discoverable</a> feature, the slug for each list is determined by
+either setting the <code>slug</code> property, or returning a string from the <code>get_slug</code> classmethod.</p>
+<h3 id="templates">Templates</h3>
+<h3 id="tagged-patient-lists">Tagged Patient Lists</h3>
 <p>A common model for working with lists is to use lists based on the tags assigned to an episode.
 This allows users to add and remove patients from lists as they see fit, rather than attempting
 to infer it from other properties of the patient (e.g. their current location for instance.)
@@ -367,6 +391,17 @@ in the urls for lists, so attempting to define one will raise an exception.</p>
     tag = 'foo-bar'
 
 # This will raise InvalidDiscoverableFeatureError !
+</code></pre>
+<h3 id="direct-add">Direct Add</h3>
+<p>Sometimes, we want to control the flow of patients onto, off, or between lists a little more closely.
+For instance, we might need to ensure additional data collection at points in a patient journey.</p>
+<p>In order to accomplish this, we often implement custom patient flows that wil programatically tag
+episodes to tagged lists. In those cases we will want to prevent users from manually adding or
+removing the tags themselves. This can be easily accomplished via the <code>direct_add</code> property. When
+set to false, users will not be able to add the tag for this list.</p>
+<pre><code>class MyLockedDownList(TaggedPatientList):
+    tag = 'liaisonpatients'
+    direct_add = False
 </code></pre>
 <h2 id="access-control">Access Control</h2></div>
         </div>

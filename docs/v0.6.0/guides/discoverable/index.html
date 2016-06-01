@@ -116,7 +116,7 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../teams/">Teams</a> -->
+                <!--             <a href="../tagging/">Tagging</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -129,6 +129,10 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../templates/">Templates</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../context_processors/">Context Processors</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -181,10 +185,6 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../../reference/team/">Team</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
                 <!--             <a href="../../reference/opal_application/">OpalApplication</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -213,6 +213,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../reference/javascript_dependencies/">Javascript dependencies</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../reference/schemas/">Schemas</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -226,6 +230,14 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../../reference/patient_list/">Patient Lists</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/search_js_services/">Search JS Services</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/upgrading/">Upgrading</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--     </ul> -->
@@ -266,13 +278,17 @@
         
             <li><a href="#defining-discoverable-features">Defining Discoverable Features</a></li>
         
-            <li><a href="#slugs-and-getting-subclasses">Slugs and Getting Subclasses</a></li>
+            <li><a href="#slugs-and-display-names">Slugs and Display Names</a></li>
+        
+            <li><a href="#retrieving-subclasses">Retrieving Subclasses</a></li>
         
             <li><a href="#sortable-features">Sortable Features</a></li>
         
             <li><a href="#restrictable-features">Restrictable Features</a></li>
         
             <li><a href="#validating-features">Validating Features</a></li>
+        
+            <li><a href="#abstract-features">Abstract Features</a></li>
         
     
     </ul>
@@ -296,10 +312,28 @@ class MyFeature(discoverable.DiscoverableFeature):
 all subclasses of <code>MyFeature</code> by calling <code>MyFeature.list()</code> - which will look through all
 Django apps in our application, and look for a module named <code>myfeature.py</code>. The <code>list()</code>
 method then returns any subclasses of <code>MyFeature</code>.</p>
-<h3 id="slugs-and-getting-subclasses">Slugs and Getting Subclasses</h3>
-<p>Once we define a <code>name</code> attribute on sublasses of our feature, we can then fetch them via
+<h3 id="slugs-and-display-names">Slugs and Display Names</h3>
+<p>We often want to define human and machine readable strings to name our features. Display
+names are intended for people - feel free to include spaces, numbers and puctuation. Slugs
+are intended for machines - so no spaces, numbers, hypens, periods or other punctuation. By
+default, if there is a display name and no explicit slug, we wil 'slugify' the display name.</p>
+<pre><code>class MyNameFeature(MyFeature):
+    display_name = 'Hello World'
+
+print MyNameFeature.get_slug()
+# 'hello_world'
+
+class MySlugFeature(MyFeature):
+    slug = 'this_is_a_slug'
+
+print MySlugFeature.get_slug()
+# 'this_is_a_slug'
+</code></pre>
+<h3 id="retrieving-subclasses">Retrieving Subclasses</h3>
+<p>Once we define a <code>display_name</code> or <code>slug</code> for sublasses of our feature, we can then fetch them via
 the <code>get()</code> api.</p>
-<pre><code>class RedFeature(MyFeature): pass
+<pre><code>class RedFeature(MyFeature):
+    slug = 'red_feature'
 
 MyFeature.get('red_feature') # -&gt; RedFeature
 </code></pre>
@@ -346,6 +380,26 @@ class Threat(BombFeature): pass
 class Detonate(BombFeature):
     blow_up = True
 # InvalidDiscoverableFeatureError: BLOWING UP
+</code></pre>
+<h3 id="abstract-features">Abstract Features</h3>
+<p>Sometimes we want to declare an abstract feature - something with reusable functionality
+that isn't itself a new feature. We would rather not have our abstract feature show up
+when we <code>list()</code> our base feature - because it's simply a programming convenience. This
+is made simple by using <code>opal.utils.AbstractBase</code>.</p>
+<pre><code>    class A(discoverable.DiscoverableFeature):
+        module_name = 'a'
+
+    class AA(A, AbstractBase): pass
+
+    class B(A): pass
+
+    class C(AA): pass
+
+    class D(AA): pass
+
+
+    A.list()
+    # [B, C, D]
 </code></pre></div>
         </div>
 

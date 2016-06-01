@@ -116,7 +116,7 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../../guides/teams/">Teams</a> -->
+                <!--             <a href="../../guides/tagging/">Tagging</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -129,6 +129,10 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../../guides/templates/">Templates</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/context_processors/">Context Processors</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -181,10 +185,6 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../team/">Team</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
                 <!--             <a href="../opal_application/">OpalApplication</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -213,6 +213,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../javascript_dependencies/">Javascript dependencies</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../schemas/">Schemas</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -226,6 +230,14 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../patient_list/">Patient Lists</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../search_js_services/">Search JS Services</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../upgrading/">Upgrading</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--     </ul> -->
@@ -247,7 +259,7 @@
                 <!--     </a> -->
                 <!-- </li> -->
                 <!-- <li > -->
-                <!--     <a rel="prev" href="../team/"> -->
+                <!--     <a rel="prev" href="../opal_application/"> -->
                 <!--         Next <i class="fa fa-arrow-right"></i> -->
                 <!--     </a> -->
                 <!-- </li> -->
@@ -267,6 +279,8 @@
             <li><a href="#properties">Properties</a></li>
         
             <li><a href="#methods">Methods</a></li>
+        
+            <li><a href="#subrecord-mixins">Subrecord Mixins</a></li>
         
     
     </ul>
@@ -314,6 +328,12 @@ additional contextually sensitive information when editing or entering data.</p>
 <pre><code>class Antimicrobial(EpisodeSubrecord):
     _title = 'Abx'
 </code></pre>
+<h4 id="subrecord_clonable">Subrecord._clonable</h4>
+<p>A Boolean that is True by default used by <code>opal.views.EpisodeCopyToCategoryView</code> 
+to determine if instances of this record should be copied across.</p>
+<pre><code>class Antimicrobial(EpisodeSubrecord):
+    _clonable = 'False'
+</code></pre>
 <h4 id="subrecord_exclude_from_extract">Subrecord._exclude_from_extract</h4>
 <p>Boolean to specify that this subrecord should be excluded from any standard data extract.
 This implicitly defaults to False.</p>
@@ -325,20 +345,51 @@ This implicitly defaults to False.</p>
 <p>This is used when creating data extracts to exclude PID from e.g. CSV downloads.</p>
 <h3 id="methods">Methods</h3>
 <h4 id="subrecordget_display_template">Subrecord.get_display_template()</h4>
-<p>Classmethod to locate the active display templte for our record.</p>
+<p>Classmethod to locate the active display template for our record.</p>
 <p>Returns the name of the template or None.</p>
 <p>Keywords:</p>
 <ul>
-<li><code>team</code> Optional team to check for form customisations</li>
-<li><code>subteam</code> Optional subteam to check for form customisations</li>
+<li><code>episode_type</code> Optional episode type string to check for form customisations</li>
+<li><code>patient_list</code> Optional patient list slug string to check for form customisations</li>
 </ul>
 <h4 id="subrecordget_form_template">Subrecord.get_form_template()</h4>
 <p>Classmethod to locate the active template for our record. Returns the name of a template or None.</p>
 <p>Keywords:</p>
 <ul>
-<li><code>team</code> Optional team to check for form customisations</li>
-<li><code>subteam</code> Optional subteam to check for form customisations</li>
-</ul></div>
+<li><code>episode_type</code> Optional episode type string to check for form customisations</li>
+<li><code>patient_list</code> Optional patient list slug string to check for form customisations</li>
+</ul>
+<h4 id="subrecordget_modal_template">Subrecord.get_modal_template()</h4>
+<p>Classmethod to locate the active template for our record. Returns the name of a template or None.</p>
+<p>Keywords:</p>
+<ul>
+<li><code>episode_type</code> Optional episode type string to check for modal customisations</li>
+<li><code>patient_list</code> Optional patient list slug string to check for modal customisations</li>
+</ul>
+<h4 id="subrecordget_modal_footer_template">Subrecord.get_modal_footer_template</h4>
+<p>Classmethod to add a custom footer to a modal, used for example to denote if
+the data from a model has been sourced from an external source</p>
+<h4 id="subrecordupdate_from_dict">Subrecord.update_from_dict()</h4>
+<p>An instance method that will update a model with a dictionary. This method is used
+to provides a hook for changing the way a subrecord handles being updated from serialised
+data.</p>
+<p>For example on a new allergy
+    allergy.update_from_dict({"drug": "penicillin"})</p>
+<p>will update the allergy to have the correct drug</p>
+<h4 id="subrecordbulk_update_from_dicts">Subrecord.bulk_update_from_dicts()</h4>
+<p>A Classmethod to allow the creation of multiple objects.</p>
+<p>Takes in the parent model - an episode
+for EpisodeSubrecords a patient for PatientSubrecords. Under the covers it iterates
+over all the subrecords, adds in the parent relationship and calls update_from_dict</p>
+<h3 id="subrecord-mixins">Subrecord Mixins</h3>
+<h4 id="trackedmodel">TrackedModel</h4>
+<p>A Tracked Model automatically has created, created_by, updated, updated_by and
+these are only updated when used via the api</p>
+<h4 id="externallysourcedmodel">ExternallySourcedModel</h4>
+<p>Often we want data to be sourced from external systems, this mixin adds in the
+fields external_system and external_identifier to allow us to track where
+they come from and how they are referenced by that system.</p>
+<p>These fields are then often used in forms to make the data read only</p></div>
         </div>
 
         <footer class="col-md-12">

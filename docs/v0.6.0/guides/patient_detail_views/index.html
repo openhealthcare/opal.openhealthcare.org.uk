@@ -116,7 +116,7 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../teams/">Teams</a> -->
+                <!--             <a href="../tagging/">Tagging</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -129,6 +129,10 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../templates/">Templates</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../context_processors/">Context Processors</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -181,10 +185,6 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../../reference/team/">Team</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
                 <!--             <a href="../../reference/opal_application/">OpalApplication</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -213,6 +213,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../reference/javascript_dependencies/">Javascript dependencies</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../reference/schemas/">Schemas</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -226,6 +230,14 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../../reference/patient_list/">Patient Lists</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/search_js_services/">Search JS Services</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/upgrading/">Upgrading</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--     </ul> -->
@@ -278,8 +290,8 @@
 <h1 id="opal-patient-detail-views">OPAL Patient Detail Views</h1>
 <p>OPAL provides all patients with a detail view.</p>
 <p>The default detail view will allow the user to switch between all of a patient's
-<a href="../datamodel/">episodes</a>, as well as editing patient information such as Allergies
-for example.</p>
+<a href="../datamodel/">episodes</a>, as well as editing patient information linked to the patient
+rather than an episode. (Allergies for example.)</p>
 <h3 id="template-selection">Template selection</h3>
 <p>The base template for a patient detail view is <code>./opal/templates/patient_detail_base.html</code>,
 although you can override or customise that for your application most easily by implementing

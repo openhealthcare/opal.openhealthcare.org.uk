@@ -116,7 +116,7 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../../guides/teams/">Teams</a> -->
+                <!--             <a href="../../guides/tagging/">Tagging</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -129,6 +129,10 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../../guides/templates/">Templates</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/context_processors/">Context Processors</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -181,10 +185,6 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../team/">Team</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
                 <!--             <a href="../opal_application/">OpalApplication</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -213,6 +213,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../javascript_dependencies/">Javascript dependencies</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../schemas/">Schemas</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -226,6 +230,14 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../patient_list/">Patient Lists</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../search_js_services/">Search JS Services</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../upgrading/">Upgrading</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--     </ul> -->
@@ -262,7 +274,7 @@
   <h3>Contents</h3>
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#form-helpers">Form Helpers</a></li>
+        <li class="main active"><a href="#panel-helpers">Panel helpers</a></li>
         
             <li><a href="#record_panel">{% record_panel ... %}</a></li>
         
@@ -273,13 +285,13 @@
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="form-helpers">Form Helpers</h1>
+<h1 id="panel-helpers">Panel helpers</h1>
 <p>OPAL comes with a selection of templatetags for rendering OPAL panels
 for a given subrecord. These panels also allow the user to
 see instances of the model against the current value of <code>episode</code> in
 Angular <code>$scope</code>. The user can also create new
 instances of the given model, as well as editing any existing ones.</p>
-<h2 id="record_panel">{% record_panel ... %}</h2>
+<h3 id="record_panel">{% record_panel ... %}</h3>
 <p>Render a panel for a given record that will allow the user to view, create, update and delete instances.</p>
 <p>The record panel template expects the relevant Angular <code>$scope</code> to have <code>newNamedItem(name, index)</code>,
 <code>editNamedItem(name, index)</code> and <code>deleteItem(name, index)</code> methods implemented. Default
@@ -297,7 +309,7 @@ implementations of these are available from the <code>EpisodeDetailMixin</code>.
 <li><code>noentries</code>: A string to render if there are no instances of <code>model</code> for the current episode</li>
 <li><code>only_display_if_exists</code>: Boolean defaulting to False. If true, the panel will simply not render if there are no instances of <code>model</code></li>
 </ul>
-<h2 id="record_timeline">{% record_timeline ... %}</h2>
+<h3 id="record_timeline">{% record_timeline ... %}</h3>
 <p>Similar to <code>record_panel</code>, <code>record_timeline</code> renders a penel for a given record as a timeline - particularly
 useful for subrecord types where the date is a key field.</p>
 <pre><code>{% load panels %}

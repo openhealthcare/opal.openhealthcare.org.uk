@@ -116,7 +116,7 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../../guides/teams/">Teams</a> -->
+                <!--             <a href="../../guides/tagging/">Tagging</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -129,6 +129,10 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../../guides/templates/">Templates</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/context_processors/">Context Processors</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -181,10 +185,6 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../team/">Team</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
                 <!--             <a href="../opal_application/">OpalApplication</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -213,6 +213,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../javascript_dependencies/">Javascript dependencies</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../schemas/">Schemas</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -226,6 +230,14 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../patient_list/">Patient Lists</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../search_js_services/">Search JS Services</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../upgrading/">Upgrading</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--     </ul> -->
@@ -291,14 +303,16 @@ your forms.</p>
 <p>Generates a checkbox</p>
 <p>Keywords:</p>
 <ul>
+<li><code>field</code> a string of the model name '.' field from this it calculates the label, model and will infer the lookuplist if required. For example {% checkbox field="DogOwner.dog" %}</li>
 <li><code>label</code> The Label with which to describe this field</li>
 <li><code>model</code> The model which we are editing (This is a string that references an in-scope Angular variable)</li>
 <li><code>disabled</code> If this exists, we use this as the expression for the ng-disabled directive</li>
 </ul>
 <h3 id="datepicker">{% datepicker ... %}</h3>
 <p>Generates a datepicker</p>
-<p>Keywords: </p>
+<p>Keywords:</p>
 <ul>
+<li><code>field</code> a string of the models api name '.' field from this it calculates the label, model and will infer the lookuplist if required. For example {% datepicker field="DogOwner.dog" %}</li>
 <li><code>label</code> The Label with which to describe this field</li>
 <li><code>model</code> The model which we are editing (This is a string that references an in-scope Angular variable)</li>
 <li><code>show</code>  A string that contains an Angular expression for the ng-show directive</li>
@@ -307,9 +321,12 @@ your forms.</p>
 <li><code>mindate</code> Expression to use to set the minimum possible date</li>
 </ul>
 <h3 id="input">{% input ... %}</h3>
-<p>Generates an Input</p>
-<p>Keywords: </p>
+<p>Generates an Input. If you pass a field, the tag will infer the label, model and lookuplist by introspecting the relevant subrecord model.</p>
+<pre><code>{% input field="allergies.drug" %}
+</code></pre>
+<p>Keywords:</p>
 <ul>
+<li><code>field</code> a string of the models api name '.' field from this it calculates the label, model and will infer the lookuplist if required. For example {% input field="DogOwner.dog" %}</li>
 <li><code>label</code> The Label with which to describe this field</li>
 <li><code>model</code> The model which we are editing (This is a string that references an in-scope Angular variable)</li>
 <li><code>show</code>  A string that contains an Angular expression for the ng-show directive</li>
@@ -318,11 +335,13 @@ your forms.</p>
 <li><code>required</code> Label to show when we're required</li>
 <li><code>enter</code> expression to evaluate if the user presses return when in this input</li>
 <li><code>maxlength</code> maximum number of characters for this input. Will render the form invalid and display help text if exceeded.</li>
+<li><code>static</code> an Angular expression that will swap the display to be a static input if it evaluates to <code>true</code></li>
 </ul>
 <h3 id="radio">{% radio ... %}</h3>
 <p>Generates an inline radio input</p>
-<p>Keywords: </p>
+<p>Keywords:</p>
 <ul>
+<li><code>field</code> a string of the models api name '.' field from this it calculates the label, model and will infer the lookuplist if required. For example {% radio field="DogOwner.dog" %}</li>
 <li><code>label</code> The Label with which to describe this input</li>
 <li><code>model</code> The model which we are editing (This is a string that references an in-scope Angular variable)</li>
 <li><code>show</code>  A string that contains an Angular expression for the ng-show directive</li>
@@ -331,8 +350,9 @@ your forms.</p>
 </ul>
 <h3 id="select">{% select ... %}</h3>
 <p>Generates an inline select input</p>
-<p>Keywords: </p>
+<p>Keywords:</p>
 <ul>
+<li><code>field</code> a string of the models api name '.' field from this it calculates the label, model and will infer the lookuplist if required. For example {% select field="DogOwner.dog" %}</li>
 <li><code>label</code> The Label with which to describe this input</li>
 <li><code>model</code> The model which we are editing (This is a string that references an in-scope Angular variable)</li>
 <li><code>show</code>  A string that contains an Angular expression for the ng-show directive</li>
@@ -340,19 +360,27 @@ your forms.</p>
 <li><code>lookuplist</code> an Angular expression that evaluates to an array containing the radio values</li>
 <li><code>other</code> A boolean parameter that if true, provides a free text option when 'Other' is selected</li>
 <li><code>help</code> a template to use as the contents of a help popover</li>
+<li><code>static</code> an Angular expression that will swap the display to be a static input if it evaluates to <code>true</code></li>
+<li></li>
 </ul>
 <h3 id="textarea">{% textarea ... %}</h3>
 <p>Generates an inline textarea input</p>
-<p>Keywords: </p>
+<p>Keywords:</p>
 <ul>
+<li><code>field</code> a string of the models api name '.' field from this it calculates the label, model and will infer the lookuplist if required. For example {% textarea field="DogOwner.dog" %}</li>
 <li><code>label</code> The Label with which to describe this input</li>
 <li><code>model</code> The model which we are editing (This is a string that references an in-scope Angular variable)</li>
 <li><code>show</code>  A string that contains an Angular expression for the ng-show directive</li>
 <li><code>hide</code>  A string that contains an Angular expression for the ng-hide directive</li>
 </ul>
 <h3 id="icon-icon-name">{% icon "icon-name" %}</h3>
-<p>We assume that the icon is one of the available glyphicon or Font Awesome icons.</p>
+<p>Renders a Bootstrap style Icon tag.
+If the icon starts with <code>fa</code> or <code>glyphicon</code> then we will insert the preceding <code>fa</code>.</p>
 <pre><code>{% icon "fa-user-md" %}
+&lt;i class="fa fa-user-md"&gt;&lt;/i&gt;
+
+{% icon "cusom-icon"}
+&lt;i class="custom-icon"&gt;&lt;/i&gt;
 </code></pre></div>
         </div>
 
