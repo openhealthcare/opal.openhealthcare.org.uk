@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>Javascript helpers - OPAL</title>
+	<title>Javascript dependencies - OPAL</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -173,7 +173,7 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../episode_types/">Episode Types</a> -->
+                <!--             <a href="../episode_categories/">Episode Categories</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -208,12 +208,12 @@
                 <!--             <a href="../panels_templatetags/">Panel Template tags</a> -->
                 <!--         </li> -->
                 <!--      -->
-                <!--         <li class="active"> -->
-                <!--             <a href="./">Javascript helpers</a> -->
+                <!--         <li > -->
+                <!--             <a href="../javascript_helpers/">Javascript helpers</a> -->
                 <!--         </li> -->
                 <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../javascript_dependencies/">Javascript dependencies</a> -->
+                <!--         <li class="active"> -->
+                <!--             <a href="./">Javascript dependencies</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -237,6 +237,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../changelog/">Changelog</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../upgrading/">Upgrading</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -249,17 +253,17 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.6.0" target="_blank">
-                  <i class="fa fa-github"></i> v0.6.0
+                <a href="https://github.com/openhealthcare/opal/tree/v0.7.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.7.0
                 </a>
               </li>
                 <!-- <li > -->
-                <!--     <a rel="next" href="../panels_templatetags/"> -->
+                <!--     <a rel="next" href="../javascript_helpers/"> -->
                 <!--         <i class="fa fa-arrow-left"></i> Previous -->
                 <!--     </a> -->
                 <!-- </li> -->
                 <!-- <li > -->
-                <!--     <a rel="prev" href="../javascript_dependencies/"> -->
+                <!--     <a rel="prev" href="../schemas/"> -->
                 <!--         Next <i class="fa fa-arrow-right"></i> -->
                 <!--     </a> -->
                 <!-- </li> -->
@@ -274,42 +278,50 @@
   <h3>Contents</h3>
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#opal-javascript-helpers">OPAL Javascript Helpers</a></li>
-        
-            <li><a href="#rootscope-methods">$rootScope methods</a></li>
-        
-            <li><a href="#angular-directives">Angular Directives</a></li>
-        
-            <li><a href="#angular-filters">Angular Filters</a></li>
+        <li class="main active"><a href="#opal-javscript-dependencies">OPAL Javscript Dependencies</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h2 id="opal-javascript-helpers">OPAL Javascript Helpers</h2>
-<h3 id="rootscope-methods">$rootScope methods</h3>
-<p>OPAL provides some methods on the Angular $rootScope object.</p>
-<h4 id="open_modal">open_modal</h4>
-<pre><code>$rootScope.open_modal(controller, template, size, {episode: episode})
-</code></pre>
-<p>Open an arbitrary controller in a modal, passing in the name of the controller,
-the url for the template, the size of the modal window (either 'sm' or 'lg').</p>
-<p>You may also pass through a dictionary of items to resolve.</p>
-<h3 id="angular-directives">Angular Directives</h3>
-<p>OPAL provides some built-in Angular directives for your project to use.</p>
-<h4 id="date-of-birth">date-of-birth</h4>
-<p>Creates an input field that assumes to base field is a moment and handles validation and parsing. It assumes no one is born in the future or is over 150 years old.</p>
-<h3 id="angular-filters">Angular Filters</h3>
-<p>OPAL provides some built-in Angular filters for your project to use.</p>
-<h4 id="short-date">short-date</h4>
-<p>Displays a date as DD/MM if it's this year, else DD/MM/YYYY</p>
-<h4 id="hhmm">hhmm</h4>
-<p>Displays the hours &amp; minutes portion of a javascript Date object as HH:MM</p>
-<h4 id="boxed">boxed</h4>
-<p>Displays Boolean fields as a checkbox (e.g. either [ ] or [X])</p>
-<pre><code>[[ item.boolean_field | boxed]]
-</code></pre></div>
+<h2 id="opal-javscript-dependencies">OPAL Javscript Dependencies</h2>
+<p>OPAL makes use of a number of upstream dependencies which are available for
+devleopers to use in building applications.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Modernizr</td>
+<td>Opal has a custom modernizr build that detects touch events</td>
+</tr>
+<tr>
+<td>Jquery</td>
+<td>1.11.3</td>
+</tr>
+<tr>
+<td>Angular</td>
+<td>1.2.20</td>
+</tr>
+<tr>
+<td>Underscore.js</td>
+<td>1.8.3</td>
+</tr>
+<tr>
+<td>D3</td>
+<td>3.5.6</td>
+</tr>
+<tr>
+<td>C3</td>
+<td>0.4.10</td>
+</tr>
+</tbody>
+</table></div>
         </div>
 
         <footer class="col-md-12">

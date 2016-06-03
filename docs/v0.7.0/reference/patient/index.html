@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>Javascript helpers - OPAL</title>
+	<title>Patient - OPAL</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -173,11 +173,11 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../episode_types/">Episode Types</a> -->
+                <!--             <a href="../episode_categories/">Episode Categories</a> -->
                 <!--         </li> -->
                 <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../patient/">Patient</a> -->
+                <!--         <li class="active"> -->
+                <!--             <a href="./">Patient</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -208,8 +208,8 @@
                 <!--             <a href="../panels_templatetags/">Panel Template tags</a> -->
                 <!--         </li> -->
                 <!--      -->
-                <!--         <li class="active"> -->
-                <!--             <a href="./">Javascript helpers</a> -->
+                <!--         <li > -->
+                <!--             <a href="../javascript_helpers/">Javascript helpers</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -237,6 +237,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../changelog/">Changelog</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../upgrading/">Upgrading</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -249,17 +253,17 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.6.0" target="_blank">
-                  <i class="fa fa-github"></i> v0.6.0
+                <a href="https://github.com/openhealthcare/opal/tree/v0.7.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.7.0
                 </a>
               </li>
                 <!-- <li > -->
-                <!--     <a rel="next" href="../panels_templatetags/"> -->
+                <!--     <a rel="next" href="../episode_categories/"> -->
                 <!--         <i class="fa fa-arrow-left"></i> Previous -->
                 <!--     </a> -->
                 <!-- </li> -->
                 <!-- <li > -->
-                <!--     <a rel="prev" href="../javascript_dependencies/"> -->
+                <!--     <a rel="prev" href="../subrecords/"> -->
                 <!--         Next <i class="fa fa-arrow-right"></i> -->
                 <!--     </a> -->
                 <!-- </li> -->
@@ -274,41 +278,40 @@
   <h3>Contents</h3>
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#opal-javascript-helpers">OPAL Javascript Helpers</a></li>
+        <li class="main active"><a href="#opalmodelspatient">opal.models.Patient</a></li>
         
-            <li><a href="#rootscope-methods">$rootScope methods</a></li>
-        
-            <li><a href="#angular-directives">Angular Directives</a></li>
-        
-            <li><a href="#angular-filters">Angular Filters</a></li>
+            <li><a href="#methods">methods</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h2 id="opal-javascript-helpers">OPAL Javascript Helpers</h2>
-<h3 id="rootscope-methods">$rootScope methods</h3>
-<p>OPAL provides some methods on the Angular $rootScope object.</p>
-<h4 id="open_modal">open_modal</h4>
-<pre><code>$rootScope.open_modal(controller, template, size, {episode: episode})
+<h2 id="opalmodelspatient">opal.models.Patient</h2>
+<h3 id="methods">methods</h3>
+<h4 id="create_episode">create_episode</h4>
+<p>Returns a new <code>Episode</code> for this patient.</p>
+<h4 id="to_dict">to_dict</h4>
+<p>Return the dictionary representation of this patient - suitable for serialization.</p>
+<pre><code>patient.to_dict(user)
 </code></pre>
-<p>Open an arbitrary controller in a modal, passing in the name of the controller,
-the url for the template, the size of the modal window (either 'sm' or 'lg').</p>
-<p>You may also pass through a dictionary of items to resolve.</p>
-<h3 id="angular-directives">Angular Directives</h3>
-<p>OPAL provides some built-in Angular directives for your project to use.</p>
-<h4 id="date-of-birth">date-of-birth</h4>
-<p>Creates an input field that assumes to base field is a moment and handles validation and parsing. It assumes no one is born in the future or is over 150 years old.</p>
-<h3 id="angular-filters">Angular Filters</h3>
-<p>OPAL provides some built-in Angular filters for your project to use.</p>
-<h4 id="short-date">short-date</h4>
-<p>Displays a date as DD/MM if it's this year, else DD/MM/YYYY</p>
-<h4 id="hhmm">hhmm</h4>
-<p>Displays the hours &amp; minutes portion of a javascript Date object as HH:MM</p>
-<h4 id="boxed">boxed</h4>
-<p>Displays Boolean fields as a checkbox (e.g. either [ ] or [X])</p>
-<pre><code>[[ item.boolean_field | boxed]]
+<h4 id="bulk_update">bulk_update</h4>
+<p>Create or update many subrecords in one go, from a serialised dictionary of data.</p>
+<p>Pass in a dictionary of subrecords you want to update, as well as an episode if one exists.
+This method will create all the subrecords and implicitly create a new episode if required.</p>
+<p>This API will execute all create/update operations as an atomic transaction.</p>
+<p>For example the following will create a patient:</p>
+<pre><code>patient = Patient()
+patient.bulk_update(
+  {
+    "demographics": "hospital_number": "1231212",
+    "allergies": [
+        {"drug": "penicillin"},
+        {"drug": "aspirin"},
+    ]
+  },
+  user
+)
 </code></pre></div>
         </div>
 

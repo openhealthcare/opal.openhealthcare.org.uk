@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>Javascript helpers - OPAL</title>
+	<title>Subrecords - OPAL</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -173,15 +173,15 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../episode_types/">Episode Types</a> -->
+                <!--             <a href="../episode_categories/">Episode Categories</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../patient/">Patient</a> -->
                 <!--         </li> -->
                 <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../subrecords/">Subrecords</a> -->
+                <!--         <li class="active"> -->
+                <!--             <a href="./">Subrecords</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -208,8 +208,8 @@
                 <!--             <a href="../panels_templatetags/">Panel Template tags</a> -->
                 <!--         </li> -->
                 <!--      -->
-                <!--         <li class="active"> -->
-                <!--             <a href="./">Javascript helpers</a> -->
+                <!--         <li > -->
+                <!--             <a href="../javascript_helpers/">Javascript helpers</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -237,6 +237,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../changelog/">Changelog</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../upgrading/">Upgrading</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -249,17 +253,17 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.6.0" target="_blank">
-                  <i class="fa fa-github"></i> v0.6.0
+                <a href="https://github.com/openhealthcare/opal/tree/v0.7.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.7.0
                 </a>
               </li>
                 <!-- <li > -->
-                <!--     <a rel="next" href="../panels_templatetags/"> -->
+                <!--     <a rel="next" href="../patient/"> -->
                 <!--         <i class="fa fa-arrow-left"></i> Previous -->
                 <!--     </a> -->
                 <!-- </li> -->
                 <!-- <li > -->
-                <!--     <a rel="prev" href="../javascript_dependencies/"> -->
+                <!--     <a rel="prev" href="../opal_application/"> -->
                 <!--         Next <i class="fa fa-arrow-right"></i> -->
                 <!--     </a> -->
                 <!-- </li> -->
@@ -274,42 +278,122 @@
   <h3>Contents</h3>
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#opal-javascript-helpers">OPAL Javascript Helpers</a></li>
+        <li class="main active"><a href="#opal-subrecords">OPAL Subrecords</a></li>
         
-            <li><a href="#rootscope-methods">$rootScope methods</a></li>
+            <li><a href="#properties">Properties</a></li>
         
-            <li><a href="#angular-directives">Angular Directives</a></li>
+            <li><a href="#methods">Methods</a></li>
         
-            <li><a href="#angular-filters">Angular Filters</a></li>
+            <li><a href="#subrecord-mixins">Subrecord Mixins</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h2 id="opal-javascript-helpers">OPAL Javascript Helpers</h2>
-<h3 id="rootscope-methods">$rootScope methods</h3>
-<p>OPAL provides some methods on the Angular $rootScope object.</p>
-<h4 id="open_modal">open_modal</h4>
-<pre><code>$rootScope.open_modal(controller, template, size, {episode: episode})
+<h2 id="opal-subrecords">OPAL Subrecords</h2>
+<p>OPAL Subrecords are models that relate to either Patients or Episodes, and inherit from
+base classes <code>opal.models.PatientSubrecord</code> or <code>opal.models.EpisodeSubrecord</code></p>
+<h3 id="properties">Properties</h3>
+<h4 id="subrecord_icon">Subrecord._icon</h4>
+<p>String that provides the name of the icon to use for forms, column headings etc.</p>
+<pre><code>class Demographics(PatientSubrecord):
+    _icon = 'fa fa-user'
 </code></pre>
-<p>Open an arbitrary controller in a modal, passing in the name of the controller,
-the url for the template, the size of the modal window (either 'sm' or 'lg').</p>
-<p>You may also pass through a dictionary of items to resolve.</p>
-<h3 id="angular-directives">Angular Directives</h3>
-<p>OPAL provides some built-in Angular directives for your project to use.</p>
-<h4 id="date-of-birth">date-of-birth</h4>
-<p>Creates an input field that assumes to base field is a moment and handles validation and parsing. It assumes no one is born in the future or is over 150 years old.</p>
-<h3 id="angular-filters">Angular Filters</h3>
-<p>OPAL provides some built-in Angular filters for your project to use.</p>
-<h4 id="short-date">short-date</h4>
-<p>Displays a date as DD/MM if it's this year, else DD/MM/YYYY</p>
-<h4 id="hhmm">hhmm</h4>
-<p>Displays the hours &amp; minutes portion of a javascript Date object as HH:MM</p>
-<h4 id="boxed">boxed</h4>
-<p>Displays Boolean fields as a checkbox (e.g. either [ ] or [X])</p>
-<pre><code>[[ item.boolean_field | boxed]]
-</code></pre></div>
+<h4 id="subrecord_is_singleton">Subrecord._is_singleton</h4>
+<p>Boolean that determines whether this subrecord is a singleton.
+There may only be one of each singleton Subrecord, which is created whth the parent.</p>
+<pre><code>class Demographics(PatientSubrecord):
+    _is_singleton = True
+</code></pre>
+<p>For this case, when a <code>Patient</code> is created, an empty <code>Demographics</code> instance will
+automatically be created.</p>
+<h4 id="subrecord_list_limit">Subrecord._list_limit</h4>
+<p>Integer to indicate the maximum number of entries to display in list view for this
+model. Useful for record types where many entries will accrue, or where display is
+particularly verbose.</p>
+<pre><code>class BloodPressureReading(EpisodeSubrecord):
+    _list_limit = 3
+</code></pre>
+<h4 id="subrecord_modal">Subrecord._modal</h4>
+<p>String to indicate a non-default modal size to be used for editing this <code>Subrecord</code>.
+Valid options are: 'lg', 'sm'. Typically used for complex forms or the display of
+additional contextually sensitive information when editing or entering data.</p>
+<pre><code>class Antimicrobial(EpisodeSubrecord):
+    _modal = 'lg'
+</code></pre>
+<h4 id="subrecord_sort">Subrecord._sort</h4>
+<p>Name of the field by which we want to sort these records when displaying.</p>
+<pre><code>class Antimicrobial(EpisodeSubrecord):
+    _sort = 'start_date'
+</code></pre>
+<h4 id="subrecord_title">Subrecord._title</h4>
+<p>String we would like to use for user-facing display of this record type.</p>
+<pre><code>class Antimicrobial(EpisodeSubrecord):
+    _title = 'Abx'
+</code></pre>
+<h4 id="subrecord_clonable">Subrecord._clonable</h4>
+<p>A Boolean that is True by default used by <code>opal.views.EpisodeCopyToCategoryView</code> 
+to determine if instances of this record should be copied across.</p>
+<pre><code>class Antimicrobial(EpisodeSubrecord):
+    _clonable = 'False'
+</code></pre>
+<h4 id="subrecord_exclude_from_extract">Subrecord._exclude_from_extract</h4>
+<p>Boolean to specify that this subrecord should be excluded from any standard data extract.
+This implicitly defaults to False.</p>
+<pre><code>class Antimicrobial(EpisodeSubrecord):
+    _exclude_from_extract = 'Abx'
+</code></pre>
+<h4 id="subrecordpid_fields">Subrecord.pid_fields</h4>
+<p>An iterable of strings that correspond to fieldnames that contain Patient Identifiable Data (PID).</p>
+<p>This is used when creating data extracts to exclude PID from e.g. CSV downloads.</p>
+<h3 id="methods">Methods</h3>
+<h4 id="subrecordget_display_template">Subrecord.get_display_template()</h4>
+<p>Classmethod to locate the active display template for our record.</p>
+<p>Returns the name of the template or None.</p>
+<p>Keywords:</p>
+<ul>
+<li><code>episode_type</code> Optional episode type string to check for form customisations</li>
+<li><code>patient_list</code> Optional patient list slug string to check for form customisations</li>
+</ul>
+<h4 id="subrecordget_form_template">Subrecord.get_form_template()</h4>
+<p>Classmethod to locate the active template for our record. Returns the name of a template or None.</p>
+<p>Keywords:</p>
+<ul>
+<li><code>episode_type</code> Optional episode type string to check for form customisations</li>
+<li><code>patient_list</code> Optional patient list slug string to check for form customisations</li>
+</ul>
+<h4 id="subrecordget_modal_template">Subrecord.get_modal_template()</h4>
+<p>Classmethod to locate the active template for our record. Returns the name of a template or None.</p>
+<p>Keywords:</p>
+<ul>
+<li><code>episode_type</code> Optional episode type string to check for modal customisations</li>
+<li><code>patient_list</code> Optional patient list slug string to check for modal customisations</li>
+</ul>
+<h4 id="subrecordget_modal_footer_template">Subrecord.get_modal_footer_template</h4>
+<p>Classmethod to add a custom footer to a modal, used for example to denote if
+the data from a model has been sourced from an external source</p>
+<h4 id="subrecordupdate_from_dict">Subrecord.update_from_dict()</h4>
+<p>An instance method that will update a model with a dictionary. This method is used
+to provides a hook for changing the way a subrecord handles being updated from serialised
+data.</p>
+<p>For example on a new allergy
+    allergy.update_from_dict({"drug": "penicillin"})</p>
+<p>will update the allergy to have the correct drug</p>
+<h4 id="subrecordbulk_update_from_dicts">Subrecord.bulk_update_from_dicts()</h4>
+<p>A Classmethod to allow the creation of multiple objects.</p>
+<p>Takes in the parent model - an episode
+for EpisodeSubrecords a patient for PatientSubrecords. Under the covers it iterates
+over all the subrecords, adds in the parent relationship and calls update_from_dict</p>
+<h3 id="subrecord-mixins">Subrecord Mixins</h3>
+<h4 id="trackedmodel">TrackedModel</h4>
+<p>A Tracked Model automatically has created, created_by, updated, updated_by and
+these are only updated when used via the api</p>
+<h4 id="externallysourcedmodel">ExternallySourcedModel</h4>
+<p>Often we want data to be sourced from external systems, this mixin adds in the
+fields external_system and external_identifier to allow us to track where
+they come from and how they are referenced by that system.</p>
+<p>These fields are then often used in forms to make the data read only</p></div>
         </div>
 
         <footer class="col-md-12">

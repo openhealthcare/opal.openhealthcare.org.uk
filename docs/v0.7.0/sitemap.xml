@@ -86,7 +86,7 @@
     </url>
         
     <url>
-     <loc>None/guides/teams/</loc>
+     <loc>None/guides/tagging/</loc>
      <lastmod>2016-06-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -110,6 +110,12 @@
     </url>
         
     <url>
+     <loc>None/guides/context_processors/</loc>
+     <lastmod>2016-06-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>None/guides/static_files/</loc>
      <lastmod>2016-06-03</lastmod>
      <changefreq>daily</changefreq>
@@ -122,13 +128,25 @@
     </url>
         
     <url>
-     <loc>None/guides/episode_detail_views/</loc>
+     <loc>None/guides/patient_detail_views/</loc>
      <lastmod>2016-06-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/guides/list_views/</loc>
+     <lastmod>2016-06-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/guides/discoverable/</loc>
+     <lastmod>2016-06-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/guides/search/</loc>
      <lastmod>2016-06-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -144,6 +162,12 @@
     </url>
         
     <url>
+     <loc>None/reference/episode_categories/</loc>
+     <lastmod>2016-06-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>None/reference/patient/</loc>
      <lastmod>2016-06-03</lastmod>
      <changefreq>daily</changefreq>
@@ -151,12 +175,6 @@
         
     <url>
      <loc>None/reference/subrecords/</loc>
-     <lastmod>2016-06-03</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/reference/team/</loc>
      <lastmod>2016-06-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -192,13 +210,19 @@
     </url>
         
     <url>
-     <loc>None/reference/record_panel_templatetag/</loc>
+     <loc>None/reference/panels_templatetags/</loc>
      <lastmod>2016-06-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/reference/javascript_helpers/</loc>
+     <lastmod>2016-06-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/reference/javascript_dependencies/</loc>
      <lastmod>2016-06-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -211,6 +235,30 @@
         
     <url>
      <loc>None/reference/search_queries/</loc>
+     <lastmod>2016-06-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/reference/detail_views/</loc>
+     <lastmod>2016-06-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/reference/patient_list/</loc>
+     <lastmod>2016-06-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/reference/search_js_services/</loc>
+     <lastmod>2016-06-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/reference/changelog/</loc>
      <lastmod>2016-06-03</lastmod>
      <changefreq>daily</changefreq>
     </url>

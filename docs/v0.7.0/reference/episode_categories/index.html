@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>Javascript helpers - OPAL</title>
+	<title>Episode Categories - OPAL</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -172,8 +172,8 @@
                 <!--             <a href="../episode/">The Episode model</a> -->
                 <!--         </li> -->
                 <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../episode_types/">Episode Types</a> -->
+                <!--         <li class="active"> -->
+                <!--             <a href="./">Episode Categories</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -208,8 +208,8 @@
                 <!--             <a href="../panels_templatetags/">Panel Template tags</a> -->
                 <!--         </li> -->
                 <!--      -->
-                <!--         <li class="active"> -->
-                <!--             <a href="./">Javascript helpers</a> -->
+                <!--         <li > -->
+                <!--             <a href="../javascript_helpers/">Javascript helpers</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -237,6 +237,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../changelog/">Changelog</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../upgrading/">Upgrading</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -249,17 +253,17 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.6.0" target="_blank">
-                  <i class="fa fa-github"></i> v0.6.0
+                <a href="https://github.com/openhealthcare/opal/tree/v0.7.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.7.0
                 </a>
               </li>
                 <!-- <li > -->
-                <!--     <a rel="next" href="../panels_templatetags/"> -->
+                <!--     <a rel="next" href="../episode/"> -->
                 <!--         <i class="fa fa-arrow-left"></i> Previous -->
                 <!--     </a> -->
                 <!-- </li> -->
                 <!-- <li > -->
-                <!--     <a rel="prev" href="../javascript_dependencies/"> -->
+                <!--     <a rel="prev" href="../patient/"> -->
                 <!--         Next <i class="fa fa-arrow-right"></i> -->
                 <!--     </a> -->
                 <!-- </li> -->
@@ -274,42 +278,39 @@
   <h3>Contents</h3>
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#opal-javascript-helpers">OPAL Javascript Helpers</a></li>
+        <li class="main active"><a href="#opalcoreepisodes">opal.core.episodes</a></li>
         
-            <li><a href="#rootscope-methods">$rootScope methods</a></li>
+    
+        <li class="main "><a href="#episodecategory">EpisodeCategory</a></li>
         
-            <li><a href="#angular-directives">Angular Directives</a></li>
+            <li><a href="#properties">Properties</a></li>
         
-            <li><a href="#angular-filters">Angular Filters</a></li>
+    
+        <li class="main "><a href="#inpatientepisode">InpatientEpisode</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h2 id="opal-javascript-helpers">OPAL Javascript Helpers</h2>
-<h3 id="rootscope-methods">$rootScope methods</h3>
-<p>OPAL provides some methods on the Angular $rootScope object.</p>
-<h4 id="open_modal">open_modal</h4>
-<pre><code>$rootScope.open_modal(controller, template, size, {episode: episode})
-</code></pre>
-<p>Open an arbitrary controller in a modal, passing in the name of the controller,
-the url for the template, the size of the modal window (either 'sm' or 'lg').</p>
-<p>You may also pass through a dictionary of items to resolve.</p>
-<h3 id="angular-directives">Angular Directives</h3>
-<p>OPAL provides some built-in Angular directives for your project to use.</p>
-<h4 id="date-of-birth">date-of-birth</h4>
-<p>Creates an input field that assumes to base field is a moment and handles validation and parsing. It assumes no one is born in the future or is over 150 years old.</p>
-<h3 id="angular-filters">Angular Filters</h3>
-<p>OPAL provides some built-in Angular filters for your project to use.</p>
-<h4 id="short-date">short-date</h4>
-<p>Displays a date as DD/MM if it's this year, else DD/MM/YYYY</p>
-<h4 id="hhmm">hhmm</h4>
-<p>Displays the hours &amp; minutes portion of a javascript Date object as HH:MM</p>
-<h4 id="boxed">boxed</h4>
-<p>Displays Boolean fields as a checkbox (e.g. either [ ] or [X])</p>
-<pre><code>[[ item.boolean_field | boxed]]
-</code></pre></div>
+<h2 id="opalcoreepisodes">opal.core.episodes</h2>
+<h2 id="episodecategory">EpisodeCategory</h2>
+<p>OPAL Episodes have an associated category. These categories are implemented as subclasses
+of <code>opal.core.episodes.EpisodeCategory</code>. This class is an OPAL <a href="../../guides/discoverable/">DiscoverableFeature</a>
+and thus inherits all of the core Discoverable API.</p>
+<p>The category of any episode can be accessed as the <code>.category</code> property of any <code>Episode</code> instance.</p>
+<h3 id="properties">Properties</h3>
+<h4 id="episodecategorydetail_template">EpisodeCategory.detail_template</h4>
+<p>This is the template used within the <a href="../../guides/patient_detail_views/">Patient Detail View</a> to display
+information about episodes of this category.</p>
+<h4 id="episodecategorystart">EpisodeCategory.start</h4>
+<p>Returns the Start date of this episode type.</p>
+<h4 id="episodecategorystop">EpisodeCategory.stop</h4>
+<p>Returns the Stop date of this episode type</p>
+<h2 id="inpatientepisode">InpatientEpisode</h2>
+<p>This is the defualt EpisodeCategory imlpementation - applications started with OPAL's scaffolding
+scripts will use this as the <code>OpalApplication.default_episode_category</code>. It sets the detail template to
+<code>detail/inpatient.html</code></p></div>
         </div>
 
         <footer class="col-md-12">

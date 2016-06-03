@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>Javascript helpers - OPAL</title>
+	<title>Form helpers - OPAL</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -173,7 +173,7 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../episode_types/">Episode Types</a> -->
+                <!--             <a href="../episode_categories/">Episode Categories</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -200,16 +200,16 @@
                 <!--             <a href="../patient_summary_service/">Patient summary service</a> -->
                 <!--         </li> -->
                 <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../form_templatetags/">Form helpers</a> -->
+                <!--         <li class="active"> -->
+                <!--             <a href="./">Form helpers</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../panels_templatetags/">Panel Template tags</a> -->
                 <!--         </li> -->
                 <!--      -->
-                <!--         <li class="active"> -->
-                <!--             <a href="./">Javascript helpers</a> -->
+                <!--         <li > -->
+                <!--             <a href="../javascript_helpers/">Javascript helpers</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -237,6 +237,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../changelog/">Changelog</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../upgrading/">Upgrading</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -249,17 +253,17 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.6.0" target="_blank">
-                  <i class="fa fa-github"></i> v0.6.0
+                <a href="https://github.com/openhealthcare/opal/tree/v0.7.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.7.0
                 </a>
               </li>
                 <!-- <li > -->
-                <!--     <a rel="next" href="../panels_templatetags/"> -->
+                <!--     <a rel="next" href="../patient_summary_service/"> -->
                 <!--         <i class="fa fa-arrow-left"></i> Previous -->
                 <!--     </a> -->
                 <!-- </li> -->
                 <!-- <li > -->
-                <!--     <a rel="prev" href="../javascript_dependencies/"> -->
+                <!--     <a rel="prev" href="../panels_templatetags/"> -->
                 <!--         Next <i class="fa fa-arrow-right"></i> -->
                 <!--     </a> -->
                 <!-- </li> -->
@@ -274,41 +278,113 @@
   <h3>Contents</h3>
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#opal-javascript-helpers">OPAL Javascript Helpers</a></li>
+        <li class="main active"><a href="#form-helpers">Form Helpers</a></li>
         
-            <li><a href="#rootscope-methods">$rootScope methods</a></li>
+            <li><a href="#checkbox">{% checkbox ... %}</a></li>
         
-            <li><a href="#angular-directives">Angular Directives</a></li>
+            <li><a href="#datepicker">{% datepicker ... %}</a></li>
         
-            <li><a href="#angular-filters">Angular Filters</a></li>
+            <li><a href="#input">{% input ... %}</a></li>
+        
+            <li><a href="#radio">{% radio ... %}</a></li>
+        
+            <li><a href="#select">{% select ... %}</a></li>
+        
+            <li><a href="#textarea">{% textarea ... %}</a></li>
+        
+            <li><a href="#icon-icon-name">{% icon "icon-name" %}</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h2 id="opal-javascript-helpers">OPAL Javascript Helpers</h2>
-<h3 id="rootscope-methods">$rootScope methods</h3>
-<p>OPAL provides some methods on the Angular $rootScope object.</p>
-<h4 id="open_modal">open_modal</h4>
-<pre><code>$rootScope.open_modal(controller, template, size, {episode: episode})
+<h1 id="form-helpers">Form Helpers</h1>
+<p>OPAL comes with a selection of templatetags that can help you with the
+repetitive task of generating Bootstrap and OPAL compatible markup for
+your forms.</p>
+<h3 id="checkbox">{% checkbox ... %}</h3>
+<p>Generates a checkbox</p>
+<p>Keywords:</p>
+<ul>
+<li><code>field</code> a string of the model name '.' field from this it calculates the label, model and will infer the lookuplist if required. For example {% checkbox field="DogOwner.dog" %}</li>
+<li><code>label</code> The Label with which to describe this field</li>
+<li><code>model</code> The model which we are editing (This is a string that references an in-scope Angular variable)</li>
+<li><code>disabled</code> If this exists, we use this as the expression for the ng-disabled directive</li>
+</ul>
+<h3 id="datepicker">{% datepicker ... %}</h3>
+<p>Generates a datepicker</p>
+<p>Keywords:</p>
+<ul>
+<li><code>field</code> a string of the models api name '.' field from this it calculates the label, model and will infer the lookuplist if required. For example {% datepicker field="DogOwner.dog" %}</li>
+<li><code>label</code> The Label with which to describe this field</li>
+<li><code>model</code> The model which we are editing (This is a string that references an in-scope Angular variable)</li>
+<li><code>show</code>  A string that contains an Angular expression for the ng-show directive</li>
+<li><code>hide</code>  A string that contains an Angular expression for the ng-hide directive</li>
+<li><code>required</code> Label to show when we're required</li>
+<li><code>mindate</code> Expression to use to set the minimum possible date</li>
+</ul>
+<h3 id="input">{% input ... %}</h3>
+<p>Generates an Input. If you pass a field, the tag will infer the label, model and lookuplist by introspecting the relevant subrecord model.</p>
+<pre><code>{% input field="allergies.drug" %}
 </code></pre>
-<p>Open an arbitrary controller in a modal, passing in the name of the controller,
-the url for the template, the size of the modal window (either 'sm' or 'lg').</p>
-<p>You may also pass through a dictionary of items to resolve.</p>
-<h3 id="angular-directives">Angular Directives</h3>
-<p>OPAL provides some built-in Angular directives for your project to use.</p>
-<h4 id="date-of-birth">date-of-birth</h4>
-<p>Creates an input field that assumes to base field is a moment and handles validation and parsing. It assumes no one is born in the future or is over 150 years old.</p>
-<h3 id="angular-filters">Angular Filters</h3>
-<p>OPAL provides some built-in Angular filters for your project to use.</p>
-<h4 id="short-date">short-date</h4>
-<p>Displays a date as DD/MM if it's this year, else DD/MM/YYYY</p>
-<h4 id="hhmm">hhmm</h4>
-<p>Displays the hours &amp; minutes portion of a javascript Date object as HH:MM</p>
-<h4 id="boxed">boxed</h4>
-<p>Displays Boolean fields as a checkbox (e.g. either [ ] or [X])</p>
-<pre><code>[[ item.boolean_field | boxed]]
+<p>Keywords:</p>
+<ul>
+<li><code>field</code> a string of the models api name '.' field from this it calculates the label, model and will infer the lookuplist if required. For example {% input field="DogOwner.dog" %}</li>
+<li><code>label</code> The Label with which to describe this field</li>
+<li><code>model</code> The model which we are editing (This is a string that references an in-scope Angular variable)</li>
+<li><code>show</code>  A string that contains an Angular expression for the ng-show directive</li>
+<li><code>hide</code>  A string that contains an Angular expression for the ng-hide directive</li>
+<li><code>lookuplist</code> an Angular expression that evaluates to an array containing the lookuplist values</li>
+<li><code>required</code> Label to show when we're required</li>
+<li><code>enter</code> expression to evaluate if the user presses return when in this input</li>
+<li><code>maxlength</code> maximum number of characters for this input. Will render the form invalid and display help text if exceeded.</li>
+<li><code>static</code> an Angular expression that will swap the display to be a static input if it evaluates to <code>true</code></li>
+</ul>
+<h3 id="radio">{% radio ... %}</h3>
+<p>Generates an inline radio input</p>
+<p>Keywords:</p>
+<ul>
+<li><code>field</code> a string of the models api name '.' field from this it calculates the label, model and will infer the lookuplist if required. For example {% radio field="DogOwner.dog" %}</li>
+<li><code>label</code> The Label with which to describe this input</li>
+<li><code>model</code> The model which we are editing (This is a string that references an in-scope Angular variable)</li>
+<li><code>show</code>  A string that contains an Angular expression for the ng-show directive</li>
+<li><code>hide</code>  A string that contains an Angular expression for the ng-hide directive</li>
+<li><code>lookuplist</code> an Angular expression that evaluates to an array containing the radio values</li>
+</ul>
+<h3 id="select">{% select ... %}</h3>
+<p>Generates an inline select input</p>
+<p>Keywords:</p>
+<ul>
+<li><code>field</code> a string of the models api name '.' field from this it calculates the label, model and will infer the lookuplist if required. For example {% select field="DogOwner.dog" %}</li>
+<li><code>label</code> The Label with which to describe this input</li>
+<li><code>model</code> The model which we are editing (This is a string that references an in-scope Angular variable)</li>
+<li><code>show</code>  A string that contains an Angular expression for the ng-show directive</li>
+<li><code>hide</code>  A string that contains an Angular expression for the ng-hide directive</li>
+<li><code>lookuplist</code> an Angular expression that evaluates to an array containing the radio values</li>
+<li><code>other</code> A boolean parameter that if true, provides a free text option when 'Other' is selected</li>
+<li><code>help</code> a template to use as the contents of a help popover</li>
+<li><code>static</code> an Angular expression that will swap the display to be a static input if it evaluates to <code>true</code></li>
+<li></li>
+</ul>
+<h3 id="textarea">{% textarea ... %}</h3>
+<p>Generates an inline textarea input</p>
+<p>Keywords:</p>
+<ul>
+<li><code>field</code> a string of the models api name '.' field from this it calculates the label, model and will infer the lookuplist if required. For example {% textarea field="DogOwner.dog" %}</li>
+<li><code>label</code> The Label with which to describe this input</li>
+<li><code>model</code> The model which we are editing (This is a string that references an in-scope Angular variable)</li>
+<li><code>show</code>  A string that contains an Angular expression for the ng-show directive</li>
+<li><code>hide</code>  A string that contains an Angular expression for the ng-hide directive</li>
+</ul>
+<h3 id="icon-icon-name">{% icon "icon-name" %}</h3>
+<p>Renders a Bootstrap style Icon tag.
+If the icon starts with <code>fa</code> or <code>glyphicon</code> then we will insert the preceding <code>fa</code>.</p>
+<pre><code>{% icon "fa-user-md" %}
+&lt;i class="fa fa-user-md"&gt;&lt;/i&gt;
+
+{% icon "cusom-icon"}
+&lt;i class="custom-icon"&gt;&lt;/i&gt;
 </code></pre></div>
         </div>
 

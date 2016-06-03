@@ -137,7 +137,7 @@
         }, 
         {
             "location": "/guides/topic-guides/", 
-            "text": "OPAL Guides\n\n\nA list of all available topic guides.\n\n\nOPAL\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOPAL - Applications, Plugins\n\n\nHow OPAL components hang together.\n\n\n\n\n\n\nCommand line tool\n\n\nrunning admin tasks from the command line\n\n\n\n\n\n\nDiscoverable\n\n\ndesign patterns and library for creating easily reusable features\n\n\n\n\n\n\nPlugins\n\n\nAvailable interfaces for OPAL plugins\n\n\n\n\n\n\nList of Plugins\n\n\nA list of available high quality plugins\n\n\n\n\n\n\n\n\nData and flow\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData Model\n\n\nHow OPAL models clinical reality.\n\n\n\n\n\n\nFlow\n\n\nHooks to customise key moments in a patient's flow through a clinical service.\n\n\n\n\n\n\nRoles \n Permissions\n\n\nHow we handle authorization in OPAL\n\n\n\n\n\n\nTagging\n\n\nTagging episodes in OPAL\n\n\n\n\n\n\nJSON API\n\n\nThe OPAL JSON API\n\n\n\n\n\n\nLookup Lists\n\n\nCanonical coded terms and ontologies\n\n\n\n\n\n\n\n\nPresentation and templating\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTemplates\n\n\nServer and client side templating\n\n\n\n\n\n\nDefault Context Processors\n\n\nOPAL Django context processors\n\n\n\n\n\n\nStatic Files\n\n\nHow OPAL handles static files\n\n\n\n\n\n\nForms\n\n\nForms for entering or editing data\n\n\n\n\n\n\nPatient Detail Views\n\n\nDetailed views of a Patient\n\n\n\n\n\n\nPatient List Views\n\n\nLists of patients\n\n\n\n\n\n\n\n\nOptional Components\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSearch\n\n\nDefault search implementation", 
+            "text": "OPAL Guides\n\n\nA list of all available topic guides.\n\n\nOPAL\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOPAL - Applications, Plugins\n\n\nHow OPAL components hang together.\n\n\n\n\n\n\nCommand line tool\n\n\nrunning admin tasks from the command line\n\n\n\n\n\n\nDiscoverable\n\n\ndesign patterns and library for creating easily reusable features\n\n\n\n\n\n\nPlugins\n\n\nAvailable interfaces for OPAL plugins\n\n\n\n\n\n\nList of Plugins\n\n\nA list of available high quality plugins\n\n\n\n\n\n\n\n\nData and Business Logic\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData Model\n\n\nHow OPAL models clinical reality.\n\n\n\n\n\n\nFlow\n\n\nHooks to customise key moments in a patient's flow through a clinical service.\n\n\n\n\n\n\nRoles \n Permissions\n\n\nHow we handle authorization in OPAL\n\n\n\n\n\n\nTagging\n\n\nTagging episodes in OPAL\n\n\n\n\n\n\nJSON API\n\n\nThe OPAL JSON API\n\n\n\n\n\n\nLookup Lists\n\n\nCanonical coded terms and ontologies\n\n\n\n\n\n\n\n\nPresentation and templating\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTemplates\n\n\nServer and client side templating\n\n\n\n\n\n\nDefault Context Processors\n\n\nOPAL Django context processors\n\n\n\n\n\n\nStatic Files\n\n\nHow OPAL handles static files\n\n\n\n\n\n\nForms\n\n\nForms for entering or editing data\n\n\n\n\n\n\nPatient Detail Views\n\n\nDetailed views of a Patient\n\n\n\n\n\n\nPatient List Views\n\n\nLists of patients\n\n\n\n\n\n\n\n\nOptional Components\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSearch\n\n\nDefault search implementation", 
             "title": "Guides"
         }, 
         {
@@ -151,9 +151,9 @@
             "title": "OPAL"
         }, 
         {
-            "location": "/guides/topic-guides/#data-and-flow", 
+            "location": "/guides/topic-guides/#data-and-business-logic", 
             "text": "Data Model  How OPAL models clinical reality.    Flow  Hooks to customise key moments in a patient's flow through a clinical service.    Roles   Permissions  How we handle authorization in OPAL    Tagging  Tagging episodes in OPAL    JSON API  The OPAL JSON API    Lookup Lists  Canonical coded terms and ontologies", 
-            "title": "Data and flow"
+            "title": "Data and Business Logic"
         }, 
         {
             "location": "/guides/topic-guides/#presentation-and-templating", 
@@ -167,7 +167,7 @@
         }, 
         {
             "location": "/reference/reference_guides/", 
-            "text": "OPAL Reference material\n\n\nThe following reference guides are available:\n\n\nModels\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nopal.models.Episode model\n\n\nThe central Episode model\n\n\n\n\n\n\nopal.models.Patient\n\n\nThe Patient model\n\n\n\n\n\n\nopal.models.Subrecord base class\n\n\nBase class for subrecords of Episodes or Patients\n\n\n\n\n\n\n\n\nOPAL Core\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nopal.application.OpalApplication\n\n\nOPAL Application objects\n\n\n\n\n\n\nopal.core.schemas\n\n\nSchemas - Dynamic columns for the table views\n\n\n\n\n\n\nopal.core.detail\n\n\nDetail Views - Custom views over one or many episodes.\n\n\n\n\n\n\nopal.core.patient_lists\n\n\nPatient Lists - defining different types of list.\n\n\n\n\n\n\n\n\nAngular Services\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEpisode\n\n\nEpisode objects\n\n\n\n\n\n\nItem\n\n\nSubrecord objects\n\n\n\n\n\n\nPatientSummary\n\n\nPatient search result summaries\n\n\n\n\n\n\nSearch Services\n\n\nServices from the Search module\n\n\n\n\n\n\n\n\nHelper libraries\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe forms Templatetag library\n\n\nThe building blocks for OPAL forms\n\n\n\n\n\n\nThe panels Templatetag library\n\n\nRendering record panels.\n\n\n\n\n\n\nJavascript Helpers\n\n\nAngular filters and $rootScope methods\n\n\n\n\n\n\n\n\nOPAL Search module\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMaking Search Queries\n\n\nSearch query backends and helper functions\n\n\n\n\n\n\n\n\nMiscenlaneous documentation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUpgrading\n\n\nSearch query backends and helper functions\n\n\n\n\n\n\nJavascript dependencies\n\n\nExternal javascript libraries available", 
+            "text": "OPAL Reference material\n\n\nThe following reference guides are available:\n\n\nModels\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nopal.models.Episode model\n\n\nThe central Episode model\n\n\n\n\n\n\nopal.models.Patient\n\n\nThe Patient model\n\n\n\n\n\n\nopal.models.Subrecord base class\n\n\nBase class for subrecords of Episodes or Patients\n\n\n\n\n\n\n\n\nOPAL Core\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nopal.core.application\n\n\nOPAL Application objects\n\n\n\n\n\n\nopal.core.detail\n\n\nDetail Views - Custom views over one or many episodes.\n\n\n\n\n\n\nopal.core.episodes\n\n\nEpisode Categories - Controlling the behaviour of different types of episode.\n\n\n\n\n\n\nopal.core.schemas\n\n\nSchemas - Dynamic columns for the table views\n\n\n\n\n\n\nopal.core.patient_lists\n\n\nPatient Lists - defining different types of list.\n\n\n\n\n\n\n\n\nAngular Services\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEpisode\n\n\nEpisode objects\n\n\n\n\n\n\nItem\n\n\nSubrecord objects\n\n\n\n\n\n\nPatientSummary\n\n\nPatient search result summaries\n\n\n\n\n\n\nSearch Services\n\n\nServices from the Search module\n\n\n\n\n\n\n\n\nHelper libraries\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe forms Templatetag library\n\n\nThe building blocks for OPAL forms\n\n\n\n\n\n\nThe panels Templatetag library\n\n\nRendering record panels.\n\n\n\n\n\n\nJavascript Helpers\n\n\nAngular filters and $rootScope methods\n\n\n\n\n\n\n\n\nOPAL Search module\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMaking Search Queries\n\n\nSearch query backends and helper functions\n\n\n\n\n\n\n\n\nMiscenlaneous documentation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nChangelog\n\n\nOPAL Changelog\n\n\n\n\n\n\nUpgrading\n\n\nSearch query backends and helper functions\n\n\n\n\n\n\nJavascript dependencies\n\n\nExternal javascript libraries available", 
             "title": "Reference"
         }, 
         {
@@ -182,7 +182,7 @@
         }, 
         {
             "location": "/reference/reference_guides/#opal-core", 
-            "text": "opal.application.OpalApplication  OPAL Application objects    opal.core.schemas  Schemas - Dynamic columns for the table views    opal.core.detail  Detail Views - Custom views over one or many episodes.    opal.core.patient_lists  Patient Lists - defining different types of list.", 
+            "text": "opal.core.application  OPAL Application objects    opal.core.detail  Detail Views - Custom views over one or many episodes.    opal.core.episodes  Episode Categories - Controlling the behaviour of different types of episode.    opal.core.schemas  Schemas - Dynamic columns for the table views    opal.core.patient_lists  Patient Lists - defining different types of list.", 
             "title": "OPAL Core"
         }, 
         {
@@ -202,7 +202,7 @@
         }, 
         {
             "location": "/reference/reference_guides/#miscenlaneous-documentation", 
-            "text": "Upgrading  Search query backends and helper functions    Javascript dependencies  External javascript libraries available", 
+            "text": "Changelog  OPAL Changelog    Upgrading  Search query backends and helper functions    Javascript dependencies  External javascript libraries available", 
             "title": "Miscenlaneous documentation"
         }, 
         {
@@ -467,7 +467,7 @@
         }, 
         {
             "location": "/guides/roles_and_permissions/", 
-            "text": "Roles \n Permissions in OPAL\n\n\nOPAL provides some global per-user flags, which are set in the UserProfile model, as well\nas more detailed permissions available via roles.\n\n\nThe UserProfile model\n\n\nSome global properties about Users are set in the \nopal.models.UserProfile\n\nmodel.\n\n\nUserProflie._can_extract\n\n\nBoolean flag to determine whether this user is allowed to download data extracts\nfrom the system\n\n\nUserProflie._force_password_change\n\n\nBoolean flag to determine whether we would like to force this user to change\ntheir password on their next login. This defaults to \nTrue\n when the \nUser\n is \nfirst created.\n\n\nUserProfile._readonly\n\n\nBoolean flag to determine whether this user has readonly access.\n\n\nUserProfile._restricted_only\n\n\nBoolean flag to determine whether this user should be only shown \nteams\n for which they\nhave explicitly been given permission to view or whether they should also see the list of\ngeneral access teams.\n\n\nUserProfile.get_roles()\n\n\nReturn a dictionary of roles in various contexts for our user\n\n\nprofile.get_roles() # -\n\n{\n    'default': ['doctor'],\n    'some_research_study': ['Clinical Lead']\n}\n\n\n\nUserProfile.get_teams()\n\n\nReturn a list of \nTeam\n objects that this user should be allowed to see.\n\n\nRoles\n\n\nA user may be given a particular role. These can be either global - in which case they are \nreturned in the 'default' section of the roles dict from \nget_roles()\n, or specific to \na \nteam\n.", 
+            "text": "Roles \n Permissions in OPAL\n\n\nOPAL provides some global per-user flags, which are set in the UserProfile model, as well\nas more detailed permissions available via roles.\n\n\nThe UserProfile model\n\n\nSome global properties about Users are set in the \nopal.models.UserProfile\n\nmodel.\n\n\nUserProflie._can_extract\n\n\nBoolean flag to determine whether this user is allowed to download data extracts\nfrom the system\n\n\nUserProflie._force_password_change\n\n\nBoolean flag to determine whether we would like to force this user to change\ntheir password on their next login. This defaults to \nTrue\n when the \nUser\n is\nfirst created.\n\n\nUserProfile._readonly\n\n\nBoolean flag to determine whether this user has readonly access.\n\n\nUserProfile._restricted_only\n\n\nBoolean flag to determine whether this user should be only shown teams for which they\nhave explicitly been given permission to view or whether they should also see the list of\ngeneral access teams.\n\n\nUserProfile.get_roles()\n\n\nReturn a dictionary of roles in various contexts for our user\n\n\nprofile.get_roles() # -\n\n{\n    'default': ['doctor'],\n    'some_research_study': ['Clinical Lead']\n}\n\n\n\nUserProfile.get_teams()\n\n\nReturn a list of \nTeam\n objects that this user should be allowed to see.\n\n\nRoles\n\n\nA user may be given a particular role. These can be either global - in which case they are\nreturned in the 'default' section of the roles dict from \nget_roles()\n, or specific to\na team.", 
             "title": "Roles & Permissions"
         }, 
         {
@@ -487,7 +487,7 @@
         }, 
         {
             "location": "/guides/roles_and_permissions/#userproflie_force_password_change", 
-            "text": "Boolean flag to determine whether we would like to force this user to change\ntheir password on their next login. This defaults to  True  when the  User  is \nfirst created.", 
+            "text": "Boolean flag to determine whether we would like to force this user to change\ntheir password on their next login. This defaults to  True  when the  User  is\nfirst created.", 
             "title": "UserProflie._force_password_change"
         }, 
         {
@@ -497,7 +497,7 @@
         }, 
         {
             "location": "/guides/roles_and_permissions/#userprofile_restricted_only", 
-            "text": "Boolean flag to determine whether this user should be only shown  teams  for which they\nhave explicitly been given permission to view or whether they should also see the list of\ngeneral access teams.", 
+            "text": "Boolean flag to determine whether this user should be only shown teams for which they\nhave explicitly been given permission to view or whether they should also see the list of\ngeneral access teams.", 
             "title": "UserProfile._restricted_only"
         }, 
         {
@@ -512,7 +512,7 @@
         }, 
         {
             "location": "/guides/roles_and_permissions/#roles", 
-            "text": "A user may be given a particular role. These can be either global - in which case they are \nreturned in the 'default' section of the roles dict from  get_roles() , or specific to \na  team .", 
+            "text": "A user may be given a particular role. These can be either global - in which case they are\nreturned in the 'default' section of the roles dict from  get_roles() , or specific to\na team.", 
             "title": "Roles"
         }, 
         {
@@ -662,7 +662,7 @@
         }, 
         {
             "location": "/guides/patient_detail_views/", 
-            "text": "OPAL Patient Detail Views\n\n\nOPAL provides all patients with a detail view.\n\n\nThe default detail view will allow the user to switch between all of a patient's\n\nepisodes\n, as well as editing patient information linked to the patient\nrather than an episode. (Allergies for example.)\n\n\nTemplate selection\n\n\nThe base template for a patient detail view is \n./opal/templates/patient_detail_base.html\n,\nalthough you can override or customise that for your application most easily by implementing\na \n./templates/patient_detail.html\n and customising specific blocks, as the OPAL implementation\nsimply includes the base template.\n\n\nEach episode will display using the template appropriate for it's \nEpisodeType\n - for instance\nan \nInpatientEpisode\n will use \n./templates/detail/inpatient.html\n. You may \ndefine your own\nepisode types\n should you require.\n\n\nRecord Panels\n\n\nA frequent pattern when constructing detail views is to render a panel for a particular \nSubrecord\n\ntype. The panels templatetag library contains some useful helpers for rendering panels based on\nmodels.\n\n\n{% load panels %}\n{% record_panel Diagnosis %}\n\n\n\nThe above code will render a panel for your episode, including the \nSubrecord\n detail template for\neach instance, and allowing editing, deletion and creation of instances of your \nSubrecord\n.\n\n\nYou may also consult the Detailed \nreference documentation\n for\nRecord Panels.\n\n\nCustom Patient Detail Views\n\n\nSometimes we also need to display information about a patient across multiple episodes, or simlply\na particular view of one episode. For instance, you might like to have a specific view for showing\nall of the lab results for a patient, which would be overwhelming were they all displayed in the\nepisode detail view.\n\n\nOPAL's PatientDetailView allows you to do just this. To add an additional view to a patient you\nsimply declare a PatientDetailView class:\n\n\n# detail.py\nfrom opal.core import detail\n\nclass MyCustomView(detail.PatientDetailView):\n    name = 'my_custom_view'\n    title = 'Special View'\n    template = 'detail/my_custom_view.html'\n\n\n\nThis will then be available in the Patient Detail view in the episode switcher menu. You can\nfind details of all the various options for PatientDetailViews in the\n\nreference documentation\n.", 
+            "text": "OPAL Patient Detail Views\n\n\nOPAL provides all patients with a detail view.\n\n\nThe default detail view will allow the user to switch between all of a patient's\n\nepisodes\n, as well as editing patient information linked to the patient\nrather than an episode. (Allergies for example.)\n\n\nTemplate selection\n\n\nThe base template for a patient detail view is \n./opal/templates/patient_detail_base.html\n,\nalthough you can override or customise that for your application most easily by implementing\na \n./templates/patient_detail.html\n and customising specific blocks, as the OPAL implementation\nsimply includes the base template.\n\n\nEach episode will display using the template appropriate for it's \nEpisodeCategory\n - for instance\nan \nInpatientEpisode\n will use \n./templates/detail/inpatient.html\n. You may \ndefine your own\nepisode types\n should you require.\n\n\nRecord Panels\n\n\nA frequent pattern when constructing detail views is to render a panel for a particular \nSubrecord\n\ntype. The panels templatetag library contains some useful helpers for rendering panels based on\nmodels.\n\n\n{% load panels %}\n{% record_panel Diagnosis %}\n\n\n\nThe above code will render a panel for your episode, including the \nSubrecord\n detail template for\neach instance, and allowing editing, deletion and creation of instances of your \nSubrecord\n.\n\n\nYou may also consult the Detailed \nreference documentation\n for\nRecord Panels.\n\n\nCustom Patient Detail Views\n\n\nSometimes we also need to display information about a patient across multiple episodes, or simlply\na particular view of one episode. For instance, you might like to have a specific view for showing\nall of the lab results for a patient, which would be overwhelming were they all displayed in the\nepisode detail view.\n\n\nOPAL's PatientDetailView allows you to do just this. To add an additional view to a patient you\nsimply declare a PatientDetailView class:\n\n\n# detail.py\nfrom opal.core import detail\n\nclass MyCustomView(detail.PatientDetailView):\n    name = 'my_custom_view'\n    title = 'Special View'\n    template = 'detail/my_custom_view.html'\n\n\n\nThis will then be available in the Patient Detail view in the episode switcher menu. You can\nfind details of all the various options for PatientDetailViews in the\n\nreference documentation\n.", 
             "title": "Patient Detail Views"
         }, 
         {
@@ -672,7 +672,7 @@
         }, 
         {
             "location": "/guides/patient_detail_views/#template-selection", 
-            "text": "The base template for a patient detail view is  ./opal/templates/patient_detail_base.html ,\nalthough you can override or customise that for your application most easily by implementing\na  ./templates/patient_detail.html  and customising specific blocks, as the OPAL implementation\nsimply includes the base template.  Each episode will display using the template appropriate for it's  EpisodeType  - for instance\nan  InpatientEpisode  will use  ./templates/detail/inpatient.html . You may  define your own\nepisode types  should you require.", 
+            "text": "The base template for a patient detail view is  ./opal/templates/patient_detail_base.html ,\nalthough you can override or customise that for your application most easily by implementing\na  ./templates/patient_detail.html  and customising specific blocks, as the OPAL implementation\nsimply includes the base template.  Each episode will display using the template appropriate for it's  EpisodeCategory  - for instance\nan  InpatientEpisode  will use  ./templates/detail/inpatient.html . You may  define your own\nepisode types  should you require.", 
             "title": "Template selection"
         }, 
         {
@@ -886,14 +886,44 @@
             "title": "Episode.objects.serialised()"
         }, 
         {
-            "location": "/reference/episode_types/", 
-            "text": "Episode Types", 
-            "title": "Episode Types"
+            "location": "/reference/episode_categories/", 
+            "text": "opal.core.episodes\n\n\nEpisodeCategory\n\n\nOPAL Episodes have an associated category. These categories are implemented as subclasses\nof \nopal.core.episodes.EpisodeCategory\n. This class is an OPAL \nDiscoverableFeature\n\nand thus inherits all of the core Discoverable API.\n\n\nThe category of any episode can be accessed as the \n.category\n property of any \nEpisode\n instance.\n\n\nProperties\n\n\nEpisodeCategory.detail_template\n\n\nThis is the template used within the \nPatient Detail View\n to display\ninformation about episodes of this category.\n\n\nEpisodeCategory.start\n\n\nReturns the Start date of this episode type.\n\n\nEpisodeCategory.stop\n\n\nReturns the Stop date of this episode type\n\n\nInpatientEpisode\n\n\nThis is the defualt EpisodeCategory imlpementation - applications started with OPAL's scaffolding\nscripts will use this as the \nOpalApplication.default_episode_category\n. It sets the detail template to\n\ndetail/inpatient.html", 
+            "title": "Episode Categories"
         }, 
         {
-            "location": "/reference/episode_types/#episode-types", 
+            "location": "/reference/episode_categories/#opalcoreepisodes", 
             "text": "", 
-            "title": "Episode Types"
+            "title": "opal.core.episodes"
+        }, 
+        {
+            "location": "/reference/episode_categories/#episodecategory", 
+            "text": "OPAL Episodes have an associated category. These categories are implemented as subclasses\nof  opal.core.episodes.EpisodeCategory . This class is an OPAL  DiscoverableFeature \nand thus inherits all of the core Discoverable API.  The category of any episode can be accessed as the  .category  property of any  Episode  instance.", 
+            "title": "EpisodeCategory"
+        }, 
+        {
+            "location": "/reference/episode_categories/#properties", 
+            "text": "", 
+            "title": "Properties"
+        }, 
+        {
+            "location": "/reference/episode_categories/#episodecategorydetail_template", 
+            "text": "This is the template used within the  Patient Detail View  to display\ninformation about episodes of this category.", 
+            "title": "EpisodeCategory.detail_template"
+        }, 
+        {
+            "location": "/reference/episode_categories/#episodecategorystart", 
+            "text": "Returns the Start date of this episode type.", 
+            "title": "EpisodeCategory.start"
+        }, 
+        {
+            "location": "/reference/episode_categories/#episodecategorystop", 
+            "text": "Returns the Stop date of this episode type", 
+            "title": "EpisodeCategory.stop"
+        }, 
+        {
+            "location": "/reference/episode_categories/#inpatientepisode", 
+            "text": "This is the defualt EpisodeCategory imlpementation - applications started with OPAL's scaffolding\nscripts will use this as the  OpalApplication.default_episode_category . It sets the detail template to detail/inpatient.html", 
+            "title": "InpatientEpisode"
         }, 
         {
             "location": "/reference/patient/", 
@@ -1037,23 +1067,23 @@
         }, 
         {
             "location": "/reference/opal_application/", 
-            "text": "opal.application.OpalApplication\n\n\nThe base class for your main application entrypoints is opal.application.OpalApplication.\n\n\nYou must subclass this in order for OPAL to discover your application.\n\n\nIf you started your OPAL project via \n$ opal startproject yourproject\n then this will have been\ngenerated for you, and located in \nyourproject/yourproject/__init__.py\n\n\nschema_module\n\n\nflow_module\n\n\njavascripts\n\n\nactions\n\n\nmenuitems\n\n\nA list of items to add to the top level menu\n\n\ndefault_episode_category\n\n\nThe default category is either 'inpatient', but can be overridden in the \nOpalApplication\n subclass for your implementation.", 
+            "text": "opal.core.application\n\n\nOpalApplication\n\n\nThe base class for your main application entrypoints is opal.core.application.OpalApplication.\n\n\nYou must subclass this in order for OPAL to discover your application.\n\n\nIf you started your OPAL project via \n$ opal startproject yourproject\n then this will have been\ngenerated for you, and located in \nyourproject/yourproject/__init__.py\n\n\nschema_module\n\n\njavascripts\n\n\nactions\n\n\nmenuitems\n\n\nA list of items to add to the top level menu\n\n\ndefault_episode_category\n\n\nThe default category is either 'inpatient', but can be overridden in the \nOpalApplication\n subclass for your implementation.", 
             "title": "OpalApplication"
         }, 
         {
-            "location": "/reference/opal_application/#opalapplicationopalapplication", 
-            "text": "The base class for your main application entrypoints is opal.application.OpalApplication.  You must subclass this in order for OPAL to discover your application.  If you started your OPAL project via  $ opal startproject yourproject  then this will have been\ngenerated for you, and located in  yourproject/yourproject/__init__.py", 
-            "title": "opal.application.OpalApplication"
+            "location": "/reference/opal_application/#opalcoreapplication", 
+            "text": "", 
+            "title": "opal.core.application"
+        }, 
+        {
+            "location": "/reference/opal_application/#opalapplication", 
+            "text": "The base class for your main application entrypoints is opal.core.application.OpalApplication.  You must subclass this in order for OPAL to discover your application.  If you started your OPAL project via  $ opal startproject yourproject  then this will have been\ngenerated for you, and located in  yourproject/yourproject/__init__.py", 
+            "title": "OpalApplication"
         }, 
         {
             "location": "/reference/opal_application/#schema_module", 
             "text": "", 
             "title": "schema_module"
-        }, 
-        {
-            "location": "/reference/opal_application/#flow_module", 
-            "text": "", 
-            "title": "flow_module"
         }, 
         {
             "location": "/reference/opal_application/#javascripts", 
@@ -1429,6 +1459,96 @@
             "location": "/reference/search_js_services/#filterresource", 
             "text": "Angular $resource for Filter objects.", 
             "title": "FilterResource"
+        }, 
+        {
+            "location": "/reference/changelog/", 
+            "text": "0.7.0 (Major Release)\n\n\n Episode Categories\n\n\nRefactors EpisodeCategory to be a discoverable feature. Renames \nEpisode.category\n -\n \nEpisode.category_name\n.\n\n\n0.6.0 (Major Release)\n\n\nDetail views\n\n\nMoves from episode oriented detail to patient oriented detail.\n(All episodes plus x-episode views are available from a patient detail screen)\n\n\nTagging\n\n\nAs a performance optimisation for the frequent access of historic tags, untagging\nan episode simply renders the tag inactive rather than deleting it and relying on\nDjango-Reversion for access to historical data.\n\n\nDate Formatting\n\n\nWe now expect 'd/m/y' date formatting by default.\n\n\nPatient lists\n\n\nLists are now declarative, and separate from teams. They are implemented as\nsubclasses of opal.core.patient_lists.PatientList.\n\n\nForms vs. Modals\n\n\nIntroduces a distinction between a form and a modal.\nBy default, we now use forms for subrecords, only overriding the modal if there\nis something we want to do differently specifically in the modal.\n\n\nCommand line tools\n\n\nAdds $opal checkout for switching between applications or application versions.\n\n\n Upgrade instructions:\n\n\n\n\nUpdate your settings to use the new date formats.\n\n\n\n\n0.5.5 (Minor Release)\n\n\nChanges the way old tags are handled.\n\n\nTags are no longer deleted episodes, rather they're marked as archived.\n\n\n0.5.4 (Minor Release)\n\n\n\n\nInclude local storage\n\n\n\n\n0.5.3 (Minor Release)\n\n\n\n\nSpeed up loading of the lookup lists\n\n\nFix pagination issues in search\n\n\nSpeed up loading of many to many fields\n\n\nIncrease test coverage\n\n\nAdd some extra help fields to {% forms %} helpers\n\n\nFixes bug with $rootScope.open_modal() where keystrokes were being intercepted\n\n\n\n\n0.5.2 (Minor Release)\n\n\nSpeed improvements on page load\nallow us to only show record panels if a record of that type exists\ndisable modal buttons while saving\n\n\n0.5.1 (Minor Release)\n\n\nMinor bug fixes\n\n\n0.5 (Major release)\n\n\nSearch\n\n\nComplete re-design of Search interface to provide a single search box on every page and pagination for resulta.\nPuts in place a pluggable interface that could be swapped out for e.g. ElasticSearch.\nNew Service for PatientSummary()\n\n\nAnalytics\n\n\nMoves Analytics integration into OPAL core with the ability to blacklist pages that should never be reported\n\n\nList view\n\n\nRemoved old spreadsheet-style cell based navigation and moved to row-wise nav with clearer highlighting of the active row.\nUpdated scrolling and loading behaviour to snap to viewport and not display the page build.\n\n\nSubrecord metadata\n\n\nAdded four new utility fields to Patient and Episode subrecords:\n\n\ncreated_by, updated_by, created, updated\n\n\nSelect2 and list fields\n\n\nAdded support for select2 as an input widget and Subrecord fields that can be lists of things.\n\n\nAlso\n\n\nNumerous small bugfixes.\nRefactoring of the models package into a models module.\nUpdated Underscore.js -\n 1.8.3\nUpdated Angular.js -\n 1.3.11\n\n\n0.4.3 (Minor release)\n\n\nRefactors opal.models to be a models.py file rather than a package.\nAdds several improvements to forms helpers -\n Help argument, other argument to select.\n\n\nUpdates dependency graph:\n\n\n\n\nAngular-strap -\n 2.3.1\n\n\n\n\n0.4.2 (Minor release)\n\n\nUpgrades dependency graph:\n\n\n\n\nDjango -\n 1.8.3\n\n\nDjango-reversion -\n 1.8.7\n\n\njQuery -\n 1.11.3\n\n\nD3 -\n 3.5.6\n\n\nC4 -\n 0.4.10\n\n\n\n\nSouth has been removed, now using django migrations\n\n\n0.4.1 (Bugfix release)\n\n\nFixes some search results appearing duplicated.\n\n\n0.4 (Major release)\n\n\nNew Design\n\n\nCompletely re-designed UI following extensive user research and multiple iterations.\n\n\nManagementcommands and scaffolding\n\n\nFeatures the opal command line tool for common administrative tasks\nhttp://opal.openhealthcare.org.uk/docs/guides/command_line_tool/\n\n\n Form helpers templatetag library\n\n\nNew template library for consistent form controls in line with our new interface guidelines\nhttp://opal.openhealthcare.org.uk/docs/reference/form_templatetags/\n\n\nAPI Documentation\n\n\nOPAL JSON APIs are now fully self-documenting for all updated instances\nhttp://opal.openhealthcare.org.uk/docs/guides/json_api/\n\n\n0.3 (Major release)\n\n\nBugfixes, significant flexibility in template customisability.\n\n\nMinor UI updates.\n\n\n0.2.2 (Bugfix release)\n\n\nNumerous small bugfixes.\n\n\nAdds the concept of undischarging patients.\n\n\n0.2.1\n\n\nNumerous small bugfixes.\n\n\n0.2.0\n\n\nSearch overhaul - introduces advanced searches.\n\n\n0.1.1\n\n\nInitial public release", 
+            "title": "Changelog"
+        }, 
+        {
+            "location": "/reference/changelog/#070-major-release", 
+            "text": "Episode Categories  Refactors EpisodeCategory to be a discoverable feature. Renames  Episode.category  -   Episode.category_name .", 
+            "title": "0.7.0 (Major Release)"
+        }, 
+        {
+            "location": "/reference/changelog/#060-major-release", 
+            "text": "Detail views  Moves from episode oriented detail to patient oriented detail.\n(All episodes plus x-episode views are available from a patient detail screen)  Tagging  As a performance optimisation for the frequent access of historic tags, untagging\nan episode simply renders the tag inactive rather than deleting it and relying on\nDjango-Reversion for access to historical data.  Date Formatting  We now expect 'd/m/y' date formatting by default.  Patient lists  Lists are now declarative, and separate from teams. They are implemented as\nsubclasses of opal.core.patient_lists.PatientList.  Forms vs. Modals  Introduces a distinction between a form and a modal.\nBy default, we now use forms for subrecords, only overriding the modal if there\nis something we want to do differently specifically in the modal.  Command line tools  Adds $opal checkout for switching between applications or application versions.   Upgrade instructions:   Update your settings to use the new date formats.", 
+            "title": "0.6.0 (Major Release)"
+        }, 
+        {
+            "location": "/reference/changelog/#055-minor-release", 
+            "text": "Changes the way old tags are handled.  Tags are no longer deleted episodes, rather they're marked as archived.", 
+            "title": "0.5.5 (Minor Release)"
+        }, 
+        {
+            "location": "/reference/changelog/#054-minor-release", 
+            "text": "Include local storage", 
+            "title": "0.5.4 (Minor Release)"
+        }, 
+        {
+            "location": "/reference/changelog/#053-minor-release", 
+            "text": "Speed up loading of the lookup lists  Fix pagination issues in search  Speed up loading of many to many fields  Increase test coverage  Add some extra help fields to {% forms %} helpers  Fixes bug with $rootScope.open_modal() where keystrokes were being intercepted", 
+            "title": "0.5.3 (Minor Release)"
+        }, 
+        {
+            "location": "/reference/changelog/#052-minor-release", 
+            "text": "Speed improvements on page load\nallow us to only show record panels if a record of that type exists\ndisable modal buttons while saving", 
+            "title": "0.5.2 (Minor Release)"
+        }, 
+        {
+            "location": "/reference/changelog/#051-minor-release", 
+            "text": "Minor bug fixes", 
+            "title": "0.5.1 (Minor Release)"
+        }, 
+        {
+            "location": "/reference/changelog/#05-major-release", 
+            "text": "Search  Complete re-design of Search interface to provide a single search box on every page and pagination for resulta.\nPuts in place a pluggable interface that could be swapped out for e.g. ElasticSearch.\nNew Service for PatientSummary()  Analytics  Moves Analytics integration into OPAL core with the ability to blacklist pages that should never be reported  List view  Removed old spreadsheet-style cell based navigation and moved to row-wise nav with clearer highlighting of the active row.\nUpdated scrolling and loading behaviour to snap to viewport and not display the page build.  Subrecord metadata  Added four new utility fields to Patient and Episode subrecords:  created_by, updated_by, created, updated  Select2 and list fields  Added support for select2 as an input widget and Subrecord fields that can be lists of things.  Also  Numerous small bugfixes.\nRefactoring of the models package into a models module.\nUpdated Underscore.js -  1.8.3\nUpdated Angular.js -  1.3.11", 
+            "title": "0.5 (Major release)"
+        }, 
+        {
+            "location": "/reference/changelog/#043-minor-release", 
+            "text": "Refactors opal.models to be a models.py file rather than a package.\nAdds several improvements to forms helpers -  Help argument, other argument to select.  Updates dependency graph:   Angular-strap -  2.3.1", 
+            "title": "0.4.3 (Minor release)"
+        }, 
+        {
+            "location": "/reference/changelog/#042-minor-release", 
+            "text": "Upgrades dependency graph:   Django -  1.8.3  Django-reversion -  1.8.7  jQuery -  1.11.3  D3 -  3.5.6  C4 -  0.4.10   South has been removed, now using django migrations", 
+            "title": "0.4.2 (Minor release)"
+        }, 
+        {
+            "location": "/reference/changelog/#041-bugfix-release", 
+            "text": "Fixes some search results appearing duplicated.", 
+            "title": "0.4.1 (Bugfix release)"
+        }, 
+        {
+            "location": "/reference/changelog/#04-major-release", 
+            "text": "New Design  Completely re-designed UI following extensive user research and multiple iterations.  Managementcommands and scaffolding  Features the opal command line tool for common administrative tasks\nhttp://opal.openhealthcare.org.uk/docs/guides/command_line_tool/   Form helpers templatetag library  New template library for consistent form controls in line with our new interface guidelines\nhttp://opal.openhealthcare.org.uk/docs/reference/form_templatetags/  API Documentation  OPAL JSON APIs are now fully self-documenting for all updated instances\nhttp://opal.openhealthcare.org.uk/docs/guides/json_api/", 
+            "title": "0.4 (Major release)"
+        }, 
+        {
+            "location": "/reference/changelog/#03-major-release", 
+            "text": "Bugfixes, significant flexibility in template customisability.  Minor UI updates.", 
+            "title": "0.3 (Major release)"
+        }, 
+        {
+            "location": "/reference/changelog/#022-bugfix-release", 
+            "text": "Numerous small bugfixes.  Adds the concept of undischarging patients.", 
+            "title": "0.2.2 (Bugfix release)"
+        }, 
+        {
+            "location": "/reference/changelog/#021", 
+            "text": "Numerous small bugfixes.", 
+            "title": "0.2.1"
+        }, 
+        {
+            "location": "/reference/changelog/#020", 
+            "text": "Search overhaul - introduces advanced searches.", 
+            "title": "0.2.0"
+        }, 
+        {
+            "location": "/reference/changelog/#011", 
+            "text": "Initial public release", 
+            "title": "0.1.1"
         }, 
         {
             "location": "/reference/upgrading/", 
