@@ -343,11 +343,28 @@ MyFeature.get('red_feature') # -&gt; RedFeature
 </code></pre>
 <h3 id="sortable-features">Sortable Features</h3>
 <p>We can make our feature sortable via an <code>order</code> property by including
- <code>discoverable.SortableFeature</code> as a parent class.</p>
-<pre><code> class MyFeature(discoverable.DiscoverableFeature, discoverable.SortableFeature):
+ <code>discoverable.SortableFeature</code> as a parent class. This will ensure that <code>MyFeature.list()</code>
+ respects the <code>.order</code> number of any subclass.</p>
+<pre><code>class MyFeature(discoverable.DiscoverableFeature,
+                 discoverable.SortableFeature):
      module_name = 'myfeature'
+
+class ThirdFeature(MyFeature):
+    order = 3
+
+class FirstFeature(MyFeature):
+    order = 1
+
+class SecondFeature(MyFeature):
+    order = 2
+
+for f in MyFeature.list():
+    print f.order, f
+
+# &lt;class '*.*.FirstFeature'&gt;, 1
+# &lt;class '*.*.SecondFeature'&gt;, 2
+# &lt;class '*.*.ThirdFeature'&gt;, 3
 </code></pre>
-<p>This will ensure that <code>MyFeature.list()</code> respects the <code>.order</code> number of any subclass.</p>
 <h3 id="restrictable-features">Restrictable Features</h3>
 <p>We can ensure that only particular users can access a feature by including
  <code>discoverable.RestrictableFeature</code> as a parent class, and implementing the <code>visible_to</code>
