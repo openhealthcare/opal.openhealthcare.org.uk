@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>Plugins - OPAL</title>
+	<title>Archetypes - OPAL</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -95,8 +95,8 @@
                 <!--             <a href="../command_line_tool/">Command Line tool</a> -->
                 <!--         </li> -->
                 <!--      -->
-                <!--         <li class="active"> -->
-                <!--             <a href="./">Plugins</a> -->
+                <!--         <li > -->
+                <!--             <a href="../plugins/">Plugins</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -107,8 +107,8 @@
                 <!--             <a href="../datamodel/">Data Model</a> -->
                 <!--         </li> -->
                 <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../archetypes/">Archetypes</a> -->
+                <!--         <li class="active"> -->
+                <!--             <a href="./">Archetypes</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -262,12 +262,12 @@
                 </a>
               </li>
                 <!-- <li > -->
-                <!--     <a rel="next" href="../command_line_tool/"> -->
+                <!--     <a rel="next" href="../datamodel/"> -->
                 <!--         <i class="fa fa-arrow-left"></i> Previous -->
                 <!--     </a> -->
                 <!-- </li> -->
                 <!-- <li > -->
-                <!--     <a rel="prev" href="../plugins_list/"> -->
+                <!--     <a rel="prev" href="../flow/"> -->
                 <!--         Next <i class="fa fa-arrow-right"></i> -->
                 <!--     </a> -->
                 <!-- </li> -->
@@ -282,121 +282,503 @@
   <h3>Contents</h3>
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#writing-plugins">Writing Plugins</a></li>
+        <li class="main active"><a href="#core-clinical-archetypes">Core Clinical Archetypes</a></li>
         
-            <li><a href="#getting-started-with-your-plugin">Getting started with your plugin</a></li>
+            <li><a href="#common-metadata-fields">Common Metadata fields</a></li>
         
-            <li><a href="#adding-discoverable-functionality">Adding Discoverable Functionality</a></li>
+            <li><a href="#patient-subrecords">Patient Subrecords</a></li>
         
-            <li><a href="#defining-new-flows">Defining new flows</a></li>
-        
-            <li><a href="#adding-urls">Adding URLS</a></li>
-        
-            <li><a href="#adding-javascript">Adding Javascript</a></li>
-        
-            <li><a href="#adding-apis">Adding APIs</a></li>
-        
-            <li><a href="#adding-actions-to-the-sidebar">Adding Actions to the sidebar</a></li>
-        
-            <li><a href="#adding-dependencies-globally-to-our-angular-modules">Adding dependencies globally to our angular modules</a></li>
-        
-            <li><a href="#installing-plugins">Installing plugins</a></li>
-        
-            <li><a href="#adding-extra-markup-to-the-tag">Adding extra markup to the  tag</a></li>
+            <li><a href="#episode-subrecords">Episode Subrecords</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h2 id="writing-plugins">Writing Plugins</h2>
-<p>OPAL Plugins are Django apps on the server side, and collections of angular.js
-models for the client.</p>
-<h3 id="getting-started-with-your-plugin">Getting started with your plugin</h3>
-<p>The OPAL commandline tool will bootstrap your plugin for you - just run:</p>
-<pre><code>$ opal startplugin yourcoolplugin
-</code></pre>
-<h3 id="adding-discoverable-functionality">Adding Discoverable Functionality</h3>
-<p>A common pattern for plugins is to add functionality that other plugins or applications
-can use by inheriting a base class that you define in a file with a magic name. (In
-much the same way that Django provides models.)</p>
-<p>For example, if you're creating an appointments plugin that helps people to book and schedule
-appointments in clinics, you would create a base <code>Clinic</code> class that can be subclassed to
-create specific clinics.</p>
-<pre><code>class Clinic(opal.core.discoverable.DiscoverableFeature):
-    module_name = 'clinics'
-</code></pre>
-<p>We can then create clinics in any installed app, and they will be available from <code>Clinic.list()</code></p>
-<pre><code>class OutpatientsClinic(Clinic):
-    name = 'Outpatients'
-
-    # Add your custom clnic functionality here e.g.
-    def book_appointment(self, date, patient):
-        pass
-
-
-Clinic.list()
-# -&gt; Generator including OutPatientsClinic
-
-Clinic.get('outpatients)
-# -&gt; OutpatientsClinic
-</code></pre>
-<h3 id="defining-new-flows">Defining new flows</h3>
-<p>Plugins can define flows. They should return a dictionary of flows from the
-flows() method of the plugin class.</p>
-<h3 id="adding-urls">Adding URLS</h3>
-<p>Add an urls.py, then add to your plugin class as YourPlugin.urls</p>
-<p>Naturally, these can point to views in your plugin!</p>
-<h3 id="adding-javascript">Adding Javascript</h3>
-<p>add to static, then add to your plugin class as YourPlugin.javascripts</p>
-<p>There are some restricted namespaces for these...</p>
-<h3 id="adding-apis">Adding APIs</h3>
-<p>OPAL uses Django Rest Framweork to provide APIs, and you may add to these from your plugin.
-By convention, APIs live in <code>yourplugin/api.py</code>. You are expected to provide a
-<code>rest_framework.viewsets.ViewSet</code> subclass, which you then detail as the <code>.apis</code> attribute
-of your plugin.</p>
-<pre><code># yourplugin/api.py
-from rest_framework.viewsets import ViewSet
-from rest_framework.response import Response
-
-class PingViewSet(ViewSet):
-    def list(self, request): return Response('pong')
-
-# yourplugin/__init__.py
-from opal.core.plugins import OpalPlugin
-from yourplugin import api
-
-class YourPlugin(OpalPlugin):
-    apis = [
-        ('ping', api.PingViewSet)
-    ]
-</code></pre>
-<p>These APIs will then be available and self-documenting fom the standard OPAL url <code>/api/v0.1/</code></p>
-<h3 id="adding-actions-to-the-sidebar">Adding Actions to the sidebar</h3>
-<p>Actions can be added to the sidebar by setting the <code>actions</code> attribute of your plugin.
-Actions is expected to be an iterable of strings which are templates to be included in
-the sidebar. By convention, actions will live in <code>./templates/actions/</code> .</p>
-<pre><code># __init__.py:
-class Plugin(OpalPlugin):
-    actions = ('actions/javascript_alert.html', 'actions/dummy_button.html')
-</code></pre>
-<p>And then in the template:</p>
-<pre><code>&lt;p ng-show="episode.category == 'YourEpisodeCategory'"&gt;
-  &lt;button class="btn btn-primary" ng-click="alert('Boom!')"&gt;
-    &lt;i href="fa fa-warning"&gt;&lt;/i&gt;
-    ALERT ME
-  &lt;/button&gt;
-&lt;/p&gt;
-</code></pre>
-<h3 id="adding-dependencies-globally-to-our-angular-modules">Adding dependencies globally to our angular modules</h3>
-<p>Dependencies listed in <code>angular_module_deps</code> will be added to all Angular modules (as long as they
-use the OPAL.module() API. If not, you're on your own. We could monkey patch angular.module, but we
-won't for now.</p>
-<h3 id="installing-plugins">Installing plugins</h3>
-<p>Add to installed apps
-Add to requirements if appropriate</p>
-<h3 id="adding-extra-markup-to-the-tag">Adding extra markup to the <head> tag</h3>
-<p>Any templates you define in the property .head_extra will be included in the <head></p></div>
+<h1 id="core-clinical-archetypes">Core Clinical Archetypes</h1>
+<p>OPAL ships with a wide range of core clinical concepts implemented as Abstract Subrecords.
+Applications that are generated via the <code>$ opal startproject</code> command will automatically
+contain concrete implementations of these models in the application.</p>
+<h2 id="common-metadata-fields">Common Metadata fields</h2>
+<p>All subrecords will contain the following fields, which are not repreated individually</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Length</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>created_by</td>
+<td>FK</td>
+<td>User ID</td>
+</tr>
+<tr>
+<td>created</td>
+<td>Date</td>
+<td></td>
+</tr>
+<tr>
+<td>updated_by</td>
+<td>FK User ID</td>
+<td></td>
+</tr>
+<tr>
+<td>update</td>
+<td>Date</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The details of each individual archetype are set out below:</p>
+<h2 id="patient-subrecords">Patient Subrecords</h2>
+<h3 id="demographics">Demographics</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Length</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hospital_number</td>
+<td>Char</td>
+<td>255</td>
+</tr>
+<tr>
+<td>nhs_number</td>
+<td>Char</td>
+<td>255</td>
+</tr>
+<tr>
+<td>date_of_birth</td>
+<td>Date</td>
+<td></td>
+</tr>
+<tr>
+<td>place_of_birth</td>
+<td>FKorFT(Destination)</td>
+<td></td>
+</tr>
+<tr>
+<td>ethnicity</td>
+<td>FKorFT(Ethnicity)</td>
+<td></td>
+</tr>
+<tr>
+<td>surname</td>
+<td>Char</td>
+<td>255</td>
+</tr>
+<tr>
+<td>first_name</td>
+<td>Char</td>
+<td>255</td>
+</tr>
+<tr>
+<td>middle_name</td>
+<td>Char</td>
+<td>255</td>
+</tr>
+<tr>
+<td>sex</td>
+<td>FKorFT(Gender)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="allergies">Allergies</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Length</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>drug</td>
+<td>FKorFT(Drug)</td>
+<td></td>
+</tr>
+<tr>
+<td>provisional</td>
+<td>Boolean</td>
+<td></td>
+</tr>
+<tr>
+<td>details</td>
+<td>Char</td>
+<td>255</td>
+</tr>
+</tbody>
+</table>
+<h2 id="episode-subrecords">Episode Subrecords</h2>
+<h3 id="location">Location</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Length</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>category</td>
+<td>Char</td>
+<td>255</td>
+</tr>
+<tr>
+<td>hospital</td>
+<td>Char</td>
+<td>255</td>
+</tr>
+<tr>
+<td>ward</td>
+<td>Char</td>
+<td>255</td>
+</tr>
+<tr>
+<td>bed</td>
+<td>Char</td>
+<td>255</td>
+</tr>
+</tbody>
+</table>
+<h3 id="treatment">Treatment</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Length</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>drug</td>
+<td>FKorFT(Drug)</td>
+<td></td>
+</tr>
+<tr>
+<td>dose</td>
+<td>Char</td>
+<td>255</td>
+</tr>
+<tr>
+<td>route</td>
+<td>FKorFT(Drugroute)</td>
+<td></td>
+</tr>
+<tr>
+<td>start_date</td>
+<td>Date</td>
+<td></td>
+</tr>
+<tr>
+<td>end_date</td>
+<td>Date</td>
+<td></td>
+</tr>
+<tr>
+<td>frequency</td>
+<td>FKorFT(Drugfreq)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="diagnosis">Diagnosis</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Length</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>condition</td>
+<td>FKorFT(Condition)</td>
+<td></td>
+</tr>
+<tr>
+<td>provisional</td>
+<td>Boolean</td>
+<td></td>
+</tr>
+<tr>
+<td>details</td>
+<td>Char</td>
+<td>255</td>
+</tr>
+<tr>
+<td>date_of_diagnosis</td>
+<td>Date</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="pastmedicalhistory">PastMedicalHistory</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Length</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>condition</td>
+<td>FKorFT(Condition)</td>
+<td></td>
+</tr>
+<tr>
+<td>year</td>
+<td>Char</td>
+<td>4</td>
+</tr>
+<tr>
+<td>details</td>
+<td>Char</td>
+<td>255</td>
+</tr>
+</tbody>
+</table>
+<h3 id="investigation">Investigation</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Length</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>test</td>
+<td>Char</td>
+<td>255</td>
+</tr>
+<tr>
+<td>date_ordered</td>
+<td>Date</td>
+<td></td>
+</tr>
+<tr>
+<td>details</td>
+<td>Char</td>
+<td>255</td>
+</tr>
+<tr>
+<td>microscopy</td>
+<td>Char</td>
+<td>255</td>
+</tr>
+<tr>
+<td>organism</td>
+<td>Char</td>
+<td>255</td>
+</tr>
+<tr>
+<td>sensitive_antibiotics</td>
+<td>Char</td>
+<td>255</td>
+</tr>
+<tr>
+<td>resistant_antibiotics</td>
+<td>Char</td>
+<td>255</td>
+</tr>
+<tr>
+<td>result</td>
+<td>Char</td>
+<td>255</td>
+</tr>
+<tr>
+<td>igm</td>
+<td>Char</td>
+<td>20</td>
+</tr>
+<tr>
+<td>igg</td>
+<td>Char</td>
+<td>20</td>
+</tr>
+<tr>
+<td>vca_igm</td>
+<td>Char</td>
+<td>20</td>
+</tr>
+<tr>
+<td>vca_igg</td>
+<td>Char</td>
+<td>20</td>
+</tr>
+<tr>
+<td>ebna_igg</td>
+<td>Char</td>
+<td>20</td>
+</tr>
+<tr>
+<td>hbsag</td>
+<td>Char</td>
+<td>20</td>
+</tr>
+<tr>
+<td>anti_hbs</td>
+<td>Char</td>
+<td>20</td>
+</tr>
+<tr>
+<td>anti_hbcore_igm</td>
+<td>Char</td>
+<td>20</td>
+</tr>
+<tr>
+<td>anti_hbcore_igg</td>
+<td>Char</td>
+<td>20</td>
+</tr>
+<tr>
+<td>rpr</td>
+<td>Char</td>
+<td>20</td>
+</tr>
+<tr>
+<td>tppa</td>
+<td>Char</td>
+<td>20</td>
+</tr>
+<tr>
+<td>viral_load</td>
+<td>Char</td>
+<td>20</td>
+</tr>
+<tr>
+<td>parasitaemia</td>
+<td>Char</td>
+<td>20</td>
+</tr>
+<tr>
+<td>hsv</td>
+<td>Char</td>
+<td>20</td>
+</tr>
+<tr>
+<td>vzv</td>
+<td>Char</td>
+<td>20</td>
+</tr>
+<tr>
+<td>syphilis</td>
+<td>Char</td>
+<td>20</td>
+</tr>
+<tr>
+<td>c_difficile_antigen</td>
+<td>Char</td>
+<td>20</td>
+</tr>
+<tr>
+<td>c_difficile_toxin</td>
+<td>Char</td>
+<td>20</td>
+</tr>
+<tr>
+<td>species</td>
+<td>Char</td>
+<td>20</td>
+</tr>
+<tr>
+<td>hsv_1</td>
+<td>Char</td>
+<td>20</td>
+</tr>
+<tr>
+<td>hsv_2</td>
+<td>Char</td>
+<td>20</td>
+</tr>
+<tr>
+<td>enterovirus</td>
+<td>Char</td>
+<td>20</td>
+</tr>
+<tr>
+<td>cmv</td>
+<td>Char</td>
+<td>20</td>
+</tr>
+<tr>
+<td>ebv</td>
+<td>Char</td>
+<td>20</td>
+</tr>
+<tr>
+<td>influenza_a</td>
+<td>Char</td>
+<td>20</td>
+</tr>
+<tr>
+<td>influenza_b</td>
+<td>Char</td>
+<td>20</td>
+</tr>
+<tr>
+<td>parainfluenza</td>
+<td>Char</td>
+<td>20</td>
+</tr>
+<tr>
+<td>metapneumovirus</td>
+<td>Char</td>
+<td>20</td>
+</tr>
+<tr>
+<td>rsv</td>
+<td>Char</td>
+<td>20</td>
+</tr>
+<tr>
+<td>adenovirus</td>
+<td>Char</td>
+<td>20</td>
+</tr>
+<tr>
+<td>norovirus</td>
+<td>Char</td>
+<td>20</td>
+</tr>
+<tr>
+<td>rotavirus</td>
+<td>Char</td>
+<td>20</td>
+</tr>
+<tr>
+<td>giardia</td>
+<td>Char</td>
+<td>20</td>
+</tr>
+<tr>
+<td>entamoeba_histolytica</td>
+<td>Char</td>
+<td>20</td>
+</tr>
+<tr>
+<td>cryptosporidium</td>
+<td>Char</td>
+<td>20</td>
+</tr>
+</tbody>
+</table></div>
         </div>
 
         <footer class="col-md-12">
