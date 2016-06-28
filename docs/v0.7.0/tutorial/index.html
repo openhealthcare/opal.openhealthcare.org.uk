@@ -112,13 +112,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-<<<<<<< HEAD
                 <!--             <a href="../guides/working_with_data_in_angular/">Angular Models</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-=======
->>>>>>> gh-pages
                 <!--             <a href="../guides/flow/">Flow</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -341,12 +338,11 @@ a Djano project, some core datamodels (complete with JSON APIs) and a general ap
     requirements.txt        # Requirements file ready for your project
 
     data/                   # A dummy directory for fixtures
+        lookuplists/        # A dummy directory for reference data
 
     mynewapp/               # The actual python package for your application
          __init__.py
-        flow.py             # How patients move through your services
         models.py           # Data models for your application
-        schema.py           # The list schemas for your application
         settings.py         # Helpfully tweaked Django settings
         tests.py            # Dummy unittests
         urls.py             # Django Urlconf
@@ -360,9 +356,10 @@ a Djano project, some core datamodels (complete with JSON APIs) and a general ap
 </code></pre>
 <h3 id="test-it-out">Test it out</h3>
 <p>The scaffolding step has generated you a working project - so let's check that out</p>
-<pre><code>cd mynewapp
+<pre><code class="bash">cd mynewapp
 python manage.py runserver
 </code></pre>
+
 <p>If you now visit <code>http://localhost:8000</code> in your browser, you should see the standard login screen:</p>
 <p><img src="/img/tutorial-login.png" style="margin: 12px auto; border: 1px solid black;"/></p>
 <p>The scaffolding step created you a superuser, so try logging in with the credentials:</p>
@@ -442,6 +439,7 @@ which provides us with some extra functionality:</p>
 <li>A relationship to an episode, linked to a patient</li>
 <li>JSON APIs for creating, retrieving and updating it</li>
 <li>Ensuring that the OPAL Angular layer knows it exists</li>
+<li>Some metadata fields, like created, updated, created_by, updated_by</li>
 </ul>
 <p>Next, we're going to let OPAL take care of the boilerplate that we'll need to use this
 model in our application. From the commandline:</p>
@@ -450,8 +448,9 @@ model in our application. From the commandline:</p>
 <p>Let's take a look at what that did:</p>
 <ul>
 <li>It created a Django migration</li>
+<li>It ran that migration for you</li>
 <li>It created a detail template <code>mynewapp/templates/records/todo_item.html</code></li>
-<li>It created a form template <code>mynewapp/templates/modals/todo_item_modal.html</code></li>
+<li>It created a form template <code>mynewapp/templates/forms/todo_item_forml.html</code></li>
 </ul>
 <h4 id="detail-template">Detail template</h4>
 <p>The default detail template simply displays each field on a new line:</p>
@@ -464,33 +463,49 @@ model in our application. From the commandline:</p>
 <p>The default form template will display each field on a new line, with some basic
 appropriate form field types set.
 It uses the OPAL form helpers templatetag library.</p>
-<pre><code>{% extends 'modal_base.html' %}
-{% load forms %}
-{% block modal_body %}
-  &lt;form class="form-horizontal"&gt;
-   {% input  label="Job" model="editing.job"  %}
-   {% datepicker  label="Due Date" model="editing.due_date"  %}
-   {% textarea  label="Details" model="editing.details"  %}
-   {% checkbox  label="Completed" model="editing.completed"  %}
-  &lt;/form&gt;
-{% endblock %}
+<pre><code class="html">{% load forms %}
+{% input  field=&quot;TODOItem.job&quot;  %}
+{% datepicker  field=&quot;TODOItem.due_date&quot;  %}
+{% textarea  field=&quot;TODOItem.details&quot;  %}
+{% checkbox  field=&quot;TODOItem.completed&quot;  %}
 </code></pre>
+
 <h4 id="adding-todos-to-our-team-lists">Adding TODOs to our Team Lists</h4>
 <p>Now let's add our TODO list model as a column in the Spreadsheet-like list view.</p>
-<p>The columns for team lists are set in <code>mynewapp/schema.py</code> as a list of models.</p>
-<p>Open mynewapp/schemas.py and edit the <code>list_columns</code> variable to add <code>models.TODOItem</code> as
-the final item:</p>
-<pre><code>list_columns = [
-    models.Demographics,
-    models.Location,
-    models.Allergies,
-    models.Diagnosis,
-    models.PastMedicalHistory,
-    models.Treatment,
-    models.Investigation,
-    models.TODOItem
-]
+<p>Patient Lists in OPAL are subclasses of <code>opal.core.patient_lists.PatientList</code>, and
+they live in <code>patient_lists.py</code> files of our Django apps.</p>
+<blockquote><small>
+Technically these can live anywhere you like - although if you put them in other places
+you're responsible for making sure that they're imported at startup.
+<br />OPAL guarantees
+to autodiscover lists in `app.patient_list` modules.
+</small></blockquote>
+
+<p>You can see the basic list that the OPAL application scaffold created for you in
+<code>yournewapp/patient_lists.py</code>.</p>
+<pre><code class="python">class AllPatientsList(core.patient_lists.PatientList):
+    display_name = 'All Patients'
+
+    schema = [
+        models.Demographics,
+        models.Diagnosis,
+        models.Treatment
+    ]
+
+    def get_queryset(self):
+        return Episode.objects.all()
 </code></pre>
+
+<p>The columns for lists are set in the <code>schema</code> property of the PatientList class. To add
+our TODO model to the list, just add the model to the schema:</p>
+<pre><code class="python">    schema = [
+        models.Demographics,
+        models.Diagnosis,
+        models.Treatment,
+        models.TODOItem
+    ]
+</code></pre>
+
 <p>Refresh the lists page in your browser, and you'll see your new column on the end - add a
 TODO item, noting how we automatically get appropriate form types like datepickers and
 checkboxes.</p>
@@ -519,7 +534,7 @@ or unique identifier:</p>
 <h4 id="detail-views">Detail views</h4>
 <p>We also have a detail view for our patients, which you can access via search results. This
 view will typically allow for a more detailed display and editing of all the events
-comprising an activity of care than is available on the list page.</p>
+comprising a patient's care than is available on the list page.</p>
 <p><img src="/img/detail.png" style="margin: 12px auto; border: 1px solid black; width: 600px;"/></p>
 <h4 id="json-apis">JSON APIs</h4>
 <p>OPAL automatically creates self-documenting JSON APIs for your interacting with the data

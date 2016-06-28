@@ -19,5 +19,5 @@ task :docs do
 
   sh "git add ."
   sh "git commit -a -m 'Rake:: Add newly generated docs to site.'"
-  sh "git push origin gh-pages"
+#  sh "git push origin gh-pages"
 end
