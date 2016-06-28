@@ -12,12 +12,12 @@
         }, 
         {
             "location": "/installation/", 
-            "text": "Installing OPAL\n\n\nInstallation should be simple.\n\n\nStep 1: The Prerequisites\n\n\nBefore you install OPAL, you'll need to make sure that you have \n\nPython\n and \npip\n\ninstalled on your system.\n\n\nLet's just check that you do:\n\n\n$ python --version\nPython 2.7.5\n$ pip --version\npip 1.5.6\n\n\n\nStep 2: Use Pip\n\n\nNow we can install OPAL using pip:\n\n\n$ pip install opal\n\n\n\nYou should now have the \nopal\n commandline tools installed.\n\n\nLet's just check that you do:\n\n\n$ opal --version\nOPAL 0.6.0\n\n\n\nStep 3: There is no step 3.\n\n\nMaybe make yourself somme tea \n then try the \nTutorial\n instead ?", 
+            "text": "Installing OPAL\n\n\nInstallation should be simple.\n\n\nStep 1: The Prerequisites\n\n\nBefore you install OPAL, you'll need to make sure that you have\n\nPython\n and \npip\n\ninstalled on your system.\n\n\nLet's just check that you do:\n\n\n$ python --version\nPython 2.7.5\n$ pip --version\npip 1.5.6\n\n\n\nStep 2: Use Pip\n\n\nNow we can install OPAL using pip:\n\n\n$ pip install opal\n\n\n\nYou should now have the \nopal\n commandline tools installed.\n\n\nLet's just check that you do:\n\n\n$ opal --version\nOPAL 0.6.0\n\n\n\nStep 3: There is no step 3.\n\n\nMaybe make yourself some tea \n then try the \nTutorial\n instead ?", 
             "title": "Installation"
         }, 
         {
             "location": "/installation/#installing-opal", 
-            "text": "Installation should be simple.  Step 1: The Prerequisites  Before you install OPAL, you'll need to make sure that you have  Python  and  pip \ninstalled on your system.  Let's just check that you do:  $ python --version\nPython 2.7.5\n$ pip --version\npip 1.5.6  Step 2: Use Pip  Now we can install OPAL using pip:  $ pip install opal  You should now have the  opal  commandline tools installed.  Let's just check that you do:  $ opal --version\nOPAL 0.6.0  Step 3: There is no step 3.  Maybe make yourself somme tea   then try the  Tutorial  instead ?", 
+            "text": "Installation should be simple.  Step 1: The Prerequisites  Before you install OPAL, you'll need to make sure that you have Python  and  pip \ninstalled on your system.  Let's just check that you do:  $ python --version\nPython 2.7.5\n$ pip --version\npip 1.5.6  Step 2: Use Pip  Now we can install OPAL using pip:  $ pip install opal  You should now have the  opal  commandline tools installed.  Let's just check that you do:  $ opal --version\nOPAL 0.6.0  Step 3: There is no step 3.  Maybe make yourself some tea   then try the  Tutorial  instead ?", 
             "title": "Installing OPAL"
         }, 
         {
