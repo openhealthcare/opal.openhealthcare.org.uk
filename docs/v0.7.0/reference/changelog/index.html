@@ -108,6 +108,14 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../guides/archetypes/">Archetypes</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/working_with_data_in_angular/">Angular Models</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../guides/flow/">Flow</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -335,7 +343,14 @@
 
 <h3 id="070-major-release">0.7.0 (Major Release)</h3>
 <p><strong> Episode Categories</strong></p>
-<p>Refactors EpisodeCategory to be a discoverable feature. Renames <code>Episode.category</code> -&gt; <code>Episode.category_name</code>.</p>
+<p>Refactors EpisodeCategory to be a discoverable feature.</p>
+<p>Renames <code>Episode.category</code> -&gt; <code>Episode.category_name</code>.</p>
+<p><strong> Episode JSON API</strong></p>
+<p>The Restful Episode JSON API previously available at <code>/episode/:pk/</code> is now moved into
+<code>/api/v0.1/episode/:pk/</code> for consistency with the rest of our JSON APIs.
+The OPAL Angular layer has been updated to reflect this, and
+should handle the transition seamlessly, but code calling the API directly should update
+to reflect the new URL.</p>
 <h3 id="060-major-release">0.6.0 (Major Release)</h3>
 <p><strong>Detail views</strong></p>
 <p>Moves from episode oriented detail to patient oriented detail.

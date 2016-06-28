@@ -116,7 +116,7 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../../guides/teams/">Teams</a> -->
+                <!--             <a href="../../guides/tagging/">Tagging</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -132,6 +132,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../guides/context_processors/">Context Processors</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../guides/static_files/">Static Files</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -140,11 +144,19 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../../guides/episode_detail_views/">Episode Detail Views</a> -->
+                <!--             <a href="../../guides/patient_detail_views/">Patient Detail Views</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../../guides/list_views/">Patient List Views</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/discoverable/">Discoverable Features</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/search/">Search Overview</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--     </ul> -->
@@ -161,15 +173,15 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../episode_types/">Episode Types</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../patient/">Patient</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../subrecords/">Subrecords</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../team/">Team</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -193,11 +205,15 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../record_panel_templatetag/">Record panel templatetag</a> -->
+                <!--             <a href="../panels_templatetags/">Panel Template tags</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../javascript_helpers/">Javascript helpers</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../javascript_dependencies/">Javascript dependencies</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -206,6 +222,18 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../search_queries/">Search Queries</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../detail_views/">Detail Views</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../patient_list/">Patient Lists</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../search_js_services/">Search JS Services</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -221,8 +249,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.5.6" target="_blank">
-                  <i class="fa fa-github"></i> v0.5.6
+                <a href="https://github.com/openhealthcare/opal/tree/v0.6.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.6.0
                 </a>
               </li>
                 <!-- <li > -->
@@ -288,10 +316,6 @@
 <td><a href="../subrecords/">opal.models.Subrecord base class</a></td>
 <td>Base class for subrecords of Episodes or Patients</td>
 </tr>
-<tr>
-<td><a href="../team/">opal.models.Team</a></td>
-<td>Teams - Clinical units or stages in a Service</td>
-</tr>
 </tbody>
 </table>
 <h3 id="opal-core">OPAL Core</h3>
@@ -310,6 +334,14 @@
 <tr>
 <td><a href="../schemas/">opal.core.schemas</a></td>
 <td>Schemas - Dynamic columns for the table views</td>
+</tr>
+<tr>
+<td><a href="../detail_views/">opal.core.detail</a></td>
+<td>Detail Views - Custom views over one or many episodes.</td>
+</tr>
+<tr>
+<td><a href="../patient_list/">opal.core.patient_lists</a></td>
+<td>Patient Lists - defining different types of list.</td>
 </tr>
 </tbody>
 </table>
@@ -334,6 +366,10 @@
 <td><a href="../patient_summary_service/">PatientSummary</a></td>
 <td>Patient search result summaries</td>
 </tr>
+<tr>
+<td><a href="../search_js_services/">Search Services</a></td>
+<td>Services from the Search module</td>
+</tr>
 </tbody>
 </table>
 <h3 id="helper-libraries">Helper libraries</h3>
@@ -350,7 +386,7 @@
 <td>The building blocks for OPAL forms</td>
 </tr>
 <tr>
-<td><a href="../record_panel_templatetag/">The record_panel templatetag</a></td>
+<td><a href="../panels_templatetags/">The panels Templatetag library</a></td>
 <td>Rendering record panels.</td>
 </tr>
 <tr>
@@ -386,6 +422,10 @@
 <tr>
 <td><a href="../upgrading/">Upgrading</a></td>
 <td>Search query backends and helper functions</td>
+</tr>
+<tr>
+<td><a href="../javascript_dependencies/">Javascript dependencies</a></td>
+<td>External javascript libraries available</td>
 </tr>
 </tbody>
 </table></div>

@@ -13,12 +13,25 @@ function get_started(event, what){
 
 function contactform(event){
     event.preventDefault();
-    
+
     $.post('http://ohcucontakt.deadpansincerity.com/former.php', {
         z_name: $('#name').val(),
         z_requester: $('#email').val(),
         z_subject: 'OPAL website contact form',
         z_description: $('#message').val(),
     }, function(){ window.location = window.location.href});
+    return false;
+}
+
+
+function getintouchform(event){
+    event.preventDefault();
+
+    $.post('http://ohcucontakt.deadpansincerity.com/former.php', {
+        z_name: $('#contactName').val(),
+        z_requester: $('#contactEmail').val(),
+        z_subject: 'OPAL website contact form',
+        z_description: $('#contactMessage').val(),
+    }, function(){ $('#thanksMessage').show(); $('#contactForm').hide();});
     return false;
 }

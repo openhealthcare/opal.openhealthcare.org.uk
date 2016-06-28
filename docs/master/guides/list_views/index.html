@@ -116,7 +116,7 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../teams/">Teams</a> -->
+                <!--             <a href="../tagging/">Tagging</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -132,6 +132,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../context_processors/">Context Processors</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../static_files/">Static Files</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -140,11 +144,19 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../episode_detail_views/">Episode Detail Views</a> -->
+                <!--             <a href="../patient_detail_views/">Patient Detail Views</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li class="active"> -->
                 <!--             <a href="./">Patient List Views</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../discoverable/">Discoverable Features</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../search/">Search Overview</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--     </ul> -->
@@ -161,15 +173,15 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../reference/episode_types/">Episode Types</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../reference/patient/">Patient</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../../reference/subrecords/">Subrecords</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../../reference/team/">Team</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -193,11 +205,15 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../../reference/record_panel_templatetag/">Record panel templatetag</a> -->
+                <!--             <a href="../../reference/panels_templatetags/">Panel Template tags</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../../reference/javascript_helpers/">Javascript helpers</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/javascript_dependencies/">Javascript dependencies</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -206,6 +222,18 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../../reference/search_queries/">Search Queries</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/detail_views/">Detail Views</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/patient_list/">Patient Lists</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/search_js_services/">Search JS Services</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -221,17 +249,17 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.5.6" target="_blank">
-                  <i class="fa fa-github"></i> v0.5.6
+                <a href="https://github.com/openhealthcare/opal/tree/v0.6.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.6.0
                 </a>
               </li>
                 <!-- <li > -->
-                <!--     <a rel="next" href="../episode_detail_views/"> -->
+                <!--     <a rel="next" href="../patient_detail_views/"> -->
                 <!--         <i class="fa fa-arrow-left"></i> Previous -->
                 <!--     </a> -->
                 <!-- </li> -->
                 <!-- <li > -->
-                <!--     <a rel="prev" href="../../reference/episode/"> -->
+                <!--     <a rel="prev" href="../discoverable/"> -->
                 <!--         Next <i class="fa fa-arrow-right"></i> -->
                 <!--     </a> -->
                 <!-- </li> -->
@@ -248,11 +276,27 @@
     
         <li class="main active"><a href="#opal-patient-list-views">OPAL Patient List views</a></li>
         
-            <li><a href="#registering-a-list">Registering a list</a></li>
+            <li><a href="#defining-lists">Defining lists</a></li>
         
-            <li><a href="#registering-a-list-via-a-plugin">Registering a list via a plugin</a></li>
+            <li><a href="#schemas">Schemas</a></li>
         
             <li><a href="#template-selection">Template selection</a></li>
+        
+            <li><a href="#querysets">Querysets</a></li>
+        
+            <li><a href="#ordering-lists">Ordering Lists</a></li>
+        
+            <li><a href="#slug">Slug</a></li>
+        
+            <li><a href="#templates">Templates</a></li>
+        
+            <li><a href="#tagged-patient-lists">Tagged Patient Lists</a></li>
+        
+            <li><a href="#invalid-tagged-patient-lists">Invalid Tagged Patient Lists</a></li>
+        
+            <li><a href="#direct-add">Direct Add</a></li>
+        
+            <li><a href="#access-control">Access Control</a></li>
         
     
     </ul>
@@ -260,40 +304,115 @@
             <div class="col-md-9" role="main">
 
 <h1 id="opal-patient-list-views">OPAL Patient List views</h1>
-<p>OPAL core provides support for displaying spreadsheet-style lists of patients.</p>
-<p>A list is comprised of a set of record types to display, and their ordering.</p>
-<h3 id="registering-a-list">Registering a list</h3>
-<p>Your application will have a <code>schema_module</code> defined in its object. This is expected
-to be a python module with a <code>list_schemas</code> object. The <code>list_schemas</code> object should
-be a dictionary of team/subteam names that point to lists of models.</p>
-<p>If you are using the OPAL scaffolding commands from the command line interface, this
-will have been generated for you.</p>
-<pre><code>list_columns = [models.Demographics, models.Diagnosis]
-list_columns_micro = [models.Demographics, models.Diagnosis, models.Antimicrobial]
-list_columns_id_liaison = [models.Demographics, models.Diagnosis, models.Travel]
+<p>OPAL provides support for displaying lists of patients, both via a spreadsheet like view,
+and with a card based view.</p>
+<h3 id="defining-lists">Defining lists</h3>
+<p>OPAL patient lists are subclasses of <code>opal.core.patient_lists.PatientList</code>.</p>
+<p>Typically these are found in a <code>patient_lists.py</code> module of your application or plugin. (Lists <em>can</em> be
+defined elsewhere, but may not be autodiscovered.)</p>
+<p>A basic list needs only define it's <code>display_name</code> a <code>queryset</code> of episodes to display, and
+a <code>schema</code> of subrecords to show for each episode.</p>
+<pre><code># patient_lists.py
+from opal.models import Episore
+from opal.core import patient_lists
 
-list_schemas = {
-    'default': list_columns,
-    'microbiology': {
-        'default': list_columns_micro,
-    },
-    'infectious_diseases': {
-        'id_liaison': list_columns_id_liaison
-    }
-}
+from myapplication import models
+
+class AlphabetListA(patient_lists.PatientList):
+    display_name = 'A Patients'
+
+    queryset = Episode.objects.filter(demographics__name__istartswith='a')
+
+    schema = [
+        models.Demographics,
+        models.Location,
+        models.Diagnosis,
+        models.Treatment
+    ]
 </code></pre>
-<h3 id="registering-a-list-via-a-plugin">Registering a list via a plugin</h3>
-<p>Plugins may register their own schemas by returning dictionaries of similar structure
-to the above from the <code>OpalPlugin.list_schemas()</code> <a href="../plugins/">method</a>.</p>
+<p>The <code>display_name</code> property is the human readable name for our list - which is displayed as
+link text to our list.</p>
+<h3 id="schemas">Schemas</h3>
+<p>Schemas are lists of Subrecords that we would like to display in our list. By default we
+render the subrecord display_template, and allow editing and addition of each subrecord in
+place.</p>
 <h3 id="template-selection">Template selection</h3>
-<p>The list view is constructed by rendering a column for each record, in the order 
+<p>The list view is constructed by rendering a column for each record, in the order
 defined in the schema, and a row for each episode in the list.</p>
-<p>The template for each cell should live in <code>./templates/records/*</code>. In order to 
+<p>The template for each cell should live in <code>./templates/records/*</code>. In order to
 select the appropriate template for a given episode, OPAL looks in the following
 locations:</p>
-<pre><code>records/{record_name}.html
-records/{team}/{record_name}.html
-records/{team}/{subteam}/{record_name}.html
+<pre><code>records/{episode_type}/{list slug}/{record_name}.html
+records/{list_slug}/{record_name}.html
+records/{episode_type}/{record_name}.html
+records/{record_name}.html
+</code></pre>
+<h3 id="querysets">Querysets</h3>
+<p>The queryset property of your list should contain all of the episodes for this particular
+list. On occasion we require a more dynamic queryset, in which case we can ovreride the
+<code>get_queryset</code> method.</p>
+<pre><code># patient_lists.py
+import datetime
+from opal.models import Episode
+from opal.core import patient_lists
+
+class MyWeeklyList(patient_lists.PatientList):
+    def get_queryset(self):
+        one_week_ago = datetime.date.today() - datetime.timedelta(days=1)
+        return Episode.objects.filter(date_of_admission__gte=one_week_ago)
+</code></pre>
+<h3 id="ordering-lists">Ordering Lists</h3>
+<p>As a <a href="../discoverable/">discoverable.SortableFeature</a> lists may be ordered by setting the
+<code>order</code> property to an integer. Lists will display in drop-downs, tables et cetera, in
+this order.</p>
+<h3 id="slug">Slug</h3>
+<p>As a <a href="../discoverable/">discoverable</a> feature, the slug for each list is determined by
+either setting the <code>slug</code> property, or returning a string from the <code>get_slug</code> classmethod.</p>
+<h3 id="templates">Templates</h3>
+<h3 id="tagged-patient-lists">Tagged Patient Lists</h3>
+<p>A common model for working with lists is to use lists based on the tags assigned to an episode.
+This allows users to add and remove patients from lists as they see fit, rather than attempting
+to infer it from other properties of the patient (e.g. their current location for instance.)
+which can be particularly challenging for some clinical services.</p>
+<p>OPAL provides a specific subclass for working with Tagged Patient Lists:</p>
+<pre><code># patient_lists.py
+from opal.core import patient_lists
+
+class MyTagList(patient_lists.TaggedPatientList):
+    display_name = 'Tagged blue'
+    tag = 'blue'
+</code></pre>
+<p>Tagged lists will automatically fetch the appropriate queryset for patients tagged with the tag
+you specify.</p>
+<h3 id="invalid-tagged-patient-lists">Invalid Tagged Patient Lists</h3>
+<p>Tag names may not have hyphens in them - OPAL uses hyphens to distinguish between tags and subtags
+in the urls for lists, so attempting to define one will raise an exception.</p>
+<pre><code>class MyList(TaggedPatientList):
+    tag = 'foo-bar'
+
+# This will raise InvalidDiscoverableFeatureError !
+</code></pre>
+<h3 id="direct-add">Direct Add</h3>
+<p>Sometimes, we want to control the flow of patients onto, off, or between lists a little more closely.
+For instance, we might need to ensure additional data collection at points in a patient journey.</p>
+<p>In order to accomplish this, we often implement custom patient flows that wil programatically tag
+episodes to tagged lists. In those cases we will want to prevent users from manually adding or
+removing the tags themselves. This can be easily accomplished via the <code>direct_add</code> property. When
+set to false, users will not be able to add the tag for this list.</p>
+<pre><code>class MyLockedDownList(TaggedPatientList):
+    tag = 'liaisonpatients'
+    direct_add = False
+</code></pre>
+<h3 id="access-control">Access Control</h3>
+<p>As PatientLists are a <a href="../discoverable/#restrictable-features">RestrictableFeature</a>, Access control
+for lists is set by overriding the <code>visible_to</code> classmethod. Your list will only be visible to
+those users for whom this method returns <code>True</code>.</p>
+<p>For instance, we could define a Patient List that was only available to Django Superusers:</p>
+<pre><code>class SuperuserPatientList(PatientList):
+
+    @classmethod
+    def visible_to(klass, user):
+        return user.is_superuser
 </code></pre></div>
         </div>
 

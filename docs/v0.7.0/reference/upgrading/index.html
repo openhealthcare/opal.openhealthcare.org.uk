@@ -108,6 +108,14 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../guides/archetypes/">Archetypes</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/working_with_data_in_angular/">Angular Models</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../guides/flow/">Flow</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -280,6 +288,8 @@
     
         <li class="main active"><a href="#upgrading-your-opal-application">Upgrading Your OPAL Application</a></li>
         
+            <li><a href="#6x-7x">6.x -&gt; 7.x</a></li>
+        
             <li><a href="#4x-5x">4.X -&gt; 5.x</a></li>
         
     
@@ -290,6 +300,14 @@
 <h2 id="upgrading-your-opal-application">Upgrading Your OPAL Application</h2>
 <p>This document provides instructions for specific steps required to upgrading your OPAL
 application to a later version where there are extra steps required.</p>
+<h3 id="6x-7x">6.x -&gt; 7.x</h3>
+<h4 id="breaking-changes">Breaking changes</h4>
+<p>OPAL 0.7 contains a number of breaking changes.</p>
+<p><code>opal.models.Episode.category</code> has been re-named <code>category_name</code>. If your application
+directly sets category, you will be required to update all instances where this happens.</p>
+<p>The <code>/episode/:pk/</code> API has moved to <code>/api/v0.1/episode/:pk/</code> so any code (typically
+javascript) code that directly saves to this API endpoint rather than using the OPAL JS
+<code>Episode</code> services should work immediately when re-pointed at the new URL.</p>
 <h3 id="4x-5x">4.X -&gt; 5.x</h3>
 <h4 id="migrations">Migrations</h4>
 <p>Before upgrading from 4.x to 5.x you should ensure that you have upgraded from South

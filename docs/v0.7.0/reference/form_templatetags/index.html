@@ -108,6 +108,14 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../guides/archetypes/">Archetypes</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/working_with_data_in_angular/">Angular Models</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../guides/flow/">Flow</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -292,6 +300,8 @@
         
             <li><a href="#textarea">{% textarea ... %}</a></li>
         
+            <li><a href="#static">{% static ... %}</a></li>
+        
             <li><a href="#icon-icon-name">{% icon "icon-name" %}</a></li>
         
     
@@ -364,8 +374,8 @@ your forms.</p>
 <li><code>lookuplist</code> an Angular expression that evaluates to an array containing the radio values</li>
 <li><code>other</code> A boolean parameter that if true, provides a free text option when 'Other' is selected</li>
 <li><code>help</code> a template to use as the contents of a help popover</li>
-<li><code>static</code> an Angular expression that will swap the display to be a static input if it evaluates to <code>true</code></li>
-<li></li>
+<li><code>static</code> an Angular expression that will swap the display to be a static input if it evaluates to <code>true</code>
+*</li>
 </ul>
 <h3 id="textarea">{% textarea ... %}</h3>
 <p>Generates an inline textarea input</p>
@@ -377,6 +387,20 @@ your forms.</p>
 <li><code>show</code>  A string that contains an Angular expression for the ng-show directive</li>
 <li><code>hide</code>  A string that contains an Angular expression for the ng-hide directive</li>
 </ul>
+<h3 id="static">{% static ... %}</h3>
+<p>Generates a bootstrap Static div (for displaying data from fields as uneditable but formatted nicely with appropriate styles).</p>
+<p>Takes one positional argument, a string representing the subrecord field path.</p>
+<pre><code>{% static "Demographics.name" %}
+&lt;!-- Renders as --&gt;
+&lt;div class="form-group"&gt;
+  &lt;label class="control-label col-sm-3"&gt;
+    Name
+  &lt;/label&gt;
+  &lt;p class="form-control-static col-sm-8"&gt;
+    [[ editing.demographics.name ]]
+  &lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
 <h3 id="icon-icon-name">{% icon "icon-name" %}</h3>
 <p>Renders a Bootstrap style Icon tag.
 If the icon starts with <code>fa</code> or <code>glyphicon</code> then we will insert the preceding <code>fa</code>.</p>
