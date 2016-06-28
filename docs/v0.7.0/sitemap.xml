@@ -4,7 +4,11 @@
     
     <url>
      <loc>None/</loc>
+<<<<<<< HEAD
      <lastmod>2016-06-24</lastmod>
+=======
+     <lastmod>2016-06-06</lastmod>
+>>>>>>> gh-pages
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,7 +16,11 @@
     
     <url>
      <loc>None/installation/</loc>
+<<<<<<< HEAD
      <lastmod>2016-06-24</lastmod>
+=======
+     <lastmod>2016-06-06</lastmod>
+>>>>>>> gh-pages
      <changefreq>daily</changefreq>
     </url>
     
@@ -20,7 +28,11 @@
     
     <url>
      <loc>None/tutorial/</loc>
+<<<<<<< HEAD
      <lastmod>2016-06-24</lastmod>
+=======
+     <lastmod>2016-06-06</lastmod>
+>>>>>>> gh-pages
      <changefreq>daily</changefreq>
     </url>
     
@@ -28,7 +40,11 @@
     
     <url>
      <loc>None/guides/topic-guides/</loc>
+<<<<<<< HEAD
      <lastmod>2016-06-24</lastmod>
+=======
+     <lastmod>2016-06-06</lastmod>
+>>>>>>> gh-pages
      <changefreq>daily</changefreq>
     </url>
     
@@ -36,7 +52,11 @@
     
     <url>
      <loc>None/reference/reference_guides/</loc>
+<<<<<<< HEAD
      <lastmod>2016-06-24</lastmod>
+=======
+     <lastmod>2016-06-06</lastmod>
+>>>>>>> gh-pages
      <changefreq>daily</changefreq>
     </url>
     
@@ -45,36 +65,57 @@
         
     <url>
      <loc>None/guides/components_overview/</loc>
+<<<<<<< HEAD
      <lastmod>2016-06-24</lastmod>
+=======
+     <lastmod>2016-06-06</lastmod>
+>>>>>>> gh-pages
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/guides/command_line_tool/</loc>
+<<<<<<< HEAD
      <lastmod>2016-06-24</lastmod>
+=======
+     <lastmod>2016-06-06</lastmod>
+>>>>>>> gh-pages
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/guides/plugins/</loc>
+<<<<<<< HEAD
      <lastmod>2016-06-24</lastmod>
+=======
+     <lastmod>2016-06-06</lastmod>
+>>>>>>> gh-pages
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/guides/plugins_list/</loc>
+<<<<<<< HEAD
      <lastmod>2016-06-24</lastmod>
+=======
+     <lastmod>2016-06-06</lastmod>
+>>>>>>> gh-pages
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/guides/datamodel/</loc>
+<<<<<<< HEAD
      <lastmod>2016-06-24</lastmod>
+=======
+     <lastmod>2016-06-06</lastmod>
+>>>>>>> gh-pages
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/guides/archetypes/</loc>
+<<<<<<< HEAD
      <lastmod>2016-06-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -82,84 +123,139 @@
     <url>
      <loc>None/guides/working_with_data_in_angular/</loc>
      <lastmod>2016-06-24</lastmod>
+=======
+     <lastmod>2016-06-06</lastmod>
+>>>>>>> gh-pages
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/guides/flow/</loc>
+<<<<<<< HEAD
      <lastmod>2016-06-24</lastmod>
+=======
+     <lastmod>2016-06-06</lastmod>
+>>>>>>> gh-pages
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/guides/roles_and_permissions/</loc>
+<<<<<<< HEAD
      <lastmod>2016-06-24</lastmod>
+=======
+     <lastmod>2016-06-06</lastmod>
+>>>>>>> gh-pages
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/guides/tagging/</loc>
+<<<<<<< HEAD
      <lastmod>2016-06-24</lastmod>
+=======
+     <lastmod>2016-06-06</lastmod>
+>>>>>>> gh-pages
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/guides/json_api/</loc>
+<<<<<<< HEAD
      <lastmod>2016-06-24</lastmod>
+=======
+     <lastmod>2016-06-06</lastmod>
+>>>>>>> gh-pages
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/guides/lookup_lists/</loc>
+<<<<<<< HEAD
      <lastmod>2016-06-24</lastmod>
+=======
+     <lastmod>2016-06-06</lastmod>
+>>>>>>> gh-pages
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/guides/templates/</loc>
+<<<<<<< HEAD
      <lastmod>2016-06-24</lastmod>
+=======
+     <lastmod>2016-06-06</lastmod>
+>>>>>>> gh-pages
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/guides/context_processors/</loc>
+<<<<<<< HEAD
      <lastmod>2016-06-24</lastmod>
+=======
+     <lastmod>2016-06-06</lastmod>
+>>>>>>> gh-pages
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/guides/static_files/</loc>
+<<<<<<< HEAD
      <lastmod>2016-06-24</lastmod>
+=======
+     <lastmod>2016-06-06</lastmod>
+>>>>>>> gh-pages
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/guides/forms/</loc>
+<<<<<<< HEAD
      <lastmod>2016-06-24</lastmod>
+=======
+     <lastmod>2016-06-06</lastmod>
+>>>>>>> gh-pages
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/guides/patient_detail_views/</loc>
+<<<<<<< HEAD
      <lastmod>2016-06-24</lastmod>
+=======
+     <lastmod>2016-06-06</lastmod>
+>>>>>>> gh-pages
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/guides/list_views/</loc>
+<<<<<<< HEAD
      <lastmod>2016-06-24</lastmod>
+=======
+     <lastmod>2016-06-06</lastmod>
+>>>>>>> gh-pages
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/guides/discoverable/</loc>
+<<<<<<< HEAD
      <lastmod>2016-06-24</lastmod>
+=======
+     <lastmod>2016-06-06</lastmod>
+>>>>>>> gh-pages
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/guides/search/</loc>
+<<<<<<< HEAD
      <lastmod>2016-06-24</lastmod>
+=======
+     <lastmod>2016-06-06</lastmod>
+>>>>>>> gh-pages
      <changefreq>daily</changefreq>
     </url>
         
@@ -169,115 +265,191 @@
         
     <url>
      <loc>None/reference/episode/</loc>
+<<<<<<< HEAD
      <lastmod>2016-06-24</lastmod>
+=======
+     <lastmod>2016-06-06</lastmod>
+>>>>>>> gh-pages
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/reference/episode_categories/</loc>
+<<<<<<< HEAD
      <lastmod>2016-06-24</lastmod>
+=======
+     <lastmod>2016-06-06</lastmod>
+>>>>>>> gh-pages
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/reference/patient/</loc>
+<<<<<<< HEAD
      <lastmod>2016-06-24</lastmod>
+=======
+     <lastmod>2016-06-06</lastmod>
+>>>>>>> gh-pages
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/reference/subrecords/</loc>
+<<<<<<< HEAD
      <lastmod>2016-06-24</lastmod>
+=======
+     <lastmod>2016-06-06</lastmod>
+>>>>>>> gh-pages
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/reference/opal_application/</loc>
+<<<<<<< HEAD
      <lastmod>2016-06-24</lastmod>
+=======
+     <lastmod>2016-06-06</lastmod>
+>>>>>>> gh-pages
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/reference/episode_service/</loc>
+<<<<<<< HEAD
      <lastmod>2016-06-24</lastmod>
+=======
+     <lastmod>2016-06-06</lastmod>
+>>>>>>> gh-pages
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/reference/item_service/</loc>
+<<<<<<< HEAD
      <lastmod>2016-06-24</lastmod>
+=======
+     <lastmod>2016-06-06</lastmod>
+>>>>>>> gh-pages
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/reference/patient_summary_service/</loc>
+<<<<<<< HEAD
      <lastmod>2016-06-24</lastmod>
+=======
+     <lastmod>2016-06-06</lastmod>
+>>>>>>> gh-pages
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/reference/form_templatetags/</loc>
+<<<<<<< HEAD
      <lastmod>2016-06-24</lastmod>
+=======
+     <lastmod>2016-06-06</lastmod>
+>>>>>>> gh-pages
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/reference/panels_templatetags/</loc>
+<<<<<<< HEAD
      <lastmod>2016-06-24</lastmod>
+=======
+     <lastmod>2016-06-06</lastmod>
+>>>>>>> gh-pages
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/reference/javascript_helpers/</loc>
+<<<<<<< HEAD
      <lastmod>2016-06-24</lastmod>
+=======
+     <lastmod>2016-06-06</lastmod>
+>>>>>>> gh-pages
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/reference/javascript_dependencies/</loc>
+<<<<<<< HEAD
      <lastmod>2016-06-24</lastmod>
+=======
+     <lastmod>2016-06-06</lastmod>
+>>>>>>> gh-pages
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/reference/schemas/</loc>
+<<<<<<< HEAD
      <lastmod>2016-06-24</lastmod>
+=======
+     <lastmod>2016-06-06</lastmod>
+>>>>>>> gh-pages
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/reference/search_queries/</loc>
+<<<<<<< HEAD
      <lastmod>2016-06-24</lastmod>
+=======
+     <lastmod>2016-06-06</lastmod>
+>>>>>>> gh-pages
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/reference/detail_views/</loc>
+<<<<<<< HEAD
      <lastmod>2016-06-24</lastmod>
+=======
+     <lastmod>2016-06-06</lastmod>
+>>>>>>> gh-pages
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/reference/patient_list/</loc>
+<<<<<<< HEAD
      <lastmod>2016-06-24</lastmod>
+=======
+     <lastmod>2016-06-06</lastmod>
+>>>>>>> gh-pages
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/reference/search_js_services/</loc>
+<<<<<<< HEAD
      <lastmod>2016-06-24</lastmod>
+=======
+     <lastmod>2016-06-06</lastmod>
+>>>>>>> gh-pages
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/reference/changelog/</loc>
+<<<<<<< HEAD
      <lastmod>2016-06-24</lastmod>
+=======
+     <lastmod>2016-06-06</lastmod>
+>>>>>>> gh-pages
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/reference/upgrading/</loc>
+<<<<<<< HEAD
      <lastmod>2016-06-24</lastmod>
+=======
+     <lastmod>2016-06-06</lastmod>
+>>>>>>> gh-pages
      <changefreq>daily</changefreq>
     </url>
         
