@@ -1,198 +1,643 @@
----
-layout: default
----
-<!-- ******FEATURES PROMO****** --> 
-<section id="opal" class="features-promo section">
-  <div class="container">
-    <div class="row">
-      <div class="features-intro col-md-5 col-sm-6 col-xs-12">
-        <img src="assets/images/opallogo.png" />
-        <h2 class="title">Manage your ward your way</h2>
-        <ul class="list-unstyled features-list">
-          <li><i class="fa fa-check"></i>Endlessly customisable</li>
-          <li><i class="fa fa-check"></i>Designed by you for your own service</li>
-          <li><i class="fa fa-check"></i>Extensive library of reusable modules</li>
-          <li><i class="fa fa-check"></i>Open Source - no vendor lockin - ever</li>
-          <li><i class="fa fa-check"></i>Full support available</li>
-        </ul>
-      </div><!--//intro-->
-      <div class="features-intro col-md-4 col-md-offset-3 col-sm-6 col-xs-12 col-xs-offset-0">
-        <h2 class="title">Get OPAL for your organisation</h2>
-        <p class="summary">Get in touch to see what OPAL could do for you.</p>
-        <form class="signup-form">
-          <div class="form-group">
-            <input type="text" class="form-control" id="indexheader" placeholder="Enter your email address">
+<!DOCTYPE html>
+<!--[if IE 9 ]><html class="ie ie9 no-js" lang="en"><![endif]-->
+<!--[if gt IE 9 | !IE]><!-->
+<html class="no-js" lang="en">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>OPAL - A full stack web framework for building health care applications</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="apple-touch-icon" href="assets/img/OPALIcon.png">
+    <link rel="icon" href="assets/img/OPALIcon.png">
+    <link rel='stylesheet' href='assets/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='assets/css/vendor.css'>
+    <link rel='stylesheet' href='assets/css/style.css'>
+    <link rel='stylesheet' href='assets/css/custom.css'>
+    <!--[if lte IE 9]><!-->
+  <script src='assets/js/vendor/html5shiv.min.js'></script>
+  <!--<![endif]-->
+</head>
+<body>
+
+  <div class="site">
+    <div class="site-loader">
+      <div class="site-loader-spinner"></div>
+    </div> <!-- .site-loader -->
+
+    <div class="site-canvas">
+      <header class="site-header">
+        <nav class="navbar navbar-theme">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <div class="navbar-brand-wrap">
+                <a class="navbar-brand" href="#">
+                  <img src="assets/img/opallogo.png" alt="">
+                </a>
+              </div>
+            </div> <!-- .navbar-header -->
+
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <ul class="nav navbar-nav navbar-right">
+                <!-- <li class="active"><a href="#home">Home</a></li> -->
+                <li><a href="#about">About</a></li>
+                <li><a href="#brief_1">Features</a></li>
+                <!-- <li><a href="#pricing">Pricing</a></li> -->
+                <li><a href="#download">Download</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="/docs/">Documentation</a></li>
+              </ul>
+            </div> <!-- .navbar-collapse -->
           </div>
-          <button type="submit" class="btn btn-cta btn-cta-primary" 
-                  onclick="get_started(event, 'indexheader')">Get Started</button>
-        </form><!--//signup-form-->
-      </div>
-    </div><!--//row-->
-  </div><!--//container-->
-</section><!--//features-promo-->
+        </nav>
+      </header> <!-- .site-header -->
+      <main class="site-main">
+        <div id="home" class="section block-primary position-r align-c-xs-max">
+          <div id="particles-js" class="site-bg">
+            <div class="site-bg-img"></div>
+            <div class="site-bg-video"></div>
+            <div class="site-bg-overlay"></div>
+            <div class="site-bg-effect layer" data-depth=".30"></div>
+            <canvas class="site-bg-canvas layer" data-depth=".30"></canvas>
+          </div> <!-- .site-bg -->
 
-<!-- ******WHY****** --> 
-<section id="why" class="why section">
+          <div class="container">
+            <div class="row row-table">
+              <div class="col-sm-6">
+                <div class="col-inner" data-sr="left">
+                  <div class="section-heading">
+                    <!-- <h5>From Open Health Care,</h5> -->
+                    <h1>
+                      OPAL is a full stack <br />
+                      web framework for building<br />
+                      health care applications.
+                    </h1>
+                    <p>
+                      OPAL encourages rapid development, and elegant, pragmatic design.
+                      <br />
+                      Focussed on health care, it builds on years of research and design to
+                      <br />
+                      help you in building your app. It's free and open source.
+                    </p>
+                  </div> <!-- .section-heading -->
+                  <div class="section-content">
+                    <a class="btn btn-pink m-y-5" href="#about">
+                      <i class="fa fa-arrow-down"></i>
+                      Learn More
+                    </a>
+                    <a class="btn btn-warning m-y-5" href="#download">
+                      <i class="fa fa-download"></i>
+                      Download
+                    </a>
+                  </div> <!-- .section-content -->
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-p-l-1 m-t-60-xs-max">
+                <div class="col-inner clearfix">
+                  <img class="img-responsive float-r-sm-min m-x-auto-xs-max" src="assets/img/item/iconcircle.png" alt="" data-sr="right">
+                  <!-- <img class="img-responsive float-r-sm-min m-x-auto-xs-max" src="http://opal.openhealthcare.org.uk/img/clinical.advice.png" alt="" data-sr="right"> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> <!-- #home -->
+
+        <div id="about" class="section p-a-0 align-c">
+          <div class="container-fluid p-x-0">
+            <div class="row row-table">
+              <div class="col-sm-4 block-invert p-x-30-sm-max p-x-60-md-min p-t-20-sm-min align-t-sm-min">
+                <div class="col-inner p-y-50-sm-min p-y-30-xs-max max-width m-x-auto-xs-max">
+                  <div class="icon-box _center">
+                    <div class="icon-box-media">
+                      <img src="assets/img/icon/rocket.png" alt="" data-sr="bottom">
+                    </div>
+                    <div class="icon-box-heading">
+                      <h3>Starting from the shoulders of Giants</h3>
+                    </div>
+                    <div class="icon-box-content">
+                      <p>
+                        We don't believe in reinventing the wheel - and that's why we've built OPAL on a Django, Angular and Bootstrap stack.
+
+                      </p>
+                      <center>
+                        <img src="/assets/img/djangologo.png" width="100">
+                        <img src="/assets/img/angularlogo.png" width="100">
+                        <img src="/assets/img/bootstraplogo.png" width="100">
+                      </center>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-4 block-pink p-x-30-sm-max p-x-60-md-min p-t-20-sm-min align-t-sm-min">
+                <div class="col-inner p-y-50-sm-min p-y-30-xs-max max-width m-x-auto-xs-max">
+                  <div class="icon-box _center">
+                    <div class="icon-box-media">
+                      <img src="assets/img/icon/medical-kit.svg" alt="" data-sr="bottom">
+                    </div>
+                    <div class="icon-box-heading">
+                      <h3> A specialist health care framework</h3>
+                    </div>
+                    <div class="icon-box-content">
+                      <p>
+                        Most frameworks don't care about your domain.
+                        <br />
+                        OPAL is different.
+                      </p>
+                      <p>
+                        Built by experienced developers, it helps you ship robust applications
+                        fit for the demanding world of health care.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-4 block-light p-x-30-sm-max p-x-60-md-min p-t-20-sm-min align-t-sm-min">
+                <div class="col-inner p-y-50-sm-min p-y-30-xs-max max-width m-x-auto-xs-max">
+                  <div class="icon-box _center">
+                    <div class="icon-box-media">
+                      <img src="assets/img/icon/folder.svg" alt="" data-sr="bottom">
+                    </div>
+                    <div class="icon-box-heading">
+                      <h3>
+                        With Batteries Included
+                      </h3>
+                    </div>
+                    <div class="icon-box-content">
+                      <p>
+                        Lots of clinical applications need similar components. Patient lists, clinical pathways, and search to name just a
+                        few.
+                      </p>
+                      <p>
+                        OPAL is a "batteries included" framework, and comes with a rich library of composable modules,
+                        battle tested in real clinical settings.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> <!-- #about -->
+
+        <div id="brief_1" class="section block-default align-c-xs-max">
+          <div class="container">
+            <div class="row row-table">
+              <div class="col-sm-6">
+                <div class="col-inner">
+                  <div class="section-heading">
+                    <!-- <h5>Flat Style Landing Page</h5> -->
+                    <h2>
+                      OPAL Optimises for <br />
+                      programmer happiness
+                    </h2>
+                    <p>
+                      OPAL is designed to support developers who need to take applications
+                      from idea to production as fast as possible, and to support services
+                      that are iterated frequently.
+                    </p>
+                  </div> <!-- .section-heading -->
+                  <div class="section-content">
+                    <ul class="icon-list align-l m-t-30">
+                      <li>
+                        <img src="assets/img/icon/clock.png" alt="">
+                        Get up and running in seconds.
+                      </li>
+                      <li>
+                        <img src="assets/img/icon/thunder.png" alt="">
+                        Save time with convention over configuration.
+                      </li>
+                      <li>
+                        <img src="assets/img/icon/robot.png" alt="">
+                        No need to re-invent the wheel, or spend time writing boilerplate code.
+                      </li>
+                    </ul>
+                    <a class="btn btn-primary m-y-5"
+                       href="/docs/tutorial/"
+                       target="_blank">
+                      <i class="fa fa-laptop"></i>
+                      See how fast you can start building
+                    </a>
+                  </div> <!-- .section-content -->
+                </div>
+              </div>
+              <div class="col-sm-6 m-t-60-xs-max p-l-60-md-min">
+                <div class="col-inner clearfix">
+                  <section class="quickstart">
+                    <div class="grid">
+                      <div class="unit golden-large code">
+                        <p class="title">Quick-start Instructions</p>
+                        <div class="shell">
+                          <p class="line">
+                            <span class="path">~</span>
+                            <span class="prompt">$</span>
+                            <span class="command">pip install opal</span>
+                          </p>
+                          <p class="line">
+                            <span class="path">~</span>
+                            <span class="prompt">$</span>
+                            <span class="command">opal startproject myawesomeapp</span>
+                          </p>
+                          <p class="line">
+                            <span class="path">~</span>
+                            <span class="prompt">$</span>
+                            <span class="command">cd myawesomeapp</span>
+                          </p>
+                          <p class="line">
+                            <span class="path">~/myawesomeapp</span>
+                            <span class="prompt">$</span>
+                            <span class="command">python manage.py runserver</span>
+                          </p>
+                          <p class="line">
+                            <span class="output"># => Now browse to http://localhost:8000</span>
+                          </p>
+                          <p class="line">
+                            <span class="output"># => Now log in with u: super p: super1</span>
+                          </p>
+
+
+</div>
+</div>
+<div class="clear"></div>
+</div>
+</section>
+<!-- <img class="img-responsive float-r-sm-min m-x-auto-xs-max" src="assets/img/item/brief-1.png" alt="" data-sr="right"> -->
+</div>
+</div>
+</div>
+</div>
+</div> <!-- #brief_1 -->
+
+<div id="brief_2" class="section block-warning align-c-xs-max">
   <div class="container">
-    <h2 class="title text-center">OPAL</h2>
-    <p class="intro text-center">A highly customisable framework for building clinical applications</p>
-    <div class="row">
-      <div class="benefits col-md-7 col-sm-6 col-xs-12">                    
-        
-        <div class="item clearfix">                            
-          <div class="icon col-md-3 col-xs-12 text-center">
-            <i class="fa fa-user-md"></i>
-          </div><!--//icon-->
-          <div class="content col-md-9 col-xs-12">
-            <h3 class="title">Clinical-need centered design</h3>
-            <p class="desc">
-              Our strong focus on the user needs of the clinical end user,
-              along with our insistence on deep clinical engagement at every stage
-              makes services built on top of OPAL are a joy to use. 
-            </p>
-          </div><!--//content-->                            
-        </div><!--//item-->
-        <div class="item clearfix">                            
-          <div class="icon col-md-3  col-xs-12 text-center">
-            <i class="fa fa-wrench"></i>
-          </div><!--//icon-->
-          <div class="content col-md-9 col-xs-12">
-            <h3 class="title">Customisation</h3>
-            <p class="desc">
-              We believe that no two clinical services are the same, 
-              and that the digital services that support them need to reflect that.
-              We provide complete customisation services to create a bespoke application that 
-              tailors the wealth of features available in OPAL to your unique situation.
-            </p>
-          </div><!--//content-->
-        </div><!--//item-->
-        <div class="item clearfix">                            
-          <div class="icon col-md-3  col-xs-12 text-center">
-            <i class="fa fa-users"></i>
-          </div><!--//icon-->
-          <div class="content col-md-9 col-xs-12">
-            <h3 class="title">Supporting your services</h3>
-            <p class="desc">
-              We're in it for the long haul. We want to build long-term partnerships with 
-              organisations
-              looking to build the best possible digital environment for healthcare in the
-              21st century.
-              With a wide range of support services, whether you want the assurance of knowing 
-              someone you trust will pick up the phone, or just some pointers to get you started 
-              - we've got your back.
-            </p>
-          </div><!--//content-->
-        </div><!--//item-->
-        <div class="item clearfix">
-          <div class="icon col-md-3  col-xs-12 text-center">
-            <i class="fa fa-hospital-o"></i>
-          </div><!--//icon-->
-          <div class="content col-md-9 col-xs-12">
-            <h3 class="title">Understanding the NHS</h3>
-            <p class="desc">
-              We know how organisations within the NHS function. 
-              OPAL has been deployed and certified compliant for Information Governance and 
-              Clinical Safety and we know how to get that in place at your organization.
-            </p>
-            <p class="desc">
-              OPAL is ready to integrate with the rest of your infrastructure using 
-              Open APIs and Open Standards.
-            </p>
-          </div><!--//content-->
-        </div><!--//item-->
-        <div class="item last clearfix">
-          <div class="icon col-md-3  col-xs-12 text-center">
-            <i class="fa fa-code"></i>
-          </div><!--//icon-->
-          <div class="content col-md-9 col-xs-12">
-            <h3 class="title">Open All The Things</h3>
-            <p class="desc">
-              OPAL is entirely Open Source, Open Governance. 
-              Vendor neutrality is baked in to the licenses we provide at a fundamental level.
-              Our customers are always free to customise and re-use the work with other partners.
-            </p>
-          </div><!--//content-->
-        </div><!--//item-->
-        <div class="clearfix"></div>
-        <div class="text-center">
-          <a class="btn btn-cta btn-cta-secondary" href="services.html" >Learn how it works</a>
+    <div class="row row-table">
+      <div class="col-sm-6 m-t-60-xs-max p-r-60-md-min">
+        <div class="col-inner clearfix">
+          <img class="img-responsive float-l-sm-min m-x-auto-xs-max" src="assets/img/item/extract.png" alt="" data-sr="right">
         </div>
-      </div> 
-      <div class="testimonials col-md-4 col-sm-5 col-md-offset-1 col-sm-offset-1 col-xs-12 col-xs-offset-0">
-        <div class="item">
-          <div class="quote-box">
-            <blockquote class="quote">OPAL is an example of NHS IT done right. It's easy to use and offers so much more than the system it replaces.
-            </blockquote><!--//quote-->
-            <p class="details">
-              <span class="name">Dr Michael Marks</span>
-              <span class="title">Hospital For Tropical Diseases<br /> University College Hospital</span>
-            </p> 
-            <i class="fa fa-quote-right"></i>                                
-          </div><!--//quote-box-->
-          <div class="people text-center">
-            <img class="img-rounded user-pic" src="assets/images/people/notpeople-1.png" alt="">                       
-          </div><!--//people-->
-        </div><!--//item-->
-        <!-- <div class="item"> -->
-        <!--     <div class="quote-box"> -->
-        <!--         <blockquote class="quote">Great vehicula consequat cursus. Pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim! -->
-        
-        <!--         </blockquote><\!--//quote-\-> -->
-        <!--         <p class="details"> -->
-        <!--             <span class="name">Michelle Cheung</span> -->
-        <!--             <span class="title">San Francisco, US</span> -->
-        <!--         </p>  -->
-        <!--         <i class="fa fa-quote-right"></i>                                 -->
-        <!--     </div><\!--//quote-box-\-> -->
-        <!--     <div class="people text-center"> -->
-        <!--         <img class="img-rounded user-pic" src="assets/images/people/people-2.png" alt="">                        -->
-        <!--     </div><\!--//people-\-> -->
-        <!-- </div><\!--//item-\-> -->
-        <!-- <div class="item last"> -->
-        <!--     <div class="quote-box"> -->
-        <!--         <blockquote class="quote">Excellent Vivamus sit amet tortor id orci interdum tempor sed sit amet ante, pretium quis, sem. Nulla consequat massa quis enim! -->
-        <!--         </blockquote><\!--//quote-\-> -->
-        <!--         <p class="details"> -->
-        <!--             <span class="name">James Lee</span> -->
-        <!--             <span class="title">London, UK</span> -->
-        <!--         </p>  -->
-        <!--         <i class="fa fa-quote-right"></i>                                 -->
-        <!--     </div><\!--//quote-box-\-> -->
-        <!--     <div class="people text-center"> -->
-        <!--         <img class="img-rounded user-pic" src="assets/images/people/people-3.png" alt="">                        -->
-        <!--     </div><\!--//people-\-> -->
-        <!-- </div><\!--//item-\-> -->
-      </div>                   
-    </div><!--//row-->
-  </div><!--//container-->
-</section><!--//why-->
-
-<!-- ******hireus****** --> 
-<section id="hireus" class="hireus section">
-  <div class="container">
-    <h2 class="title">Hire us.</h2>
-    <p class="summary">Deploy OPAL for your organisation.</p>
-    <p class="summary">
-      We're experts in building day-to-day transactional clinical applications for organisations
-      in the NHS that delight their users.
-    </p>
-    <p class="summary">We can provide development and support services tailored to your needs.</p>
-    <a class="btn btn-cta btn-cta-secondary" href="contact.html">Get started</a>
-  </div>
-</section><!--//hireus-->
-
-<!-- ******SIGNUP****** --> 
-<section id="signup" class="signup has-bg-color">
-  <div class="container text-center">
-    <h2 class="title">Get OPAL for your organisation</h2>
-    <p class="summary">Get in touch to see what OPAL could do for you.</p>
-    <form class="signup-form">
-      <div class="form-group">
-        <input type="text" class="form-control" placeholder="Enter your email address" id="indexsignup">
       </div>
-      <button type="submit" class="btn btn-cta btn-cta-primary" 
-              onclick="get_started(event, 'indexsignup')">Get Started</button>
-    </form><!--//signup-form-->
-  </div>
-</section><!--//signup-->
 
+      <div class="col-sm-6">
+        <div class="col-inner">
+          <div class="section-heading">
+            <!-- <h5>Flat Style Landing Page</h5> -->
+            <h2>
+              Modelling medicine is complicated
+            </h2>
+            <p>
+              OPAL makes it easy to capture high granularity data on clinical activity, through
+              design patterns that ease data capture, and a data model designed to provide
+              the answers to interesting research questions.
+            </p>
+          </div> <!-- .section-heading -->
+          <div class="section-content">
+            <ul class="icon-list align-l m-t-30">
+              <li><img src="assets/img/icon/folder.png" alt="">Core clinical data model</li>
+              <li><img src="assets/img/icon/support.png" alt="">Coded reference data.</li>
+              <li><img src="assets/img/icon/paint.png" alt=""> Usable in the real world.</li>
+            </ul>
+            <!-- <a class="btn btn-primary m-y-5" href="#pricing">Our Plan</a> -->
+            <a class="btn btn-invert m-y-5" href="/docs/v0.7.0/guides/archetypes/"
+               target="_blank">
+              <i class="fa fa-search"></i>
+              Find out more
+            </a>
+          </div> <!-- .section-content -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div> <!-- #brief_2 -->
+
+<div id="brief_3" class="section block-success align-c-xs-max">
+  <div class="container">
+    <div class="row row-table">
+      <div class="col-sm-6">
+        <div class="col-inner">
+          <div class="section-heading">
+            <!-- <h5>Flat Style Landing Page</h5> -->
+            <h2>Integration and Security</h2>
+          </div> <!-- .section-heading -->
+          <div class="section-content">
+            <p>
+              OPAL helps you integrate your application with other hospital systems, from
+              bespoke data inputs, through to major EHRs.
+            </p>
+            <p>
+              By providing Open RESTful APIs for all of the core clinical data management,
+              other developers can easily build on top of your application's data.
+            </p>
+            <p>
+              OPAL applications are configured to provide user management, as well as a
+              full audit trail out of the box.
+            </p>
+            <!-- <a class="btn btn-success m-y-5" href="#brief_3">Learn More</a> -->
+            <!-- <a class="btn btn-pink m-y-5" href="#brief_3">More Button</a> -->
+          </div> <!-- .section-content -->
+        </div>
+      </div>
+
+      <div class="col-sm-6 m-b-60-xs-max p-l-60-md-min">
+        <div class="col-inner clearfix">
+          <img class="img-responsive float-r-sm-min m-x-auto-xs-max" src="assets/img/item/brief-3.png" alt="" data-sr="left">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div> <!-- #brief_3 -->
+
+<!-- <div id="pricing" class="section block-light align-c"> -->
+<!--   <div class="container"> -->
+<!--     <div class="row"> -->
+<!--       <div class="col-xs-12"> -->
+<!--         <div class="col-inner"> -->
+<!--           <div class="section-heading"> -->
+<!--             <h5>Pricing Table Section</h5> -->
+<!--             <h2>Free And Business Plan</h2> -->
+<!--             <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p> -->
+<!--           </div> -->
+<!--           <div class="section-content m-t-60-sm-min"> -->
+<!--             <div class="row"> -->
+<!--               <div class="col-xs-12 col-sm-4"> -->
+<!--                 <div class="pricing-table m-t-0-xs-max"> -->
+<!--                   <div class="pricing-table-header block-invert"> -->
+<!--                     <h5 class="pricing-table-caption">Checkmark pricing table</h5> -->
+<!--                     <h2 class="pricing-table-title">FREE</h2> -->
+<!--                   </div> -->
+<!--                   <div class="pricing-table-content block-light"> -->
+<!--                     <ul class="pricing-table-list"> -->
+<!--                       <li><i class="fa fa-check"></i> Up to 25 users</li> -->
+<!--                       <li><i class="fa fa-check"></i>500 messages</li> -->
+<!--                       <li><i class="fa fa-check"></i>Normal options</li> -->
+<!--                       <li><i class="fa fa-check"></i>Phone support</li> -->
+<!--                     </ul> -->
+<!--                   </div> -->
+<!--                   <div class="pricing-table-footer block-light"> -->
+<!--                     <a class="btn btn-primary" href="#download">Download</a> -->
+<!--                   </div> -->
+<!--                 </div> <\!-- .pricing-table -\-> -->
+<!--               </div> -->
+<!--               <div class="col-xs-12 col-sm-4"> -->
+<!--                 <div class="pricing-table"> -->
+<!--                   <div class="pricing-table-header block-primary"> -->
+<!--                     <span class="pricing-table-badge"> -->
+<!--                       <i class="fa fa-star"></i> -->
+<!--                     </span> -->
+<!--                     <h5 class="pricing-table-caption">With badge</h5> -->
+<!--                     <h2 class="pricing-table-title"><span>$</span>45<span>/ mo.</span></h2> -->
+<!--                   </div> -->
+<!--                   <div class="pricing-table-content block-light"> -->
+<!--                     <ul class="pricing-table-list"> -->
+<!--                       <li><i class="fa fa-check"></i> Up to 150 users</li> -->
+<!--                       <li><i class="fa fa-check"></i> 2000 messages</li> -->
+<!--                       <li><i class="fa fa-check"></i> Advanced options</li> -->
+<!--                       <li><i class="fa fa-check"></i> Phone support</li> -->
+<!--                     </ul> -->
+<!--                   </div> -->
+<!--                   <div class="pricing-table-footer block-light"> -->
+<!--                     <a class="btn btn-primary" href="#download">Download</a> -->
+<!--                   </div> -->
+<!--                 </div> <\!-- .pricing-table -\-> -->
+<!--               </div> -->
+<!--               <div class="col-xs-12 col-sm-4"> -->
+<!--                 <div class="pricing-table"> -->
+<!--                   <div class="pricing-table-header block-pink"> -->
+<!--                     <h5 class="pricing-table-caption">Icon pricing table</h5> -->
+<!--                     <h2 class="pricing-table-title"><span>$</span>75<span>/ mo.</span></h2> -->
+<!--                   </div> -->
+<!--                   <div class="pricing-table-content block-light"> -->
+<!--                     <ul class="pricing-table-list"> -->
+<!--                       <li><i class="fa fa-user-plus"></i> Up to 500 users</li> -->
+<!--                       <li><i class="fa fa-envelope"></i> <span class="color-pink">Unlimited</span> messages</li> -->
+<!--                       <li><i class="fa fa-cog"></i> Advanced options</li> -->
+<!--                       <li><i class="fa fa-support"></i> Phone support</li> -->
+<!--                     </ul> -->
+<!--                   </div> -->
+<!--                   <div class="pricing-table-footer block-light"> -->
+<!--                     <a class="btn btn-primary" href="#download">Download</a> -->
+<!--                   </div> -->
+<!--                 </div> <\!-- .pricing-table -\-> -->
+<!--               </div> -->
+<!--             </div> -->
+<!--           </div> <\!-- .section-content -\-> -->
+<!--         </div> -->
+<!--       </div> -->
+<!--     </div> -->
+<!--   </div> -->
+<!-- </div> <\!-- #download -\-> -->
+
+<div id="download" class="section block-primary align-c">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="col-inner">
+          <div class="section-heading">
+            <h5>Download OPAL</h5>
+            <h2>It's quick and easy to get started with OPAL</h2>
+            <div class="section-content">
+              <p>
+                The latest official version of OPAL is <strong>0.6.0</strong>.
+              </p>
+              <a class="btn btn-pink m-y-5"
+                 target="_blank"
+                 href="/docs/installation/ ">
+                <i class="fa fa-download"></i>Latest Official Version (OPAL 0.6.0)
+              </a>
+            </div>
+            <div class="section-content">
+              <p>
+                The very latest version of OPAL is the one in our GitHub repository.
+                <br />
+                This is recommended only for experienced developers.
+              </p>
+              <a class="btn btn-warning m-y"
+                 target="_blank"
+                 href="/docs/v0.7.0/installation/">
+                <i class="fa fa-github"></i>Development Version (OPAL 0.7.0)
+              </a>
+            </div>
+          </div> <!-- .section-content -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div> <!-- #download -->
+
+<div id="contact" class="section block-default">
+  <div class="container">
+    <div class="section-heading text-center">
+      <!-- <h5>Flat Style Landing Page</h5> -->
+      <h2>Want to know more?</h2>
+      <p>
+        Not quite sure what you need? <br />
+        Want some help getting started with your project?<br />
+        We can provide support and advice on your
+        needs.
+      </p>
+    </div>
+    <div class="row section-content m-t-60-sm-min">
+      <div class="col-sm-6 col-md-5">
+        <div class="col-inner">
+
+          <!-- <div class="icon-box _left"> -->
+          <!--   <div class="icon-box-media"> -->
+          <!--     <img src="assets/img/icon/mobile.png" alt="" data-sr="bottom"> -->
+          <!--   </div> -->
+          <!--   <div class="icon-box-heading"> -->
+          <!--     <h4>Phone Number</h4> -->
+          <!--   </div> -->
+          <!--   <div class="icon-box-content font-sub font-italic"> -->
+          <!--     <span>(00) 123-4567890 (tel-1)</span> -->
+          <!--     <br> -->
+          <!--     <span>(00) 123-4567890 (tel-2)</span> -->
+          <!--   </div> -->
+          <!-- </div> -->
+
+          <div class="icon-box _left">
+            <div class="icon-box-media">
+              <img src="assets/img/icon/mail.png" alt="" data-sr="bottom">
+            </div>
+            <div class="icon-box-heading">
+              <h4>Email</h4>
+            </div>
+            <div class="icon-box-content font-sub font-italic">
+              <span>
+                <a href="mailto:hello@openhealthcare.org.uk">
+                  hello@openhealthcare.org.uk
+                </a>
+              </span>
+              <!-- <br> -->
+              <!-- <span>email_2@example.com</span> -->
+            </div>
+          </div>
+
+          <div class="icon-box _left">
+            <div class="icon-box-media">
+              <img src="assets/img/icon/paper.png" alt="" data-sr="bottom">
+            </div>
+            <div class="icon-box-heading">
+              <h4>Documentation</h4>
+            </div>
+            <div class="icon-box-content font-sub font-italic">
+              <span>
+                <a href="/docs/" target="_blank">Full Documentation</a>
+              </span>
+            </div>
+          </div>
+
+        </div>
+          <div class="icon-box _left">
+            <div class="icon-box-media">
+              <img src="assets/img/icon/mail.png" alt="" data-sr="bottom">
+            </div>
+            <div class="icon-box-heading">
+              <h4>Mailing List</h4>
+            </div>
+            <div class="icon-box-content font-sub font-italic">
+              <span>
+                <a href="https://groups.google.com/forum/?ohc-dev#!forum/ohc-opal">
+                  ohc-opal on Google Groups
+                </a>
+              </span>
+              <!-- <br> -->
+              <!-- <span>email_2@example.com</span> -->
+            </div>
+          </div>
+
+
+      </div>
+      <div class="col-sm-6 col-md-offset-1 m-t-60-xs-max">
+        <div class="col-inner">
+          <div id="thanksMessage" style="display: none">
+            <h4>
+              Thanks for your message, we'll be in touch shortly.
+            </h4>
+          </div>
+          <form class="_default" id="contactForm" novalidate="novalidate">
+            <div class="form-group required">
+              <label class="form-label" for="contactName">Your name</label>
+              <input class="form-control" id="contactName" type="text" name="name">
+            </div>
+            <div class="form-group required">
+              <label class="form-label" for="contactEmail">Email address</label>
+              <input class="form-control" id="contactEmail" type="text" name="email">
+            </div>
+            <div class="form-group required">
+              <label class="form-label" for="contactMessage">Message</label>
+              <textarea class="form-control" id="contactMessage" rows="4" name="message"></textarea>
+            </div>
+            <div class="btn-wrap">
+              <button type="submit" class="btn btn-primary btn-block"
+                      onclick="getintouchform(event)">Send Message</button>
+            </div>
+            <div class="form-notify"></div>
+          </form> <!-- #contactForm -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div> <!-- #contact -->
+<!-- <div id="map-canvas"></div> <\!-- #map-canvas -\-> -->
+</main> <!-- .site-main -->
+<footer class="site-footer block-invert">
+  <div class="container">
+    <ul class="site-footer-social-list">
+      <li><a href="https://github.com/openhealthcare/opal/" target="_blank">Source Code</a></li>
+      <li><a href="https://github.com/openhealthcare/opal/issues/" target="_blank">Issues</a></li>
+      <li><a href="/docs/" target="_blank">Documentation</a></li>
+
+      <li><a href="https://twitter.com/opalframework" target="_blank">Twitter</a></li>
+
+      <!-- <li><a href="https://instagram.com/" target="_blank">Instagram</a></li> -->
+      <!-- <li><a href="https://www.linkedin.com/" target="_blank">LinkedIn</a></li> -->
+      <!-- <li><a href="https://www.pinterest.com/" target="_blank">Pinterest</a></li> -->
+    </ul>
+    <p class="site-footer-copyright">
+      OPAL is an Open Source, Open Governance project from Open Health Care UK.
+    </p>
+    <a href="http://openhealthcare.org.uk" target="_blank">
+      <img class="site-footer-logo img-responsive" src="assets/img/ohcuklogo.trans.white.png" data-sr="bottom">
+    </a>
+    <p class="site-footer-copyright">
+      2016 © <a href="#" target="_blank">Open Health Care UK</a>.
+      <br />
+      <small>Many icons designed by Flaticon</small>
+    </p>
+  </div>
+</footer> <!-- .site-footer -->
+</div>
+</div>
+
+<script src="assets/js/vendor/jquery-1.11.3.min.js"></script>
+<script src='assets/js/vendor/bootstrap.min.js'></script>
+<script src='assets/js/vendor/plugin.js'></script>
+<script src='assets/js/variable.js'></script>
+<!-- <script src='assets/js/map.js'></script> -->
+<script src='assets/js/main.js'></script>
+<script src='assets/opal.js'></script>
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<!--
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='https://www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+    </script>
+    -->
+
+</body>
+</html>

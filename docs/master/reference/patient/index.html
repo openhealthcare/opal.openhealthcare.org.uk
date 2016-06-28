@@ -116,7 +116,7 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../../guides/teams/">Teams</a> -->
+                <!--             <a href="../../guides/tagging/">Tagging</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -132,6 +132,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../guides/context_processors/">Context Processors</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../guides/static_files/">Static Files</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -140,11 +144,19 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../../guides/episode_detail_views/">Episode Detail Views</a> -->
+                <!--             <a href="../../guides/patient_detail_views/">Patient Detail Views</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../../guides/list_views/">Patient List Views</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/discoverable/">Discoverable Features</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/search/">Search Overview</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--     </ul> -->
@@ -160,16 +172,16 @@
                 <!--             <a href="../episode/">The Episode model</a> -->
                 <!--         </li> -->
                 <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../episode_types/">Episode Types</a> -->
+                <!--         </li> -->
+                <!--      -->
                 <!--         <li class="active"> -->
                 <!--             <a href="./">Patient</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../subrecords/">Subrecords</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../team/">Team</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -193,11 +205,15 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../record_panel_templatetag/">Record panel templatetag</a> -->
+                <!--             <a href="../panels_templatetags/">Panel Template tags</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../javascript_helpers/">Javascript helpers</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../javascript_dependencies/">Javascript dependencies</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -206,6 +222,18 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../search_queries/">Search Queries</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../detail_views/">Detail Views</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../patient_list/">Patient Lists</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../search_js_services/">Search JS Services</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -221,12 +249,12 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.5.6" target="_blank">
-                  <i class="fa fa-github"></i> v0.5.6
+                <a href="https://github.com/openhealthcare/opal/tree/v0.6.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.6.0
                 </a>
               </li>
                 <!-- <li > -->
-                <!--     <a rel="next" href="../episode/"> -->
+                <!--     <a rel="next" href="../episode_types/"> -->
                 <!--         <i class="fa fa-arrow-left"></i> Previous -->
                 <!--     </a> -->
                 <!-- </li> -->
@@ -262,6 +290,24 @@
 <h4 id="to_dict">to_dict</h4>
 <p>Return the dictionary representation of this patient - suitable for serialization.</p>
 <pre><code>patient.to_dict(user)
+</code></pre>
+<h4 id="bulk_update">bulk_update</h4>
+<p>Create or update many subrecords in one go, from a serialised dictionary of data.</p>
+<p>Pass in a dictionary of subrecords you want to update, as well as an episode if one exists.
+This method will create all the subrecords and implicitly create a new episode if required.</p>
+<p>This API will execute all create/update operations as an atomic transaction.</p>
+<p>For example the following will create a patient:</p>
+<pre><code>patient = Patient()
+patient.bulk_update(
+  {
+    "demographics": "hospital_number": "1231212",
+    "allergies": [
+        {"drug": "penicillin"},
+        {"drug": "aspirin"},
+    ]
+  },
+  user
+)
 </code></pre></div>
         </div>
 

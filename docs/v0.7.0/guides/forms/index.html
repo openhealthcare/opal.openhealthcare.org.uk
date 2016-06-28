@@ -112,6 +112,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../working_with_data_in_angular/">Angular Models</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../flow/">Flow</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -286,6 +290,8 @@
         
             <li><a href="#editing-records">Editing Records</a></li>
         
+            <li><a href="#customising-the-angular-controller">Customising the Angular Controller</a></li>
+        
             <li><a href="#form-and-modal-templates">Form and modal templates</a></li>
         
             <li><a href="#autogenerating-forms">Autogenerating forms</a></li>
@@ -304,6 +310,26 @@
 <p>The editing of records is a key component of any OPAL application. A key pattern is to edit
 or create an individual record in a modal containing the form for just that record. OPAL provides
 the Angular Controller <code>opal.controllers.EditItemCtrl</code> for doing just this</p>
+<h3 id="customising-the-angular-controller">Customising the Angular Controller</h3>
+<p>OPAL uses the <code>formController</code> attribute of an <code>Item</code> to determine which Angular Controller to use. This
+defaults to <code>opal.controllers.EditItemCtrl</code>. Individual Subrecords may customise this by implementing an Angualar record Service
+and overriding the formController attribute.</p>
+<pre><code class="python"># yourapp/models.py
+class Diagnosis(models.Diagnosis):
+    _angular_service = 'Diagnosis'
+</code></pre>
+
+<pre><code class="js">// yourapp/static/js/diagnosis.js
+angular.module('opal.records').factory('Diagnosis', function(){
+    return function(record){
+        record.formController = 'MyCustomDiagnosisFormController';
+        return record;
+    }
+});
+
+</code></pre>
+
+<p>Custom form controllers can use the preSave(itemToBeSaved) hook to add their own custom logic before the item is saved</p>
 <h3 id="form-and-modal-templates">Form and modal templates</h3>
 <p>Subrecords have <code>get_form_template()</code> and <code>get_modal_template()</code> methods, which are used for
 figuring out how to render forms for interacting with them. These use the following template

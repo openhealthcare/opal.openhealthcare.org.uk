@@ -116,7 +116,7 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../teams/">Teams</a> -->
+                <!--             <a href="../tagging/">Tagging</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -132,6 +132,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../context_processors/">Context Processors</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../static_files/">Static Files</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -140,11 +144,19 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../episode_detail_views/">Episode Detail Views</a> -->
+                <!--             <a href="../patient_detail_views/">Patient Detail Views</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../list_views/">Patient List Views</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../discoverable/">Discoverable Features</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../search/">Search Overview</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--     </ul> -->
@@ -161,15 +173,15 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../reference/episode_types/">Episode Types</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../reference/patient/">Patient</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../../reference/subrecords/">Subrecords</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../../reference/team/">Team</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -193,11 +205,15 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../../reference/record_panel_templatetag/">Record panel templatetag</a> -->
+                <!--             <a href="../../reference/panels_templatetags/">Panel Template tags</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../../reference/javascript_helpers/">Javascript helpers</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/javascript_dependencies/">Javascript dependencies</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -206,6 +222,18 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../../reference/search_queries/">Search Queries</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/detail_views/">Detail Views</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/patient_list/">Patient Lists</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/search_js_services/">Search JS Services</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -221,8 +249,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.5.6" target="_blank">
-                  <i class="fa fa-github"></i> v0.5.6
+                <a href="https://github.com/openhealthcare/opal/tree/v0.6.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.6.0
                 </a>
               </li>
                 <!-- <li > -->
@@ -231,7 +259,7 @@
                 <!--     </a> -->
                 <!-- </li> -->
                 <!-- <li > -->
-                <!--     <a rel="prev" href="../episode_detail_views/"> -->
+                <!--     <a rel="prev" href="../patient_detail_views/"> -->
                 <!--         Next <i class="fa fa-arrow-right"></i> -->
                 <!--     </a> -->
                 <!-- </li> -->
@@ -250,7 +278,9 @@
         
             <li><a href="#editing-records">Editing Records</a></li>
         
-            <li><a href="#modal-template-selection">Modal template selection</a></li>
+            <li><a href="#form-and-modal-templates">Form and modal templates</a></li>
+        
+            <li><a href="#autogenerating-forms">Autogenerating forms</a></li>
         
             <li><a href="#client-side-validation">Client side Validation</a></li>
         
@@ -266,22 +296,35 @@
 <p>The editing of records is a key component of any OPAL application. A key pattern is to edit
 or create an individual record in a modal containing the form for just that record. OPAL provides
 the Angular Controller <code>opal.controllers.EditItemCtrl</code> for doing just this</p>
-<h3 id="modal-template-selection">Modal template selection</h3>
-<p>Modal templates live in <code>./templates/modals/*</code>. For the Demographics subrecord we would
-look in <code>./templates/modals/demographics_modal.html</code> - which is also available from the URL
-<code>/templates/modals/demographics_modal.html</code>. Modal or form templates can be customised per
-team or sub-team, with template selection handled by the <code>.get_form_template</code> classmethod of your
-Subrecord.</p>
-<p>Team customised subrecords are retrieved from the url e.g.
-<code>/templates/modals/demographics_modal.html/team/subteam/</code> and will look for templates in 
-<code>./templates/modals/team/subteam/demographics_modal.html</code></p>
+<h3 id="form-and-modal-templates">Form and modal templates</h3>
+<p>Subrecords have <code>get_form_template()</code> and <code>get_modal_template()</code> methods, which are used for
+figuring out how to render forms for interacting with them. These use the following template
+paths based on the context in which they are called:</p>
+<pre><code># Forms
+forms/{episode_type}/{list slug}/{record_name}_form.html
+forms/{list_slug}/{record_name}_form.html
+forms/{episode_type}/{record_name}_form.html
+forms/{record_name}_form.html
+
+# Modals
+modals/{episode_type}/{list slug}/{record_name}_modal.html
+modals/{list_slug}/{record_name}_modal.html
+modals/{episode_type}/{record_name}_modal.html
+modals/{record_name}_modal.html
+</code></pre>
+<h3 id="autogenerating-forms">Autogenerating forms</h3>
+<p>The <code>opal</code> commandline tool has a scaffold command, which will autogenerate missing form templates
+for subrecord models. Simply run the following command to generate.</p>
+<pre><code>$ opal scaffold $DJANGO_APP_WHERE_MODELS_LIVE
+</code></pre>
+<p>(Note this will also generate and run migrations for any unmigrated models.xb)</p>
 <h3 id="client-side-validation">Client side Validation</h3>
 <p>Client side validation for forms requires a pattern and a help block &amp;&amp; uses ng-pattern, ng-disabled (https://docs.angularjs.org/api/ng/directive/input)</p>
 <h3 id="helpers">Helpers</h3>
 <p>OPAL contains a number of helpers for developing forms and input modals.</p>
 <p>Many of these are located in the forms template tag library, which is a
 Django templatetag library that understands the context of common patterns with
-OPAL for creating forms and modals. </p>
+OPAL for creating forms and modals.</p>
 <p>It provides helpers for various input types that will allow you to render consistent
 forms, with less verbose templates.</p>
 <pre><code>{% load forms %}

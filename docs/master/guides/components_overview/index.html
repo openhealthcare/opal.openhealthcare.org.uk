@@ -116,7 +116,7 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../teams/">Teams</a> -->
+                <!--             <a href="../tagging/">Tagging</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -132,6 +132,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../context_processors/">Context Processors</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../static_files/">Static Files</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -140,11 +144,19 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../episode_detail_views/">Episode Detail Views</a> -->
+                <!--             <a href="../patient_detail_views/">Patient Detail Views</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../list_views/">Patient List Views</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../discoverable/">Discoverable Features</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../search/">Search Overview</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--     </ul> -->
@@ -161,15 +173,15 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../reference/episode_types/">Episode Types</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../reference/patient/">Patient</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../../reference/subrecords/">Subrecords</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../../reference/team/">Team</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -193,11 +205,15 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../../reference/record_panel_templatetag/">Record panel templatetag</a> -->
+                <!--             <a href="../../reference/panels_templatetags/">Panel Template tags</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../../reference/javascript_helpers/">Javascript helpers</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/javascript_dependencies/">Javascript dependencies</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -206,6 +222,18 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../../reference/search_queries/">Search Queries</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/detail_views/">Detail Views</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/patient_list/">Patient Lists</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/search_js_services/">Search JS Services</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -221,8 +249,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.5.6" target="_blank">
-                  <i class="fa fa-github"></i> v0.5.6
+                <a href="https://github.com/openhealthcare/opal/tree/v0.6.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.6.0
                 </a>
               </li>
                 <!-- <li > -->
@@ -248,7 +276,7 @@
     
         <li class="main active"><a href="#components-of-an-opal-application">Components of an OPAL application</a></li>
         
-            <li><a href="#core-opal-framework">Core OPAL framework</a></li>
+            <li><a href="#opal">OPAL</a></li>
         
             <li><a href="#plugins">Plugins</a></li>
         
@@ -262,50 +290,56 @@
             <div class="col-md-9" role="main">
 
 <h1 id="components-of-an-opal-application">Components of an OPAL application</h1>
-<p>The OPAL ecosystem comprises several types of components - let's take a look at how they all
-hang together.</p>
-<h3 id="core-opal-framework">Core OPAL framework</h3>
-<p>The core OPAL framework provides common patterns for writing clinical facing transactional 
-applications. It is an opinionated approach, and amongst many other things, it gives you 
-authentication and login mechanisms, hooks for integration with other clinical systems, a 
-foundational <a href="../datamodel/">Clinical Data Model</a>, self-documenting, open JSON APIs for your 
-data, a <a href="../roles_and_permissions/">Permission framework</a> and a pattern library for UX 
-components.</p>
-<p>In addition to this, OPAL also provides some very common functionality as part of the core
-framework, such as Search, rendering lists of patients, viewing the detail and history of
-episodes of care, as well as multi-user realtime updates.</p>
+<p>OPAL applications will typically be made up of several types of components.</p>
+<p><img alt="Layers of an OPAL application" src="../../img/OPALLayers.png" /></p>
+<h3 id="opal">OPAL</h3>
+<p>The core OPAL framework provides you with a range of commonly required elements
+of clinical applications.</p>
+<p>It contains a core <a href="../datamodel/">data model</a> for persisting clinical information,
+as well core clinical archetypes out of the box that build on many
+years of collaboratively modelling clinical concepts by medical domain experts.</p>
+<p>OPAL also makes it easy to integrate standard clinical <a href="../lookup_lists/">reference data</a>
+into your application - things like medical diagnoses, tests, drugs et cetera.</p>
+<p>Some common functional components end up in to most clinical applications, and many
+of these come with OPAL as "batteries included" - immediately available modular features
+that can be simply re-used without having to reinvent the wheel.</p>
+<p>For example:</p>
+<ul>
+<li><a href="../list_views/">Patient lists</a></li>
+<li><a href="../search/">Search</a></li>
+<li>Authentication and <a href="../roles_and_permissions/">Permissions</a></li>
+<li><a href="../forms/">Forms for data entry</a></li>
+<li><a href="../json_api/">JSON based REST APIs</a> for all of your models</li>
+<li>... and <a href="../topic-guides/">many more</a>...</li>
+</ul>
 <h3 id="plugins">Plugins</h3>
-<p>OPAL plugins are intended to provide high quality generic, composable, re-usable chunks of 
-functionality that can be "dropped in" to an application. For example, installing the 
-<a href="https://github.com/openhealthcare/opal-analytics">Analytics</a> plugin allows you to integrate
-your application with Google or Piwik Analytics with a minimum of fuss. The 
-<a href="https://github.com/openhealthcare/opal-referral">Referral</a> plugin provides the plumbing for 
+<p>OPAL plugins are intended to provide high quality generic, composable, re-usable chunks of
+functionality that can be "dropped in" to an application. For example, installing the
+<a href="https://github.com/openhealthcare/opal-dashboards">Dashboards</a> plugin allows you to easily
+create clinical dashboards within your application. The
+<a href="https://github.com/openhealthcare/opal-referral">Referral</a> plugin provides the plumbing for
 building complex inter-team referrals within an institution.</p>
-<p>Plugins have a <a href="../plugins/">rich plugin API</a> they can hook into to aid the seamlessness, and
-many examples can be found by inspecting the source of <a href="../plugins_list/">existing plugins</a>. 
-This includes defining patient Flows through the system, adding to the core JSON API, ovrerriding
-templates, adding patient Actions, as well as much more.</p>
-<p>TODO: Write the Plugin Tutorial</p>
+<p>Plugins have a <a href="../plugins/">rich plugin API</a> they can hook into to, and
+many examples can be found by inspecting the source of <a href="../plugins_list/">existing plugins</a>.</p>
 <h3 id="applications">Applications</h3>
-<p>An application is the collection of configuration and bespoke functionality that would be 
-provided to an individual institution - e.g. it's the thing that you would look to deploy.</p>
+<p>An application is the collection of configuration and bespoke functionality that would be
+provided to an individual institution - it's the thing that you would look to deploy.</p>
 <p>Example applications include <a href="https://github.com/openhealthcare/elcid">elCID</a> - a for managing
-infection patients, or <a href="https://github.com/openhealthcare/opal-renal">OPAL-Renal</a> - an MDT &amp; 
-handover tool for Renal wards. </p>
-<p>A hospital might have multiple services running on one <code>Application</code>, or multiple <code>Applications</code>
-that integrate with one another.</p>
+infection patients, or <a href="https://github.com/openhealthcare/opal-renal">OPAL-Renal</a> - an MDT &amp;
+handover tool for Renal wards.</p>
+<p>A hospital might have multiple clinical services running on one application, or multiple
+applications that integrate with one another.</p>
 <h3 id="opinionated-but-pluggable">Opinionated but Pluggable</h3>
-<p>OPAL is an Opinionated Framework. It expects the developer to structure code in a 
-certain way. </p>
+<p>OPAL is an opinionated framework. It expects the developer to structure code in a
+certain way.</p>
 <p>OPAL expects features to be implemented as single page Angular.js applications, with the server
 mostly figuring as an API endpoint for reading and writing data.</p>
-<p>TODO: Expand on this</p>
 <p>That said, the technology stack of Django, Angular &amp; Bootstrap allows the confident user a huge
-degree of flexibility when writing their own applications and plugins. </p>
-<p>For instance, there is nothing to <em>stop</em> a developer from implementing a part of the functionality 
+degree of flexibility when writing their own applications and plugins.</p>
+<p>For instance, there is nothing to <em>stop</em> a developer from implementing a part of the functionality
 in some other Javascript framework, and simply calling the <a href="../json_api/">JSON API</a>. However, by
 doing so, the developer will lose a large collection of pre-existing libraries, conventions et cetera.
-While possible, this approach is not likely to be officially supported in the medium term..</p></div>
+While possible, this approach is not likely to be officially supported in the medium term.</p></div>
         </div>
 
         <footer class="col-md-12">

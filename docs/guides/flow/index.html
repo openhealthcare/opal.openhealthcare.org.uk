@@ -116,7 +116,7 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../teams/">Teams</a> -->
+                <!--             <a href="../tagging/">Tagging</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -132,6 +132,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../context_processors/">Context Processors</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../static_files/">Static Files</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -140,11 +144,19 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../episode_detail_views/">Episode Detail Views</a> -->
+                <!--             <a href="../patient_detail_views/">Patient Detail Views</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../list_views/">Patient List Views</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../discoverable/">Discoverable Features</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../search/">Search Overview</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--     </ul> -->
@@ -161,15 +173,15 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../reference/episode_types/">Episode Types</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../reference/patient/">Patient</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../../reference/subrecords/">Subrecords</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../../reference/team/">Team</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -193,11 +205,15 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../../reference/record_panel_templatetag/">Record panel templatetag</a> -->
+                <!--             <a href="../../reference/panels_templatetags/">Panel Template tags</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../../reference/javascript_helpers/">Javascript helpers</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/javascript_dependencies/">Javascript dependencies</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -206,6 +222,18 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../../reference/search_queries/">Search Queries</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/detail_views/">Detail Views</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/patient_list/">Patient Lists</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/search_js_services/">Search JS Services</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -221,8 +249,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.5.6" target="_blank">
-                  <i class="fa fa-github"></i> v0.5.6
+                <a href="https://github.com/openhealthcare/opal/tree/v0.6.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.6.0
                 </a>
               </li>
                 <!-- <li > -->
@@ -248,7 +276,7 @@
     
         <li class="main active"><a href="#flow-hooks-in-opal">Flow hooks in OPAL</a></li>
         
-            <li><a href="#the-flow-schema">The Flow schema</a></li>
+            <li><a href="#the-flow-service">The Flow service</a></li>
         
             <li><a href="#the-enter-verb">The enter verb</a></li>
         
@@ -260,33 +288,48 @@
             <div class="col-md-9" role="main">
 
 <h1 id="flow-hooks-in-opal">Flow hooks in OPAL</h1>
-<p>OPAL provides various hooks that developers can use to customise behaviour at certain key points in a 
+<p>OPAL provides various hooks that developers can use to customise behaviour at certain key points in a
 patient's journey through a clinical service - for example when a patient is discharged.</p>
 <p>These hooks are associated with verbs <code>enter</code>, <code>exit</code>.</p>
-<h3 id="the-flow-schema">The Flow schema</h3>
-<p>Your application scaffold will have created a file at <code>./yourapp/flow.py</code>. This file will contain a variable <code>flow</code>, 
-which is rendered as the flow schema for your application. Instances are defined as pairs of Angular controllers and
-templates used to render them.</p>
-<pre><code>flows = {
-    'default': {
-        'enter': {
-            'controller': 'HospitalNumberCtrl',
-            'template'  : '/templates/modals/hospital_number.html/'
-        },
-        'exit': {
-            'controller': 'DischargeEpisodeCtrl',
-            'template'  : '/templates/modals/discharge_episode.html/'
-        }
-    }
-}
-</code></pre>
+<h3 id="the-flow-service">The Flow service</h3>
+<p>Your application scaffold will have created a file at
+<code>./yourapp/assets/js/yourapp/services/flow.js</code>. This file will declare an angular service that
+your application will use to determine how to move to the correct next step for a patient.</p>
+<p>Flow services must define an <code>enter</code> and an <code>exit</code> method, which both return the appropriate
+angular controller and template to use. Although OPAL provides sensible default controllers and
+templates for these common actions, applications with custom flows may customise these methods
+as required.</p>
 <h3 id="the-enter-verb">The enter verb</h3>
 <p>The enter verb is called when a patient is added to a service - for instance by adding a patient to a team list.</p>
-<p>It should be an Angular controller that expects to be initialised as a modal.</p>
+<p>Implementations of enter are expected to return a dictionary of the controller and template they wish to be called.</p>
+<pre><code>enter: function(){
+        return {
+            'controller': 'HospitalNumberCtrl',
+            'template'  : '/templates/modals/hospital_number.html/'
+        }
+    }
+</code></pre>
+<p>A common strategy is to examine angular <code>$route</code> or <code>$routeParams</code> to determine where the user is in the application.
+For instance you may wish to have custom controllers for a particular patient list, or the search results page.</p>
 <h3 id="the-exit-verb">The exit verb</h3>
-<p>The exit verb is called when a patient is added to a service - for instance when we discharge a patient, or end
+<p>The exit verb is called when a patient is moving through a service - for instance when we discharge a patient, or end
 one phase of a clinical pathway.</p>
-<p>It should be an Angular controller that expects to be initialised as a modal.</p></div>
+<p>Implementations of exit are expected to return a dictionary of the controller and template they wish to be called.</p>
+<p>The enter verb will receive the episode that we are acting on - for instance a controller that acts differently for
+deceased patients might look as follows</p>
+<pre><code>exit: function(episode){
+      if(episode.demographics[0].deceased){
+          return {
+              'controller': 'DeceasedDischargeEpisodeCtrl',
+              'template'  : '/templates/modals/deceased_discharge.html/'
+          }
+      }
+      return {
+          'controller': 'DischargeEpisodeCtrl',
+          'template'  : '/templates/modals/discharge_episode.html/'
+      }
+    }
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">

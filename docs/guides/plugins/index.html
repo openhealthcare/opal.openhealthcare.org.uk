@@ -116,7 +116,7 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../teams/">Teams</a> -->
+                <!--             <a href="../tagging/">Tagging</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -132,6 +132,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../context_processors/">Context Processors</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../static_files/">Static Files</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -140,11 +144,19 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../episode_detail_views/">Episode Detail Views</a> -->
+                <!--             <a href="../patient_detail_views/">Patient Detail Views</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../list_views/">Patient List Views</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../discoverable/">Discoverable Features</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../search/">Search Overview</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--     </ul> -->
@@ -161,15 +173,15 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../reference/episode_types/">Episode Types</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../reference/patient/">Patient</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../../reference/subrecords/">Subrecords</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../../reference/team/">Team</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -193,11 +205,15 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../../reference/record_panel_templatetag/">Record panel templatetag</a> -->
+                <!--             <a href="../../reference/panels_templatetags/">Panel Template tags</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../../reference/javascript_helpers/">Javascript helpers</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/javascript_dependencies/">Javascript dependencies</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -206,6 +222,18 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../../reference/search_queries/">Search Queries</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/detail_views/">Detail Views</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/patient_list/">Patient Lists</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/search_js_services/">Search JS Services</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -221,8 +249,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.5.6" target="_blank">
-                  <i class="fa fa-github"></i> v0.5.6
+                <a href="https://github.com/openhealthcare/opal/tree/v0.6.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.6.0
                 </a>
               </li>
                 <!-- <li > -->
@@ -250,9 +278,7 @@
         
             <li><a href="#getting-started-with-your-plugin">Getting started with your plugin</a></li>
         
-            <li><a href="#defining-teams">Defining teams</a></li>
-        
-            <li><a href="#defining-schemas">Defining Schemas</a></li>
+            <li><a href="#adding-discoverable-functionality">Adding Discoverable Functionality</a></li>
         
             <li><a href="#defining-new-flows">Defining new flows</a></li>
         
@@ -277,37 +303,42 @@
 
 <h2 id="writing-plugins">Writing Plugins</h2>
 <p>OPAL Plugins are Django apps on the server side, and collections of angular.js
-models for the client. </p>
+models for the client.</p>
 <h3 id="getting-started-with-your-plugin">Getting started with your plugin</h3>
-<p>The OPAL commandline tool will bootstrap your plugin for you - just run: </p>
+<p>The OPAL commandline tool will bootstrap your plugin for you - just run:</p>
 <pre><code>$ opal startplugin yourcoolplugin
 </code></pre>
-<h3 id="defining-teams">Defining teams</h3>
-<p>As a signal is fine.
-Data migrations might work.</p>
-<p>Defining restricted team access is done by:</p>
-<p>Adding a method to your pluigin that takes one argument, a User object, and returning a set of
-extra teams that this user is allowed to see.</p>
-<h3 id="defining-schemas">Defining Schemas</h3>
-<p>Plugins can define list schemas to be used to generate patient lists. 
-They should return a dictionary of lists of models from the
-<code>list_schemas</code> method of the plugin class.</p>
-<pre><code># yourplugin/__init__.py
-from opal.core.plugins import OpalPlugin
+<h3 id="adding-discoverable-functionality">Adding Discoverable Functionality</h3>
+<p>A common pattern for plugins is to add functionality that other plugins or applications
+can use by inheriting a base class that you define in a file with a magic name. (In
+much the same way that Django provides models.)</p>
+<p>For example, if you're creating an appointments plugin that helps people to book and schedule
+appointments in clinics, you would create a base <code>Clinic</code> class that can be subclassed to
+create specific clinics.</p>
+<pre><code>class Clinic(opal.core.discoverable.DiscoverableFeature):
+    module_name = 'clinics'
+</code></pre>
+<p>We can then create clinics in any installed app, and they will be available from <code>Clinic.list()</code></p>
+<pre><code>class OutpatientsClinic(Clinic):
+    name = 'Outpatients'
 
-from yourplugin import models
+    # Add your custom clnic functionality here e.g.
+    def book_appointment(self, date, patient):
+        pass
 
-class YourPlugin(OpalPlugin):
-    def list_schemas(self):
-        columns = [models.YourAwesomeModel, models.YourSecondModel, models.SomeOtherModel]
-        return {'yourplugin': {'default': columns}}
+
+Clinic.list()
+# -&gt; Generator including OutPatientsClinic
+
+Clinic.get('outpatients)
+# -&gt; OutpatientsClinic
 </code></pre>
 <h3 id="defining-new-flows">Defining new flows</h3>
-<p>Plugins can define flows. They should return a dictionary of flows from the 
+<p>Plugins can define flows. They should return a dictionary of flows from the
 flows() method of the plugin class.</p>
 <h3 id="adding-urls">Adding URLS</h3>
 <p>Add an urls.py, then add to your plugin class as YourPlugin.urls</p>
-<p>Naturally, these can point to views in your plugin! </p>
+<p>Naturally, these can point to views in your plugin!</p>
 <h3 id="adding-javascript">Adding Javascript</h3>
 <p>add to static, then add to your plugin class as YourPlugin.javascripts</p>
 <p>There are some restricted namespaces for these...</p>
@@ -346,7 +377,7 @@ class Plugin(OpalPlugin):
   &lt;button class="btn btn-primary" ng-click="alert('Boom!')"&gt;
     &lt;i href="fa fa-warning"&gt;&lt;/i&gt;
     ALERT ME
-  &lt;/button&gt;    
+  &lt;/button&gt;
 &lt;/p&gt;
 </code></pre>
 <h3 id="adding-dependencies-globally-to-our-angular-modules">Adding dependencies globally to our angular modules</h3>

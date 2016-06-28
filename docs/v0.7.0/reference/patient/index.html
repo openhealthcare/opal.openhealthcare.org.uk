@@ -112,6 +112,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../guides/working_with_data_in_angular/">Angular Models</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../guides/flow/">Flow</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -286,6 +290,8 @@
         
             <li><a href="#methods">methods</a></li>
         
+            <li><a href="#manager">Manager</a></li>
+        
     
     </ul>
 </div></div>
@@ -316,7 +322,15 @@ patient.bulk_update(
   },
   user
 )
-</code></pre></div>
+</code></pre>
+<h3 id="manager">Manager</h3>
+<p>The custom manager for Patient has the following methods:</p>
+<h4 id="patientobjectssearch">Patient.objects.search</h4>
+<p>A useful utility the patient manager has a search method that
+will search on first name last name hospital number. Its splits the string input on space, so if you do "12 Jane", you will get all
+Patients who's name, surname or hospital number contains either
+12 or Jane, in this example most probably people who's hospital
+number contains 12 and who's first name is Jane.</p></div>
         </div>
 
         <footer class="col-md-12">

@@ -112,6 +112,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../working_with_data_in_angular/">Angular Models</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../flow/">Flow</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -267,7 +271,7 @@
                 <!--     </a> -->
                 <!-- </li> -->
                 <!-- <li > -->
-                <!--     <a rel="prev" href="../flow/"> -->
+                <!--     <a rel="prev" href="../working_with_data_in_angular/"> -->
                 <!--         Next <i class="fa fa-arrow-right"></i> -->
                 <!--     </a> -->
                 <!-- </li> -->
@@ -549,6 +553,107 @@ contain concrete implementations of these models in the application.</p>
 <td>details</td>
 <td>Char</td>
 <td>255</td>
+</tr>
+</tbody>
+</table>
+<h3 id="symptomcomplex">SymptomComplex</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Length</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>symptoms</td>
+<td>ManyToMany(Symptom)</td>
+<td></td>
+</tr>
+<tr>
+<td>duration</td>
+<td>Char</td>
+<td>255</td>
+</tr>
+<tr>
+<td>details</td>
+<td>Text</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="referralroute">ReferralRoute</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Length</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>internal</td>
+<td>NullBoolean</td>
+<td></td>
+</tr>
+<tr>
+<td>referral_route</td>
+<td>FKorFT(ReferralOrganisation)</td>
+<td></td>
+</tr>
+<tr>
+<td>referral_name</td>
+<td>Char</td>
+<td>255</td>
+</tr>
+<tr>
+<td>date_of_referral</td>
+<td>Date</td>
+<td></td>
+</tr>
+<tr>
+<td>referral_team</td>
+<td>FKorFT(Speciality)</td>
+<td></td>
+</tr>
+<tr>
+<td>referral_reason</td>
+<td>FKorFT(ReferralReason)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="patientconsultation">PatientConsultation</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Length</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>when</td>
+<td>Datetime</td>
+<td></td>
+</tr>
+<tr>
+<td>initials</td>
+<td>Char</td>
+<td>255</td>
+</tr>
+<tr>
+<td>reason_for_interaction</td>
+<td>FKorFT(Patient_consultation_reason_for_interaction)</td>
+<td></td>
+</tr>
+<tr>
+<td>discussion</td>
+<td>Text</td>
+<td></td>
 </tr>
 </tbody>
 </table>
