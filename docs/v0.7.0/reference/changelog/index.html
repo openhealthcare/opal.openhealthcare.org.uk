@@ -288,6 +288,20 @@
     
         <li class="main active"><a href="#070-major-release">0.7.0 (Major Release)</a></li>
         
+            <li><a href="#episode-categories">Episode Categories</a></li>
+        
+            <li><a href="#episode-json-api">Episode JSON API</a></li>
+        
+            <li><a href="#defaults-for-records-on-the-client-side">Defaults for records on the client side</a></li>
+        
+            <li><a href="#update-to-javascript-signatures">Update to Javascript Signatures</a></li>
+        
+            <li><a href="#maxlength-for-form-helpers">MaxLength for form helpers</a></li>
+        
+            <li><a href="#episodedetail-removed">EpisodeDetail removed</a></li>
+        
+            <li><a href="#additional-utilities">Additional utilities</a></li>
+        
     
         <li class="main "><a href="#060-major-release">0.6.0 (Major Release)</a></li>
         
@@ -347,15 +361,33 @@
             <div class="col-md-9" role="main">
 
 <h3 id="070-major-release">0.7.0 (Major Release)</h3>
-<p><strong> Episode Categories</strong></p>
+<h4 id="episode-categories">Episode Categories</h4>
 <p>Refactors EpisodeCategory to be a discoverable feature.</p>
 <p>Renames <code>Episode.category</code> -&gt; <code>Episode.category_name</code>.</p>
-<p><strong> Episode JSON API</strong></p>
+<h4 id="episode-json-api">Episode JSON API</h4>
 <p>The Restful Episode JSON API previously available at <code>/episode/:pk/</code> is now moved into
 <code>/api/v0.1/episode/:pk/</code> for consistency with the rest of our JSON APIs.
 The OPAL Angular layer has been updated to reflect this, and
 should handle the transition seamlessly, but code calling the API directly should update
 to reflect the new URL.</p>
+<h4 id="defaults-for-records-on-the-client-side">Defaults for records on the client side</h4>
+<p>Establishes a new way to define defaults for records initialized in Javascript without
+requiring that we hard-code API names to defaults in a global namespace.</p>
+<h4 id="update-to-javascript-signatures">Update to Javascript Signatures</h4>
+<p><code>Flow.enter()</code> and <code>Flow.exit()</code> now no longer take <code>options</code> positional arguments - instead
+the controllers they initialize have <code>Metadata</code> and <code>Referencedata</code> as optional resolves
+arguments.</p>
+<p>AddEpisodeCtrl now no longer requires options as a resolves() option, but requires Referencedata
+instead.</p>
+<h4 id="maxlength-for-form-helpers">MaxLength for form helpers</h4>
+<p>The <code>input</code> form helper will now infer the max length of char fields from the max length of the
+database field, and render relevant Angular directives.</p>
+<h4 id="episodedetail-removed">EpisodeDetail removed</h4>
+<p>The <code>EpisodeDetailCtrl</code> and <code>EpisodeDetailMixin</code> controller and service have been removed - these
+were not used anywhere other than in the Wardround plugin, and redundant after enhancements to
+Patient Detail and Custom DetailViews in 0.6.</p>
+<h4 id="additional-utilities">Additional utilities</h4>
+<p>Adds a datetimepicker templatetag that will render widgets for a Datetime field including time.</p>
 <p>Updates dependency graph:</p>
 <ul>
 <li>Django -&gt; 1.8.13</li>

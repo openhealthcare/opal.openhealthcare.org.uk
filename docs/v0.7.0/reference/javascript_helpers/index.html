@@ -312,12 +312,34 @@ the url for the template, the size of the modal window (either 'sm' or 'lg').</p
 <p>OPAL provides some built-in Angular directives for your project to use.</p>
 <h4 id="date-of-birth">date-of-birth</h4>
 <p>Creates an input field that assumes to base field is a moment and handles validation and parsing. It assumes no one is born in the future or is over 150 years old.</p>
+<h4 id="one-click-only">one-click-only</h4>
+<p>A directive that if set with no arguments, or set to true, will only allow a button to be
+clicked on once and then it'll be disabled. Useful for example to make sure that multiple save requests aren't
+accidentally triggered.</p>
+<h4 id="scroll-top">scroll-top</h4>
+<p>Adds a click handler to the element that when click will animate the body of the element to scroll to the top</p>
+<h4 id="go-to-top">go-to-top</h4>
+<p>Similar to scroll-top, this moves the scroll bar to the top of the page but doesn't animate the transition.</p>
 <h3 id="angular-filters">Angular Filters</h3>
 <p>OPAL provides some built-in Angular filters for your project to use.</p>
 <h4 id="short-date">short-date</h4>
 <p>Displays a date as DD/MM if it's this year, else DD/MM/YYYY</p>
 <h4 id="hhmm">hhmm</h4>
 <p>Displays the hours &amp; minutes portion of a javascript Date object as HH:MM</p>
+<h4 id="short-date-time">short-date-time</h4>
+<p>Displays a date time, short date as above and time as in hhmm above</p>
+<h4 id="moment-date-filter">moment-date-filter</h4>
+<p>Allows a us to use moment.js formatters in the template exactly like you would use moment.format</p>
+<h4 id="title">title</h4>
+<p>Converts a string to title case</p>
+<h4 id="upper">upper</h4>
+<p>Converts a string to upper case</p>
+<h4 id="plural">plural</h4>
+<p>takes a word, a count, and an optional plural term.</p>
+<p>if count != 1 and there is a plural term it will return the plural term otherwise it will just suffix an 's'</p>
+<p>if count == 1 then it will return the word</p>
+<h4 id="age">age</h4>
+<p>calculates a persons current age from their date of birth</p>
 <h4 id="boxed">boxed</h4>
 <p>Displays Boolean fields as a checkbox (e.g. either [ ] or [X])</p>
 <pre><code>[[ item.boolean_field | boxed]]

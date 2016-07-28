@@ -310,6 +310,18 @@ directly sets category, you will be required to update all instances where this 
 <p>The <code>/episode/:pk/</code> API has moved to <code>/api/v0.1/episode/:pk/</code> so any code (typically
 javascript) code that directly saves to this API endpoint rather than using the OPAL JS
 <code>Episode</code> services should work immediately when re-pointed at the new URL.</p>
+<p>The signature of the EditItemCtrl has been updated - this modal controller no longer
+takes an <code>options</code> argument, rather it uses the new 0.7.x <code>referencedata</code> and <code>metadata</code>
+services. Applications that call EditItemCtrl directly should look to update the <code>resolves</code>
+option they were passing to <code>$modal.open</code>. (Alternatively, developers should consider
+refactoring to use the new <code>recordEditor</code> API.)</p>
+<p>The signatures of Flow <code>enter</code> and <code>exit</code> methods has changed to no longer accept
+options as a positional argument, and enter/exit controllers will no longer be initialized
+with access to options as a resovled provider. They will have access to either/both of
+<code>referencedata</code> and <code>metadata</code> so if your application includes custom flow controllers that
+use <code>options</code> you will need to refactor these to use the new x-data arguments instead.</p>
+<p><code>referencedata</code> and <code>metadata</code> between them have all data previously in options, so the refactor
+here should be relatively painless.</p>
 <h3 id="5x-6x">5.x -&gt; 6.x</h3>
 <h4 id="upgrading-opal">Upgrading OPAL</h4>
 <p>How you do this depends on how you have configured your application, but updating your

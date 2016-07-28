@@ -292,6 +292,8 @@
         
             <li><a href="#the-item-service">The Item Service</a></li>
         
+            <li><a href="#subrecord-crud-modals">Subrecord CRUD modals</a></li>
+        
             <li><a href="#customising-subrecords">Customising Subrecords</a></li>
         
     
@@ -320,6 +322,19 @@ the available data fields for this subrecord type.</p>
 var editing = diagnosis.makeCopy();
 editing.date_of_diagnosis = new Date();
 diagnosis.save(editing);
+</code></pre>
+
+<h2 id="subrecord-crud-modals">Subrecord CRUD modals</h2>
+<p>The <code>Episode</code> service has a convenient API that allows you to open a modal to edit
+a new or existing subrecord.</p>
+<pre><code class="js">epiode.recordEditor.newItem('diagnosis'):
+// -&gt; Opens a modal with the diagnosis form and will create a new diagnosis on save
+
+episode.recordEditor.editItem('diagnosis', 0);
+// -&gt; Opens a modal that allows the user to edit the first diagnosis
+
+episode.recordEditor.deleteItem('diagnosis', 0);
+// -&gt; Prompts the user to confirm the deletion of the first diagnosis
 </code></pre>
 
 <h2 id="customising-subrecords">Customising Subrecords</h2>

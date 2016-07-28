@@ -319,13 +319,30 @@ Episode JSON API.</p>
 </ul>
 <h4 id="episodenewitem">Episode.newItem</h4>
 <p>Instantiate a new subrecord for this episode of a given type.</p>
-<p>Arguments: </p>
+<p>Arguments:</p>
 <ul>
 <li><code>recordName</code>: The name of the type of record you want to instantiate.</li>
 </ul>
-<p>Example usage: </p>
+<p>Example usage:</p>
 <pre><code>episode.newItem('diagnosis');
 // item (an Item() instance.
+</code></pre>
+<h4 id="episoderecordeditornewitemname">Episode.recordEditor.newItem(name)</h4>
+<p>Takes a string, opens a modal from which the user can create a new subrecord of type <code>name</code>.</p>
+<pre><code class="js">epiode.recordEditor.newItem('diagnosis'):
+// -&gt; Opens a modal with the diagnosis form and will create a new diagnosis on save
+</code></pre>
+
+<h4 id="episoderecordeditordeleteitemname-index">Episode.recordEditor.deleteItem(name, index)</h4>
+<p>Delete the <code>index-th</code> item of type <code>name</code>. Prompt the user to confirm this with a dialog.</p>
+<pre><code class="js">episode.recordEditor.deleteItem('diagnosis', 0);
+// -&gt; Prompts the user to confirm the deletion of the first diagnosis
+</code></pre>
+
+<h4 id="episoderecordeditoredititemname-index">Episode.recordEditor.editItem(name, index)</h4>
+<p>Open a modal from which the user may edit the <code>index-th</code> item of type <code>name</code>.</p>
+<pre><code class="js">episode.recordEditor.editItem('diagnosis', 0);
+// -&gt; Opens a modal that allows the user to edit the first diagnosis
 </code></pre></div>
         </div>
 
