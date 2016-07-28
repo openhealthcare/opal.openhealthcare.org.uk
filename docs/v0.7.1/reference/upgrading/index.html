@@ -296,6 +296,8 @@
     
         <li class="main active"><a href="#upgrading-your-opal-application">Upgrading Your OPAL Application</a></li>
         
+            <li><a href="#070-071">0.7.0 -&gt; 0.7.1</a></li>
+        
             <li><a href="#6x-7x">6.x -&gt; 7.x</a></li>
         
             <li><a href="#5x-6x">5.x -&gt; 6.x</a></li>
@@ -310,14 +312,51 @@
 <h2 id="upgrading-your-opal-application">Upgrading Your OPAL Application</h2>
 <p>This document provides instructions for specific steps required to upgrading your OPAL
 application to a later version where there are extra steps required.</p>
+<h3 id="070-071">0.7.0 -&gt; 0.7.1</h3>
+<p>We highly recommend that applications explicitly set Django Rest Framework authentication
+classes in their <code>settings.py</code>.</p>
+<p>By default OPAL now uses session and token auth, which will require a migration to install
+the DRF Token authentication app.</p>
+<pre><code class="python">INSTALLED_APPS = (
+    # ....
+    'rest_framework',
+    'rest_framework.authtoken',
+    # ...
+)
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    )
+}
+</code></pre>
+
 <h3 id="6x-7x">6.x -&gt; 7.x</h3>
+<h4 id="upgrading-opal">Upgrading OPAL</h4>
+<p>How you do this depends on how you have configured your application, but updating your
+requirements.txt to update the version should work.</p>
+<pre><code># requirements.txt
+opal==0.7.0
+</code></pre>
+<p>After re-installing (via for instance <code>pip install -r requirements.txt</code>) you will need to
+run the migrations for OPAL 0.6.x</p>
+<pre><code>$ python manage.py migrate opal
+</code></pre>
+<p>If you are inheriting from the abstract models in OPAL e.g. <code>Demographics</code> then you should
+run a makemigrations command to update to the 0.7.x data model.</p>
+<pre><code>python manage.py makemigrations yourapp
+python manage.py migrate yourapp
+</code></pre>
 <h4 id="breaking-changes">Breaking changes</h4>
 <p>OPAL 0.7 contains a number of breaking changes.</p>
+<h5 id="name-changes">Name changes</h5>
 <p><code>opal.models.Episode.category</code> has been re-named <code>category_name</code>. If your application
 directly sets category, you will be required to update all instances where this happens.</p>
 <p>The <code>/episode/:pk/</code> API has moved to <code>/api/v0.1/episode/:pk/</code> so any code (typically
 javascript) code that directly saves to this API endpoint rather than using the OPAL JS
 <code>Episode</code> services should work immediately when re-pointed at the new URL.</p>
+<h5 id="moving-from-options-to-referencedata-and-metadata">Moving from options to referencedata and metadata</h5>
 <p>The signature of the EditItemCtrl has been updated - this modal controller no longer
 takes an <code>options</code> argument, rather it uses the new 0.7.x <code>referencedata</code> and <code>metadata</code>
 services. Applications that call EditItemCtrl directly should look to update the <code>resolves</code>
@@ -330,8 +369,12 @@ with access to options as a resovled provider. They will have access to either/b
 use <code>options</code> you will need to refactor these to use the new x-data arguments instead.</p>
 <p><code>referencedata</code> and <code>metadata</code> between them have all data previously in options, so the refactor
 here should be relatively painless.</p>
+<h5 id="date-of-birth-fields-in-forms">Date of birth fields in forms</h5>
+<p>The partial <code>partials/_date_of_birth_field.html</code> has been removed and replaced with the
+<code>{% date_of_birth_field %}</code> templatetag in the forms library. You should update any forms
+to use this new tag.</p>
 <h3 id="5x-6x">5.x -&gt; 6.x</h3>
-<h4 id="upgrading-opal">Upgrading OPAL</h4>
+<h4 id="upgrading-opal_1">Upgrading OPAL</h4>
 <p>How you do this depends on how you have configured your application, but updating your
 requirements.txt to update the version should work.</p>
 <pre><code># requirements.txt
@@ -427,6 +470,13 @@ from <code>inpatient</code> to <code>Inpatient</code>. To update your episodes r
 ...
 </code></pre>
 
+<p>Any references to episode category in templates (for e.g. ng-hide) or controllers for logic
+will also require updates.</p>
+<h4 id="flow-is-now-defined-in-js">Flow is now defined in JS</h4>
+<p>Flow is no longer defined on the server side in python, but rather is a javascript service.
+See the documentation for information about setting up custom flows. At a minimum applications
+that use custom flows will have to implement their own flow service and reference it in their
+settings.</p>
 <h3 id="4x-5x">4.X -&gt; 5.x</h3>
 <h4 id="migrations">Migrations</h4>
 <p>Before upgrading from 4.x to 5.x you should ensure that you have upgraded from South

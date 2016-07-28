@@ -315,6 +315,11 @@ patient's journey through a clinical service - for example when a patient is dis
 <p>Your application scaffold will have created a file at
 <code>./yourapp/assets/js/yourapp/services/flow.js</code>. This file will declare an angular service that
 your application will use to determine how to move to the correct next step for a patient.</p>
+<p>To enable this, we must set the following setting:</p>
+<pre><code class="python"># settings.py
+OPAL_FLOW_SERVICE = 'MyAppFlow'
+</code></pre>
+
 <p>Flow services must define an <code>enter</code> and an <code>exit</code> method, which both return the appropriate
 angular controller and template to use. Although OPAL provides sensible default controllers and
 templates for these common actions, applications with custom flows may customise these methods
