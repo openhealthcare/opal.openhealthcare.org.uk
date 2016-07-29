@@ -108,6 +108,14 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../archetypes/">Archetypes</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../working_with_data_in_angular/">Angular Models</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../flow/">Flow</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -173,7 +181,7 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../../reference/episode_types/">Episode Types</a> -->
+                <!--             <a href="../../reference/episode_categories/">Episode Categories</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -237,6 +245,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../reference/changelog/">Changelog</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../reference/upgrading/">Upgrading</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -249,8 +261,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.6.0" target="_blank">
-                  <i class="fa fa-github"></i> v0.6.0
+                <a href="https://github.com/openhealthcare/opal/tree/v0.7.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.7.0
                 </a>
               </li>
                 <!-- <li > -->
@@ -259,7 +271,7 @@
                 <!--     </a> -->
                 <!-- </li> -->
                 <!-- <li > -->
-                <!--     <a rel="prev" href="../flow/"> -->
+                <!--     <a rel="prev" href="../archetypes/"> -->
                 <!--         Next <i class="fa fa-arrow-right"></i> -->
                 <!--     </a> -->
                 <!-- </li> -->
@@ -276,15 +288,15 @@
     
         <li class="main active"><a href="#the-opal-data-model">The OPAL Data model</a></li>
         
-            <li><a href="#location-and-trackedmodel-abstract-models">Location and TrackedModel abstract models</a></li>
-        
             <li><a href="#patients">Patients</a></li>
         
             <li><a href="#episodes">Episodes</a></li>
         
             <li><a href="#records">Records</a></li>
         
-            <li><a href="#lookup-lists">Lookup Lists</a></li>
+            <li><a href="#core-clinical-data-model">Core Clinical Data Model</a></li>
+        
+            <li><a href="#reference-data">Reference Data</a></li>
         
     
     </ul>
@@ -296,17 +308,10 @@
 <code>Episodes of care</code>. Some information is linked to an <code>Episode</code>, some is linked to
 a <code>Patient</code>.</p>
 <p><img alt="Datamodel" src="../../img/OPAL.datamodel.png" /></p>
-<h3 id="location-and-trackedmodel-abstract-models">Location and TrackedModel abstract models</h3>
-<p>Location provides all the fields you might need to location a specific bed in a hospital
-i.e. category, hospital, ward, bed</p>
-<p>TrackedModel provides some basic audit fields created_by, created, updated_by, updated
-the presumption is that these will be set by the update_to_dict model or manually in your
-view this is so backend modification can happen without having to worry about corrupting
-the audit trail.</p>
 <h3 id="patients">Patients</h3>
 <p>A <code>Patient</code> may have many <code>Episodes</code>. An <code>Episode</code> is something like an Inpatient admission,
-a Telephone Liaison, care under an outpatient clinic, an appointment at a drop in clinic.
-Applications or plugins may define their own <code>Episode</code> types, and a common pattern is to
+a telephone liaison, care under an outpatient clinic, an appointment at a drop in clinic.
+Applications or plugins may define their own <code>Episode</code> categories, and a common pattern is to
 alter the display or available functionality by episode type. (e.g. You may associate
 templates for discharge summaries with particular episode types)</p>
 <p>A <code>Patient</code> will have <code>Subrecords</code> (such as e.g. Demographics) which follow them across multiple
@@ -314,9 +319,10 @@ episodes. These are information linked to a particular person, and should be imp
 Django models that inherit from the <code>opal.models.PatientSubrecord</code> base class.</p>
 <h3 id="episodes">Episodes</h3>
 <p>An <code>Episode</code> is linked to a <code>Patient</code>, and will contain some metadata about the type and date
-of the episode. The field <code>Episode.category</code> stores the type of episode ('Inpatient', 'Outpatient', ...)
-while the fields <code>Episode.date_of_admission</code>, <code>Episode.discharge_date</code>, and <code>Episode.date_of_episode</code>
-store information about when the <code>Episode</code> occurrs.</p>
+of the episode. The field <code>Episode.category_name</code> stores a string representing the relevant
+<code>EpisodeCategory</code> e.g. ('Inpatient', 'Outpatient', ...), while a category object is returned
+from the <code>episode.category</code> field. The start and end dates of an <code>Episode</code> may be retrieved
+from the <code>start</code> and <code>end</code> properties.</p>
 <p>An <code>Episode</code> will have <code>Subrecords</code> (such as e.g. Diagnosis) which are linked to this episode of
 care. These should be implemented as Django models that inherit from the <code>opal.models.EpisodeSubRecord</code>
 base class.</p>
@@ -326,8 +332,6 @@ implement a Demograpics <code>Subrecord</code> as follows:</p>
 <pre><code>class Demographics(PatientSubrecord):
     name             = models.CharField(max_length=255, blank=True)
     hospital_number  = models.CharField(max_length=255, blank=True)
-    nhs_number       = models.CharField(max_length=255, blank=True,
-                                        null=True)
     date_of_birth    = models.DateField(null=True, blank=True)
     ethnicity        = models.CharField(max_length=255, blank=True,
                                         null=True)
@@ -337,7 +341,12 @@ implement a Demograpics <code>Subrecord</code> as follows:</p>
 <p>Subrecords also define various properties that will provide metadata about their
 display or structure, which are documented in the
 <a href="../../reference/subrecords/">Subrecord reference material</a></p>
-<h3 id="lookup-lists">Lookup Lists</h3>
+<h3 id="core-clinical-data-model">Core Clinical Data Model</h3>
+<p>OPAL ships with a wide range of core clinical concepts implemented as Abstract Subrecords.
+Applications that are generated via the <code>$ opal startproject</code> command will automatically
+contain concrete implementations of these models in the application.</p>
+<p>Full documentation of these models is available in the <a href="../archetypes/">Archetypes</a> documentation.</p>
+<h3 id="reference-data">Reference Data</h3>
 <p>OPAL comes with a set of clinical terminology data models out of the box. - we often
 want to link our records to one of these - for example to record a type of condition
 a patient might have, or a drug they are taking.</p>

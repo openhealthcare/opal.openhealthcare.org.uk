@@ -108,6 +108,14 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../guides/archetypes/">Archetypes</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/working_with_data_in_angular/">Angular Models</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../guides/flow/">Flow</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -173,7 +181,7 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../episode_types/">Episode Types</a> -->
+                <!--             <a href="../episode_categories/">Episode Categories</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -237,6 +245,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../changelog/">Changelog</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../upgrading/">Upgrading</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -249,8 +261,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.6.0" target="_blank">
-                  <i class="fa fa-github"></i> v0.6.0
+                <a href="https://github.com/openhealthcare/opal/tree/v0.7.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.7.0
                 </a>
               </li>
                 <!-- <li > -->
@@ -274,38 +286,67 @@
   <h3>Contents</h3>
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#opalapplicationopalapplication">opal.application.OpalApplication</a></li>
+        <li class="main active"><a href="#opalcoreapplication">opal.core.application</a></li>
         
-            <li><a href="#schema_module">schema_module</a></li>
-        
-            <li><a href="#flow_module">flow_module</a></li>
-        
-            <li><a href="#javascripts">javascripts</a></li>
-        
-            <li><a href="#actions">actions</a></li>
-        
-            <li><a href="#menuitems">menuitems</a></li>
-        
-            <li><a href="#default_episode_category">default_episode_category</a></li>
+            <li><a href="#opalapplication">OpalApplication</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="opalapplicationopalapplication">opal.application.OpalApplication</h1>
-<p>The base class for your main application entrypoints is opal.application.OpalApplication.</p>
+<h1 id="opalcoreapplication">opal.core.application</h1>
+<h2 id="opalapplication">OpalApplication</h2>
+<p>The base class for your main application entrypoints is opal.core.application.OpalApplication.</p>
 <p>You must subclass this in order for OPAL to discover your application.</p>
 <p>If you started your OPAL project via <code>$ opal startproject yourproject</code> then this will have been
 generated for you, and located in <code>yourproject/yourproject/__init__.py</code></p>
-<h3 id="schema_module">schema_module</h3>
-<h3 id="flow_module">flow_module</h3>
-<h3 id="javascripts">javascripts</h3>
-<h3 id="actions">actions</h3>
-<h3 id="menuitems">menuitems</h3>
+<h3 id="properties">Properties</h3>
+<p>Properties available on an OpalApplication:</p>
+<h4 id="opalapplicationactions">OpalApplication.actions</h4>
+<h4 id="opalapplicationdefault_episode_category">OpalApplication.default_episode_category</h4>
+<p>The default category is 'Inpatient', but can be overridden in the
+<a href="./">OpalApplication</a> subclass for your implementation.</p>
+<h4 id="opalapplicationjavascripts">OpalApplication.javascripts</h4>
+<p>A list of javascripts that our application would like to include. These should be strings
+representing paths ready for staticfiles. Defaults to <code>[]</code>.</p>
+<pre><code class="python">class MyApplication(OpalApplication):
+    javascripts = ['js/one.js']
+</code></pre>
+
+<h4 id="opalapplicationmenuitems">OpalApplication.menuitems</h4>
 <p>A list of items to add to the top level menu</p>
-<h3 id="default_episode_category">default_episode_category</h3>
-<p>The default category is either 'inpatient', but can be overridden in the <a href="./">OpalApplication</a> subclass for your implementation.</p></div>
+<h4 id="opalapplicationstyles">OpalApplication.styles</h4>
+<p>A list of stylesheets that our application would like to include. These should be strings
+representing paths ready for staticfiles. Defaults to <code>[]</code>. These styles are included after
+the default OPAL styles.</p>
+<pre><code class="python">class MyApplication(OpalApplication):
+    styles = ['css/app.css']
+</code></pre>
+
+<h3 id="classmethods">Classmethods</h3>
+<p>Classmethod API for OpalApplication instances:</p>
+<h4 id="opalapplicationget_core_javascriptsnamespace">OpalApplication.get_core_javascripts(namespace)</h4>
+<p>Return a list of the core javascript files specified within a given namespace. These wil be
+relative paths ready for staticfiles.</p>
+<pre><code class="python">application.get_core_javascripts('opal.utils')
+# -&gt; ['js/opal/utils.js', ...]
+</code></pre>
+
+<h4 id="opalapplicationget_javascripts">OpalApplication.get_javascripts()</h4>
+<p>Return a list of the application's javasctipts as paths to them ready for staticfiles.
+Defaults to returning the <code>OpalApplication.javascripts</code> property.</p>
+<pre><code class="python">application.get_javascripts()
+# -&gt; ['js/one.js', 'js/two.js', ...]
+</code></pre>
+
+<h4 id="opalapplicationget_menu_items">OpalApplication.get_menu_items()</h4>
+<h4 id="opalapplicationget_styles">OpalApplication.get_styles()</h4>
+<p>Return a list of the application's stylesheets as paths to them ready for staticfiles.
+Defaults to returning the contents of <code>OpalApplication.styles</code>.</p>
+<pre><code class="python">application.get_styles()
+# -&gt; ['css/app.css', ...]
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">

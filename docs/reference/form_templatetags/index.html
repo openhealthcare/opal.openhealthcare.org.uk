@@ -108,6 +108,14 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../guides/archetypes/">Archetypes</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/working_with_data_in_angular/">Angular Models</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../guides/flow/">Flow</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -173,7 +181,7 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../episode_types/">Episode Types</a> -->
+                <!--             <a href="../episode_categories/">Episode Categories</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -237,6 +245,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../changelog/">Changelog</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../upgrading/">Upgrading</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -249,8 +261,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.6.0" target="_blank">
-                  <i class="fa fa-github"></i> v0.6.0
+                <a href="https://github.com/openhealthcare/opal/tree/v0.7.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.7.0
                 </a>
               </li>
                 <!-- <li > -->
@@ -280,6 +292,8 @@
         
             <li><a href="#datepicker">{% datepicker ... %}</a></li>
         
+            <li><a href="#datepicker_1">{% datepicker ... %}</a></li>
+        
             <li><a href="#input">{% input ... %}</a></li>
         
             <li><a href="#radio">{% radio ... %}</a></li>
@@ -287,6 +301,8 @@
             <li><a href="#select">{% select ... %}</a></li>
         
             <li><a href="#textarea">{% textarea ... %}</a></li>
+        
+            <li><a href="#static">{% static ... %}</a></li>
         
             <li><a href="#icon-icon-name">{% icon "icon-name" %}</a></li>
         
@@ -320,10 +336,18 @@ your forms.</p>
 <li><code>required</code> Label to show when we're required</li>
 <li><code>mindate</code> Expression to use to set the minimum possible date</li>
 </ul>
+<h3 id="datepicker_1">{% datepicker ... %}</h3>
+<p>Generates a date time fields, a date field on one line and a time field on another</p>
+<p>Keywords:</p>
+<ul>
+<li><code>field</code> a string of the models api name '.' field from this it calculates the label, model and will infer the lookuplist if required. For example {% datetimepicker field="DogOwner.vet_appointment" %}</li>
+<li><code>date_label</code> The Label with which to describe the date field (defaults to 'Date')</li>
+<li><code>time_label</code> The Label with which to describe the date field (defaults to 'Time')</li>
+<li><code>model</code> The model which we are editing (This is a string that references an in-scope Angular variable)</li>
+<li><code>change</code>  an angular directive that fires on change</li>
+</ul>
 <h3 id="input">{% input ... %}</h3>
-<p>Generates an Input. If you pass a field, the tag will infer the label, model and lookuplist by introspecting the relevant subrecord model.</p>
-<pre><code>{% input field="allergies.drug" %}
-</code></pre>
+<p>The input template tag generates you a form input that will play nicely with OPAL's styling.</p>
 <p>Keywords:</p>
 <ul>
 <li><code>field</code> a string of the models api name '.' field from this it calculates the label, model and will infer the lookuplist if required. For example {% input field="DogOwner.dog" %}</li>
@@ -337,6 +361,17 @@ your forms.</p>
 <li><code>maxlength</code> maximum number of characters for this input. Will render the form invalid and display help text if exceeded.</li>
 <li><code>static</code> an Angular expression that will swap the display to be a static input if it evaluates to <code>true</code></li>
 </ul>
+<h4 id="inputs-for-subrecord-fields">Inputs for subrecord fields</h4>
+<p>A very common pattern is to render form fields that relate to fields of <code>Subrecords</code>. The input templatetag
+accepts a <code>field</code> argument, from which it will infer the label, model and lookuplist by introspecting the relevant subrecord model.</p>
+<pre><code>{% input field="allergies.drug" %}
+</code></pre>
+<h4 id="inputs-with-units">Inputs with units</h4>
+<p>We also often want to display the unit of a particular field to help our users - consistent styling for this is
+available by using the unit argument e.g.</p>
+<pre><code class="html">{% input label=&quot;Weight&quot; model=&quot;editing.weight&quot; unit=&quot;kg&quot; %}
+</code></pre>
+
 <h3 id="radio">{% radio ... %}</h3>
 <p>Generates an inline radio input</p>
 <p>Keywords:</p>
@@ -360,8 +395,8 @@ your forms.</p>
 <li><code>lookuplist</code> an Angular expression that evaluates to an array containing the radio values</li>
 <li><code>other</code> A boolean parameter that if true, provides a free text option when 'Other' is selected</li>
 <li><code>help</code> a template to use as the contents of a help popover</li>
-<li><code>static</code> an Angular expression that will swap the display to be a static input if it evaluates to <code>true</code></li>
-<li></li>
+<li><code>static</code> an Angular expression that will swap the display to be a static input if it evaluates to <code>true</code>
+*</li>
 </ul>
 <h3 id="textarea">{% textarea ... %}</h3>
 <p>Generates an inline textarea input</p>
@@ -373,6 +408,20 @@ your forms.</p>
 <li><code>show</code>  A string that contains an Angular expression for the ng-show directive</li>
 <li><code>hide</code>  A string that contains an Angular expression for the ng-hide directive</li>
 </ul>
+<h3 id="static">{% static ... %}</h3>
+<p>Generates a bootstrap Static div (for displaying data from fields as uneditable but formatted nicely with appropriate styles).</p>
+<p>Takes one positional argument, a string representing the subrecord field path.</p>
+<pre><code>{% static "Demographics.name" %}
+&lt;!-- Renders as --&gt;
+&lt;div class="form-group"&gt;
+  &lt;label class="control-label col-sm-3"&gt;
+    Name
+  &lt;/label&gt;
+  &lt;p class="form-control-static col-sm-8"&gt;
+    [[ editing.demographics.name ]]
+  &lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
 <h3 id="icon-icon-name">{% icon "icon-name" %}</h3>
 <p>Renders a Bootstrap style Icon tag.
 If the icon starts with <code>fa</code> or <code>glyphicon</code> then we will insert the preceding <code>fa</code>.</p>
