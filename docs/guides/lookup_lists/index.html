@@ -131,6 +131,14 @@
                 <!--             <a href="../json_api/">JSON API</a> -->
                 <!--         </li> -->
                 <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../referencedata/">Referencedata</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../metadata/">Metadata</a> -->
+                <!--         </li> -->
+                <!--      -->
                 <!--         <li class="active"> -->
                 <!--             <a href="./">Lookup Lists</a> -->
                 <!--         </li> -->
@@ -190,6 +198,10 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../../reference/subrecords/">Subrecords</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/mixins/">Mixins</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -261,12 +273,12 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.7.0" target="_blank">
-                  <i class="fa fa-github"></i> v0.7.0
+                <a href="https://github.com/openhealthcare/opal/tree/v0.7.1" target="_blank">
+                  <i class="fa fa-github"></i> v0.7.1
                 </a>
               </li>
                 <!-- <li > -->
-                <!--     <a rel="next" href="../json_api/"> -->
+                <!--     <a rel="next" href="../metadata/"> -->
                 <!--         <i class="fa fa-arrow-left"></i> Previous -->
                 <!--     </a> -->
                 <!-- </li> -->
@@ -286,55 +298,11 @@
   <h3>Contents</h3>
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#opal-lookup-lists">OPAL Lookup Lists</a></li>
-        
-            <li><a href="#adding-a-lookup-list">Adding a lookup list</a></li>
-        
-            <li><a href="#management-commands">Management commands</a></li>
-        
-    
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h2 id="opal-lookup-lists">OPAL Lookup Lists</h2>
-<p>Lookup Lists allow us to reference canonical lists of available terminology as a foreign key, while
-also allowing synonymous terms, and a free text override.</p>
-<h3 id="adding-a-lookup-list">Adding a lookup list</h3>
-<p>Lookup lists are subclasses of <code>opal.core.lookuplists.LookupList</code>. Typically, a specific named
-lookup list will not need to do anything other than define a class that inherits from the base
-class.</p>
-<p>The custom field type <code>opal.core.fields.ForeignKeyOrFreeText</code> allows you to build interfaces
-that cater for synonyms, and also allow the user to enter a free text string that is not in
-the lookup list.</p>
-<pre><code># yourapp.models
-
-from django.db import models
-from opal.core import lookuplists
-from opal.core.fields import ForeignKeyOrFreeText
-from opal.models import EpisodeSubrecord
-
-class TreatmentType(lookuplists.LookupList): pass
-
-class Treatment(EpisodeSubrecord):
-    treatment = ForeignKeyOrFreeText(TreatmentType)
-    notes     = models.CharField(max_length=200)
-# yourapp.models
-</code></pre>
-<p>When you create your lookup list, you are creating a new model, so you will need a new migration
-to accompany it.</p>
-<pre><code>$ python manage.py schemamigration --atuo yourapp
-$ python manage.py migrate yourapp
-</code></pre>
-<p>The lookup list will automatically be added to the admin.</p>
-<h3 id="management-commands">Management commands</h3>
-<p>OPAL ships with some managemnent commands for importing and exporting lookup lists</p>
-<h4 id="dump_lookup_lists">dump_lookup_lists</h4>
-<p>Prints all lookuplists as JSON to stdout.</p>
-<h4 id="load_lookup_lists-f-filename">load_lookup_lists -f [filename]</h4>
-<p>Loads lookup lists in the OPAL JSON format.</p>
-<h4 id="delete_all_lookuplists">delete_all_lookuplists</h4>
-<p>Deletes all currently lookuplist values and related synonyms</p></div>
+</div>
         </div>
 
         <footer class="col-md-12">

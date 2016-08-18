@@ -132,6 +132,14 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../guides/referencedata/">Referencedata</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/metadata/">Metadata</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../guides/lookup_lists/">Lookup Lists</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -190,6 +198,10 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../subrecords/">Subrecords</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../mixins/">Mixins</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -261,8 +273,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.7.0" target="_blank">
-                  <i class="fa fa-github"></i> v0.7.0
+                <a href="https://github.com/openhealthcare/opal/tree/v0.7.1" target="_blank">
+                  <i class="fa fa-github"></i> v0.7.1
                 </a>
               </li>
                 <!-- <li > -->
@@ -312,6 +324,19 @@ the url for the template, the size of the modal window (either 'sm' or 'lg').</p
 <p>OPAL provides some built-in Angular directives for your project to use.</p>
 <h4 id="date-of-birth">date-of-birth</h4>
 <p>Creates an input field that assumes to base field is a moment and handles validation and parsing. It assumes no one is born in the future or is over 150 years old.</p>
+<h4 id="tag-select">tag-select</h4>
+<p>Creates a multi select box where users can remove or add tags. Only tags set as <code>direct_add</code> tags can be set here.
+This property is set on individual <code>PatientList</code> subclasses, and passed to the front end with the <code>Metadata</code> service.</p>
+<p>We set the Angular model to be a copy of an episode's tagging.</p>
+<pre><code class="js">$scope.editing.tagging = episode.tagging[0].makeCopy();
+</code></pre>
+
+<p>We can instantiate the tag-select widget in our markup as follows.</p>
+<pre><code class="html">&lt;div tag-select ng-model=&quot;editing.tagging&quot; metadata=&quot;metadata&quot; class=&quot;col-sm-8&quot;&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>Note: this directive will load the <code>Metadata</code> service over HTTP if it has not been loaded already.</p>
 <h4 id="one-click-only">one-click-only</h4>
 <p>A directive that if set with no arguments, or set to true, will only allow a button to be
 clicked on once and then it'll be disabled. Useful for example to make sure that multiple save requests aren't
@@ -320,6 +345,14 @@ accidentally triggered.</p>
 <p>Adds a click handler to the element that when click will animate the body of the element to scroll to the top</p>
 <h4 id="go-to-top">go-to-top</h4>
 <p>Similar to scroll-top, this moves the scroll bar to the top of the page but doesn't animate the transition.</p>
+<h4 id="copy-to-clipboard">copy to clipboard</h4>
+<h5 id="eg">e.g.</h5>
+<pre><code>&lt;button clipboard data-clipboard-target="#content-to-copy"&gt;
+Copy to Clipboard
+&lt;/button&gt;
+</code></pre>
+<p>This is a wrapper around clipboard.js, it lets the user copy text from an element that matches the selector you pass it. It will present a growl message saying that the text has been
+copied.</p>
 <h3 id="angular-filters">Angular Filters</h3>
 <p>OPAL provides some built-in Angular filters for your project to use.</p>
 <h4 id="short-date">short-date</h4>

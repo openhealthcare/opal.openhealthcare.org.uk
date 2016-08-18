@@ -132,6 +132,14 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../guides/referencedata/">Referencedata</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/metadata/">Metadata</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../guides/lookup_lists/">Lookup Lists</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -190,6 +198,10 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../subrecords/">Subrecords</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../mixins/">Mixins</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -261,8 +273,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.7.0" target="_blank">
-                  <i class="fa fa-github"></i> v0.7.0
+                <a href="https://github.com/openhealthcare/opal/tree/v0.7.1" target="_blank">
+                  <i class="fa fa-github"></i> v0.7.1
                 </a>
               </li>
                 <!-- <li > -->
@@ -291,6 +303,8 @@
             <li><a href="#record_panel">{% record_panel ... %}</a></li>
         
             <li><a href="#record_timeline">{% record_timeline ... %}</a></li>
+        
+            <li><a href="#aligned_pair">{% aligned_pair ... %}</a></li>
         
     
     </ul>
@@ -331,6 +345,20 @@ useful for subrecord types where the date is a key field.</p>
 <ul>
 <li><code>model</code>: The model we want to render our panel for</li>
 <li><code>whenfield</code>: String of the field that we're using to sort by.</li>
+</ul>
+<h3 id="aligned_pair">{% aligned_pair ... %}</h3>
+<p>Render a key value pair in their own Bootstrap row using columns of width <code>md-4</code> each.
+Particularly useful for occasions when we have multiple entries that need to be presented one after
+another but the data is not naturally tabular.</p>
+<pre><code class="html">{% load panels %}
+{% aligned_pair model=&quot;episode.start_date | shortDate&quot; label=&quot;Start Date&quot; %}
+{% aligned_pair model=&quot;22&quot; label=&quot;Next Data Point&quot; %}
+</code></pre>
+
+<p>Arguments:</p>
+<ul>
+<li><code>label</code>: The left hand item, to be rendered bold.</li>
+<li><code>model</code>: The right hand item, to be rendered as an angular expression</li>
 </ul></div>
         </div>
 

@@ -201,6 +201,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../mixins/">Mixins</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../opal_application/">OpalApplication</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -296,6 +300,8 @@
     
         <li class="main active"><a href="#071-minor-release">0.7.1 (Minor Release)</a></li>
         
+            <li><a href="#updates-to-the-dependency-graph">Updates to the Dependency Graph</a></li>
+        
     
         <li class="main "><a href="#070-major-release">0.7.0 (Major Release)</a></li>
         
@@ -372,6 +378,20 @@
             <div class="col-md-9" role="main">
 
 <h3 id="071-minor-release">0.7.1 (Minor Release)</h3>
+<p>Completes the refactor of front end data, no longer using the <code>/api/v0.1/options/</code> API internally.
+This is slated for removal in 0.8.0.</p>
+<p>Updates DRF APIs - we now expect either Token or DjangoSession auth.</p>
+<p>Fixes several small bugs with scaffolded applications -  the setting of <code>STATIC_ROOT</code> and
+<code>SECRET_KEY</code>, generating forms for NullBooleanFields, requirements.txt.</p>
+<p>Adds an <code>aligned_pair</code> templatetag to the <code>panels</code> library.</p>
+<p>Updates the label for <code>Demographics.birth_place</code> to indicate that this should be a country.</p>
+<p>Adds the <code>clipboard</code> directive to give the user one click copy to clipboard.</p>
+<p>Adds a <code>tag-select</code> directive that renders a widget for editing the tags for an episode.</p>
+<p>Adds metadata to the scope for patient detail views</p>
+<h4 id="updates-to-the-dependency-graph">Updates to the Dependency Graph</h4>
+<ul>
+<li>Django Axes 1.4.0 -&gt; 1.7.0</li>
+</ul>
 <h3 id="070-major-release">0.7.0 (Major Release)</h3>
 <h4 id="episode-categories">Episode Categories</h4>
 <p>Refactors EpisodeCategory to be a discoverable feature.</p>

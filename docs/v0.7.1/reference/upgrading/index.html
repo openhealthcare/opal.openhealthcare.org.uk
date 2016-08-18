@@ -201,6 +201,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../mixins/">Mixins</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../opal_application/">OpalApplication</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -313,6 +317,10 @@
 <p>This document provides instructions for specific steps required to upgrading your OPAL
 application to a later version where there are extra steps required.</p>
 <h3 id="070-071">0.7.0 -&gt; 0.7.1</h3>
+<h4 id="downstream-dependencies">Downstream dependencies</h4>
+<p>OPAL 0.7.1 updates the expected version of Django Axes to 1.7.0 - you will wish to update
+this in your requirements.txt or similar accordingly.</p>
+<h4 id="drf-authentication">DRF Authentication</h4>
 <p>We highly recommend that applications explicitly set Django Rest Framework authentication
 classes in their <code>settings.py</code>.</p>
 <p>By default OPAL now uses session and token auth, which will require a migration to install

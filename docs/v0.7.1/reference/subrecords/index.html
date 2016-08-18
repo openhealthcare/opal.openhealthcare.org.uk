@@ -201,6 +201,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../mixins/">Mixins</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../opal_application/">OpalApplication</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -279,7 +283,7 @@
                 <!--     </a> -->
                 <!-- </li> -->
                 <!-- <li > -->
-                <!--     <a rel="prev" href="../opal_application/"> -->
+                <!--     <a rel="prev" href="../mixins/"> -->
                 <!--         Next <i class="fa fa-arrow-right"></i> -->
                 <!--     </a> -->
                 <!-- </li> -->
@@ -310,6 +314,7 @@
 <h2 id="opal-subrecords">OPAL Subrecords</h2>
 <p>OPAL Subrecords are models that relate to either Patients or Episodes, and inherit from
 base classes <code>opal.models.PatientSubrecord</code> or <code>opal.models.EpisodeSubrecord</code></p>
+<p>They themselves inherit from the mixins <code>opal.models.ToDictMixin</code>, <code>opal.models.UpdateFromDict</code></p>
 <h3 id="properties">Properties</h3>
 <h4 id="subrecord_angular_service">Subrecord._angular_service</h4>
 <p>Name of the Angular service you would like to use to customise the initialization of this
@@ -397,13 +402,6 @@ This implicitly defaults to False.</p>
 <h4 id="subrecordget_modal_footer_template">Subrecord.get_modal_footer_template</h4>
 <p>Classmethod to add a custom footer to a modal, used for example to denote if
 the data from a model has been sourced from an external source</p>
-<h4 id="subrecordupdate_from_dict">Subrecord.update_from_dict()</h4>
-<p>An instance method that will update a model with a dictionary. This method is used
-to provides a hook for changing the way a subrecord handles being updated from serialised
-data.</p>
-<p>For example on a new allergy
-    allergy.update_from_dict({"drug": "penicillin"})</p>
-<p>will update the allergy to have the correct drug</p>
 <h4 id="subrecordbulk_update_from_dicts">Subrecord.bulk_update_from_dicts()</h4>
 <p>A Classmethod to allow the creation of multiple objects.</p>
 <p>Takes in the parent model - an episode
