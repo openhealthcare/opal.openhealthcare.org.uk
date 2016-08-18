@@ -13,7 +13,7 @@ task :docs do
     sh "cd _opalsrc; git checkout #{b};"
     sh "cd _opalsrc/doc; mkdocs build"
     sh "mv _opalsrc/doc/site docs/#{b}"
-    sh "cp -r docs/#{b}/img img"
+    sh "cp -r docs/#{b}/img/* img/"
   end
   sh "cp -r docs/master/* docs"
 
