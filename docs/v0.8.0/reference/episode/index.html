@@ -306,6 +306,8 @@
         
             <li><a href="#manager">Manager</a></li>
         
+            <li><a href="#opalcoreapiepisodeviewset">opal.core.api.EpisodeViewSet</a></li>
+        
     
     </ul>
 </div></div>
@@ -383,7 +385,14 @@ previous and subsequent episodes</li>
 be serialised</li>
 </ul>
 <h4 id="episodeobjectssearch">Episode.objects.search</h4>
-<p>As a useful utility, the episode manager has a search method that will search on first name, last name and/or hospital number, under the hood it uses <a href="../patient/#patientobjectssearch">Patient search</a></p></div>
+<p>As a useful utility, the episode manager has a search method that will search on first name, last name and/or hospital number, under the hood it uses <a href="../patient/#patientobjectssearch">Patient search</a></p>
+<h3 id="opalcoreapiepisodeviewset">opal.core.api.EpisodeViewSet</h3>
+<p>Gives you an api for create/update/list/retrieve apis for episodes. Its recommended that you use <a href="../patient_list/">opal.core.patient_lists</a> rather than the list api, as this gives you more flexibility.</p>
+<p>The Create api accepts {
+    demographics: {{ a serialised demographics model }},
+    location: {{ a serialised location model }}.
+    tagging: {{ a dictionary of tag names to True }}
+}</p></div>
         </div>
 
         <footer class="col-md-12">

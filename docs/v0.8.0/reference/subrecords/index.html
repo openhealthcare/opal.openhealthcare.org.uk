@@ -344,13 +344,6 @@ particularly verbose.</p>
 <pre><code>class BloodPressureReading(EpisodeSubrecord):
     _list_limit = 3
 </code></pre>
-<h4 id="subrecord_modal">Subrecord._modal</h4>
-<p>String to indicate a non-default modal size to be used for editing this <code>Subrecord</code>.
-Valid options are: 'lg', 'sm'. Typically used for complex forms or the display of
-additional contextually sensitive information when editing or entering data.</p>
-<pre><code>class Antimicrobial(EpisodeSubrecord):
-    _modal = 'lg'
-</code></pre>
 <h4 id="subrecord_sort">Subrecord._sort</h4>
 <p>Name of the field by which we want to sort these records when displaying.</p>
 <pre><code>class Antimicrobial(EpisodeSubrecord):

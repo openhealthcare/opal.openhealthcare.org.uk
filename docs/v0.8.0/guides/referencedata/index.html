@@ -308,6 +308,8 @@
         
             <li><a href="#using-referencedata-in-forms">Using referencedata in forms</a></li>
         
+            <li><a href="#providing-data-for-lookuplists">Providing data for lookuplists</a></li>
+        
             <li><a href="#management-commands">Management commands</a></li>
         
     
@@ -372,12 +374,27 @@ referencedata into the forms we build, eiether by detecting their use automatica
 {% select label=&quot;List of Conditions&quot; lookuplist=&quot;referencedata.diagnosis&quot; %}
 </code></pre>
 
+<h3 id="providing-data-for-lookuplists">Providing data for lookuplists</h3>
+<p>Reference data can be provided at application or plugin level in a file named <code>lookuplists.json</code> found in the
+<code>{{ app_or_plugin }}/data/lookuplists</code> directory. This data should be in the OPAL JSON format.</p>
+<pre><code class="JSON">{
+    &quot;name_of_lookuplist&quot;: [
+        {
+            &quot;name&quot;: &quot;Value of lookuplist item&quot;,
+            &quot;synonyms&quot;: [&quot;Synonym 1&quot;,]
+
+        },
+    ]
+}
+</code></pre>
+
 <h3 id="management-commands">Management commands</h3>
 <p>OPAL ships with some managemnent commands for importing and exporting lookup lists</p>
 <h4 id="dump_lookup_lists">dump_lookup_lists</h4>
 <p>Prints all lookuplists as JSON to stdout.</p>
-<h4 id="load_lookup_lists-f-filename">load_lookup_lists -f [filename]</h4>
-<p>Loads lookup lists in the OPAL JSON format.</p>
+<h4 id="load_lookup_lists">load_lookup_lists</h4>
+<p>Loads lookup lists from all plugins/apps in the OPAL JSON format. The lookup lists are expected to be in
+<code>{{ app }}/data/lookuplists/lookuplists.json</code></p>
 <h4 id="delete_all_lookuplists">delete_all_lookuplists</h4>
 <p>Deletes all currently lookuplist values and related synonyms</p></div>
         </div>

@@ -300,6 +300,8 @@
     
         <li class="main active"><a href="#opalcoreapplication">opal.core.application</a></li>
         
+            <li><a href="#utility-functions">Utility functions</a></li>
+        
             <li><a href="#opalapplication">OpalApplication</a></li>
         
     
@@ -308,6 +310,11 @@
             <div class="col-md-9" role="main">
 
 <h1 id="opalcoreapplication">opal.core.application</h1>
+<h3 id="utility-functions">Utility functions</h3>
+<h4 id="get_app">get_app</h4>
+<p>Returns the application class for the currently active application.</p>
+<h4 id="get_all_components">get_all_components</h4>
+<p>Returns an iterator of all the of the <a href="../../guides/plugins/">plugins</a> and the current application</p>
 <h2 id="opalapplication">OpalApplication</h2>
 <p>The base class for your main application entrypoints is opal.core.application.OpalApplication.</p>
 <p>You must subclass this in order for OPAL to discover your application.</p>
@@ -352,6 +359,8 @@ Defaults to returning the <code>OpalApplication.javascripts</code> property.</p>
 # -&gt; ['js/one.js', 'js/two.js', ...]
 </code></pre>
 
+<h4 id="opalapplicationdirectory">OpalApplication.directory</h4>
+<p>Returns the file system location of the module.</p>
 <h4 id="opalapplicationget_menu_items">OpalApplication.get_menu_items()</h4>
 <h4 id="opalapplicationget_styles">OpalApplication.get_styles()</h4>
 <p>Return a list of the application's stylesheets as paths to them ready for staticfiles.

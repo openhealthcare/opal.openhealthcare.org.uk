@@ -300,6 +300,8 @@
     
         <li class="main active"><a href="#upgrading-your-opal-application">Upgrading Your OPAL Application</a></li>
         
+            <li><a href="#071-080">0.7.1 -&gt; 0.8.0</a></li>
+        
             <li><a href="#070-071">0.7.0 -&gt; 0.7.1</a></li>
         
             <li><a href="#6x-7x">6.x -&gt; 7.x</a></li>
@@ -316,6 +318,22 @@
 <h2 id="upgrading-your-opal-application">Upgrading Your OPAL Application</h2>
 <p>This document provides instructions for specific steps required to upgrading your OPAL
 application to a later version where there are extra steps required.</p>
+<h3 id="071-080">0.7.1 -&gt; 0.8.0</h3>
+<h4 id="options">Options</h4>
+<p>Options are now an ex-API. Applications should convert to use either Referencedata (canonical terms for common data), or
+Metadata (App specific data you wish to pass into the front end).</p>
+<h4 id="ui-components">UI Components</h4>
+<p>Those applications relying on Angular strap ui components (Typeahead, Popover,
+Tooltip, Datepicker, Timepicker) should convert their templates to use the Angular UI Boostrap equivalents, or the
+OPAL templatetags. </p>
+<p>If you are simply using Opal templatetags from <code>forms</code> and not overriding these templates, then the transition should be seamless. Otherwise, searching your codebase for html files containing <code>bs-</code> and looking for angular strap components is a good start.</p>
+<p>Applications or plugins with javascript tests may need to update their includes to remove references to old library files.</p>
+<p>Full documentation of the markup and options for these components is found <a href="http://angular-ui.github.io/bootstrap/versioned-docs/0.14.3/">here</a></p>
+<h4 id="extending-modal_basehtml">extending modal_base.html</h4>
+<p>We now have different base templates for modals, forms and two column modal forms (essentially a form with a side bar).</p>
+<p>The form templates add validation checks around the saving to catch any validation errors a form might through. They assume the existence of a form called 'form'.</p>
+<p>As part of this modal_base has been moved into a folder in templates called base_templates</p>
+<p>Rename any templates extending <code>modal_base.html</code> to extend the correct template in <code>base_templates/</code> - <code>modal_base.html</code> or <code>modal_form_base.html</code>.</p>
 <h3 id="070-071">0.7.0 -&gt; 0.7.1</h3>
 <h4 id="downstream-dependencies">Downstream dependencies</h4>
 <p>OPAL 0.7.1 updates the expected version of Django Axes to 1.7.0 - you will wish to update

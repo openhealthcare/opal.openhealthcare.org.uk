@@ -306,11 +306,15 @@
         
             <li><a href="#defining-new-flows">Defining new flows</a></li>
         
+            <li><a href="#getting-a-plugin-directory">Getting a plugin directory</a></li>
+        
             <li><a href="#adding-urls">Adding URLS</a></li>
         
             <li><a href="#adding-javascript">Adding Javascript</a></li>
         
             <li><a href="#adding-apis">Adding APIs</a></li>
+        
+            <li><a href="#permissioning">Permissioning</a></li>
         
             <li><a href="#adding-actions-to-the-sidebar">Adding Actions to the sidebar</a></li>
         
@@ -360,6 +364,9 @@ Clinic.get('outpatients)
 <h3 id="defining-new-flows">Defining new flows</h3>
 <p>Plugins can define flows. They should return a dictionary of flows from the
 flows() method of the plugin class.</p>
+<h3 id="getting-a-plugin-directory">Getting a plugin directory</h3>
+<p>Each plugin has a <code>directory()</code> method that returns
+the file system location of the module.</p>
 <h3 id="adding-urls">Adding URLS</h3>
 <p>Add an urls.py, then add to your plugin class as YourPlugin.urls</p>
 <p>Naturally, these can point to views in your plugin!</p>
@@ -388,6 +395,17 @@ class YourPlugin(OpalPlugin):
     ]
 </code></pre>
 <p>These APIs will then be available and self-documenting fom the standard OPAL url <code>/api/v0.1/</code></p>
+<h3 id="permissioning">Permissioning</h3>
+<p>Developers are strongly encouraged to ensure that APIs which
+serve patient data are restricted to logged in users. Django Rest Framework <code>ViewSet</code> classes
+have an <a href="http://www.django-rest-framework.org/api-guide/permissions/">extensive permissioning system</a>.</p>
+<p>Opal ships with the base ViewSet class <code>opal.core.api.LoginRequiredViewset</code> which adds the Django
+Rest Framework permission class IsAuthenticated to your viewset.</p>
+<pre><code class="python">    class PingViewSet(LoginRequiredViewset):
+        def list(self, request):
+            return Response('pong')
+</code></pre>
+
 <h3 id="adding-actions-to-the-sidebar">Adding Actions to the sidebar</h3>
 <p>Actions can be added to the sidebar by setting the <code>actions</code> attribute of your plugin.
 Actions is expected to be an iterable of strings which are templates to be included in
