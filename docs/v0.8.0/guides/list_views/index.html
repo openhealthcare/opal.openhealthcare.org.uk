@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>Patient List Views - OPAL</title>
+	<title>Patient List Views - Opal</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -175,6 +175,14 @@
                 <!--             <a href="../search/">Search Overview</a> -->
                 <!--         </li> -->
                 <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../contributing/">Contributing</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../development_environment/">Development environment</a> -->
+                <!--         </li> -->
+                <!--      -->
                 <!--     </ul> -->
                 <!-- </li> -->
             
@@ -261,6 +269,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../reference/testing/">Testing</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../reference/upgrading/">Upgrading</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -273,8 +285,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.8.1" target="_blank">
-                  <i class="fa fa-github"></i> v0.8.1
+                <a href="https://github.com/openhealthcare/opal/tree/v0.8.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.8.0
                 </a>
               </li>
                 <!-- <li > -->
@@ -298,7 +310,7 @@
   <h3>Contents</h3>
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#opal-patient-list-views">OPAL Patient List views</a></li>
+        <li class="main active"><a href="#opal-patient-list-views">Opal Patient List views</a></li>
         
             <li><a href="#defining-lists">Defining lists</a></li>
         
@@ -320,18 +332,22 @@
         
             <li><a href="#direct-add">Direct Add</a></li>
         
+            <li><a href="#customising-sort-order-of-episodes">Customising Sort order of Episodes</a></li>
+        
             <li><a href="#access-control">Access Control</a></li>
+        
+            <li><a href="#grouping-related-patient-lists">Grouping related Patient Lists</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="opal-patient-list-views">OPAL Patient List views</h1>
-<p>OPAL provides support for displaying lists of patients, both via a spreadsheet like view,
+<h1 id="opal-patient-list-views">Opal Patient List views</h1>
+<p>Opal provides support for displaying lists of patients, both via a spreadsheet like view,
 and with a card based view.</p>
 <h3 id="defining-lists">Defining lists</h3>
-<p>OPAL patient lists are subclasses of <code>opal.core.patient_lists.PatientList</code>.</p>
+<p>Opal patient lists are subclasses of <code>opal.core.patient_lists.PatientList</code>.</p>
 <p>Typically these are found in a <code>patient_lists.py</code> module of your application or plugin. (Lists <em>can</em> be
 defined elsewhere, but may not be autodiscovered.)</p>
 <p>A basic list needs only define it's <code>display_name</code> a <code>queryset</code> of episodes to display, and
@@ -364,7 +380,7 @@ place.</p>
 <p>The list view is constructed by rendering a column for each record, in the order
 defined in the schema, and a row for each episode in the list.</p>
 <p>The template for each cell should live in <code>./templates/records/*</code>. In order to
-select the appropriate template for a given episode, OPAL looks in the following
+select the appropriate template for a given episode, Opal looks in the following
 locations:</p>
 <pre><code>records/{episode_type}/{list slug}/{record_name}.html
 records/{list_slug}/{record_name}.html
@@ -398,7 +414,7 @@ either setting the <code>slug</code> property, or returning a string from the <c
 This allows users to add and remove patients from lists as they see fit, rather than attempting
 to infer it from other properties of the patient (e.g. their current location for instance.)
 which can be particularly challenging for some clinical services.</p>
-<p>OPAL provides a specific subclass for working with Tagged Patient Lists:</p>
+<p>Opal provides a specific subclass for working with Tagged Patient Lists:</p>
 <pre><code># patient_lists.py
 from opal.core import patient_lists
 
@@ -409,7 +425,7 @@ class MyTagList(patient_lists.TaggedPatientList):
 <p>Tagged lists will automatically fetch the appropriate queryset for patients tagged with the tag
 you specify.</p>
 <h3 id="invalid-tagged-patient-lists">Invalid Tagged Patient Lists</h3>
-<p>Tag names may not have hyphens in them - OPAL uses hyphens to distinguish between tags and subtags
+<p>Tag names may not have hyphens in them - Opal uses hyphens to distinguish between tags and subtags
 in the urls for lists, so attempting to define one will raise an exception.</p>
 <pre><code>class MyList(TaggedPatientList):
     tag = 'foo-bar'
@@ -427,6 +443,30 @@ set to false, users will not be able to add the tag for this list.</p>
     tag = 'liaisonpatients'
     direct_add = False
 </code></pre>
+<h3 id="customising-sort-order-of-episodes">Customising Sort order of Episodes</h3>
+<p>By default, PatientLists sort according to the Angular method <code>Episode.compare</code>. You may override this
+on a list-by-list basis by setting the <code>comparator_service</code> attribute.</p>
+<pre><code class="python">class MySortedList(PatientList):
+    comparator_service = 'MyComparatorService'
+</code></pre>
+
+<p>This attribute should be the name of an Angular service that returns a list of comparator functions.
+For instance, to sort by Episode.category_name then Episode id:</p>
+<pre><code class="javascript">angular.module('opal.services')
+    .factory('MyComparatorService', function(){
+        &quot;use strict&quot;;
+        return [
+            function(e){ return e.category_name },
+            function(e){ return e.id }
+        ]
+    })
+</code></pre>
+
+<blockquote><small>
+The file containing your comparator service must be included in the javascripts <br />
+of your application or plugin in order to be available on the client.
+</small></blockquote>
+
 <h3 id="access-control">Access Control</h3>
 <p>As PatientLists are a <a href="../discoverable/#restrictable-features">RestrictableFeature</a>, Access control
 for lists is set by overriding the <code>visible_to</code> classmethod. Your list will only be visible to
@@ -437,7 +477,55 @@ those users for whom this method returns <code>True</code>.</p>
     @classmethod
     def visible_to(klass, user):
         return user.is_superuser
-</code></pre></div>
+</code></pre>
+<h2 id="grouping-related-patient-lists">Grouping related Patient Lists</h2>
+<p>We commonly require groups of patient lists for a single clinical service. For example a busy
+outpatients cinic might have one list of people in the waiting room, one list of people being
+triaged, one list for people waiting to see the medical staff, and another for people who have
+been seen but need review - for instance because they have outstanding test results.</p>
+<p>Opal provides the <code>TabbedPatientListGroup</code> class to help with this case. Tabbed Patient List
+Groups are an ordered collection of related Patient Lists that are displayed as tabs at the
+top of any list in the group.</p>
+<h3 id="defining-a-tabbed-patient-list-group">Defining a Tabbed Patient List Group</h3>
+<p>Defining a group can be as simple as declaring member lists in a property.</p>
+<pre><code class="python"># yourapp/patient_lists.py
+
+from opal.core import patient_lists
+
+# ... Define your lists here
+
+class MyListGroup(patient_lists.TabbedPatientListGroup):
+    member_lists = [MyFirstPatientList, MySecondPatientList, ...]
+</code></pre>
+
+<blockquote><small>
+Tabbed Patient List Groups are a Discoverable feature, we expect them to be in a
+module named patient_lists.py in one of the Django apps in your application.
+</small></blockquote>
+
+<h3 id="customising-membership">Customising membership</h3>
+<p>The members of your group can be determined dynamically by overriding the <code>get_member_lists</code>
+classmethod of your group:</p>
+<pre><code class="python">class MyListGroup(patient_lists.TabbedPatientListGroup):
+    @classmethod
+    def get_member_lists(klass):
+        # return an iterable of PatientList subclasses
+</code></pre>
+
+<h3 id="restricting-access">Restricting access</h3>
+<p>By default, the UI for a <code>TabbedPatientListGroup</code> is shown at the top of any member <code>PatientList</code>
+as long as there are more than one members of the group visible to the given user.</p>
+<p>This behaviour can be customised by overriding the <code>visible_to</code> classmethod:</p>
+<pre><code class="python">class MyListGroup(patient_lists.TabbedPatientListGroup):
+    @classmethod
+    def visible_to(klass, user):
+        # return True or False appropriately
+</code></pre>
+
+<h3 id="customising-templates">Customising templates</h3>
+<p>Applications may customise the UI for Tabbed Patient List Groups by customising the template
+<code>patient_lists/tabbed_list_group.html</code>.</p>
+<p>The default template simply extends <code>patient_lists/tabbed_list_group_base.html</code>.</p></div>
         </div>
 
         <footer class="col-md-12">
@@ -445,7 +533,7 @@ those users for whom this method returns <code>True</code>.</p>
             <img src="/img/opallogo.png" class="pull-left"/>
             <center>
               <br />
-              OPAL is an Open Source framework for building clinical applications from
+              Opal is an Open Source framework for building clinical applications from
               <a href="http://openhealthcare.org.uk" target="_blank">Open Health Care UK</i></a>.
             </center>
         </footer>

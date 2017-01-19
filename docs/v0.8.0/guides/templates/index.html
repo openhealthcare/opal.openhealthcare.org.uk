@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>Templates - OPAL</title>
+	<title>Templates - Opal</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -175,6 +175,14 @@
                 <!--             <a href="../search/">Search Overview</a> -->
                 <!--         </li> -->
                 <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../contributing/">Contributing</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../development_environment/">Development environment</a> -->
+                <!--         </li> -->
+                <!--      -->
                 <!--     </ul> -->
                 <!-- </li> -->
             
@@ -261,6 +269,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../reference/testing/">Testing</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../reference/upgrading/">Upgrading</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -273,8 +285,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.8.1" target="_blank">
-                  <i class="fa fa-github"></i> v0.8.1
+                <a href="https://github.com/openhealthcare/opal/tree/v0.8.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.8.0
                 </a>
               </li>
                 <!-- <li > -->
@@ -298,7 +310,7 @@
   <h3>Contents</h3>
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#templates-in-opal">Templates in OPAL</a></li>
+        <li class="main active"><a href="#templates-in-opal">Templates in Opal</a></li>
         
             <li><a href="#angular-templates">Angular templates</a></li>
         
@@ -309,18 +321,18 @@
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="templates-in-opal">Templates in OPAL</h1>
-<p>OPAL uses a mixture of Django and Angular templates.</p>
+<h1 id="templates-in-opal">Templates in Opal</h1>
+<p>Opal uses a mixture of Django and Angular templates.</p>
 <h3 id="angular-templates">Angular templates</h3>
 <p>In order to be compatible with Django templating, we use the <code>[[ ... ]]</code> notation for
 Angular interpolation, which allows us to mix Django template interpolation in templates
 designed to be rendered by Angular on the client side.</p>
 <pre><code>&lt;!-- app_details_snippet.html --&gt;
-{{ OPAL_BRAND_NAME }} [[ OPAL_VERSION ]]
+{{ OPAL_BRAND_NAME }} [[ Opal_VERSION ]]
 </code></pre>
 <h3 id="generic-template-url">Generic Template URL</h3>
 <p>On many occasions we simply want to fetch a template from the server in our Angular code
-without any further processing. OPAL provides a default catchall HTML template url which
+without any further processing. Opal provides a default catchall HTML template url which
 will render .html files direct from disk.</p>
 <pre><code># opal.urls
 
@@ -335,7 +347,7 @@ will return it.</p></div>
             <img src="/img/opallogo.png" class="pull-left"/>
             <center>
               <br />
-              OPAL is an Open Source framework for building clinical applications from
+              Opal is an Open Source framework for building clinical applications from
               <a href="http://openhealthcare.org.uk" target="_blank">Open Health Care UK</i></a>.
             </center>
         </footer>

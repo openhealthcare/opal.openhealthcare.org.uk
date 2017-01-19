@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>Forms - OPAL</title>
+	<title>Forms - Opal</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -175,6 +175,14 @@
                 <!--             <a href="../search/">Search Overview</a> -->
                 <!--         </li> -->
                 <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../contributing/">Contributing</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../development_environment/">Development environment</a> -->
+                <!--         </li> -->
+                <!--      -->
                 <!--     </ul> -->
                 <!-- </li> -->
             
@@ -261,6 +269,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../reference/testing/">Testing</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../reference/upgrading/">Upgrading</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -273,8 +285,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.8.1" target="_blank">
-                  <i class="fa fa-github"></i> v0.8.1
+                <a href="https://github.com/openhealthcare/opal/tree/v0.8.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.8.0
                 </a>
               </li>
                 <!-- <li > -->
@@ -319,11 +331,11 @@
 
 <h2 id="forms">Forms</h2>
 <h3 id="editing-records">Editing Records</h3>
-<p>The editing of records is a key component of any OPAL application. A key pattern is to edit
-or create an individual record in a modal containing the form for just that record. OPAL provides
+<p>The editing of records is a key component of any Opal application. A key pattern is to edit
+or create an individual record in a modal containing the form for just that record. Opal provides
 the Angular Controller <code>opal.controllers.EditItemCtrl</code> for doing just this</p>
 <h3 id="customising-the-angular-controller">Customising the Angular Controller</h3>
-<p>OPAL uses the <code>formController</code> attribute of an <code>Item</code> to determine which Angular Controller to use. This
+<p>Opal uses the <code>formController</code> attribute of an <code>Item</code> to determine which Angular Controller to use. This
 defaults to <code>opal.controllers.EditItemCtrl</code>. Individual Subrecords may customise this by implementing an Angualar record Service
 and overriding the formController attribute.</p>
 <pre><code class="python"># yourapp/models.py
@@ -367,10 +379,10 @@ for subrecord models. Simply run the following command to generate.</p>
 <h3 id="client-side-validation">Client side Validation</h3>
 <p>Client side validation for forms requires a pattern and a help block &amp;&amp; uses ng-pattern, ng-disabled (https://docs.angularjs.org/api/ng/directive/input)</p>
 <h3 id="helpers">Helpers</h3>
-<p>OPAL contains a number of helpers for developing forms and input modals.</p>
+<p>Opal contains a number of helpers for developing forms and input modals.</p>
 <p>Many of these are located in the forms template tag library, which is a
 Django templatetag library that understands the context of common patterns with
-OPAL for creating forms and modals.</p>
+Opal for creating forms and modals.</p>
 <p>It provides helpers for various input types that will allow you to render consistent
 forms, with less verbose templates.</p>
 <pre><code>{% load forms %}
@@ -388,7 +400,7 @@ forms, with less verbose templates.</p>
             <img src="/img/opallogo.png" class="pull-left"/>
             <center>
               <br />
-              OPAL is an Open Source framework for building clinical applications from
+              Opal is an Open Source framework for building clinical applications from
               <a href="http://openhealthcare.org.uk" target="_blank">Open Health Care UK</i></a>.
             </center>
         </footer>

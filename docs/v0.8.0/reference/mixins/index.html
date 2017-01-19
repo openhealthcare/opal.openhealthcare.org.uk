@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>Mixins - OPAL</title>
+	<title>Mixins - Opal</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -175,6 +175,14 @@
                 <!--             <a href="../../guides/search/">Search Overview</a> -->
                 <!--         </li> -->
                 <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/contributing/">Contributing</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/development_environment/">Development environment</a> -->
+                <!--         </li> -->
+                <!--      -->
                 <!--     </ul> -->
                 <!-- </li> -->
             
@@ -261,6 +269,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../testing/">Testing</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../upgrading/">Upgrading</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -273,8 +285,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.8.1" target="_blank">
-                  <i class="fa fa-github"></i> v0.8.1
+                <a href="https://github.com/openhealthcare/opal/tree/v0.8.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.8.0
                 </a>
               </li>
                 <!-- <li > -->
@@ -298,7 +310,7 @@
   <h3>Contents</h3>
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#opal-mixins">OPAL mixins</a></li>
+        <li class="main active"><a href="#opal-mixins">Opal mixins</a></li>
         
             <li><a href="#serialisablefields">SerialisableFields</a></li>
         
@@ -311,7 +323,7 @@
 </div></div>
             <div class="col-md-9" role="main">
 
-<h2 id="opal-mixins">OPAL mixins</h2>
+<h2 id="opal-mixins">Opal mixins</h2>
 <h3 id="serialisablefields">SerialisableFields</h3>
 <p>provides the fields that are on the model for example
 if we have an allergy model with a field drug
@@ -325,6 +337,8 @@ if we have an allergy model with a field drug
 it might serialise like below</p>
 <pre><code>allergy.to_dict() -&gt; {"id": 1, "drug": "penicillin"}
 </code></pre>
+<h4 id="todictmixin_bulk_serialise">ToDictMixin._bulk_serialise</h4>
+<p>Used by episode and patient. This flag is used to determine whether the item is serialised as part of Episode/Patient.to_dict.</p>
 <h3 id="updatefromdict">UpdateFromDict</h3>
 <p>provides a method that updates a model
 based on a dictionary of fields, for example</p>
@@ -339,7 +353,7 @@ based on a dictionary of fields, for example</p>
             <img src="/img/opallogo.png" class="pull-left"/>
             <center>
               <br />
-              OPAL is an Open Source framework for building clinical applications from
+              Opal is an Open Source framework for building clinical applications from
               <a href="http://openhealthcare.org.uk" target="_blank">Open Health Care UK</i></a>.
             </center>
         </footer>
