@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>Form helpers - OPAL</title>
+	<title>Form helpers - Opal</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -175,6 +175,14 @@
                 <!--             <a href="../../guides/search/">Search Overview</a> -->
                 <!--         </li> -->
                 <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/contributing/">Contributing</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/development_environment/">Development environment</a> -->
+                <!--         </li> -->
+                <!--      -->
                 <!--     </ul> -->
                 <!-- </li> -->
             
@@ -261,6 +269,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../testing/">Testing</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../upgrading/">Upgrading</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -273,8 +285,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.7.3" target="_blank">
-                  <i class="fa fa-github"></i> v0.7.3
+                <a href="https://github.com/openhealthcare/opal/tree/v0.8.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.8.0
                 </a>
               </li>
                 <!-- <li > -->
@@ -304,7 +316,7 @@
         
             <li><a href="#datepicker">{% datepicker ... %}</a></li>
         
-            <li><a href="#datepicker_1">{% datepicker ... %}</a></li>
+            <li><a href="#datetimepicker">{% datetimepicker ... %}</a></li>
         
             <li><a href="#input">{% input ... %}</a></li>
         
@@ -324,45 +336,52 @@
             <div class="col-md-9" role="main">
 
 <h1 id="form-helpers">Form Helpers</h1>
-<p>OPAL comes with a selection of templatetags that can help you with the
-repetitive task of generating Bootstrap and OPAL compatible markup for
+<p>Opal comes with a selection of templatetags that can help you with the
+repetitive task of generating Bootstrap and Opal compatible markup for
 your forms.</p>
 <h3 id="checkbox">{% checkbox ... %}</h3>
 <p>Generates a checkbox</p>
 <p>Keywords:</p>
 <ul>
-<li><code>field</code> a string of the model name '.' field from this it calculates the label, model and will infer the lookuplist if required. For example {% checkbox field="DogOwner.dog" %}</li>
+<li><code>field</code> a string of the models api name '.' field which infers attributes for the model, for more information see
+<a href="#inference-from-subrecord-fields">Inference from subrecord fields</a></li>
 <li><code>label</code> The Label with which to describe this field</li>
 <li><code>model</code> The model which we are editing (This is a string that references an in-scope Angular variable)</li>
 <li><code>disabled</code> If this exists, we use this as the expression for the ng-disabled directive</li>
+<li><code>element_name</code> If this exists this is an Angular expression that is set to the 'name' attribute of the html element</li>
 </ul>
 <h3 id="datepicker">{% datepicker ... %}</h3>
 <p>Generates a datepicker</p>
 <p>Keywords:</p>
 <ul>
-<li><code>field</code> a string of the models api name '.' field from this it calculates the label, model and will infer the lookuplist if required. For example {% datepicker field="DogOwner.dog" %}</li>
+<li><code>field</code> a string of the models api name '.' field which infers attributes for the model, for more information see
+<a href="#inference-from-subrecord-fields">Inference from subrecord fields</a></li>
 <li><code>label</code> The Label with which to describe this field</li>
 <li><code>model</code> The model which we are editing (This is a string that references an in-scope Angular variable)</li>
 <li><code>show</code>  A string that contains an Angular expression for the ng-show directive</li>
 <li><code>hide</code>  A string that contains an Angular expression for the ng-hide directive</li>
 <li><code>required</code> Label to show when we're required</li>
-<li><code>mindate</code> Expression to use to set the minimum possible date</li>
+<li><code>mindate</code> Angular Javascript expression to return the minimum possible date</li>
+<li><code>element_name</code> If this exists this is an Angular expression that is set to the 'name' attribute of the html element</li>
 </ul>
-<h3 id="datepicker_1">{% datepicker ... %}</h3>
+<h3 id="datetimepicker">{% datetimepicker ... %}</h3>
 <p>Generates a date time fields, a date field on one line and a time field on another</p>
 <p>Keywords:</p>
 <ul>
-<li><code>field</code> a string of the models api name '.' field from this it calculates the label, model and will infer the lookuplist if required. For example {% datetimepicker field="DogOwner.vet_appointment" %}</li>
+<li><code>field</code> a string of the models api name '.' field which infers attributes for the model, for more information see
+<a href="#inference-from-subrecord-fields">Inference from subrecord fields</a></li>
 <li><code>date_label</code> The Label with which to describe the date field (defaults to 'Date')</li>
 <li><code>time_label</code> The Label with which to describe the date field (defaults to 'Time')</li>
 <li><code>model</code> The model which we are editing (This is a string that references an in-scope Angular variable)</li>
-<li><code>change</code>  an angular directive that fires on change</li>
+<li><code>change</code>  an Angular directive that fires on change</li>
+<li><code>element_name</code> If this exists this is an Angular expression that is set to the 'name' attribute of the html datetime picker element</li>
 </ul>
 <h3 id="input">{% input ... %}</h3>
-<p>The input template tag generates you a form input that will play nicely with OPAL's styling.</p>
+<p>The input template tag generates you a form input that will play nicely with Opal's styling.</p>
 <p>Keywords:</p>
 <ul>
-<li><code>field</code> a string of the models api name '.' field from this it calculates the label, model and will infer the lookuplist if required. For example {% input field="DogOwner.dog" %}</li>
+<li><code>field</code> a string of the models api name '.' field which infers attributes for the model, for more information see
+<a href="#inference-from-subrecord-fields">Inference from subrecord fields</a></li>
 <li><code>label</code> The Label with which to describe this field</li>
 <li><code>model</code> The model which we are editing (This is a string that references an in-scope Angular variable)</li>
 <li><code>show</code>  A string that contains an Angular expression for the ng-show directive</li>
@@ -371,13 +390,8 @@ your forms.</p>
 <li><code>required</code> Label to show when we're required</li>
 <li><code>enter</code> expression to evaluate if the user presses return when in this input</li>
 <li><code>maxlength</code> maximum number of characters for this input. Will render the form invalid and display help text if exceeded.</li>
-<li><code>static</code> an Angular expression that will swap the display to be a static input if it evaluates to <code>true</code></li>
+<li><code>element_name</code> If this exists this is an Angular expression that is set to the 'name' attribute of the html element</li>
 </ul>
-<h4 id="inputs-for-subrecord-fields">Inputs for subrecord fields</h4>
-<p>A very common pattern is to render form fields that relate to fields of <code>Subrecords</code>. The input templatetag
-accepts a <code>field</code> argument, from which it will infer the label, model and lookuplist by introspecting the relevant subrecord model.</p>
-<pre><code>{% input field="allergies.drug" %}
-</code></pre>
 <h4 id="inputs-with-units">Inputs with units</h4>
 <p>We also often want to display the unit of a particular field to help our users - consistent styling for this is
 available by using the unit argument e.g.</p>
@@ -394,6 +408,7 @@ available by using the unit argument e.g.</p>
 <li><code>show</code>  A string that contains an Angular expression for the ng-show directive</li>
 <li><code>hide</code>  A string that contains an Angular expression for the ng-hide directive</li>
 <li><code>lookuplist</code> an Angular expression that evaluates to an array containing the radio values</li>
+<li><code>element_name</code> If this exists this is an Angular expression that is set to the 'name' attribute of the html element</li>
 </ul>
 <h3 id="select">{% select ... %}</h3>
 <p>Generates an inline select input</p>
@@ -407,8 +422,8 @@ available by using the unit argument e.g.</p>
 <li><code>lookuplist</code> an Angular expression that evaluates to an array containing the radio values</li>
 <li><code>other</code> A boolean parameter that if true, provides a free text option when 'Other' is selected</li>
 <li><code>help</code> a template to use as the contents of a help popover</li>
-<li><code>static</code> an Angular expression that will swap the display to be a static input if it evaluates to <code>true</code>
-*</li>
+<li><code>static</code> an Angular expression that will swap the display to be a static input if it evaluates to <code>true</code></li>
+<li><code>element_name</code> If this exists this is an Angular expression that is set to the 'name' attribute of the html element*</li>
 </ul>
 <h3 id="textarea">{% textarea ... %}</h3>
 <p>Generates an inline textarea input</p>
@@ -419,7 +434,29 @@ available by using the unit argument e.g.</p>
 <li><code>model</code> The model which we are editing (This is a string that references an in-scope Angular variable)</li>
 <li><code>show</code>  A string that contains an Angular expression for the ng-show directive</li>
 <li><code>hide</code>  A string that contains an Angular expression for the ng-hide directive</li>
+<li><code>element_name</code> If this exists this is an Angular expression that is set to the 'name' attribute of the html element</li>
 </ul>
+<h4 id="inference-from-subrecord-fields">Inference from subrecord fields</h4>
+<p>A very common pattern is to render form fields that relate to fields of <code>Subrecords</code>. Template tags will use this to infer useful information. The display name will be set to the verbose_name and the the ng-model will be inferred.</p>
+<p>If its required, it will set as a required field. If its a CharField with a max length it will set a validation rule accordingly.</p>
+<p>If the field is a free text or foreign key we will infer the lookup list.</p>
+<p>Alternatively if the field has choices attatched to it we will infer the choices into the field.</p>
+<pre><code class="html">{% input field=&quot;Allergies.drug&quot; %}
+</code></pre>
+
+<p>Note unlike the traditional choices implementation only the last value of the choices is used and saved to the database</p>
+<pre><code class="python">  Colours = (
+    ('P', 'Purple'),
+    ('R', 'Red'),
+  )
+</code></pre>
+
+<p>What is displayed to the user and saved to the database is 'Purple' or 'Red' respectively.</p>
+<p>All inferences can be overridden by declarations in the template tag. For Example</p>
+<pre><code class="html">{% input field=&quot;Allergies.drug&quot; label=&quot;Something else&quot; %}
+</code></pre>
+
+<p>Will render the input with a different label.</p>
 <h3 id="static">{% static ... %}</h3>
 <p>Generates a bootstrap Static div (for displaying data from fields as uneditable but formatted nicely with appropriate styles).</p>
 <p>Takes one positional argument, a string representing the subrecord field path.</p>
@@ -450,7 +487,7 @@ If the icon starts with <code>fa</code> or <code>glyphicon</code> then we will i
             <img src="/img/opallogo.png" class="pull-left"/>
             <center>
               <br />
-              OPAL is an Open Source framework for building clinical applications from
+              Opal is an Open Source framework for building clinical applications from
               <a href="http://openhealthcare.org.uk" target="_blank">Open Health Care UK</i></a>.
             </center>
         </footer>

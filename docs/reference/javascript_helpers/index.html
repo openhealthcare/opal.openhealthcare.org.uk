@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>Javascript helpers - OPAL</title>
+	<title>Javascript helpers - Opal</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -175,6 +175,14 @@
                 <!--             <a href="../../guides/search/">Search Overview</a> -->
                 <!--         </li> -->
                 <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/contributing/">Contributing</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/development_environment/">Development environment</a> -->
+                <!--         </li> -->
+                <!--      -->
                 <!--     </ul> -->
                 <!-- </li> -->
             
@@ -261,6 +269,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../testing/">Testing</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../upgrading/">Upgrading</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -273,8 +285,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.7.3" target="_blank">
-                  <i class="fa fa-github"></i> v0.7.3
+                <a href="https://github.com/openhealthcare/opal/tree/v0.8.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.8.0
                 </a>
               </li>
                 <!-- <li > -->
@@ -298,7 +310,7 @@
   <h3>Contents</h3>
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#opal-javascript-helpers">OPAL Javascript Helpers</a></li>
+        <li class="main active"><a href="#opal-javascript-helpers">Opal Javascript Helpers</a></li>
         
             <li><a href="#rootscope-methods">$rootScope methods</a></li>
         
@@ -306,22 +318,24 @@
         
             <li><a href="#angular-filters">Angular Filters</a></li>
         
+            <li><a href="#angular-http-interceptors">Angular HTTP Interceptors</a></li>
+        
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h2 id="opal-javascript-helpers">OPAL Javascript Helpers</h2>
+<h2 id="opal-javascript-helpers">Opal Javascript Helpers</h2>
 <h3 id="rootscope-methods">$rootScope methods</h3>
-<p>OPAL provides some methods on the Angular $rootScope object.</p>
+<p>Opal provides some methods on the Angular $rootScope object.</p>
 <h4 id="open_modal">open_modal</h4>
-<pre><code>$rootScope.open_modal(controller, template, size, {episode: episode})
+<pre><code>$rootScope.open_modal(controller, template, {episode: episode})
 </code></pre>
 <p>Open an arbitrary controller in a modal, passing in the name of the controller,
-the url for the template, the size of the modal window (either 'sm' or 'lg').</p>
+the url for the template.</p>
 <p>You may also pass through a dictionary of items to resolve.</p>
 <h3 id="angular-directives">Angular Directives</h3>
-<p>OPAL provides some built-in Angular directives for your project to use.</p>
+<p>Opal provides some built-in Angular directives for your project to use.</p>
 <h4 id="date-of-birth">date-of-birth</h4>
 <p>Creates an input field that assumes to base field is a moment and handles validation and parsing. It assumes no one is born in the future or is over 150 years old.</p>
 <h4 id="tag-select">tag-select</h4>
@@ -341,6 +355,18 @@ This property is set on individual <code>PatientList</code> subclasses, and pass
 <p>A directive that if set with no arguments, or set to true, will only allow a button to be
 clicked on once and then it'll be disabled. Useful for example to make sure that multiple save requests aren't
 accidentally triggered.</p>
+<h4 id="check-form">check-form</h4>
+<p>Similar to one click only but it takes the form in use as an argument</p>
+<p>e.g.</p>
+<pre><code class="html">&lt;button check-form=&quot;form&quot; ng-click=&quot;sendDataToTheServer&quot;&gt;click me&lt;/button&gt;
+</code></pre>
+
+<p>This checks the form for valid on click.</p>
+<p>If the form is then not valid. It will not call the second function, but mark the form as submitted and disable the button.</p>
+<p>It will watch for the form to become valid and undisable the button when that happens.</p>
+<p>If the form is valid, it will allow the ng-click function to be called.</p>
+<p>This means that if you only want to show error messages after the user has clicked the save button you can do so with the
+form.$submitted variable.</p>
 <h4 id="scroll-top">scroll-top</h4>
 <p>Adds a click handler to the element that when click will animate the body of the element to scroll to the top</p>
 <h4 id="go-to-top">go-to-top</h4>
@@ -354,7 +380,7 @@ Copy to Clipboard
 <p>This is a wrapper around clipboard.js, it lets the user copy text from an element that matches the selector you pass it. It will present a growl message saying that the text has been
 copied.</p>
 <h3 id="angular-filters">Angular Filters</h3>
-<p>OPAL provides some built-in Angular filters for your project to use.</p>
+<p>Opal provides some built-in Angular filters for your project to use.</p>
 <h4 id="short-date">short-date</h4>
 <p>Displays a date as DD/MM if it's this year, else DD/MM/YYYY</p>
 <h4 id="hhmm">hhmm</h4>
@@ -376,7 +402,9 @@ copied.</p>
 <h4 id="boxed">boxed</h4>
 <p>Displays Boolean fields as a checkbox (e.g. either [ ] or [X])</p>
 <pre><code>[[ item.boolean_field | boxed]]
-</code></pre></div>
+</code></pre>
+<h3 id="angular-http-interceptors">Angular HTTP Interceptors</h3>
+<p>opal uses opal.services.LogoutInterceptor to intercept all failed responses from the server. If they're a 401 or a 403 we redirect the user to the login page, otherwise it passes them through.</p></div>
         </div>
 
         <footer class="col-md-12">
@@ -384,7 +412,7 @@ copied.</p>
             <img src="/img/opallogo.png" class="pull-left"/>
             <center>
               <br />
-              OPAL is an Open Source framework for building clinical applications from
+              Opal is an Open Source framework for building clinical applications from
               <a href="http://openhealthcare.org.uk" target="_blank">Open Health Care UK</i></a>.
             </center>
         </footer>

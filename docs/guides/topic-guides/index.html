@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>Guides - OPAL</title>
+	<title>Guides - Opal</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -175,6 +175,14 @@
                 <!--             <a href="../search/">Search Overview</a> -->
                 <!--         </li> -->
                 <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../contributing/">Contributing</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../development_environment/">Development environment</a> -->
+                <!--         </li> -->
+                <!--      -->
                 <!--     </ul> -->
                 <!-- </li> -->
             
@@ -261,6 +269,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../reference/testing/">Testing</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../reference/upgrading/">Upgrading</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -273,8 +285,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.7.3" target="_blank">
-                  <i class="fa fa-github"></i> v0.7.3
+                <a href="https://github.com/openhealthcare/opal/tree/v0.8.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.8.0
                 </a>
               </li>
                 <!-- <li > -->
@@ -298,9 +310,9 @@
   <h3>Contents</h3>
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#opal-guides">OPAL Guides</a></li>
+        <li class="main active"><a href="#opal-guides">Opal Guides</a></li>
         
-            <li><a href="#opal">OPAL</a></li>
+            <li><a href="#opal">Opal</a></li>
         
             <li><a href="#data-and-business-logic">Data and Business Logic</a></li>
         
@@ -308,14 +320,16 @@
         
             <li><a href="#optional-components">Optional Components</a></li>
         
+            <li><a href="#working-on-opal-itself">Working on Opal itself</a></li>
+        
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h2 id="opal-guides">OPAL Guides</h2>
+<h2 id="opal-guides">Opal Guides</h2>
 <p>A list of all available topic guides.</p>
-<h3 id="opal">OPAL</h3>
+<h3 id="opal">Opal</h3>
 <table>
 <thead>
 <tr>
@@ -325,8 +339,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../components_overview/">OPAL - Applications, Plugins</a></td>
-<td>How OPAL components hang together</td>
+<td><a href="../components_overview/">Opal - Applications, Plugins</a></td>
+<td>How Opal components hang together</td>
 </tr>
 <tr>
 <td><a href="../command_line_tool/">Command line tool</a></td>
@@ -338,7 +352,7 @@
 </tr>
 <tr>
 <td><a href="../plugins/">Plugins</a></td>
-<td>Available interfaces for OPAL plugins</td>
+<td>Available interfaces for Opal plugins</td>
 </tr>
 <tr>
 <td><a href="../plugins_list/">List of Plugins</a></td>
@@ -357,11 +371,11 @@
 <tbody>
 <tr>
 <td><a href="../datamodel/">Data Model</a></td>
-<td>How OPAL models clinical reality</td>
+<td>How Opal models clinical reality</td>
 </tr>
 <tr>
 <td><a href="../archetypes/">Core Clinical Model</a></td>
-<td>The core clinical data model available to OPAL applications</td>
+<td>The core clinical data model available to Opal applications</td>
 </tr>
 <tr>
 <td><a href="../referencedata/">Reference data</a></td>
@@ -381,15 +395,15 @@
 </tr>
 <tr>
 <td><a href="../roles_and_permissions/">Roles &amp; Permissions</a></td>
-<td>How we handle authorization in OPAL</td>
+<td>How we handle authorization in Opal</td>
 </tr>
 <tr>
 <td><a href="../tagging/">Tagging</a></td>
-<td>Tagging episodes in OPAL</td>
+<td>Tagging episodes in Opal</td>
 </tr>
 <tr>
 <td><a href="../json_api/">JSON API</a></td>
-<td>The OPAL JSON API</td>
+<td>The Opal JSON API</td>
 </tr>
 </tbody>
 </table>
@@ -408,11 +422,11 @@
 </tr>
 <tr>
 <td><a href="../context_processors/">Default Context Processors</a></td>
-<td>OPAL Django context processors</td>
+<td>Opal Django context processors</td>
 </tr>
 <tr>
 <td><a href="../static_files/">Static Files</a></td>
-<td>How OPAL handles static files</td>
+<td>How Opal handles static files</td>
 </tr>
 <tr>
 <td><a href="../forms/">Forms</a></td>
@@ -442,6 +456,25 @@
 <td>Default search implementation</td>
 </tr>
 </tbody>
+</table>
+<h3 id="working-on-opal-itself">Working on Opal itself</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../contributing/">Contributing</a></td>
+<td>Contributing to Opal</td>
+</tr>
+<tr>
+<td><a href="../development_environment/">Development environment</a></td>
+<td>Setting up the Opal development environment</td>
+</tr>
+</tbody>
 </table></div>
         </div>
 
@@ -450,7 +483,7 @@
             <img src="/img/opallogo.png" class="pull-left"/>
             <center>
               <br />
-              OPAL is an Open Source framework for building clinical applications from
+              Opal is an Open Source framework for building clinical applications from
               <a href="http://openhealthcare.org.uk" target="_blank">Open Health Care UK</i></a>.
             </center>
         </footer>

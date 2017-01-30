@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>Patient Lists - OPAL</title>
+	<title>Patient Lists - Opal</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -175,6 +175,14 @@
                 <!--             <a href="../../guides/search/">Search Overview</a> -->
                 <!--         </li> -->
                 <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/contributing/">Contributing</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/development_environment/">Development environment</a> -->
+                <!--         </li> -->
+                <!--      -->
                 <!--     </ul> -->
                 <!-- </li> -->
             
@@ -261,6 +269,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../testing/">Testing</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../upgrading/">Upgrading</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -273,8 +285,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.7.3" target="_blank">
-                  <i class="fa fa-github"></i> v0.7.3
+                <a href="https://github.com/openhealthcare/opal/tree/v0.8.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.8.0
                 </a>
               </li>
                 <!-- <li > -->
@@ -304,6 +316,8 @@
         
             <li><a href="#taggedpatientlist">TaggedPatientList</a></li>
         
+            <li><a href="#tabbedpatientlistgroup">TabbedPatientListGroup</a></li>
+        
     
     </ul>
 </div></div>
@@ -316,6 +330,8 @@
 <h3 id="properties">Properties</h3>
 <h4 id="patientlistdisplay_name">PatientList.display_name</h4>
 <p>How we want to refer to this list on screen to users.</p>
+<h4 id="patientlistcomparator_service">PatientList.comparator_service</h4>
+<p>A custom comparator service to set sort order within a list. Defaults to None.</p>
 <h2 id="taggedpatientlist">TaggedPatientList</h2>
 <p>Tagged Patient Lists inherit from Patient Lists - as such they have all of the same methods and properties
 of Patient Lists.</p>
@@ -323,7 +339,22 @@ of Patient Lists.</p>
 <h4 id="taggedpatientlisttag">TaggedPatientList.tag</h4>
 <p>The main, or parent tag for this list. Should be lowercase, with no numbers or dashes. Underscores are OK.</p>
 <h4 id="taggedpatientlistsubtag">TaggedPatientList.subtag</h4>
-<p>The child tag for this list. Should be lowercase, with no numbers or dashes. Underscores are OK.</p></div>
+<p>The child tag for this list. Should be lowercase, with no numbers or dashes. Underscores are OK.</p>
+<h2 id="tabbedpatientlistgroup">TabbedPatientListGroup</h2>
+<p>Groups of Patient Lists to display as tabs at the top of any list in the group.</p>
+<h3 id="properties_2">Properties</h3>
+<h4 id="tabbedpatientlistgroupmember_lists">TabbedPatientListGroup.member_lists</h4>
+<p>A list containing the <code>PatientList</code> subclasses in this group.</p>
+<h3 id="classmethods">Classmethods</h3>
+<h4 id="tabbedpatientlistgroupfor_list">TabbedPatientListGroup.for_list</h4>
+<p>Returns the group for a given PatientList. Raises ValueError if not passed a PatientList</p>
+<h4 id="tabbedpatientlistgroupget_member_lists">TabbedPatientListGroup.get_member_lists</h4>
+<p>A hook for dynamically customising the members of this list group.</p>
+<p>Returns an iterable of PatientLists. Defaults to the <code>.member_lists</code> property</p>
+<h4 id="tabbedpatientlistgroupget_member_lists_for_user">TabbedPatientListGroup.get_member_lists_for_user</h4>
+<p>Returns an iterable of the visible member lists for a given USER</p>
+<h4 id="tabbedpatientlistgroupvisible_to">TabbedPatientListGroup.visible_to</h4>
+<p>Predicate function to determine whether this list is meaningfully visible to this USER</p></div>
         </div>
 
         <footer class="col-md-12">
@@ -331,7 +362,7 @@ of Patient Lists.</p>
             <img src="/img/opallogo.png" class="pull-left"/>
             <center>
               <br />
-              OPAL is an Open Source framework for building clinical applications from
+              Opal is an Open Source framework for building clinical applications from
               <a href="http://openhealthcare.org.uk" target="_blank">Open Health Care UK</i></a>.
             </center>
         </footer>

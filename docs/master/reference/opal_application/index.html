@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>OpalApplication - OPAL</title>
+	<title>OpalApplication - Opal</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -175,6 +175,14 @@
                 <!--             <a href="../../guides/search/">Search Overview</a> -->
                 <!--         </li> -->
                 <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/contributing/">Contributing</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/development_environment/">Development environment</a> -->
+                <!--         </li> -->
+                <!--      -->
                 <!--     </ul> -->
                 <!-- </li> -->
             
@@ -261,6 +269,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../testing/">Testing</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../upgrading/">Upgrading</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -273,8 +285,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.7.3" target="_blank">
-                  <i class="fa fa-github"></i> v0.7.3
+                <a href="https://github.com/openhealthcare/opal/tree/v0.8.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.8.0
                 </a>
               </li>
                 <!-- <li > -->
@@ -300,6 +312,8 @@
     
         <li class="main active"><a href="#opalcoreapplication">opal.core.application</a></li>
         
+            <li><a href="#utility-functions">Utility functions</a></li>
+        
             <li><a href="#opalapplication">OpalApplication</a></li>
         
     
@@ -308,10 +322,15 @@
             <div class="col-md-9" role="main">
 
 <h1 id="opalcoreapplication">opal.core.application</h1>
+<h3 id="utility-functions">Utility functions</h3>
+<h4 id="get_app">get_app</h4>
+<p>Returns the application class for the currently active application.</p>
+<h4 id="get_all_components">get_all_components</h4>
+<p>Returns an iterator of all the of the <a href="../../guides/plugins/">plugins</a> and the current application</p>
 <h2 id="opalapplication">OpalApplication</h2>
 <p>The base class for your main application entrypoints is opal.core.application.OpalApplication.</p>
-<p>You must subclass this in order for OPAL to discover your application.</p>
-<p>If you started your OPAL project via <code>$ opal startproject yourproject</code> then this will have been
+<p>You must subclass this in order for Opal to discover your application.</p>
+<p>If you started your Opal project via <code>$ opal startproject yourproject</code> then this will have been
 generated for you, and located in <code>yourproject/yourproject/__init__.py</code></p>
 <h3 id="properties">Properties</h3>
 <p>Properties available on an OpalApplication:</p>
@@ -331,7 +350,7 @@ representing paths ready for staticfiles. Defaults to <code>[]</code>.</p>
 <h4 id="opalapplicationstyles">OpalApplication.styles</h4>
 <p>A list of stylesheets that our application would like to include. These should be strings
 representing paths ready for staticfiles. Defaults to <code>[]</code>. These styles are included after
-the default OPAL styles.</p>
+the default Opal styles.</p>
 <pre><code class="python">class MyApplication(OpalApplication):
     styles = ['css/app.css']
 </code></pre>
@@ -352,6 +371,8 @@ Defaults to returning the <code>OpalApplication.javascripts</code> property.</p>
 # -&gt; ['js/one.js', 'js/two.js', ...]
 </code></pre>
 
+<h4 id="opalapplicationdirectory">OpalApplication.directory</h4>
+<p>Returns the file system location of the module.</p>
 <h4 id="opalapplicationget_menu_items">OpalApplication.get_menu_items()</h4>
 <h4 id="opalapplicationget_styles">OpalApplication.get_styles()</h4>
 <p>Return a list of the application's stylesheets as paths to them ready for staticfiles.
@@ -366,7 +387,7 @@ Defaults to returning the contents of <code>OpalApplication.styles</code>.</p>
             <img src="/img/opallogo.png" class="pull-left"/>
             <center>
               <br />
-              OPAL is an Open Source framework for building clinical applications from
+              Opal is an Open Source framework for building clinical applications from
               <a href="http://openhealthcare.org.uk" target="_blank">Open Health Care UK</i></a>.
             </center>
         </footer>

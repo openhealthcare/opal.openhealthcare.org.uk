@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>Data Model - OPAL</title>
+	<title>Data Model - Opal</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -175,6 +175,14 @@
                 <!--             <a href="../search/">Search Overview</a> -->
                 <!--         </li> -->
                 <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../contributing/">Contributing</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../development_environment/">Development environment</a> -->
+                <!--         </li> -->
+                <!--      -->
                 <!--     </ul> -->
                 <!-- </li> -->
             
@@ -261,6 +269,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../reference/testing/">Testing</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../reference/upgrading/">Upgrading</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -273,8 +285,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.7.3" target="_blank">
-                  <i class="fa fa-github"></i> v0.7.3
+                <a href="https://github.com/openhealthcare/opal/tree/v0.8.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.8.0
                 </a>
               </li>
                 <!-- <li > -->
@@ -298,7 +310,7 @@
   <h3>Contents</h3>
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#the-opal-data-model">The OPAL Data model</a></li>
+        <li class="main active"><a href="#the-opal-data-model">The Opal Data model</a></li>
         
             <li><a href="#patients">Patients</a></li>
         
@@ -315,8 +327,8 @@
 </div></div>
             <div class="col-md-9" role="main">
 
-<h2 id="the-opal-data-model">The OPAL Data model</h2>
-<p>The OPAL data model allows for patients to have multiple sequential or concurrent
+<h2 id="the-opal-data-model">The Opal Data model</h2>
+<p>The Opal data model allows for patients to have multiple sequential or concurrent
 <code>Episodes of care</code>. Some information is linked to an <code>Episode</code>, some is linked to
 a <code>Patient</code>.</p>
 <p><img alt="Datamodel" src="../../img/OPAL.datamodel.png" /></p>
@@ -354,12 +366,12 @@ implement a Demograpics <code>Subrecord</code> as follows:</p>
 display or structure, which are documented in the
 <a href="../../reference/subrecords/">Subrecord reference material</a></p>
 <h3 id="core-clinical-data-model">Core Clinical Data Model</h3>
-<p>OPAL ships with a wide range of core clinical concepts implemented as Abstract Subrecords.
+<p>Opal ships with a wide range of core clinical concepts implemented as Abstract Subrecords.
 Applications that are generated via the <code>$ opal startproject</code> command will automatically
 contain concrete implementations of these models in the application.</p>
 <p>Full documentation of these models is available in the <a href="../archetypes/">Archetypes</a> documentation.</p>
 <h3 id="reference-data">Reference Data</h3>
-<p>OPAL comes with a set of clinical terminology data models out of the box. - we often
+<p>Opal comes with a set of clinical terminology data models out of the box. - we often
 want to link our records to one of these - for example to record a type of condition
 a patient might have, or a drug they are taking.</p>
 <p>Full documentation of these is available in the <a href="../lookup_lists/">Lookup lists</a> documentation.</p></div>
@@ -370,7 +382,7 @@ a patient might have, or a drug they are taking.</p>
             <img src="/img/opallogo.png" class="pull-left"/>
             <center>
               <br />
-              OPAL is an Open Source framework for building clinical applications from
+              Opal is an Open Source framework for building clinical applications from
               <a href="http://openhealthcare.org.uk" target="_blank">Open Health Care UK</i></a>.
             </center>
         </footer>

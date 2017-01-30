@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../img/favicon.ico">
 
-	<title>Tutorial - OPAL</title>
+	<title>Tutorial - Opal</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -175,6 +175,14 @@
                 <!--             <a href="../guides/search/">Search Overview</a> -->
                 <!--         </li> -->
                 <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../guides/contributing/">Contributing</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../guides/development_environment/">Development environment</a> -->
+                <!--         </li> -->
+                <!--      -->
                 <!--     </ul> -->
                 <!-- </li> -->
             
@@ -261,6 +269,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../reference/testing/">Testing</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../reference/upgrading/">Upgrading</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -273,8 +285,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.7.3" target="_blank">
-                  <i class="fa fa-github"></i> v0.7.3
+                <a href="https://github.com/openhealthcare/opal/tree/v0.8.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.8.0
                 </a>
               </li>
                 <!-- <li > -->
@@ -298,7 +310,7 @@
   <h3>Contents</h3>
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#writing-a-clinical-service-with-opal">Writing a clinical service with OPAL</a></li>
+        <li class="main active"><a href="#writing-a-clinical-service-with-opal">Writing a clinical service with Opal</a></li>
         
             <li><a href="#bootstrapping-a-new-project">Bootstrapping a new project</a></li>
         
@@ -306,7 +318,7 @@
         
             <li><a href="#team-lists">Team lists</a></li>
         
-            <li><a href="#lookup-lists">Lookup Lists</a></li>
+            <li><a href="#reference-data">Reference data</a></li>
         
             <li><a href="#add-your-own-data-models">Add your own data models</a></li>
         
@@ -321,8 +333,8 @@
 </div></div>
             <div class="col-md-9" role="main">
 
-<h2 id="writing-a-clinical-service-with-opal">Writing a clinical service with OPAL</h2>
-<p>This tutorial will walk you through the creation of a new OPAL service.</p>
+<h2 id="writing-a-clinical-service-with-opal">Writing a clinical service with Opal</h2>
+<p>This tutorial will walk you through the creation of a new Opal service.</p>
 <p>The application we're going to be building will help clinical users to manage the patients on a ward in a hospital.</p>
 <blockquote class="custom-quote"><p><i class="fa fa-user-md fa-3x"></i>
 As a Doctor <br />
@@ -331,11 +343,11 @@ So that I can treat them effectively and safely.
 </p></blockquote>
 
 <h3 id="bootstrapping-a-new-project">Bootstrapping a new project</h3>
-<p>We assume that you've already <a href="../installation/">Installed OPAL</a>. You can tell which version of opal is installed
+<p>We assume that you've already <a href="../installation/">Installed Opal</a>. You can tell which version of opal is installed
 by running this command</p>
 <pre><code>$ opal --version
 </code></pre>
-<p>At the start a new project, OPAL will bootstrap the initial project structure, including
+<p>At the start a new project, Opal will bootstrap the initial project structure, including
 a Djano project, some core datamodels (complete with JSON APIs) and a general application structure.</p>
 <p>From the commandline:</p>
 <pre><code>$ opal startproject mynewapp
@@ -384,11 +396,11 @@ python manage.py runserver
 <p>When you log in you should be presented with a welcome screen that shows you the three
 areas that are enabled by default - team lists, search and the admin area.</p>
 <p><img src="/img/tutorial-welcome.png" width="600" style="margin: 12px auto; border: 1px solid black;"/></p>
-<p>OPAL applications are a collection of single page Angular apps that talk to the Django
+<p>Opal applications are a collection of single page Angular apps that talk to the Django
 server-side layer via JSON APIs. The Team Lists and Search options here are two examples of
 front-end Angular single page apps.</p>
 <h3 id="team-lists">Team lists</h3>
-<p>Most clinical services will need at some stage to generate a list of patients - so OPAL provides
+<p>Most clinical services will need at some stage to generate a list of patients - so Opal provides
 this functionality enabled by default.</p>
 <p>The <a href="../guides/list_views/">list view</a> is a spreadhseet-style list of patients - try navigating
 to the list view and adding a patient with the <code>add patient</code> button.</p>
@@ -401,7 +413,7 @@ of care for a patient - but we'll come to that in a second.
 </small></blockquote>
 
 <p>The columns you see initially are just a few of the standard clinical models that come with
-OPAL - for instance the Diagnosis model in your new application inherits from a model that
+Opal - for instance the Diagnosis model in your new application inherits from a model that
 looks a lot like this:</p>
 <pre><code>class Diagnosis(EpisodeSubrecord):
     condition         = ForeignKeyOrFreeText(Condition)
@@ -412,32 +424,38 @@ looks a lot like this:</p>
     class Meta:
         abstract = True
 </code></pre>
-<h3 id="lookup-lists">Lookup Lists</h3>
+<h3 id="reference-data">Reference data</h3>
 <p>You will notice that the condition field has a custom field type - <code>ForeignKeyOrFreeText</code>.
-This is a custom field type that we use with OPAL when we want to use a
+This is a custom field type that we use with Opal when we want to use a
 <a href="../guides/lookup_lists/">Lookup List</a>.</p>
 <p>Lookup Lists allow us to reference canonical lists of available terminology as a foreign key, while
 also allowing synonymous terms, and a free text override. That means that we can ensure that
 we record high quality coded data, while allowing users an easy way to enter unusual edge
 cases.</p>
 <p>You'll need to import the data for a terminology before you can start to take advantage of that.
-For now, let's use the reference data from elCID (An OPAL application maintained by Open Health Care):</p>
-<pre><code>wget https://raw.githubusercontent.com/openhealthcare/elcid/master/data/lookuplists/lookuplists.json -P data/lookuplists
+For now, let's use the reference data from elCID (An Opal application maintained by Open Health Care):</p>
+<pre><code>wget https://raw.githubusercontent.com/openhealthcare/elcid/master/data/lookuplists/lookuplists.json -P yourapp/data/lookuplists
 </code></pre>
 <blockquote><small>
 By convention, we store data in the <code>./data/lookuplists</code> directory of our project.
 </small></blockquote>
 
 <p>Now let's import the data:</p>
-<pre><code>python manage.py load_lookup_lists -f data/lookuplists/lookuplists.json
+<pre><code>python manage.py load_lookup_lists
 </code></pre>
 <p>Now refresh your application and try adding a new diagnosis to your patient. As you start to type in
 the condition field, you'l see that the conditions we just imported appear as suggestions:</p>
 <p><img src="/img/tutorial-conditions.png" style="margin: 12px auto; border: 1px solid black;"/></p>
+<blockquote><small>
+You can add your own Lookup Lists to your application. <br />
+For more details consult the
+<a href="../guides/referencedata/#adding-a-lookup-list">Reference Data guide</a>.
+</small></blockquote>
+
 <h3 id="add-your-own-data-models">Add your own data models</h3>
-<p>So far we've begun to get a sense of the batteries-included parts of OPAL,
+<p>So far we've begun to get a sense of the batteries-included parts of Opal,
 but before long, you're going to need to create models for your own needs.</p>
-<p>Most OPAL models are <a href="../guides/datamodel/">Subrecords</a> - they relate to either a patient, or
+<p>Most Opal models are <a href="../guides/datamodel/">Subrecords</a> - they relate to either a patient, or
 an episode (an episode is for example, an admission to hospital).</p>
 <p>Let's see how that works by creating a TODO list model that is assigned to
 episodes of care. In your <code>mynewapp/models.py</code> :</p>
@@ -452,10 +470,10 @@ which provides us with some extra functionality:</p>
 <ul>
 <li>A relationship to an episode, linked to a patient</li>
 <li>JSON APIs for creating, retrieving and updating it</li>
-<li>Ensuring that the OPAL Angular layer knows it exists</li>
+<li>Ensuring that the Opal Angular layer knows it exists</li>
 <li>Some metadata fields, like created, updated, created_by, updated_by</li>
 </ul>
-<p>Next, we're going to let OPAL take care of the boilerplate that we'll need to use this
+<p>Next, we're going to let Opal take care of the boilerplate that we'll need to use this
 model in our application. From the commandline:</p>
 <pre><code>$ opal scaffold mynewapp
 </code></pre>
@@ -476,7 +494,7 @@ model in our application. From the commandline:</p>
 <h4 id="form-template">Form template</h4>
 <p>The default form template will display each field on a new line, with some basic
 appropriate form field types set.
-It uses the OPAL form helpers templatetag library.</p>
+It uses the Opal form helpers templatetag library.</p>
 <pre><code class="html">{% load forms %}
 {% input  field=&quot;TODOItem.job&quot;  %}
 {% datepicker  field=&quot;TODOItem.due_date&quot;  %}
@@ -486,16 +504,16 @@ It uses the OPAL form helpers templatetag library.</p>
 
 <h4 id="adding-todos-to-our-team-lists">Adding TODOs to our Team Lists</h4>
 <p>Now let's add our TODO list model as a column in the Spreadsheet-like list view.</p>
-<p>Patient Lists in OPAL are subclasses of <code>opal.core.patient_lists.PatientList</code>, and
+<p>Patient Lists in Opal are subclasses of <code>opal.core.patient_lists.PatientList</code>, and
 they live in <code>patient_lists.py</code> files of our Django apps.</p>
 <blockquote><small>
 Technically these can live anywhere you like - although if you put them in other places
 you're responsible for making sure that they're imported at startup.
-<br />OPAL guarantees
+<br />Opal guarantees
 to autodiscover lists in `app.patient_list` modules.
 </small></blockquote>
 
-<p>You can see the basic list that the OPAL application scaffold created for you in
+<p>You can see the basic list that the Opal application scaffold created for you in
 <code>yournewapp/patient_lists.py</code>.</p>
 <pre><code class="python">class AllPatientsList(core.patient_lists.PatientList):
     display_name = 'All Patients'
@@ -529,7 +547,7 @@ checkboxes.</p>
 need to tweak the templates they generate with whatever logic makes sense for your
 application.</p>
 <p>For us, you'll notice that the value of <code>TODOItem.completed</code> simply displays as false -
-which is not particularly useful. So let's update that using the OPAL
+which is not particularly useful. So let's update that using the Opal
 <a href="../reference/javascript_helpers/">Boxed filter</a>. In <code>mynewapp/templates/records/todo_item.html</code>
 change the last line to look like this:</p>
 <pre><code>&lt;span ng-show="item.completed"&gt;[[ item.completed | boxed ]] &lt;br /&gt;&lt;/span&gt;
@@ -551,13 +569,13 @@ view will typically allow for a more detailed display and editing of all the eve
 comprising a patient's care than is available on the list page.</p>
 <p><img src="/img/detail.png" style="margin: 12px auto; border: 1px solid black; width: 600px;"/></p>
 <h4 id="json-apis">JSON APIs</h4>
-<p>OPAL automatically creates self-documenting JSON APIs for your interacting with the data
+<p>Opal automatically creates self-documenting JSON APIs for your interacting with the data
 in your application. You can inspect these APIs interactively at the url:</p>
 <pre><code>http://localhost:8000/api/v0.1/
 </code></pre>
 <p><img src="/img/tutorial-api.png" style="margin: 12px auto; border: 1px solid black;"/></p>
 <h3 id="what-next">What next?</h3>
-<p>This is just a glimpse at the full range of functionality that comes with OPAL - there is
+<p>This is just a glimpse at the full range of functionality that comes with Opal - there is
 much more to discover in the <a href="../guides/topic-guides/">Topic Guides</a>.</p></div>
         </div>
 
@@ -566,7 +584,7 @@ much more to discover in the <a href="../guides/topic-guides/">Topic Guides</a>.
             <img src="/img/opallogo.png" class="pull-left"/>
             <center>
               <br />
-              OPAL is an Open Source framework for building clinical applications from
+              Opal is an Open Source framework for building clinical applications from
               <a href="http://openhealthcare.org.uk" target="_blank">Open Health Care UK</i></a>.
             </center>
         </footer>

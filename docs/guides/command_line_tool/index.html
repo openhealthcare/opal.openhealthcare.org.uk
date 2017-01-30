@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>Command Line tool - OPAL</title>
+	<title>Command Line tool - Opal</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -175,6 +175,14 @@
                 <!--             <a href="../search/">Search Overview</a> -->
                 <!--         </li> -->
                 <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../contributing/">Contributing</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../development_environment/">Development environment</a> -->
+                <!--         </li> -->
+                <!--      -->
                 <!--     </ul> -->
                 <!-- </li> -->
             
@@ -261,6 +269,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../reference/testing/">Testing</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../reference/upgrading/">Upgrading</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -273,8 +285,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.7.3" target="_blank">
-                  <i class="fa fa-github"></i> v0.7.3
+                <a href="https://github.com/openhealthcare/opal/tree/v0.8.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.8.0
                 </a>
               </li>
                 <!-- <li > -->
@@ -298,7 +310,7 @@
   <h3>Contents</h3>
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#the-opal-command-line-tool">The OPAL Command line tool</a></li>
+        <li class="main active"><a href="#the-opal-command-line-tool">The Opal Command line tool</a></li>
         
             <li><a href="#startproject-name">startproject &lt;name&gt;</a></li>
         
@@ -315,19 +327,19 @@
 </div></div>
             <div class="col-md-9" role="main">
 
-<h2 id="the-opal-command-line-tool">The OPAL Command line tool</h2>
-<p>OPAL ships with a helpful command line tool that helps with administrative tasks.</p>
-<p>The <code>opal</code> script should be on your system path if you installed OPAL via setup.py or
+<h2 id="the-opal-command-line-tool">The Opal Command line tool</h2>
+<p>Opal ships with a helpful command line tool that helps with administrative tasks.</p>
+<p>The <code>opal</code> script should be on your system path if you installed Opal via setup.py or
 pip. You can check whether it is available by running this command:</p>
 <pre><code>$ opal -v
 </code></pre>
 <h3 id="startproject-name">startproject &lt;name&gt;</h3>
-<p>Creates a new OPAL project.</p>
+<p>Creates a new Opal project.</p>
 <p>This creates boilerplate and a default configuration for your new project, including
 creating a new underlying Django project, updating default settings to be compatible
-with OPAL, creating directories and code boilerplate, and running initial migrations.</p>
+with Opal, creating directories and code boilerplate, and running initial migrations.</p>
 <h3 id="startplugin-name">startplugin &lt;name&gt;</h3>
-<p>Creates boilerplate code, and directory structures for a new OPAL plugin.</p>
+<p>Creates boilerplate code, and directory structures for a new Opal plugin.</p>
 <h3 id="scaffold-appname">scaffold &lt;appname&gt;</h3>
 <p>Use with new record models.</p>
 <p>Creates and runs automatic migrations, creates display and form (modal) templates.</p>
@@ -344,8 +356,8 @@ test module, case or method to run.</p>
 <p>$ opal test py -t opal.tests.test_models</p>
 <h3 id="checkout">checkout</h3>
 <p>Ensure that all of our application plugins and packages are on the correct branch.</p>
-<p>This is particularly useful when working on OPAL itself, or when you have multiple
-projects that use different versions of OPAL or plugins. It will assume that github
+<p>This is particularly useful when working on Opal itself, or when you have multiple
+projects that use different versions of Opal or plugins. It will assume that github
 based requirements will be installed in development via <code>python setup.py develop</code>.</p>
 <p>This command will parse your project's <code>requirements.txt</code>, and then ensure that any
 Github sources are checked out loclaly to the branch specified therein.</p></div>
@@ -356,7 +368,7 @@ Github sources are checked out loclaly to the branch specified therein.</p></div
             <img src="/img/opallogo.png" class="pull-left"/>
             <center>
               <br />
-              OPAL is an Open Source framework for building clinical applications from
+              Opal is an Open Source framework for building clinical applications from
               <a href="http://openhealthcare.org.uk" target="_blank">Open Health Care UK</i></a>.
             </center>
         </footer>

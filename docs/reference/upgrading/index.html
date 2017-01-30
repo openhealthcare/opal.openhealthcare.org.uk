@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>Upgrading - OPAL</title>
+	<title>Upgrading - Opal</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -175,6 +175,14 @@
                 <!--             <a href="../../guides/search/">Search Overview</a> -->
                 <!--         </li> -->
                 <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/contributing/">Contributing</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/development_environment/">Development environment</a> -->
+                <!--         </li> -->
+                <!--      -->
                 <!--     </ul> -->
                 <!-- </li> -->
             
@@ -260,6 +268,10 @@
                 <!--             <a href="../changelog/">Changelog</a> -->
                 <!--         </li> -->
                 <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../testing/">Testing</a> -->
+                <!--         </li> -->
+                <!--      -->
                 <!--         <li class="active"> -->
                 <!--             <a href="./">Upgrading</a> -->
                 <!--         </li> -->
@@ -273,12 +285,12 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.7.3" target="_blank">
-                  <i class="fa fa-github"></i> v0.7.3
+                <a href="https://github.com/openhealthcare/opal/tree/v0.8.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.8.0
                 </a>
               </li>
                 <!-- <li > -->
-                <!--     <a rel="next" href="../changelog/"> -->
+                <!--     <a rel="next" href="../testing/"> -->
                 <!--         <i class="fa fa-arrow-left"></i> Previous -->
                 <!--     </a> -->
                 <!-- </li> -->
@@ -298,7 +310,9 @@
   <h3>Contents</h3>
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#upgrading-your-opal-application">Upgrading Your OPAL Application</a></li>
+        <li class="main active"><a href="#upgrading-your-opal-application">Upgrading Your Opal Application</a></li>
+        
+            <li><a href="#071-080">0.7.1 -&gt; 0.8.0</a></li>
         
             <li><a href="#070-071">0.7.0 -&gt; 0.7.1</a></li>
         
@@ -313,17 +327,48 @@
 </div></div>
             <div class="col-md-9" role="main">
 
-<h2 id="upgrading-your-opal-application">Upgrading Your OPAL Application</h2>
-<p>This document provides instructions for specific steps required to upgrading your OPAL
+<h2 id="upgrading-your-opal-application">Upgrading Your Opal Application</h2>
+<p>This document provides instructions for specific steps required to upgrading your Opal
 application to a later version where there are extra steps required.</p>
+<h3 id="071-080">0.7.1 -&gt; 0.8.0</h3>
+<h4 id="upgrading-opal">Upgrading Opal</h4>
+<p>How you do this depends on how you have configured your application, but updating your
+requirements.txt to update the version should work.</p>
+<pre><code># requirements.txt
+opal==0.8.0
+</code></pre>
+<p>After re-installing (via for instance <code>pip install -r requirements.txt</code>) you will need to
+run the migrations for Opal 0.6.x</p>
+<pre><code>$ python manage.py migrate opal
+</code></pre>
+<h4 id="options">Options</h4>
+<p>Options are now an ex-API. Applications should convert to use either Referencedata (canonical terms for common data), or
+Metadata (App specific data you wish to pass into the front end).</p>
+<h4 id="ui-components">UI Components</h4>
+<p>Those applications relying on Angular strap ui components (Typeahead, Popover,
+Tooltip, Datepicker, Timepicker) should convert their templates to use the Angular UI Boostrap equivalents, or the
+Opal templatetags.</p>
+<p>If you are simply using Opal templatetags from <code>forms</code> and not overriding these templates, then the transition should be seamless. Otherwise, searching your codebase for html files containing <code>bs-</code> and looking for angular strap components is a good start.</p>
+<p>Applications or plugins with javascript tests may need to update their includes to remove references to old library files.</p>
+<p>Full documentation of the markup and options for these components is found <a href="http://angular-ui.github.io/bootstrap/versioned-docs/0.14.3/">here</a></p>
+<h4 id="extending-modal_basehtml">extending modal_base.html</h4>
+<p>We now have different base templates for modals, forms and two column modal forms (essentially a form with a side bar).</p>
+<p>The form templates add validation checks around the saving to catch any validation errors a form might through. They assume the existence of a form called 'form'.</p>
+<p>As part of this modal_base has been moved into a folder in templates called base_templates</p>
+<p>Rename any templates extending <code>modal_base.html</code> to extend the correct template in <code>base_templates/</code> - <code>modal_base.html</code> or <code>modal_form_base.html</code>.</p>
+<h4 id="add-episode-modal-url">Add episode modal url</h4>
+<p>The add episode modal previously available at
+<code>/templates/modals/add_episode.html/</code> is now not available at the url with a trailing slash.
+Any controllers attempting to open the modal e.g. custom list flows should update their
+<code>$modal.open</code> call to remove the trailing slash.</p>
 <h3 id="070-071">0.7.0 -&gt; 0.7.1</h3>
 <h4 id="downstream-dependencies">Downstream dependencies</h4>
-<p>OPAL 0.7.1 updates the expected version of Django Axes to 1.7.0 - you will wish to update
+<p>Opal 0.7.1 updates the expected version of Django Axes to 1.7.0 - you will wish to update
 this in your requirements.txt or similar accordingly.</p>
 <h4 id="drf-authentication">DRF Authentication</h4>
 <p>We highly recommend that applications explicitly set Django Rest Framework authentication
 classes in their <code>settings.py</code>.</p>
-<p>By default OPAL now uses session and token auth, which will require a migration to install
+<p>By default Opal now uses session and token auth, which will require a migration to install
 the DRF Token authentication app.</p>
 <pre><code class="python">INSTALLED_APPS = (
     # ....
@@ -341,28 +386,28 @@ REST_FRAMEWORK = {
 </code></pre>
 
 <h3 id="6x-7x">6.x -&gt; 7.x</h3>
-<h4 id="upgrading-opal">Upgrading OPAL</h4>
+<h4 id="upgrading-opal_1">Upgrading Opal</h4>
 <p>How you do this depends on how you have configured your application, but updating your
 requirements.txt to update the version should work.</p>
 <pre><code># requirements.txt
 opal==0.7.0
 </code></pre>
 <p>After re-installing (via for instance <code>pip install -r requirements.txt</code>) you will need to
-run the migrations for OPAL 0.6.x</p>
+run the migrations for Opal 0.6.x</p>
 <pre><code>$ python manage.py migrate opal
 </code></pre>
-<p>If you are inheriting from the abstract models in OPAL e.g. <code>Demographics</code> then you should
+<p>If you are inheriting from the abstract models in Opal e.g. <code>Demographics</code> then you should
 run a makemigrations command to update to the 0.7.x data model.</p>
 <pre><code>python manage.py makemigrations yourapp
 python manage.py migrate yourapp
 </code></pre>
 <h4 id="breaking-changes">Breaking changes</h4>
-<p>OPAL 0.7 contains a number of breaking changes.</p>
+<p>Opal 0.7 contains a number of breaking changes.</p>
 <h5 id="name-changes">Name changes</h5>
 <p><code>opal.models.Episode.category</code> has been re-named <code>category_name</code>. If your application
 directly sets category, you will be required to update all instances where this happens.</p>
 <p>The <code>/episode/:pk/</code> API has moved to <code>/api/v0.1/episode/:pk/</code> so any code (typically
-javascript) code that directly saves to this API endpoint rather than using the OPAL JS
+javascript) code that directly saves to this API endpoint rather than using the Opal JS
 <code>Episode</code> services should work immediately when re-pointed at the new URL.</p>
 <h5 id="moving-from-options-to-referencedata-and-metadata">Moving from options to referencedata and metadata</h5>
 <p>The signature of the EditItemCtrl has been updated - this modal controller no longer
@@ -382,32 +427,32 @@ here should be relatively painless.</p>
 <code>{% date_of_birth_field %}</code> templatetag in the forms library. You should update any forms
 to use this new tag.</p>
 <h3 id="5x-6x">5.x -&gt; 6.x</h3>
-<h4 id="upgrading-opal_1">Upgrading OPAL</h4>
+<h4 id="upgrading-opal_2">Upgrading Opal</h4>
 <p>How you do this depends on how you have configured your application, but updating your
 requirements.txt to update the version should work.</p>
 <pre><code># requirements.txt
 opal==0.6.0
 </code></pre>
 <p>After re-installing (via for instance <code>pip install -r requirements.txt</code>) you will need to
-run the migrations for OPAL 0.6.x</p>
+run the migrations for Opal 0.6.x</p>
 <pre><code>$ python manage.py migrate opal
 </code></pre>
 <h4 id="changes-to-abstract-models">Changes to abstract models</h4>
-<p>If you are inheriting from the abstract models in OPAL e.g. <code>Demographics</code> then you should
+<p>If you are inheriting from the abstract models in Opal e.g. <code>Demographics</code> then you should
 run a makemigrations command to update to the 0.6.x data model.</p>
 <pre><code>python manage.py makemigrations yourapp
 python manage.py migrate yourapp
 </code></pre>
-<p>You should note that as of OPAL 0.6.x <code>Demographics</code> now splits names into first, surname,
+<p>You should note that as of Opal 0.6.x <code>Demographics</code> now splits names into first, surname,
 middle name and title. The previous <code>name</code> field will be converted to be <code>first_name</code>.</p>
 <p>Strategies for updating your data to use the appropriate fields will vary from application
 to application, but one good such strategy is to use a data migration <a href="https://github.com/openhealthcare/acute/blob/master/acute/migrations/0004_auto_20160624_1215.py">such as the one done
 here</a>.</p>
 <h4 id="update-settings">Update settings</h4>
-<p>Many of the default OPAL templates now assume that the <code>'opal.context_processors.models'</code>
+<p>Many of the default Opal templates now assume that the <code>'opal.context_processors.models'</code>
 Context Processor is available - you should add that to the <code>TEMPLATE_CONTEXT_PROCESSORS</code>
 setting in your application's <code>settings.py</code></p>
-<p>The default date formats in OPAL have changed - and so you should update your <code>DATE_X</code>
+<p>The default date formats in Opal have changed - and so you should update your <code>DATE_X</code>
 settings to match:</p>
 <pre><code class="python">DATE_FORMAT = 'd/m/Y'
 DATE_INPUT_FORMATS = ['%d/%m/%Y']
@@ -416,7 +461,7 @@ DATETIME_INPUT_FORMATS = ['%d/%m/%Y %H:%M:%S']
 </code></pre>
 
 <h4 id="upgrade-plugins">Upgrade plugins</h4>
-<p>A number of OPAL plugins have new releases to work with the changes in OPAL 0.6.x</p>
+<p>A number of Opal plugins have new releases to work with the changes in Opal 0.6.x</p>
 <ul>
 <li>opal-referral - Upgrade to 0.1.4</li>
 <li>opal-wardround - Upgrade to 0.6.0</li>
@@ -425,7 +470,7 @@ DATETIME_INPUT_FORMATS = ['%d/%m/%Y %H:%M:%S']
 <li>opal-dashboard - Upgrade to 0.1.3</li>
 </ul>
 <p>Meanwhile the <code>opal-taskrunner</code> plugin has now been deprecated, this functionality now
-living natively within OPAL core.</p>
+living natively within Opal core.</p>
 <h4 id="update-your-teams-to-be-patientlists">Update your Teams to be PatientLists</h4>
 <p>Patient Lists are now driven by subclasses of <code>opal.core.PatientList</code>, so we will need
 to convert your Teams to be PatientLists. You may want to re-enable the Team admin while
@@ -455,10 +500,10 @@ file - which is now obsolete.</p>
 of the options available for Patient Lists.</p>
 <h4 id="form-and-display-templates">Form and Display templates.</h4>
 <p>We may now be missing some form or display templates, as your application may be
-relying on templates previously in OPAL. To discover which these are, run</p>
+relying on templates previously in Opal. To discover which these are, run</p>
 <pre><code>$ opal scaffold --dry-run
 </code></pre>
-<p>You may either create templates by hand, or have OPAL generate boilerplate templates for you
+<p>You may either create templates by hand, or have Opal generate boilerplate templates for you
 by running <code>$ opal scaffold</code>.</p>
 <p>Modal templates already in your application will likely be referencing invalid paths
 to their Angular variables. You should update these to include the record name - for example:</p>
@@ -493,15 +538,15 @@ to Djangomigrations.</p>
 $ python manage.py makemigrations yourapp
 $ python manage.py migrate yourapp --fake-initial
 </code></pre>
-<h4 id="opal">OPAL</h4>
-<p>Next you will need to upgrade the OPAL version itself.</p>
+<h4 id="opal">Opal</h4>
+<p>Next you will need to upgrade the Opal version itself.</p>
 <p>How you do this depends on how you have configured your application, but updating your
 requirements.txt to update the version should work. This will also update FFS and Django
 Axes as well as adding Python Dateutil.</p>
 <pre><code>-e git://github.com/openhealthcare/opal.git@v0.5.6#egg=opal
 </code></pre>
 <h4 id="migrations_1">Migrations.</h4>
-<p>OPAL has fresh migrations in 0.5.x, which we should run. There are also changes to the
+<p>Opal has fresh migrations in 0.5.x, which we should run. There are also changes to the
 base abstract model classes (to add created/updated timestamps) so you'll need to create
 fresh migrations for your own application.</p>
 <pre><code>$ python manage.py migrate
@@ -511,7 +556,7 @@ $ python manage.py migrate yourapp
 <p>At this stage you'll want to commit your new migrations, as well as any changes to your
 application's requirements file.</p>
 <h4 id="tags">Tags</h4>
-<p>As of 0.5.5, old tags in OPAL are stored directly on the Tagging model rather than via
+<p>As of 0.5.5, old tags in Opal are stored directly on the Tagging model rather than via
 Djano Reversion. We can import those old tags by doing the following.</p>
 <pre><code>$ python manage.py shell
 
@@ -531,7 +576,7 @@ commands to upgrade your database:</p>
             <img src="/img/opallogo.png" class="pull-left"/>
             <center>
               <br />
-              OPAL is an Open Source framework for building clinical applications from
+              Opal is an Open Source framework for building clinical applications from
               <a href="http://openhealthcare.org.uk" target="_blank">Open Health Care UK</i></a>.
             </center>
         </footer>

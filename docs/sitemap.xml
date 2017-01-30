@@ -175,6 +175,18 @@
      <changefreq>daily</changefreq>
     </url>
         
+    <url>
+     <loc>None/guides/contributing/</loc>
+     <lastmod>2017-01-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/guides/development_environment/</loc>
+     <lastmod>2017-01-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
     
@@ -289,6 +301,12 @@
         
     <url>
      <loc>None/reference/changelog/</loc>
+     <lastmod>2017-01-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/reference/testing/</loc>
      <lastmod>2017-01-30</lastmod>
      <changefreq>daily</changefreq>
     </url>

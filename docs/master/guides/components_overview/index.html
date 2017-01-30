@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>Component Overview - OPAL</title>
+	<title>Component Overview - Opal</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -175,6 +175,14 @@
                 <!--             <a href="../search/">Search Overview</a> -->
                 <!--         </li> -->
                 <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../contributing/">Contributing</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../development_environment/">Development environment</a> -->
+                <!--         </li> -->
+                <!--      -->
                 <!--     </ul> -->
                 <!-- </li> -->
             
@@ -261,6 +269,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../reference/testing/">Testing</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../reference/upgrading/">Upgrading</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -273,8 +285,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.7.3" target="_blank">
-                  <i class="fa fa-github"></i> v0.7.3
+                <a href="https://github.com/openhealthcare/opal/tree/v0.8.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.8.0
                 </a>
               </li>
                 <!-- <li > -->
@@ -298,9 +310,9 @@
   <h3>Contents</h3>
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#components-of-an-opal-application">Components of an OPAL application</a></li>
+        <li class="main active"><a href="#components-of-an-opal-application">Components of an Opal application</a></li>
         
-            <li><a href="#opal">OPAL</a></li>
+            <li><a href="#opal">Opal</a></li>
         
             <li><a href="#plugins">Plugins</a></li>
         
@@ -313,19 +325,19 @@
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="components-of-an-opal-application">Components of an OPAL application</h1>
-<p>OPAL applications will typically be made up of several types of components.</p>
-<p><img alt="Layers of an OPAL application" src="../../img/OPALLayers.png" /></p>
-<h3 id="opal">OPAL</h3>
-<p>The core OPAL framework provides you with a range of commonly required elements
+<h1 id="components-of-an-opal-application">Components of an Opal application</h1>
+<p>Opal applications will typically be made up of several types of components.</p>
+<p><img alt="Layers of an Opal application" src="../../img/OpalLayers.png" /></p>
+<h3 id="opal">Opal</h3>
+<p>The core Opal framework provides you with a range of commonly required elements
 of clinical applications.</p>
 <p>It contains a core <a href="../datamodel/">data model</a> for persisting clinical information,
 as well core clinical archetypes out of the box that build on many
 years of collaboratively modelling clinical concepts by medical domain experts.</p>
-<p>OPAL also makes it easy to integrate standard clinical <a href="../lookup_lists/">reference data</a>
+<p>Opal also makes it easy to integrate standard clinical <a href="../lookup_lists/">reference data</a>
 into your application - things like medical diagnoses, tests, drugs et cetera.</p>
 <p>Some common functional components end up in to most clinical applications, and many
-of these come with OPAL as "batteries included" - immediately available modular features
+of these come with Opal as "batteries included" - immediately available modular features
 that can be simply re-used without having to reinvent the wheel.</p>
 <p>For example:</p>
 <ul>
@@ -337,7 +349,7 @@ that can be simply re-used without having to reinvent the wheel.</p>
 <li>... and <a href="../topic-guides/">many more</a>...</li>
 </ul>
 <h3 id="plugins">Plugins</h3>
-<p>OPAL plugins are intended to provide high quality generic, composable, re-usable chunks of
+<p>Opal plugins are intended to provide high quality generic, composable, re-usable chunks of
 functionality that can be "dropped in" to an application. For example, installing the
 <a href="https://github.com/openhealthcare/opal-dashboards">Dashboards</a> plugin allows you to easily
 create clinical dashboards within your application. The
@@ -349,14 +361,14 @@ many examples can be found by inspecting the source of <a href="../plugins_list/
 <p>An application is the collection of configuration and bespoke functionality that would be
 provided to an individual institution - it's the thing that you would look to deploy.</p>
 <p>Example applications include <a href="https://github.com/openhealthcare/elcid">elCID</a> - a for managing
-infection patients, or <a href="https://github.com/openhealthcare/opal-renal">OPAL-Renal</a> - an MDT &amp;
+infection patients, or <a href="https://github.com/openhealthcare/opal-renal">Opal-Renal</a> - an MDT &amp;
 handover tool for Renal wards.</p>
 <p>A hospital might have multiple clinical services running on one application, or multiple
 applications that integrate with one another.</p>
 <h3 id="opinionated-but-pluggable">Opinionated but Pluggable</h3>
-<p>OPAL is an opinionated framework. It expects the developer to structure code in a
+<p>Opal is an opinionated framework. It expects the developer to structure code in a
 certain way.</p>
-<p>OPAL expects features to be implemented as single page Angular.js applications, with the server
+<p>Opal expects features to be implemented as single page Angular.js applications, with the server
 mostly figuring as an API endpoint for reading and writing data.</p>
 <p>That said, the technology stack of Django, Angular &amp; Bootstrap allows the confident user a huge
 degree of flexibility when writing their own applications and plugins.</p>
@@ -371,7 +383,7 @@ While possible, this approach is not likely to be officially supported in the me
             <img src="/img/opallogo.png" class="pull-left"/>
             <center>
               <br />
-              OPAL is an Open Source framework for building clinical applications from
+              Opal is an Open Source framework for building clinical applications from
               <a href="http://openhealthcare.org.uk" target="_blank">Open Health Care UK</i></a>.
             </center>
         </footer>
