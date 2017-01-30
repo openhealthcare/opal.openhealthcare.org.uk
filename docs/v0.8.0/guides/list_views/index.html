@@ -373,9 +373,21 @@ class AlphabetListA(patient_lists.PatientList):
 <p>The <code>display_name</code> property is the human readable name for our list - which is displayed as
 link text to our list.</p>
 <h3 id="schemas">Schemas</h3>
-<p>Schemas are lists of Subrecords that we would like to display in our list. By default we
-render the subrecord display_template, and allow editing and addition of each subrecord in
-place.</p>
+<p>The schema attribute declares the columns of a PatientList. The entries in a schema may either
+be <code>Subrecord</code> instances, or instances of <code>opal.core.patient_lists.Column</code>.</p>
+<h4 id="custom-columns">Custom Columns</h4>
+<p>Although most schema entries will be subrecords, it can be useful to have non-subrecord columns.
+For instance because you want to allow a composite
+column fo mulitple <code>Subrecords</code> or because we want to simply render arbitrary markup.</p>
+<p>Columns require the title, and template_path to be set, and are simply included in the schema
+list.</p>
+<pre><code class="python">class MyMarkupList(patient_lists.PatientList):
+    schema = [
+        patient_lists.Column(title='Foo', template_path='foo/bar')
+    ]
+
+</code></pre>
+
 <h3 id="template-selection">Template selection</h3>
 <p>The list view is constructed by rendering a column for each record, in the order
 defined in the schema, and a row for each episode in the list.</p>

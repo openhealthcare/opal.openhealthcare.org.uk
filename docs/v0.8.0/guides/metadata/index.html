@@ -338,10 +338,11 @@ class FavouriteColours(metadata.Metadata):
     slug = 'favourite-colour'
 
     @classmethod
-    def to_dict(klass):
+    def to_dict(klass, **kwargs):
         return {'favourite_colour': settings.FAVOURITE_COLOUR}
 </code></pre>
 
+<p>The to_dict method will be passed the current user as a keyword argument.</p>
 <h3 id="accessing-metadata-on-the-front-end">Accessing Metadata on the front end</h3>
 <p>We can access our metadata with the Angular <code>Metadata</code> service.</p>
 <pre><code class="javascript">// yourapp/routes.js

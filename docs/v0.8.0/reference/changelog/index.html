@@ -312,6 +312,8 @@
     
         <li class="main active"><a href="#080-major-release">0.8.0 (Major Release)</a></li>
         
+            <li><a href="#plugins">Plugins</a></li>
+        
             <li><a href="#opalcoreapipatient_from_pk">opal.core.api.patient_from_pk</a></li>
         
             <li><a href="#todictmixin_bulk_serialise">ToDictMixin._bulk_serialise</a></li>
@@ -333,6 +335,8 @@
             <li><a href="#tabbed-patient-list-groups">Tabbed Patient List Groups</a></li>
         
             <li><a href="#patientlist-sort-order">PatientList sort order</a></li>
+        
+            <li><a href="#patientlist-arbitrary-columns">PatientList Arbitrary columns</a></li>
         
             <li><a href="#template-re-naming">Template re-naming</a></li>
         
@@ -430,6 +434,11 @@
             <div class="col-md-9" role="main">
 
 <h3 id="080-major-release">0.8.0 (Major Release)</h3>
+<h4 id="plugins">Plugins</h4>
+<p>Plugins have been refactored and are now <code>DiscoverableFeatures</code>. This should have no impact on existing
+plugins, however the functions <code>opal.core.plugins.register</code> and <code>opal.core.plugins.plugins</code> are slated for
+removal in 0.9.0</p>
+<p>When creating new plugins we will place the plugin definition class in <code>plugin.py</code> rather than <code>__init__.py</code></p>
 <h4 id="opalcoreapipatient_from_pk">opal.core.api.patient_from_pk</h4>
 <p>A decorator that changes a method that is passed a pk, to a method that is passed a patient.</p>
 <h4 id="todictmixin_bulk_serialise">ToDictMixin._bulk_serialise</h4>
@@ -482,6 +491,9 @@ lists as tabs at the top of each member list.</p>
 <h4 id="patientlist-sort-order">PatientList sort order</h4>
 <p>To enable custom sort orders for individual <code>PatientList</code>s we introduce the <code>comparator_service</code> attribute.
 This names an Angular service which will return a list of comparator functions.</p>
+<h4 id="patientlist-arbitrary-columns">PatientList Arbitrary columns</h4>
+<p>We now explicitly enable columns in spreadhseet lists that are not tied to subrecords. These can be
+included in PatientList schema instances as explicit Column() entries.</p>
 <h4 id="template-re-naming">Template re-naming</h4>
 <p>Modal_base has now been moved into a folder called base_templates. Its also now got a form_modal_base and a two_column_form_modal_base.
 The latter two templates add validation around saving.</p>
