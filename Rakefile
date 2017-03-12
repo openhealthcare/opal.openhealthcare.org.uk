@@ -8,7 +8,7 @@ task :docs do
   sh "rm -rf docs/"
   sh "mkdir docs"
   sh "git clone git@github.com:openhealthcare/opal _opalsrc"
-  ["master", "v0.6.0", "v0.7.0", "v0.7.1", "v0.7.2", "v0.7.3", "v0.7.4", "v0.8.0", "v0.8.1"].each do |b|
+  ["master", "v0.6.0", "v0.7.0", "v0.7.1", "v0.7.2", "v0.7.3", "v0.7.4", "v0.8.0", "v0.8.1", "v0.8.2"].each do |b|
     puts "Bulding docs for #{b}"
     sh "cd _opalsrc; git checkout #{b};"
     sh "cd _opalsrc/doc; mkdocs build"
