@@ -176,6 +176,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../guides/django_admin/">Django Admin</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../guides/contributing/">Contributing</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -191,6 +195,38 @@
                 <!-- <li class="dropdown"> -->
                 <!--     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reference <b class="caret"></b></a> -->
                 <!--     <ul class="dropdown-menu"> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/javascript/episode_service/">Episode service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/javascript/patient_service/">Patient service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/javascript/item_service/">Item service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/javascript/loaders/">Loaders</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/javascript/patient_summary_service/">Patient summary service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/javascript/search_js_services/">Search JS Services</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/javascript/javascript_helpers/">Javascript helpers</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/javascript/javascript_dependencies/">Javascript dependencies</a> -->
+                <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../reference/episode/">The Episode model</a> -->
@@ -217,15 +253,11 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../reference/episode_service/">Episode service</a> -->
+                <!--             <a href="../reference/plugin/">OpalPlugin</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../reference/item_service/">Item service</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../reference/patient_summary_service/">Patient summary service</a> -->
+                <!--             <a href="../reference/core_views/">Core.Views</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -234,14 +266,6 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../reference/panels_templatetags/">Panel Template tags</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../reference/javascript_helpers/">Javascript helpers</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../reference/javascript_dependencies/">Javascript dependencies</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -258,10 +282,6 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../reference/patient_list/">Patient Lists</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../reference/search_js_services/">Search JS Services</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -285,8 +305,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.8.0" target="_blank">
-                  <i class="fa fa-github"></i> v0.8.0
+                <a href="https://github.com/openhealthcare/opal/tree/v0.8.1" target="_blank">
+                  <i class="fa fa-github"></i> v0.8.1
                 </a>
               </li>
                 <!-- <li > -->
@@ -415,7 +435,7 @@ of care for a patient - but we'll come to that in a second.
 <p>The columns you see initially are just a few of the standard clinical models that come with
 Opal - for instance the Diagnosis model in your new application inherits from a model that
 looks a lot like this:</p>
-<pre><code>class Diagnosis(EpisodeSubrecord):
+<pre><code class="python">class Diagnosis(EpisodeSubrecord):
     condition         = ForeignKeyOrFreeText(Condition)
     provisional       = models.BooleanField(default=False)
     details           = models.CharField(max_length=255, blank=True)
@@ -424,6 +444,7 @@ looks a lot like this:</p>
     class Meta:
         abstract = True
 </code></pre>
+
 <h3 id="reference-data">Reference data</h3>
 <p>You will notice that the condition field has a custom field type - <code>ForeignKeyOrFreeText</code>.
 This is a custom field type that we use with Opal when we want to use a
@@ -434,7 +455,7 @@ we record high quality coded data, while allowing users an easy way to enter unu
 cases.</p>
 <p>You'll need to import the data for a terminology before you can start to take advantage of that.
 For now, let's use the reference data from elCID (An Opal application maintained by Open Health Care):</p>
-<pre><code>wget https://raw.githubusercontent.com/openhealthcare/elcid/master/data/lookuplists/lookuplists.json -P yourapp/data/lookuplists
+<pre><code>wget https://raw.githubusercontent.com/openhealthcare/elcid/master/data/lookuplists/lookuplists.json -P mynewapp/data/lookuplists
 </code></pre>
 <blockquote><small>
 By convention, we store data in the <code>./data/lookuplists</code> directory of our project.
@@ -465,6 +486,7 @@ episodes of care. In your <code>mynewapp/models.py</code> :</p>
     details   = fields.TextField(blank=True, null=True)
     completed = fields.BooleanField(default=False)
 </code></pre>
+
 <p>This is simply a Django model, apart from the parent class <code>models.EpisodeSubrecord</code>
 which provides us with some extra functionality:</p>
 <ul>

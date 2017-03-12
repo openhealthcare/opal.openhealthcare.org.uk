@@ -176,6 +176,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../django_admin/">Django Admin</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../contributing/">Contributing</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -191,6 +195,38 @@
                 <!-- <li class="dropdown"> -->
                 <!--     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reference <b class="caret"></b></a> -->
                 <!--     <ul class="dropdown-menu"> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/javascript/episode_service/">Episode service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/javascript/patient_service/">Patient service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/javascript/item_service/">Item service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/javascript/loaders/">Loaders</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/javascript/patient_summary_service/">Patient summary service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/javascript/search_js_services/">Search JS Services</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/javascript/javascript_helpers/">Javascript helpers</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/javascript/javascript_dependencies/">Javascript dependencies</a> -->
+                <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../../reference/episode/">The Episode model</a> -->
@@ -217,15 +253,11 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../../reference/episode_service/">Episode service</a> -->
+                <!--             <a href="../../reference/plugin/">OpalPlugin</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../../reference/item_service/">Item service</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../../reference/patient_summary_service/">Patient summary service</a> -->
+                <!--             <a href="../../reference/core_views/">Core.Views</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -234,14 +266,6 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../../reference/panels_templatetags/">Panel Template tags</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../../reference/javascript_helpers/">Javascript helpers</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../../reference/javascript_dependencies/">Javascript dependencies</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -258,10 +282,6 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../../reference/patient_list/">Patient Lists</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../../reference/search_js_services/">Search JS Services</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -285,8 +305,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.8.0" target="_blank">
-                  <i class="fa fa-github"></i> v0.8.0
+                <a href="https://github.com/openhealthcare/opal/tree/v0.8.1" target="_blank">
+                  <i class="fa fa-github"></i> v0.8.1
                 </a>
               </li>
                 <!-- <li > -->
@@ -314,14 +334,6 @@
         
             <li><a href="#opalcoresearch">opal.core.search</a></li>
         
-            <li><a href="#opalcorecollaborative">opal.core.collaborative</a></li>
-        
-            <li><a href="#opal-opat">opal-opat</a></li>
-        
-            <li><a href="#opal-research">opal-research</a></li>
-        
-            <li><a href="#opal-walk-in">opal-walk-in</a></li>
-        
             <li><a href="#opal-wardround">opal-wardround</a></li>
         
             <li><a href="#opal-dischargesummary">opal-dischargesummary</a></li>
@@ -332,11 +344,9 @@
         
             <li><a href="#opal-observations">opal-observations</a></li>
         
-            <li><a href="#opal-analytics">opal-analytics</a></li>
-        
             <li><a href="#opal-guidelines">opal-guidelines</a></li>
         
-            <li><a href="#opal-iframe-api">opal-iframe-api</a></li>
+            <li><a href="#opal-pathway">opal-pathway</a></li>
         
     
     </ul>
@@ -350,21 +360,6 @@ units of functionality to build your application. This page lists some of the be
 <p>The Search plugin bundled with Opal core provides a default database based search implementation
 for your application, and is scheduled to provide hooks for e.g. using Elastic Search as your
 serach backend.</p>
-<h3 id="opalcorecollaborative">opal.core.collaborative</h3>
-<p>The Collaborative plugin bundled with Opal core provides a mechanism for providing realtime
-collaborative editing of patient data within lists, by providing a streaming websocket link
-of updates from other open sessions. (Requires <a href="https://github.com/openhealthcare/glossolalia">Glossolalia</a> ).</p>
-<h3 id="opal-opat">opal-opat</h3>
-<p>The <a href="https://github.com/openhealthcare/opal-opat">OPAT</a> plugin provides a set of teams, flows
-and record types for running a BSAC OPAT clinic.</p>
-<h3 id="opal-research">opal-research</h3>
-<p>The <a href="https://github.com/openhealthcare/opal-research">Research</a> plugin allows an Opal application to be used as the
-data collection method for multiple concurrent research studies, including researcher blinding, a
-structured role &amp; permission framework.</p>
-<h3 id="opal-walk-in">opal-walk-in</h3>
-<p>The <a href="https://github.com/openhealthcare/opal-walk-in">Walk In</a> plugin supports the operation of
-drop in services within your institution, including registration, triage, escalation &amp;
-discharge summaries.</p>
 <h3 id="opal-wardround">opal-wardround</h3>
 <p>The <a href="https://github.com/openhealthcare/opal-wardround">Wardround</a> plugin provides structured virtual
 ward rounds - sequential subsets of patients matching arbitrary criteria that the user may step
@@ -381,16 +376,13 @@ dashboards featuring arbitrary metrics, displayed within your application.</p>
 <h3 id="opal-observations">opal-observations</h3>
 <p>The <a href="https://github.com/openhealthcare/opal-observations">Observations</a> plugin caters for the recording and
 display of electronic observations data.</p>
-<h3 id="opal-analytics">opal-analytics</h3>
-<p>The <a href="https://github.com/openhealthcare/opal-analytics">Analytics</a> plugin allows you to integrate
-your application with Google or Piwik Analytics with a minimum of fuss.</p>
 <h3 id="opal-guidelines">opal-guidelines</h3>
 <p>The <a href="https://github.com/openhealthcare/opal-guidelines">Guidelines</a> plugin presents contextual links to clinical
 guidelines in use at your institution when viewing records of patients whose condition matches those guidelines.</p>
 <p>Can be used with national or local guidelines.</p>
-<h3 id="opal-iframe-api">opal-iframe-api</h3>
-<p>The <a href="https://github.com/openhealthcare/opal-iframe-api">Iframe Api</a> plugin allows you to set up an api key.
-With this Api key you can create templates to view subrecords for embedding in for example iframes.</p></div>
+<h3 id="opal-pathway">opal-pathway</h3>
+<p>The <a href="https://github.com/openhealthcare/opal-guidelines">Pathway</a> plugin provides a comprehensive extensible
+forms library for Opal applications.</p></div>
         </div>
 
         <footer class="col-md-12">

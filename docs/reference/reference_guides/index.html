@@ -176,6 +176,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../guides/django_admin/">Django Admin</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../guides/contributing/">Contributing</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -191,6 +195,38 @@
                 <!-- <li class="dropdown"> -->
                 <!--     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reference <b class="caret"></b></a> -->
                 <!--     <ul class="dropdown-menu"> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../javascript/episode_service/">Episode service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../javascript/patient_service/">Patient service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../javascript/item_service/">Item service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../javascript/loaders/">Loaders</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../javascript/patient_summary_service/">Patient summary service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../javascript/search_js_services/">Search JS Services</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../javascript/javascript_helpers/">Javascript helpers</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../javascript/javascript_dependencies/">Javascript dependencies</a> -->
+                <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../episode/">The Episode model</a> -->
@@ -217,15 +253,11 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../episode_service/">Episode service</a> -->
+                <!--             <a href="../plugin/">OpalPlugin</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../item_service/">Item service</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../patient_summary_service/">Patient summary service</a> -->
+                <!--             <a href="../core_views/">Core.Views</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -234,14 +266,6 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../panels_templatetags/">Panel Template tags</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../javascript_helpers/">Javascript helpers</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../javascript_dependencies/">Javascript dependencies</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -258,10 +282,6 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../patient_list/">Patient Lists</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../search_js_services/">Search JS Services</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -285,8 +305,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.8.0" target="_blank">
-                  <i class="fa fa-github"></i> v0.8.0
+                <a href="https://github.com/openhealthcare/opal/tree/v0.8.1" target="_blank">
+                  <i class="fa fa-github"></i> v0.8.1
                 </a>
               </li>
                 <!-- <li > -->
@@ -387,6 +407,14 @@
 <td><a href="../patient_list/">opal.core.patient_lists</a></td>
 <td>Patient Lists - defining different types of list</td>
 </tr>
+<tr>
+<td><a href="../plugin/">opal.core.plugin</a></td>
+<td>Plugins - defining plugins to package reusable functionality</td>
+</tr>
+<tr>
+<td><a href="../core_views/">opal.core.views</a></td>
+<td>Views - helper functions for working with Django views</td>
+</tr>
 </tbody>
 </table>
 <h3 id="angular-services">Angular Services</h3>
@@ -399,20 +427,28 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../episode_service/">Episode</a></td>
+<td><a href="../javascript/patient_service/">Patient</a></td>
+<td>Patient objects</td>
+</tr>
+<tr>
+<td><a href="../javascript/episode_service/">Episode</a></td>
 <td>Episode objects</td>
 </tr>
 <tr>
-<td><a href="../item_service/">Item</a></td>
+<td><a href="../javascript/item_service/">Item</a></td>
 <td>Subrecord objects</td>
 </tr>
 <tr>
-<td><a href="../patient_summary_service/">PatientSummary</a></td>
+<td><a href="../javascript/patient_summary_service/">PatientSummary</a></td>
 <td>Patient search result summaries</td>
 </tr>
 <tr>
-<td><a href="../search_js_services/">Search Services</a></td>
+<td><a href="../javascript/search_js_services/">Search Services</a></td>
 <td>Services from the Search module</td>
+</tr>
+<tr>
+<td><a href="../javascript/loaders/">Loaders</a></td>
+<td>JS Services that load in from patient list, episode and patient apis</td>
 </tr>
 </tbody>
 </table>
@@ -434,7 +470,7 @@
 <td>Rendering record panels</td>
 </tr>
 <tr>
-<td><a href="../javascript_helpers/">Javascript Helpers</a></td>
+<td><a href="../javascript/javascript_helpers/">Javascript Helpers</a></td>
 <td>Angular filters and $rootScope methods</td>
 </tr>
 </tbody>
@@ -472,7 +508,7 @@
 <td>Upgrading between Opal&gt; versions</td>
 </tr>
 <tr>
-<td><a href="../javascript_dependencies/">Javascript dependencies</a></td>
+<td><a href="../javascript/javascript_dependencies/">Javascript dependencies</a></td>
 <td>External javascript libraries available</td>
 </tr>
 <tr>

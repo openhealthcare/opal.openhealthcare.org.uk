@@ -176,6 +176,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../guides/django_admin/">Django Admin</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../guides/contributing/">Contributing</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -191,6 +195,38 @@
                 <!-- <li class="dropdown active"> -->
                 <!--     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reference <b class="caret"></b></a> -->
                 <!--     <ul class="dropdown-menu"> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../javascript/episode_service/">Episode service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../javascript/patient_service/">Patient service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../javascript/item_service/">Item service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../javascript/loaders/">Loaders</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../javascript/patient_summary_service/">Patient summary service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../javascript/search_js_services/">Search JS Services</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../javascript/javascript_helpers/">Javascript helpers</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../javascript/javascript_dependencies/">Javascript dependencies</a> -->
+                <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../episode/">The Episode model</a> -->
@@ -217,15 +253,11 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../episode_service/">Episode service</a> -->
+                <!--             <a href="../plugin/">OpalPlugin</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../item_service/">Item service</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../patient_summary_service/">Patient summary service</a> -->
+                <!--             <a href="../core_views/">Core.Views</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -234,14 +266,6 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../panels_templatetags/">Panel Template tags</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../javascript_helpers/">Javascript helpers</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../javascript_dependencies/">Javascript dependencies</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -258,10 +282,6 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../patient_list/">Patient Lists</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../search_js_services/">Search JS Services</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li class="active"> -->
@@ -285,12 +305,12 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.8.0" target="_blank">
-                  <i class="fa fa-github"></i> v0.8.0
+                <a href="https://github.com/openhealthcare/opal/tree/v0.8.1" target="_blank">
+                  <i class="fa fa-github"></i> v0.8.1
                 </a>
               </li>
                 <!-- <li > -->
-                <!--     <a rel="next" href="../search_js_services/"> -->
+                <!--     <a rel="next" href="../patient_list/"> -->
                 <!--         <i class="fa fa-arrow-left"></i> Previous -->
                 <!--     </a> -->
                 <!-- </li> -->
@@ -310,7 +330,26 @@
   <h3>Contents</h3>
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#080-major-release">0.8.0 (Major Release)</a></li>
+        <li class="main active"><a href="#081-minor-release">0.8.1 (Minor Release)</a></li>
+        
+            <li><a href="#cookies-for-the-future">Cookies for the future</a></li>
+        
+            <li><a href="#patients-as-a-service">Patients as a service</a></li>
+        
+            <li><a href="#patientlistget_queryset-arguments">PatientList.get_queryset arguments</a></li>
+        
+            <li><a href="#overriding-default-menu-items-behaviour">Overriding default Menu Items behaviour</a></li>
+        
+            <li><a href="#removals">Removals</a></li>
+        
+            <li><a href="#pending-removals">Pending removals</a></li>
+        
+            <li><a href="#subrecord-list-api">Subrecord List API</a></li>
+        
+            <li><a href="#misc-changes">Misc Changes</a></li>
+        
+    
+        <li class="main "><a href="#080-major-release">0.8.0 (Major Release)</a></li>
         
             <li><a href="#plugins">Plugins</a></li>
         
@@ -344,11 +383,20 @@
         
             <li><a href="#form-validation">Form Validation</a></li>
         
-            <li><a href="#removals">Removals</a></li>
+            <li><a href="#removals_1">Removals</a></li>
         
-            <li><a href="#misc-changes">Misc changes</a></li>
+            <li><a href="#misc-changes_1">Misc changes</a></li>
         
             <li><a href="#updates-to-the-dependency-graph">Updates to the Dependency Graph</a></li>
+        
+    
+        <li class="main "><a href="#075-minor-release">0.7.5 (Minor Release)</a></li>
+        
+    
+        <li class="main "><a href="#074-minor-release">0.7.4 (Minor Release)</a></li>
+        
+    
+        <li class="main "><a href="#073-minor-release">0.7.3 (Minor Release)</a></li>
         
     
         <li class="main "><a href="#072-minor-release">0.7.2 (Minor Release)</a></li>
@@ -433,6 +481,38 @@
 </div></div>
             <div class="col-md-9" role="main">
 
+<h3 id="081-minor-release">0.8.1 (Minor Release)</h3>
+<h4 id="cookies-for-the-future">Cookies for the future</h4>
+<p>We now use the <code>$cookies</code> api as part of moving to angular v1.5.8.</p>
+<p>The default expiry of cookies is now a year in the future.</p>
+<p>The cookie name previously stored as <code>opal.lastPatientList</code> is now
+<code>opal.previousPatientList</code>.</p>
+<h4 id="patients-as-a-service">Patients as a service</h4>
+<p>Patient becomes a service in angular. This takes in a patient as loaded by the patient loader or another service. It casts the data to Episode or Item instances as appropriate.</p>
+<h4 id="patientlistget_queryset-arguments">PatientList.get_queryset arguments</h4>
+<p>PatientList.get_queryset() is now passed an extra keyword argument - <code>user</code>.
+This is the current <code>User</code> object.</p>
+<h4 id="overriding-default-menu-items-behaviour">Overriding default Menu Items behaviour</h4>
+<p>The <code>get_menu_items</code> method of Opal Application objects is now passed an extra keyword argument - <code>user</code>.
+This is the current <code>User</code> object.</p>
+<p>The templatetag application_menuitems now uses this method to render navigation menus, allowing dynamic
+customisation of menu contents based on user.</p>
+<h4 id="removals">Removals</h4>
+<p>Opal 0.8.1 removes some minor features which, to our knowledge are not used by any applications in active development.</p>
+<ul>
+<li>ReopenEpisodeCtrl - applications may implement their own 're-open' episode flow, but Opal no longer handles this out of the box.</li>
+<li>Subrecord._bulk_serialise - this flag has been removed</li>
+</ul>
+<h4 id="pending-removals">Pending removals</h4>
+<p>We have re-named <code>opal.core.views._build_json_response</code> to <code>opal.core.views.json_response</code>. This will issue a
+warning for the remainder of the 0.8.x branch, before being removed entirely in Opal 0.9.0.</p>
+<h4 id="subrecord-list-api">Subrecord List API</h4>
+<p>We have added a list method to the default Opal JSON API for subrecords - you may now obtain a list of all instances
+of a given subrecord from the API endpoint <code>/api/v0.1/$api_name/</code>.</p>
+<h4 id="misc-changes">Misc Changes</h4>
+<p>Updates the custom <code>UserAdmin</code> so that the email, first and last name fields from the Django <code>User</code> model
+are in the add user form not just the edit user form.</p>
+<p>The default test runner generated by plugin scaffolding now uses <code>opal.urls</code> as the default url conf in the test settings. This allows you to test urls generated by Opal - for instance default form or record templates, or simply raw templates from our generic template view.</p>
 <h3 id="080-major-release">0.8.0 (Major Release)</h3>
 <h4 id="plugins">Plugins</h4>
 <p>Plugins have been refactored and are now <code>DiscoverableFeatures</code>. This should have no impact on existing
@@ -512,7 +592,7 @@ opal.core.api.LoginRequiredViewset, a standard DRF viewset that requires the use
 <p>This adds default form submission behaviour to the a button. It will check if the form is valid, and if its not it will mark the button as disabled until it becomes valid.</p>
 <p>It will also set the form as submitted.</p>
 <p>We also now show the required error if the form has been submitted or if the field is dirty, so that the user doesn't get an ugly "fill this field in now" message when opening the modal/pathway but will get the error after they click submit.</p>
-<h4 id="removals">Removals</h4>
+<h4 id="removals_1">Removals</h4>
 <p>Opal 0.8.0 removes a number of un-used features that have been slated for removal for some time:</p>
 <ul>
 <li><code>Options</code> - both from the JSON API, and the Angular service.</li>
@@ -522,7 +602,7 @@ opal.core.api.LoginRequiredViewset, a standard DRF viewset that requires the use
 <li>The <code>static</code> argument from the forms <code>input</code> tag. Developers should move to the <code>static</code> tag.</li>
 <li>The _modal option to set on subrecords. This is because we now use large modals across the board.</li>
 </ul>
-<h4 id="misc-changes">Misc changes</h4>
+<h4 id="misc-changes_1">Misc changes</h4>
 <p>The opal.core.api.EpisodeViewSet.create now expects tagging to be an object rather than a list, similar to how it details with demographics and location.</p>
 <p>The API will no longer serialise the _ft or _fk_id fields of FreeTextOrForeignKey fields - these
 are internal implementation details of the server that are not useful on the client side.</p>
@@ -537,6 +617,14 @@ database level, this does introduce a migration.</p>
 <p>Upgrades angular to v1.5.8 (from 1.3.11) you can see their change log <a href="https://github.com/angular/angular.js/blob/master/CHANGELOG.md">here</a></p>
 <p>Updates angular-cookies and angular-mocks to v1.5.8 (both from 1.3.11)</p>
 <p>Updates angular-ui-select to 0.19.4 from 0.13.2</p>
+<h3 id="075-minor-release">0.7.5 (Minor Release)</h3>
+<p>The flow enter and exif functions now take an optional context argument. When called from PatientList or PatientDetail controllers this is the parent scope when the flow has been entered.</p>
+<p>Note: The current Flow API is likely to undergo substantial revision in Opal 0.9 / 0.10 do contact us on the mailing list if you are relying heavily upon it or would like to let us know your needs.</p>
+<h3 id="074-minor-release">0.7.4 (Minor Release)</h3>
+<p>Adds  a past filter, future and past filters now take a
+boolean argument as to whether you should include today</p>
+<h3 id="073-minor-release">0.7.3 (Minor Release)</h3>
+<p>Fixes a bug whereby celery tasks are not autodiscovered - will have affected users of async extract functionality.</p>
 <h3 id="072-minor-release">0.7.2 (Minor Release)</h3>
 <p>Fixes a bug with the copy to category API not setting category name.</p>
 <p>Removes the hangover use of options in the list of teams per episode in the patient list</p>

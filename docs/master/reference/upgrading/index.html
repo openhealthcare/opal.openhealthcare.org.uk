@@ -176,6 +176,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../guides/django_admin/">Django Admin</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../guides/contributing/">Contributing</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -191,6 +195,38 @@
                 <!-- <li class="dropdown active"> -->
                 <!--     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reference <b class="caret"></b></a> -->
                 <!--     <ul class="dropdown-menu"> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../javascript/episode_service/">Episode service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../javascript/patient_service/">Patient service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../javascript/item_service/">Item service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../javascript/loaders/">Loaders</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../javascript/patient_summary_service/">Patient summary service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../javascript/search_js_services/">Search JS Services</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../javascript/javascript_helpers/">Javascript helpers</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../javascript/javascript_dependencies/">Javascript dependencies</a> -->
+                <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../episode/">The Episode model</a> -->
@@ -217,15 +253,11 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../episode_service/">Episode service</a> -->
+                <!--             <a href="../plugin/">OpalPlugin</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../item_service/">Item service</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../patient_summary_service/">Patient summary service</a> -->
+                <!--             <a href="../core_views/">Core.Views</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -234,14 +266,6 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../panels_templatetags/">Panel Template tags</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../javascript_helpers/">Javascript helpers</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../javascript_dependencies/">Javascript dependencies</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -258,10 +282,6 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../patient_list/">Patient Lists</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../search_js_services/">Search JS Services</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -285,8 +305,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.8.0" target="_blank">
-                  <i class="fa fa-github"></i> v0.8.0
+                <a href="https://github.com/openhealthcare/opal/tree/v0.8.1" target="_blank">
+                  <i class="fa fa-github"></i> v0.8.1
                 </a>
               </li>
                 <!-- <li > -->
@@ -312,6 +332,8 @@
     
         <li class="main active"><a href="#upgrading-your-opal-application">Upgrading Your Opal Application</a></li>
         
+            <li><a href="#080-081">0.8.0 -&gt; 0.8.1</a></li>
+        
             <li><a href="#071-080">0.7.1 -&gt; 0.8.0</a></li>
         
             <li><a href="#070-071">0.7.0 -&gt; 0.7.1</a></li>
@@ -330,8 +352,12 @@
 <h2 id="upgrading-your-opal-application">Upgrading Your Opal Application</h2>
 <p>This document provides instructions for specific steps required to upgrading your Opal
 application to a later version where there are extra steps required.</p>
-<h3 id="071-080">0.7.1 -&gt; 0.8.0</h3>
+<h3 id="080-081">0.8.0 -&gt; 0.8.1</h3>
 <h4 id="upgrading-opal">Upgrading Opal</h4>
+<p>We've removed the undocumented <code>ReopenEpisodeCtrl</code> from Opal. Applications wishing to retain this functionality may
+copy the controller from the v0.7.1 branch (opal/static/js/opal/controllers/reopen_episode.js). However we would warn developers that this flow has proven to be problematic and confusing for users whenever used - hence the removal. </p>
+<h3 id="071-080">0.7.1 -&gt; 0.8.0</h3>
+<h4 id="upgrading-opal_1">Upgrading Opal</h4>
 <p>How you do this depends on how you have configured your application, but updating your
 requirements.txt to update the version should work.</p>
 <pre><code># requirements.txt
@@ -386,7 +412,7 @@ REST_FRAMEWORK = {
 </code></pre>
 
 <h3 id="6x-7x">6.x -&gt; 7.x</h3>
-<h4 id="upgrading-opal_1">Upgrading Opal</h4>
+<h4 id="upgrading-opal_2">Upgrading Opal</h4>
 <p>How you do this depends on how you have configured your application, but updating your
 requirements.txt to update the version should work.</p>
 <pre><code># requirements.txt
@@ -427,7 +453,7 @@ here should be relatively painless.</p>
 <code>{% date_of_birth_field %}</code> templatetag in the forms library. You should update any forms
 to use this new tag.</p>
 <h3 id="5x-6x">5.x -&gt; 6.x</h3>
-<h4 id="upgrading-opal_2">Upgrading Opal</h4>
+<h4 id="upgrading-opal_3">Upgrading Opal</h4>
 <p>How you do this depends on how you have configured your application, but updating your
 requirements.txt to update the version should work.</p>
 <pre><code># requirements.txt
