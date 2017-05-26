@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>Tagging - Opal</title>
+	<title>Deployment - Opal</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -135,8 +135,8 @@
                 <!--             <a href="../roles_and_permissions/">Roles & Permissions</a> -->
                 <!--         </li> -->
                 <!--      -->
-                <!--         <li class="active"> -->
-                <!--             <a href="./">Tagging</a> -->
+                <!--         <li > -->
+                <!--             <a href="../tagging/">Tagging</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -183,8 +183,8 @@
                 <!--             <a href="../development_environment/">Development environment</a> -->
                 <!--         </li> -->
                 <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../deployment/">Deployment</a> -->
+                <!--         <li class="active"> -->
+                <!--             <a href="./">Deployment</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--     </ul> -->
@@ -330,12 +330,12 @@
                 </a>
               </li>
                 <!-- <li > -->
-                <!--     <a rel="next" href="../roles_and_permissions/"> -->
+                <!--     <a rel="next" href="../development_environment/"> -->
                 <!--         <i class="fa fa-arrow-left"></i> Previous -->
                 <!--     </a> -->
                 <!-- </li> -->
                 <!-- <li > -->
-                <!--     <a rel="prev" href="../json_api/"> -->
+                <!--     <a rel="prev" href="../../reference/episode/"> -->
                 <!--         Next <i class="fa fa-arrow-right"></i> -->
                 <!--     </a> -->
                 <!-- </li> -->
@@ -350,22 +350,50 @@
   <h3>Contents</h3>
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#tagging">Tagging</a></li>
+        <li class="main active"><a href="#deploying-opal">Deploying Opal</a></li>
+        
+            <li><a href="#heroku">Heroku</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="tagging">Tagging</h1>
-<p>Episodes in Opal may be tagged. This is commonly used as a mechanism to
-record that a particular team is looking after a patient - via <code>TaggedPatientList</code>,
-but also to group patients.</p>
-<p>For instance, we might like to 'tag' episodes with a particular string when some
-particular event occurrs so that we can run reports or analyse these groups later.</p>
-<p>The "Teams" modal in list and detail views, is actually an interface over updating
-the tagging of the episode in question.</p>
-<p>Metadata concerning tags can be found via the Options API.</p></div>
+<h1 id="deploying-opal">Deploying Opal</h1>
+<p>It's no use building a great application if you can't easily deploy it.</p>
+<p>Because Opal is built on top of Django, we can take advantage of all the hard work that
+<a href="https://docs.djangoproject.com/en/1.10/howto/deployment/">the open source community</a> has
+put into making it easy to deploy Django applications.</p>
+<p>Opal can be deployed on any modern web server, if you're new to deploying Django applications
+we'd recommend you try <a href="https://docs.djangoproject.com/en/1.10/howto/deployment/wsgi/modwsgi/">Apache and mod_wsgi</a>
+first. In most cases it'll be the easiest deployment choice.</p>
+<h2 id="heroku">Heroku</h2>
+<p>The Opal scaffold application comes with a <code>Procfile</code> ready for Heroku deployment, and the
+default <code>requirements.txt</code> includes some dependencies that allow us to easily deploy to
+Heroku.</p>
+<p>(Other PaaS and cloud technologies are available, and Opal should deploy fairly easliy
+to any of them!)</p>
+<h3 id="deploying-to-heroku">Deploying to Heroku</h3>
+<p>Firstly, <a href="https://signup.heroku.com/">sign up for Heroku</a>, and install their
+<a href="https://devcenter.heroku.com/articles/heroku-cli">command line tool</a>.</p>
+<p>We then need to create a new heroku application, and set up our database:</p>
+<pre><code class="bash">heroku create
+heroku addons:create heroku-postgresql
+</code></pre>
+
+<p>Next, we need to push our application code to the Heroku server with git:</p>
+<pre><code class="bash">git push heroku master
+</code></pre>
+
+<p>Then we can run our migrations, load our lookuplists and create a user:</p>
+<pre><code class="bash">heroku run python manage.py migrate
+heroku run python manage.py load_lookup_lists
+heroku run python manage.py createsuperuser
+</code></pre>
+
+<p>We should now be able to log in to our deployed app - to open it in a browser:</p>
+<pre><code class="bash">heroku open
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">
