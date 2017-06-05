@@ -389,7 +389,7 @@ and with a card based view.</p>
 <h3 id="defining-lists">Defining lists</h3>
 <p>Opal patient lists are subclasses of <code>opal.core.patient_lists.PatientList</code>.</p>
 <p>Typically these are found in a <code>patient_lists.py</code> module of your application or plugin. (Lists <em>can</em> be
-defined elsewhere, but may not be autodiscovered.)</p>
+defined elsewhere, but may not be auto discovered.)</p>
 <p>A basic list needs only define it's <code>display_name</code> a <code>queryset</code> of episodes to display, and
 a <code>schema</code> of subrecords to show for each episode.</p>
 <pre><code># patient_lists.py
@@ -418,7 +418,7 @@ be <code>Subrecord</code> instances, or instances of <code>opal.core.patient_lis
 <h4 id="custom-columns">Custom Columns</h4>
 <p>Although most schema entries will be subrecords, it can be useful to have non-subrecord columns.
 For instance because you want to allow a composite
-column fo mulitple <code>Subrecords</code> or because we want to simply render arbitrary markup.</p>
+column of multiple <code>Subrecords</code> or because we want to simply render arbitrary markup.</p>
 <p>Columns require the title, and template_path to be set, and are simply included in the schema
 list.</p>
 <pre><code class="python">class MyMarkupList(patient_lists.PatientList):
@@ -441,7 +441,7 @@ records/{record_name}.html
 </code></pre>
 <h3 id="querysets">Querysets</h3>
 <p>The queryset property of your list should contain all of the episodes for this particular
-list. On occasion we require a more dynamic queryset, in which case we can ovreride the
+list. On occasion we require a more dynamic queryset, in which case we can override the
 <code>get_queryset</code> method.</p>
 <pre><code># patient_lists.py
 import datetime
@@ -487,7 +487,7 @@ in the urls for lists, so attempting to define one will raise an exception.</p>
 <h3 id="direct-add">Direct Add</h3>
 <p>Sometimes, we want to control the flow of patients onto, off, or between lists a little more closely.
 For instance, we might need to ensure additional data collection at points in a patient journey.</p>
-<p>In order to accomplish this, we often implement custom patient flows that wil programatically tag
+<p>In order to accomplish this, we often implement custom patient flows that will programatically tag
 episodes to tagged lists. In those cases we will want to prevent users from manually adding or
 removing the tags themselves. This can be easily accomplished via the <code>direct_add</code> property. When
 set to false, users will not be able to add the tag for this list.</p>
@@ -532,7 +532,7 @@ those users for whom this method returns <code>True</code>.</p>
 </code></pre>
 <h2 id="grouping-related-patient-lists">Grouping related Patient Lists</h2>
 <p>We commonly require groups of patient lists for a single clinical service. For example a busy
-outpatients cinic might have one list of people in the waiting room, one list of people being
+outpatients clinic might have one list of people in the waiting room, one list of people being
 triaged, one list for people waiting to see the medical staff, and another for people who have
 been seen but need review - for instance because they have outstanding test results.</p>
 <p>Opal provides the <code>TabbedPatientListGroup</code> class to help with this case. Tabbed Patient List

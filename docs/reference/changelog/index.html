@@ -350,7 +350,12 @@
   <h3>Contents</h3>
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#082-minor-release">0.8.2 (Minor Release)</a></li>
+        <li class="main active"><a href="#083-minor-release">0.8.3 (Minor Release)</a></li>
+        
+            <li><a href="#opallogconfidentialemailer">opal.log.ConfidentialEmailer</a></li>
+        
+    
+        <li class="main "><a href="#082-minor-release">0.8.2 (Minor Release)</a></li>
         
             <li><a href="#opal_location-is-added-as-a-system-variable-when-running-js-tests">OPAL_LOCATION is added as a system variable when running js tests</a></li>
         
@@ -534,6 +539,11 @@
 </div></div>
             <div class="col-md-9" role="main">
 
+<h3 id="083-minor-release">0.8.3 (Minor Release)</h3>
+<h4 id="opallogconfidentialemailer">opal.log.ConfidentialEmailer</h4>
+<p>Adds a custom email logger. This enables Django error emails which remove any confidential patient data.</p>
+<p>Also adds in the karma config to the MANIFEST.in so that we include the karma configs on pip install. It also moves it
+to "opal/tests/js_config/karma_defaults.js".</p>
 <h3 id="082-minor-release">0.8.2 (Minor Release)</h3>
 <h4 id="opal_location-is-added-as-a-system-variable-when-running-js-tests">OPAL_LOCATION is added as a system variable when running js tests</h4>
 <p>If you run opal test js, your karma config is now run in an environment that has

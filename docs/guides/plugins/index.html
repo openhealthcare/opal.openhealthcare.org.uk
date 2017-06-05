@@ -402,7 +402,7 @@ create specific clinics.</p>
 <pre><code>class OutpatientsClinic(Clinic):
     name = 'Outpatients'
 
-    # Add your custom clnic functionality here e.g.
+    # Add your custom clinic functionality here e.g.
     def book_appointment(self, date, patient):
         pass
 
@@ -423,7 +423,7 @@ the file system location of the module.</p>
 <p>Add to static, then add to your plugin class as YourPlugin.javascripts</p>
 <p>There are some restricted namespaces for these...</p>
 <h3 id="adding-apis">Adding APIs</h3>
-<p>Opal uses Django Rest Framweork to provide APIs, and you may add to these from your plugin.
+<p>Opal uses Django Rest Framework to provide APIs, and you may add to these from your plugin.
 By convention, APIs live in <code>yourplugin/api.py</code>. You are expected to provide a
 <code>rest_framework.viewsets.ViewSet</code> subclass, which you then detail as the <code>.apis</code> attribute
 of your plugin.</p>
@@ -444,7 +444,7 @@ class YourPlugin(OpalPlugin):
     ]
 </code></pre>
 
-<p>These APIs will then be available and self-documenting fom the standard Opal url <code>/api/v0.1/</code></p>
+<p>These APIs will then be available and self-documenting from the standard Opal url <code>/api/v0.1/</code></p>
 <h3 id="permissioning">Permissioning</h3>
 <p>Developers are strongly encouraged to ensure that APIs which
 serve patient data are restricted to logged in users. Django Rest Framework <code>ViewSet</code> classes

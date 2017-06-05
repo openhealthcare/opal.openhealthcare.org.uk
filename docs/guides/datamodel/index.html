@@ -392,7 +392,7 @@ care. These should be implemented as Django models that inherit from the <code>o
 base class.</p>
 <h3 id="records">Records</h3>
 <p>A <code>Subrecord</code> consists of a collection of fields that constitute a record. For example, one could
-implement a Demograpics <code>Subrecord</code> as follows:</p>
+implement a Demographics <code>Subrecord</code> as follows:</p>
 <pre><code>class Demographics(PatientSubrecord):
     name             = models.CharField(max_length=255, blank=True)
     hospital_number  = models.CharField(max_length=255, blank=True)

@@ -352,6 +352,10 @@
     
         <li class="main active"><a href="#upgrading-your-opal-application">Upgrading Your Opal Application</a></li>
         
+            <li><a href="#082-083">0.8.2 -&gt; 0.8.3</a></li>
+        
+            <li><a href="#081-082">0.8.1 -&gt; 0.8.2</a></li>
+        
             <li><a href="#080-081">0.8.0 -&gt; 0.8.1</a></li>
         
             <li><a href="#071-080">0.7.1 -&gt; 0.8.0</a></li>
@@ -372,6 +376,14 @@
 <h2 id="upgrading-your-opal-application">Upgrading Your Opal Application</h2>
 <p>This document provides instructions for specific steps required to upgrading your Opal
 application to a later version where there are extra steps required.</p>
+<h3 id="082-083">0.8.2 -&gt; 0.8.3</h3>
+<p>No changes.</p>
+<h3 id="081-082">0.8.1 -&gt; 0.8.2</h3>
+<p>The application menu API, previously python dicts stored in attributes on either plugin or
+application subclasses, now consists of the new <code>opal.core.menus.MenuItem</code> class, enabling
+enhanced customisation and flexibility.</p>
+<p>If you previously were adding Menu Items with the dictionary format. These should be
+coverted to use a <code>MenuItem</code> class.</p>
 <h3 id="080-081">0.8.0 -&gt; 0.8.1</h3>
 <h4 id="upgrading-opal">Upgrading Opal</h4>
 <p>How you do this depends on how you have configured your application, but updating your
@@ -480,7 +492,7 @@ option they were passing to <code>$modal.open</code>. (Alternatively, developers
 refactoring to use the new <code>recordEditor</code> API.)</p>
 <p>The signatures of Flow <code>enter</code> and <code>exit</code> methods has changed to no longer accept
 options as a positional argument, and enter/exit controllers will no longer be initialized
-with access to options as a resovled provider. They will have access to either/both of
+with access to options as a resolved provider. They will have access to either/both of
 <code>referencedata</code> and <code>metadata</code> so if your application includes custom flow controllers that
 use <code>options</code> you will need to refactor these to use the new x-data arguments instead.</p>
 <p><code>referencedata</code> and <code>metadata</code> between them have all data previously in options, so the refactor
@@ -620,7 +632,7 @@ $ python manage.py migrate yourapp
 application's requirements file.</p>
 <h4 id="tags">Tags</h4>
 <p>As of 0.5.5, old tags in Opal are stored directly on the Tagging model rather than via
-Djano Reversion. We can import those old tags by doing the following.</p>
+Django Reversion. We can import those old tags by doing the following.</p>
 <pre><code>$ python manage.py shell
 
 &gt;&gt;&gt; from opal.models import Tagging

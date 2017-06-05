@@ -434,7 +434,7 @@ your forms.</p>
 <li><code>enter</code> expression to evaluate if the user presses return when in this input</li>
 <li><code>maxlength</code> maximum number of characters for this input. Will render the form invalid and display help text if exceeded.</li>
 <li><code>element_name</code> If this exists this is an Angular expression that is set to the 'name' attribute of the html element</li>
-<li><code>element_type</code> If this exists it sets the input 'type' on the html tag. For numeric fields set by the 'field' paramenter this will default to number. Otherwise it will just default to 'text'.</li>
+<li><code>element_type</code> If this exists it sets the input 'type' on the html tag. For numeric fields set by the 'field' parameter this will default to number. Otherwise it will just default to 'text'.</li>
 </ul>
 <h4 id="inputs-with-units">Inputs with units</h4>
 <p>We also often want to display the unit of a particular field to help our users - consistent styling for this is
@@ -487,7 +487,7 @@ available by using the unit argument e.g.</p>
 <p>A very common pattern is to render form fields that relate to fields of <code>Subrecords</code>. Template tags will use this to infer useful information. The display name will be set to the verbose_name and the the ng-model will be inferred.</p>
 <p>If its required, it will set as a required field. If its a CharField with a max length it will set a validation rule accordingly.</p>
 <p>If the field is a free text or foreign key we will infer the lookup list.</p>
-<p>Alternatively if the field has choices attatched to it we will infer the choices into the field.</p>
+<p>Alternatively if the field has choices attached to it we will infer the choices into the field.</p>
 <pre><code class="html">{% input field=&quot;Allergies.drug&quot; %}
 </code></pre>
 

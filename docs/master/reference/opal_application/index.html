@@ -368,7 +368,7 @@
 <h4 id="get_all_components">get_all_components</h4>
 <p>Returns an iterator of all the of the <a href="../../guides/plugins/">plugins</a> and the current application</p>
 <h2 id="opalapplication">OpalApplication</h2>
-<p>The base class for your main application entrypoints is opal.core.application.OpalApplication.</p>
+<p>The base class for your main application entry point is opal.core.application.OpalApplication.</p>
 <p>You must subclass this in order for Opal to discover your application.</p>
 <p>If you started your Opal project via <code>$ opal startproject yourproject</code> then this will have been
 generated for you, and located in <code>yourproject/yourproject/__init__.py</code></p>
@@ -398,14 +398,14 @@ the default Opal styles.</p>
 <h3 id="classmethods">Classmethods</h3>
 <p>Classmethod API for OpalApplication instances:</p>
 <h4 id="opalapplicationget_core_javascriptsnamespace">OpalApplication.get_core_javascripts(namespace)</h4>
-<p>Return a list of the core javascript files specified within a given namespace. These wil be
+<p>Return a list of the core javascript files specified within a given namespace. These will be
 relative paths ready for staticfiles.</p>
 <pre><code class="python">application.get_core_javascripts('opal.utils')
 # -&gt; ['js/opal/utils.js', ...]
 </code></pre>
 
 <h4 id="opalapplicationget_javascripts">OpalApplication.get_javascripts()</h4>
-<p>Return a list of the application's javasctipts as paths to them ready for staticfiles.
+<p>Return a list of the application's javascripts as paths to them ready for staticfiles.
 Defaults to returning the <code>OpalApplication.javascripts</code> property.</p>
 <pre><code class="python">application.get_javascripts()
 # -&gt; ['js/one.js', 'js/two.js', ...]
