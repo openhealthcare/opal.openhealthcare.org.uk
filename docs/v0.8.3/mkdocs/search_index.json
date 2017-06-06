@@ -22,7 +22,7 @@
         }, 
         {
             "location": "/installation/", 
-            "text": "Installing Opal\n\n\nInstallation should be simple.\n\n\nStep 1: The Prerequisites\n\n\nBefore you install Opal, you'll need to make sure that you have\n\nPython\n and \npip\n\ninstalled on your system.\n\n\nLet's just check that you do:\n\n\n$ python --version\nPython 2.7.5\n$ pip --version\npip 1.5.6\n\n\n\nStep 2: Use Pip\n\n\nNow we can install Opal using pip:\n\n\n$ pip install opal\n\n\n\nYou should now have the \nopal\n commandline tools installed.\n\n\nLet's just check that you do:\n\n\n$ opal --version\nOpal 0.8.0\n\n\n\nStep 3: There is no step 3.\n\n\nMaybe make yourself some tea \n then try the \nTutorial\n instead ?", 
+            "text": "Installing Opal\n\n\nInstallation should be simple.\n\n\nStep 1: The Prerequisites\n\n\nBefore you install Opal, you'll need to make sure that you have\n\nPython\n and \npip\n\ninstalled on your system.\n\n\nLet's just check that you do:\n\n\n$ python --version\nPython 2.7.5\n$ pip --version\npip 1.5.6\n\n\n\nStep 2: Use Pip\n\n\nNow we can install Opal using pip:\n\n\n$ pip install opal\n\n\n\nYou should now have the \nopal\n commandline tools installed.\n\n\nLet's just check that you do:\n\n\n$ opal --version\nOpal {{ config.extra.version }}\n\n\n\nStep 3: There is no step 3.\n\n\nMaybe make yourself some tea \n then try the \nTutorial\n instead ?", 
             "title": "Installation"
         }, 
         {
@@ -37,7 +37,7 @@
         }, 
         {
             "location": "/installation/#step-2-use-pip", 
-            "text": "Now we can install Opal using pip:  $ pip install opal  You should now have the  opal  commandline tools installed.  Let's just check that you do:  $ opal --version\nOpal 0.8.0", 
+            "text": "Now we can install Opal using pip:  $ pip install opal  You should now have the  opal  commandline tools installed.  Let's just check that you do:  $ opal --version\nOpal {{ config.extra.version }}", 
             "title": "Step 2: Use Pip"
         }, 
         {
