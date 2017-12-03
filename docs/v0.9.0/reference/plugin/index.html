@@ -71,6 +71,23 @@
             
             
             
+                <!-- <li class="dropdown"> -->
+                <!--     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials <b class="caret"></b></a> -->
+                <!--     <ul class="dropdown-menu"> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../tutorials/pathway_tutorial/">Pathway tutorial</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../tutorials/theming_tutorial/">Theming tutorial</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--     </ul> -->
+                <!-- </li> -->
+            
+            
+            
                 <li >
                     <a href="../../guides/topic-guides/">Guides</a>
                 </li>
@@ -144,6 +161,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../guides/theming/">Theming</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../guides/templates/">Templates</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -169,6 +190,10 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../../guides/search/">Search Overview</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/pathways/">Pathway Overview</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -249,6 +274,14 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../loggers/">Log</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../core_fields/">Fields</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../javascript/patient_service/">Patient service</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -294,6 +327,10 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../search_queries/">Search Queries</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../pathways/">Pathway</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -357,9 +394,6 @@
             <li><a href="#attributes">Attributes</a></li>
         
             <li><a href="#classmethods">Classmethods</a></li>
-        
-    
-        <li class="main "><a href="#-cssappcss">-&gt; ['css/app.css', ...]</a></li>
         
     
     </ul>
@@ -439,10 +473,13 @@ Defaults to returning the <code>OpalPlugin.javascripts</code> property.</p>
 <h4 id="opalpluginget_styles">OpalPlugin.get_styles()</h4>
 <p>Return a list of the plugin's stylesheets as paths to them ready for staticfiles.
 Defaults to returning the contents of <code>OpalPlugin.styles</code>.</p>
-<p>```python
-plugin.get_styles()</p>
-<h1 id="-cssappcss">-&gt; ['css/app.css', ...]</h1>
-<p>``</p></div>
+<pre><code class="python">plugin.get_styles()
+# -&gt; ['css/app.css', ...]
+</code></pre>
+
+<h4 id="opalpluginangular_module_deps">OpalPlugin.angular_module_deps</h4>
+<p>When you initialise an angular application you need to register dependencies
+This allows you to add to the dependencies of the default opal application</p></div>
         </div>
 
         <footer class="col-md-12">
@@ -450,7 +487,7 @@ plugin.get_styles()</p>
             <img src="/img/opallogo.png" class="pull-left"/>
             <center>
               <br />
-              Opal is an Open Source framework for building clinical applications from
+              Opal is an open source framework for building clinical applications from
               <a href="http://openhealthcare.org.uk" target="_blank">Open Health Care UK</i></a>.
             </center>
         </footer>

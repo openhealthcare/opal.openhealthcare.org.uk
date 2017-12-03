@@ -71,6 +71,23 @@
             
             
             
+                <!-- <li class="dropdown"> -->
+                <!--     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials <b class="caret"></b></a> -->
+                <!--     <ul class="dropdown-menu"> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../tutorials/pathway_tutorial/">Pathway tutorial</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../tutorials/theming_tutorial/">Theming tutorial</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--     </ul> -->
+                <!-- </li> -->
+            
+            
+            
                 <li >
                     <a href="../../guides/topic-guides/">Guides</a>
                 </li>
@@ -144,6 +161,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../guides/theming/">Theming</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../guides/templates/">Templates</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -169,6 +190,10 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../../guides/search/">Search Overview</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/pathways/">Pathway Overview</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -249,6 +274,14 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../loggers/">Log</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../core_fields/">Fields</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../javascript/patient_service/">Patient service</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -297,6 +330,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../pathways/">Pathway</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../settings/">Settings</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -325,8 +362,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.8.3" target="_blank">
-                  <i class="fa fa-github"></i> v0.8.3
+                <a href="https://github.com/openhealthcare/opal/tree/v0.9.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.9.0
                 </a>
               </li>
                 <!-- <li > -->
@@ -378,13 +415,10 @@ This defaults to whatever is set on your application's subclass of
 <p>A foreign key relationship to the patient for whom this episode concerns.</p>
 <h4 id="episodeactive">Episode.active</h4>
 <p>A boolean to provide a quick lookup for whether this is an active or closed episode.</p>
-<h4 id="episodedate_of_admission">Episode.date_of_admission</h4>
-<p>If this is an inpatient episode, the date of admission.</p>
-<h4 id="episodedischarge_date">Episode.discharge_date</h4>
-<p>If this is an inpatient episode, the date of discharge.</p>
-<h4 id="episodedate_of_episode">Episode.date_of_episode</h4>
-<p>If this is an episode that occurs on one date (like a clinic visit or telephone liaison), the
-date of that event.</p>
+<h4 id="episodestart">Episode.start</h4>
+<p>This should be the start of the episode. If this is an inpatient episode, the date of admission.</p>
+<h4 id="episodeend">Episode.end</h4>
+<p>This should be the end of the episode. If this is an inpatient episode, the date of discharge.</p>
 <h4 id="episodeconsistency_token">Episode.consistency_token</h4>
 <p>A (automatically generated) hash of the above fields. This is used for detecting concurrent edits.</p>
 <h3 id="methods">Methods</h3>
@@ -452,7 +486,7 @@ be serialised</li>
             <img src="/img/opallogo.png" class="pull-left"/>
             <center>
               <br />
-              Opal is an Open Source framework for building clinical applications from
+              Opal is an open source framework for building clinical applications from
               <a href="http://openhealthcare.org.uk" target="_blank">Open Health Care UK</i></a>.
             </center>
         </footer>

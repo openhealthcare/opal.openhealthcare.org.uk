@@ -71,6 +71,23 @@
             
             
             
+                <!-- <li class="dropdown"> -->
+                <!--     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials <b class="caret"></b></a> -->
+                <!--     <ul class="dropdown-menu"> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../tutorials/pathway_tutorial/">Pathway tutorial</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../tutorials/theming_tutorial/">Theming tutorial</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--     </ul> -->
+                <!-- </li> -->
+            
+            
+            
                 <li >
                     <a href="../../guides/topic-guides/">Guides</a>
                 </li>
@@ -144,6 +161,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../guides/theming/">Theming</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../guides/templates/">Templates</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -169,6 +190,10 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../../guides/search/">Search Overview</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/pathways/">Pathway Overview</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -249,6 +274,14 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../loggers/">Log</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../core_fields/">Fields</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../javascript/patient_service/">Patient service</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -297,6 +330,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../pathways/">Pathway</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../settings/">Settings</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -325,8 +362,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.8.3" target="_blank">
-                  <i class="fa fa-github"></i> v0.8.3
+                <a href="https://github.com/openhealthcare/opal/tree/v0.9.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.9.0
                 </a>
               </li>
                 <!-- <li > -->
@@ -350,7 +387,30 @@
   <h3>Contents</h3>
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#083-minor-release">0.8.3 (Minor Release)</a></li>
+        <li class="main active"><a href="#090-major-release">0.9.0 (Major Release)</a></li>
+        
+            <li><a href="#good-bye-date_of_episode-discharge_date-date_of_admission">Good bye date_of_episode, discharge_date, date_of_admission</a></li>
+        
+            <li><a href="#pathway">Pathway</a></li>
+        
+            <li><a href="#weve-got-time-on-our-side">We've got time on our side</a></li>
+        
+            <li><a href="#removes-a-js-global-declaration-of-categories">Removes a js global declaration of categories</a></li>
+        
+            <li><a href="#order-order">Order Order</a></li>
+        
+            <li><a href="#theming-support">Theming support</a></li>
+        
+            <li><a href="#makes-search-fully-pluggable">Makes search fully pluggable</a></li>
+        
+            <li><a href="#exclude-prefixes-now-work-on-actual-paths">Exclude prefixes now work on actual paths</a></li>
+        
+            <li><a href="#misc-changes">Misc Changes</a></li>
+        
+            <li><a href="#removes-deprecated-functionality-in-referencedata-metadata-userprofile-and-recordloader">Removes Deprecated functionality in ReferenceData, Metadata, UserProfile and recordLoader</a></li>
+        
+    
+        <li class="main "><a href="#083-minor-release">0.8.3 (Minor Release)</a></li>
         
             <li><a href="#opallogconfidentialemailer">opal.log.ConfidentialEmailer</a></li>
         
@@ -381,7 +441,7 @@
         
             <li><a href="#notice-of-future-removals">Notice of future removals</a></li>
         
-            <li><a href="#misc-changes">Misc changes</a></li>
+            <li><a href="#misc-changes_1">Misc changes</a></li>
         
             <li><a href="#minor-fixes">Minor fixes</a></li>
         
@@ -404,7 +464,7 @@
         
             <li><a href="#subrecord-list-api">Subrecord List API</a></li>
         
-            <li><a href="#misc-changes_1">Misc Changes</a></li>
+            <li><a href="#misc-changes_2">Misc Changes</a></li>
         
     
         <li class="main "><a href="#080-major-release">0.8.0 (Major Release)</a></li>
@@ -443,7 +503,7 @@
         
             <li><a href="#removals_1">Removals</a></li>
         
-            <li><a href="#misc-changes_2">Misc changes</a></li>
+            <li><a href="#misc-changes_3">Misc changes</a></li>
         
             <li><a href="#updates-to-the-dependency-graph_1">Updates to the Dependency Graph</a></li>
         
@@ -539,6 +599,59 @@
 </div></div>
             <div class="col-md-9" role="main">
 
+<h3 id="090-major-release">0.9.0 (Major Release)</h3>
+<h4 id="good-bye-date_of_episode-discharge_date-date_of_admission">Good bye date_of_episode, discharge_date, date_of_admission</h4>
+<p>And hello <code>episode.start</code> and <code>episode.end</code>. These fields on the <code>Episode</code> model
+replace the multiple ways of recording Episode duration in Opal.</p>
+<p>There is a migration that sets <code>start</code> to date_of_episode if it  exists, otherwise
+it uses date of admission.</p>
+<p><code>end</code> will be date_of_episode if it exists, otherwise it will use discharge_date.</p>
+<p>Note that this means we no longer refer to start and end properties on the
+Episode category. If you override <code>start</code> and <code>end</code> in a custom episode category
+you should update to use the Episode model fields. This logic should be moved into
+your flows and you'll need to put in a migration to populate existing
+episodes.</p>
+<p>We also remove the episode fields <code>date_of_episode</code> <code>discharge_date</code>, and
+<code>date_of_admission</code>.
+Warning: Backwards migrations will not migrate back to <code>date_of_episode</code> but to
+a admission and discharge. Take backups before running these migrations!</p>
+<p>The fields <code>start</code> and <code>end</code> are both cast to moments (rather than raw js Dates) on
+episode.initialisation</p>
+<h4 id="pathway">Pathway</h4>
+<p>Moves the opal-pathway module into the opal core. Pathways is an extensible way
+of creating forms that involve multiple subrecords.</p>
+<h4 id="weve-got-time-on-our-side">We've got time on our side</h4>
+<p>Adds in the {% timepicker %} template tag, that follows the same convention as
+the other template tags, ie {% timepicker field="Dinner.time" %}</p>
+<h4 id="removes-a-js-global-declaration-of-categories">Removes a js global declaration of categories</h4>
+<p>Previously we declared CATEGORIES globally. This has now been removed</p>
+<h4 id="order-order">Order Order</h4>
+<p>Episodes in the patient list are now ordered by start, first_name and surname</p>
+<h4 id="theming-support">Theming support</h4>
+<p>Improvements and better documentation and guides for theming applications. Particularly
+of note are changes to <code>opal.html</code> and <code>base.html</code>, as well as the addition of the
+<code>static_page.html</code> template.</p>
+<p>This version also includes extensive improved support for customising the templates that
+display patient lists, detail views, menus and forms amongst other things.</p>
+<p>For full documentation, consult the theming guide in the documentation.</p>
+<h4 id="makes-search-fully-pluggable">Makes search fully pluggable</h4>
+<p>Search is now completely pluggable, you need to have <em>some</em> angular controller
+called SearchCtrl, but apart from that you can plugin your own implementation.</p>
+<h4 id="exclude-prefixes-now-work-on-actual-paths">Exclude prefixes now work on actual paths</h4>
+<p>Previously they only worked with angular paths, now they work
+with a combination of actual paths and angular url paths (e.g. /search/#/extract)</p>
+<h4 id="misc-changes">Misc Changes</h4>
+<p>Add the allow_add_patient and allow_edit_teams options to the patient lists.</p>
+<p>We added support for a <code>--file</code> or <code>-f</code> option for the <code>load_lookup_lists</code> command which
+allows the user to specify a particular file outside of the default locations.</p>
+<p>The default <code>Location</code> record display template will no longer include references
+to <code>Episode.start</code>. and <code>Episode.stop</code> labelled as admisssion and discharge to support
+the majority case where an episode relates to something other than an inpatient episode!</p>
+<p>Applications wishing to retaint this functionality should update their own temaplates
+to display start/stop details.</p>
+<h4 id="removes-deprecated-functionality-in-referencedata-metadata-userprofile-and-recordloader">Removes Deprecated functionality in ReferenceData, Metadata, UserProfile and recordLoader</h4>
+<p>Previously these would make their http request when imported into a file. They now require you to call .load()
+for them to return the promise that loads in their respective data.</p>
 <h3 id="083-minor-release">0.8.3 (Minor Release)</h3>
 <h4 id="opallogconfidentialemailer">opal.log.ConfidentialEmailer</h4>
 <p>Adds a custom email logger. This enables Django error emails which remove any confidential patient data.</p>
@@ -584,7 +697,7 @@ True by default.</p>
 <p>The context variables <code>brand_name</code> <code>settings</code> and <code>extra_application</code> in <code>opal.views.IndexView</code>
 are no longer helpful thanks to the settings context processor. These will be removed in
 0.9.0 and emit warnings until then.</p>
-<h4 id="misc-changes">Misc changes</h4>
+<h4 id="misc-changes_1">Misc changes</h4>
 <p>Adds a new filter - <code>underscore-to-spaces</code> for removing underscores from strings.</p>
 <p>The options for <code>SymptomComplex.duration</code> have moved from the default form template to a choices
 declaration on the model. These are scheduled to move again to a lookuplist.</p>
@@ -622,7 +735,7 @@ warning for the remainder of the 0.8.x branch, before being removed entirely in 
 <h4 id="subrecord-list-api">Subrecord List API</h4>
 <p>We have added a list method to the default Opal JSON API for subrecords - you may now obtain a list of all instances
 of a given subrecord from the API endpoint <code>/api/v0.1/$api_name/</code>.</p>
-<h4 id="misc-changes_1">Misc Changes</h4>
+<h4 id="misc-changes_2">Misc Changes</h4>
 <p>Updates the custom <code>UserAdmin</code> so that the email, first and last name fields from the Django <code>User</code> model
 are in the add user form not just the edit user form.</p>
 <p>The default test runner generated by plugin scaffolding now uses <code>opal.urls</code> as the default url conf in the test settings. This allows you to test urls generated by Opal - for instance default form or record templates, or simply raw templates from our generic template view.</p>
@@ -715,7 +828,7 @@ opal.core.api.LoginRequiredViewset, a standard DRF viewset that requires the use
 <li>The <code>static</code> argument from the forms <code>input</code> tag. Developers should move to the <code>static</code> tag.</li>
 <li>The _modal option to set on subrecords. This is because we now use large modals across the board.</li>
 </ul>
-<h4 id="misc-changes_2">Misc changes</h4>
+<h4 id="misc-changes_3">Misc changes</h4>
 <p>The opal.core.api.EpisodeViewSet.create now expects tagging to be an object rather than a list, similar to how it details with demographics and location.</p>
 <p>The API will no longer serialise the _ft or _fk_id fields of FreeTextOrForeignKey fields - these
 are internal implementation details of the server that are not useful on the client side.</p>
@@ -910,7 +1023,7 @@ http://opal.openhealthcare.org.uk/docs/guides/json_api/</p>
             <img src="/img/opallogo.png" class="pull-left"/>
             <center>
               <br />
-              Opal is an Open Source framework for building clinical applications from
+              Opal is an open source framework for building clinical applications from
               <a href="http://openhealthcare.org.uk" target="_blank">Open Health Care UK</i></a>.
             </center>
         </footer>

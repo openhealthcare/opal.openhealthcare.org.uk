@@ -71,6 +71,23 @@
             
             
             
+                <!-- <li class="dropdown"> -->
+                <!--     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials <b class="caret"></b></a> -->
+                <!--     <ul class="dropdown-menu"> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../tutorials/pathway_tutorial/">Pathway tutorial</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../tutorials/theming_tutorial/">Theming tutorial</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--     </ul> -->
+                <!-- </li> -->
+            
+            
+            
                 <li >
                     <a href="../../guides/topic-guides/">Guides</a>
                 </li>
@@ -144,6 +161,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../guides/theming/">Theming</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../guides/templates/">Templates</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -169,6 +190,10 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../../guides/search/">Search Overview</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/pathways/">Pathway Overview</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -249,6 +274,14 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../loggers/">Log</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../core_fields/">Fields</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../javascript/patient_service/">Patient service</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -297,6 +330,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../pathways/">Pathway</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../settings/">Settings</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -335,7 +372,7 @@
                 <!--     </a> -->
                 <!-- </li> -->
                 <!-- <li > -->
-                <!--     <a rel="prev" href="../settings/"> -->
+                <!--     <a rel="prev" href="../pathways/"> -->
                 <!--         Next <i class="fa fa-arrow-right"></i> -->
                 <!--     </a> -->
                 <!-- </li> -->
@@ -354,6 +391,8 @@
         
             <li><a href="#episodes_for_user">episodes_for_user</a></li>
         
+            <li><a href="#fuzzy_query">fuzzy_query</a></li>
+        
     
     </ul>
 </div></div>
@@ -365,7 +404,12 @@
 <p>Given an iterable of EPISODES and a USER, return a filtered list of episodes that this user has
 the permissions to know about.</p>
 <pre><code>filtered_episodes = episodes_for_user(episodes, user)
-</code></pre></div>
+</code></pre>
+<h4 id="fuzzy_query">fuzzy_query</h4>
+<p>Given a partial fragment for example Jane 123, return all patients that
+have either a first name, last name or hospital number including jane or 123.
+Under the covers it uses <a href="../patient/#patientobjectssearch">Patient.objects.search</a>. It then
+orders patients by which have had their episodes created most recently.</p></div>
         </div>
 
         <footer class="col-md-12">
@@ -373,7 +417,7 @@ the permissions to know about.</p>
             <img src="/img/opallogo.png" class="pull-left"/>
             <center>
               <br />
-              Opal is an Open Source framework for building clinical applications from
+              Opal is an open source framework for building clinical applications from
               <a href="http://openhealthcare.org.uk" target="_blank">Open Health Care UK</i></a>.
             </center>
         </footer>

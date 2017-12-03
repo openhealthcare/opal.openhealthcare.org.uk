@@ -71,6 +71,23 @@
             
             
             
+                <!-- <li class="dropdown"> -->
+                <!--     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials <b class="caret"></b></a> -->
+                <!--     <ul class="dropdown-menu"> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../tutorials/pathway_tutorial/">Pathway tutorial</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../tutorials/theming_tutorial/">Theming tutorial</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--     </ul> -->
+                <!-- </li> -->
+            
+            
+            
                 <li >
                     <a href="../../guides/topic-guides/">Guides</a>
                 </li>
@@ -144,6 +161,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../guides/theming/">Theming</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../guides/templates/">Templates</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -169,6 +190,10 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../../guides/search/">Search Overview</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/pathways/">Pathway Overview</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -249,6 +274,14 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../loggers/">Log</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../core_fields/">Fields</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../javascript/patient_service/">Patient service</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -297,6 +330,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../pathways/">Pathway</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../settings/">Settings</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -325,8 +362,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.8.3" target="_blank">
-                  <i class="fa fa-github"></i> v0.8.3
+                <a href="https://github.com/openhealthcare/opal/tree/v0.9.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.9.0
                 </a>
               </li>
                 <!-- <li > -->
@@ -356,6 +393,10 @@
         
             <li><a href="#taggedpatientlist">TaggedPatientList</a></li>
         
+            <li><a href="#card-patient-list-template">Card Patient List Template</a></li>
+        
+            <li><a href="#table-patient-list-template">Table Patient list Template</a></li>
+        
             <li><a href="#tabbedpatientlistgroup">TabbedPatientListGroup</a></li>
         
     
@@ -372,9 +413,21 @@
 <p>How we want to refer to this list on screen to users.</p>
 <h4 id="patientlistcomparator_service">PatientList.comparator_service</h4>
 <p>A custom comparator service to set sort order within a list. Defaults to None.</p>
+<h4 id="patientlistallow_add_patient">PatientList.allow_add_patient</h4>
+<p>Whether we should show the add patient button.</p>
+<p>Defaults to <code>True</code>.</p>
+<h4 id="patientlistallow_edit_teams">PatientList.allow_edit_teams</h4>
+<p>Whether we should allow the user to edit teams.</p>
+<p>Defaults to <code>True</code></p>
 <h2 id="taggedpatientlist">TaggedPatientList</h2>
 <p>Tagged Patient Lists inherit from Patient Lists - as such they have all of the same methods and properties
 of Patient Lists.</p>
+<h2 id="card-patient-list-template">Card Patient List Template</h2>
+<p>Change your patientlist template_name to "patient_lists/card_list.html".</p>
+<p>This will display the patient list as a series of 'cards', more analagous to a twitter stream than a spreadsheet like the default list.</p>
+<h2 id="table-patient-list-template">Table Patient list Template</h2>
+<p>Change your patientlist template_name to "patient_lists/card_list.html".</p>
+<p>This will display the patient list as a series of 'cards', more analagous to a twitter stream than a spreadsheet like the default list.</p>
 <h3 id="properties_1">Properties</h3>
 <h4 id="taggedpatientlisttag">TaggedPatientList.tag</h4>
 <p>The main, or parent tag for this list. Should be lowercase, with no numbers or dashes. Underscores are OK.</p>
@@ -402,7 +455,7 @@ of Patient Lists.</p>
             <img src="/img/opallogo.png" class="pull-left"/>
             <center>
               <br />
-              Opal is an Open Source framework for building clinical applications from
+              Opal is an open source framework for building clinical applications from
               <a href="http://openhealthcare.org.uk" target="_blank">Open Health Care UK</i></a>.
             </center>
         </footer>

@@ -71,6 +71,23 @@
             
             
             
+                <!-- <li class="dropdown"> -->
+                <!--     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials <b class="caret"></b></a> -->
+                <!--     <ul class="dropdown-menu"> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../tutorials/pathway_tutorial/">Pathway tutorial</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../tutorials/theming_tutorial/">Theming tutorial</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--     </ul> -->
+                <!-- </li> -->
+            
+            
+            
                 <li >
                     <a href="../../guides/topic-guides/">Guides</a>
                 </li>
@@ -144,6 +161,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../guides/theming/">Theming</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../guides/templates/">Templates</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -169,6 +190,10 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../../guides/search/">Search Overview</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/pathways/">Pathway Overview</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -249,6 +274,14 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../loggers/">Log</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../core_fields/">Fields</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../javascript/patient_service/">Patient service</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -294,6 +327,10 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../search_queries/">Search Queries</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../pathways/">Pathway</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -363,7 +400,7 @@
 
 <h2 id="opal-schemas">Opal Schemas</h2>
 <p>Opal schemas provide a JSON representation of the structure of subrecords. Opal uses these schemas internally to construct the <code>Item</code> classes in AngularJS on the client side.</p>
-<p>The Schema for an Opal application is available at the url <code>/api/v0.1/schema/</code> and contains the serialized representation of all subrecords and their fields.</p>
+<p>The Schema for an Opal application is available at the url <code>/api/v0.1/record/</code> and contains the serialized representation of all subrecords and their fields.</p>
 <h3 id="subrecord-information">Subrecord information</h3>
 <p>Individual subrecords are serialized to the schema using the function <code>opal.core.schemas.serialize_model</code>.</p>
 <h4 id="schema-subrecord-fields">Schema Subrecord fields</h4>
@@ -372,7 +409,7 @@
 <li>display_name: the result of <code>Subrecord.get_display_name()</code></li>
 <li>single: Whether the Subrecord is a singleton</li>
 <li>advanced_searchable: if the Subrecord should appear in the advanced search view</li>
-<li>fields: a represention of each field </li>
+<li>fields: a represention of each field</li>
 </ul>
 <p>Optional fields:</p>
 <ul>
@@ -448,7 +485,7 @@
             <img src="/img/opallogo.png" class="pull-left"/>
             <center>
               <br />
-              Opal is an Open Source framework for building clinical applications from
+              Opal is an open source framework for building clinical applications from
               <a href="http://openhealthcare.org.uk" target="_blank">Open Health Care UK</i></a>.
             </center>
         </footer>

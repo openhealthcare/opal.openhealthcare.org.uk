@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+
+	<title>Javascript helpers - Opal</title>
+
+        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../../css/highlight.css">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link href="../../../opaldocs.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../../..">
+              <img src="/img/opallogo.png" height="30"/>
+            </a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="../../..">Home</a>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../../../installation/">Installation</a>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../../../tutorial/">Tutorial</a>
+                </li>
+            
+            
+            
+                <!-- <li class="dropdown"> -->
+                <!--     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials <b class="caret"></b></a> -->
+                <!--     <ul class="dropdown-menu"> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../../tutorials/pathway_tutorial/">Pathway tutorial</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../../tutorials/theming_tutorial/">Theming tutorial</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--     </ul> -->
+                <!-- </li> -->
+            
+            
+            
+                <li >
+                    <a href="../../../guides/topic-guides/">Guides</a>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../../reference_guides/">Reference</a>
+                </li>
+            
+            
+            
+                <!-- <li class="dropdown"> -->
+                <!--     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Topic Guides <b class="caret"></b></a> -->
+                <!--     <ul class="dropdown-menu"> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../../guides/components_overview/">Component Overview</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../../guides/command_line_tool/">Command Line tool</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../../guides/discoverable/">Discoverable Features</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../../guides/plugins/">Plugins</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../../guides/plugins_list/">Plugin List</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../../guides/datamodel/">Data Model</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../../guides/archetypes/">Archetypes</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../../guides/referencedata/">Referencedata</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../../guides/metadata/">Metadata</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../../guides/working_with_data_in_angular/">Angular Models</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../../guides/flow/">Flow</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../../guides/roles_and_permissions/">Roles & Permissions</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../../guides/tagging/">Tagging</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../../guides/json_api/">JSON API</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../../guides/theming/">Theming</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../../guides/templates/">Templates</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../../guides/context_processors/">Context Processors</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../../guides/static_files/">Static Files</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../../guides/forms/">Forms</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../../guides/patient_detail_views/">Patient Detail Views</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../../guides/list_views/">Patient List Views</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../../guides/search/">Search Overview</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../../guides/pathways/">Pathway Overview</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../../guides/django_admin/">Django Admin</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../../guides/contributing/">Contributing</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../../guides/development_environment/">Development environment</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../../guides/deployment/">Deployment</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--     </ul> -->
+                <!-- </li> -->
+            
+            
+            
+                <!-- <li class="dropdown active"> -->
+                <!--     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reference <b class="caret"></b></a> -->
+                <!--     <ul class="dropdown-menu"> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../episode/">The Episode model</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../patient/">The Patient model</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../subrecords/">Subrecords</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../user_profile_model/">UserProfile</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../mixins/">Mixins</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../opal_application/">OpalApplication</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../detail_views/">Detail Views</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../episode_categories/">Episode Categories</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../schemas/">Schemas</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../patient_list/">Patient Lists</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../plugin/">OpalPlugin</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../core_views/">Core.Views</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../core_menus/">Menus</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../loggers/">Log</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../core_fields/">Fields</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../patient_service/">Patient service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../episode_service/">Episode service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../item_service/">Item service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../user_service/">User service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../patient_summary_service/">Patient summary service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../search_js_services/">Search JS Services</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../loaders/">Loaders</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../form_templatetags/">Form helpers</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../panels_templatetags/">Panel Template tags</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../menus_templatetags/">Menu Template tag</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li class="active"> -->
+                <!--             <a href="./">Javascript helpers</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../search_queries/">Search Queries</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../pathways/">Pathway</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../settings/">Settings</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../changelog/">Changelog</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../testing/">Testing</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../javascript_dependencies/">Javascript dependencies</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../upgrading/">Upgrading</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--     </ul> -->
+                <!-- </li> -->
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <a href="https://github.com/openhealthcare/opal/tree/v0.9.1" target="_blank">
+                  <i class="fa fa-github"></i> v0.9.1
+                </a>
+              </li>
+                <!-- <li > -->
+                <!--     <a rel="next" href="../../menus_templatetags/"> -->
+                <!--         <i class="fa fa-arrow-left"></i> Previous -->
+                <!--     </a> -->
+                <!-- </li> -->
+                <!-- <li > -->
+                <!--     <a rel="prev" href="../../search_queries/"> -->
+                <!--         Next <i class="fa fa-arrow-right"></i> -->
+                <!--     </a> -->
+                <!-- </li> -->
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+  <h3>Contents</h3>
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#opal-javascript-helpers">Opal Javascript Helpers</a></li>
+        
+            <li><a href="#rootscope-methods">$rootScope methods</a></li>
+        
+            <li><a href="#angular-directives">Angular Directives</a></li>
+        
+            <li><a href="#angular-filters">Angular Filters</a></li>
+        
+            <li><a href="#angular-http-interceptors">Angular HTTP Interceptors</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h2 id="opal-javascript-helpers">Opal Javascript Helpers</h2>
+<h3 id="rootscope-methods">$rootScope methods</h3>
+<p>Opal provides some methods on the Angular $rootScope object.</p>
+<h4 id="open_modal">open_modal</h4>
+<pre><code>$rootScope.open_modal(controller, template, {episode: episode})
+</code></pre>
+<p>Open an arbitrary controller in a modal, passing in the name of the controller,
+the url for the template.</p>
+<p>You may also pass through a dictionary of items to resolve.</p>
+<h3 id="angular-directives">Angular Directives</h3>
+<p>Opal provides some built-in Angular directives for your project to use.</p>
+<h4 id="date-of-birth">date-of-birth</h4>
+<p>Creates an input field that assumes to base field is a moment and handles validation and
+parsing. It assumes no one is born in the future or is over 150 years old.</p>
+<h4 id="tag-select">tag-select</h4>
+<p>Creates a multi select box where users can remove or add tags. Only tags set as
+<code>direct_add</code> tags can be set here.
+This property is set on individual <code>PatientList</code> subclasses, and passed to the front
+end with the <code>Metadata</code> service.</p>
+<p>We set the Angular model to be a copy of an episode's tagging.</p>
+<pre><code class="js">$scope.editing.tagging = episode.tagging[0].makeCopy();
+</code></pre>
+
+<p>We can instantiate the tag-select widget in our markup as follows.</p>
+<pre><code class="html">&lt;div tag-select ng-model=&quot;editing.tagging&quot; metadata=&quot;metadata&quot; class=&quot;col-sm-8&quot;&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>Note: this directive will load the <code>Metadata</code> service over HTTP if it has not been loaded already.</p>
+<h4 id="one-click-only">one-click-only</h4>
+<p>A directive that if set with no arguments, or set to true, will only allow a button to be
+clicked on once and then it'll be disabled. Useful for example to make sure that multiple save requests aren't
+accidentally triggered.</p>
+<h4 id="check-form">check-form</h4>
+<p>Similar to one click only but it takes the form in use as an argument</p>
+<p>e.g.</p>
+<pre><code class="html">&lt;button check-form=&quot;form&quot; ng-click=&quot;sendDataToTheServer&quot;&gt;click me&lt;/button&gt;
+</code></pre>
+
+<p>This checks the form for valid on click.</p>
+<p>If the form is then not valid. It will not call the second function, but mark the form as submitted and disable the button.</p>
+<p>It will watch for the form to become valid and enable the button when that happens.</p>
+<p>If the form is valid, it will allow the ng-click function to be called.</p>
+<p>This means that if you only want to show error messages after the user has clicked the save button you can do so with the
+form.$submitted variable.</p>
+<h4 id="scroll-top">scroll-top</h4>
+<p>Adds a click handler to the element that when click will animate the body of the element to scroll to the top</p>
+<h4 id="go-to-top">go-to-top</h4>
+<p>Similar to scroll-top, this moves the scroll bar to the top of the page but doesn't animate the transition.</p>
+<h4 id="copy-to-clipboard">copy to clipboard</h4>
+<h5 id="eg">e.g.</h5>
+<pre><code class="html">&lt;button clipboard data-clipboard-target=&quot;#content-to-copy&quot;&gt;
+Copy to Clipboard
+&lt;/button&gt;
+</code></pre>
+
+<p>This is a wrapper around clipboard.js, it lets the user copy text from an element that matches the selector you pass it. It will present a growl message saying that the text has been
+copied.</p>
+<h4 id="fullnameforuser">fullNameForUser</h4>
+<p>Given a User ID, inserts the full name of a user into the element the directive is on</p>
+<pre><code class="html">&lt;span full-name-for-user=&quot;2&quot;&gt;&lt;/span&gt;
+&lt;!-- Becomes --&gt;
+&lt;span&gt;Jane Doe&lt;/span&gt;
+</code></pre>
+
+<h4 id="avatarforuser">avatarForUser</h4>
+<p>Intended for use on an <code>img</code> tag, given a User ID, sets the src attribute to the correct
+avatar URL.</p>
+<pre><code class="html">&lt;img avatar-for-user=&quot;1&quot; /&gt;
+&lt;!-- Becomes --&gt;
+&lt;img src=&quot;http://gravatar.com.....&quot; /&gt;
+</code></pre>
+
+<h3 id="angular-filters">Angular Filters</h3>
+<p>Opal provides some built-in Angular filters for your project to use.</p>
+<h4 id="age">Age</h4>
+<p>Calculates a persons current age from their date of birth</p>
+<h4 id="boxed">boxed</h4>
+<p>Displays Boolean fields as a checkbox (e.g. either [ ] or [X])</p>
+<pre><code>[[ item.boolean_field | boxed]]
+</code></pre>
+<h4 id="hhmm">hhmm</h4>
+<p>Displays the hours &amp; minutes portion of a javascript Date object as HH:MM</p>
+<h4 id="moment-date-filter">moment-date-filter</h4>
+<p>Allows a us to use moment.js formatters in the template exactly like you would use moment.format</p>
+<h4 id="plural">plural</h4>
+<p>Takes a word, a count, and an optional plural term.</p>
+<p>If count != 1 and there is a plural term it will return the plural term otherwise it will just suffix an 's'</p>
+<p>if count == 1 then it will return the word</p>
+<h4 id="short-date">short-date</h4>
+<p>Displays a date as DD/MM if it's this year, else DD/MM/YYYY</p>
+<h4 id="short-date-time">short-date-time</h4>
+<p>Displays a date time, short date as above and time as in hhmm above</p>
+<h4 id="title">title</h4>
+<p>Converts a string to title case</p>
+<h4 id="upper">upper</h4>
+<p>Converts a string to upper case</p>
+<h4 id="underscore-to-spaces">underscore-to-spaces</h4>
+<p>Converts strings with underscores (e.g. variable names etc) to words with spaces.</p>
+<pre><code class="html">[[ 'some_underscore_string' | underscore-to-spaces ]]
+-&gt;&gt; some underscore string
+</code></pre>
+
+<h3 id="angular-http-interceptors">Angular HTTP Interceptors</h3>
+<p>Opal uses opal.services.LogoutInterceptor to intercept all failed responses from the server. If they're a 401 or a 403 we redirect the user to the login page, otherwise it passes them through.</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <img src="/img/opallogo.png" class="pull-left"/>
+            <center>
+              <br />
+              Opal is an open source framework for building clinical applications from
+              <a href="http://openhealthcare.org.uk" target="_blank">Open Health Care UK</i></a>.
+            </center>
+        </footer>
+
+        <script src="../../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../../js/highlight.pack.js"></script>
+        <script src="../../../js/base.js"></script>
+          <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35112560-5', 'openhealthcare.org.uk');
+  ga('send', 'pageview');
+          </script>
+
+    </body>
+</html>

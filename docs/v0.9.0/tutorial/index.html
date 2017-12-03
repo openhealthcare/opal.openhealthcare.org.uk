@@ -71,6 +71,23 @@
             
             
             
+                <!-- <li class="dropdown"> -->
+                <!--     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials <b class="caret"></b></a> -->
+                <!--     <ul class="dropdown-menu"> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../tutorials/pathway_tutorial/">Pathway tutorial</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../tutorials/theming_tutorial/">Theming tutorial</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--     </ul> -->
+                <!-- </li> -->
+            
+            
+            
                 <li >
                     <a href="../guides/topic-guides/">Guides</a>
                 </li>
@@ -144,6 +161,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../guides/theming/">Theming</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../guides/templates/">Templates</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -169,6 +190,10 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../guides/search/">Search Overview</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../guides/pathways/">Pathway Overview</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -249,6 +274,14 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../reference/loggers/">Log</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/core_fields/">Fields</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../reference/javascript/patient_service/">Patient service</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -297,6 +330,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../reference/pathways/">Pathway</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../reference/settings/">Settings</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -335,7 +372,7 @@
                 <!--     </a> -->
                 <!-- </li> -->
                 <!-- <li > -->
-                <!--     <a rel="prev" href="../guides/topic-guides/"> -->
+                <!--     <a rel="prev" href="../tutorials/pathway_tutorial/"> -->
                 <!--         Next <i class="fa fa-arrow-right"></i> -->
                 <!--     </a> -->
                 <!-- </li> -->
@@ -437,7 +474,7 @@ python manage.py runserver
 areas that are enabled by default - team lists, search and the admin area.</p>
 <p><img src="/img/tutorial-welcome.png" width="600" style="margin: 12px auto; border: 1px solid black;"/></p>
 <p>Opal applications are a collection of single page Angular apps that talk to the Django
-server-side layer via JSON APIs. The Team Lists and Search options here are two examples of
+server-side layer via JSON APIs. The team lists and search options here are two examples of
 front-end Angular single page apps.</p>
 <h3 id="team-lists">Team lists</h3>
 <p>Most clinical services will need at some stage to generate a list of patients - so Opal provides
@@ -475,15 +512,17 @@ we record high quality coded data, while allowing users an easy way to enter unu
 cases.</p>
 <p>You'll need to import the data for a terminology before you can start to take advantage of that.
 For now, let's use the reference data from elCID (An Opal application maintained by Open Health Care):</p>
-<pre><code>wget https://raw.githubusercontent.com/openhealthcare/elcid/master/data/lookuplists/lookuplists.json -P mynewapp/data/lookuplists
+<pre><code class="sh">wget https://raw.githubusercontent.com/openhealthcare/elcid/master/data/lookuplists/lookuplists.json -P mynewapp/data/lookuplists
 </code></pre>
+
 <blockquote><small>
 By convention, we store data in the <code>./data/lookuplists</code> directory of our project.
 </small></blockquote>
 
 <p>Now let's import the data:</p>
-<pre><code>python manage.py load_lookup_lists
+<pre><code class="sh">python manage.py load_lookup_lists
 </code></pre>
+
 <p>Now refresh your application and try adding a new diagnosis to your patient. As you start to type in
 the condition field, you'll see that the conditions we just imported appear as suggestions:</p>
 <p><img src="/img/tutorial-conditions.png" style="margin: 12px auto; border: 1px solid black;"/></p>
@@ -517,8 +556,9 @@ which provides us with some extra functionality:</p>
 </ul>
 <p>Next, we're going to let Opal take care of the boilerplate that we'll need to use this
 model in our application. From the commandline:</p>
-<pre><code>$ opal scaffold mynewapp
+<pre><code class="sh">opal scaffold mynewapp
 </code></pre>
+
 <p>Let's take a look at what that did:</p>
 <ul>
 <li>It created a Django migration</li>
@@ -591,9 +631,12 @@ application.</p>
 <p>For us, you'll notice that the value of <code>TODOItem.completed</code> simply displays as false -
 which is not particularly useful. So let's update that using the Opal
 <a href="../reference/javascript_helpers/">Boxed filter</a>. In <code>mynewapp/templates/records/todo_item.html</code>
-change the last line to look like this:</p>
-<pre><code>&lt;span ng-show="item.completed"&gt;[[ item.completed | boxed ]] &lt;br /&gt;&lt;/span&gt;
+change the last <code>span</code> to look like this:</p>
+<pre><code class="html">&lt;span ng-show=&quot;item.completed&quot;&gt;
+  [[ item.completed | boxed ]]
+&lt;/span&gt;
 </code></pre>
+
 <h4 id="set-an-icon-for-your-model">Set an Icon for your model</h4>
 <p>You'll notice that your new column is the only one without an icon - we set the icon by
 adding the following property to your <code>TODOItem</code> class:</p>
@@ -626,7 +669,7 @@ much more to discover in the <a href="../guides/topic-guides/">Topic Guides</a>.
             <img src="/img/opallogo.png" class="pull-left"/>
             <center>
               <br />
-              Opal is an Open Source framework for building clinical applications from
+              Opal is an open source framework for building clinical applications from
               <a href="http://openhealthcare.org.uk" target="_blank">Open Health Care UK</i></a>.
             </center>
         </footer>

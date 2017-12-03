@@ -71,6 +71,23 @@
             
             
             
+                <!-- <li class="dropdown"> -->
+                <!--     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials <b class="caret"></b></a> -->
+                <!--     <ul class="dropdown-menu"> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../tutorials/pathway_tutorial/">Pathway tutorial</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../tutorials/theming_tutorial/">Theming tutorial</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--     </ul> -->
+                <!-- </li> -->
+            
+            
+            
                 <li >
                     <a href="../topic-guides/">Guides</a>
                 </li>
@@ -144,6 +161,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../theming/">Theming</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../templates/">Templates</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -169,6 +190,10 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../search/">Search Overview</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../pathways/">Pathway Overview</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -249,6 +274,14 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../reference/loggers/">Log</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/core_fields/">Fields</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../reference/javascript/patient_service/">Patient service</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -294,6 +327,10 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../../reference/search_queries/">Search Queries</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/pathways/">Pathway</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -429,7 +466,7 @@ referencedata into the forms we build, either by detecting their use automatical
 <h3 id="providing-data-for-lookuplists">Providing data for lookuplists</h3>
 <p>Reference data can be provided at application or plugin level in a file named <code>lookuplists.json</code> found in the
 <code>{{ app_or_plugin }}/data/lookuplists</code> directory. This data should be in the Opal JSON format. The name value
-of each lookuplist should be the return value of that lookuplist's <code>get_api_name()</code> method.</p>
+of each lookuplist should be the return value of that lookuplist's <code>get_api_name()</code> method (otherwise they will fail to load), these can be found via <a href="../../reference/schemas/">Schemas</a></p>
 <pre><code class="JSON">{
     &quot;name_of_lookuplist&quot;: [
         {
@@ -452,7 +489,8 @@ of each lookuplist should be the return value of that lookuplist's <code>get_api
 <h4 id="load_lookup_lists">load_lookup_lists</h4>
 <p>Loads lookup lists from all plugins/apps in the Opal JSON format. The lookup lists are expected to be in
 <code>{{ app }}/data/lookuplists/lookuplists.json</code></p>
-<h4 id="delete_all_lookuplists">delete_all_lookuplists</h4>
+<p>Optionally you can pass in an explicit filename with the <code>-f</code> argument.</p>
+<h4 id="delete_all_lookup_lists">delete_all_lookup_lists</h4>
 <p>Deletes all currently lookuplist values and related synonyms</p></div>
         </div>
 
@@ -461,7 +499,7 @@ of each lookuplist should be the return value of that lookuplist's <code>get_api
             <img src="/img/opallogo.png" class="pull-left"/>
             <center>
               <br />
-              Opal is an Open Source framework for building clinical applications from
+              Opal is an open source framework for building clinical applications from
               <a href="http://openhealthcare.org.uk" target="_blank">Open Health Care UK</i></a>.
             </center>
         </footer>

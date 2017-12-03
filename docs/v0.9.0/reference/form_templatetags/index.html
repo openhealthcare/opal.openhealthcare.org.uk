@@ -71,6 +71,23 @@
             
             
             
+                <!-- <li class="dropdown"> -->
+                <!--     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials <b class="caret"></b></a> -->
+                <!--     <ul class="dropdown-menu"> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../tutorials/pathway_tutorial/">Pathway tutorial</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../tutorials/theming_tutorial/">Theming tutorial</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--     </ul> -->
+                <!-- </li> -->
+            
+            
+            
                 <li >
                     <a href="../../guides/topic-guides/">Guides</a>
                 </li>
@@ -144,6 +161,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../guides/theming/">Theming</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../guides/templates/">Templates</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -169,6 +190,10 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../../guides/search/">Search Overview</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/pathways/">Pathway Overview</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -249,6 +274,14 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../loggers/">Log</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../core_fields/">Fields</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../javascript/patient_service/">Patient service</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -294,6 +327,10 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../search_queries/">Search Queries</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../pathways/">Pathway</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -356,6 +393,8 @@
         
             <li><a href="#datepicker">{% datepicker ... %}</a></li>
         
+            <li><a href="#timepicker">{% timepicker ... %}</a></li>
+        
             <li><a href="#datetimepicker">{% datetimepicker ... %}</a></li>
         
             <li><a href="#input">{% input ... %}</a></li>
@@ -390,6 +429,7 @@ your forms.</p>
 <li><code>change</code>  A javascript function that fires if the field has changed</li>
 <li><code>disabled</code> If this exists, we use this as the expression for the ng-disabled directive</li>
 <li><code>element_name</code> If this exists this is an Angular expression that is set to the 'name' attribute of the html element</li>
+<li><code>style</code> The form style to render this widget with. Possible values are <code>['horizontal', 'vertical']</code>. Defaults to 'horizontal'</li>
 </ul>
 <h3 id="datepicker">{% datepicker ... %}</h3>
 <p>Generates a datepicker</p>
@@ -405,6 +445,18 @@ your forms.</p>
 <li><code>required</code> Label to show when we're required</li>
 <li><code>mindate</code> Angular Javascript expression to return the minimum possible date</li>
 <li><code>element_name</code> If this exists this is an Angular expression that is set to the 'name' attribute of the html element</li>
+<li><code>style</code> The form style to render this widget with. Possible values are <code>['horizontal', 'vertical']</code>. Defaults to 'horizontal'</li>
+</ul>
+<h3 id="timepicker">{% timepicker ... %}</h3>
+<p>Generates a time picker widget</p>
+<p>Keywords:</p>
+<ul>
+<li><code>field</code> a string of the models api name '.' field which infers attributes for the model, for more information see
+<a href="#inference-from-subrecord-fields">Inference from subrecord fields</a></li>
+<li><code>label</code> The Label with which to describe the date field (defaults to 'Date')</li>
+<li><code>model</code> The model which we are editing (This is a string that references an in-scope Angular variable)</li>
+<li><code>change</code>  A javascript function that fires if the field has changed</li>
+<li><code>style</code> The form style to render this widget with. Possible values are <code>['horizontal', 'vertical']</code>. Defaults to 'horizontal'</li>
 </ul>
 <h3 id="datetimepicker">{% datetimepicker ... %}</h3>
 <p>Generates a date time fields, a date field on one line and a time field on another</p>
@@ -417,6 +469,7 @@ your forms.</p>
 <li><code>model</code> The model which we are editing (This is a string that references an in-scope Angular variable)</li>
 <li><code>change</code>  A javascript function that fires if the field has changed</li>
 <li><code>element_name</code> If this exists this is an Angular expression that is set to the 'name' attribute of the html datetime picker element</li>
+<li><code>style</code> The form style to render this widget with. Possible values are <code>['horizontal', 'vertical']</code>. Defaults to 'horizontal'</li>
 </ul>
 <h3 id="input">{% input ... %}</h3>
 <p>The input template tag generates you a form input that will play nicely with Opal's styling.</p>
@@ -435,6 +488,7 @@ your forms.</p>
 <li><code>maxlength</code> maximum number of characters for this input. Will render the form invalid and display help text if exceeded.</li>
 <li><code>element_name</code> If this exists this is an Angular expression that is set to the 'name' attribute of the html element</li>
 <li><code>element_type</code> If this exists it sets the input 'type' on the html tag. For numeric fields set by the 'field' parameter this will default to number. Otherwise it will just default to 'text'.</li>
+<li><code>style</code> The form style to render this widget with. Possible values are <code>['horizontal', 'vertical']</code>. Defaults to 'horizontal'</li>
 </ul>
 <h4 id="inputs-with-units">Inputs with units</h4>
 <p>We also often want to display the unit of a particular field to help our users - consistent styling for this is
@@ -454,6 +508,7 @@ available by using the unit argument e.g.</p>
 <li><code>hide</code>  A string that contains an Angular expression for the ng-hide directive</li>
 <li><code>lookuplist</code> an Angular expression that evaluates to an array containing the radio values</li>
 <li><code>element_name</code> If this exists this is an Angular expression that is set to the 'name' attribute of the html element</li>
+<li><code>style</code> The form style to render this widget with. Possible values are <code>['horizontal', 'vertical']</code>. Defaults to 'horizontal'</li>
 </ul>
 <h3 id="select">{% select ... %}</h3>
 <p>Generates an inline select input</p>
@@ -470,6 +525,7 @@ available by using the unit argument e.g.</p>
 <li><code>help</code> a template to use as the contents of a help popover</li>
 <li><code>static</code> an Angular expression that will swap the display to be a static input if it evaluates to <code>true</code></li>
 <li><code>element_name</code> If this exists this is an Angular expression that is set to the 'name' attribute of the html element*</li>
+<li><code>style</code> The form style to render this widget with. Possible values are <code>['horizontal', 'vertical']</code>. Defaults to 'horizontal'</li>
 </ul>
 <h3 id="textarea">{% textarea ... %}</h3>
 <p>Generates an inline textarea input</p>
@@ -482,6 +538,7 @@ available by using the unit argument e.g.</p>
 <li><code>show</code>  A string that contains an Angular expression for the ng-show directive</li>
 <li><code>hide</code>  A string that contains an Angular expression for the ng-hide directive</li>
 <li><code>element_name</code> If this exists this is an Angular expression that is set to the 'name' attribute of the html element</li>
+<li><code>style</code> The form style to render this widget with. Possible values are <code>['horizontal', 'vertical']</code>. Defaults to 'horizontal'</li>
 </ul>
 <h4 id="inference-from-subrecord-fields">Inference from subrecord fields</h4>
 <p>A very common pattern is to render form fields that relate to fields of <code>Subrecords</code>. Template tags will use this to infer useful information. The display name will be set to the verbose_name and the the ng-model will be inferred.</p>
@@ -534,7 +591,7 @@ If the icon starts with <code>fa</code> or <code>glyphicon</code> then we will i
             <img src="/img/opallogo.png" class="pull-left"/>
             <center>
               <br />
-              Opal is an Open Source framework for building clinical applications from
+              Opal is an open source framework for building clinical applications from
               <a href="http://openhealthcare.org.uk" target="_blank">Open Health Care UK</i></a>.
             </center>
         </footer>
