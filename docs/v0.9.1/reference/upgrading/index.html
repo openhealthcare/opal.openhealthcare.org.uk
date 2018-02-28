@@ -389,6 +389,8 @@
     
         <li class="main active"><a href="#upgrading-your-opal-application">Upgrading Your Opal Application</a></li>
         
+            <li><a href="#90-91">9.0 -&gt; 9.1</a></li>
+        
             <li><a href="#083-090">0.8.3 -&gt; 0.9.0</a></li>
         
             <li><a href="#082-083">0.8.2 -&gt; 0.8.3</a></li>
@@ -415,6 +417,17 @@
 <h2 id="upgrading-your-opal-application">Upgrading Your Opal Application</h2>
 <p>This document provides instructions for specific steps required to upgrading your Opal
 application to a later version where there are extra steps required.</p>
+<h3 id="90-91">9.0 -&gt; 9.1</h3>
+<h4 id="upgrading-opal">Upgrading Opal</h4>
+<p>How you do this depends on how you have configured your application, but updating your
+requirements.txt to update the version should work.</p>
+<pre><code># requirements.txt
+opal==0.9.1
+</code></pre>
+<p>After re-installing (via for instance <code>pip install -r requirements.txt</code>) you will need to
+run the migrations for Opal 0.9.1</p>
+<pre><code>$ python manage.py migrate opal
+</code></pre>
 <h3 id="083-090">0.8.3 -&gt; 0.9.0</h3>
 <p>episode.date_of_episode, episode.date_of_admission, episode.discharge_date are all deprecated.</p>
 <p>Instead we use episode.start and episode.end, for episode.date_of_episode, these are the same.</p>
@@ -425,9 +438,9 @@ application to a later version where there are extra steps required.</p>
 application subclasses, now consists of the new <code>opal.core.menus.MenuItem</code> class, enabling
 enhanced customisation and flexibility.</p>
 <p>If you previously were adding Menu Items with the dictionary format. These should be
-coverted to use a <code>MenuItem</code> class.</p>
+converted to use a <code>MenuItem</code> class.</p>
 <h3 id="080-081">0.8.0 -&gt; 0.8.1</h3>
-<h4 id="upgrading-opal">Upgrading Opal</h4>
+<h4 id="upgrading-opal_1">Upgrading Opal</h4>
 <p>How you do this depends on how you have configured your application, but updating your
 requirements.txt to update the version should work.</p>
 <pre><code># requirements.txt
@@ -446,7 +459,7 @@ to retain this functionality may copy the controller from the v0.7.1 branch
 that this flow has proven to be problematic and confusing for users whenever
 used - hence the removal.</p>
 <h3 id="071-080">0.7.1 -&gt; 0.8.0</h3>
-<h4 id="upgrading-opal_1">Upgrading Opal</h4>
+<h4 id="upgrading-opal_2">Upgrading Opal</h4>
 <p>How you do this depends on how you have configured your application, but updating your
 requirements.txt to update the version should work.</p>
 <pre><code># requirements.txt
@@ -503,7 +516,7 @@ REST_FRAMEWORK = {
 </code></pre>
 
 <h3 id="6x-7x">6.x -&gt; 7.x</h3>
-<h4 id="upgrading-opal_2">Upgrading Opal</h4>
+<h4 id="upgrading-opal_3">Upgrading Opal</h4>
 <p>How you do this depends on how you have configured your application, but updating your
 requirements.txt to update the version should work.</p>
 <pre><code># requirements.txt
@@ -544,7 +557,7 @@ here should be relatively painless.</p>
 <code>{% date_of_birth_field %}</code> templatetag in the forms library. You should update any forms
 to use this new tag.</p>
 <h3 id="5x-6x">5.x -&gt; 6.x</h3>
-<h4 id="upgrading-opal_3">Upgrading Opal</h4>
+<h4 id="upgrading-opal_4">Upgrading Opal</h4>
 <p>How you do this depends on how you have configured your application, but updating your
 requirements.txt to update the version should work.</p>
 <pre><code># requirements.txt
