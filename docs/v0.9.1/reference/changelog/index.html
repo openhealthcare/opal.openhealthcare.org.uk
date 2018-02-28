@@ -201,7 +201,7 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../../guides/contributing/">Contributing</a> -->
+                <!--             <a href="../../guides/CONTRIBUTING/">Contributing</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -388,6 +388,8 @@
     <ul class="nav bs-sidenav">
     
         <li class="main active"><a href="#091-minor-release">0.9.1 (Minor Release)</a></li>
+        
+            <li><a href="#pathways-contextprocessor">Pathways ContextProcessor</a></li>
         
     
         <li class="main "><a href="#misc-changes">Misc Changes</a></li>
@@ -606,6 +608,13 @@
             <div class="col-md-9" role="main">
 
 <h3 id="091-minor-release">0.9.1 (Minor Release)</h3>
+<p>Bugfix: in edit_item.js $scope.episode_category is now set from episode.category_name as opposed to episode.category (which was always null)</p>
+<h4 id="pathways-contextprocessor">Pathways ContextProcessor</h4>
+<p>The 'opal.core.pathways.context_processors.pathways' Context Processor will allow you to access your
+pathways from templates without having to explicitly load them in a view. In turn,
+this allows patterns like:</p>
+<pre><code>{% include pathways.YourPathway.get_display_name %}
+</code></pre>
 <h3 id="misc-changes">Misc Changes</h3>
 <p>Fixes some instances of progressbars not being reset if unexpected error states
 occur.</p>

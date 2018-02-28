@@ -201,7 +201,7 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../contributing/">Contributing</a> -->
+                <!--             <a href="../CONTRIBUTING/">Contributing</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -338,7 +338,7 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../../reference/changelog/">Changelog</a> -->
+                <!--             <a href="../../reference/CHANGELOG/">Changelog</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -387,23 +387,34 @@
   <h3>Contents</h3>
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#default-context-processors">Default context Processors</a></li>
+        <li class="main active"><a href="#default-context-processors">Default context processors</a></li>
         
-            <li><a href="#settings">settings</a></li>
+            <li><a href="#settings">Settings</a></li>
         
-    
-        <li class="main "><a href="#models">models</a></li>
+            <li><a href="#models">Models</a></li>
+        
+            <li><a href="#pathways">Pathways</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h2 id="default-context-processors">Default context Processors</h2>
-<h3 id="settings">settings</h3>
-<p>all settings are copied into the context of the template</p>
-<h2 id="models">models</h2>
-<p>all subrecords are copied into the context of the template under the namespace models, e.g. the allergies subrecord can be referred to by models.Allergy</p></div>
+<h2 id="default-context-processors">Default context processors</h2>
+<p>Context processors are part of the Django template language. In Opal we use this to give all templates access to some generic information about the internals of Opal applications.</p>
+<h3 id="settings">Settings</h3>
+<p>All Opal settings are copied into the context of the template.</p>
+<h3 id="models">Models</h3>
+<p>All <a href="../../reference/subrecords/">subrecords</a> (the underlying clinical models of Opal) are copied into the context of the template context and can be accessed from the variable <code>models</code>, e.g. the Allergies subrecord can be referred to by </p>
+<pre><code class="html">{{ models.Allergy }}
+</code></pre>
+
+<h3 id="pathways">Pathways</h3>
+<p>Pathways are copied in to the context of the template and can be accessed from the variable <code>pathways</code>. For an example Pathway you would be able to access attributes of a Pathway thus: </p>
+<pre><code class="html">{{ pathways.MyPathway.get_display_name }}
+</code></pre>
+
+<p>It is important to note that since the context processor is applied <em>after</em> the request context, this can lead to the context processor over-writing elements of context data. For further information on this see the Django documentation.</p></div>
         </div>
 
         <footer class="col-md-12">
