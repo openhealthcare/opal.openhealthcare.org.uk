@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+	<title>Upgrading - Opal</title>
+
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link href="../../opaldocs.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../..">
+              <img src="/img/opallogo.png" height="30"/>
+            </a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="../..">Home</a>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../../installation/">Installation</a>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../../tutorial/">Tutorial</a>
+                </li>
+            
+            
+            
+                <!-- <li class="dropdown"> -->
+                <!--     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials <b class="caret"></b></a> -->
+                <!--     <ul class="dropdown-menu"> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../tutorials/pathway_tutorial/">Pathway tutorial</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../tutorials/theming_tutorial/">Theming tutorial</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--     </ul> -->
+                <!-- </li> -->
+            
+            
+            
+                <li >
+                    <a href="../../guides/topic-guides/">Guides</a>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../reference_guides/">Reference</a>
+                </li>
+            
+            
+            
+                <!-- <li class="dropdown"> -->
+                <!--     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Topic Guides <b class="caret"></b></a> -->
+                <!--     <ul class="dropdown-menu"> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/components_overview/">Component Overview</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/command_line_tool/">Command Line tool</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/discoverable/">Discoverable Features</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/plugins/">Plugins</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/plugins_list/">Plugin List</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/datamodel/">Data Model</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/episodes/">Episodes</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/archetypes/">Archetypes</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/referencedata/">Referencedata</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/metadata/">Metadata</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/working_with_data_in_angular/">Angular Models</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/flow/">Flow</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/roles_and_permissions/">Roles & Permissions</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/tagging/">Tagging</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/json_api/">JSON API</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/theming/">Theming</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/templates/">Templates</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/context_processors/">Context Processors</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/static_files/">Static Files</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/forms/">Forms</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/patient_detail_views/">Patient Detail Views</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/list_views/">Patient List Views</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/search/">Search Overview</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/pathways/">Pathway Overview</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/django_admin/">Django Admin</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/CONTRIBUTING/">Contributing</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/development_environment/">Development environment</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/releasing/">Releasing</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/deployment/">Deployment</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--     </ul> -->
+                <!-- </li> -->
+            
+            
+            
+                <!-- <li class="dropdown active"> -->
+                <!--     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reference <b class="caret"></b></a> -->
+                <!--     <ul class="dropdown-menu"> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../episode/">The Episode model</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../patient/">The Patient model</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../subrecords/">Subrecords</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../user_profile_model/">UserProfile</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../mixins/">Mixins</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../opal_application/">OpalApplication</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../detail_views/">Detail Views</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../episode_categories/">Episode Categories</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../schemas/">Schemas</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../patient_list/">Patient Lists</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../plugin/">OpalPlugin</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../core_views/">Core.Views</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../core_menus/">Menus</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../loggers/">Log</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../core_fields/">Fields</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../core_lookuplists/">Lookuplists</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../core_discoverable/">Discoverable</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../javascript/patient_service/">Patient service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../javascript/episode_service/">Episode service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../javascript/item_service/">Item service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../javascript/user_service/">User service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../javascript/patient_summary_service/">Patient summary service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../javascript/search_js_services/">Search JS Services</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../javascript/loaders/">Loaders</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../form_templatetags/">Form helpers</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../panels_templatetags/">Panel Template tags</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../menus_templatetags/">Menu Template tag</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../javascript/javascript_helpers/">Javascript helpers</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../search_queries/">Search Queries</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../pathways/">Pathway</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../settings/">Settings</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../CHANGELOG/">Changelog</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../testing/">Testing</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../javascript/javascript_dependencies/">Javascript dependencies</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li class="active"> -->
+                <!--             <a href="./">Upgrading</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../management_commands/">Management commands</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--     </ul> -->
+                <!-- </li> -->
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <a href="https://github.com/openhealthcare/opal/tree/v0.10.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.10.0
+                </a>
+              </li>
+                <!-- <li > -->
+                <!--     <a rel="next" href="../javascript/javascript_dependencies/"> -->
+                <!--         <i class="fa fa-arrow-left"></i> Previous -->
+                <!--     </a> -->
+                <!-- </li> -->
+                <!-- <li > -->
+                <!--     <a rel="prev" href="../management_commands/"> -->
+                <!--         Next <i class="fa fa-arrow-right"></i> -->
+                <!--     </a> -->
+                <!-- </li> -->
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+  <h3>Contents</h3>
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#upgrading-your-opal-application">Upgrading Your Opal Application</a></li>
+        
+            <li><a href="#091-0100">0.9.1 -&gt; 0.10.0</a></li>
+        
+            <li><a href="#090-091">0.9.0 -&gt; 0.9.1</a></li>
+        
+            <li><a href="#083-090">0.8.3 -&gt; 0.9.0</a></li>
+        
+            <li><a href="#082-083">0.8.2 -&gt; 0.8.3</a></li>
+        
+            <li><a href="#081-082">0.8.1 -&gt; 0.8.2</a></li>
+        
+            <li><a href="#080-081">0.8.0 -&gt; 0.8.1</a></li>
+        
+            <li><a href="#071-080">0.7.1 -&gt; 0.8.0</a></li>
+        
+            <li><a href="#070-071">0.7.0 -&gt; 0.7.1</a></li>
+        
+            <li><a href="#6x-7x">6.x -&gt; 7.x</a></li>
+        
+            <li><a href="#5x-6x">5.x -&gt; 6.x</a></li>
+        
+            <li><a href="#4x-5x">4.X -&gt; 5.x</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h2 id="upgrading-your-opal-application">Upgrading Your Opal Application</h2>
+<p>This document provides instructions for specific steps required to upgrading your Opal
+application to a later version where there are extra steps required.</p>
+<h3 id="091-0100">0.9.1 -&gt; 0.10.0</h3>
+<h4 id="upgrading-opal">Upgrading Opal</h4>
+<p>How you do this depends on how you have configured your application. You will need to
+update both the Opal version, and versions of dependencies upgraded dependencies if
+you have specified them in for instance, a requirements.txt.</p>
+<p>(This will be the case if you use the requirements.txt originally provided by
+<code>opal startproject</code>)</p>
+<pre><code># requirements.txt
+django==1.10.8
+django-reversion==1.10.2
+djangorestframework==3.4.7
+psycopg==2.7
+ffs==0.0.8.2
+opal==0.10.0
+requests==2.18.4
+django-celery==3.2.2
+celery==3.1.25
+</code></pre>
+<p>After re-installing (via for instance <code>pip install -r requirements.txt</code>) you will
+likely need to make some changes to your application code to fix errors that arise as
+a result of upstream breaking changes.</p>
+<h5 id="breaking-changes-from-dependencies">Breaking changes from dependencies</h5>
+<p>The jump in Django versions introduces some breaking changes. Some common problems are
+outlined here.</p>
+<p><em>Early imports of models</em></p>
+<p>Importing models in a package <strong>init</strong>.py file is no longer allowed - if you see
+<code>django.core.exceptions.AppRegistryNotReady</code> this is the likely cause.</p>
+<p><em>Django reversion</em></p>
+<p>Reversion has reorganized its package structure to avoid importing models.
+Specifically:</p>
+<pre><code class="python"># Old-style import for accessing the admin class.
+import reversion
+# New-style import for accesssing admin class.
+from reversion.admin import VersionAdmin
+
+# Old-style import for accessing the low-level API.
+import reversion
+# New-style import for accesssing the low-level API.
+from reversion import revisions as reversion
+</code></pre>
+
+<p>You should examine your <code>admin.py</code> to see whether you do this.</p>
+<p><em>Urlpatterns</em></p>
+<p><code>django.conf.urls.patterns</code> is now removed rather than deprecated. The default urlconfs
+generated by older Opal versions use them, but these should now be replaced with lists.</p>
+<p><em>TEMPLATES setting</em></p>
+<p>You will need to convert to the new style TEMPLATES-* dictionary-style configuration in settings.py. Details are in the <a href="https://docs.djangoproject.com/en/1.10/ref/templates/upgrading/#the-templates-settings">relevant section of the Django documentation</a>. Note that Django's own context processors have moved from <code>django.core</code> to <code>django.template</code>.</p>
+<p><em>AUTOCOMPLETE_SEARCH setting</em></p>
+<p>The (previously undocumented) setting <code>AUTOCOMPLETE_SEARCH</code> has been renamed to
+<code>OPAL_AUTOCOMPLETE_SEARCH</code> to match other Opal settings. Update your <code>settings.py</code>
+to the new setting name if you had enabled this feature.</p>
+<h5 id="migrations">Migrations</h5>
+<p>You will need to run the migrations for Opal 0.10.0</p>
+<pre><code>$ python manage.py migrate opal
+</code></pre>
+<p>As Opal 0.10.0 contains changes to the cascading deletion behaviour of subrecords, you will
+need to run a makemigrations command to update your subrecords.</p>
+<pre><code>python manage.py makemigrations yourapp
+python manage.py migrate yourapp
+</code></pre>
+<h5 id="loginrequiredmixin">LoginRequiredMixin</h5>
+<p>Django now ships with <code>django.contrib.auth.mixins.LoginRequiredMixin</code>. Accordingly we have
+removed <code>opal.core.views.LoginRequiredMixin</code>. A direct switch to the Django class should
+work seamlessly without any functional differences.</p>
+<h5 id="csrf_failure_view">CSRF_FAILURE_VIEW</h5>
+<p>We now ship the <code>opal.views.csrf_failure</code> view which can be enabled by adding
+<code>CSRF_FAILURE_VIEW = 'opal.views.csrf_failure'</code> in your settings.py. This will
+redirect a user to their intended destination on a CSRF failure. This mitigates
+an edge case where an unauthenticated user opens two pages at the same time.
+Both pages will get redirected to the login form and whichever page the user
+logs into second will throw a CSRF failure because Django invalidates CSRF
+tokens on login.</p>
+<h3 id="090-091">0.9.0 -&gt; 0.9.1</h3>
+<h4 id="upgrading-opal_1">Upgrading Opal</h4>
+<p>How you do this depends on how you have configured your application, but updating your
+requirements.txt to update the version should work.</p>
+<pre><code># requirements.txt
+opal==0.9.1
+</code></pre>
+<p>After re-installing (via for instance <code>pip install -r requirements.txt</code>) you will need to
+run the migrations for Opal 0.9.1</p>
+<pre><code>$ python manage.py migrate opal
+</code></pre>
+<h3 id="083-090">0.8.3 -&gt; 0.9.0</h3>
+<p><code>episode.date_of_episode</code>, <code>episode.date_of_admission</code> and <code>episode.discharge_date</code> are all deprecated.</p>
+<p>We now expect episodes to use <code>episode.start</code> and <code>episode.end</code>. You should search your codebase for any
+instances where the three variables are used and switch to the start/end properties.</p>
+<h3 id="082-083">0.8.2 -&gt; 0.8.3</h3>
+<p>No changes.</p>
+<h3 id="081-082">0.8.1 -&gt; 0.8.2</h3>
+<p>The application menu API, previously python dicts stored in attributes on either plugin or
+application subclasses, now consists of the new <code>opal.core.menus.MenuItem</code> class, enabling
+enhanced customisation and flexibility.</p>
+<p>If you previously were adding Menu Items with the dictionary format. These should be
+converted to use a <code>MenuItem</code> class.</p>
+<h3 id="080-081">0.8.0 -&gt; 0.8.1</h3>
+<h4 id="upgrading-opal_2">Upgrading Opal</h4>
+<p>How you do this depends on how you have configured your application, but updating your
+requirements.txt to update the version should work.</p>
+<pre><code># requirements.txt
+opal==0.8.0
+</code></pre>
+<p>There are no Opal migrations for this version.</p>
+<h4 id="patientlistget_queryset">PatientList.get_queryset</h4>
+<p>The <code>PatientList.get_queryset</code> method now takes keyword arguments - at the current time
+it is only passed <code>user</code> - the user for the current request, but in the future this may
+be extended, so applications should consider using <code>**kwargs</code> to ensure this method
+does not raise exceptions in the future.</p>
+<h4 id="reopenepisodectrl">ReopenEpisodeCtrl</h4>
+<p>We've removed the undocumented <code>ReopenEpisodeCtrl</code> from Opal. Applications wishing
+to retain this functionality may copy the controller from the v0.7.1 branch
+(opal/static/js/opal/controllers/reopen_episode.js). However we would warn developers
+that this flow has proven to be problematic and confusing for users whenever
+used - hence the removal.</p>
+<h3 id="071-080">0.7.1 -&gt; 0.8.0</h3>
+<h4 id="upgrading-opal_3">Upgrading Opal</h4>
+<p>How you do this depends on how you have configured your application, but updating your
+requirements.txt to update the version should work.</p>
+<pre><code># requirements.txt
+opal==0.8.0
+</code></pre>
+<p>After re-installing (via for instance <code>pip install -r requirements.txt</code>) you will need to
+run the migrations for Opal 0.6.x</p>
+<pre><code>$ python manage.py migrate opal
+</code></pre>
+<h4 id="options">Options</h4>
+<p>Options are now an ex-API. Applications should convert to use either Referencedata (canonical terms for common data), or
+Metadata (App specific data you wish to pass into the front end).</p>
+<h4 id="ui-components">UI Components</h4>
+<p>Those applications relying on Angular strap ui components (Typeahead, Popover,
+Tooltip, Datepicker, Timepicker) should convert their templates to use the Angular UI Boostrap equivalents, or the
+Opal templatetags.</p>
+<p>If you are simply using Opal templatetags from <code>forms</code> and not overriding these templates, then the transition should be seamless. Otherwise, searching your codebase for html files containing <code>bs-</code> and looking for angular strap components is a good start.</p>
+<p>Applications or plugins with javascript tests may need to update their includes to remove references to old library files.</p>
+<p>Full documentation of the markup and options for these components is found <a href="http://angular-ui.github.io/bootstrap/versioned-docs/0.14.3/">here</a></p>
+<h4 id="extending-modal_basehtml">extending modal_base.html</h4>
+<p>We now have different base templates for modals, forms and two column modal forms (essentially a form with a side bar).</p>
+<p>The form templates add validation checks around the saving to catch any validation errors a form might through. They assume the existence of a form called 'form'.</p>
+<p>As part of this modal_base has been moved into a folder in templates called base_templates</p>
+<p>Rename any templates extending <code>modal_base.html</code> to extend the correct template in <code>base_templates/</code>. This will be either <code>modal_base.html</code> or <code>modal_form_base.html</code>.</p>
+<h4 id="add-episode-modal-url">Add episode modal url</h4>
+<p>The add episode modal previously available at
+<code>/templates/modals/add_episode.html/</code> is now not available at the url with a trailing slash.
+Any controllers attempting to open the modal e.g. custom list flows should update their
+<code>$modal.open</code> call to remove the trailing slash.</p>
+<h4 id="admin-url">Admin URL</h4>
+<p>The Admin url has changed to require a trailing slash, so any links to <code>/admin</code> - for instance, in a custom menu bar, will need to be updated to <code>/admin/</code>.</p>
+<h3 id="070-071">0.7.0 -&gt; 0.7.1</h3>
+<h4 id="downstream-dependencies">Downstream dependencies</h4>
+<p>Opal 0.7.1 updates the expected version of Django Axes to 1.7.0 - you will wish to update
+this in your requirements.txt or similar accordingly.</p>
+<h4 id="drf-authentication">DRF Authentication</h4>
+<p>We highly recommend that applications explicitly set Django Rest Framework authentication
+classes in their <code>settings.py</code>.</p>
+<p>By default Opal now uses session and token auth, which will require a migration to install
+the DRF Token authentication app.</p>
+<pre><code class="python">INSTALLED_APPS = (
+    # ....
+    'rest_framework',
+    'rest_framework.authtoken',
+    # ...
+)
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    )
+}
+</code></pre>
+
+<h3 id="6x-7x">6.x -&gt; 7.x</h3>
+<h4 id="upgrading-opal_4">Upgrading Opal</h4>
+<p>How you do this depends on how you have configured your application, but updating your
+requirements.txt to update the version should work.</p>
+<pre><code># requirements.txt
+opal==0.7.0
+</code></pre>
+<p>After re-installing (via for instance <code>pip install -r requirements.txt</code>) you will need to
+run the migrations for Opal 0.6.x</p>
+<pre><code>$ python manage.py migrate opal
+</code></pre>
+<p>If you are inheriting from the abstract models in Opal e.g. <code>Demographics</code> then you should
+run a makemigrations command to update to the 0.7.x data model.</p>
+<pre><code>python manage.py makemigrations yourapp
+python manage.py migrate yourapp
+</code></pre>
+<h4 id="breaking-changes">Breaking changes</h4>
+<p>Opal 0.7 contains a number of breaking changes.</p>
+<h5 id="name-changes">Name changes</h5>
+<p><code>opal.models.Episode.category</code> has been re-named <code>category_name</code>. If your application
+directly sets category, you will be required to update all instances where this happens.</p>
+<p>The <code>/episode/:pk/</code> API has moved to <code>/api/v0.1/episode/:pk/</code> so any code (typically
+javascript) code that directly saves to this API endpoint rather than using the Opal JS
+<code>Episode</code> services should work immediately when re-pointed at the new URL.</p>
+<h5 id="moving-from-options-to-referencedata-and-metadata">Moving from options to referencedata and metadata</h5>
+<p>The signature of the EditItemCtrl has been updated - this modal controller no longer
+takes an <code>options</code> argument, rather it uses the new 0.7.x <code>referencedata</code> and <code>metadata</code>
+services. Applications that call EditItemCtrl directly should look to update the <code>resolves</code>
+option they were passing to <code>$modal.open</code>. (Alternatively, developers should consider
+refactoring to use the new <code>recordEditor</code> API.)</p>
+<p>The signatures of Flow <code>enter</code> and <code>exit</code> methods has changed to no longer accept
+options as a positional argument, and enter/exit controllers will no longer be initialized
+with access to options as a resolved provider. They will have access to either/both of
+<code>referencedata</code> and <code>metadata</code> so if your application includes custom flow controllers that
+use <code>options</code> you will need to refactor these to use the new x-data arguments instead.</p>
+<p><code>referencedata</code> and <code>metadata</code> between them have all data previously in options, so the refactor
+here should be relatively painless.</p>
+<h5 id="date-of-birth-fields-in-forms">Date of birth fields in forms</h5>
+<p>The partial <code>partials/_date_of_birth_field.html</code> has been removed and replaced with the
+<code>{% date_of_birth_field %}</code> templatetag in the forms library. You should update any forms
+to use this new tag.</p>
+<h3 id="5x-6x">5.x -&gt; 6.x</h3>
+<h4 id="upgrading-opal_5">Upgrading Opal</h4>
+<p>How you do this depends on how you have configured your application, but updating your
+requirements.txt to update the version should work.</p>
+<pre><code># requirements.txt
+opal==0.6.0
+</code></pre>
+<p>After re-installing (via for instance <code>pip install -r requirements.txt</code>) you will need to
+run the migrations for Opal 0.6.x</p>
+<pre><code>$ python manage.py migrate opal
+</code></pre>
+<h4 id="changes-to-abstract-models">Changes to abstract models</h4>
+<p>If you are inheriting from the abstract models in Opal e.g. <code>Demographics</code> then you should
+run a makemigrations command to update to the 0.6.x data model.</p>
+<pre><code>python manage.py makemigrations yourapp
+python manage.py migrate yourapp
+</code></pre>
+<p>You should note that as of Opal 0.6.x <code>Demographics</code> now splits names into first, surname,
+middle name and title. The previous <code>name</code> field will be converted to be <code>first_name</code>.</p>
+<p>Strategies for updating your data to use the appropriate fields will vary from application
+to application, but one good such strategy is to use a data migration <a href="https://github.com/openhealthcare/acute/blob/master/acute/migrations/0004_auto_20160624_1215.py">such as the one done
+here</a>.</p>
+<h4 id="update-settings">Update settings</h4>
+<p>Many of the default Opal templates now assume that the <code>'opal.context_processors.models'</code>
+Context Processor is available - you should add that to the <code>TEMPLATE_CONTEXT_PROCESSORS</code>
+setting in your application's <code>settings.py</code></p>
+<p>The default date formats in Opal have changed - and so you should update your <code>DATE_X</code>
+settings to match:</p>
+<pre><code class="python">DATE_FORMAT = 'd/m/Y'
+DATE_INPUT_FORMATS = ['%d/%m/%Y']
+DATETIME_FORMAT = 'd/m/Y H:i:s'
+DATETIME_INPUT_FORMATS = ['%d/%m/%Y %H:%M:%S']
+</code></pre>
+
+<h4 id="upgrade-plugins">Upgrade plugins</h4>
+<p>A number of Opal plugins have new releases to work with the changes in Opal 0.6.x</p>
+<ul>
+<li>opal-referral - Upgrade to 0.1.4</li>
+<li>opal-wardround - Upgrade to 0.6.0</li>
+<li>opal-observations - Upgrade to 0.1.2</li>
+<li>opal-dischargesummary - Upgrade to 0.2.0</li>
+<li>opal-dashboard - Upgrade to 0.1.3</li>
+</ul>
+<p>Meanwhile the <code>opal-taskrunner</code> plugin has now been deprecated, this functionality now
+living natively within Opal core.</p>
+<h4 id="update-your-teams-to-be-patientlists">Update your Teams to be PatientLists</h4>
+<p>Patient Lists are now driven by subclasses of <code>opal.core.PatientList</code>, so we will need
+to convert your Teams to be PatientLists. You may want to re-enable the Team admin while
+you do so - this is simple, by updating your application's <code>admin.py</code>:</p>
+<pre><code># yourapp/admin.py
+...
+from opal.admin import TeamAdmin
+from opal.models import Team
+admin.site.register(Team, TeamAdmin)
+</code></pre>
+<p>Patient lists are now declarative. For instance, to replicate the following team:</p>
+<p><img src="/img/resp.team.png" style="margin: 12px auto; border: 1px solid black;"/></p>
+<p>We would convert that to:</p>
+<pre><code class="python"># yourapp/patient*lists.py
+from opal.core import patient_lists
+
+class RespiratoryList(patient_lists.TaggedPatientList):
+    display_name = 'Respiratory'
+    tag          = 'respiratory'
+    order        = 4
+    schema       = [models.Demographics, models.Treatment]
+</code></pre>
+
+<p>The schema property will likely be available to you in your application's <code>schema.py</code>
+file - which is now obsolete.</p>
+<p>See the <a href="../../guides/list_views/">full patient list documentation</a> for further details
+of the options available for Patient Lists.</p>
+<h4 id="form-and-display-templates">Form and Display templates.</h4>
+<p>We may now be missing some form or display templates, as your application may be
+relying on templates previously in Opal. To discover which these are, run</p>
+<pre><code>$ opal scaffold --dry-run
+</code></pre>
+<p>You may either create templates by hand, or have Opal generate boilerplate templates for you
+by running <code>$ opal scaffold</code>.</p>
+<p>Modal templates already in your application will likely be referencing invalid paths
+to their Angular variables. You should update these to include the record name - for example:</p>
+<pre><code class="html">&lt;!-- Was --&gt;
+{% input  label=&quot;Drug&quot; model=&quot;editing.drug&quot; lookuplist=&quot;antimicrobial_list&quot; %}
+&lt;!-- Becomes --&gt;
+{% input  label=&quot;Drug&quot; model=&quot;editing.treatment.drug&quot; lookuplist=&quot;antimicrobial_list&quot; %}
+</code></pre>
+
+<h4 id="the-inpatient-episode-category">The Inpatient episode category</h4>
+<p>The default Episode Category - Inpatient episodes has updated it's database identifier
+from <code>inpatient</code> to <code>Inpatient</code>. To update your episodes run :</p>
+<pre><code class="python">&gt;&gt;&gt; from opal.models import Episode
+&gt;&gt;&gt; for e in Episode.objects.filter(category='inpatient'):
+...   e.category='Inpatient'
+...   e.save()
+...
+</code></pre>
+
+<p>Any references to episode category in templates (for e.g. ng-hide) or controllers for logic
+will also require updates.</p>
+<h4 id="flow-is-now-defined-in-js">Flow is now defined in JS</h4>
+<p>Flow is no longer defined on the server side in python, but rather is a javascript service.
+See the documentation for information about setting up custom flows. At a minimum applications
+that use custom flows will have to implement their own flow service and reference it in their
+settings.</p>
+<h3 id="4x-5x">4.X -&gt; 5.x</h3>
+<h4 id="migrations_1">Migrations</h4>
+<p>Before upgrading from 4.x to 5.x you should ensure that you have upgraded from South
+to Djangomigrations.</p>
+<pre><code>$ rm yourapp/migrations/*
+$ python manage.py makemigrations yourapp
+$ python manage.py migrate yourapp --fake-initial
+</code></pre>
+<h4 id="opal">Opal</h4>
+<p>Next you will need to upgrade the Opal version itself.</p>
+<p>How you do this depends on how you have configured your application, but updating your
+requirements.txt to update the version should work. This will also update FFS and Django
+Axes as well as adding Python Dateutil.</p>
+<pre><code>-e git://github.com/openhealthcare/opal.git@v0.5.6#egg=opal
+</code></pre>
+<h4 id="migrations_2">Migrations.</h4>
+<p>Opal has fresh migrations in 0.5.x, which we should run. There are also changes to the
+base abstract model classes (to add created/updated timestamps) so you'll need to create
+fresh migrations for your own application.</p>
+<pre><code>$ python manage.py migrate
+$ python manage.py makemigrations yourapp
+$ python manage.py migrate yourapp
+</code></pre>
+<p>At this stage you'll want to commit your new migrations, as well as any changes to your
+application's requirements file.</p>
+<h4 id="tags">Tags</h4>
+<p>As of 0.5.5, old tags in Opal are stored directly on the Tagging model rather than via
+Django Reversion. We can import those old tags by doing the following.</p>
+<pre><code>$ python manage.py shell
+
+&gt;&gt;&gt; from opal.models import Tagging
+&gt;&gt;&gt; Tagging.import_from_reversion()
+</code></pre>
+<h4 id="deployment">Deployment</h4>
+<p>The first time you deploy your upgraded application you'll need to run the following
+commands to upgrade your database:</p>
+<pre><code>$ python manage.py migrate --fake-initial
+</code></pre>
+<p>You'll also have to repeat the Tagging step once for each deployment.</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <img src="/img/opallogo.png" class="pull-left"/>
+            <center>
+              <br />
+              Opal is an open source framework for building clinical applications from
+              <a href="http://openhealthcare.org.uk" target="_blank">Open Health Care UK</i></a>.
+            </center>
+        </footer>
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script src="../../js/base.js"></script>
+          <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35112560-5', 'openhealthcare.org.uk');
+  ga('send', 'pageview');
+          </script>
+
+    </body>
+</html>
