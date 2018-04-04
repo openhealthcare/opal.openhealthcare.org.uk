@@ -16,3 +16,4 @@ _site
 _build
 dist
 _opalsrc
+*.pyc
