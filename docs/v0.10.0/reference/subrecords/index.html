@@ -213,6 +213,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../guides/releasing/">Releasing</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../guides/deployment/">Deployment</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -481,6 +485,14 @@ This implicitly defaults to False.</p>
 <p>An iterable of strings that correspond to fieldnames that contain Patient Identifiable Data (PID).</p>
 <p>This is used when creating data extracts to exclude PID from e.g. CSV downloads.</p>
 <h3 id="methods">Methods</h3>
+<h4 id="subrecordget_api_name">Subrecord.get_api_name()</h4>
+<p>Classmethod that returns a snake case version of the API name for this subrecord.
+This will be used in the URL for the subrecord API, and as a property name in Javascript
+representations of the data.</p>
+<pre><code class="python">&gt;&gt;&gt; Demographics.get_api_name()
+&quot;demographics&quot;
+</code></pre>
+
 <h4 id="subrecordget_display_template">Subrecord.get_display_template()</h4>
 <p>Classmethod to locate the display template for our record. By default this
 looks in the location <code>{{ template_dir }}/records/{{ subrecord api name }}.html</code>.</p>

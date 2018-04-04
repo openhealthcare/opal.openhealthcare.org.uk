@@ -213,6 +213,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../guides/releasing/">Releasing</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../guides/deployment/">Deployment</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -433,7 +437,7 @@
 full page pathways.</p>
 <h4 id="pathwayslug">Pathway.slug</h4>
 <p>The slug to use in the URL for accessing an individual pathway, and the string that can
-be passed to <code>Pathway.get()</code> that will return i.t</p>
+be passed to <code>Pathway.get()</code> that will return it.</p>
 <h4 id="pathwaysteps">Pathway.steps</h4>
 <p>The steps that make up this pathway. A tuple of either <code>opal.models.Subrecord</code> or
 <code>pathway.Step</code> subclasses.</p>
@@ -458,7 +462,9 @@ to navigate through the form.</p>
 <h2 id="pagepathway">PagePathway</h2>
 <p>Inherits from <code>opal.core.pathway.Pathway</code>, this displays all steps as one long form.</p>
 <h2 id="step">Step</h2>
-<p>Steps are a single section within a form</p>
+<p>Steps are a single section within a form, and can be instances of either <code>opal.models.Subrecord</code> or
+<code>pathway.Step</code> subclasses. You can use both types of Step in a given Pathway.</p>
+<p>More detail on Steps is given in the <a href="../../guides/pathways/">Guides section on Pathways</a></p>
 <h2 id="helptextstep">HelpTextStep</h2>
 <p>A Step subclass with help text to the side of the form</p>
 <h2 id="findpatientstep">FindPatientStep</h2>
@@ -466,8 +472,7 @@ to navigate through the form.</p>
 includes a widget for searching for patients, then selecting that patient for use in the rest of the
 form.</p>
 <h2 id="redirectstopatientmixin">RedirectsToPatientMixin</h2>
-<p>Redirect to the patient detail page for this patient.
-he patient detail page, viewing the last episode for this patient.</p></div>
+<p>After saving, redirect the browser to the patient detail page for the relevant patient.</p></div>
         </div>
 
         <footer class="col-md-12">

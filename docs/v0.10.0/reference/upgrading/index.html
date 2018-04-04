@@ -213,6 +213,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../guides/releasing/">Releasing</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../guides/deployment/">Deployment</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -450,6 +454,8 @@ psycopg==2.7
 ffs==0.0.8.2
 opal==0.10.0
 requests==2.18.4
+django-celery==3.2.2
+celery==3.1.25
 </code></pre>
 <p>After re-installing (via for instance <code>pip install -r requirements.txt</code>) you will
 likely need to make some changes to your application code to fix errors that arise as
@@ -497,6 +503,14 @@ python manage.py migrate yourapp
 <p>Django now ships with <code>django.contrib.auth.mixins.LoginRequiredMixin</code>. Accordingly we have
 removed <code>opal.core.views.LoginRequiredMixin</code>. A direct switch to the Django class should
 work seamlessly without any functional differences.</p>
+<h5 id="csrf_failure_view">CSRF_FAILURE_VIEW</h5>
+<p>We now ship the <code>opal.views.csrf_failure</code> view which can be enabled by adding
+<code>CSRF_FAILURE_VIEW = 'opal.views.csrf_failure'</code> in your settings.py. This will
+redirect a user to their intended destination on a CSRF failure. This mitigates
+an edge case where an unauthenticated user opens two pages at the same time.
+Both pages will get redirected to the login form and whichever page the user
+logs into second will throw a CSRF failure because Django invalidates CSRF
+tokens on login.</p>
 <h3 id="090-091">0.9.0 -&gt; 0.9.1</h3>
 <h4 id="upgrading-opal_1">Upgrading Opal</h4>
 <p>How you do this depends on how you have configured your application, but updating your
