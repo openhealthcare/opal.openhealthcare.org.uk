@@ -129,6 +129,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../guides/episodes/">Episodes</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../guides/archetypes/">Archetypes</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -201,11 +205,15 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../../guides/contributing/">Contributing</a> -->
+                <!--             <a href="../../guides/CONTRIBUTING/">Contributing</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../../guides/development_environment/">Development environment</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/releasing/">Releasing</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -282,6 +290,14 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../core_lookuplists/">Lookuplists</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../core_discoverable/">Discoverable</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../javascript/patient_service/">Patient service</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -338,7 +354,7 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../changelog/">Changelog</a> -->
+                <!--             <a href="../CHANGELOG/">Changelog</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -353,6 +369,10 @@
                 <!--             <a href="../upgrading/">Upgrading</a> -->
                 <!--         </li> -->
                 <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../management_commands/">Management commands</a> -->
+                <!--         </li> -->
+                <!--      -->
                 <!--     </ul> -->
                 <!-- </li> -->
             
@@ -362,8 +382,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.9.0" target="_blank">
-                  <i class="fa fa-github"></i> v0.9.0
+                <a href="https://github.com/openhealthcare/opal/tree/v0.10.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.10.0
                 </a>
               </li>
                 <!-- <li > -->
@@ -389,33 +409,70 @@
     
         <li class="main active"><a href="#opalcoreepisodes">opal.core.episodes</a></li>
         
-    
-        <li class="main "><a href="#episodecategory">EpisodeCategory</a></li>
+            <li><a href="#episodecategory">EpisodeCategory</a></li>
         
-            <li><a href="#properties">Properties</a></li>
-        
-    
-        <li class="main "><a href="#inpatientepisode">InpatientEpisode</a></li>
+            <li><a href="#inpatientepisode">InpatientEpisode</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h2 id="opalcoreepisodes">opal.core.episodes</h2>
+<h1 id="opalcoreepisodes">opal.core.episodes</h1>
 <h2 id="episodecategory">EpisodeCategory</h2>
-<p>Opal Episodes have an associated category. These categories are implemented as subclasses
-of <code>opal.core.episodes.EpisodeCategory</code>. This class is an Opal <a href="../../guides/discoverable/">DiscoverableFeature</a>
-and thus inherits all of the core Discoverable API.</p>
+<p>Opal <a href="../../guides/episodes/">Episodes</a> have an associated category. These categories are
+implemented as subclasses of <code>opal.core.episodes.EpisodeCategory</code>. This class is an Opal
+<a href="../../guides/discoverable/">DiscoverableFeature</a> and thus inherits all of the core
+Discoverable API.</p>
 <p>The category of any episode can be accessed as the <code>.category</code> property of any <code>Episode</code> instance.</p>
-<h3 id="properties">Properties</h3>
-<h4 id="episodecategorydetail_template">EpisodeCategory.detail_template</h4>
-<p>This is the template used within the <a href="../../guides/patient_detail_views/">Patient Detail View</a> to display
-information about episodes of this category.</p>
+<p>An episode category must be initialized with an instance of an episode.</p>
+<pre><code class="python">from opal.core.episodes import InpatientEpisode
+
+category = InpatientEpisode(episode)
+</code></pre>
+
+<p><strong> Properties </strong></p>
+<h3 id="episodecategorydetail_template">EpisodeCategory.detail_template</h3>
+<p>This is the template used within the <a href="../../guides/patient_detail_views/">Patient Detail View</a>
+to display information about episodes of this category.</p>
+<h3 id="episodecategorystages">EpisodeCategory.stages</h3>
+<p>A list of strings that are valid values for <code>Episode.stage</code> for this category.</p>
+<p><strong> Classmethods </strong></p>
+<h3 id="episodecategoryepisode_visible_toepisode-user">EpisodeCategory.episode_visible_to(episode, user)</h3>
+<p>Predidcate function to determine whether an episode of this category is visible
+to a particular user.</p>
+<p>The default implementation will return True unless <code>UserProfile.restricted_only</code> is set to
+True. (In which case this user should not see any elements which are visible 'by default' for
+this application.)</p>
+<pre><code class="python">InpatientEpisode.episode_visible_to(episode, user)
+
+# -&gt; True
+</code></pre>
+
+<p><strong> Methods </strong></p>
+<h3 id="episodecategoryget_stages">EpisodeCategory.get_stages()</h3>
+<p>Returns a list of stages for this category as strings.</p>
+<pre><code class="python">InpatientEpisode(episode).get_stages()
+# -&gt; ['Inpatient', 'Followup', 'Discharged']
+</code></pre>
+
+<h3 id="episodecategoryhas_stagestage">EpisodeCategory.has_stage(stage)</h3>
+<p>Predicate function to determine whether a string is a valid stage for this category.</p>
+<pre><code class="python">InpatientEpisode(episode).has_stage('Inpatient')
+# -&gt; True
+</code></pre>
+
+<h3 id="episodecategoryset_stagestage-user-data">EpisodeCategory.set_stage(stage, user, data)</h3>
+<p>Sets the stage on the episode. It gets passed the user, and the
+rest of the data that's been used to update the episode.</p>
+<pre><code class="python">InpatientEpisode(episode).set_stage('Discharged', user, data_dict)
+# -&gt; True
+</code></pre>
+
 <h2 id="inpatientepisode">InpatientEpisode</h2>
-<p>This is the default EpisodeCategory imlpementation - applications started with Opal's scaffolding
-scripts will use this as the <code>OpalApplication.default_episode_category</code>. It sets the detail template to
-<code>detail/inpatient.html</code></p></div>
+<p>This is the default EpisodeCategory imlpementation - applications started with Opal's
+scaffolding scripts will use this as the <code>OpalApplication.default_episode_category</code>.
+It sets the detail template to <code>detail/inpatient.html</code></p></div>
         </div>
 
         <footer class="col-md-12">

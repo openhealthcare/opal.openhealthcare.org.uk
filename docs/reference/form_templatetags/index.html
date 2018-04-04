@@ -129,6 +129,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../guides/episodes/">Episodes</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../guides/archetypes/">Archetypes</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -201,11 +205,15 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../../guides/contributing/">Contributing</a> -->
+                <!--             <a href="../../guides/CONTRIBUTING/">Contributing</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../../guides/development_environment/">Development environment</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/releasing/">Releasing</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -282,6 +290,14 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../core_lookuplists/">Lookuplists</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../core_discoverable/">Discoverable</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../javascript/patient_service/">Patient service</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -338,7 +354,7 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../changelog/">Changelog</a> -->
+                <!--             <a href="../CHANGELOG/">Changelog</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -353,6 +369,10 @@
                 <!--             <a href="../upgrading/">Upgrading</a> -->
                 <!--         </li> -->
                 <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../management_commands/">Management commands</a> -->
+                <!--         </li> -->
+                <!--      -->
                 <!--     </ul> -->
                 <!-- </li> -->
             
@@ -362,8 +382,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.9.0" target="_blank">
-                  <i class="fa fa-github"></i> v0.9.0
+                <a href="https://github.com/openhealthcare/opal/tree/v0.10.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.10.0
                 </a>
               </li>
                 <!-- <li > -->
@@ -418,6 +438,12 @@
 <p>Opal comes with a selection of templatetags that can help you with the
 repetitive task of generating Bootstrap and Opal compatible markup for
 your forms.</p>
+<p>To use these in your HTML templates you need to load them:</p>
+<pre><code class="html">&lt;!-- myapp/templates/forms/mytemplate.html --&gt;
+{% load forms %}
+...
+</code></pre>
+
 <h3 id="checkbox">{% checkbox ... %}</h3>
 <p>Generates a checkbox</p>
 <p>Keywords:</p>
@@ -539,6 +565,7 @@ available by using the unit argument e.g.</p>
 <li><code>hide</code>  A string that contains an Angular expression for the ng-hide directive</li>
 <li><code>element_name</code> If this exists this is an Angular expression that is set to the 'name' attribute of the html element</li>
 <li><code>style</code> The form style to render this widget with. Possible values are <code>['horizontal', 'vertical']</code>. Defaults to 'horizontal'</li>
+<li><code>rows</code> The number of rows in the textarea. Used to fill the html textarea row attribute. Defaults to 5.</li>
 </ul>
 <h4 id="inference-from-subrecord-fields">Inference from subrecord fields</h4>
 <p>A very common pattern is to render form fields that relate to fields of <code>Subrecords</code>. Template tags will use this to infer useful information. The display name will be set to the verbose_name and the the ng-model will be inferred.</p>

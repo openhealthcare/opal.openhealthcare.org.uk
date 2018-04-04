@@ -129,6 +129,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../guides/episodes/">Episodes</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../guides/archetypes/">Archetypes</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -201,11 +205,15 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../../guides/contributing/">Contributing</a> -->
+                <!--             <a href="../../guides/CONTRIBUTING/">Contributing</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../../guides/development_environment/">Development environment</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/releasing/">Releasing</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -282,6 +290,14 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../reference/core_lookuplists/">Lookuplists</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/core_discoverable/">Discoverable</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../reference/javascript/patient_service/">Patient service</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -338,7 +354,7 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../../reference/changelog/">Changelog</a> -->
+                <!--             <a href="../../reference/CHANGELOG/">Changelog</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -353,6 +369,10 @@
                 <!--             <a href="../../reference/upgrading/">Upgrading</a> -->
                 <!--         </li> -->
                 <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/management_commands/">Management commands</a> -->
+                <!--         </li> -->
+                <!--      -->
                 <!--     </ul> -->
                 <!-- </li> -->
             
@@ -362,8 +382,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.9.0" target="_blank">
-                  <i class="fa fa-github"></i> v0.9.0
+                <a href="https://github.com/openhealthcare/opal/tree/v0.10.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.10.0
                 </a>
               </li>
                 <!-- <li > -->
@@ -389,12 +409,65 @@
     
         <li class="main active"><a href="#customising-the-design-of-your-application">Customising the design of your application</a></li>
         
+            <li><a href="#changing-the-default-logo-and-favicon">Changing the default logo and favicon</a></li>
+        
+            <li><a href="#adding-your-own-css-file-to-change-the-default-colours-fonts-layouts-and-more">Adding your own CSS file to change the default colours, fonts, layouts and more</a></li>
+        
+            <li><a href="#key-overrides-and-a-sass-template-to-reset-key-colours">Key overrides and a .sass template to reset key colours</a></li>
+        
+            <li><a href="#changing-the-layout-of-the-application">Changing the layout of the application</a></li>
+        
+            <li><a href="#bundling-as-a-standalone-theme">Bundling as a standalone theme</a></li>
+        
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="customising-the-design-of-your-application">Customising the design of your application</h1></div>
+<h1 id="customising-the-design-of-your-application">Customising the design of your application</h1>
+<p>Tutorial WIP</p>
+<h2 id="changing-the-default-logo-and-favicon">Changing the default logo and favicon</h2>
+<p>We can change the logo and favicon of our application by changing settings.
+Create a logo and a favicon, place them in <code>./yourapp/static/img/</code> and then
+update the following settings:</p>
+<pre><code class="python"># ./yourapp/settings.py
+
+OPAL_FAVICON_PATH = 'img/yourapp.favicon.ico'
+OPAL_LOGO_PATH    = 'img/yourapp.logo.png'
+</code></pre>
+
+<p>Some platforms require favicons to be .ico format, however .png also works</p>
+<h2 id="adding-your-own-css-file-to-change-the-default-colours-fonts-layouts-and-more">Adding your own CSS file to change the default colours, fonts, layouts and more</h2>
+<p>To change the CSS used for the Opal interface, first create a CSS file with your custom application styling:</p>
+<pre><code class="css">/* ./yourapp/static/yourapp.css */
+body {
+  /*main text style*/
+  font-family: 'Franklin Gothic Book', Arial;
+}
+
+.bg-primary {
+  background-color: #25408F; }
+
+.bg-secondary {
+  background-color: #0084FF; }
+</code></pre>
+
+<p>Then include this CSS file in your Application definition:</p>
+<pre><code class="python"># ./yourapp/__init__.py
+class Application(application.OpalApplication):
+
+    styles = [
+        &quot;css/yourapp.css&quot;
+    ]
+</code></pre>
+
+<p>Many of the classes are standard Bootstrap CSS classes, which can be identified in the Bootstrap documentation, or via the inspector in your browser's developer tools.</p>
+<h2 id="key-overrides-and-a-sass-template-to-reset-key-colours">Key overrides and a .sass template to reset key colours</h2>
+<p>WIP</p>
+<h2 id="changing-the-layout-of-the-application">Changing the layout of the application</h2>
+<p>WIP</p>
+<h2 id="bundling-as-a-standalone-theme">Bundling as a standalone theme</h2>
+<p>WIP</p></div>
         </div>
 
         <footer class="col-md-12">

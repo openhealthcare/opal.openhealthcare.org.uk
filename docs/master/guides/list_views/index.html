@@ -129,6 +129,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../episodes/">Episodes</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../archetypes/">Archetypes</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -201,11 +205,15 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../contributing/">Contributing</a> -->
+                <!--             <a href="../CONTRIBUTING/">Contributing</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../development_environment/">Development environment</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../releasing/">Releasing</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -282,6 +290,14 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../reference/core_lookuplists/">Lookuplists</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/core_discoverable/">Discoverable</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../reference/javascript/patient_service/">Patient service</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -338,7 +354,7 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../../reference/changelog/">Changelog</a> -->
+                <!--             <a href="../../reference/CHANGELOG/">Changelog</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -353,6 +369,10 @@
                 <!--             <a href="../../reference/upgrading/">Upgrading</a> -->
                 <!--         </li> -->
                 <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/management_commands/">Management commands</a> -->
+                <!--         </li> -->
+                <!--      -->
                 <!--     </ul> -->
                 <!-- </li> -->
             
@@ -362,8 +382,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.9.0" target="_blank">
-                  <i class="fa fa-github"></i> v0.9.0
+                <a href="https://github.com/openhealthcare/opal/tree/v0.10.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.10.0
                 </a>
               </li>
                 <!-- <li > -->
@@ -401,8 +421,6 @@
         
             <li><a href="#slug">Slug</a></li>
         
-            <li><a href="#templates">Templates</a></li>
-        
             <li><a href="#tagged-patient-lists">Tagged Patient Lists</a></li>
         
             <li><a href="#invalid-tagged-patient-lists">Invalid Tagged Patient Lists</a></li>
@@ -427,10 +445,10 @@ and with a card based view.</p>
 <p>Opal patient lists are subclasses of <code>opal.core.patient_lists.PatientList</code>.</p>
 <p>Typically these are found in a <code>patient_lists.py</code> module of your application or plugin. (Lists <em>can</em> be
 defined elsewhere, but may not be auto discovered.)</p>
-<p>A basic list needs only define it's <code>display_name</code> a <code>queryset</code> of episodes to display, and
+<p>A basic list needs only define its <code>display_name</code> a <code>queryset</code> of episodes to display, and
 a <code>schema</code> of subrecords to show for each episode.</p>
 <pre><code># patient_lists.py
-from opal.models import Episore
+from opal.models import Episode
 from opal.core import patient_lists
 
 from myapplication import models
@@ -497,7 +515,6 @@ this order.</p>
 <h3 id="slug">Slug</h3>
 <p>As a <a href="../discoverable/">discoverable</a> feature, the slug for each list is determined by
 either setting the <code>slug</code> property, or returning a string from the <code>get_slug</code> classmethod.</p>
-<h3 id="templates">Templates</h3>
 <h3 id="tagged-patient-lists">Tagged Patient Lists</h3>
 <p>A common model for working with lists is to use lists based on the tags assigned to an episode.
 This allows users to add and remove patients from lists as they see fit, rather than attempting

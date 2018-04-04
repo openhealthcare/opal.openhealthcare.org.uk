@@ -96,6 +96,12 @@
     </url>
         
     <url>
+     <loc>None/guides/episodes/</loc>
+     <lastmod>2018-04-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>None/guides/archetypes/</loc>
      <lastmod>2018-04-04</lastmod>
      <changefreq>daily</changefreq>
@@ -204,13 +210,19 @@
     </url>
         
     <url>
-     <loc>None/guides/contributing/</loc>
+     <loc>None/guides/CONTRIBUTING/</loc>
      <lastmod>2018-04-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/guides/development_environment/</loc>
+     <lastmod>2018-04-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/guides/releasing/</loc>
      <lastmod>2018-04-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -316,6 +328,18 @@
     </url>
         
     <url>
+     <loc>None/reference/core_lookuplists/</loc>
+     <lastmod>2018-04-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/reference/core_discoverable/</loc>
+     <lastmod>2018-04-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>None/reference/javascript/patient_service/</loc>
      <lastmod>2018-04-04</lastmod>
      <changefreq>daily</changefreq>
@@ -400,7 +424,7 @@
     </url>
         
     <url>
-     <loc>None/reference/changelog/</loc>
+     <loc>None/reference/CHANGELOG/</loc>
      <lastmod>2018-04-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -419,6 +443,12 @@
         
     <url>
      <loc>None/reference/upgrading/</loc>
+     <lastmod>2018-04-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/reference/management_commands/</loc>
      <lastmod>2018-04-04</lastmod>
      <changefreq>daily</changefreq>
     </url>

@@ -129,6 +129,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../episodes/">Episodes</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../archetypes/">Archetypes</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -201,11 +205,15 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../contributing/">Contributing</a> -->
+                <!--             <a href="../CONTRIBUTING/">Contributing</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../development_environment/">Development environment</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../releasing/">Releasing</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -282,6 +290,14 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../reference/core_lookuplists/">Lookuplists</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/core_discoverable/">Discoverable</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../reference/javascript/patient_service/">Patient service</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -338,7 +354,7 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../../reference/changelog/">Changelog</a> -->
+                <!--             <a href="../../reference/CHANGELOG/">Changelog</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -353,6 +369,10 @@
                 <!--             <a href="../../reference/upgrading/">Upgrading</a> -->
                 <!--         </li> -->
                 <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/management_commands/">Management commands</a> -->
+                <!--         </li> -->
+                <!--      -->
                 <!--     </ul> -->
                 <!-- </li> -->
             
@@ -362,8 +382,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.9.0" target="_blank">
-                  <i class="fa fa-github"></i> v0.9.0
+                <a href="https://github.com/openhealthcare/opal/tree/v0.10.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.10.0
                 </a>
               </li>
                 <!-- <li > -->
@@ -425,7 +445,7 @@ working with complex forms.</p>
 <code>Subrecords</code> - which can be challenging with the <code>Subrecord forms</code>.</p>
 <p>The pathway provides Wizards, long multi-model forms, custom validation and much more,
 all usable either in full page or modal contexts.</p>
-<p>If you're new to using pathways you might like to go through the
+<p>If you're new to using pathways, you might like to go through the
 <a href="../../tutorials/pathway_tutorial/">Pathway tutorial</a>.</p>
 <blockquote><small>
 See the
@@ -457,7 +477,7 @@ class SimplePathway(pathway.PagePathway):
 lets the user create a patient with their demographics and past medical history</p>
 <h2 id="customising-steps">Customising Steps</h2>
 <p>When passed a model, a step will infer the details of form templates, display names et
-cetera from the subrecord. However a model is not requried - you can also pass arbitrary
+cetera from the subrecord. However a model is not required - you can also pass arbitrary
 chunks of html with the two required fields:</p>
 <pre><code class="python">Step(
   template=&quot;pathway/steps/my_step.html&quot;
@@ -511,7 +531,7 @@ class SimplePathway(pathway.Pathway):
     display_name = 'A simple pathway'
     slug         = 'simples'
     steps        = (
-        pathways.Step(model=models.Allergies, delete_others=True),
+        pathway.Step(model=models.Allergies, delete_others=True),
         models.Treatment,
         models.PastMedicalHistory
     )

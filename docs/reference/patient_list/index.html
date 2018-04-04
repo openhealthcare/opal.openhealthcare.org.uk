@@ -129,6 +129,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../guides/episodes/">Episodes</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../guides/archetypes/">Archetypes</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -201,11 +205,15 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../../guides/contributing/">Contributing</a> -->
+                <!--             <a href="../../guides/CONTRIBUTING/">Contributing</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../../guides/development_environment/">Development environment</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/releasing/">Releasing</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -282,6 +290,14 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../core_lookuplists/">Lookuplists</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../core_discoverable/">Discoverable</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../javascript/patient_service/">Patient service</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -338,7 +354,7 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../changelog/">Changelog</a> -->
+                <!--             <a href="../CHANGELOG/">Changelog</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -353,6 +369,10 @@
                 <!--             <a href="../upgrading/">Upgrading</a> -->
                 <!--         </li> -->
                 <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../management_commands/">Management commands</a> -->
+                <!--         </li> -->
+                <!--      -->
                 <!--     </ul> -->
                 <!-- </li> -->
             
@@ -362,8 +382,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.9.0" target="_blank">
-                  <i class="fa fa-github"></i> v0.9.0
+                <a href="https://github.com/openhealthcare/opal/tree/v0.10.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.10.0
                 </a>
               </li>
                 <!-- <li > -->
@@ -389,65 +409,93 @@
     
         <li class="main active"><a href="#opalcorepatient_lists">opal.core.patient_lists</a></li>
         
-            <li><a href="#patientlist">PatientList</a></li>
+            <li><a href="#class-opalcorepatient_listspatientlist">class opal.core.patient_lists.PatientList</a></li>
         
-            <li><a href="#taggedpatientlist">TaggedPatientList</a></li>
+            <li><a href="#class-taggedpatientlist">class TaggedPatientList</a></li>
         
-            <li><a href="#card-patient-list-template">Card Patient List Template</a></li>
+            <li><a href="#properties">Properties</a></li>
         
-            <li><a href="#table-patient-list-template">Table Patient list Template</a></li>
+            <li><a href="#class-tabbedpatientlistgroup">class TabbedPatientListGroup</a></li>
         
-            <li><a href="#tabbedpatientlistgroup">TabbedPatientListGroup</a></li>
+    
+        <li class="main "><a href="#built-in-patientlist-templates">Built-in PatientList Templates</a></li>
+        
+            <li><a href="#spreadsheet-patientlist-template">'Spreadsheet' PatientList Template</a></li>
+        
+            <li><a href="#card-patientlist-template">'Card' PatientList Template</a></li>
+        
+            <li><a href="#table-patientlist-template">'Table' PatientList Template</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="opalcorepatient_lists">opal.core.patient_lists</h1>
+<h2 id="opalcorepatient_lists">opal.core.patient_lists</h2>
 <p>The <code>patient_lists</code> module defines a number of classes for working with lists of patients.</p>
-<h2 id="patientlist">PatientList</h2>
-<p>...</p>
-<h3 id="properties">Properties</h3>
+<h3 id="class-opalcorepatient_listspatientlist">class opal.core.patient_lists.PatientList</h3>
+<h4 id="patientlistallow_add_patient">PatientList.allow_add_patient</h4>
+<p>Whether we should show the add patient button. Defaults to <code>True</code>.</p>
+<h4 id="patientlistallow_edit_teams">PatientList.allow_edit_teams</h4>
+<p>Whether we should allow the user to edit teams. Defaults to <code>True</code>.</p>
+<h4 id="patientlistcomparator_service">PatientList.comparator_service</h4>
+<p>A custom comparator service to set sort order within a list. Defaults to None.
+Further information on Comparators can be found in the <a href="../../guides/list_views/#customising-sort-order-of-episodes">Opal Guides</a> section.</p>
+<h4 id="patientlistdirect_add">PatientList.direct_add</h4>
+<p>Further information is available in the <a href="../../guides/list_views/#direct-add">Guides section</a>.</p>
 <h4 id="patientlistdisplay_name">PatientList.display_name</h4>
 <p>How we want to refer to this list on screen to users.</p>
-<h4 id="patientlistcomparator_service">PatientList.comparator_service</h4>
-<p>A custom comparator service to set sort order within a list. Defaults to None.</p>
-<h4 id="patientlistallow_add_patient">PatientList.allow_add_patient</h4>
-<p>Whether we should show the add patient button.</p>
-<p>Defaults to <code>True</code>.</p>
-<h4 id="patientlistallow_edit_teams">PatientList.allow_edit_teams</h4>
-<p>Whether we should allow the user to edit teams.</p>
-<p>Defaults to <code>True</code></p>
-<h2 id="taggedpatientlist">TaggedPatientList</h2>
-<p>Tagged Patient Lists inherit from Patient Lists - as such they have all of the same methods and properties
-of Patient Lists.</p>
-<h2 id="card-patient-list-template">Card Patient List Template</h2>
-<p>Change your patientlist template_name to "patient_lists/card_list.html".</p>
-<p>This will display the patient list as a series of 'cards', more analagous to a twitter stream than a spreadsheet like the default list.</p>
-<h2 id="table-patient-list-template">Table Patient list Template</h2>
-<p>Change your patientlist template_name to "patient_lists/card_list.html".</p>
-<p>This will display the patient list as a series of 'cards', more analagous to a twitter stream than a spreadsheet like the default list.</p>
-<h3 id="properties_1">Properties</h3>
+<h4 id="patientlistorder">PatientList.order</h4>
+<p>Passing an integer to <code>PatientList.order</code> will allow you to control the order of display of Patient Lists in dropdowns and other views. Further information is available in the <a href="../../guides/list_views/#ordering-lists">Guides section</a>.</p>
+<h4 id="patientlistqueryset">PatientList.queryset</h4>
+<p>Further information is available in the <a href="../../guides/list_views/#querysets">Guides section</a>.</p>
+<h4 id="patientlistschema">PatientList.schema</h4>
+<p>Further information is available in the <a href="../../guides/list_views/#schemas">Guides section</a>.</p>
+<h4 id="patientlistslug">PatientList.slug</h4>
+<p>Further information is available in the <a href="../../guides/list_views/#slug">Guides section</a>.</p>
+<h4 id="patientlisttemplate_name">PatientList.template_name</h4>
+<p>If you want to over-ride the default Patient List template <code>opal/templates/patient_list/spreadsheet.html</code> with a custom template, or set the Card or Table PatientList templates, you can specify the path of the custom template (relative to <code>/myapp/templates/</code>) in this property.</p>
+<pre><code class="python"># myapp/patient_lists.py
+
+class MyPatientList(PatientList):
+    template_name = 'my_layout.html'
+</code></pre>
+
+<p>Will look for a template at <code>/myapp/templates/my_layout.html</code>.</p>
+<h4 id="patientlistvisible_to">PatientList.visible_to</h4>
+<p>Further information is available in the <a href="../../guides/list_views/#access-control">Guides section</a>.</p>
+<h3 id="class-taggedpatientlist">class TaggedPatientList</h3>
+<p>Tagged Patient Lists inherit from Patient Lists - as such they have all of the same methods and properties of Patient Lists.</p>
+<h3 id="properties">Properties</h3>
 <h4 id="taggedpatientlisttag">TaggedPatientList.tag</h4>
-<p>The main, or parent tag for this list. Should be lowercase, with no numbers or dashes. Underscores are OK.</p>
+<p>The main, or parent tag for this list. Should be lowercase, with no numbers or dashes. Underscores are OK. Further information is available in the <a href="../../guides/list_views/#tagged-patient-lists">Guides section</a>.</p>
 <h4 id="taggedpatientlistsubtag">TaggedPatientList.subtag</h4>
 <p>The child tag for this list. Should be lowercase, with no numbers or dashes. Underscores are OK.</p>
-<h2 id="tabbedpatientlistgroup">TabbedPatientListGroup</h2>
-<p>Groups of Patient Lists to display as tabs at the top of any list in the group.</p>
-<h3 id="properties_2">Properties</h3>
+<h3 id="class-tabbedpatientlistgroup">class TabbedPatientListGroup</h3>
+<p>Groups Patient Lists together, to display as tabs at the top of any list in the group.
+<img alt="patientlist-tabbed-view" src="../../img/patientlist-tabbed-view.png" />.</p>
+<h4 id="tabbedpatientlistgroupfor_list">TabbedPatientListGroup.for_list</h4>
+<p>Returns the group for a given PatientList. Raises ValueError if not passed a PatientList.</p>
+<h4 id="tabbedpatientlistgroupget_member_lists">TabbedPatientListGroup.get_member_lists</h4>
+<p>A hook for dynamically customising the members of this list group. Returns an iterable of PatientLists. Defaults to the <code>.member_lists</code> property.</p>
+<h4 id="tabbedpatientlistgroupget_member_lists_for_user">TabbedPatientListGroup.get_member_lists_for_user</h4>
+<p>Returns an iterable of the visible member lists for a given user.</p>
 <h4 id="tabbedpatientlistgroupmember_lists">TabbedPatientListGroup.member_lists</h4>
 <p>A list containing the <code>PatientList</code> subclasses in this group.</p>
-<h3 id="classmethods">Classmethods</h3>
-<h4 id="tabbedpatientlistgroupfor_list">TabbedPatientListGroup.for_list</h4>
-<p>Returns the group for a given PatientList. Raises ValueError if not passed a PatientList</p>
-<h4 id="tabbedpatientlistgroupget_member_lists">TabbedPatientListGroup.get_member_lists</h4>
-<p>A hook for dynamically customising the members of this list group.</p>
-<p>Returns an iterable of PatientLists. Defaults to the <code>.member_lists</code> property</p>
-<h4 id="tabbedpatientlistgroupget_member_lists_for_user">TabbedPatientListGroup.get_member_lists_for_user</h4>
-<p>Returns an iterable of the visible member lists for a given USER</p>
 <h4 id="tabbedpatientlistgroupvisible_to">TabbedPatientListGroup.visible_to</h4>
-<p>Predicate function to determine whether this list is meaningfully visible to this USER</p></div>
+<p>Predicate function to determine whether this list is meaningfully visible to this user.</p>
+<h2 id="built-in-patientlist-templates">Built-in PatientList Templates</h2>
+<h3 id="spreadsheet-patientlist-template">'Spreadsheet' PatientList Template</h3>
+<p>This is the default template, which gives you a 'spreadsheet'-like view of the patient list, with the standard Opal sidebar, containing the default demographic info, tags and action tools.</p>
+<p><img alt="patientlist-spreadsheet-template" src="../../img/patientlist-spreadsheet-template.png" /></p>
+<h3 id="card-patientlist-template">'Card' PatientList Template</h3>
+<p>This will display the patient list as a series of 'cards', more analogous to a Twitter stream than the spreadsheet-like appearance of the default list.</p>
+<p><img alt="patientlist-card-template" src="../../img/patientlist-card-template.png" /></p>
+<p>To use this layout, change your PatientList <code>template_name</code> to "patient_lists/layouts/card_list.html".</p>
+<h3 id="table-patientlist-template">'Table' PatientList Template</h3>
+<p>This will display the patient list as a wide 'table', similar to the spreadsheet-like appearance of the default list, but without the sidebar.</p>
+<p><img alt="patientlist-table-template" src="../../img/patientlist-table-template.png" /></p>
+<p>To use, just change your PatientList <code>template_name</code> to "patient_lists/layouts/table_list.html".</p></div>
         </div>
 
         <footer class="col-md-12">

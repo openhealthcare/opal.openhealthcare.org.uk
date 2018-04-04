@@ -129,6 +129,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../guides/episodes/">Episodes</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../guides/archetypes/">Archetypes</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -201,11 +205,15 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../../guides/contributing/">Contributing</a> -->
+                <!--             <a href="../../guides/CONTRIBUTING/">Contributing</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../../guides/development_environment/">Development environment</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/releasing/">Releasing</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -282,6 +290,14 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../core_lookuplists/">Lookuplists</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../core_discoverable/">Discoverable</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../javascript/patient_service/">Patient service</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -338,7 +354,7 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../changelog/">Changelog</a> -->
+                <!--             <a href="../CHANGELOG/">Changelog</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li class="active"> -->
@@ -353,6 +369,10 @@
                 <!--             <a href="../upgrading/">Upgrading</a> -->
                 <!--         </li> -->
                 <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../management_commands/">Management commands</a> -->
+                <!--         </li> -->
+                <!--      -->
                 <!--     </ul> -->
                 <!-- </li> -->
             
@@ -362,12 +382,12 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.9.0" target="_blank">
-                  <i class="fa fa-github"></i> v0.9.0
+                <a href="https://github.com/openhealthcare/opal/tree/v0.10.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.10.0
                 </a>
               </li>
                 <!-- <li > -->
-                <!--     <a rel="next" href="../changelog/"> -->
+                <!--     <a rel="next" href="../CHANGELOG/"> -->
                 <!--         <i class="fa fa-arrow-left"></i> Previous -->
                 <!--     </a> -->
                 <!-- </li> -->
@@ -411,13 +431,13 @@
 <p>Built on top of Django and Angular, Opal applications have great support for automated testing.</p>
 <p>Opal provides some utilities to make testing your application even easier.</p>
 <h2 id="command-line-test-runner">Command Line test runner</h2>
-<p>The <code>opal</code> command line tool has a <code>test</code> command which will run unittests for both the server and client
-side components of your application.</p>
+<p>The <code>opal</code> command line tool has a <code>test</code> command which will run unittests for both the server
+and client side components of your application.</p>
 <h2 id="javascript-testing">Javascript testing</h2>
 <p>By default, we recommend using Jasmine and Karma to test your javascript code.
 <blockquote><small>
-Of course you can use any test framework you choose, although Opal doesn't currently ship with helpers
-for any other frameworks.
+Of course you can use any test framework you choose, although Opal doesn't currently ship with
+helpers for any other frameworks.
 </small></blockquote></p>
 <h3 id="installing-javascript-testing-tools">Installing javascript testing tools</h3>
 <p>To installing Karma, Jasmine and Phantomjs in a local directory:</p>
@@ -447,11 +467,13 @@ module.exports = function(config){
 <p>If run from opal test js, we set the path to opal as an env variable called
 OPAL_LOCATION</p>
 <h2 id="test-coverage">Test Coverage</h2>
-<p>The Opal test runner has a <code>-c</code> option which runs coverage reports for both Python and Javascript code:</p>
+<p>The Opal test runner has a <code>-c</code> option which runs coverage reports for both Python and
+Javascript code:</p>
 <pre><code class="bash">opal test -c
 </code></pre>
 
-<p>Python test coverage uses the <code>coverage</code> tool and you may want to set include/excludes in a <code>.coveragerc</code>.</p>
+<p>Python test coverage uses the <code>coverage</code> tool and you may want to set include/excludes in
+a <code>.coveragerc</code>.</p>
 <p>Javascript test files to be reported on should be passed as an extra argument to <code>karmaDefaults</code>:</p>
 <pre><code class="js">  var coverageFiles = [
      ...
@@ -459,7 +481,8 @@ OPAL_LOCATION</p>
   var defaultConfig = karmaDefaults(includedFiles, baseDir, coverageFiles);
 </code></pre>
 
-<p>HTML test coverage reports will be output to the directory <code>htmlcov</code> and <code>htmlcov/js</code> at the root of your application.</p></div>
+<p>HTML test coverage reports will be output to the directory <code>htmlcov</code> and <code>htmlcov/js</code> at the
+root of your application.</p></div>
         </div>
 
         <footer class="col-md-12">

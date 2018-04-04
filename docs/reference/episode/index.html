@@ -129,6 +129,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../guides/episodes/">Episodes</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../guides/archetypes/">Archetypes</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -201,11 +205,15 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../../guides/contributing/">Contributing</a> -->
+                <!--             <a href="../../guides/CONTRIBUTING/">Contributing</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../../guides/development_environment/">Development environment</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/releasing/">Releasing</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -282,6 +290,14 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../core_lookuplists/">Lookuplists</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../core_discoverable/">Discoverable</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../javascript/patient_service/">Patient service</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -338,7 +354,7 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../changelog/">Changelog</a> -->
+                <!--             <a href="../CHANGELOG/">Changelog</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -353,6 +369,10 @@
                 <!--             <a href="../upgrading/">Upgrading</a> -->
                 <!--         </li> -->
                 <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../management_commands/">Management commands</a> -->
+                <!--         </li> -->
+                <!--      -->
                 <!--     </ul> -->
                 <!-- </li> -->
             
@@ -362,8 +382,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.9.0" target="_blank">
-                  <i class="fa fa-github"></i> v0.9.0
+                <a href="https://github.com/openhealthcare/opal/tree/v0.10.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.10.0
                 </a>
               </li>
                 <!-- <li > -->
@@ -402,28 +422,28 @@
 </div></div>
             <div class="col-md-9" role="main">
 
-<h2 id="opalmodelsepisode">opal.models.Episode</h2>
-<p>The <code>opal.models.Episode</code> class represents an episode of care for a patient. This can be either
-an inpatient stay, an outpatient treatment, a telephone liaison, an appointment at a clinic,
-or any other arbitrarily defined period of care.</p>
-<h3 id="fields">Fields</h3>
-<h4 id="episodecategory">Episode.category</h4>
-<p>The category of this episode - e.g. inpatient, outpatient et cetera.
+<h1 id="opalmodelsepisode">opal.models.Episode</h1>
+<p>The <code>opal.models.Episode</code> class represents an episode of care for a patient.
+This can be either an inpatient stay, an outpatient treatment, a telephone
+liaison, an appointment at a clinic, or any other arbitrarily defined period of care.</p>
+<h2 id="fields">Fields</h2>
+<h3 id="episodecategory">Episode.category</h3>
+<p>The <a href="../episode_categories">category</a> of this episode - e.g. inpatient, outpatient et cetera.
 This defaults to whatever is set on your application's subclass of
 <code>opal.core.application.OpalApplication</code> - which itself defaults to 'inpatient'.</p>
-<h4 id="episodepatient">Episode.patient</h4>
+<h3 id="episodepatient">Episode.patient</h3>
 <p>A foreign key relationship to the patient for whom this episode concerns.</p>
-<h4 id="episodeactive">Episode.active</h4>
+<h3 id="episodeactive">Episode.active</h3>
 <p>A boolean to provide a quick lookup for whether this is an active or closed episode.</p>
-<h4 id="episodestart">Episode.start</h4>
+<h3 id="episodestart">Episode.start</h3>
 <p>This should be the start of the episode. If this is an inpatient episode, the date of admission.</p>
-<h4 id="episodeend">Episode.end</h4>
+<h3 id="episodeend">Episode.end</h3>
 <p>This should be the end of the episode. If this is an inpatient episode, the date of discharge.</p>
-<h4 id="episodeconsistency_token">Episode.consistency_token</h4>
+<h3 id="episodeconsistency_token">Episode.consistency_token</h3>
 <p>A (automatically generated) hash of the above fields. This is used for detecting concurrent edits.</p>
-<h3 id="methods">Methods</h3>
+<h2 id="methods">Methods</h2>
 <p>The Episode model has the following methods:</p>
-<h4 id="episodeto_dict">Episode.to_dict</h4>
+<h3 id="episodeto_dict">Episode.to_dict</h3>
 <p>Return a dictionary of field value pairs for this episode</p>
 <pre><code>episode.to_dict(user)
 </code></pre>
@@ -436,7 +456,7 @@ This defaults to whatever is set on your application's subclass of
 <li><code>shallow</code> Boolean to indicate whether we want just this episode, or also a sorted set of
 previous and subsequent episodes</li>
 </ul>
-<h4 id="episodeget_tag_names">Episode.get_tag_names</h4>
+<h3 id="episodeget_tag_namesuser">Episode.get_tag_names(user)</h3>
 <p>Arguments:</p>
 <ul>
 <li><code>user</code> The user for whom we want the tag names.</li>
@@ -445,18 +465,37 @@ previous and subsequent episodes</li>
 <pre><code>episode.get_tag_names(user)
 # ['mine', 'infectioncontrol']
 </code></pre>
-<h4 id="episodeset_tag_names">Episode.set_tag_names</h4>
+<h3 id="episodeset_tag_namestag_names-user">Episode.set_tag_names(tag_names, user)</h3>
 <p>Arguments:</p>
 <ul>
 <li><code>tag_names</code> The list of tags that we want to be active for this Episode.</li>
 <li><code>user</code> The user for whom we want the tag names.</li>
 </ul>
-<p>Return the current active tag names for this Episode as strings.</p>
-<pre><code>episode.set_tag_names(['mine', 'infectioncontrol'], user)
+<p>Set tags for this Episode.</p>
+<pre><code class="python">episode.set_tag_names(['mine', 'infectioncontrol'], user)
 </code></pre>
-<h3 id="manager">Manager</h3>
+
+<h3 id="episodeset_tag_names_from_tagging_dicttagging_dict-user">Episode.set_tag_names_from_tagging_dict(tagging_dict, user)</h3>
+<p>Arguments:</p>
+<ul>
+<li><code>tagging_dict</code> The dictionary of {tag_name: boolean} tags to set</li>
+<li><code>user</code> The user for whom we want the tag names.</li>
+</ul>
+<p>Set tags for this Episode.</p>
+<pre><code class="python">episode.set_tag_names_from_tagging_dict({'inpatient': True}, user)
+</code></pre>
+
+<h3 id="episodeset_stagestage-user-data">Episode.set_stage(stage, user, data)</h3>
+<p>Setter function for episode stage. Will validate that the stage given is
+valid for the current <code>EpisodeCategory</code> and raise <code>ValueError</code> if it is invalid.</p>
+<pre><code class="python">episode.set_stage('Discharged', user, {})
+episode.stage
+# -&gt; 'Discharged'
+</code></pre>
+
+<h2 id="manager">Manager</h2>
 <p>The custom manager for Episodes has the following methods:</p>
-<h4 id="episodeobjectsserialised">Episode.objects.serialised()</h4>
+<h3 id="episodeobjectsserialised">Episode.objects.serialised()</h3>
 <p>Return a set of serialised episodes.</p>
 <pre><code>Episode.objects.serialised(User, [episode, ...], historic_tags=False)
 </code></pre>
@@ -470,9 +509,9 @@ previous and subsequent episodes</li>
 <li><code>historic_tags</code> A boolean to indicate whether the user desires historic or just current tags to
 be serialised</li>
 </ul>
-<h4 id="episodeobjectssearch">Episode.objects.search</h4>
+<h3 id="episodeobjectssearch">Episode.objects.search</h3>
 <p>As a useful utility, the episode manager has a search method that will search on first name, last name and/or hospital number, under the hood it uses <a href="../patient/#patientobjectssearch">Patient search</a></p>
-<h3 id="opalcoreapiepisodeviewset">opal.core.api.EpisodeViewSet</h3>
+<h2 id="opalcoreapiepisodeviewset">opal.core.api.EpisodeViewSet</h2>
 <p>Gives you an api for create/update/list/retrieve apis for episodes. Its recommended that you use <a href="../patient_list/">opal.core.patient_lists</a> rather than the list api, as this gives you more flexibility.</p>
 <p>The Create api accepts {
     demographics: {{ a serialised demographics model }},

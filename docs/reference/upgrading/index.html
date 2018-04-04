@@ -129,6 +129,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../guides/episodes/">Episodes</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../guides/archetypes/">Archetypes</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -201,11 +205,15 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../../guides/contributing/">Contributing</a> -->
+                <!--             <a href="../../guides/CONTRIBUTING/">Contributing</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../../guides/development_environment/">Development environment</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../guides/releasing/">Releasing</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -282,6 +290,14 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../core_lookuplists/">Lookuplists</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../core_discoverable/">Discoverable</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../javascript/patient_service/">Patient service</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -338,7 +354,7 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../changelog/">Changelog</a> -->
+                <!--             <a href="../CHANGELOG/">Changelog</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -353,6 +369,10 @@
                 <!--             <a href="./">Upgrading</a> -->
                 <!--         </li> -->
                 <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../management_commands/">Management commands</a> -->
+                <!--         </li> -->
+                <!--      -->
                 <!--     </ul> -->
                 <!-- </li> -->
             
@@ -362,8 +382,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.9.0" target="_blank">
-                  <i class="fa fa-github"></i> v0.9.0
+                <a href="https://github.com/openhealthcare/opal/tree/v0.10.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.10.0
                 </a>
               </li>
                 <!-- <li > -->
@@ -371,8 +391,8 @@
                 <!--         <i class="fa fa-arrow-left"></i> Previous -->
                 <!--     </a> -->
                 <!-- </li> -->
-                <!-- <li class="disabled"> -->
-                <!--     <a rel="prev" > -->
+                <!-- <li > -->
+                <!--     <a rel="prev" href="../management_commands/"> -->
                 <!--         Next <i class="fa fa-arrow-right"></i> -->
                 <!--     </a> -->
                 <!-- </li> -->
@@ -388,6 +408,10 @@
     <ul class="nav bs-sidenav">
     
         <li class="main active"><a href="#upgrading-your-opal-application">Upgrading Your Opal Application</a></li>
+        
+            <li><a href="#091-0100">0.9.1 -&gt; 0.10.0</a></li>
+        
+            <li><a href="#090-091">0.9.0 -&gt; 0.9.1</a></li>
         
             <li><a href="#083-090">0.8.3 -&gt; 0.9.0</a></li>
         
@@ -415,9 +439,93 @@
 <h2 id="upgrading-your-opal-application">Upgrading Your Opal Application</h2>
 <p>This document provides instructions for specific steps required to upgrading your Opal
 application to a later version where there are extra steps required.</p>
+<h3 id="091-0100">0.9.1 -&gt; 0.10.0</h3>
+<h4 id="upgrading-opal">Upgrading Opal</h4>
+<p>How you do this depends on how you have configured your application. You will need to
+update both the Opal version, and versions of dependencies upgraded dependencies if
+you have specified them in for instance, a requirements.txt.</p>
+<p>(This will be the case if you use the requirements.txt originally provided by
+<code>opal startproject</code>)</p>
+<pre><code># requirements.txt
+django==1.10.8
+django-reversion==1.10.2
+djangorestframework==3.4.7
+psycopg==2.7
+ffs==0.0.8.2
+opal==0.10.0
+requests==2.18.4
+django-celery==3.2.2
+celery==3.1.25
+</code></pre>
+<p>After re-installing (via for instance <code>pip install -r requirements.txt</code>) you will
+likely need to make some changes to your application code to fix errors that arise as
+a result of upstream breaking changes.</p>
+<h5 id="breaking-changes-from-dependencies">Breaking changes from dependencies</h5>
+<p>The jump in Django versions introduces some breaking changes. Some common problems are
+outlined here.</p>
+<p><em>Early imports of models</em></p>
+<p>Importing models in a package <strong>init</strong>.py file is no longer allowed - if you see
+<code>django.core.exceptions.AppRegistryNotReady</code> this is the likely cause.</p>
+<p><em>Django reversion</em></p>
+<p>Reversion has reorganized its package structure to avoid importing models.
+Specifically:</p>
+<pre><code class="python"># Old-style import for accessing the admin class.
+import reversion
+# New-style import for accesssing admin class.
+from reversion.admin import VersionAdmin
+
+# Old-style import for accessing the low-level API.
+import reversion
+# New-style import for accesssing the low-level API.
+from reversion import revisions as reversion
+</code></pre>
+
+<p>You should examine your <code>admin.py</code> to see whether you do this.</p>
+<p><em>Urlpatterns</em></p>
+<p><code>django.conf.urls.patterns</code> is now removed rather than deprecated. The default urlconfs
+generated by older Opal versions use them, but these should now be replaced with lists.</p>
+<p><em>TEMPLATES setting</em></p>
+<p>You will need to convert to the new style TEMPLATES-* dictionary-style configuration in settings.py. Details are in the <a href="https://docs.djangoproject.com/en/1.10/ref/templates/upgrading/#the-templates-settings">relevant section of the Django documentation</a>. Note that Django's own context processors have moved from <code>django.core</code> to <code>django.template</code>.</p>
+<p><em>AUTOCOMPLETE_SEARCH setting</em></p>
+<p>The (previously undocumented) setting <code>AUTOCOMPLETE_SEARCH</code> has been renamed to
+<code>OPAL_AUTOCOMPLETE_SEARCH</code> to match other Opal settings. Update your <code>settings.py</code>
+to the new setting name if you had enabled this feature.</p>
+<h5 id="migrations">Migrations</h5>
+<p>You will need to run the migrations for Opal 0.10.0</p>
+<pre><code>$ python manage.py migrate opal
+</code></pre>
+<p>As Opal 0.10.0 contains changes to the cascading deletion behaviour of subrecords, you will
+need to run a makemigrations command to update your subrecords.</p>
+<pre><code>python manage.py makemigrations yourapp
+python manage.py migrate yourapp
+</code></pre>
+<h5 id="loginrequiredmixin">LoginRequiredMixin</h5>
+<p>Django now ships with <code>django.contrib.auth.mixins.LoginRequiredMixin</code>. Accordingly we have
+removed <code>opal.core.views.LoginRequiredMixin</code>. A direct switch to the Django class should
+work seamlessly without any functional differences.</p>
+<h5 id="csrf_failure_view">CSRF_FAILURE_VIEW</h5>
+<p>We now ship the <code>opal.views.csrf_failure</code> view which can be enabled by adding
+<code>CSRF_FAILURE_VIEW = 'opal.views.csrf_failure'</code> in your settings.py. This will
+redirect a user to their intended destination on a CSRF failure. This mitigates
+an edge case where an unauthenticated user opens two pages at the same time.
+Both pages will get redirected to the login form and whichever page the user
+logs into second will throw a CSRF failure because Django invalidates CSRF
+tokens on login.</p>
+<h3 id="090-091">0.9.0 -&gt; 0.9.1</h3>
+<h4 id="upgrading-opal_1">Upgrading Opal</h4>
+<p>How you do this depends on how you have configured your application, but updating your
+requirements.txt to update the version should work.</p>
+<pre><code># requirements.txt
+opal==0.9.1
+</code></pre>
+<p>After re-installing (via for instance <code>pip install -r requirements.txt</code>) you will need to
+run the migrations for Opal 0.9.1</p>
+<pre><code>$ python manage.py migrate opal
+</code></pre>
 <h3 id="083-090">0.8.3 -&gt; 0.9.0</h3>
-<p>episode.date_of_episode, episode.date_of_admission, episode.discharge_date are all deprecated.</p>
-<p>Instead we use episode.start and episode.end, for episode.date_of_episode, these are the same.</p>
+<p><code>episode.date_of_episode</code>, <code>episode.date_of_admission</code> and <code>episode.discharge_date</code> are all deprecated.</p>
+<p>We now expect episodes to use <code>episode.start</code> and <code>episode.end</code>. You should search your codebase for any
+instances where the three variables are used and switch to the start/end properties.</p>
 <h3 id="082-083">0.8.2 -&gt; 0.8.3</h3>
 <p>No changes.</p>
 <h3 id="081-082">0.8.1 -&gt; 0.8.2</h3>
@@ -425,9 +533,9 @@ application to a later version where there are extra steps required.</p>
 application subclasses, now consists of the new <code>opal.core.menus.MenuItem</code> class, enabling
 enhanced customisation and flexibility.</p>
 <p>If you previously were adding Menu Items with the dictionary format. These should be
-coverted to use a <code>MenuItem</code> class.</p>
+converted to use a <code>MenuItem</code> class.</p>
 <h3 id="080-081">0.8.0 -&gt; 0.8.1</h3>
-<h4 id="upgrading-opal">Upgrading Opal</h4>
+<h4 id="upgrading-opal_2">Upgrading Opal</h4>
 <p>How you do this depends on how you have configured your application, but updating your
 requirements.txt to update the version should work.</p>
 <pre><code># requirements.txt
@@ -446,7 +554,7 @@ to retain this functionality may copy the controller from the v0.7.1 branch
 that this flow has proven to be problematic and confusing for users whenever
 used - hence the removal.</p>
 <h3 id="071-080">0.7.1 -&gt; 0.8.0</h3>
-<h4 id="upgrading-opal_1">Upgrading Opal</h4>
+<h4 id="upgrading-opal_3">Upgrading Opal</h4>
 <p>How you do this depends on how you have configured your application, but updating your
 requirements.txt to update the version should work.</p>
 <pre><code># requirements.txt
@@ -503,7 +611,7 @@ REST_FRAMEWORK = {
 </code></pre>
 
 <h3 id="6x-7x">6.x -&gt; 7.x</h3>
-<h4 id="upgrading-opal_2">Upgrading Opal</h4>
+<h4 id="upgrading-opal_4">Upgrading Opal</h4>
 <p>How you do this depends on how you have configured your application, but updating your
 requirements.txt to update the version should work.</p>
 <pre><code># requirements.txt
@@ -544,7 +652,7 @@ here should be relatively painless.</p>
 <code>{% date_of_birth_field %}</code> templatetag in the forms library. You should update any forms
 to use this new tag.</p>
 <h3 id="5x-6x">5.x -&gt; 6.x</h3>
-<h4 id="upgrading-opal_3">Upgrading Opal</h4>
+<h4 id="upgrading-opal_5">Upgrading Opal</h4>
 <p>How you do this depends on how you have configured your application, but updating your
 requirements.txt to update the version should work.</p>
 <pre><code># requirements.txt
@@ -648,7 +756,7 @@ See the documentation for information about setting up custom flows. At a minimu
 that use custom flows will have to implement their own flow service and reference it in their
 settings.</p>
 <h3 id="4x-5x">4.X -&gt; 5.x</h3>
-<h4 id="migrations">Migrations</h4>
+<h4 id="migrations_1">Migrations</h4>
 <p>Before upgrading from 4.x to 5.x you should ensure that you have upgraded from South
 to Djangomigrations.</p>
 <pre><code>$ rm yourapp/migrations/*
@@ -662,7 +770,7 @@ requirements.txt to update the version should work. This will also update FFS an
 Axes as well as adding Python Dateutil.</p>
 <pre><code>-e git://github.com/openhealthcare/opal.git@v0.5.6#egg=opal
 </code></pre>
-<h4 id="migrations_1">Migrations.</h4>
+<h4 id="migrations_2">Migrations.</h4>
 <p>Opal has fresh migrations in 0.5.x, which we should run. There are also changes to the
 base abstract model classes (to add created/updated timestamps) so you'll need to create
 fresh migrations for your own application.</p>

@@ -129,6 +129,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../episodes/">Episodes</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../archetypes/">Archetypes</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -201,11 +205,15 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../contributing/">Contributing</a> -->
+                <!--             <a href="../CONTRIBUTING/">Contributing</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../development_environment/">Development environment</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../releasing/">Releasing</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -282,6 +290,14 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../reference/core_lookuplists/">Lookuplists</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/core_discoverable/">Discoverable</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../reference/javascript/patient_service/">Patient service</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -338,7 +354,7 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../../reference/changelog/">Changelog</a> -->
+                <!--             <a href="../../reference/CHANGELOG/">Changelog</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -353,6 +369,10 @@
                 <!--             <a href="../../reference/upgrading/">Upgrading</a> -->
                 <!--         </li> -->
                 <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/management_commands/">Management commands</a> -->
+                <!--         </li> -->
+                <!--      -->
                 <!--     </ul> -->
                 <!-- </li> -->
             
@@ -362,8 +382,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.9.0" target="_blank">
-                  <i class="fa fa-github"></i> v0.9.0
+                <a href="https://github.com/openhealthcare/opal/tree/v0.10.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.10.0
                 </a>
               </li>
                 <!-- <li > -->
@@ -454,9 +474,9 @@ MyFeature.get('red_feature') # -&gt; RedFeature
 <p>We can make our feature sortable via an <code>order</code> property by including
  <code>discoverable.SortableFeature</code> as a parent class. This will ensure that <code>MyFeature.list()</code>
  respects the <code>.order</code> number of any subclass.</p>
-<pre><code>class MyFeature(discoverable.DiscoverableFeature,
-                 discoverable.SortableFeature):
-     module_name = 'myfeature'
+<pre><code class="python">class MyFeature(discoverable.DiscoverableFeature,
+                discoverable.SortableFeature):
+    module_name = 'myfeature'
 
 class ThirdFeature(MyFeature):
     order = 3
@@ -468,12 +488,13 @@ class SecondFeature(MyFeature):
     order = 2
 
 for f in MyFeature.list():
-    print f.order, f
+    print f, f.order
 
 # &lt;class '*.*.FirstFeature'&gt;, 1
 # &lt;class '*.*.SecondFeature'&gt;, 2
 # &lt;class '*.*.ThirdFeature'&gt;, 3
 </code></pre>
+
 <h3 id="restrictable-features">Restrictable Features</h3>
 <p>We can ensure that only particular users can access a feature by including
  <code>discoverable.RestrictableFeature</code> as a parent class, and implementing the <code>visible_to</code>

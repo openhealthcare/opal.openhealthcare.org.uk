@@ -129,6 +129,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../episodes/">Episodes</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../archetypes/">Archetypes</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -201,11 +205,15 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../contributing/">Contributing</a> -->
+                <!--             <a href="../CONTRIBUTING/">Contributing</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../development_environment/">Development environment</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../releasing/">Releasing</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -282,6 +290,14 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../reference/core_lookuplists/">Lookuplists</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/core_discoverable/">Discoverable</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../reference/javascript/patient_service/">Patient service</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -338,7 +354,7 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../../reference/changelog/">Changelog</a> -->
+                <!--             <a href="../../reference/CHANGELOG/">Changelog</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -353,6 +369,10 @@
                 <!--             <a href="../../reference/upgrading/">Upgrading</a> -->
                 <!--         </li> -->
                 <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/management_commands/">Management commands</a> -->
+                <!--         </li> -->
+                <!--      -->
                 <!--     </ul> -->
                 <!-- </li> -->
             
@@ -362,8 +382,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.9.0" target="_blank">
-                  <i class="fa fa-github"></i> v0.9.0
+                <a href="https://github.com/openhealthcare/opal/tree/v0.10.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.10.0
                 </a>
               </li>
                 <!-- <li > -->
@@ -389,6 +409,8 @@
     
         <li class="main active"><a href="#reference-data">Reference data</a></li>
         
+            <li><a href="#core-referencedata">Core referencedata</a></li>
+        
             <li><a href="#adding-a-lookup-list">Adding a lookup list</a></li>
         
             <li><a href="#reference-data-json-api">Reference data JSON API</a></li>
@@ -406,10 +428,14 @@
 </div></div>
             <div class="col-md-9" role="main">
 
-<h2 id="reference-data">Reference data</h2>
+<h1 id="reference-data">Reference data</h1>
 <p>Lookup Lists allow us to create or reference canonical lists of available terminology as a
 foreign key, while also allowing synonymous terms, and a free text override.</p>
-<h3 id="adding-a-lookup-list">Adding a lookup list</h3>
+<h2 id="core-referencedata">Core referencedata</h2>
+<p>By default, Opal will install some lookuplists for common things such as countries, drugs,
+conditions, and symptoms amongst others. The data for these is found in the
+<code>opal.core.referencedata</code> package.</p>
+<h2 id="adding-a-lookup-list">Adding a lookup list</h2>
 <p>Lookup lists are subclasses of <code>opal.core.lookuplists.LookupList</code>. Typically, a specific named
 lookup list will not need to do anything other than define a class that inherits from the base
 class.</p>
@@ -436,13 +462,13 @@ $ python manage.py migrate yourapp
 </code></pre>
 
 <p>The lookup list will automatically be added to the admin, where you can manually add entries.</p>
-<h3 id="reference-data-json-api">Reference data JSON API</h3>
+<h2 id="reference-data-json-api">Reference data JSON API</h2>
 <p>Reference data is available over the Opal JSON API.</p>
 <p>You may either load all lookuplists at once via the <code>/api/v0.1/referencedata/</code> endpoint, or
 individual lookuplists by name - for example all diagnoses from <code>/api/v0.1/referencedata/diagnosis/</code>.</p>
 <p>The reference data API also loads all synonyms in a flat list - the conversion of synonyms to their
 canonical form is handled by the save mechanism of subrecords using <code>ForeignKeyOrFreeText</code> fields.</p>
-<h3 id="working-with-reference-data-on-the-front-end">Working with reference data on the front end</h3>
+<h2 id="working-with-reference-data-on-the-front-end">Working with reference data on the front end</h2>
 <p>The Angular service <code>Referencedata</code> can be used to fetch all lookuplists at once - for instance
 loaded in the Angular routing for a controller in your application</p>
 <pre><code class="javascript">when('/my/route', {
@@ -454,7 +480,7 @@ loaded in the Angular routing for a controller in your application</p>
 </code></pre>
 
 <p>Lookuplists will then be available either as properties of the <code>referencedata</code> object.</p>
-<h3 id="using-referencedata-in-forms">Using referencedata in forms</h3>
+<h2 id="using-referencedata-in-forms">Using referencedata in forms</h2>
 <p>The Opal <a href="../../reference/form_templatetags/">form templatetag library</a> allow us to easily incorporate
 referencedata into the forms we build, either by detecting their use automatically when we have
 <code>ForeignKeyOrFreeText</code> fields, or explicitly by passing an argument.</p>
@@ -463,10 +489,11 @@ referencedata into the forms we build, either by detecting their use automatical
 {% select label=&quot;List of Conditions&quot; lookuplist=&quot;referencedata.diagnosis&quot; %}
 </code></pre>
 
-<h3 id="providing-data-for-lookuplists">Providing data for lookuplists</h3>
+<h2 id="providing-data-for-lookuplists">Providing data for lookuplists</h2>
 <p>Reference data can be provided at application or plugin level in a file named <code>lookuplists.json</code> found in the
 <code>{{ app_or_plugin }}/data/lookuplists</code> directory. This data should be in the Opal JSON format. The name value
-of each lookuplist should be the return value of that lookuplist's <code>get_api_name()</code> method (otherwise they will fail to load), these can be found via <a href="../../reference/schemas/">Schemas</a></p>
+of each lookuplist should be the return value of that lookuplist's <code>get_api_name()</code> method (otherwise they
+will fail to load), these can be found via <a href="../../reference/schemas/">Schemas</a></p>
 <pre><code class="JSON">{
     &quot;name_of_lookuplist&quot;: [
         {
@@ -482,15 +509,18 @@ of each lookuplist should be the return value of that lookuplist's <code>get_api
 <pre><code class="bash">python manage.py load_lookup_lists
 </code></pre>
 
-<h3 id="management-commands">Management commands</h3>
+<h2 id="management-commands">Management commands</h2>
 <p>Opal ships with some management commands for importing and exporting lookup lists</p>
-<h4 id="dump_lookup_lists">dump_lookup_lists</h4>
+<h3 id="dump_lookup_lists">dump_lookup_lists</h3>
 <p>Prints all loockuplists as JSON to stdout.</p>
-<h4 id="load_lookup_lists">load_lookup_lists</h4>
-<p>Loads lookup lists from all plugins/apps in the Opal JSON format. The lookup lists are expected to be in
-<code>{{ app }}/data/lookuplists/lookuplists.json</code></p>
+<p>When the <code>--many-files</code> argument is passd, the command will write each installed
+lookup list to a separate file in the <code>./data/lookuplists</code> directory of the
+application.</p>
+<h3 id="load_lookup_lists">load_lookup_lists</h3>
+<p>Loads lookup lists from all plugins/apps in the Opal JSON format. The lookup
+lists are expected to be in <code>{{ app }}/data/lookuplists/lookuplists.json</code></p>
 <p>Optionally you can pass in an explicit filename with the <code>-f</code> argument.</p>
-<h4 id="delete_all_lookup_lists">delete_all_lookup_lists</h4>
+<h3 id="delete_all_lookup_lists">delete_all_lookup_lists</h3>
 <p>Deletes all currently lookuplist values and related synonyms</p></div>
         </div>
 

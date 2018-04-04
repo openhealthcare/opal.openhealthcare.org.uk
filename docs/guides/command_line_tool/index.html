@@ -129,6 +129,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../episodes/">Episodes</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../archetypes/">Archetypes</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -201,11 +205,15 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../contributing/">Contributing</a> -->
+                <!--             <a href="../CONTRIBUTING/">Contributing</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../development_environment/">Development environment</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../releasing/">Releasing</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -282,6 +290,14 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../../reference/core_lookuplists/">Lookuplists</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/core_discoverable/">Discoverable</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../../reference/javascript/patient_service/">Patient service</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -338,7 +354,7 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../../reference/changelog/">Changelog</a> -->
+                <!--             <a href="../../reference/CHANGELOG/">Changelog</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -353,6 +369,10 @@
                 <!--             <a href="../../reference/upgrading/">Upgrading</a> -->
                 <!--         </li> -->
                 <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../../reference/management_commands/">Management commands</a> -->
+                <!--         </li> -->
+                <!--      -->
                 <!--     </ul> -->
                 <!-- </li> -->
             
@@ -362,8 +382,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.9.0" target="_blank">
-                  <i class="fa fa-github"></i> v0.9.0
+                <a href="https://github.com/openhealthcare/opal/tree/v0.10.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.10.0
                 </a>
               </li>
                 <!-- <li > -->
@@ -393,8 +413,6 @@
         
             <li><a href="#startplugin-name">startplugin &lt;name&gt;</a></li>
         
-            <li><a href="#scaffold-appname">scaffold &lt;appname&gt;</a></li>
-        
             <li><a href="#test-what">test &lt;what&gt;</a></li>
         
             <li><a href="#checkout">checkout</a></li>
@@ -417,11 +435,6 @@ creating a new underlying Django project, updating default settings to be compat
 with Opal, creating directories and code boilerplate, and running initial migrations.</p>
 <h3 id="startplugin-name">startplugin &lt;name&gt;</h3>
 <p>Creates boilerplate code, and directory structures for a new Opal plugin.</p>
-<h3 id="scaffold-appname">scaffold &lt;appname&gt;</h3>
-<p>Use with new record models.</p>
-<p>Creates and runs automatic migrations, creates display and form (modal) templates.</p>
-<p>Running with <code>--dry-run</code> will run makemigrations with <code>--dry-run</code> and print display
-and form templates that would be generated.</p>
 <h3 id="test-what">test &lt;what&gt;</h3>
 <p>Run our tests suites.</p>
 <p>Defaults to running both Python and Javascript tests.</p>
@@ -431,6 +444,8 @@ and form templates that would be generated.</p>
 <p>When running Python tests, the <code>-t</code> or <code>--test</code> option allows the user to specify a single
 test module, case or method to run.</p>
 <p>$ opal test py -t opal.tests.test_models</p>
+<p>The <code>--failfast</code> option will end the test run on the first failing test rather than
+continuing with the entire run.</p>
 <h3 id="checkout">checkout</h3>
 <p>Ensure that all of our application plugins and packages are on the correct branch.</p>
 <p>This is particularly useful when working on Opal itself, or when you have multiple
