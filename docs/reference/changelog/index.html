@@ -382,8 +382,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.10.0" target="_blank">
-                  <i class="fa fa-github"></i> v0.10.0
+                <a href="https://github.com/openhealthcare/opal/tree/v0.10.1" target="_blank">
+                  <i class="fa fa-github"></i> v0.10.1
                 </a>
               </li>
                 <!-- <li > -->
@@ -407,7 +407,22 @@
   <h3>Contents</h3>
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#0100-major-release">0.10.0 (Major Release)</a></li>
+        <li class="main active"><a href="#0101-minor-release">0.10.1 (Minor Release)</a></li>
+        
+            <li><a href="#plugin-api-end-points-can-now-override-application-end-points">Plugin API end points can now override application end points</a></li>
+        
+            <li><a href="#fonts-are-now-locally-sourced">Fonts are now locally sourced</a></li>
+        
+            <li><a href="#printscreen-stylesheets-have-been-collapsed-into-opalcss">print/screen stylesheets have been collapsed into opal.css</a></li>
+        
+            <li><a href="#google-analytics-is-now-deferred">Google Analytics is now deferred</a></li>
+        
+            <li><a href="#scaffold-version-control-failures">Scaffold version control failures</a></li>
+        
+            <li><a href="#episodeobjectsserialised-now-uses-select_related">Episode.objects.serialised now uses select_related</a></li>
+        
+    
+        <li class="main "><a href="#0100-major-release">0.10.0 (Major Release)</a></li>
         
             <li><a href="#referencedata-in-new-applications">Referencedata in new applications</a></li>
         
@@ -652,6 +667,26 @@
 </div></div>
             <div class="col-md-9" role="main">
 
+<h3 id="0101-minor-release">0.10.1 (Minor Release)</h3>
+<h4 id="plugin-api-end-points-can-now-override-application-end-points">Plugin API end points can now override application end points</h4>
+<p>A change to the order that APIs are registered with Django Rest Framework allows
+plugins to now override the core Opal application APIs.</p>
+<h4 id="fonts-are-now-locally-sourced">Fonts are now locally sourced</h4>
+<p>Fonts are now served from Opal's static assets rather than from the Google CDN.</p>
+<h4 id="printscreen-stylesheets-have-been-collapsed-into-opalcss">print/screen stylesheets have been collapsed into opal.css</h4>
+<p>Print/screen differences are now in opal.css with media tags.</p>
+<h4 id="google-analytics-is-now-deferred">Google Analytics is now deferred</h4>
+<p>The loading in of Google Analytics is now deferred to the bottom of the body
+tag to allow the page to load without waiting on analytics scripts to load.</p>
+<h4 id="scaffold-version-control-failures">Scaffold version control failures</h4>
+<p>The <code>startplugin</code> and <code>startproject</code> commands initialize a git repository by
+default. If we (The <code>subprocess</code> module) cannot find the <code>git</code> command, we now
+continue with a message printed to screen rather than raising an exception.</p>
+<h4 id="episodeobjectsserialised-now-uses-select_related">Episode.objects.serialised now uses select_related</h4>
+<p><code>ForeignKeyOrFreeText</code> fields now have their ForeignKey items preselected when
+we use <code>Episode.objects.serialised</code>. This provides a speed boost for applications
+with moderately heavy <code>ForeignKeyOrFreeText</code> usage.</p>
+<p>(Approx 30-40% in our tests.)</p>
 <h3 id="0100-major-release">0.10.0 (Major Release)</h3>
 <p>This is a major release with breaking changes from upstream dependencies.
 You are almost certain to require changes to your application. Please see
