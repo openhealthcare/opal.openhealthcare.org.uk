@@ -563,22 +563,21 @@
               Thanks for your message, we'll be in touch shortly.
             </h4>
           </div>
-          <form class="_default" id="contactForm" novalidate="novalidate">
+          <form class="_default" method="POST" action="https://formspree.io/hello@openhealthcare.org.uk" role="form">
             <div class="form-group required">
               <label class="form-label" for="contactName">Your name</label>
-              <input class="form-control" id="contactName" type="text" name="name">
+              <input required class="form-control" id="contactName" type="text" name="name">
             </div>
             <div class="form-group required">
               <label class="form-label" for="contactEmail">Email address</label>
-              <input class="form-control" id="contactEmail" type="text" name="email">
+              <input required class="form-control" id="contactEmail" type="email" name="email">
             </div>
             <div class="form-group required">
               <label class="form-label" for="contactMessage">Message</label>
-              <textarea class="form-control" id="contactMessage" rows="4" name="message"></textarea>
+              <textarea required class="form-control" id="contactMessage" rows="4" name="message"></textarea>
             </div>
             <div class="btn-wrap">
-              <button type="submit" class="btn btn-primary btn-block"
-                      onclick="getintouchform(event)">Send Message</button>
+              <button type="submit" class="btn btn-primary btn-block">Send Message</button>
             </div>
             <div class="form-notify"></div>
           </form> <!-- #contactForm -->
