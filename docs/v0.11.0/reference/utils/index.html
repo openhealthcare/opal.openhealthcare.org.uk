@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>UserProfile - Opal</title>
+	<title>Utils module - Opal</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -241,8 +241,8 @@
                 <!--             <a href="../subrecords/">Subrecords</a> -->
                 <!--         </li> -->
                 <!--      -->
-                <!--         <li class="active"> -->
-                <!--             <a href="./">UserProfile</a> -->
+                <!--         <li > -->
+                <!--             <a href="../user_profile_model/">UserProfile</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -349,8 +349,8 @@
                 <!--             <a href="../javascript/javascript_helpers/">Javascript helpers</a> -->
                 <!--         </li> -->
                 <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../utils/">Utils module</a> -->
+                <!--         <li class="active"> -->
+                <!--             <a href="./">Utils module</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -399,12 +399,12 @@
                 </a>
               </li>
                 <!-- <li > -->
-                <!--     <a rel="next" href="../subrecords/"> -->
+                <!--     <a rel="next" href="../javascript/javascript_helpers/"> -->
                 <!--         <i class="fa fa-arrow-left"></i> Previous -->
                 <!--     </a> -->
                 <!-- </li> -->
                 <!-- <li > -->
-                <!--     <a rel="prev" href="../mixins/"> -->
+                <!--     <a rel="prev" href="../search_queries/"> -->
                 <!--         Next <i class="fa fa-arrow-right"></i> -->
                 <!--     </a> -->
                 <!-- </li> -->
@@ -419,25 +419,33 @@
   <h3>Contents</h3>
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#opalmodelsuserprofile">opal.models.UserProfile</a></li>
+        <li class="main active"><a href="#opalutils">opal.utils</a></li>
         
-            <li><a href="#methods">Methods</a></li>
+            <li><a href="#find_template-template_list">find_template( template_list )</a></li>
+        
+            <li><a href="#write-what">write( what )</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h2 id="opalmodelsuserprofile">opal.models.UserProfile</h2>
-<p>The model which stores individual user profile information.</p>
-<h3 id="methods">Methods</h3>
-<h4 id="userprofileget_avatar_url">UserProfile.get_avatar_url</h4>
-<p>Return the URL at which the avatar for this user may be found.
-Uses the User email address if it exists or the username to locate a
-Gravatar URL.</p>
-<pre><code class="python">profile = UserProfile.objects.get(pk=1)
-profile.get_avatar_url()
-# http://gravatar....
+<h1 id="opalutils">opal.utils</h1>
+<p>The <code>opal.utils</code> module contains a number of helpful python utilities.</p>
+<h2 id="find_template-template_list">find_template( template_list )</h2>
+<p>Given an iterable of template paths, return the first one that
+exists on our template path or None.</p>
+<pre><code class="python">find_template(['not_a_real_template.html'])
+None
+</code></pre>
+
+<h2 id="write-what">write( what )</h2>
+<p>Writes the argument to <code>sys.stdout</code> unless it detects an active test run.
+If run during tests, it should do nothing.</p>
+<p>Used by Opal for chatty commandline utilities that should be quieter during
+test runs.</p>
+<pre><code class="python">&gt;&gt;&gt; write('hai')
+hai
 </code></pre></div>
         </div>
 

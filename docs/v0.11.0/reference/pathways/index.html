@@ -298,6 +298,14 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../core_serialization/">Serialization</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../core_subrecords/">Subrecords</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../javascript/patient_service/">Patient service</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -339,6 +347,10 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../javascript/javascript_helpers/">Javascript helpers</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../utils/">Utils module</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -449,6 +461,33 @@ be passed to <code>Pathway.get()</code> that will return it.</p>
 <p>The name of the pathway template, it must include a div/span with the class .to_append which will be replaced by the wrapped step templates.</p>
 <h4 id="pathwaymodal_template">Pathway.modal_template</h4>
 <p>If set, this template will be used if your pathway is opened in a modal. If its not set the template attribute will be used.</p>
+<h3 id="class-methods">Class Methods</h3>
+<h4 id="pathwayas_menuitemhrefnone-activepatternnone-iconnone-displaynone"><code>Pathway.as_menuitem(href=None, activepattern=None, icon=None, display=None)</code></h4>
+<p>Return an instance of <code>opal.core.menus.MenuItem</code> that will direct the user to this pathway.</p>
+<h4 id="pathwayget_slug"><code>Pathway.get_slug()</code></h4>
+<p>Returns a string which should be used as the slug for this Pathway.</p>
+<pre><code class="python">MyPathwy.get_slug()
+&quot;mypathway&quot;
+</code></pre>
+
+<h4 id="pathwayget_absolute_url"><code>Pathway.get_absolute_url()</code></h4>
+<p>Returns a string which is the absolute URL of this Pathway.</p>
+<pre><code class="python">MyPathway.get_absolute_url()
+&quot;/pathway/#/mypathway/&quot;
+</code></pre>
+
+<h4 id="pathwayget_icon"><code>Pathway.get_icon()</code></h4>
+<p>Returns a string which is the icon for this pathway. Defaults to None.</p>
+<pre><code class="python">MyPathway.get_icon()
+&quot;fa-wave&quot;
+</code></pre>
+
+<h4 id="pathwayget_display_name"><code>Pathway.get_display_name()</code></h4>
+<p>Returns a string which is the display name for this pathway. Defaults to None</p>
+<pre><code class="python">MyPathway.get_display_name()
+&quot;The Form&quot;
+</code></pre>
+
 <h3 id="methods">Methods</h3>
 <h4 id="pathwayredirect_urlself-patient-episde"><code>Pathway.redirect_url(self, patient, episde)</code></h4>
 <p>Returns a string that we should redirect to on success. Defaults to
@@ -466,7 +505,10 @@ to navigate through the form.</p>
 <code>pathway.Step</code> subclasses. You can use both types of Step in a given Pathway.</p>
 <p>More detail on Steps is given in the <a href="../../guides/pathways/">Guides section on Pathways</a></p>
 <h2 id="helptextstep">HelpTextStep</h2>
-<p>A Step subclass with help text to the side of the form</p>
+<p>A Step subclass with help text to the side of the form.</p>
+<p>As arguments these takes either <code>help_text</code> or <code>help_text_template</code>.</p>
+<p><code>help_text</code> will be displayed in a side bar next to the step.</p>
+<p><code>help_text_template</code> will completely replace the normal side bar template with the template that you pass in.</p>
 <h2 id="findpatientstep">FindPatientStep</h2>
 <p>A frequent pattern is a form that allows the user to search for a patient at the start. This step
 includes a widget for searching for patients, then selecting that patient for use in the rest of the

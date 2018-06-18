@@ -298,6 +298,14 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../core_serialization/">Serialization</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../core_subrecords/">Subrecords</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../javascript/patient_service/">Patient service</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -339,6 +347,10 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../javascript/javascript_helpers/">Javascript helpers</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../utils/">Utils module</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -411,6 +423,9 @@
         
             <li><a href="#0101-0110">0.10.1 -&gt; 0.11.0</a></li>
         
+    
+        <li class="main "><a href="#requirementstxt">requirements.txt</a></li>
+        
             <li><a href="#0100-0101">0.10.0 -&gt; 0.10.1</a></li>
         
             <li><a href="#090-0100">0.9.0 -&gt; 0.10.0</a></li>
@@ -442,14 +457,11 @@
 <p>This document provides instructions for specific steps required to upgrading your Opal
 application to a later version where there are extra steps required.</p>
 <h3 id="0101-0110">0.10.1 -&gt; 0.11.0</h3>
-<h4 id="upgrading-opal">Upgrading Opal</h4>
-<p>How you do this depends on how you have configured your application, but updating your
-requirements.txt to update the version should work.</p>
-<pre><code># requirements.txt
-opal==0.10.1
-</code></pre>
+<p>Please upgrade django-compressor version to 2.2, ie update your requirements to</p>
+<h1 id="requirementstxt">requirements.txt</h1>
+<p>django-compressor==2.2</p>
 <h3 id="0100-0101">0.10.0 -&gt; 0.10.1</h3>
-<h4 id="upgrading-opal_1">Upgrading Opal</h4>
+<h4 id="upgrading-opal">Upgrading Opal</h4>
 <p>How you do this depends on how you have configured your application, but updating your
 requirements.txt to update the version should work.</p>
 <pre><code># requirements.txt
@@ -458,7 +470,7 @@ opal==0.10.1
 <p>There are no migrations or additional commands for this upgrae, and we are not aware of
 any backwards incompatible changes.</p>
 <h3 id="090-0100">0.9.0 -&gt; 0.10.0</h3>
-<h4 id="upgrading-opal_2">Upgrading Opal</h4>
+<h4 id="upgrading-opal_1">Upgrading Opal</h4>
 <p>How you do this depends on how you have configured your application. You will need to
 update both the Opal version, and versions of dependencies upgraded dependencies if
 you have specified them in for instance, a requirements.txt.</p>
@@ -474,6 +486,7 @@ opal==0.10.0
 requests==2.18.4
 django-celery==3.2.2
 celery==3.1.25
+django-compressor==2.2
 </code></pre>
 <p>After re-installing (via for instance <code>pip install -r requirements.txt</code>) you will
 likely need to make some changes to your application code to fix errors that arise as
@@ -542,7 +555,7 @@ enhanced customisation and flexibility.</p>
 <p>If you previously were adding Menu Items with the dictionary format. These should be
 converted to use a <code>MenuItem</code> class.</p>
 <h3 id="080-081">0.8.0 -&gt; 0.8.1</h3>
-<h4 id="upgrading-opal_3">Upgrading Opal</h4>
+<h4 id="upgrading-opal_2">Upgrading Opal</h4>
 <p>How you do this depends on how you have configured your application, but updating your
 requirements.txt to update the version should work.</p>
 <pre><code># requirements.txt
@@ -561,7 +574,7 @@ to retain this functionality may copy the controller from the v0.7.1 branch
 that this flow has proven to be problematic and confusing for users whenever
 used - hence the removal.</p>
 <h3 id="071-080">0.7.1 -&gt; 0.8.0</h3>
-<h4 id="upgrading-opal_4">Upgrading Opal</h4>
+<h4 id="upgrading-opal_3">Upgrading Opal</h4>
 <p>How you do this depends on how you have configured your application, but updating your
 requirements.txt to update the version should work.</p>
 <pre><code># requirements.txt
@@ -618,7 +631,7 @@ REST_FRAMEWORK = {
 </code></pre>
 
 <h3 id="6x-7x">6.x -&gt; 7.x</h3>
-<h4 id="upgrading-opal_5">Upgrading Opal</h4>
+<h4 id="upgrading-opal_4">Upgrading Opal</h4>
 <p>How you do this depends on how you have configured your application, but updating your
 requirements.txt to update the version should work.</p>
 <pre><code># requirements.txt
@@ -659,7 +672,7 @@ here should be relatively painless.</p>
 <code>{% date_of_birth_field %}</code> templatetag in the forms library. You should update any forms
 to use this new tag.</p>
 <h3 id="5x-6x">5.x -&gt; 6.x</h3>
-<h4 id="upgrading-opal_6">Upgrading Opal</h4>
+<h4 id="upgrading-opal_5">Upgrading Opal</h4>
 <p>How you do this depends on how you have configured your application, but updating your
 requirements.txt to update the version should work.</p>
 <pre><code># requirements.txt

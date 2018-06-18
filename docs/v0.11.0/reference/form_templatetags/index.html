@@ -298,6 +298,14 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../core_serialization/">Serialization</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../core_subrecords/">Subrecords</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../javascript/patient_service/">Patient service</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -339,6 +347,10 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../javascript/javascript_helpers/">Javascript helpers</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../utils/">Utils module</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -421,6 +433,8 @@
         
             <li><a href="#radio">{% radio ... %}</a></li>
         
+            <li><a href="#radio_vertical">{% radio_vertical ... %}</a></li>
+        
             <li><a href="#select">{% select ... %}</a></li>
         
             <li><a href="#textarea">{% textarea ... %}</a></li>
@@ -472,6 +486,7 @@ your forms.</p>
 <li><code>mindate</code> Angular Javascript expression to return the minimum possible date</li>
 <li><code>element_name</code> If this exists this is an Angular expression that is set to the 'name' attribute of the html element</li>
 <li><code>style</code> The form style to render this widget with. Possible values are <code>['horizontal', 'vertical']</code>. Defaults to 'horizontal'</li>
+<li><code>user_options</code> If set to <code>True</code> this will add the default options of <code>today</code>, ie the current date, or <code>yesterday</code>, ie t-1.</li>
 </ul>
 <h3 id="timepicker">{% timepicker ... %}</h3>
 <p>Generates a time picker widget</p>
@@ -523,7 +538,23 @@ available by using the unit argument e.g.</p>
 </code></pre>
 
 <h3 id="radio">{% radio ... %}</h3>
-<p>Generates an inline radio input</p>
+<p>Generates an inline radio input.
+Options are rendered in rows with multiple options on each row.</p>
+<p>Keywords:</p>
+<ul>
+<li><code>field</code> a string of the models api name '.' field from this it calculates the label, model and will infer the lookuplist if required. For example {% radio field="DogOwner.dog" %}</li>
+<li><code>label</code> The Label with which to describe this input</li>
+<li><code>model</code> The model which we are editing (This is a string that references an in-scope Angular variable)</li>
+<li><code>change</code>  A javascript function that fires if the field has changed</li>
+<li><code>show</code>  A string that contains an Angular expression for the ng-show directive</li>
+<li><code>hide</code>  A string that contains an Angular expression for the ng-hide directive</li>
+<li><code>lookuplist</code> an Angular expression that evaluates to an array containing the radio values</li>
+<li><code>element_name</code> If this exists this is an Angular expression that is set to the 'name' attribute of the html element</li>
+<li><code>style</code> The form style to render this widget with. Possible values are <code>['horizontal', 'vertical']</code>. Defaults to 'horizontal'</li>
+</ul>
+<h3 id="radio_vertical">{% radio_vertical ... %}</h3>
+<p>Generates a vertical radio input.
+Options are rendered one option per row.</p>
 <p>Keywords:</p>
 <ul>
 <li><code>field</code> a string of the models api name '.' field from this it calculates the label, model and will infer the lookuplist if required. For example {% radio field="DogOwner.dog" %}</li>

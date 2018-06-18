@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>UserProfile - Opal</title>
+	<title>Serialization - Opal</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -241,8 +241,8 @@
                 <!--             <a href="../subrecords/">Subrecords</a> -->
                 <!--         </li> -->
                 <!--      -->
-                <!--         <li class="active"> -->
-                <!--             <a href="./">UserProfile</a> -->
+                <!--         <li > -->
+                <!--             <a href="../user_profile_model/">UserProfile</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -297,8 +297,8 @@
                 <!--             <a href="../core_discoverable/">Discoverable</a> -->
                 <!--         </li> -->
                 <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../core_serialization/">Serialization</a> -->
+                <!--         <li class="active"> -->
+                <!--             <a href="./">Serialization</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -399,12 +399,12 @@
                 </a>
               </li>
                 <!-- <li > -->
-                <!--     <a rel="next" href="../subrecords/"> -->
+                <!--     <a rel="next" href="../core_discoverable/"> -->
                 <!--         <i class="fa fa-arrow-left"></i> Previous -->
                 <!--     </a> -->
                 <!-- </li> -->
                 <!-- <li > -->
-                <!--     <a rel="prev" href="../mixins/"> -->
+                <!--     <a rel="prev" href="../core_subrecords/"> -->
                 <!--         Next <i class="fa fa-arrow-right"></i> -->
                 <!--     </a> -->
                 <!-- </li> -->
@@ -419,25 +419,48 @@
   <h3>Contents</h3>
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#opalmodelsuserprofile">opal.models.UserProfile</a></li>
+        <li class="main active"><a href="#opalcoreserialization">opal.core.serialization</a></li>
         
-            <li><a href="#methods">Methods</a></li>
+            <li><a href="#deserialize_datetimevalue">deserialize_datetime(value)</a></li>
+        
+            <li><a href="#deserialize_timevalue">deserialize_time(value)</a></li>
+        
+            <li><a href="#deserialize_datevalue">deserialize_date(value)</a></li>
+        
+            <li><a href="#opalserializer">OpalSerializer</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h2 id="opalmodelsuserprofile">opal.models.UserProfile</h2>
-<p>The model which stores individual user profile information.</p>
-<h3 id="methods">Methods</h3>
-<h4 id="userprofileget_avatar_url">UserProfile.get_avatar_url</h4>
-<p>Return the URL at which the avatar for this user may be found.
-Uses the User email address if it exists or the username to locate a
-Gravatar URL.</p>
-<pre><code class="python">profile = UserProfile.objects.get(pk=1)
-profile.get_avatar_url()
-# http://gravatar....
+<h1 id="opalcoreserialization">opal.core.serialization</h1>
+<p>Helpers for serializing and deserializing data</p>
+<h2 id="deserialize_datetimevalue"><code>deserialize_datetime(value)</code></h2>
+<p>Given a string which represents a date time, deserialize it to a Python datetime
+object using the first value of <code>settings.DATETIME_INPUT_FORMATS</code>.</p>
+<pre><code class="python">as_datetime = deserialize_datetime('22/04/1959 21:20:22')
+</code></pre>
+
+<h2 id="deserialize_timevalue"><code>deserialize_time(value)</code></h2>
+<p>Given a string which represents a time, deserialize it to a Python time
+object using the first value of <code>settings.TIME_INPUT_FORMATS</code>.</p>
+<pre><code class="python">as_time = deserialize_time('14:30:59')
+</code></pre>
+
+<h2 id="deserialize_datevalue"><code>deserialize_date(value)</code></h2>
+<p>Given a string which represents a date, deserialize it to a Python date
+object using the first value of <code>settings.DATE_INPUT_FORMATS</code>.</p>
+<pre><code class="python">as_date = deserialize_date('22/04/1959')
+</code></pre>
+
+<h2 id="opalserializer">OpalSerializer</h2>
+<p>A JSON serializer that will serialize the output of <code>to_dict</code> calls. This serializer
+uses date formats that can be understood by the Opal javascript applications.</p>
+<pre><code class="python">import json
+
+as_dict = episode.to_dict(user)
+as_json = json.dumps(as_dict, cls=OpalSerializer)
 </code></pre></div>
         </div>
 

@@ -298,6 +298,14 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../core_serialization/">Serialization</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../core_subrecords/">Subrecords</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../javascript/patient_service/">Patient service</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -339,6 +347,10 @@
                 <!--      -->
                 <!--         <li > -->
                 <!--             <a href="../javascript/javascript_helpers/">Javascript helpers</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../utils/">Utils module</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -461,12 +473,6 @@ particularly verbose.</p>
         _sort = 'start_date'
 </code></pre>
 
-<h4 id="subrecord_title">Subrecord._title</h4>
-<p>String we would like to use for user-facing display of this record type.</p>
-<pre><code class="python">    class Antimicrobial(EpisodeSubrecord):
-        _title = 'Abx'
-</code></pre>
-
 <h4 id="subrecord_clonable">Subrecord._clonable</h4>
 <p>A Boolean that is True by default used by <code>opal.views.EpisodeCopyToCategoryView</code>
 to determine if instances of this record should be copied across.</p>
@@ -491,6 +497,16 @@ This will be used in the URL for the subrecord API, and as a property name in Ja
 representations of the data.</p>
 <pre><code class="python">&gt;&gt;&gt; Demographics.get_api_name()
 &quot;demographics&quot;
+</code></pre>
+
+<h4 id="subrecordget_display_name">Subrecord.get_display_name()</h4>
+<p>Classmethod that returns the display name of the subrecord.</p>
+<p>This is used as the user visible title of subrecord panels and modals amongst other places.</p>
+<p>By default this uses the Django
+<a href="https://docs.djangoproject.com/en/dev/ref/models/options/#verbose-name">Meta verbose_name</a> 
+property</p>
+<pre><code class="python">&gt;&gt;&gt; PastMedicalHistory.get_display_name()
+&quot;PMH&quot;
 </code></pre>
 
 <h4 id="subrecordget_display_template">Subrecord.get_display_template()</h4>
