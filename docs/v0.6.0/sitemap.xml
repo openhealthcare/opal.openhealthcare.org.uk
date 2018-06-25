@@ -4,7 +4,7 @@
     
     <url>
      <loc>None/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,7 +12,7 @@
     
     <url>
      <loc>None/installation/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -20,7 +20,7 @@
     
     <url>
      <loc>None/tutorial/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -28,7 +28,7 @@
     
     <url>
      <loc>None/guides/topic-guides/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -36,7 +36,7 @@
     
     <url>
      <loc>None/reference/reference_guides/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -45,109 +45,109 @@
         
     <url>
      <loc>None/guides/components_overview/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/guides/command_line_tool/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/guides/plugins/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/guides/plugins_list/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/guides/datamodel/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/guides/flow/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/guides/roles_and_permissions/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/guides/tagging/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/guides/json_api/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/guides/lookup_lists/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/guides/templates/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/guides/context_processors/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/guides/static_files/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/guides/forms/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/guides/patient_detail_views/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/guides/list_views/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/guides/discoverable/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/guides/search/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -157,109 +157,109 @@
         
     <url>
      <loc>None/reference/episode/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/reference/episode_types/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/reference/patient/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/reference/subrecords/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/reference/opal_application/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/reference/episode_service/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/reference/item_service/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/reference/patient_summary_service/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/reference/form_templatetags/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/reference/panels_templatetags/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/reference/javascript_helpers/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/reference/javascript_dependencies/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/reference/schemas/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/reference/search_queries/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/reference/detail_views/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/reference/patient_list/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/reference/search_js_services/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/reference/upgrading/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-06-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         

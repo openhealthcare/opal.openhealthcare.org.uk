@@ -205,7 +205,7 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../../guides/CONTRIBUTING/">Contributing</a> -->
+                <!--             <a href="../../guides/contributing/">Contributing</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -298,6 +298,14 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../core_serialization/">Serialization</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../core_subrecords/">Subrecords</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../javascript/patient_service/">Patient service</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -342,6 +350,10 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
+                <!--             <a href="../utils/">Utils module</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
                 <!--             <a href="../search_queries/">Search Queries</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -354,7 +366,7 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../CHANGELOG/">Changelog</a> -->
+                <!--             <a href="../changelog/">Changelog</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -382,8 +394,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.10.1" target="_blank">
-                  <i class="fa fa-github"></i> v0.10.1
+                <a href="https://github.com/openhealthcare/opal/tree/v0.11.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.11.0
                 </a>
               </li>
                 <!-- <li > -->
@@ -420,6 +432,8 @@
             <li><a href="#dump_lookup_lists">dump_lookup_lists</a></li>
         
             <li><a href="#load_lookup_lists">load_lookup_lists</a></li>
+        
+            <li><a href="#serve-addrport">serve &lt;addrport&gt;</a></li>
         
     
     </ul>
@@ -477,6 +491,15 @@ as the input to <code>load_lookup_lists</code></p>
 <code>./yourapp/data/</code> for any files with a name matching the API name of a lookuplist
 (e.g. <code>./yourapp/data/conditions.json</code>)</p>
 <pre><code class="bash">python manage.py load_lookup_lists
+</code></pre>
+
+<h2 id="serve-addrport">serve &lt;addrport&gt;</h2>
+<p>Run the development server.</p>
+<p>By default this will start a web server on <code>localhost:8000</code>. Users may specify either
+a port or an addr port pair to change this.</p>
+<pre><code>opal serve # server on localhost:8000
+opal serve 7798 # server on localhost:7798
+opal serve 0.0.0.0:8080 # server on 0.0.0.0:8080
 </code></pre>
 
 <h3 id="scaffold-appname">scaffold &lt;appname&gt;</h3>

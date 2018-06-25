@@ -1261,27 +1261,27 @@
             "title": "Customising the Admin"
         }, 
         {
-            "location": "/guides/CONTRIBUTING/", 
+            "location": "/guides/contributing/", 
             "text": "Contributing to Opal\n\n\nOpal is developed as an open source project, and as such we welcome contributions in the form of bug reports, documentation, and code.\n\n\nReporting bugs\n\n\nIf you find what looks like a bug, add an issue to the \nGithub Issue tracker\n.\n\n\nUnclear documentation, unexpected error messages definitely count as bugs - feel free to raise issues about them.\n\n\nPlease try to include steps to reproduce your bug in the issue - it helps us enormously to find and fix it.\n\n\nContributing enhancements or fixes\n\n\nIf you want to contribute an enhancement or fix to Opal:\n\n\n\n\nFork the project on Github\n\n\nMake a feature branch from the latest default branch (this will be named vX.Y.Z and set as the default branch on Github)\n\n\nMake your changes\n\n\nMake sure that our test suite still runs, and that your changes are covered by tests (running \nopal test -c\n in the root directory of the repository will\nrun both python and javascript tests, as well as generate HTML code coverage reports.)\n\n\nUpdate the Opal documentation to be\n\n\nCommit the changes and push to your fork\n\n\nSubmit a pull request to Opal\n\n\n\n\nAt this stage, we will assign someone to review your changes before merging. We might ask you to make some changes to your pull request before\nmerging, but in general, we are biased towards accepting contributions from the community.\n\n\nThat said, we won't merge your pull request if:\n\n\n\n\nIt doesn't come with tests\n\n\nIt doesn't update the relevant documentation\n\n\n\n\nDon't worry though - we're happy to guide new contributors through this process.\n\n\nIf you want to discuss ideas you have for changes before making them, you can always propose enhancements on\nthe \nGithub Issue tracker\n or post questions and open discussions on the\n\nmailing list\n.\n\n\nIssues suitable for new contributors\n\n\nIssues in the github issue tracker labelled 'easy' have been identified as particularly appropriate for new contributors.", 
             "title": "Contributing"
         }, 
         {
-            "location": "/guides/CONTRIBUTING/#contributing-to-opal", 
+            "location": "/guides/contributing/#contributing-to-opal", 
             "text": "Opal is developed as an open source project, and as such we welcome contributions in the form of bug reports, documentation, and code.", 
             "title": "Contributing to Opal"
         }, 
         {
-            "location": "/guides/CONTRIBUTING/#reporting-bugs", 
+            "location": "/guides/contributing/#reporting-bugs", 
             "text": "If you find what looks like a bug, add an issue to the  Github Issue tracker .  Unclear documentation, unexpected error messages definitely count as bugs - feel free to raise issues about them.  Please try to include steps to reproduce your bug in the issue - it helps us enormously to find and fix it.", 
             "title": "Reporting bugs"
         }, 
         {
-            "location": "/guides/CONTRIBUTING/#contributing-enhancements-or-fixes", 
+            "location": "/guides/contributing/#contributing-enhancements-or-fixes", 
             "text": "If you want to contribute an enhancement or fix to Opal:   Fork the project on Github  Make a feature branch from the latest default branch (this will be named vX.Y.Z and set as the default branch on Github)  Make your changes  Make sure that our test suite still runs, and that your changes are covered by tests (running  opal test -c  in the root directory of the repository will\nrun both python and javascript tests, as well as generate HTML code coverage reports.)  Update the Opal documentation to be  Commit the changes and push to your fork  Submit a pull request to Opal   At this stage, we will assign someone to review your changes before merging. We might ask you to make some changes to your pull request before\nmerging, but in general, we are biased towards accepting contributions from the community.  That said, we won't merge your pull request if:   It doesn't come with tests  It doesn't update the relevant documentation   Don't worry though - we're happy to guide new contributors through this process.  If you want to discuss ideas you have for changes before making them, you can always propose enhancements on\nthe  Github Issue tracker  or post questions and open discussions on the mailing list .", 
             "title": "Contributing enhancements or fixes"
         }, 
         {
-            "location": "/guides/CONTRIBUTING/#issues-suitable-for-new-contributors", 
+            "location": "/guides/contributing/#issues-suitable-for-new-contributors", 
             "text": "Issues in the github issue tracker labelled 'easy' have been identified as particularly appropriate for new contributors.", 
             "title": "Issues suitable for new contributors"
         }, 
@@ -3011,658 +3011,663 @@
             "title": "VERSION_NUMBER"
         }, 
         {
-            "location": "/reference/CHANGELOG/", 
-            "text": "0.11.0 (Major Release)\n\n\nAdds options of \ntoday\n and \nyesterday\n in the date picker\n\n\nIf you pass in \nuser_options=True\n to the date picker. You will be provided with options to select today or yesterday in the form tag.\n\n\nAdds \ndateHelper\n to the rootScope\n\n\nThe dateHelper has the functions \nnow\n and \nyesterday\n that return javascript Dates for\nthe current time and the current time - 1 day.\n\n\nDeprecates the _title property\n\n\nIn future we will use the standard \nverbose_name\n property as the display name. The abstract models have been changed to account for this.\n\n\nCore API registration\n\n\nA refactor in the way that the core APIs are registered by Opal means that\nimporting \nopal.core.api\n in a plugin API no longer results in circular imports.\n\n\nFixes a bug whereby episodes were serialising differently depending on whether\nthe code path went via \n.to_dict()\n or \n.objects.serialised()\n.\n\n\nHelpTextStep can now use a custom template\n\n\nThe \nopal.core.pathway.steps.HelpTextStep\n can now have a \nhelp_text_template\n passed in.\n\n\nThis is the template for what will be placed in the side bar.\n\n\nAdds in a radio_vertical template tag\n\n\nThis displays the label and then the radio\nbuttons as a vertical list.\n\n\nopal.core.serialization\n\n\nA number of helpers related to serialization and deserialization have been brought\ntogether in the new module \nopal.core.serialization\n.\n\n\nRemoves \"episode_history\" from episode serialization\n\n\nSerialised episodes previously contained a \"shallow\" copy of all other episodes in\na property named \nepisode_history\n. This was primarially useful before we switched\nfrom episode-oriented to patient-oriented detail views by default.\n\n\nThis also includes a change to the signature of the \n.serialised()\n method of the\nEpisode manager, which no longer accepts a \nepisode_history\n kwarg.\n\n\nas_menuitem helpers\n\n\nApplications using Opal Menuitems often wish to add menu items for Patient Lists and\nPathways.\n\n\nTo aid this, the \n.as_menuitem()\n method now creates one from the target class with\nsensible but overridable defaults.\n\n\nMisc Changes\n\n\nAdds the utility function \nopal.utils.get\n. Similar to the \ngetattr\n builtin, \nget\n looks\nfor a method named \nget_$attr\n and will call that if it exists.\n\n\nAdds the method \n.get_absolute_url()\n to \nopal.core.pathways.Pathway\n and\n\nopal.core.patient_lists.PatientList\n.\n\n\nTemplate removals\n\n\nWe removed a number of superfluous templates:\n\n\n\n\nopal/templates/patient_lists/spreadsheet_list.html\n\n\nopal/templates/layouts/left-panel.html\n\n\n\n\nStatic asset minification\n\n\nThe Django upgrade in Opal 0.10 stopped compressor minifying files\nwhen DEBUG is set to False. This fixes that issue by upgrading Django compressor to\na version that supports Django 1.10.\n\n\nThe return of an old friend: IE Document modes\n\n\nUsers report that their system administrators sometimes configure Internet Explorer\nin such a way that it uses e.g. IE7 Document mode by default.\n\n\nThis is problematical for Opal applications which do in fact make use of internet\ntechnologies that were in widespread use after say, 2006.\n\n\nWe have altered \nbase.html\n to specify \n\"X-UA-Compatible\" content=\"IE=Edge\"\n. If you\noverride \nbase.html\nin your application we advise that you add this \nmeta\n tag.\n\n\nMisc Changes\n\n\n\n\n\n\nAdds the utility function \nopal.core.subrecords.singletons()\n which returns\na generator function which will yield all subrecord singletons.\n\n\n\n\n\n\nAdds the methods \n.get_absolute_url()\n, \n.get_icon()\n and \nget_display_name()\n\nto \nopal.core.pathways.Pathway\n and \nopal.core.patient_lists.PatientList\n.\n\n\n\n\n\n\nUpdates to the Dependency Graph\n\n\n\n\nDjango compressor: 1.5 -\n 2.2\n\n\n\n\n0.10.1 (Minor Release)\n\n\nPlugin API end points can now override application end points\n\n\nA change to the order that APIs are registered with Django Rest Framework allows\nplugins to now override the core Opal application APIs.\n\n\nFonts are now locally sourced\n\n\nFonts are now served from Opal's static assets rather than from the Google CDN.\n\n\nprint/screen stylesheets have been collapsed into opal.css\n\n\nPrint/screen differences are now in opal.css with media tags.\n\n\nGoogle Analytics is now deferred\n\n\nThe loading in of Google Analytics is now deferred to the bottom of the body\ntag to allow the page to load without waiting on analytics scripts to load.\n\n\nScaffold version control failures\n\n\nThe \nstartplugin\n and \nstartproject\n commands initialize a git repository by\ndefault. If we (The \nsubprocess\n module) cannot find the \ngit\n command, we now\ncontinue with a message printed to screen rather than raising an exception.\n\n\nEpisode.objects.serialised now uses select_related\n\n\nForeignKeyOrFreeText\n fields now have their ForeignKey items preselected when\nwe use \nEpisode.objects.serialised\n. This provides a speed boost for applications\nwith moderately heavy \nForeignKeyOrFreeText\n usage.\n\n\n(Approx 30-40% in our tests.)\n\n\n0.10.0 (Major Release)\n\n\nThis is a major release with breaking changes from upstream dependencies.\nYou are almost certain to require changes to your application. Please see\nthe upgrade guide for further details.\n\n\nReferencedata in new applications\n\n\nOpal now includes core lookuplist data in an \nopal.core.referencedata\n plugin\nwhich is installed and loaded by default by the \nstartproject\n scaffolding.\n\n\nDeletion cascade behaviour\n\n\nOpal 0.10 changes several behaviours related to cascading deletions which, despite\nbeing Django defaults, were confusing to users and developers in our use case.\n\n\nWhen we delete and look up list instance, we no longer delete all subrecords that use\nthat instance. Instead we set the look up list instances name in the free text field on\nthe subrecord.\n\n\nWhen you delete a user, it will no longer delete all related episodes and subrecords\n\n\nEpisode Category stages\n\n\nEpisode categories now enforce a set of valid \nEpisode.stage\n values.\n\nEpisodeCategory\n now includes the \n.get_stages()\n and \n.has_stage(stage)\n methods,\nwhile \nEpisode\n has a \nset_stage\n setter which is used by the UpdateFromDictMixin JSON API.\n\n\nlookuplists.lookuplists\n\n\nAdds the utility generator \nlookuplists.lookuplists()\n which wil yield every lookuplist\ncurrently available.\n\n\nDiscoverable.filter()\n\n\nDisoverable features now have a \nfilter\n method which allows you to filter features\nwith matching attributes.\n\n\nPathways ContextProcessor\n\n\nThe 'opal.core.pathways.context_processors.pathways' Context Processor will allow you to\naccess your pathways from templates without having to explicitly load them in a view. In\nturn, this allows patterns like:\n\n\n{% include pathways.YourPathway.get_display_name %}\n\n\n\nMissing consistency token errors\n\n\n.update_from_dict()\n will now raise the new error\n\nopal.core.errors.MissingConsistencyTokenError\n if it is called without a consistency\ntoken when one is set on the model. Previously it would raise \nAPIError\n.\n\n\nThe JSON API will now return a more specific message in the response boday, explaining\nthat the problem is a missing consistency token.\n\n\ndump_lookup_lists --many-files\n\n\nAdds the \n--many-files\n option to the \ndump_lookup_lists\n command which will write\neach installed lookup list to a separate file in the \n./data/lookuplists\n directory\nof the application.\n\n\nTemplate removals\n\n\nWe remove a number of stale unused templates:\n\n\n\n\nchangelog.html\n\n\ncontact.html\n\n\nextract_footer.html\n\n\ntagging_detail.html\n\n\n_helpers/inline_form.html\n\n\nresponsive/_phone_episode_list.html'\n\n\nresponsive/_tablet_episode_list.html\n\n\n\n\nRemoving LoginRequiredMixin\n\n\nAs Django ships with a \nLoginRequiredMixin\n of its own we no longer roll our own\nin `opal.core.views.\n\n\nTesting options\n\n\nAdds a \n--failfast\n option to the test harness to stop test runs on the first\nfailure.\n\n\nIf you are a plugin developer upgrading an existing plugin you will have to\nmanually add support for \n--failfast\n passthrough to your \nruntests.py\n.\n\n\nIf you are a plugin developer upgrading an existing plugin you will have to\nmanually add support for \n--failfast\n passthrough to your \nruntests.py\n.\n\n\nMoves scaffold to be a django management command\n\n\nThe rest of the api is still the same but now\nwe run \npython manage.py scaffold {my_app_name}\n\n\nDeprecations completed\n\n\nAs previously noted in console warnings, the Angular Episode service no longer\nsupports the \ndischarge_date\n, \ndate_of_admission\n, \ndate_of_episode\n properties.\nThese were replaced by \n.start\n and \n.end\n.\n\n\nUpdates to the Dependency Graph\n\n\n\n\nDjango: 1.8.13 -\n 1.10.8\n\n\nDjango Reversion: 1.8.7 -\n 1.10.2\n\n\nDjango Rest Framework: 3.2.2 -\n 3.4.7\n\n\nPsycopg2: 2.5 -\n 2.7\n\n\nJinja2: 2.9.6 -\n 2.10\n\n\nFfs: 0.0.8.1 -\n 0.0.8.2\n\n\nRequests: 2.7.0 -\n 2.18.4\n\n\ndjango-celery: 3.1.17 -\n 3.2.2\n\n\ncelery: 3.1.19 -\n 3.1.25\n\n\n\n\nMisc Changes\n\n\nRemoves the undocumented \ncollapsed_multisave\n tag from the \npathways\n templatetag\nlibrary.\n\n\nAdds a setting \nOPAL_FAVICON_PATH\n to specify the application Favicon to use.\n\n\nAdds the \nrows\n option to the textarea template tag which just fills in the html textarea\n\nrows\n attribute. Text areas are defaulted to 5 rows (the same as before).\n\n\nConfigures the setting \nCSRF_FAILURE_VIEW\n to use the bundled \nopal.views.csrf_failure\n view.\n\n\nPathway slugs may now include hyphens as well as numbers, lower case letters and underscores.\n\n\nBugfix: in edit_item.js $scope.episode_category is now set from episode.category_name\nas opposed to episode.category (which was always null)\n\n\nFixes some instances of progressbars not being reset if unexpected error states\noccur.\n\n\nImproves the rendering of patient detail pages where no patient with the ID from\nroute params exits. (Displays a polite message instead of erroring.)\n\n\nIncorrect pluralisation of subrecord names in the Admin view has been fixed. (Migrations\nwill have to be run in all models which extend the changed core Opal models (this is due\nto a minor upstream Django bug)\n\n\nMinor change to the diagnosis form.\n\n\n0.9.0 (Major Release)\n\n\nGood bye date_of_episode, discharge_date, date_of_admission\n\n\nAnd hello \nepisode.start\n and \nepisode.end\n. These fields on the \nEpisode\n model\nreplace the multiple ways of recording Episode duration in Opal.\n\n\nThere is a migration that sets \nstart\n to date_of_episode if it  exists, otherwise\nit uses date of admission.\n\n\nend\n will be date_of_episode if it exists, otherwise it will use discharge_date.\n\n\nNote that this means we no longer refer to start and end properties on the\nEpisode category. If you override \nstart\n and \nend\n in a custom episode category\nyou should update to use the Episode model fields. This logic should be moved into\nyour flows and you'll need to put in a migration to populate existing\nepisodes.\n\n\nWe also remove the episode fields \ndate_of_episode\n \ndischarge_date\n, and\n\ndate_of_admission\n.\nWarning: Backwards migrations will not migrate back to \ndate_of_episode\n but to\na admission and discharge. Take backups before running these migrations!\n\n\nThe fields \nstart\n and \nend\n are both cast to moments (rather than raw js Dates) on\nepisode.initialisation\n\n\nPathway\n\n\nMoves the opal-pathway module into the opal core. Pathways is an extensible way\nof creating forms that involve multiple subrecords.\n\n\nWe've got time on our side\n\n\nAdds in the {% timepicker %} template tag, that follows the same convention as\nthe other template tags, ie {% timepicker field=\"Dinner.time\" %}\n\n\nRemoves a js global declaration of categories\n\n\nPreviously we declared CATEGORIES globally. This has now been removed\n\n\nOrder Order\n\n\nEpisodes in the patient list are now ordered by start, first_name and surname\n\n\nTheming support\n\n\nImprovements and better documentation and guides for theming applications. Particularly\nof note are changes to \nopal.html\n and \nbase.html\n, as well as the addition of the\n\nstatic_page.html\n template.\n\n\nThis version also includes extensive improved support for customising the templates that\ndisplay patient lists, detail views, menus and forms amongst other things.\n\n\nFor full documentation, consult the theming guide in the documentation.\n\n\nMakes search fully pluggable\n\n\nSearch is now completely pluggable, you need to have \nsome\n angular controller\ncalled SearchCtrl, but apart from that you can plugin your own implementation.\n\n\nExclude prefixes now work on actual paths\n\n\nPreviously they only worked with angular paths, now they work\nwith a combination of actual paths and angular url paths (e.g. /search/#/extract)\n\n\nMisc Changes\n\n\nAdd the allow_add_patient and allow_edit_teams options to the patient lists.\n\n\nWe added support for a \n--file\n or \n-f\n option for the \nload_lookup_lists\n command which\nallows the user to specify a particular file outside of the default locations.\n\n\nThe default \nLocation\n record display template will no longer include references\nto \nEpisode.start\n. and \nEpisode.stop\n labelled as admisssion and discharge to support\nthe majority case where an episode relates to something other than an inpatient episode!\n\n\nApplications wishing to retaint this functionality should update their own temaplates\nto display start/stop details.\n\n\nRemoves Deprecated functionality in ReferenceData, Metadata, UserProfile and recordLoader\n\n\nPreviously these would make their http request when imported into a file. They now require you to call .load()\nfor them to return the promise that loads in their respective data.\n\n\n0.8.3 (Minor Release)\n\n\nopal.log.ConfidentialEmailer\n\n\nAdds a custom email logger. This enables Django error emails which remove any confidential patient data.\n\n\nAlso adds in the karma config to the MANIFEST.in so that we include the karma configs on pip install. It also moves it\nto \"opal/tests/js_config/karma_defaults.js\".\n\n\n0.8.2 (Minor Release)\n\n\nOPAL_LOCATION is added as a system variable when running js tests\n\n\nIf you run opal test js, your karma config is now run in an environment that has\naccess to the OPAL_LOCATION variable which points to the opal parent directory.\n\n\nA Data Dictionary In The Extract\n\n\nThe Extract zip file has a data dictionary with human readable metadata about each field.\n\n\nEnhanced Application menus\n\n\nThe application menu API, previously python dicts stored in attributes on either plugin or\napplication subclasses, now consists of the new \nopal.core.menus.MenuItem\n class, enabling\nenhanced customisation and flexibility.\n\n\nPUT to the episode API returns the episode with all its subrecords\n\n\nPreviously it only returned the episode. Now it matches the episode create api end point\n\n\nEpisode/Patient links in admin\n\n\nIn the admin, episodes and patients lists now have links to the patient detail pages.\n\n\nUser data for the client\n\n\nAdds a \nUser\n Angular service that enables applications to use user data.\nAlso adds some directives to make it easy to render User names and avatars.\n\n\nEpisode.getFullName()\n\n\nAdds a utility method to the \nEpisode\n service that returns a human readable patient name.\n\n\nPlugin.get_javascripts, Plugin.get_styles\n\n\nEnhances the API available for plugins to include javascript and css by adding methods on\n\nopal.core.plugins.OpalPlugin\n\n\n'element_type' argument for the form template tags\n\n\nNumeric database fields are now set as the html5 type=\"number\" when rendering\nthem with the forms templatetag library. This means on mobile devices it will\nbring up the numeric keypad. The element type can now be set via the template\ntag API with the 'element_type' argument.\n\n\nOPAL_LOGO_PATH\n\n\nThis new setting allows applications to set the path at which the app logo is served.\nIf \nOPAL_LOGO_PATH\n is set, the value is passed to the \n{% static %}\n templatetag to set\nthe \nsrc\n atribute of an image in the default application header and login screen.\n\n\nInactive episodes in PatientLists\n\n\nChanges the behaviour of \nopal.core.PatientList.to_dict\n to serialise inactive\nepisodes by default rather than filtering by Episode.active == True.\n\n\nopal.core.TaggedPatientList.to_dict\n continues to filter by Episode.active ==\nTrue by default.\n\n\nNotice of future removals\n\n\nThe context variables \nbrand_name\n \nsettings\n and \nextra_application\n in \nopal.views.IndexView\n\nare no longer helpful thanks to the settings context processor. These will be removed in\n0.9.0 and emit warnings until then.\n\n\nMisc changes\n\n\nAdds a new filter - \nunderscore-to-spaces\n for removing underscores from strings.\n\n\nThe options for \nSymptomComplex.duration\n have moved from the default form template to a choices\ndeclaration on the model. These are scheduled to move again to a lookuplist.\n\n\nThe default value of \nSubrecord.get_display_name\n now uses Django \nMeta.verbose_name\n.\n\n\nMinor fixes\n\n\nFixes a bug where the allergies form rendered the provisional field twice\n\n\nUpdates to the Dependency Graph\n\n\nUpgrades Font Awesome from 4.3.0 -\n 4.7.0\nUpgrades Jinja2 from 2.8 -\n 2.9.6\n\n\n0.8.1 (Minor Release)\n\n\nCookies for the future\n\n\nWe now use the \n$cookies\n api as part of moving to angular v1.5.8.\n\n\nThe default expiry of cookies is now a year in the future.\n\n\nThe cookie name previously stored as \nopal.lastPatientList\n is now\n\nopal.previousPatientList\n.\n\n\nPatients as a service\n\n\nPatient becomes a service in angular. This takes in a patient as loaded by the patient loader or another service. It casts the data to Episode or Item instances as appropriate.\n\n\nPatientList.get_queryset arguments\n\n\nPatientList.get_queryset() is now passed an extra keyword argument - \nuser\n.\nThis is the current \nUser\n object.\n\n\nOverriding default Menu Items behaviour\n\n\nThe \nget_menu_items\n method of Opal Application objects is now passed an extra keyword argument - \nuser\n.\nThis is the current \nUser\n object.\n\n\nThe templatetag application_menuitems now uses this method to render navigation menus, allowing dynamic\ncustomisation of menu contents based on user.\n\n\nRemovals\n\n\nOpal 0.8.1 removes some minor features which, to our knowledge are not used by any applications in active development.\n\n\n\n\nReopenEpisodeCtrl - applications may implement their own 're-open' episode flow, but Opal no longer handles this out of the box.\n\n\nSubrecord._bulk_serialise - this flag has been removed\n\n\n\n\nPending removals\n\n\nWe have re-named \nopal.core.views._build_json_response\n to \nopal.core.views.json_response\n. This will issue a\nwarning for the remainder of the 0.8.x branch, before being removed entirely in Opal 0.9.0.\n\n\nSubrecord List API\n\n\nWe have added a list method to the default Opal JSON API for subrecords - you may now obtain a list of all instances\nof a given subrecord from the API endpoint \n/api/v0.1/$api_name/\n.\n\n\nMisc Changes\n\n\nUpdates the custom \nUserAdmin\n so that the email, first and last name fields from the Django \nUser\n model\nare in the add user form not just the edit user form.\n\n\nThe default test runner generated by plugin scaffolding now uses \nopal.urls\n as the default url conf in the test settings. This allows you to test urls generated by Opal - for instance default form or record templates, or simply raw templates from our generic template view.\n\n\n0.8.0 (Major Release)\n\n\nPlugins\n\n\nPlugins have been refactored and are now \nDiscoverableFeatures\n. This should have no impact on existing\nplugins, however the functions \nopal.core.plugins.register\n and \nopal.core.plugins.plugins\n are slated for\nremoval in 0.9.0\n\n\nWhen creating new plugins we will place the plugin definition class in \nplugin.py\n rather than \n__init__.py\n\n\nopal.core.api.patient_from_pk\n\n\nA decorator that changes a method that is passed a pk, to a method that is passed a patient.\n\n\nToDictMixin._bulk_serialise\n\n\nAdds a flag to the to dict mixin to determine whether the item is serialised as part of \nEpisode/Patient.to_dict\n.\n\n\nFixes bugs in add many subrecord radio buttons\n\n\nPreviously multiple radio buttons for the same subrecord field on the same page would\nnot appear to the user to update correctly. This has now been fixed.\n\n\nAngular UI Libraries\n\n\n0.8.0 consolidates Angular UI libraries bundled with Opal. We have removed Angular Strap, and\nswitched all components using it to their Angular UI Bootstrap equivalents.\n\n\nThis is a breaking change.\n\n\nApplications taking advantage of the \nForms\n templatetag library should require no updates, but will see\nsome minor differences in visual style of widgets.\n\n\nDetailed upgrade guides for the components affected (Typeahead, Popover,\nTooltip, Datepicker, Timepicker) are available in the upgrade reference documentation.\n\n\nDefaults for Client Side subrecords\n\n\nWe pull through default values from subrecord fields into the Opal \nSchema\n and use those values when initializing the relevant\nItem instance for a new subrecord. This should greatly reduce the need to use custom Angular subrecord services to set defaults.\n\n\nChoices in form templatetags\n\n\nTemplate tags that use the 'field' attribute to point to a subrecord field will now infer a lookup list from the Choices of the field if it exists.\n\n\nNote unlike the traditional choices implementation only the last value of the choices is used and saved to the database\n\n\n  Colours = (\n    ('P', 'Purple'),\n    ('R', 'Red'),\n  )\n\n\n\n\nWhat is displayed to the user and saved to the database is 'Purple' or 'Red' respectively.\n\n\nelement name in template tags\n\n\nThe html attribute 'name' for form elements generated with the Opal \n{% forms %}\n templatetag library used to be inferred from the model name. Although this remains the default you can also set it with an angular expression:\n\n\n{% select field=\nDemographics.first_name\n element_name=\n...Your Angular expression...\n %}\n\n\n\n\nModel removals\n\n\nThe models \nTeam\n, \nGP\n, \nCommunityNurse\n and \nLocatedModel\n - marked for removal since 0.6.0\nhave now been removed.\n\n\nAs part of this change, the add episode modal previously available at\n\n/templates/modals/add_episode.html/\n is now not available at the url with a trailing slash.\nAny controllers attempting to open the modal e.g. custom list flows should update their\n\n$modal.open\n call to remove the trailing slash.\n\n\nPython 3\n\n\nOpal 0.8.0 is the first version of Opal to support Python 3. This has meant changing the default\nordering of \nPatientList\n instances to 0 rather than None.\n\n\nMoving forwards we expect all new code in Opal to be compatible both Python 2.7 / 3.4 / 3.5 / 3.6.\n\n\nThis introduces an explicit Opal dependency on the Six module for maintaining codebases that span\nPython 2.x and 3.x.\n\n\nTabbed Patient List Groups\n\n\nAdds the class \nopal.core.patient_lists.TabbedPatientListGroup\n which displays groups of related\nlists as tabs at the top of each member list.\n\n\nPatientList sort order\n\n\nTo enable custom sort orders for individual \nPatientList\ns we introduce the \ncomparator_service\n attribute.\nThis names an Angular service which will return a list of comparator functions.\n\n\nPatientList Arbitrary columns\n\n\nWe now explicitly enable columns in spreadhseet lists that are not tied to subrecords. These can be\nincluded in PatientList schema instances as explicit Column() entries.\n\n\nTemplate re-naming\n\n\nModal_base has now been moved into a folder called base_templates. Its also now got a form_modal_base and a two_column_form_modal_base.\nThe latter two templates add validation around saving.\n\n\nThe standard edit item models and others now inherit from the form_modal_base.\n\n\nAuthorization and permissions\n\n\nAll APIs should be permissioned with Django REST framework permission classes. The default implementation uses\nopal.core.api.LoginRequiredViewset, a standard DRF viewset that requires the user to be logged in.\n\n\nWe now require the user to be logged in for any use of the search functionality.\n\n\nAdded a custom interceptor that logs the user out if the we receive a 403 or 401 from the server\n\n\nForm Validation\n\n\nAdds the checkForm directive\n\n\ne.g.\n\n\nbutton check-form=\nform\n ng-click=\nsendDataToTheServer\nclick me\n/button\n\n\n\n\n\nThis adds default form submission behaviour to the a button. It will check if the form is valid, and if its not it will mark the button as disabled until it becomes valid.\n\n\nIt will also set the form as submitted.\n\n\nWe also now show the required error if the form has been submitted or if the field is dirty, so that the user doesn't get an ugly \"fill this field in now\" message when opening the modal/pathway but will get the error after they click submit.\n\n\nRemovals\n\n\nOpal 0.8.0 removes a number of un-used features that have been slated for removal for some time:\n\n\n\n\nOptions\n - both from the JSON API, and the Angular service.\n\n\nThe legacy APIs \n/api/v0.1/episode/admit\n and \n/api/v0.1/episode/refer\n.\n\n\nThe models \nGP\n, \nCommunityNurse\n and \nLocatedModel\n.\n\n\nopal.models.Tagging.import_from_reversion\n. This one-off classmethod on tagging was introduced to aid with the upgrade from Opal 4.x to 5.0 and has no further utility.\n\n\nThe \nstatic\n argument from the forms \ninput\n tag. Developers should move to the \nstatic\n tag.\n\n\nThe _modal option to set on subrecords. This is because we now use large modals across the board.\n\n\n\n\nMisc changes\n\n\nThe opal.core.api.EpisodeViewSet.create now expects tagging to be an object rather than a list, similar to how it details with demographics and location.\n\n\nThe API will no longer serialise the _ft or _fk_id fields of FreeTextOrForeignKey fields - these\nare internal implementation details of the server that are not useful on the client side.\n\n\nAdds a Unique Together constraint for (Tagging.user, Tagging.episode, Tagging.value)\n\n\nLook up lists now load in from individual apps. The look for a file at {{ app }}/data/lookuplists.json\n\n\nThe default admin url is now \n/admin/\n - rather than \n/admin/?\n this results in more readable\nadmin urls and is closer to what most applications do with the Django admin.\n\n\nThe roles field \nopal.models.UserProfile.roles\n has been updated to be \nblank=True\n. This allows the editing\nof users without specific roles assigned in the Django admin. Although this introduces no changes at the\ndatabase level, this does introduce a migration.\n\n\nUpdates to the Dependency Graph\n\n\nUpgrades angular to v1.5.8 (from 1.3.11) you can see their change log \nhere\n\n\nUpdates angular-cookies and angular-mocks to v1.5.8 (both from 1.3.11)\n\n\nUpdates angular-ui-select to 0.19.4 from 0.13.2\n\n\n0.7.5 (Minor Release)\n\n\nThe flow enter and exif functions now take an optional context argument. When called from PatientList or PatientDetail controllers this is the parent scope when the flow has been entered.\n\n\nNote: The current Flow API is likely to undergo substantial revision in Opal 0.9 / 0.10 do contact us on the mailing list if you are relying heavily upon it or would like to let us know your needs.\n\n\n0.7.4 (Minor Release)\n\n\nAdds  a past filter, future and past filters now take a\nboolean argument as to whether you should include today\n\n\n0.7.3 (Minor Release)\n\n\nFixes a bug whereby celery tasks are not autodiscovered - will have affected users of async extract functionality.\n\n\n0.7.2 (Minor Release)\n\n\nFixes a bug with the copy to category API not setting category name.\n\n\nRemoves the hangover use of options in the list of teams per episode in the patient list\n\n\n0.7.1 (Minor Release)\n\n\nCompletes the refactor of front end data, no longer using the \n/api/v0.1/options/\n API internally.\nThis is slated for removal in 0.8.0.\n\n\nUpdates DRF APIs - we now expect either Token or DjangoSession auth.\n\n\nFixes several small bugs with scaffolded applications -  the setting of \nSTATIC_ROOT\n and\n\nSECRET_KEY\n, generating forms for NullBooleanFields, requirements.txt.\n\n\nAdds an \naligned_pair\n templatetag to the \npanels\n library.\n\n\nUpdates the label for \nDemographics.birth_place\n to indicate that this should be a country.\n\n\nAdds the \nclipboard\n directive to give the user one click copy to clipboard.\n\n\nAdds a \ntag-select\n directive that renders a widget for editing the tags for an episode.\n\n\nAdds metadata to the scope for patient detail views\n\n\nUpdates to the Dependency Graph\n\n\n\n\nDjango Axes 1.4.0 -\n 1.7.0\n\n\n\n\n0.7.0 (Major Release)\n\n\nEpisode Categories\n\n\nRefactors EpisodeCategory to be a discoverable feature.\n\n\nRenames \nEpisode.category\n -\n \nEpisode.category_name\n.\n\n\nEpisode JSON API\n\n\nThe Restful Episode JSON API previously available at \n/episode/:pk/\n is now moved into\n\n/api/v0.1/episode/:pk/\n for consistency with the rest of our JSON APIs.\nThe Opal Angular layer has been updated to reflect this, and\nshould handle the transition seamlessly, but code calling the API directly should update\nto reflect the new URL.\n\n\nDefaults for records on the client side\n\n\nEstablishes a new way to define defaults for records initialized in Javascript without\nrequiring that we hard-code API names to defaults in a global namespace.\n\n\nUpdate to Javascript Signatures\n\n\nFlow.enter()\n and \nFlow.exit()\n now no longer take \noptions\n positional arguments - instead\nthe controllers they initialize have \nMetadata\n and \nReferencedata\n as optional resolves\narguments.\n\n\nAddEpisodeCtrl now no longer requires options as a resolves() option, but requires Referencedata\ninstead.\n\n\nMaxLength for form helpers\n\n\nThe \ninput\n form helper will now infer the max length of char fields from the max length of the\ndatabase field, and render relevant Angular directives.\n\n\nEpisodeDetail removed\n\n\nThe \nEpisodeDetailCtrl\n and \nEpisodeDetailMixin\n controller and service have been removed - these\nwere not used anywhere other than in the Wardround plugin, and redundant after enhancements to\nPatient Detail and Custom DetailViews in 0.6.\n\n\nAdditional utilities\n\n\nAdds a datetimepicker templatetag that will render widgets for a Datetime field including time.\n\n\nAdds a \ndate_of_birth_field\n templatetag that renders a date of birth field complete with inteligent\nvalidation. (Note this change also includes removing the old _partial/ template)\n\n\nUpdates dependency graph:\n\n\n\n\nDjango -\n 1.8.13\n\n\n\n\n0.6.0 (Major Release)\n\n\nDetail views\n\n\nMoves from episode oriented detail to patient oriented detail.\n(All episodes plus x-episode views are available from a patient detail screen)\n\n\nTagging\n\n\nAs a performance optimisation for the frequent access of historic tags, untagging\nan episode simply renders the tag inactive rather than deleting it and relying on\nDjango-Reversion for access to historical data.\n\n\nDate Formatting\n\n\nWe now expect 'd/m/y' date formatting by default.\n\n\nPatient lists\n\n\nLists are now declarative, and separate from teams. They are implemented as\nsubclasses of opal.core.patient_lists.PatientList.\n\n\nForms vs. Modals\n\n\nIntroduces a distinction between a form and a modal.\nBy default, we now use forms for subrecords, only overriding the modal if there\nis something we want to do differently specifically in the modal.\n\n\nCommand line tools\n\n\nAdds $opal checkout for switching between applications or application versions.\n\n\nModels ContextProcessor\n\n\nThe 'opal.context_processors.models' Context Processor will allow you to access your\nsubrecords from templates without having to explicitly load them in a view. In turn,\nthis allows patterns like:\n\n\n{% include models.Demographics.get_detail_template %}\n\n\n\nUpgrade instructions:\n\n\nFull upgrade instructions to work through any backwards incompatible changes are\nprovided in the Opal docs.\n\n\n0.5.5 (Minor Release)\n\n\nChanges the way old tags are handled.\n\n\nTags are no longer deleted episodes, rather they're marked as archived.\n\n\n0.5.4 (Minor Release)\n\n\n\n\nInclude local storage\n\n\n\n\n0.5.3 (Minor Release)\n\n\n\n\nSpeed up loading of the lookup lists\n\n\nFix pagination issues in search\n\n\nSpeed up loading of many to many fields\n\n\nIncrease test coverage\n\n\nAdd some extra help fields to {% forms %} helpers\n\n\nFixes bug with $rootScope.open_modal() where keystrokes were being intercepted\n\n\n\n\n0.5.2 (Minor Release)\n\n\nSpeed improvements on page load\nallow us to only show record panels if a record of that type exists\ndisable modal buttons while saving\n\n\n0.5.1 (Minor Release)\n\n\nMinor bug fixes\n\n\n0.5 (Major release)\n\n\nSearch\n\n\nComplete re-design of Search interface to provide a single search box on every page and pagination for resulta.\nPuts in place a pluggable interface that could be swapped out for e.g. ElasticSearch.\nNew Service for PatientSummary()\n\n\nAnalytics\n\n\nMoves Analytics integration into Opal core with the ability to blacklist pages that should never be reported\n\n\nList view\n\n\nRemoved old spreadsheet-style cell based navigation and moved to row-wise nav with clearer highlighting of the active row.\nUpdated scrolling and loading behaviour to snap to viewport and not display the page build.\n\n\nSubrecord metadata\n\n\nAdded four new utility fields to Patient and Episode subrecords:\n\n\ncreated_by, updated_by, created, updated\n\n\nSelect2 and list fields\n\n\nAdded support for select2 as an input widget and Subrecord fields that can be lists of things.\n\n\nAlso\n\n\nNumerous small bugfixes.\nRefactoring of the models package into a models module.\nUpdated Underscore.js -\n 1.8.3\nUpdated Angular.js -\n 1.3.11\n\n\n0.4.3 (Minor release)\n\n\nRefactors opal.models to be a models.py file rather than a package.\nAdds several improvements to forms helpers -\n Help argument, other argument to select.\n\n\nUpdates dependency graph:\n\n\n\n\nAngular-strap -\n 2.3.1\n\n\n\n\n0.4.2 (Minor release)\n\n\nUpgrades dependency graph:\n\n\n\n\nDjango -\n 1.8.3\n\n\nDjango-reversion -\n 1.8.7\n\n\njQuery -\n 1.11.3\n\n\nD3 -\n 3.5.6\n\n\nC4 -\n 0.4.10\n\n\n\n\nSouth has been removed, now using django migrations\n\n\n0.4.1 (Bugfix release)\n\n\nFixes some search results appearing duplicated.\n\n\n0.4 (Major release)\n\n\nNew Design\n\n\nCompletely re-designed UI following extensive user research and multiple iterations.\n\n\nManagementcommands and scaffolding\n\n\nFeatures the opal command line tool for common administrative tasks\nhttp://opal.openhealthcare.org.uk/docs/guides/command_line_tool/\n\n\n Form helpers templatetag library\n\n\nNew template library for consistent form controls in line with our new interface guidelines\nhttp://opal.openhealthcare.org.uk/docs/reference/form_templatetags/\n\n\nAPI Documentation\n\n\nOpal JSON APIs are now fully self-documenting for all updated instances\nhttp://opal.openhealthcare.org.uk/docs/guides/json_api/\n\n\n0.3 (Major release)\n\n\nBugfixes, significant flexibility in template customisability.\n\n\nMinor UI updates.\n\n\n0.2.2 (Bugfix release)\n\n\nNumerous small bugfixes.\n\n\nAdds the concept of undischarging patients.\n\n\n0.2.1\n\n\nNumerous small bugfixes.\n\n\n0.2.0\n\n\nSearch overhaul - introduces advanced searches.\n\n\n0.1.1\n\n\nInitial public release", 
+            "location": "/reference/changelog/", 
+            "text": "0.11.0 (Major Release)\n\n\nAdds options of \ntoday\n and \nyesterday\n in the date picker\n\n\nIf you pass in \nuser_options=True\n to the date picker. You will be provided with options to select today or yesterday in the form tag.\n\n\nAdds \ndateHelper\n to the rootScope\n\n\nThe dateHelper has the functions \nnow\n and \nyesterday\n that return javascript Dates for\nthe current time and the current time - 1 day.\n\n\nDeprecates the _title property\n\n\nIn future we will use the standard \nverbose_name\n property as the display name.\nThe abstract models have been changed to account for this.\n\n\nCore API registration\n\n\nA refactor in the way that the core APIs are registered by Opal means that\nimporting \nopal.core.api\n in a plugin API no longer results in circular imports.\n\n\nFixes a bug whereby episodes were serialising differently depending on whether\nthe code path went via \n.to_dict()\n or \n.objects.serialised()\n.\n\n\nHelpTextStep can now use a custom template\n\n\nThe \nopal.core.pathway.steps.HelpTextStep\n can now have a \nhelp_text_template\n passed in.\n\n\nThis is the template for what will be placed in the side bar.\n\n\nAdds in a radio_vertical template tag\n\n\nThis displays the label and then the radio\nbuttons as a vertical list.\n\n\nopal.core.serialization\n\n\nA number of helpers related to serialization and deserialization have been brought\ntogether in the new module \nopal.core.serialization\n.\n\n\nRemoves \"episode_history\" from episode serialization\n\n\nSerialised episodes previously contained a \"shallow\" copy of all other episodes in\na property named \nepisode_history\n. This was primarially useful before we switched\nfrom episode-oriented to patient-oriented detail views by default.\n\n\nThis also includes a change to the signature of the \n.serialised()\n method of the\nEpisode manager, which no longer accepts a \nepisode_history\n kwarg.\n\n\nas_menuitem helpers\n\n\nApplications using Opal Menuitems often wish to add menu items for Patient Lists and\nPathways.\n\n\nTo aid this, the \n.as_menuitem()\n method now creates one from the target class with\nsensible but overridable defaults.\n\n\nopal serve\n command\n\n\nWe add \nopal serve\n to the Opal commandline tool. Currently this simply wraps the\nDjango runserver management command. It is envisaged that in the future this will\nalso initialize e.g. sass precompilers with a single command.\n\n\nMisc Changes\n\n\nAdds the utility function \nopal.utils.get\n. Similar to the \ngetattr\n builtin, \nget\n looks\nfor a method named \nget_$attr\n and will call that if it exists.\n\n\nAdds the method \n.get_absolute_url()\n to \nopal.core.pathways.Pathway\n and\n\nopal.core.patient_lists.PatientList\n.\n\n\nTemplate removals\n\n\nWe removed a number of superfluous templates:\n\n\n\n\nopal/templates/patient_lists/spreadsheet_list.html\n\n\nopal/templates/layouts/left-panel.html\n\n\n\n\nStatic asset minification\n\n\nThe Django upgrade in Opal 0.10 stopped compressor minifying files\nwhen DEBUG is set to False. This fixes that issue by upgrading Django compressor to\na version that supports Django 1.10.\n\n\nThe return of an old friend: IE Document modes\n\n\nUsers report that their system administrators sometimes configure Internet Explorer\nin such a way that it uses e.g. IE7 Document mode by default.\n\n\nThis is problematical for Opal applications which do in fact make use of internet\ntechnologies that were in widespread use after say, 2006.\n\n\nWe have altered \nbase.html\n to specify \n\"X-UA-Compatible\" content=\"IE=Edge\"\n. If you\noverride \nbase.html\nin your application we advise that you add this \nmeta\n tag.\n\n\nMisc Changes\n\n\n\n\nAdds the utility function \nopal.core.subrecords.singletons()\n which returns\na generator function which will yield all subrecord singletons.\n\n\n\n\nFixes a URI encoding bug in the \nEpisode.findByHospitalNumber()\n method that\nmade hospital numbers including \n#\n or \n/\n raise an error.\n\n\n\n\n\n\nAdds the methods \n.get_absolute_url()\n, \n.get_icon()\n and \nget_display_name()\n\nto \nopal.core.pathways.Pathway\n and \nopal.core.patient_lists.PatientList\n.\n\n\n\n\n\n\nUpdates to the Dependency Graph\n\n\n\n\nDjango compressor: 1.5 -\n 2.2\n\n\n\n\n0.10.1 (Minor Release)\n\n\nPlugin API end points can now override application end points\n\n\nA change to the order that APIs are registered with Django Rest Framework allows\nplugins to now override the core Opal application APIs.\n\n\nFonts are now locally sourced\n\n\nFonts are now served from Opal's static assets rather than from the Google CDN.\n\n\nprint/screen stylesheets have been collapsed into opal.css\n\n\nPrint/screen differences are now in opal.css with media tags.\n\n\nGoogle Analytics is now deferred\n\n\nThe loading in of Google Analytics is now deferred to the bottom of the body\ntag to allow the page to load without waiting on analytics scripts to load.\n\n\nScaffold version control failures\n\n\nThe \nstartplugin\n and \nstartproject\n commands initialize a git repository by\ndefault. If we (The \nsubprocess\n module) cannot find the \ngit\n command, we now\ncontinue with a message printed to screen rather than raising an exception.\n\n\nEpisode.objects.serialised now uses select_related\n\n\nForeignKeyOrFreeText\n fields now have their ForeignKey items preselected when\nwe use \nEpisode.objects.serialised\n. This provides a speed boost for applications\nwith moderately heavy \nForeignKeyOrFreeText\n usage.\n\n\n(Approx 30-40% in our tests.)\n\n\n0.10.0 (Major Release)\n\n\nThis is a major release with breaking changes from upstream dependencies.\nYou are almost certain to require changes to your application. Please see\nthe upgrade guide for further details.\n\n\nReferencedata in new applications\n\n\nOpal now includes core lookuplist data in an \nopal.core.referencedata\n plugin\nwhich is installed and loaded by default by the \nstartproject\n scaffolding.\n\n\nDeletion cascade behaviour\n\n\nOpal 0.10 changes several behaviours related to cascading deletions which, despite\nbeing Django defaults, were confusing to users and developers in our use case.\n\n\nWhen we delete and look up list instance, we no longer delete all subrecords that use\nthat instance. Instead we set the look up list instances name in the free text field on\nthe subrecord.\n\n\nWhen you delete a user, it will no longer delete all related episodes and subrecords\n\n\nEpisode Category stages\n\n\nEpisode categories now enforce a set of valid \nEpisode.stage\n values.\n\nEpisodeCategory\n now includes the \n.get_stages()\n and \n.has_stage(stage)\n methods,\nwhile \nEpisode\n has a \nset_stage\n setter which is used by the UpdateFromDictMixin JSON API.\n\n\nlookuplists.lookuplists\n\n\nAdds the utility generator \nlookuplists.lookuplists()\n which wil yield every lookuplist\ncurrently available.\n\n\nDiscoverable.filter()\n\n\nDisoverable features now have a \nfilter\n method which allows you to filter features\nwith matching attributes.\n\n\nPathways ContextProcessor\n\n\nThe 'opal.core.pathways.context_processors.pathways' Context Processor will allow you to\naccess your pathways from templates without having to explicitly load them in a view. In\nturn, this allows patterns like:\n\n\n{% include pathways.YourPathway.get_display_name %}\n\n\n\nMissing consistency token errors\n\n\n.update_from_dict()\n will now raise the new error\n\nopal.core.errors.MissingConsistencyTokenError\n if it is called without a consistency\ntoken when one is set on the model. Previously it would raise \nAPIError\n.\n\n\nThe JSON API will now return a more specific message in the response boday, explaining\nthat the problem is a missing consistency token.\n\n\ndump_lookup_lists --many-files\n\n\nAdds the \n--many-files\n option to the \ndump_lookup_lists\n command which will write\neach installed lookup list to a separate file in the \n./data/lookuplists\n directory\nof the application.\n\n\nTemplate removals\n\n\nWe remove a number of stale unused templates:\n\n\n\n\nchangelog.html\n\n\ncontact.html\n\n\nextract_footer.html\n\n\ntagging_detail.html\n\n\n_helpers/inline_form.html\n\n\nresponsive/_phone_episode_list.html'\n\n\nresponsive/_tablet_episode_list.html\n\n\n\n\nRemoving LoginRequiredMixin\n\n\nAs Django ships with a \nLoginRequiredMixin\n of its own we no longer roll our own\nin `opal.core.views.\n\n\nTesting options\n\n\nAdds a \n--failfast\n option to the test harness to stop test runs on the first\nfailure.\n\n\nIf you are a plugin developer upgrading an existing plugin you will have to\nmanually add support for \n--failfast\n passthrough to your \nruntests.py\n.\n\n\nIf you are a plugin developer upgrading an existing plugin you will have to\nmanually add support for \n--failfast\n passthrough to your \nruntests.py\n.\n\n\nMoves scaffold to be a django management command\n\n\nThe rest of the api is still the same but now\nwe run \npython manage.py scaffold {my_app_name}\n\n\nDeprecations completed\n\n\nAs previously noted in console warnings, the Angular Episode service no longer\nsupports the \ndischarge_date\n, \ndate_of_admission\n, \ndate_of_episode\n properties.\nThese were replaced by \n.start\n and \n.end\n.\n\n\nUpdates to the Dependency Graph\n\n\n\n\nDjango: 1.8.13 -\n 1.10.8\n\n\nDjango Reversion: 1.8.7 -\n 1.10.2\n\n\nDjango Rest Framework: 3.2.2 -\n 3.4.7\n\n\nPsycopg2: 2.5 -\n 2.7\n\n\nJinja2: 2.9.6 -\n 2.10\n\n\nFfs: 0.0.8.1 -\n 0.0.8.2\n\n\nRequests: 2.7.0 -\n 2.18.4\n\n\ndjango-celery: 3.1.17 -\n 3.2.2\n\n\ncelery: 3.1.19 -\n 3.1.25\n\n\n\n\nMisc Changes\n\n\nRemoves the undocumented \ncollapsed_multisave\n tag from the \npathways\n templatetag\nlibrary.\n\n\nAdds a setting \nOPAL_FAVICON_PATH\n to specify the application Favicon to use.\n\n\nAdds the \nrows\n option to the textarea template tag which just fills in the html textarea\n\nrows\n attribute. Text areas are defaulted to 5 rows (the same as before).\n\n\nConfigures the setting \nCSRF_FAILURE_VIEW\n to use the bundled \nopal.views.csrf_failure\n view.\n\n\nPathway slugs may now include hyphens as well as numbers, lower case letters and underscores.\n\n\nBugfix: in edit_item.js $scope.episode_category is now set from episode.category_name\nas opposed to episode.category (which was always null)\n\n\nFixes some instances of progressbars not being reset if unexpected error states\noccur.\n\n\nImproves the rendering of patient detail pages where no patient with the ID from\nroute params exits. (Displays a polite message instead of erroring.)\n\n\nIncorrect pluralisation of subrecord names in the Admin view has been fixed. (Migrations\nwill have to be run in all models which extend the changed core Opal models (this is due\nto a minor upstream Django bug)\n\n\nMinor change to the diagnosis form.\n\n\n0.9.0 (Major Release)\n\n\nGood bye date_of_episode, discharge_date, date_of_admission\n\n\nAnd hello \nepisode.start\n and \nepisode.end\n. These fields on the \nEpisode\n model\nreplace the multiple ways of recording Episode duration in Opal.\n\n\nThere is a migration that sets \nstart\n to date_of_episode if it  exists, otherwise\nit uses date of admission.\n\n\nend\n will be date_of_episode if it exists, otherwise it will use discharge_date.\n\n\nNote that this means we no longer refer to start and end properties on the\nEpisode category. If you override \nstart\n and \nend\n in a custom episode category\nyou should update to use the Episode model fields. This logic should be moved into\nyour flows and you'll need to put in a migration to populate existing\nepisodes.\n\n\nWe also remove the episode fields \ndate_of_episode\n \ndischarge_date\n, and\n\ndate_of_admission\n.\nWarning: Backwards migrations will not migrate back to \ndate_of_episode\n but to\na admission and discharge. Take backups before running these migrations!\n\n\nThe fields \nstart\n and \nend\n are both cast to moments (rather than raw js Dates) on\nepisode.initialisation\n\n\nPathway\n\n\nMoves the opal-pathway module into the opal core. Pathways is an extensible way\nof creating forms that involve multiple subrecords.\n\n\nWe've got time on our side\n\n\nAdds in the {% timepicker %} template tag, that follows the same convention as\nthe other template tags, ie {% timepicker field=\"Dinner.time\" %}\n\n\nRemoves a js global declaration of categories\n\n\nPreviously we declared CATEGORIES globally. This has now been removed\n\n\nOrder Order\n\n\nEpisodes in the patient list are now ordered by start, first_name and surname\n\n\nTheming support\n\n\nImprovements and better documentation and guides for theming applications. Particularly\nof note are changes to \nopal.html\n and \nbase.html\n, as well as the addition of the\n\nstatic_page.html\n template.\n\n\nThis version also includes extensive improved support for customising the templates that\ndisplay patient lists, detail views, menus and forms amongst other things.\n\n\nFor full documentation, consult the theming guide in the documentation.\n\n\nMakes search fully pluggable\n\n\nSearch is now completely pluggable, you need to have \nsome\n angular controller\ncalled SearchCtrl, but apart from that you can plugin your own implementation.\n\n\nExclude prefixes now work on actual paths\n\n\nPreviously they only worked with angular paths, now they work\nwith a combination of actual paths and angular url paths (e.g. /search/#/extract)\n\n\nMisc Changes\n\n\nAdd the allow_add_patient and allow_edit_teams options to the patient lists.\n\n\nWe added support for a \n--file\n or \n-f\n option for the \nload_lookup_lists\n command which\nallows the user to specify a particular file outside of the default locations.\n\n\nThe default \nLocation\n record display template will no longer include references\nto \nEpisode.start\n. and \nEpisode.stop\n labelled as admisssion and discharge to support\nthe majority case where an episode relates to something other than an inpatient episode!\n\n\nApplications wishing to retaint this functionality should update their own temaplates\nto display start/stop details.\n\n\nRemoves Deprecated functionality in ReferenceData, Metadata, UserProfile and recordLoader\n\n\nPreviously these would make their http request when imported into a file. They now require you to call .load()\nfor them to return the promise that loads in their respective data.\n\n\n0.8.3 (Minor Release)\n\n\nopal.log.ConfidentialEmailer\n\n\nAdds a custom email logger. This enables Django error emails which remove any confidential patient data.\n\n\nAlso adds in the karma config to the MANIFEST.in so that we include the karma configs on pip install. It also moves it\nto \"opal/tests/js_config/karma_defaults.js\".\n\n\n0.8.2 (Minor Release)\n\n\nOPAL_LOCATION is added as a system variable when running js tests\n\n\nIf you run opal test js, your karma config is now run in an environment that has\naccess to the OPAL_LOCATION variable which points to the opal parent directory.\n\n\nA Data Dictionary In The Extract\n\n\nThe Extract zip file has a data dictionary with human readable metadata about each field.\n\n\nEnhanced Application menus\n\n\nThe application menu API, previously python dicts stored in attributes on either plugin or\napplication subclasses, now consists of the new \nopal.core.menus.MenuItem\n class, enabling\nenhanced customisation and flexibility.\n\n\nPUT to the episode API returns the episode with all its subrecords\n\n\nPreviously it only returned the episode. Now it matches the episode create api end point\n\n\nEpisode/Patient links in admin\n\n\nIn the admin, episodes and patients lists now have links to the patient detail pages.\n\n\nUser data for the client\n\n\nAdds a \nUser\n Angular service that enables applications to use user data.\nAlso adds some directives to make it easy to render User names and avatars.\n\n\nEpisode.getFullName()\n\n\nAdds a utility method to the \nEpisode\n service that returns a human readable patient name.\n\n\nPlugin.get_javascripts, Plugin.get_styles\n\n\nEnhances the API available for plugins to include javascript and css by adding methods on\n\nopal.core.plugins.OpalPlugin\n\n\n'element_type' argument for the form template tags\n\n\nNumeric database fields are now set as the html5 type=\"number\" when rendering\nthem with the forms templatetag library. This means on mobile devices it will\nbring up the numeric keypad. The element type can now be set via the template\ntag API with the 'element_type' argument.\n\n\nOPAL_LOGO_PATH\n\n\nThis new setting allows applications to set the path at which the app logo is served.\nIf \nOPAL_LOGO_PATH\n is set, the value is passed to the \n{% static %}\n templatetag to set\nthe \nsrc\n atribute of an image in the default application header and login screen.\n\n\nInactive episodes in PatientLists\n\n\nChanges the behaviour of \nopal.core.PatientList.to_dict\n to serialise inactive\nepisodes by default rather than filtering by Episode.active == True.\n\n\nopal.core.TaggedPatientList.to_dict\n continues to filter by Episode.active ==\nTrue by default.\n\n\nNotice of future removals\n\n\nThe context variables \nbrand_name\n \nsettings\n and \nextra_application\n in \nopal.views.IndexView\n\nare no longer helpful thanks to the settings context processor. These will be removed in\n0.9.0 and emit warnings until then.\n\n\nMisc changes\n\n\nAdds a new filter - \nunderscore-to-spaces\n for removing underscores from strings.\n\n\nThe options for \nSymptomComplex.duration\n have moved from the default form template to a choices\ndeclaration on the model. These are scheduled to move again to a lookuplist.\n\n\nThe default value of \nSubrecord.get_display_name\n now uses Django \nMeta.verbose_name\n.\n\n\nMinor fixes\n\n\nFixes a bug where the allergies form rendered the provisional field twice\n\n\nUpdates to the Dependency Graph\n\n\nUpgrades Font Awesome from 4.3.0 -\n 4.7.0\nUpgrades Jinja2 from 2.8 -\n 2.9.6\n\n\n0.8.1 (Minor Release)\n\n\nCookies for the future\n\n\nWe now use the \n$cookies\n api as part of moving to angular v1.5.8.\n\n\nThe default expiry of cookies is now a year in the future.\n\n\nThe cookie name previously stored as \nopal.lastPatientList\n is now\n\nopal.previousPatientList\n.\n\n\nPatients as a service\n\n\nPatient becomes a service in angular. This takes in a patient as loaded by the patient loader or another service. It casts the data to Episode or Item instances as appropriate.\n\n\nPatientList.get_queryset arguments\n\n\nPatientList.get_queryset() is now passed an extra keyword argument - \nuser\n.\nThis is the current \nUser\n object.\n\n\nOverriding default Menu Items behaviour\n\n\nThe \nget_menu_items\n method of Opal Application objects is now passed an extra keyword argument - \nuser\n.\nThis is the current \nUser\n object.\n\n\nThe templatetag application_menuitems now uses this method to render navigation menus, allowing dynamic\ncustomisation of menu contents based on user.\n\n\nRemovals\n\n\nOpal 0.8.1 removes some minor features which, to our knowledge are not used by any applications in active development.\n\n\n\n\nReopenEpisodeCtrl - applications may implement their own 're-open' episode flow, but Opal no longer handles this out of the box.\n\n\nSubrecord._bulk_serialise - this flag has been removed\n\n\n\n\nPending removals\n\n\nWe have re-named \nopal.core.views._build_json_response\n to \nopal.core.views.json_response\n. This will issue a\nwarning for the remainder of the 0.8.x branch, before being removed entirely in Opal 0.9.0.\n\n\nSubrecord List API\n\n\nWe have added a list method to the default Opal JSON API for subrecords - you may now obtain a list of all instances\nof a given subrecord from the API endpoint \n/api/v0.1/$api_name/\n.\n\n\nMisc Changes\n\n\nUpdates the custom \nUserAdmin\n so that the email, first and last name fields from the Django \nUser\n model\nare in the add user form not just the edit user form.\n\n\nThe default test runner generated by plugin scaffolding now uses \nopal.urls\n as the default url conf in the test settings. This allows you to test urls generated by Opal - for instance default form or record templates, or simply raw templates from our generic template view.\n\n\n0.8.0 (Major Release)\n\n\nPlugins\n\n\nPlugins have been refactored and are now \nDiscoverableFeatures\n. This should have no impact on existing\nplugins, however the functions \nopal.core.plugins.register\n and \nopal.core.plugins.plugins\n are slated for\nremoval in 0.9.0\n\n\nWhen creating new plugins we will place the plugin definition class in \nplugin.py\n rather than \n__init__.py\n\n\nopal.core.api.patient_from_pk\n\n\nA decorator that changes a method that is passed a pk, to a method that is passed a patient.\n\n\nToDictMixin._bulk_serialise\n\n\nAdds a flag to the to dict mixin to determine whether the item is serialised as part of \nEpisode/Patient.to_dict\n.\n\n\nFixes bugs in add many subrecord radio buttons\n\n\nPreviously multiple radio buttons for the same subrecord field on the same page would\nnot appear to the user to update correctly. This has now been fixed.\n\n\nAngular UI Libraries\n\n\n0.8.0 consolidates Angular UI libraries bundled with Opal. We have removed Angular Strap, and\nswitched all components using it to their Angular UI Bootstrap equivalents.\n\n\nThis is a breaking change.\n\n\nApplications taking advantage of the \nForms\n templatetag library should require no updates, but will see\nsome minor differences in visual style of widgets.\n\n\nDetailed upgrade guides for the components affected (Typeahead, Popover,\nTooltip, Datepicker, Timepicker) are available in the upgrade reference documentation.\n\n\nDefaults for Client Side subrecords\n\n\nWe pull through default values from subrecord fields into the Opal \nSchema\n and use those values when initializing the relevant\nItem instance for a new subrecord. This should greatly reduce the need to use custom Angular subrecord services to set defaults.\n\n\nChoices in form templatetags\n\n\nTemplate tags that use the 'field' attribute to point to a subrecord field will now infer a lookup list from the Choices of the field if it exists.\n\n\nNote unlike the traditional choices implementation only the last value of the choices is used and saved to the database\n\n\n  Colours = (\n    ('P', 'Purple'),\n    ('R', 'Red'),\n  )\n\n\n\n\nWhat is displayed to the user and saved to the database is 'Purple' or 'Red' respectively.\n\n\nelement name in template tags\n\n\nThe html attribute 'name' for form elements generated with the Opal \n{% forms %}\n templatetag library used to be inferred from the model name. Although this remains the default you can also set it with an angular expression:\n\n\n{% select field=\nDemographics.first_name\n element_name=\n...Your Angular expression...\n %}\n\n\n\n\nModel removals\n\n\nThe models \nTeam\n, \nGP\n, \nCommunityNurse\n and \nLocatedModel\n - marked for removal since 0.6.0\nhave now been removed.\n\n\nAs part of this change, the add episode modal previously available at\n\n/templates/modals/add_episode.html/\n is now not available at the url with a trailing slash.\nAny controllers attempting to open the modal e.g. custom list flows should update their\n\n$modal.open\n call to remove the trailing slash.\n\n\nPython 3\n\n\nOpal 0.8.0 is the first version of Opal to support Python 3. This has meant changing the default\nordering of \nPatientList\n instances to 0 rather than None.\n\n\nMoving forwards we expect all new code in Opal to be compatible both Python 2.7 / 3.4 / 3.5 / 3.6.\n\n\nThis introduces an explicit Opal dependency on the Six module for maintaining codebases that span\nPython 2.x and 3.x.\n\n\nTabbed Patient List Groups\n\n\nAdds the class \nopal.core.patient_lists.TabbedPatientListGroup\n which displays groups of related\nlists as tabs at the top of each member list.\n\n\nPatientList sort order\n\n\nTo enable custom sort orders for individual \nPatientList\ns we introduce the \ncomparator_service\n attribute.\nThis names an Angular service which will return a list of comparator functions.\n\n\nPatientList Arbitrary columns\n\n\nWe now explicitly enable columns in spreadhseet lists that are not tied to subrecords. These can be\nincluded in PatientList schema instances as explicit Column() entries.\n\n\nTemplate re-naming\n\n\nModal_base has now been moved into a folder called base_templates. Its also now got a form_modal_base and a two_column_form_modal_base.\nThe latter two templates add validation around saving.\n\n\nThe standard edit item models and others now inherit from the form_modal_base.\n\n\nAuthorization and permissions\n\n\nAll APIs should be permissioned with Django REST framework permission classes. The default implementation uses\nopal.core.api.LoginRequiredViewset, a standard DRF viewset that requires the user to be logged in.\n\n\nWe now require the user to be logged in for any use of the search functionality.\n\n\nAdded a custom interceptor that logs the user out if the we receive a 403 or 401 from the server\n\n\nForm Validation\n\n\nAdds the checkForm directive\n\n\ne.g.\n\n\nbutton check-form=\nform\n ng-click=\nsendDataToTheServer\nclick me\n/button\n\n\n\n\n\nThis adds default form submission behaviour to the a button. It will check if the form is valid, and if its not it will mark the button as disabled until it becomes valid.\n\n\nIt will also set the form as submitted.\n\n\nWe also now show the required error if the form has been submitted or if the field is dirty, so that the user doesn't get an ugly \"fill this field in now\" message when opening the modal/pathway but will get the error after they click submit.\n\n\nRemovals\n\n\nOpal 0.8.0 removes a number of un-used features that have been slated for removal for some time:\n\n\n\n\nOptions\n - both from the JSON API, and the Angular service.\n\n\nThe legacy APIs \n/api/v0.1/episode/admit\n and \n/api/v0.1/episode/refer\n.\n\n\nThe models \nGP\n, \nCommunityNurse\n and \nLocatedModel\n.\n\n\nopal.models.Tagging.import_from_reversion\n. This one-off classmethod on tagging was introduced to aid with the upgrade from Opal 4.x to 5.0 and has no further utility.\n\n\nThe \nstatic\n argument from the forms \ninput\n tag. Developers should move to the \nstatic\n tag.\n\n\nThe _modal option to set on subrecords. This is because we now use large modals across the board.\n\n\n\n\nMisc changes\n\n\nThe opal.core.api.EpisodeViewSet.create now expects tagging to be an object rather than a list, similar to how it details with demographics and location.\n\n\nThe API will no longer serialise the _ft or _fk_id fields of FreeTextOrForeignKey fields - these\nare internal implementation details of the server that are not useful on the client side.\n\n\nAdds a Unique Together constraint for (Tagging.user, Tagging.episode, Tagging.value)\n\n\nLook up lists now load in from individual apps. The look for a file at {{ app }}/data/lookuplists.json\n\n\nThe default admin url is now \n/admin/\n - rather than \n/admin/?\n this results in more readable\nadmin urls and is closer to what most applications do with the Django admin.\n\n\nThe roles field \nopal.models.UserProfile.roles\n has been updated to be \nblank=True\n. This allows the editing\nof users without specific roles assigned in the Django admin. Although this introduces no changes at the\ndatabase level, this does introduce a migration.\n\n\nUpdates to the Dependency Graph\n\n\nUpgrades angular to v1.5.8 (from 1.3.11) you can see their change log \nhere\n\n\nUpdates angular-cookies and angular-mocks to v1.5.8 (both from 1.3.11)\n\n\nUpdates angular-ui-select to 0.19.4 from 0.13.2\n\n\n0.7.5 (Minor Release)\n\n\nThe flow enter and exif functions now take an optional context argument. When called from PatientList or PatientDetail controllers this is the parent scope when the flow has been entered.\n\n\nNote: The current Flow API is likely to undergo substantial revision in Opal 0.9 / 0.10 do contact us on the mailing list if you are relying heavily upon it or would like to let us know your needs.\n\n\n0.7.4 (Minor Release)\n\n\nAdds  a past filter, future and past filters now take a\nboolean argument as to whether you should include today\n\n\n0.7.3 (Minor Release)\n\n\nFixes a bug whereby celery tasks are not autodiscovered - will have affected users of async extract functionality.\n\n\n0.7.2 (Minor Release)\n\n\nFixes a bug with the copy to category API not setting category name.\n\n\nRemoves the hangover use of options in the list of teams per episode in the patient list\n\n\n0.7.1 (Minor Release)\n\n\nCompletes the refactor of front end data, no longer using the \n/api/v0.1/options/\n API internally.\nThis is slated for removal in 0.8.0.\n\n\nUpdates DRF APIs - we now expect either Token or DjangoSession auth.\n\n\nFixes several small bugs with scaffolded applications -  the setting of \nSTATIC_ROOT\n and\n\nSECRET_KEY\n, generating forms for NullBooleanFields, requirements.txt.\n\n\nAdds an \naligned_pair\n templatetag to the \npanels\n library.\n\n\nUpdates the label for \nDemographics.birth_place\n to indicate that this should be a country.\n\n\nAdds the \nclipboard\n directive to give the user one click copy to clipboard.\n\n\nAdds a \ntag-select\n directive that renders a widget for editing the tags for an episode.\n\n\nAdds metadata to the scope for patient detail views\n\n\nUpdates to the Dependency Graph\n\n\n\n\nDjango Axes 1.4.0 -\n 1.7.0\n\n\n\n\n0.7.0 (Major Release)\n\n\nEpisode Categories\n\n\nRefactors EpisodeCategory to be a discoverable feature.\n\n\nRenames \nEpisode.category\n -\n \nEpisode.category_name\n.\n\n\nEpisode JSON API\n\n\nThe Restful Episode JSON API previously available at \n/episode/:pk/\n is now moved into\n\n/api/v0.1/episode/:pk/\n for consistency with the rest of our JSON APIs.\nThe Opal Angular layer has been updated to reflect this, and\nshould handle the transition seamlessly, but code calling the API directly should update\nto reflect the new URL.\n\n\nDefaults for records on the client side\n\n\nEstablishes a new way to define defaults for records initialized in Javascript without\nrequiring that we hard-code API names to defaults in a global namespace.\n\n\nUpdate to Javascript Signatures\n\n\nFlow.enter()\n and \nFlow.exit()\n now no longer take \noptions\n positional arguments - instead\nthe controllers they initialize have \nMetadata\n and \nReferencedata\n as optional resolves\narguments.\n\n\nAddEpisodeCtrl now no longer requires options as a resolves() option, but requires Referencedata\ninstead.\n\n\nMaxLength for form helpers\n\n\nThe \ninput\n form helper will now infer the max length of char fields from the max length of the\ndatabase field, and render relevant Angular directives.\n\n\nEpisodeDetail removed\n\n\nThe \nEpisodeDetailCtrl\n and \nEpisodeDetailMixin\n controller and service have been removed - these\nwere not used anywhere other than in the Wardround plugin, and redundant after enhancements to\nPatient Detail and Custom DetailViews in 0.6.\n\n\nAdditional utilities\n\n\nAdds a datetimepicker templatetag that will render widgets for a Datetime field including time.\n\n\nAdds a \ndate_of_birth_field\n templatetag that renders a date of birth field complete with inteligent\nvalidation. (Note this change also includes removing the old _partial/ template)\n\n\nUpdates dependency graph:\n\n\n\n\nDjango -\n 1.8.13\n\n\n\n\n0.6.0 (Major Release)\n\n\nDetail views\n\n\nMoves from episode oriented detail to patient oriented detail.\n(All episodes plus x-episode views are available from a patient detail screen)\n\n\nTagging\n\n\nAs a performance optimisation for the frequent access of historic tags, untagging\nan episode simply renders the tag inactive rather than deleting it and relying on\nDjango-Reversion for access to historical data.\n\n\nDate Formatting\n\n\nWe now expect 'd/m/y' date formatting by default.\n\n\nPatient lists\n\n\nLists are now declarative, and separate from teams. They are implemented as\nsubclasses of opal.core.patient_lists.PatientList.\n\n\nForms vs. Modals\n\n\nIntroduces a distinction between a form and a modal.\nBy default, we now use forms for subrecords, only overriding the modal if there\nis something we want to do differently specifically in the modal.\n\n\nCommand line tools\n\n\nAdds $opal checkout for switching between applications or application versions.\n\n\nModels ContextProcessor\n\n\nThe 'opal.context_processors.models' Context Processor will allow you to access your\nsubrecords from templates without having to explicitly load them in a view. In turn,\nthis allows patterns like:\n\n\n{% include models.Demographics.get_detail_template %}\n\n\n\nUpgrade instructions:\n\n\nFull upgrade instructions to work through any backwards incompatible changes are\nprovided in the Opal docs.\n\n\n0.5.5 (Minor Release)\n\n\nChanges the way old tags are handled.\n\n\nTags are no longer deleted episodes, rather they're marked as archived.\n\n\n0.5.4 (Minor Release)\n\n\n\n\nInclude local storage\n\n\n\n\n0.5.3 (Minor Release)\n\n\n\n\nSpeed up loading of the lookup lists\n\n\nFix pagination issues in search\n\n\nSpeed up loading of many to many fields\n\n\nIncrease test coverage\n\n\nAdd some extra help fields to {% forms %} helpers\n\n\nFixes bug with $rootScope.open_modal() where keystrokes were being intercepted\n\n\n\n\n0.5.2 (Minor Release)\n\n\nSpeed improvements on page load\nallow us to only show record panels if a record of that type exists\ndisable modal buttons while saving\n\n\n0.5.1 (Minor Release)\n\n\nMinor bug fixes\n\n\n0.5 (Major release)\n\n\nSearch\n\n\nComplete re-design of Search interface to provide a single search box on every page and pagination for resulta.\nPuts in place a pluggable interface that could be swapped out for e.g. ElasticSearch.\nNew Service for PatientSummary()\n\n\nAnalytics\n\n\nMoves Analytics integration into Opal core with the ability to blacklist pages that should never be reported\n\n\nList view\n\n\nRemoved old spreadsheet-style cell based navigation and moved to row-wise nav with clearer highlighting of the active row.\nUpdated scrolling and loading behaviour to snap to viewport and not display the page build.\n\n\nSubrecord metadata\n\n\nAdded four new utility fields to Patient and Episode subrecords:\n\n\ncreated_by, updated_by, created, updated\n\n\nSelect2 and list fields\n\n\nAdded support for select2 as an input widget and Subrecord fields that can be lists of things.\n\n\nAlso\n\n\nNumerous small bugfixes.\nRefactoring of the models package into a models module.\nUpdated Underscore.js -\n 1.8.3\nUpdated Angular.js -\n 1.3.11\n\n\n0.4.3 (Minor release)\n\n\nRefactors opal.models to be a models.py file rather than a package.\nAdds several improvements to forms helpers -\n Help argument, other argument to select.\n\n\nUpdates dependency graph:\n\n\n\n\nAngular-strap -\n 2.3.1\n\n\n\n\n0.4.2 (Minor release)\n\n\nUpgrades dependency graph:\n\n\n\n\nDjango -\n 1.8.3\n\n\nDjango-reversion -\n 1.8.7\n\n\njQuery -\n 1.11.3\n\n\nD3 -\n 3.5.6\n\n\nC4 -\n 0.4.10\n\n\n\n\nSouth has been removed, now using django migrations\n\n\n0.4.1 (Bugfix release)\n\n\nFixes some search results appearing duplicated.\n\n\n0.4 (Major release)\n\n\nNew Design\n\n\nCompletely re-designed UI following extensive user research and multiple iterations.\n\n\nManagementcommands and scaffolding\n\n\nFeatures the opal command line tool for common administrative tasks\nhttp://opal.openhealthcare.org.uk/docs/guides/command_line_tool/\n\n\n Form helpers templatetag library\n\n\nNew template library for consistent form controls in line with our new interface guidelines\nhttp://opal.openhealthcare.org.uk/docs/reference/form_templatetags/\n\n\nAPI Documentation\n\n\nOpal JSON APIs are now fully self-documenting for all updated instances\nhttp://opal.openhealthcare.org.uk/docs/guides/json_api/\n\n\n0.3 (Major release)\n\n\nBugfixes, significant flexibility in template customisability.\n\n\nMinor UI updates.\n\n\n0.2.2 (Bugfix release)\n\n\nNumerous small bugfixes.\n\n\nAdds the concept of undischarging patients.\n\n\n0.2.1\n\n\nNumerous small bugfixes.\n\n\n0.2.0\n\n\nSearch overhaul - introduces advanced searches.\n\n\n0.1.1\n\n\nInitial public release", 
             "title": "Changelog"
         }, 
         {
-            "location": "/reference/CHANGELOG/#0110-major-release", 
+            "location": "/reference/changelog/#0110-major-release", 
             "text": "", 
             "title": "0.11.0 (Major Release)"
         }, 
         {
-            "location": "/reference/CHANGELOG/#adds-options-of-today-and-yesterday-in-the-date-picker", 
+            "location": "/reference/changelog/#adds-options-of-today-and-yesterday-in-the-date-picker", 
             "text": "If you pass in  user_options=True  to the date picker. You will be provided with options to select today or yesterday in the form tag.", 
             "title": "Adds options of today and yesterday in the date picker"
         }, 
         {
-            "location": "/reference/CHANGELOG/#adds-datehelper-to-the-rootscope", 
+            "location": "/reference/changelog/#adds-datehelper-to-the-rootscope", 
             "text": "The dateHelper has the functions  now  and  yesterday  that return javascript Dates for\nthe current time and the current time - 1 day.", 
             "title": "Adds dateHelper to the rootScope"
         }, 
         {
-            "location": "/reference/CHANGELOG/#deprecates-the-_title-property", 
-            "text": "In future we will use the standard  verbose_name  property as the display name. The abstract models have been changed to account for this.", 
+            "location": "/reference/changelog/#deprecates-the-_title-property", 
+            "text": "In future we will use the standard  verbose_name  property as the display name.\nThe abstract models have been changed to account for this.", 
             "title": "Deprecates the _title property"
         }, 
         {
-            "location": "/reference/CHANGELOG/#core-api-registration", 
+            "location": "/reference/changelog/#core-api-registration", 
             "text": "A refactor in the way that the core APIs are registered by Opal means that\nimporting  opal.core.api  in a plugin API no longer results in circular imports.  Fixes a bug whereby episodes were serialising differently depending on whether\nthe code path went via  .to_dict()  or  .objects.serialised() .", 
             "title": "Core API registration"
         }, 
         {
-            "location": "/reference/CHANGELOG/#helptextstep-can-now-use-a-custom-template", 
+            "location": "/reference/changelog/#helptextstep-can-now-use-a-custom-template", 
             "text": "The  opal.core.pathway.steps.HelpTextStep  can now have a  help_text_template  passed in.  This is the template for what will be placed in the side bar.", 
             "title": "HelpTextStep can now use a custom template"
         }, 
         {
-            "location": "/reference/CHANGELOG/#adds-in-a-radio_vertical-template-tag", 
+            "location": "/reference/changelog/#adds-in-a-radio_vertical-template-tag", 
             "text": "This displays the label and then the radio\nbuttons as a vertical list.", 
             "title": "Adds in a radio_vertical template tag"
         }, 
         {
-            "location": "/reference/CHANGELOG/#opalcoreserialization", 
+            "location": "/reference/changelog/#opalcoreserialization", 
             "text": "A number of helpers related to serialization and deserialization have been brought\ntogether in the new module  opal.core.serialization .", 
             "title": "opal.core.serialization"
         }, 
         {
-            "location": "/reference/CHANGELOG/#removes-episode_history-from-episode-serialization", 
+            "location": "/reference/changelog/#removes-episode_history-from-episode-serialization", 
             "text": "Serialised episodes previously contained a \"shallow\" copy of all other episodes in\na property named  episode_history . This was primarially useful before we switched\nfrom episode-oriented to patient-oriented detail views by default.  This also includes a change to the signature of the  .serialised()  method of the\nEpisode manager, which no longer accepts a  episode_history  kwarg.", 
             "title": "Removes \"episode_history\" from episode serialization"
         }, 
         {
-            "location": "/reference/CHANGELOG/#as_menuitem-helpers", 
+            "location": "/reference/changelog/#as_menuitem-helpers", 
             "text": "Applications using Opal Menuitems often wish to add menu items for Patient Lists and\nPathways.  To aid this, the  .as_menuitem()  method now creates one from the target class with\nsensible but overridable defaults.", 
             "title": "as_menuitem helpers"
         }, 
         {
-            "location": "/reference/CHANGELOG/#misc-changes", 
+            "location": "/reference/changelog/#opal-serve-command", 
+            "text": "We add  opal serve  to the Opal commandline tool. Currently this simply wraps the\nDjango runserver management command. It is envisaged that in the future this will\nalso initialize e.g. sass precompilers with a single command.", 
+            "title": "opal serve command"
+        }, 
+        {
+            "location": "/reference/changelog/#misc-changes", 
             "text": "Adds the utility function  opal.utils.get . Similar to the  getattr  builtin,  get  looks\nfor a method named  get_$attr  and will call that if it exists.  Adds the method  .get_absolute_url()  to  opal.core.pathways.Pathway  and opal.core.patient_lists.PatientList .", 
             "title": "Misc Changes"
         }, 
         {
-            "location": "/reference/CHANGELOG/#template-removals", 
+            "location": "/reference/changelog/#template-removals", 
             "text": "We removed a number of superfluous templates:   opal/templates/patient_lists/spreadsheet_list.html  opal/templates/layouts/left-panel.html", 
             "title": "Template removals"
         }, 
         {
-            "location": "/reference/CHANGELOG/#static-asset-minification", 
+            "location": "/reference/changelog/#static-asset-minification", 
             "text": "The Django upgrade in Opal 0.10 stopped compressor minifying files\nwhen DEBUG is set to False. This fixes that issue by upgrading Django compressor to\na version that supports Django 1.10.", 
             "title": "Static asset minification"
         }, 
         {
-            "location": "/reference/CHANGELOG/#the-return-of-an-old-friend-ie-document-modes", 
+            "location": "/reference/changelog/#the-return-of-an-old-friend-ie-document-modes", 
             "text": "Users report that their system administrators sometimes configure Internet Explorer\nin such a way that it uses e.g. IE7 Document mode by default.  This is problematical for Opal applications which do in fact make use of internet\ntechnologies that were in widespread use after say, 2006.  We have altered  base.html  to specify  \"X-UA-Compatible\" content=\"IE=Edge\" . If you\noverride  base.html in your application we advise that you add this  meta  tag.", 
             "title": "The return of an old friend: IE Document modes"
         }, 
         {
-            "location": "/reference/CHANGELOG/#misc-changes_1", 
-            "text": "Adds the utility function  opal.core.subrecords.singletons()  which returns\na generator function which will yield all subrecord singletons.    Adds the methods  .get_absolute_url() ,  .get_icon()  and  get_display_name() \nto  opal.core.pathways.Pathway  and  opal.core.patient_lists.PatientList .", 
+            "location": "/reference/changelog/#misc-changes_1", 
+            "text": "Adds the utility function  opal.core.subrecords.singletons()  which returns\na generator function which will yield all subrecord singletons.   Fixes a URI encoding bug in the  Episode.findByHospitalNumber()  method that\nmade hospital numbers including  #  or  /  raise an error.    Adds the methods  .get_absolute_url() ,  .get_icon()  and  get_display_name() \nto  opal.core.pathways.Pathway  and  opal.core.patient_lists.PatientList .", 
             "title": "Misc Changes"
         }, 
         {
-            "location": "/reference/CHANGELOG/#updates-to-the-dependency-graph", 
+            "location": "/reference/changelog/#updates-to-the-dependency-graph", 
             "text": "Django compressor: 1.5 -  2.2", 
             "title": "Updates to the Dependency Graph"
         }, 
         {
-            "location": "/reference/CHANGELOG/#0101-minor-release", 
+            "location": "/reference/changelog/#0101-minor-release", 
             "text": "", 
             "title": "0.10.1 (Minor Release)"
         }, 
         {
-            "location": "/reference/CHANGELOG/#plugin-api-end-points-can-now-override-application-end-points", 
+            "location": "/reference/changelog/#plugin-api-end-points-can-now-override-application-end-points", 
             "text": "A change to the order that APIs are registered with Django Rest Framework allows\nplugins to now override the core Opal application APIs.", 
             "title": "Plugin API end points can now override application end points"
         }, 
         {
-            "location": "/reference/CHANGELOG/#fonts-are-now-locally-sourced", 
+            "location": "/reference/changelog/#fonts-are-now-locally-sourced", 
             "text": "Fonts are now served from Opal's static assets rather than from the Google CDN.", 
             "title": "Fonts are now locally sourced"
         }, 
         {
-            "location": "/reference/CHANGELOG/#printscreen-stylesheets-have-been-collapsed-into-opalcss", 
+            "location": "/reference/changelog/#printscreen-stylesheets-have-been-collapsed-into-opalcss", 
             "text": "Print/screen differences are now in opal.css with media tags.", 
             "title": "print/screen stylesheets have been collapsed into opal.css"
         }, 
         {
-            "location": "/reference/CHANGELOG/#google-analytics-is-now-deferred", 
+            "location": "/reference/changelog/#google-analytics-is-now-deferred", 
             "text": "The loading in of Google Analytics is now deferred to the bottom of the body\ntag to allow the page to load without waiting on analytics scripts to load.", 
             "title": "Google Analytics is now deferred"
         }, 
         {
-            "location": "/reference/CHANGELOG/#scaffold-version-control-failures", 
+            "location": "/reference/changelog/#scaffold-version-control-failures", 
             "text": "The  startplugin  and  startproject  commands initialize a git repository by\ndefault. If we (The  subprocess  module) cannot find the  git  command, we now\ncontinue with a message printed to screen rather than raising an exception.", 
             "title": "Scaffold version control failures"
         }, 
         {
-            "location": "/reference/CHANGELOG/#episodeobjectsserialised-now-uses-select_related", 
+            "location": "/reference/changelog/#episodeobjectsserialised-now-uses-select_related", 
             "text": "ForeignKeyOrFreeText  fields now have their ForeignKey items preselected when\nwe use  Episode.objects.serialised . This provides a speed boost for applications\nwith moderately heavy  ForeignKeyOrFreeText  usage.  (Approx 30-40% in our tests.)", 
             "title": "Episode.objects.serialised now uses select_related"
         }, 
         {
-            "location": "/reference/CHANGELOG/#0100-major-release", 
+            "location": "/reference/changelog/#0100-major-release", 
             "text": "This is a major release with breaking changes from upstream dependencies.\nYou are almost certain to require changes to your application. Please see\nthe upgrade guide for further details.", 
             "title": "0.10.0 (Major Release)"
         }, 
         {
-            "location": "/reference/CHANGELOG/#referencedata-in-new-applications", 
+            "location": "/reference/changelog/#referencedata-in-new-applications", 
             "text": "Opal now includes core lookuplist data in an  opal.core.referencedata  plugin\nwhich is installed and loaded by default by the  startproject  scaffolding.", 
             "title": "Referencedata in new applications"
         }, 
         {
-            "location": "/reference/CHANGELOG/#deletion-cascade-behaviour", 
+            "location": "/reference/changelog/#deletion-cascade-behaviour", 
             "text": "Opal 0.10 changes several behaviours related to cascading deletions which, despite\nbeing Django defaults, were confusing to users and developers in our use case.  When we delete and look up list instance, we no longer delete all subrecords that use\nthat instance. Instead we set the look up list instances name in the free text field on\nthe subrecord.  When you delete a user, it will no longer delete all related episodes and subrecords", 
             "title": "Deletion cascade behaviour"
         }, 
         {
-            "location": "/reference/CHANGELOG/#episode-category-stages", 
+            "location": "/reference/changelog/#episode-category-stages", 
             "text": "Episode categories now enforce a set of valid  Episode.stage  values. EpisodeCategory  now includes the  .get_stages()  and  .has_stage(stage)  methods,\nwhile  Episode  has a  set_stage  setter which is used by the UpdateFromDictMixin JSON API.", 
             "title": "Episode Category stages"
         }, 
         {
-            "location": "/reference/CHANGELOG/#lookuplistslookuplists", 
+            "location": "/reference/changelog/#lookuplistslookuplists", 
             "text": "Adds the utility generator  lookuplists.lookuplists()  which wil yield every lookuplist\ncurrently available.", 
             "title": "lookuplists.lookuplists"
         }, 
         {
-            "location": "/reference/CHANGELOG/#discoverablefilter", 
+            "location": "/reference/changelog/#discoverablefilter", 
             "text": "Disoverable features now have a  filter  method which allows you to filter features\nwith matching attributes.", 
             "title": "Discoverable.filter()"
         }, 
         {
-            "location": "/reference/CHANGELOG/#pathways-contextprocessor", 
+            "location": "/reference/changelog/#pathways-contextprocessor", 
             "text": "The 'opal.core.pathways.context_processors.pathways' Context Processor will allow you to\naccess your pathways from templates without having to explicitly load them in a view. In\nturn, this allows patterns like:  {% include pathways.YourPathway.get_display_name %}", 
             "title": "Pathways ContextProcessor"
         }, 
         {
-            "location": "/reference/CHANGELOG/#missing-consistency-token-errors", 
+            "location": "/reference/changelog/#missing-consistency-token-errors", 
             "text": ".update_from_dict()  will now raise the new error opal.core.errors.MissingConsistencyTokenError  if it is called without a consistency\ntoken when one is set on the model. Previously it would raise  APIError .  The JSON API will now return a more specific message in the response boday, explaining\nthat the problem is a missing consistency token.", 
             "title": "Missing consistency token errors"
         }, 
         {
-            "location": "/reference/CHANGELOG/#dump_lookup_lists-many-files", 
+            "location": "/reference/changelog/#dump_lookup_lists-many-files", 
             "text": "Adds the  --many-files  option to the  dump_lookup_lists  command which will write\neach installed lookup list to a separate file in the  ./data/lookuplists  directory\nof the application.", 
             "title": "dump_lookup_lists --many-files"
         }, 
         {
-            "location": "/reference/CHANGELOG/#template-removals_1", 
+            "location": "/reference/changelog/#template-removals_1", 
             "text": "We remove a number of stale unused templates:   changelog.html  contact.html  extract_footer.html  tagging_detail.html  _helpers/inline_form.html  responsive/_phone_episode_list.html'  responsive/_tablet_episode_list.html", 
             "title": "Template removals"
         }, 
         {
-            "location": "/reference/CHANGELOG/#removing-loginrequiredmixin", 
+            "location": "/reference/changelog/#removing-loginrequiredmixin", 
             "text": "As Django ships with a  LoginRequiredMixin  of its own we no longer roll our own\nin `opal.core.views.", 
             "title": "Removing LoginRequiredMixin"
         }, 
         {
-            "location": "/reference/CHANGELOG/#testing-options", 
+            "location": "/reference/changelog/#testing-options", 
             "text": "Adds a  --failfast  option to the test harness to stop test runs on the first\nfailure.  If you are a plugin developer upgrading an existing plugin you will have to\nmanually add support for  --failfast  passthrough to your  runtests.py .  If you are a plugin developer upgrading an existing plugin you will have to\nmanually add support for  --failfast  passthrough to your  runtests.py .", 
             "title": "Testing options"
         }, 
         {
-            "location": "/reference/CHANGELOG/#moves-scaffold-to-be-a-django-management-command", 
+            "location": "/reference/changelog/#moves-scaffold-to-be-a-django-management-command", 
             "text": "The rest of the api is still the same but now\nwe run  python manage.py scaffold {my_app_name}", 
             "title": "Moves scaffold to be a django management command"
         }, 
         {
-            "location": "/reference/CHANGELOG/#deprecations-completed", 
+            "location": "/reference/changelog/#deprecations-completed", 
             "text": "As previously noted in console warnings, the Angular Episode service no longer\nsupports the  discharge_date ,  date_of_admission ,  date_of_episode  properties.\nThese were replaced by  .start  and  .end .", 
             "title": "Deprecations completed"
         }, 
         {
-            "location": "/reference/CHANGELOG/#updates-to-the-dependency-graph_1", 
+            "location": "/reference/changelog/#updates-to-the-dependency-graph_1", 
             "text": "Django: 1.8.13 -  1.10.8  Django Reversion: 1.8.7 -  1.10.2  Django Rest Framework: 3.2.2 -  3.4.7  Psycopg2: 2.5 -  2.7  Jinja2: 2.9.6 -  2.10  Ffs: 0.0.8.1 -  0.0.8.2  Requests: 2.7.0 -  2.18.4  django-celery: 3.1.17 -  3.2.2  celery: 3.1.19 -  3.1.25", 
             "title": "Updates to the Dependency Graph"
         }, 
         {
-            "location": "/reference/CHANGELOG/#misc-changes_2", 
+            "location": "/reference/changelog/#misc-changes_2", 
             "text": "Removes the undocumented  collapsed_multisave  tag from the  pathways  templatetag\nlibrary.  Adds a setting  OPAL_FAVICON_PATH  to specify the application Favicon to use.  Adds the  rows  option to the textarea template tag which just fills in the html textarea rows  attribute. Text areas are defaulted to 5 rows (the same as before).  Configures the setting  CSRF_FAILURE_VIEW  to use the bundled  opal.views.csrf_failure  view.  Pathway slugs may now include hyphens as well as numbers, lower case letters and underscores.  Bugfix: in edit_item.js $scope.episode_category is now set from episode.category_name\nas opposed to episode.category (which was always null)  Fixes some instances of progressbars not being reset if unexpected error states\noccur.  Improves the rendering of patient detail pages where no patient with the ID from\nroute params exits. (Displays a polite message instead of erroring.)  Incorrect pluralisation of subrecord names in the Admin view has been fixed. (Migrations\nwill have to be run in all models which extend the changed core Opal models (this is due\nto a minor upstream Django bug)  Minor change to the diagnosis form.", 
             "title": "Misc Changes"
         }, 
         {
-            "location": "/reference/CHANGELOG/#090-major-release", 
+            "location": "/reference/changelog/#090-major-release", 
             "text": "", 
             "title": "0.9.0 (Major Release)"
         }, 
         {
-            "location": "/reference/CHANGELOG/#good-bye-date_of_episode-discharge_date-date_of_admission", 
+            "location": "/reference/changelog/#good-bye-date_of_episode-discharge_date-date_of_admission", 
             "text": "And hello  episode.start  and  episode.end . These fields on the  Episode  model\nreplace the multiple ways of recording Episode duration in Opal.  There is a migration that sets  start  to date_of_episode if it  exists, otherwise\nit uses date of admission.  end  will be date_of_episode if it exists, otherwise it will use discharge_date.  Note that this means we no longer refer to start and end properties on the\nEpisode category. If you override  start  and  end  in a custom episode category\nyou should update to use the Episode model fields. This logic should be moved into\nyour flows and you'll need to put in a migration to populate existing\nepisodes.  We also remove the episode fields  date_of_episode   discharge_date , and date_of_admission .\nWarning: Backwards migrations will not migrate back to  date_of_episode  but to\na admission and discharge. Take backups before running these migrations!  The fields  start  and  end  are both cast to moments (rather than raw js Dates) on\nepisode.initialisation", 
             "title": "Good bye date_of_episode, discharge_date, date_of_admission"
         }, 
         {
-            "location": "/reference/CHANGELOG/#pathway", 
+            "location": "/reference/changelog/#pathway", 
             "text": "Moves the opal-pathway module into the opal core. Pathways is an extensible way\nof creating forms that involve multiple subrecords.", 
             "title": "Pathway"
         }, 
         {
-            "location": "/reference/CHANGELOG/#weve-got-time-on-our-side", 
+            "location": "/reference/changelog/#weve-got-time-on-our-side", 
             "text": "Adds in the {% timepicker %} template tag, that follows the same convention as\nthe other template tags, ie {% timepicker field=\"Dinner.time\" %}", 
             "title": "We've got time on our side"
         }, 
         {
-            "location": "/reference/CHANGELOG/#removes-a-js-global-declaration-of-categories", 
+            "location": "/reference/changelog/#removes-a-js-global-declaration-of-categories", 
             "text": "Previously we declared CATEGORIES globally. This has now been removed", 
             "title": "Removes a js global declaration of categories"
         }, 
         {
-            "location": "/reference/CHANGELOG/#order-order", 
+            "location": "/reference/changelog/#order-order", 
             "text": "Episodes in the patient list are now ordered by start, first_name and surname", 
             "title": "Order Order"
         }, 
         {
-            "location": "/reference/CHANGELOG/#theming-support", 
+            "location": "/reference/changelog/#theming-support", 
             "text": "Improvements and better documentation and guides for theming applications. Particularly\nof note are changes to  opal.html  and  base.html , as well as the addition of the static_page.html  template.  This version also includes extensive improved support for customising the templates that\ndisplay patient lists, detail views, menus and forms amongst other things.  For full documentation, consult the theming guide in the documentation.", 
             "title": "Theming support"
         }, 
         {
-            "location": "/reference/CHANGELOG/#makes-search-fully-pluggable", 
+            "location": "/reference/changelog/#makes-search-fully-pluggable", 
             "text": "Search is now completely pluggable, you need to have  some  angular controller\ncalled SearchCtrl, but apart from that you can plugin your own implementation.", 
             "title": "Makes search fully pluggable"
         }, 
         {
-            "location": "/reference/CHANGELOG/#exclude-prefixes-now-work-on-actual-paths", 
+            "location": "/reference/changelog/#exclude-prefixes-now-work-on-actual-paths", 
             "text": "Previously they only worked with angular paths, now they work\nwith a combination of actual paths and angular url paths (e.g. /search/#/extract)", 
             "title": "Exclude prefixes now work on actual paths"
         }, 
         {
-            "location": "/reference/CHANGELOG/#misc-changes_3", 
+            "location": "/reference/changelog/#misc-changes_3", 
             "text": "Add the allow_add_patient and allow_edit_teams options to the patient lists.  We added support for a  --file  or  -f  option for the  load_lookup_lists  command which\nallows the user to specify a particular file outside of the default locations.  The default  Location  record display template will no longer include references\nto  Episode.start . and  Episode.stop  labelled as admisssion and discharge to support\nthe majority case where an episode relates to something other than an inpatient episode!  Applications wishing to retaint this functionality should update their own temaplates\nto display start/stop details.", 
             "title": "Misc Changes"
         }, 
         {
-            "location": "/reference/CHANGELOG/#removes-deprecated-functionality-in-referencedata-metadata-userprofile-and-recordloader", 
+            "location": "/reference/changelog/#removes-deprecated-functionality-in-referencedata-metadata-userprofile-and-recordloader", 
             "text": "Previously these would make their http request when imported into a file. They now require you to call .load()\nfor them to return the promise that loads in their respective data.", 
             "title": "Removes Deprecated functionality in ReferenceData, Metadata, UserProfile and recordLoader"
         }, 
         {
-            "location": "/reference/CHANGELOG/#083-minor-release", 
+            "location": "/reference/changelog/#083-minor-release", 
             "text": "", 
             "title": "0.8.3 (Minor Release)"
         }, 
         {
-            "location": "/reference/CHANGELOG/#opallogconfidentialemailer", 
+            "location": "/reference/changelog/#opallogconfidentialemailer", 
             "text": "Adds a custom email logger. This enables Django error emails which remove any confidential patient data.  Also adds in the karma config to the MANIFEST.in so that we include the karma configs on pip install. It also moves it\nto \"opal/tests/js_config/karma_defaults.js\".", 
             "title": "opal.log.ConfidentialEmailer"
         }, 
         {
-            "location": "/reference/CHANGELOG/#082-minor-release", 
+            "location": "/reference/changelog/#082-minor-release", 
             "text": "", 
             "title": "0.8.2 (Minor Release)"
         }, 
         {
-            "location": "/reference/CHANGELOG/#opal_location-is-added-as-a-system-variable-when-running-js-tests", 
+            "location": "/reference/changelog/#opal_location-is-added-as-a-system-variable-when-running-js-tests", 
             "text": "If you run opal test js, your karma config is now run in an environment that has\naccess to the OPAL_LOCATION variable which points to the opal parent directory.", 
             "title": "OPAL_LOCATION is added as a system variable when running js tests"
         }, 
         {
-            "location": "/reference/CHANGELOG/#a-data-dictionary-in-the-extract", 
+            "location": "/reference/changelog/#a-data-dictionary-in-the-extract", 
             "text": "The Extract zip file has a data dictionary with human readable metadata about each field.", 
             "title": "A Data Dictionary In The Extract"
         }, 
         {
-            "location": "/reference/CHANGELOG/#enhanced-application-menus", 
+            "location": "/reference/changelog/#enhanced-application-menus", 
             "text": "The application menu API, previously python dicts stored in attributes on either plugin or\napplication subclasses, now consists of the new  opal.core.menus.MenuItem  class, enabling\nenhanced customisation and flexibility.", 
             "title": "Enhanced Application menus"
         }, 
         {
-            "location": "/reference/CHANGELOG/#put-to-the-episode-api-returns-the-episode-with-all-its-subrecords", 
+            "location": "/reference/changelog/#put-to-the-episode-api-returns-the-episode-with-all-its-subrecords", 
             "text": "Previously it only returned the episode. Now it matches the episode create api end point", 
             "title": "PUT to the episode API returns the episode with all its subrecords"
         }, 
         {
-            "location": "/reference/CHANGELOG/#episodepatient-links-in-admin", 
+            "location": "/reference/changelog/#episodepatient-links-in-admin", 
             "text": "In the admin, episodes and patients lists now have links to the patient detail pages.", 
             "title": "Episode/Patient links in admin"
         }, 
         {
-            "location": "/reference/CHANGELOG/#user-data-for-the-client", 
+            "location": "/reference/changelog/#user-data-for-the-client", 
             "text": "Adds a  User  Angular service that enables applications to use user data.\nAlso adds some directives to make it easy to render User names and avatars.", 
             "title": "User data for the client"
         }, 
         {
-            "location": "/reference/CHANGELOG/#episodegetfullname", 
+            "location": "/reference/changelog/#episodegetfullname", 
             "text": "Adds a utility method to the  Episode  service that returns a human readable patient name.", 
             "title": "Episode.getFullName()"
         }, 
         {
-            "location": "/reference/CHANGELOG/#pluginget_javascripts-pluginget_styles", 
+            "location": "/reference/changelog/#pluginget_javascripts-pluginget_styles", 
             "text": "Enhances the API available for plugins to include javascript and css by adding methods on opal.core.plugins.OpalPlugin", 
             "title": "Plugin.get_javascripts, Plugin.get_styles"
         }, 
         {
-            "location": "/reference/CHANGELOG/#element_type-argument-for-the-form-template-tags", 
+            "location": "/reference/changelog/#element_type-argument-for-the-form-template-tags", 
             "text": "Numeric database fields are now set as the html5 type=\"number\" when rendering\nthem with the forms templatetag library. This means on mobile devices it will\nbring up the numeric keypad. The element type can now be set via the template\ntag API with the 'element_type' argument.", 
             "title": "'element_type' argument for the form template tags"
         }, 
         {
-            "location": "/reference/CHANGELOG/#opal_logo_path", 
+            "location": "/reference/changelog/#opal_logo_path", 
             "text": "This new setting allows applications to set the path at which the app logo is served.\nIf  OPAL_LOGO_PATH  is set, the value is passed to the  {% static %}  templatetag to set\nthe  src  atribute of an image in the default application header and login screen.", 
             "title": "OPAL_LOGO_PATH"
         }, 
         {
-            "location": "/reference/CHANGELOG/#inactive-episodes-in-patientlists", 
+            "location": "/reference/changelog/#inactive-episodes-in-patientlists", 
             "text": "Changes the behaviour of  opal.core.PatientList.to_dict  to serialise inactive\nepisodes by default rather than filtering by Episode.active == True.  opal.core.TaggedPatientList.to_dict  continues to filter by Episode.active ==\nTrue by default.", 
             "title": "Inactive episodes in PatientLists"
         }, 
         {
-            "location": "/reference/CHANGELOG/#notice-of-future-removals", 
+            "location": "/reference/changelog/#notice-of-future-removals", 
             "text": "The context variables  brand_name   settings  and  extra_application  in  opal.views.IndexView \nare no longer helpful thanks to the settings context processor. These will be removed in\n0.9.0 and emit warnings until then.", 
             "title": "Notice of future removals"
         }, 
         {
-            "location": "/reference/CHANGELOG/#misc-changes_4", 
+            "location": "/reference/changelog/#misc-changes_4", 
             "text": "Adds a new filter -  underscore-to-spaces  for removing underscores from strings.  The options for  SymptomComplex.duration  have moved from the default form template to a choices\ndeclaration on the model. These are scheduled to move again to a lookuplist.  The default value of  Subrecord.get_display_name  now uses Django  Meta.verbose_name .", 
             "title": "Misc changes"
         }, 
         {
-            "location": "/reference/CHANGELOG/#minor-fixes", 
+            "location": "/reference/changelog/#minor-fixes", 
             "text": "Fixes a bug where the allergies form rendered the provisional field twice", 
             "title": "Minor fixes"
         }, 
         {
-            "location": "/reference/CHANGELOG/#updates-to-the-dependency-graph_2", 
+            "location": "/reference/changelog/#updates-to-the-dependency-graph_2", 
             "text": "Upgrades Font Awesome from 4.3.0 -  4.7.0\nUpgrades Jinja2 from 2.8 -  2.9.6", 
             "title": "Updates to the Dependency Graph"
         }, 
         {
-            "location": "/reference/CHANGELOG/#081-minor-release", 
+            "location": "/reference/changelog/#081-minor-release", 
             "text": "", 
             "title": "0.8.1 (Minor Release)"
         }, 
         {
-            "location": "/reference/CHANGELOG/#cookies-for-the-future", 
+            "location": "/reference/changelog/#cookies-for-the-future", 
             "text": "We now use the  $cookies  api as part of moving to angular v1.5.8.  The default expiry of cookies is now a year in the future.  The cookie name previously stored as  opal.lastPatientList  is now opal.previousPatientList .", 
             "title": "Cookies for the future"
         }, 
         {
-            "location": "/reference/CHANGELOG/#patients-as-a-service", 
+            "location": "/reference/changelog/#patients-as-a-service", 
             "text": "Patient becomes a service in angular. This takes in a patient as loaded by the patient loader or another service. It casts the data to Episode or Item instances as appropriate.", 
             "title": "Patients as a service"
         }, 
         {
-            "location": "/reference/CHANGELOG/#patientlistget_queryset-arguments", 
+            "location": "/reference/changelog/#patientlistget_queryset-arguments", 
             "text": "PatientList.get_queryset() is now passed an extra keyword argument -  user .\nThis is the current  User  object.", 
             "title": "PatientList.get_queryset arguments"
         }, 
         {
-            "location": "/reference/CHANGELOG/#overriding-default-menu-items-behaviour", 
+            "location": "/reference/changelog/#overriding-default-menu-items-behaviour", 
             "text": "The  get_menu_items  method of Opal Application objects is now passed an extra keyword argument -  user .\nThis is the current  User  object.  The templatetag application_menuitems now uses this method to render navigation menus, allowing dynamic\ncustomisation of menu contents based on user.", 
             "title": "Overriding default Menu Items behaviour"
         }, 
         {
-            "location": "/reference/CHANGELOG/#removals", 
+            "location": "/reference/changelog/#removals", 
             "text": "Opal 0.8.1 removes some minor features which, to our knowledge are not used by any applications in active development.   ReopenEpisodeCtrl - applications may implement their own 're-open' episode flow, but Opal no longer handles this out of the box.  Subrecord._bulk_serialise - this flag has been removed", 
             "title": "Removals"
         }, 
         {
-            "location": "/reference/CHANGELOG/#pending-removals", 
+            "location": "/reference/changelog/#pending-removals", 
             "text": "We have re-named  opal.core.views._build_json_response  to  opal.core.views.json_response . This will issue a\nwarning for the remainder of the 0.8.x branch, before being removed entirely in Opal 0.9.0.", 
             "title": "Pending removals"
         }, 
         {
-            "location": "/reference/CHANGELOG/#subrecord-list-api", 
+            "location": "/reference/changelog/#subrecord-list-api", 
             "text": "We have added a list method to the default Opal JSON API for subrecords - you may now obtain a list of all instances\nof a given subrecord from the API endpoint  /api/v0.1/$api_name/ .", 
             "title": "Subrecord List API"
         }, 
         {
-            "location": "/reference/CHANGELOG/#misc-changes_5", 
+            "location": "/reference/changelog/#misc-changes_5", 
             "text": "Updates the custom  UserAdmin  so that the email, first and last name fields from the Django  User  model\nare in the add user form not just the edit user form.  The default test runner generated by plugin scaffolding now uses  opal.urls  as the default url conf in the test settings. This allows you to test urls generated by Opal - for instance default form or record templates, or simply raw templates from our generic template view.", 
             "title": "Misc Changes"
         }, 
         {
-            "location": "/reference/CHANGELOG/#080-major-release", 
+            "location": "/reference/changelog/#080-major-release", 
             "text": "", 
             "title": "0.8.0 (Major Release)"
         }, 
         {
-            "location": "/reference/CHANGELOG/#plugins", 
+            "location": "/reference/changelog/#plugins", 
             "text": "Plugins have been refactored and are now  DiscoverableFeatures . This should have no impact on existing\nplugins, however the functions  opal.core.plugins.register  and  opal.core.plugins.plugins  are slated for\nremoval in 0.9.0  When creating new plugins we will place the plugin definition class in  plugin.py  rather than  __init__.py", 
             "title": "Plugins"
         }, 
         {
-            "location": "/reference/CHANGELOG/#opalcoreapipatient_from_pk", 
+            "location": "/reference/changelog/#opalcoreapipatient_from_pk", 
             "text": "A decorator that changes a method that is passed a pk, to a method that is passed a patient.", 
             "title": "opal.core.api.patient_from_pk"
         }, 
         {
-            "location": "/reference/CHANGELOG/#todictmixin_bulk_serialise", 
+            "location": "/reference/changelog/#todictmixin_bulk_serialise", 
             "text": "Adds a flag to the to dict mixin to determine whether the item is serialised as part of  Episode/Patient.to_dict .", 
             "title": "ToDictMixin._bulk_serialise"
         }, 
         {
-            "location": "/reference/CHANGELOG/#fixes-bugs-in-add-many-subrecord-radio-buttons", 
+            "location": "/reference/changelog/#fixes-bugs-in-add-many-subrecord-radio-buttons", 
             "text": "Previously multiple radio buttons for the same subrecord field on the same page would\nnot appear to the user to update correctly. This has now been fixed.", 
             "title": "Fixes bugs in add many subrecord radio buttons"
         }, 
         {
-            "location": "/reference/CHANGELOG/#angular-ui-libraries", 
+            "location": "/reference/changelog/#angular-ui-libraries", 
             "text": "0.8.0 consolidates Angular UI libraries bundled with Opal. We have removed Angular Strap, and\nswitched all components using it to their Angular UI Bootstrap equivalents.  This is a breaking change.  Applications taking advantage of the  Forms  templatetag library should require no updates, but will see\nsome minor differences in visual style of widgets.  Detailed upgrade guides for the components affected (Typeahead, Popover,\nTooltip, Datepicker, Timepicker) are available in the upgrade reference documentation.", 
             "title": "Angular UI Libraries"
         }, 
         {
-            "location": "/reference/CHANGELOG/#defaults-for-client-side-subrecords", 
+            "location": "/reference/changelog/#defaults-for-client-side-subrecords", 
             "text": "We pull through default values from subrecord fields into the Opal  Schema  and use those values when initializing the relevant\nItem instance for a new subrecord. This should greatly reduce the need to use custom Angular subrecord services to set defaults.", 
             "title": "Defaults for Client Side subrecords"
         }, 
         {
-            "location": "/reference/CHANGELOG/#choices-in-form-templatetags", 
+            "location": "/reference/changelog/#choices-in-form-templatetags", 
             "text": "Template tags that use the 'field' attribute to point to a subrecord field will now infer a lookup list from the Choices of the field if it exists.  Note unlike the traditional choices implementation only the last value of the choices is used and saved to the database    Colours = (\n    ('P', 'Purple'),\n    ('R', 'Red'),\n  )  What is displayed to the user and saved to the database is 'Purple' or 'Red' respectively.", 
             "title": "Choices in form templatetags"
         }, 
         {
-            "location": "/reference/CHANGELOG/#element-name-in-template-tags", 
+            "location": "/reference/changelog/#element-name-in-template-tags", 
             "text": "The html attribute 'name' for form elements generated with the Opal  {% forms %}  templatetag library used to be inferred from the model name. Although this remains the default you can also set it with an angular expression:  {% select field= Demographics.first_name  element_name= ...Your Angular expression...  %}", 
             "title": "element name in template tags"
         }, 
         {
-            "location": "/reference/CHANGELOG/#model-removals", 
+            "location": "/reference/changelog/#model-removals", 
             "text": "The models  Team ,  GP ,  CommunityNurse  and  LocatedModel  - marked for removal since 0.6.0\nhave now been removed.  As part of this change, the add episode modal previously available at /templates/modals/add_episode.html/  is now not available at the url with a trailing slash.\nAny controllers attempting to open the modal e.g. custom list flows should update their $modal.open  call to remove the trailing slash.", 
             "title": "Model removals"
         }, 
         {
-            "location": "/reference/CHANGELOG/#python-3", 
+            "location": "/reference/changelog/#python-3", 
             "text": "Opal 0.8.0 is the first version of Opal to support Python 3. This has meant changing the default\nordering of  PatientList  instances to 0 rather than None.  Moving forwards we expect all new code in Opal to be compatible both Python 2.7 / 3.4 / 3.5 / 3.6.  This introduces an explicit Opal dependency on the Six module for maintaining codebases that span\nPython 2.x and 3.x.", 
             "title": "Python 3"
         }, 
         {
-            "location": "/reference/CHANGELOG/#tabbed-patient-list-groups", 
+            "location": "/reference/changelog/#tabbed-patient-list-groups", 
             "text": "Adds the class  opal.core.patient_lists.TabbedPatientListGroup  which displays groups of related\nlists as tabs at the top of each member list.", 
             "title": "Tabbed Patient List Groups"
         }, 
         {
-            "location": "/reference/CHANGELOG/#patientlist-sort-order", 
+            "location": "/reference/changelog/#patientlist-sort-order", 
             "text": "To enable custom sort orders for individual  PatientList s we introduce the  comparator_service  attribute.\nThis names an Angular service which will return a list of comparator functions.", 
             "title": "PatientList sort order"
         }, 
         {
-            "location": "/reference/CHANGELOG/#patientlist-arbitrary-columns", 
+            "location": "/reference/changelog/#patientlist-arbitrary-columns", 
             "text": "We now explicitly enable columns in spreadhseet lists that are not tied to subrecords. These can be\nincluded in PatientList schema instances as explicit Column() entries.", 
             "title": "PatientList Arbitrary columns"
         }, 
         {
-            "location": "/reference/CHANGELOG/#template-re-naming", 
+            "location": "/reference/changelog/#template-re-naming", 
             "text": "Modal_base has now been moved into a folder called base_templates. Its also now got a form_modal_base and a two_column_form_modal_base.\nThe latter two templates add validation around saving.  The standard edit item models and others now inherit from the form_modal_base.", 
             "title": "Template re-naming"
         }, 
         {
-            "location": "/reference/CHANGELOG/#authorization-and-permissions", 
+            "location": "/reference/changelog/#authorization-and-permissions", 
             "text": "All APIs should be permissioned with Django REST framework permission classes. The default implementation uses\nopal.core.api.LoginRequiredViewset, a standard DRF viewset that requires the user to be logged in.  We now require the user to be logged in for any use of the search functionality.  Added a custom interceptor that logs the user out if the we receive a 403 or 401 from the server", 
             "title": "Authorization and permissions"
         }, 
         {
-            "location": "/reference/CHANGELOG/#form-validation", 
+            "location": "/reference/changelog/#form-validation", 
             "text": "Adds the checkForm directive  e.g.  button check-form= form  ng-click= sendDataToTheServer click me /button   This adds default form submission behaviour to the a button. It will check if the form is valid, and if its not it will mark the button as disabled until it becomes valid.  It will also set the form as submitted.  We also now show the required error if the form has been submitted or if the field is dirty, so that the user doesn't get an ugly \"fill this field in now\" message when opening the modal/pathway but will get the error after they click submit.", 
             "title": "Form Validation"
         }, 
         {
-            "location": "/reference/CHANGELOG/#removals_1", 
+            "location": "/reference/changelog/#removals_1", 
             "text": "Opal 0.8.0 removes a number of un-used features that have been slated for removal for some time:   Options  - both from the JSON API, and the Angular service.  The legacy APIs  /api/v0.1/episode/admit  and  /api/v0.1/episode/refer .  The models  GP ,  CommunityNurse  and  LocatedModel .  opal.models.Tagging.import_from_reversion . This one-off classmethod on tagging was introduced to aid with the upgrade from Opal 4.x to 5.0 and has no further utility.  The  static  argument from the forms  input  tag. Developers should move to the  static  tag.  The _modal option to set on subrecords. This is because we now use large modals across the board.", 
             "title": "Removals"
         }, 
         {
-            "location": "/reference/CHANGELOG/#misc-changes_6", 
+            "location": "/reference/changelog/#misc-changes_6", 
             "text": "The opal.core.api.EpisodeViewSet.create now expects tagging to be an object rather than a list, similar to how it details with demographics and location.  The API will no longer serialise the _ft or _fk_id fields of FreeTextOrForeignKey fields - these\nare internal implementation details of the server that are not useful on the client side.  Adds a Unique Together constraint for (Tagging.user, Tagging.episode, Tagging.value)  Look up lists now load in from individual apps. The look for a file at {{ app }}/data/lookuplists.json  The default admin url is now  /admin/  - rather than  /admin/?  this results in more readable\nadmin urls and is closer to what most applications do with the Django admin.  The roles field  opal.models.UserProfile.roles  has been updated to be  blank=True . This allows the editing\nof users without specific roles assigned in the Django admin. Although this introduces no changes at the\ndatabase level, this does introduce a migration.", 
             "title": "Misc changes"
         }, 
         {
-            "location": "/reference/CHANGELOG/#updates-to-the-dependency-graph_3", 
+            "location": "/reference/changelog/#updates-to-the-dependency-graph_3", 
             "text": "Upgrades angular to v1.5.8 (from 1.3.11) you can see their change log  here  Updates angular-cookies and angular-mocks to v1.5.8 (both from 1.3.11)  Updates angular-ui-select to 0.19.4 from 0.13.2", 
             "title": "Updates to the Dependency Graph"
         }, 
         {
-            "location": "/reference/CHANGELOG/#075-minor-release", 
+            "location": "/reference/changelog/#075-minor-release", 
             "text": "The flow enter and exif functions now take an optional context argument. When called from PatientList or PatientDetail controllers this is the parent scope when the flow has been entered.  Note: The current Flow API is likely to undergo substantial revision in Opal 0.9 / 0.10 do contact us on the mailing list if you are relying heavily upon it or would like to let us know your needs.", 
             "title": "0.7.5 (Minor Release)"
         }, 
         {
-            "location": "/reference/CHANGELOG/#074-minor-release", 
+            "location": "/reference/changelog/#074-minor-release", 
             "text": "Adds  a past filter, future and past filters now take a\nboolean argument as to whether you should include today", 
             "title": "0.7.4 (Minor Release)"
         }, 
         {
-            "location": "/reference/CHANGELOG/#073-minor-release", 
+            "location": "/reference/changelog/#073-minor-release", 
             "text": "Fixes a bug whereby celery tasks are not autodiscovered - will have affected users of async extract functionality.", 
             "title": "0.7.3 (Minor Release)"
         }, 
         {
-            "location": "/reference/CHANGELOG/#072-minor-release", 
+            "location": "/reference/changelog/#072-minor-release", 
             "text": "Fixes a bug with the copy to category API not setting category name.  Removes the hangover use of options in the list of teams per episode in the patient list", 
             "title": "0.7.2 (Minor Release)"
         }, 
         {
-            "location": "/reference/CHANGELOG/#071-minor-release", 
+            "location": "/reference/changelog/#071-minor-release", 
             "text": "Completes the refactor of front end data, no longer using the  /api/v0.1/options/  API internally.\nThis is slated for removal in 0.8.0.  Updates DRF APIs - we now expect either Token or DjangoSession auth.  Fixes several small bugs with scaffolded applications -  the setting of  STATIC_ROOT  and SECRET_KEY , generating forms for NullBooleanFields, requirements.txt.  Adds an  aligned_pair  templatetag to the  panels  library.  Updates the label for  Demographics.birth_place  to indicate that this should be a country.  Adds the  clipboard  directive to give the user one click copy to clipboard.  Adds a  tag-select  directive that renders a widget for editing the tags for an episode.  Adds metadata to the scope for patient detail views", 
             "title": "0.7.1 (Minor Release)"
         }, 
         {
-            "location": "/reference/CHANGELOG/#updates-to-the-dependency-graph_4", 
+            "location": "/reference/changelog/#updates-to-the-dependency-graph_4", 
             "text": "Django Axes 1.4.0 -  1.7.0", 
             "title": "Updates to the Dependency Graph"
         }, 
         {
-            "location": "/reference/CHANGELOG/#070-major-release", 
+            "location": "/reference/changelog/#070-major-release", 
             "text": "", 
             "title": "0.7.0 (Major Release)"
         }, 
         {
-            "location": "/reference/CHANGELOG/#episode-categories", 
+            "location": "/reference/changelog/#episode-categories", 
             "text": "Refactors EpisodeCategory to be a discoverable feature.  Renames  Episode.category  -   Episode.category_name .", 
             "title": "Episode Categories"
         }, 
         {
-            "location": "/reference/CHANGELOG/#episode-json-api", 
+            "location": "/reference/changelog/#episode-json-api", 
             "text": "The Restful Episode JSON API previously available at  /episode/:pk/  is now moved into /api/v0.1/episode/:pk/  for consistency with the rest of our JSON APIs.\nThe Opal Angular layer has been updated to reflect this, and\nshould handle the transition seamlessly, but code calling the API directly should update\nto reflect the new URL.", 
             "title": "Episode JSON API"
         }, 
         {
-            "location": "/reference/CHANGELOG/#defaults-for-records-on-the-client-side", 
+            "location": "/reference/changelog/#defaults-for-records-on-the-client-side", 
             "text": "Establishes a new way to define defaults for records initialized in Javascript without\nrequiring that we hard-code API names to defaults in a global namespace.", 
             "title": "Defaults for records on the client side"
         }, 
         {
-            "location": "/reference/CHANGELOG/#update-to-javascript-signatures", 
+            "location": "/reference/changelog/#update-to-javascript-signatures", 
             "text": "Flow.enter()  and  Flow.exit()  now no longer take  options  positional arguments - instead\nthe controllers they initialize have  Metadata  and  Referencedata  as optional resolves\narguments.  AddEpisodeCtrl now no longer requires options as a resolves() option, but requires Referencedata\ninstead.", 
             "title": "Update to Javascript Signatures"
         }, 
         {
-            "location": "/reference/CHANGELOG/#maxlength-for-form-helpers", 
+            "location": "/reference/changelog/#maxlength-for-form-helpers", 
             "text": "The  input  form helper will now infer the max length of char fields from the max length of the\ndatabase field, and render relevant Angular directives.", 
             "title": "MaxLength for form helpers"
         }, 
         {
-            "location": "/reference/CHANGELOG/#episodedetail-removed", 
+            "location": "/reference/changelog/#episodedetail-removed", 
             "text": "The  EpisodeDetailCtrl  and  EpisodeDetailMixin  controller and service have been removed - these\nwere not used anywhere other than in the Wardround plugin, and redundant after enhancements to\nPatient Detail and Custom DetailViews in 0.6.", 
             "title": "EpisodeDetail removed"
         }, 
         {
-            "location": "/reference/CHANGELOG/#additional-utilities", 
+            "location": "/reference/changelog/#additional-utilities", 
             "text": "Adds a datetimepicker templatetag that will render widgets for a Datetime field including time.  Adds a  date_of_birth_field  templatetag that renders a date of birth field complete with inteligent\nvalidation. (Note this change also includes removing the old _partial/ template)  Updates dependency graph:   Django -  1.8.13", 
             "title": "Additional utilities"
         }, 
         {
-            "location": "/reference/CHANGELOG/#060-major-release", 
+            "location": "/reference/changelog/#060-major-release", 
             "text": "Detail views  Moves from episode oriented detail to patient oriented detail.\n(All episodes plus x-episode views are available from a patient detail screen)  Tagging  As a performance optimisation for the frequent access of historic tags, untagging\nan episode simply renders the tag inactive rather than deleting it and relying on\nDjango-Reversion for access to historical data.  Date Formatting  We now expect 'd/m/y' date formatting by default.  Patient lists  Lists are now declarative, and separate from teams. They are implemented as\nsubclasses of opal.core.patient_lists.PatientList.  Forms vs. Modals  Introduces a distinction between a form and a modal.\nBy default, we now use forms for subrecords, only overriding the modal if there\nis something we want to do differently specifically in the modal.  Command line tools  Adds $opal checkout for switching between applications or application versions.", 
             "title": "0.6.0 (Major Release)"
         }, 
         {
-            "location": "/reference/CHANGELOG/#models-contextprocessor", 
+            "location": "/reference/changelog/#models-contextprocessor", 
             "text": "The 'opal.context_processors.models' Context Processor will allow you to access your\nsubrecords from templates without having to explicitly load them in a view. In turn,\nthis allows patterns like:  {% include models.Demographics.get_detail_template %}", 
             "title": "Models ContextProcessor"
         }, 
         {
-            "location": "/reference/CHANGELOG/#upgrade-instructions", 
+            "location": "/reference/changelog/#upgrade-instructions", 
             "text": "Full upgrade instructions to work through any backwards incompatible changes are\nprovided in the Opal docs.", 
             "title": "Upgrade instructions:"
         }, 
         {
-            "location": "/reference/CHANGELOG/#055-minor-release", 
+            "location": "/reference/changelog/#055-minor-release", 
             "text": "Changes the way old tags are handled.  Tags are no longer deleted episodes, rather they're marked as archived.", 
             "title": "0.5.5 (Minor Release)"
         }, 
         {
-            "location": "/reference/CHANGELOG/#054-minor-release", 
+            "location": "/reference/changelog/#054-minor-release", 
             "text": "Include local storage", 
             "title": "0.5.4 (Minor Release)"
         }, 
         {
-            "location": "/reference/CHANGELOG/#053-minor-release", 
+            "location": "/reference/changelog/#053-minor-release", 
             "text": "Speed up loading of the lookup lists  Fix pagination issues in search  Speed up loading of many to many fields  Increase test coverage  Add some extra help fields to {% forms %} helpers  Fixes bug with $rootScope.open_modal() where keystrokes were being intercepted", 
             "title": "0.5.3 (Minor Release)"
         }, 
         {
-            "location": "/reference/CHANGELOG/#052-minor-release", 
+            "location": "/reference/changelog/#052-minor-release", 
             "text": "Speed improvements on page load\nallow us to only show record panels if a record of that type exists\ndisable modal buttons while saving", 
             "title": "0.5.2 (Minor Release)"
         }, 
         {
-            "location": "/reference/CHANGELOG/#051-minor-release", 
+            "location": "/reference/changelog/#051-minor-release", 
             "text": "Minor bug fixes", 
             "title": "0.5.1 (Minor Release)"
         }, 
         {
-            "location": "/reference/CHANGELOG/#05-major-release", 
+            "location": "/reference/changelog/#05-major-release", 
             "text": "Search  Complete re-design of Search interface to provide a single search box on every page and pagination for resulta.\nPuts in place a pluggable interface that could be swapped out for e.g. ElasticSearch.\nNew Service for PatientSummary()  Analytics  Moves Analytics integration into Opal core with the ability to blacklist pages that should never be reported  List view  Removed old spreadsheet-style cell based navigation and moved to row-wise nav with clearer highlighting of the active row.\nUpdated scrolling and loading behaviour to snap to viewport and not display the page build.  Subrecord metadata  Added four new utility fields to Patient and Episode subrecords:  created_by, updated_by, created, updated  Select2 and list fields  Added support for select2 as an input widget and Subrecord fields that can be lists of things.  Also  Numerous small bugfixes.\nRefactoring of the models package into a models module.\nUpdated Underscore.js -  1.8.3\nUpdated Angular.js -  1.3.11", 
             "title": "0.5 (Major release)"
         }, 
         {
-            "location": "/reference/CHANGELOG/#043-minor-release", 
+            "location": "/reference/changelog/#043-minor-release", 
             "text": "Refactors opal.models to be a models.py file rather than a package.\nAdds several improvements to forms helpers -  Help argument, other argument to select.  Updates dependency graph:   Angular-strap -  2.3.1", 
             "title": "0.4.3 (Minor release)"
         }, 
         {
-            "location": "/reference/CHANGELOG/#042-minor-release", 
+            "location": "/reference/changelog/#042-minor-release", 
             "text": "Upgrades dependency graph:   Django -  1.8.3  Django-reversion -  1.8.7  jQuery -  1.11.3  D3 -  3.5.6  C4 -  0.4.10   South has been removed, now using django migrations", 
             "title": "0.4.2 (Minor release)"
         }, 
         {
-            "location": "/reference/CHANGELOG/#041-bugfix-release", 
+            "location": "/reference/changelog/#041-bugfix-release", 
             "text": "Fixes some search results appearing duplicated.", 
             "title": "0.4.1 (Bugfix release)"
         }, 
         {
-            "location": "/reference/CHANGELOG/#04-major-release", 
+            "location": "/reference/changelog/#04-major-release", 
             "text": "New Design  Completely re-designed UI following extensive user research and multiple iterations.  Managementcommands and scaffolding  Features the opal command line tool for common administrative tasks\nhttp://opal.openhealthcare.org.uk/docs/guides/command_line_tool/   Form helpers templatetag library  New template library for consistent form controls in line with our new interface guidelines\nhttp://opal.openhealthcare.org.uk/docs/reference/form_templatetags/  API Documentation  Opal JSON APIs are now fully self-documenting for all updated instances\nhttp://opal.openhealthcare.org.uk/docs/guides/json_api/", 
             "title": "0.4 (Major release)"
         }, 
         {
-            "location": "/reference/CHANGELOG/#03-major-release", 
+            "location": "/reference/changelog/#03-major-release", 
             "text": "Bugfixes, significant flexibility in template customisability.  Minor UI updates.", 
             "title": "0.3 (Major release)"
         }, 
         {
-            "location": "/reference/CHANGELOG/#022-bugfix-release", 
+            "location": "/reference/changelog/#022-bugfix-release", 
             "text": "Numerous small bugfixes.  Adds the concept of undischarging patients.", 
             "title": "0.2.2 (Bugfix release)"
         }, 
         {
-            "location": "/reference/CHANGELOG/#021", 
+            "location": "/reference/changelog/#021", 
             "text": "Numerous small bugfixes.", 
             "title": "0.2.1"
         }, 
         {
-            "location": "/reference/CHANGELOG/#020", 
+            "location": "/reference/changelog/#020", 
             "text": "Search overhaul - introduces advanced searches.", 
             "title": "0.2.0"
         }, 
         {
-            "location": "/reference/CHANGELOG/#011", 
+            "location": "/reference/changelog/#011", 
             "text": "Initial public release", 
             "title": "0.1.1"
         }, 
         {
             "location": "/reference/testing/", 
-            "text": "Automated Testing\n\n\nBuilt on top of Django and Angular, Opal applications have great support for automated testing.\n\n\nOpal provides some utilities to make testing your application even easier.\n\n\nCommand Line test runner\n\n\nThe \nopal\n command line tool has a \ntest\n command which will run unittests for both the server\nand client side components of your application.\n\n\nJavascript testing\n\n\nBy default, we recommend using Jasmine and Karma to test your javascript code.\n\n\nOf course you can use any test framework you choose, although Opal doesn't currently ship with\nhelpers for any other frameworks.\n\n\n\nInstalling javascript testing tools\n\n\nTo installing Karma, Jasmine and Phantomjs in a local directory:\n\n\nnpm install jasmine-core karma karma-coverage karma-jasmine karma-phantomjs-launcher\n\n\n\n\nSetting up the karma environment for your application\n\n\nIf you'd like to run karma tests, Opal ships with a function to give you a default karma config.\n\n\nIn your karma config just \nrequire('[[ path to opal ]]/config/karma_defaults.js')\n\n\nThe function takes in the files you want to include and runs karma tests on them.\n\n\n// config/karma.config.js\n\nmodule.exports = function(config){\n  var opalPath = '../../opal';\n\n  var karmaDefaults = require(opalPath + '/config/karma_defaults.js');\n  var baseDir = __dirname + '/..';\n  var includedFiles = [\n     ...\n  ];\n\n  var defaultConfig = karmaDefaults(includedFiles, baseDir);\n  config.set(defaultConfig);\n};\n\n\n\n\nIf run from opal test js, we set the path to opal as an env variable called\nOPAL_LOCATION\n\n\nTest Coverage\n\n\nThe Opal test runner has a \n-c\n option which runs coverage reports for both Python and\nJavascript code:\n\n\nopal test -c\n\n\n\n\nPython test coverage uses the \ncoverage\n tool and you may want to set include/excludes in\na \n.coveragerc\n.\n\n\nJavascript test files to be reported on should be passed as an extra argument to \nkarmaDefaults\n:\n\n\n  var coverageFiles = [\n     ...\n  ];\n  var defaultConfig = karmaDefaults(includedFiles, baseDir, coverageFiles);\n\n\n\n\nHTML test coverage reports will be output to the directory \nhtmlcov\n and \nhtmlcov/js\n at the\nroot of your application.", 
+            "text": "Automated Testing\n\n\nBuilt on top of Django and Angular, Opal applications have great support for automated testing.\n\n\nOpal provides some utilities to make testing your application even easier.\n\n\nCommand Line test runner\n\n\nThe \nopal\n command line tool has a \ntest\n command which will run unittests for both the server\nand client side components of your application.\n\n\nJavascript testing\n\n\nBy default, we recommend using Jasmine and Karma to test your javascript code.\n\n\nOf course you can use any test framework you choose, although Opal doesn't currently ship with\nhelpers for any other frameworks.\n\n\n\nInstalling javascript testing tools\n\n\nTo installing Karma, Jasmine and Phantomjs in a local directory:\n\n\nnpm install jasmine-core karma karma-coverage karma-jasmine karma-phantomjs-launcher\n\n\n\n\nSetting up the karma environment for your application\n\n\nIf you'd like to run karma tests, Opal ships with a function to give you a default karma config.\n\n\nIn your karma config just \nrequire('[[ path to opal ]]/config/karma_defaults.js')\n\n\nThe function takes in the files you want to include and runs karma tests on them.\n\n\n// config/karma.config.js\n\nmodule.exports = function(config){\n  var opalPath = process.env.OPAL_LOCATION;\n\n  var karmaDefaults = require(opalPath + '/config/karma_defaults.js');\n  var baseDir = __dirname + '/..';\n  var includedFiles = [\n     ...\n  ];\n\n  var defaultConfig = karmaDefaults(includedFiles, baseDir);\n  config.set(defaultConfig);\n};\n\n\n\n\nIf run from opal test js, we set the path to opal as an env variable called\nOPAL_LOCATION\n\n\nTest Coverage\n\n\nThe Opal test runner has a \n-c\n option which runs coverage reports for both Python and\nJavascript code:\n\n\nopal test -c\n\n\n\n\nPython test coverage uses the \ncoverage\n tool and you may want to set include/excludes in\na \n.coveragerc\n.\n\n\nJavascript test files to be reported on should be passed as an extra argument to \nkarmaDefaults\n:\n\n\n  var coverageFiles = [\n     ...\n  ];\n  var defaultConfig = karmaDefaults(includedFiles, baseDir, coverageFiles);\n\n\n\n\nHTML test coverage reports will be output to the directory \nhtmlcov\n and \nhtmlcov/js\n at the\nroot of your application.", 
             "title": "Testing"
         }, 
         {
@@ -3687,7 +3692,7 @@
         }, 
         {
             "location": "/reference/testing/#setting-up-the-karma-environment-for-your-application", 
-            "text": "If you'd like to run karma tests, Opal ships with a function to give you a default karma config.  In your karma config just  require('[[ path to opal ]]/config/karma_defaults.js')  The function takes in the files you want to include and runs karma tests on them.  // config/karma.config.js\n\nmodule.exports = function(config){\n  var opalPath = '../../opal';\n\n  var karmaDefaults = require(opalPath + '/config/karma_defaults.js');\n  var baseDir = __dirname + '/..';\n  var includedFiles = [\n     ...\n  ];\n\n  var defaultConfig = karmaDefaults(includedFiles, baseDir);\n  config.set(defaultConfig);\n};  If run from opal test js, we set the path to opal as an env variable called\nOPAL_LOCATION", 
+            "text": "If you'd like to run karma tests, Opal ships with a function to give you a default karma config.  In your karma config just  require('[[ path to opal ]]/config/karma_defaults.js')  The function takes in the files you want to include and runs karma tests on them.  // config/karma.config.js\n\nmodule.exports = function(config){\n  var opalPath = process.env.OPAL_LOCATION;\n\n  var karmaDefaults = require(opalPath + '/config/karma_defaults.js');\n  var baseDir = __dirname + '/..';\n  var includedFiles = [\n     ...\n  ];\n\n  var defaultConfig = karmaDefaults(includedFiles, baseDir);\n  config.set(defaultConfig);\n};  If run from opal test js, we set the path to opal as an env variable called\nOPAL_LOCATION", 
             "title": "Setting up the karma environment for your application"
         }, 
         {
@@ -3957,7 +3962,7 @@
         }, 
         {
             "location": "/reference/management_commands/", 
-            "text": "Opal Management Commands\n\n\nOpal ships with a number of Django management commands which can be invoked with\n\npython manage.py command\n.\n\n\ncreate_random_data\n\n\nCreates patients with randomised data.\n\n\nArguments\n:\n\n\n\n\n--number\n - The number of patients to create. Defaults to 100.\n\n\n\n\npython manage.py create_random_data --number 3000\n\n\n\n\ncreate_singletons\n\n\nCreates any subrecord singletons which are missing. This is useful when\ncreating a new singleton subrecord to backfill existing patients or episodes.\n\n\nWill not create anything if singletons exist, so safe to be run as part of e.g. a\ndeployment script.\n\n\npython manage.py create_singletons\n\n\n\n\ndelete_all_lookuplists\n\n\nDeletes all instances of lookuplist and synonym entries.\n\n\npython manage.py delete_all_lookuplists\n\n\n\n\ndetect_duplicates\n\n\nExamines patients in the system and looks for possible duplicates. Prints a report\nof patients with matching names, dates of birth or hospital numbers.\n\n\npython manage.py detect_duplicates\n\n\n\n\ndump_lookup_lists\n\n\nArguments\n:\n\n\n\n\n--many-files\n - write lookuplists to separate files instead of printing them to stdout.\n\n\n\n\nPrints current lookuplist and synonym values as JSON to stdout. Suitable to be used\nas the input to \nload_lookup_lists\n\n\npython manage.py dump_lookup_lists\n\n\n\n\nload_lookup_lists\n\n\nLoad lookuplists and synonym values.\n\n\nArguments\n:\n\n\n\n\n--file\n - Load one specific file only.\n\n\n\n\nBy default this command will look in \n./yourapp/data/lookuplists.json\n as well as in\n\n./yourapp/data/\n for any files with a name matching the API name of a lookuplist\n(e.g. \n./yourapp/data/conditions.json\n)\n\n\npython manage.py load_lookup_lists\n\n\n\n\nscaffold \nappname\n\n\nUse with new record models.\n\n\nCreates and runs automatic migrations, creates display and form (modal) templates.\n\n\nRunning with \n--dry-run\n will run makemigrations with \n--dry-run\n and print display\nand form templates that would be generated.", 
+            "text": "Opal Management Commands\n\n\nOpal ships with a number of Django management commands which can be invoked with\n\npython manage.py command\n.\n\n\ncreate_random_data\n\n\nCreates patients with randomised data.\n\n\nArguments\n:\n\n\n\n\n--number\n - The number of patients to create. Defaults to 100.\n\n\n\n\npython manage.py create_random_data --number 3000\n\n\n\n\ncreate_singletons\n\n\nCreates any subrecord singletons which are missing. This is useful when\ncreating a new singleton subrecord to backfill existing patients or episodes.\n\n\nWill not create anything if singletons exist, so safe to be run as part of e.g. a\ndeployment script.\n\n\npython manage.py create_singletons\n\n\n\n\ndelete_all_lookuplists\n\n\nDeletes all instances of lookuplist and synonym entries.\n\n\npython manage.py delete_all_lookuplists\n\n\n\n\ndetect_duplicates\n\n\nExamines patients in the system and looks for possible duplicates. Prints a report\nof patients with matching names, dates of birth or hospital numbers.\n\n\npython manage.py detect_duplicates\n\n\n\n\ndump_lookup_lists\n\n\nArguments\n:\n\n\n\n\n--many-files\n - write lookuplists to separate files instead of printing them to stdout.\n\n\n\n\nPrints current lookuplist and synonym values as JSON to stdout. Suitable to be used\nas the input to \nload_lookup_lists\n\n\npython manage.py dump_lookup_lists\n\n\n\n\nload_lookup_lists\n\n\nLoad lookuplists and synonym values.\n\n\nArguments\n:\n\n\n\n\n--file\n - Load one specific file only.\n\n\n\n\nBy default this command will look in \n./yourapp/data/lookuplists.json\n as well as in\n\n./yourapp/data/\n for any files with a name matching the API name of a lookuplist\n(e.g. \n./yourapp/data/conditions.json\n)\n\n\npython manage.py load_lookup_lists\n\n\n\n\nserve \naddrport\n\n\nRun the development server.\n\n\nBy default this will start a web server on \nlocalhost:8000\n. Users may specify either\na port or an addr port pair to change this.\n\n\nopal serve # server on localhost:8000\nopal serve 7798 # server on localhost:7798\nopal serve 0.0.0.0:8080 # server on 0.0.0.0:8080\n\n\n\n\nscaffold \nappname\n\n\nUse with new record models.\n\n\nCreates and runs automatic migrations, creates display and form (modal) templates.\n\n\nRunning with \n--dry-run\n will run makemigrations with \n--dry-run\n and print display\nand form templates that would be generated.", 
             "title": "Management commands"
         }, 
         {
@@ -3994,6 +3999,11 @@
             "location": "/reference/management_commands/#load_lookup_lists", 
             "text": "Load lookuplists and synonym values.  Arguments :   --file  - Load one specific file only.   By default this command will look in  ./yourapp/data/lookuplists.json  as well as in ./yourapp/data/  for any files with a name matching the API name of a lookuplist\n(e.g.  ./yourapp/data/conditions.json )  python manage.py load_lookup_lists", 
             "title": "load_lookup_lists"
+        }, 
+        {
+            "location": "/reference/management_commands/#serve-addrport", 
+            "text": "Run the development server.  By default this will start a web server on  localhost:8000 . Users may specify either\na port or an addr port pair to change this.  opal serve # server on localhost:8000\nopal serve 7798 # server on localhost:7798\nopal serve 0.0.0.0:8080 # server on 0.0.0.0:8080", 
+            "title": "serve &lt;addrport&gt;"
         }, 
         {
             "location": "/reference/management_commands/#scaffold-appname", 

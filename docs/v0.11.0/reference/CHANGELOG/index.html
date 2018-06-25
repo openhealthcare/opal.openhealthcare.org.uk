@@ -205,7 +205,7 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="../../guides/CONTRIBUTING/">Contributing</a> -->
+                <!--             <a href="../../guides/contributing/">Contributing</a> -->
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
@@ -438,6 +438,8 @@
             <li><a href="#removes-episode_history-from-episode-serialization">Removes "episode_history" from episode serialization</a></li>
         
             <li><a href="#as_menuitem-helpers">as_menuitem helpers</a></li>
+        
+            <li><a href="#opal-serve-command">opal serve command</a></li>
         
             <li><a href="#misc-changes">Misc Changes</a></li>
         
@@ -719,7 +721,8 @@
 <p>The dateHelper has the functions <code>now</code> and <code>yesterday</code> that return javascript Dates for
 the current time and the current time - 1 day.</p>
 <h4 id="deprecates-the-_title-property">Deprecates the _title property</h4>
-<p>In future we will use the standard <code>verbose_name</code> property as the display name. The abstract models have been changed to account for this.</p>
+<p>In future we will use the standard <code>verbose_name</code> property as the display name.
+The abstract models have been changed to account for this.</p>
 <h4 id="core-api-registration">Core API registration</h4>
 <p>A refactor in the way that the core APIs are registered by Opal means that
 importing <code>opal.core.api</code> in a plugin API no longer results in circular imports.</p>
@@ -745,6 +748,10 @@ Episode manager, which no longer accepts a <code>episode_history</code> kwarg.</
 Pathways.</p>
 <p>To aid this, the <code>.as_menuitem()</code> method now creates one from the target class with
 sensible but overridable defaults.</p>
+<h4 id="opal-serve-command"><code>opal serve</code> command</h4>
+<p>We add <code>opal serve</code> to the Opal commandline tool. Currently this simply wraps the
+Django runserver management command. It is envisaged that in the future this will
+also initialize e.g. sass precompilers with a single command.</p>
 <h4 id="misc-changes">Misc Changes</h4>
 <p>Adds the utility function <code>opal.utils.get</code>. Similar to the <code>getattr</code> builtin, <code>get</code> looks
 for a method named <code>get_$attr</code> and will call that if it exists.</p>
@@ -769,9 +776,11 @@ technologies that were in widespread use after say, 2006.</p>
 override <code>base.html</code>in your application we advise that you add this <code>&lt;meta&gt;</code> tag.</p>
 <h4 id="misc-changes_1">Misc Changes</h4>
 <ul>
+<li>Adds the utility function <code>opal.core.subrecords.singletons()</code> which returns
+a generator function which will yield all subrecord singletons.</li>
 <li>
-<p>Adds the utility function <code>opal.core.subrecords.singletons()</code> which returns
-a generator function which will yield all subrecord singletons.</p>
+<p>Fixes a URI encoding bug in the <code>Episode.findByHospitalNumber()</code> method that
+made hospital numbers including <code>#</code> or <code>/</code> raise an error.</p>
 </li>
 <li>
 <p>Adds the methods <code>.get_absolute_url()</code>, <code>.get_icon()</code> and <code>get_display_name()</code>
