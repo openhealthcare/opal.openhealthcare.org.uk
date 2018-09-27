@@ -167,7 +167,7 @@
         }, 
         {
             "location": "/reference/reference_guides/", 
-            "text": "OPAL Reference material\n\n\nThe following reference guides are available:\n\n\nModels\n\n\n|\n-|-\n\nopal.models.Episode model\n| The central Episode model\n\nopal.models.Patient\n | The Patient model\n\nopal.models.Subrecord base class\n|Base class for subrecords of Episodes or Patients\n\n\nOPAL Core\n\n\n|\n-|-\n\nopal.core.application\n | OPAL Application objects|\n\nopal.core.detail\n|Detail Views - Custom views over one or many episodes.|\n\nopal.core.episodes\n|Episode Categories - Controlling the behaviour of different types of episode|\n\nopal.core.schemas\n|Schemas - Dynamic columns for the table views|\n\nopal.core.patient_lists\n|Patient Lists - defining different types of list|\n\n\nAngular Services\n\n\n|\n-|-\n\nEpisode\n | Episode objects\n\nItem\n |  Subrecord objects\n\nPatientSummary\n | Patient search result summaries\n\nSearch Services\n | Services from the Search module|\n\n\nHelper libraries\n\n\n|\n-|-\n\nThe forms Templatetag library\n | The building blocks for OPAL forms\n\nThe panels Templatetag library\n | Rendering record panels\n\nJavascript Helpers\n| Angular filters and $rootScope methods\n\n\nOPAL Search module\n\n\n|\n-|-\n\nMaking Search Queries\n | Search query backends and helper functions\n\n\nMiscenlaneous documentation\n\n\n|\n-|-\n\nChangelog\n | OPAL Changelog\n\nUpgrading\n | Upgrading between OPAL versions\n\nJavascript dependencies\n| External javascript libraries available |", 
+            "text": "OPAL Reference material\n\n\nThe following reference guides are available:\n\n\nModels\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nopal.models.Episode model\n\n\nThe central Episode model\n\n\n\n\n\n\nopal.models.Patient\n\n\nThe Patient model\n\n\n\n\n\n\nopal.models.Subrecord base class\n\n\nBase class for subrecords of Episodes or Patients\n\n\n\n\n\n\n\n\nOPAL Core\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nopal.core.application\n\n\nOPAL Application objects\n\n\n\n\n\n\nopal.core.detail\n\n\nDetail Views - Custom views over one or many episodes.\n\n\n\n\n\n\nopal.core.episodes\n\n\nEpisode Categories - Controlling the behaviour of different types of episode\n\n\n\n\n\n\nopal.core.schemas\n\n\nSchemas - Dynamic columns for the table views\n\n\n\n\n\n\nopal.core.patient_lists\n\n\nPatient Lists - defining different types of list\n\n\n\n\n\n\n\n\nAngular Services\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEpisode\n\n\nEpisode objects\n\n\n\n\n\n\nItem\n\n\nSubrecord objects\n\n\n\n\n\n\nPatientSummary\n\n\nPatient search result summaries\n\n\n\n\n\n\nSearch Services\n\n\nServices from the Search module\n\n\n\n\n\n\n\n\nHelper libraries\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe forms Templatetag library\n\n\nThe building blocks for OPAL forms\n\n\n\n\n\n\nThe panels Templatetag library\n\n\nRendering record panels\n\n\n\n\n\n\nJavascript Helpers\n\n\nAngular filters and $rootScope methods\n\n\n\n\n\n\n\n\nOPAL Search module\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMaking Search Queries\n\n\nSearch query backends and helper functions\n\n\n\n\n\n\n\n\nMiscenlaneous documentation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nChangelog\n\n\nOPAL Changelog\n\n\n\n\n\n\nUpgrading\n\n\nUpgrading between OPAL versions\n\n\n\n\n\n\nJavascript dependencies\n\n\nExternal javascript libraries available", 
             "title": "Reference"
         }, 
         {
@@ -177,32 +177,32 @@
         }, 
         {
             "location": "/reference/reference_guides/#models", 
-            "text": "|\n-|- opal.models.Episode model | The central Episode model opal.models.Patient  | The Patient model opal.models.Subrecord base class |Base class for subrecords of Episodes or Patients", 
+            "text": "opal.models.Episode model  The central Episode model    opal.models.Patient  The Patient model    opal.models.Subrecord base class  Base class for subrecords of Episodes or Patients", 
             "title": "Models"
         }, 
         {
             "location": "/reference/reference_guides/#opal-core", 
-            "text": "|\n-|- opal.core.application  | OPAL Application objects| opal.core.detail |Detail Views - Custom views over one or many episodes.| opal.core.episodes |Episode Categories - Controlling the behaviour of different types of episode| opal.core.schemas |Schemas - Dynamic columns for the table views| opal.core.patient_lists |Patient Lists - defining different types of list|", 
+            "text": "opal.core.application  OPAL Application objects    opal.core.detail  Detail Views - Custom views over one or many episodes.    opal.core.episodes  Episode Categories - Controlling the behaviour of different types of episode    opal.core.schemas  Schemas - Dynamic columns for the table views    opal.core.patient_lists  Patient Lists - defining different types of list", 
             "title": "OPAL Core"
         }, 
         {
             "location": "/reference/reference_guides/#angular-services", 
-            "text": "|\n-|- Episode  | Episode objects Item  |  Subrecord objects PatientSummary  | Patient search result summaries Search Services  | Services from the Search module|", 
+            "text": "Episode  Episode objects    Item  Subrecord objects    PatientSummary  Patient search result summaries    Search Services  Services from the Search module", 
             "title": "Angular Services"
         }, 
         {
             "location": "/reference/reference_guides/#helper-libraries", 
-            "text": "|\n-|- The forms Templatetag library  | The building blocks for OPAL forms The panels Templatetag library  | Rendering record panels Javascript Helpers | Angular filters and $rootScope methods", 
+            "text": "The forms Templatetag library  The building blocks for OPAL forms    The panels Templatetag library  Rendering record panels    Javascript Helpers  Angular filters and $rootScope methods", 
             "title": "Helper libraries"
         }, 
         {
             "location": "/reference/reference_guides/#opal-search-module", 
-            "text": "|\n-|- Making Search Queries  | Search query backends and helper functions", 
+            "text": "Making Search Queries  Search query backends and helper functions", 
             "title": "OPAL Search module"
         }, 
         {
             "location": "/reference/reference_guides/#miscenlaneous-documentation", 
-            "text": "|\n-|- Changelog  | OPAL Changelog Upgrading  | Upgrading between OPAL versions Javascript dependencies | External javascript libraries available |", 
+            "text": "Changelog  OPAL Changelog    Upgrading  Upgrading between OPAL versions    Javascript dependencies  External javascript libraries available", 
             "title": "Miscenlaneous documentation"
         }, 
         {
@@ -1542,12 +1542,12 @@
         }, 
         {
             "location": "/reference/javascript_dependencies/", 
-            "text": "OPAL Javscript Dependencies\n\n\nOPAL makes use of a number of upstream dependencies which are available for\ndevleopers to use in building applications.\n\n\n|\n-|-\nModernizr | Opal has a custom modernizr build that detects touch events\nJquery | 1.11.3\nAngular | 1.2.20\nUnderscore.js | 1.8.3\nD3 | 3.5.6\nC3 | 0.4.10", 
+            "text": "OPAL Javscript Dependencies\n\n\nOPAL makes use of a number of upstream dependencies which are available for\ndevleopers to use in building applications.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nModernizr\n\n\nOpal has a custom modernizr build that detects touch events\n\n\n\n\n\n\nJquery\n\n\n1.11.3\n\n\n\n\n\n\nAngular\n\n\n1.2.20\n\n\n\n\n\n\nUnderscore.js\n\n\n1.8.3\n\n\n\n\n\n\nD3\n\n\n3.5.6\n\n\n\n\n\n\nC3\n\n\n0.4.10", 
             "title": "Javascript dependencies"
         }, 
         {
             "location": "/reference/javascript_dependencies/#opal-javscript-dependencies", 
-            "text": "OPAL makes use of a number of upstream dependencies which are available for\ndevleopers to use in building applications.  |\n-|-\nModernizr | Opal has a custom modernizr build that detects touch events\nJquery | 1.11.3\nAngular | 1.2.20\nUnderscore.js | 1.8.3\nD3 | 3.5.6\nC3 | 0.4.10", 
+            "text": "OPAL makes use of a number of upstream dependencies which are available for\ndevleopers to use in building applications.           Modernizr  Opal has a custom modernizr build that detects touch events    Jquery  1.11.3    Angular  1.2.20    Underscore.js  1.8.3    D3  3.5.6    C3  0.4.10", 
             "title": "OPAL Javscript Dependencies"
         }, 
         {

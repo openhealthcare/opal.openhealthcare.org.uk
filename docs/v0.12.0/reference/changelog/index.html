@@ -394,8 +394,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.11.0" target="_blank">
-                  <i class="fa fa-github"></i> v0.11.0
+                <a href="https://github.com/openhealthcare/opal/tree/v0.11.2" target="_blank">
+                  <i class="fa fa-github"></i> v0.11.2
                 </a>
               </li>
                 <!-- <li > -->
@@ -424,7 +424,10 @@
             <li><a href="#misc-changes">Misc Changes</a></li>
         
     
-        <li class="main "><a href="#0111-minor-bug-fix">0.11.1 (Minor bug fix)</a></li>
+        <li class="main "><a href="#0112-bugfix-release">0.11.2 (Bugfix Release)</a></li>
+        
+    
+        <li class="main "><a href="#0111-bugfix-release">0.11.1 (Bugfix Release)</a></li>
         
     
         <li class="main "><a href="#0110-major-release">0.11.0 (Major Release)</a></li>
@@ -725,9 +728,19 @@
 <h3 id="0120-major-release">0.12.0 (Major Release)</h3>
 <h4 id="misc-changes">Misc Changes</h4>
 <ul>
-<li>Adds a method <code>.demographics()</code> to <code>opal.models.Patient</code> which returns the relevant demographics instance.</li>
+<li>
+<p>Adds the {% block analytics %} in the base template (opal/templates/base.html) that by default contains the google analytics code.</p>
+</li>
+<li>
+<p>Adds the block {% block javascripts %} in the base template (opal/templates/base.html) that will compress all javascripts.</p>
+</li>
+<li>
+<p>Adds a method <code>.demographics()</code> to <code>opal.models.Patient</code> which returns the relevant demographics instance.</p>
+</li>
 </ul>
-<h3 id="0111-minor-bug-fix">0.11.1 (Minor bug fix)</h3>
+<h3 id="0112-bugfix-release">0.11.2 (Bugfix Release)</h3>
+<p>Includes referencedata JSON files in Manifest.</p>
+<h3 id="0111-bugfix-release">0.11.1 (Bugfix Release)</h3>
 <p>Fixes the user_options in the date picker tag to display the options as part of the text input.</p>
 <h3 id="0110-major-release">0.11.0 (Major Release)</h3>
 <h4 id="adds-options-of-today-and-yesterday-in-the-date-picker">Adds options of <code>today</code> and <code>yesterday</code> in the date picker</h4>
