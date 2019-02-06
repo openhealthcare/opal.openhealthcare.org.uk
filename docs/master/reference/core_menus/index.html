@@ -394,8 +394,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.11.0" target="_blank">
-                  <i class="fa fa-github"></i> v0.11.0
+                <a href="https://github.com/openhealthcare/opal/tree/v0.12.1" target="_blank">
+                  <i class="fa fa-github"></i> v0.12.1
                 </a>
               </li>
                 <!-- <li > -->
@@ -432,7 +432,7 @@
 
 <h1 id="opalcoremenus">opal.core.menus</h1>
 <p>Opal provides classes and methods to define application menus programatically.</p>
-<h2 id="opalcoremenuitem">opal.core.MenuItem</h2>
+<h3 id="opalcoremenuitem">opal.core.MenuItem</h3>
 <p>An item in an application menu.</p>
 <p><strong>Arguments</strong></p>
 <ul>
@@ -443,7 +443,10 @@
 <li>display - the text to display in this menu item</li>
 <li>index - a number to use as the primary sort order for your menu items</li>
 </ul>
-<h2 id="opalcoremenu">opal.core.Menu</h2>
+<p><strong>Methods</strong></p>
+<h4 id="for_user">for_user</h4>
+<p>A method that takes a user and returns True by default. Override this if you want menu items hidden for certain users.</p>
+<h3 id="opalcoremenu">opal.core.Menu</h3>
 <p>The menu for an Opal application. On initialization it will construct a menu
 for the current user, pulling items from the current app, and any plugins.</p></div>
         </div>

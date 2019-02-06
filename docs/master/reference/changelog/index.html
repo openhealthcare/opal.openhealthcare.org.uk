@@ -394,8 +394,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.11.0" target="_blank">
-                  <i class="fa fa-github"></i> v0.11.0
+                <a href="https://github.com/openhealthcare/opal/tree/v0.12.1" target="_blank">
+                  <i class="fa fa-github"></i> v0.12.1
                 </a>
               </li>
                 <!-- <li > -->
@@ -419,7 +419,18 @@
   <h3>Contents</h3>
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#0111-minor-bug-fix">0.11.1 (Minor bug fix)</a></li>
+        <li class="main active"><a href="#0121-minor-release">0.12.1 (Minor Release)</a></li>
+        
+    
+        <li class="main "><a href="#0120-major-release">0.12.0 (Major Release)</a></li>
+        
+            <li><a href="#misc-changes">Misc Changes</a></li>
+        
+    
+        <li class="main "><a href="#0112-bugfix-release">0.11.2 (Bugfix Release)</a></li>
+        
+    
+        <li class="main "><a href="#0111-bugfix-release">0.11.1 (Bugfix Release)</a></li>
         
     
         <li class="main "><a href="#0110-major-release">0.11.0 (Major Release)</a></li>
@@ -444,7 +455,7 @@
         
             <li><a href="#opal-serve-command">opal serve command</a></li>
         
-            <li><a href="#misc-changes">Misc Changes</a></li>
+            <li><a href="#misc-changes_1">Misc Changes</a></li>
         
             <li><a href="#template-removals">Template removals</a></li>
         
@@ -452,7 +463,7 @@
         
             <li><a href="#the-return-of-an-old-friend-ie-document-modes">The return of an old friend: IE Document modes</a></li>
         
-            <li><a href="#misc-changes_1">Misc Changes</a></li>
+            <li><a href="#misc-changes_2">Misc Changes</a></li>
         
             <li><a href="#updates-to-the-dependency-graph">Updates to the Dependency Graph</a></li>
         
@@ -502,7 +513,7 @@
         
             <li><a href="#updates-to-the-dependency-graph_1">Updates to the Dependency Graph</a></li>
         
-            <li><a href="#misc-changes_2">Misc Changes</a></li>
+            <li><a href="#misc-changes_3">Misc Changes</a></li>
         
     
         <li class="main "><a href="#090-major-release">0.9.0 (Major Release)</a></li>
@@ -523,7 +534,7 @@
         
             <li><a href="#exclude-prefixes-now-work-on-actual-paths">Exclude prefixes now work on actual paths</a></li>
         
-            <li><a href="#misc-changes_3">Misc Changes</a></li>
+            <li><a href="#misc-changes_4">Misc Changes</a></li>
         
             <li><a href="#removes-deprecated-functionality-in-referencedata-metadata-userprofile-and-recordloader">Removes Deprecated functionality in ReferenceData, Metadata, UserProfile and recordLoader</a></li>
         
@@ -559,7 +570,7 @@
         
             <li><a href="#notice-of-future-removals">Notice of future removals</a></li>
         
-            <li><a href="#misc-changes_4">Misc changes</a></li>
+            <li><a href="#misc-changes_5">Misc changes</a></li>
         
             <li><a href="#minor-fixes">Minor fixes</a></li>
         
@@ -582,7 +593,7 @@
         
             <li><a href="#subrecord-list-api">Subrecord List API</a></li>
         
-            <li><a href="#misc-changes_5">Misc Changes</a></li>
+            <li><a href="#misc-changes_6">Misc Changes</a></li>
         
     
         <li class="main "><a href="#080-major-release">0.8.0 (Major Release)</a></li>
@@ -621,7 +632,7 @@
         
             <li><a href="#removals_1">Removals</a></li>
         
-            <li><a href="#misc-changes_6">Misc changes</a></li>
+            <li><a href="#misc-changes_7">Misc changes</a></li>
         
             <li><a href="#updates-to-the-dependency-graph_3">Updates to the Dependency Graph</a></li>
         
@@ -717,11 +728,41 @@
 </div></div>
             <div class="col-md-9" role="main">
 
-<h3 id="0111-minor-bug-fix">0.11.1 (Minor bug fix)</h3>
+<h3 id="0121-minor-release">0.12.1 (Minor Release)</h3>
+<ul>
+<li>
+<p>If an item is deleted from the edit item modal, RecordEditor.openEditItemModal will now resolve after the delete item modal is closed with 'deleted'</p>
+</li>
+<li>
+<p>Fixes the default investigation modal</p>
+</li>
+</ul>
+<h3 id="0120-major-release">0.12.0 (Major Release)</h3>
+<h4 id="misc-changes">Misc Changes</h4>
+<ul>
+<li>
+<p>Adds the {% block analytics %} in the base template (opal/templates/base.html) that by default contains the google analytics code.</p>
+</li>
+<li>
+<p>Adds the block {% block javascripts %} in the base template (opal/templates/base.html) that will compress all javascripts.</p>
+</li>
+<li>
+<p>Adds a method <code>.demographics()</code> to <code>opal.models.Patient</code> which returns the relevant demographics instance.</p>
+</li>
+<li>
+<p>Adds a <code>for_user</code> method on to the menu item. This method
+takes a user and by default returns True. Override this
+to decide if a menu item should be shown in the nav bar.</p>
+</li>
+</ul>
+<h3 id="0112-bugfix-release">0.11.2 (Bugfix Release)</h3>
+<p>Includes referencedata JSON files in Manifest.</p>
+<h3 id="0111-bugfix-release">0.11.1 (Bugfix Release)</h3>
 <p>Fixes the user_options in the date picker tag to display the options as part of the text input.</p>
 <h3 id="0110-major-release">0.11.0 (Major Release)</h3>
 <h4 id="adds-options-of-today-and-yesterday-in-the-date-picker">Adds options of <code>today</code> and <code>yesterday</code> in the date picker</h4>
-<p>If you pass in <code>user_options=True</code> to the date picker. You will be provided with options to select today or yesterday in the form tag.</p>
+<p>If you pass in <code>user_options=True</code> to the date picker. You will be provided with
+options to select today or yesterday in the form tag.</p>
 <h4 id="adds-datehelper-to-the-rootscope">Adds <code>dateHelper</code> to the rootScope</h4>
 <p>The dateHelper has the functions <code>now</code> and <code>yesterday</code> that return javascript Dates for
 the current time and the current time - 1 day.</p>
@@ -757,7 +798,7 @@ sensible but overridable defaults.</p>
 <p>We add <code>opal serve</code> to the Opal commandline tool. Currently this simply wraps the
 Django runserver management command. It is envisaged that in the future this will
 also initialize e.g. sass precompilers with a single command.</p>
-<h4 id="misc-changes">Misc Changes</h4>
+<h4 id="misc-changes_1">Misc Changes</h4>
 <p>Adds the utility function <code>opal.utils.get</code>. Similar to the <code>getattr</code> builtin, <code>get</code> looks
 for a method named <code>get_$attr</code> and will call that if it exists.</p>
 <p>Adds the method <code>.get_absolute_url()</code> to <code>opal.core.pathways.Pathway</code> and
@@ -779,18 +820,14 @@ in such a way that it uses e.g. IE7 Document mode by default.</p>
 technologies that were in widespread use after say, 2006.</p>
 <p>We have altered <code>base.html</code> to specify <code>"X-UA-Compatible" content="IE=Edge"</code>. If you
 override <code>base.html</code>in your application we advise that you add this <code>&lt;meta&gt;</code> tag.</p>
-<h4 id="misc-changes_1">Misc Changes</h4>
+<h4 id="misc-changes_2">Misc Changes</h4>
 <ul>
 <li>Adds the utility function <code>opal.core.subrecords.singletons()</code> which returns
 a generator function which will yield all subrecord singletons.</li>
-<li>
-<p>Fixes a URI encoding bug in the <code>Episode.findByHospitalNumber()</code> method that
-made hospital numbers including <code>#</code> or <code>/</code> raise an error.</p>
-</li>
-<li>
-<p>Adds the methods <code>.get_absolute_url()</code>, <code>.get_icon()</code> and <code>get_display_name()</code>
-to <code>opal.core.pathways.Pathway</code> and <code>opal.core.patient_lists.PatientList</code>.</p>
-</li>
+<li>Fixes a URI encoding bug in the <code>Episode.findByHospitalNumber()</code> method that
+made hospital numbers including <code>#</code> or <code>/</code> raise an error.</li>
+<li>Adds the methods <code>.get_absolute_url()</code>, <code>.get_icon()</code> and <code>get_display_name()</code>
+to <code>opal.core.pathways.Pathway</code> and <code>opal.core.patient_lists.PatientList</code>.</li>
 </ul>
 <h4 id="updates-to-the-dependency-graph">Updates to the Dependency Graph</h4>
 <ul>
@@ -896,7 +933,7 @@ These were replaced by <code>.start</code> and <code>.end</code>.</p>
 <li>django-celery: 3.1.17 -&gt; 3.2.2</li>
 <li>celery: 3.1.19 -&gt; 3.1.25</li>
 </ul>
-<h4 id="misc-changes_2">Misc Changes</h4>
+<h4 id="misc-changes_3">Misc Changes</h4>
 <p>Removes the undocumented <code>collapsed_multisave</code> tag from the <code>pathways</code> templatetag
 library.</p>
 <p>Adds a setting <code>OPAL_FAVICON_PATH</code> to specify the application Favicon to use.</p>
@@ -955,7 +992,7 @@ called SearchCtrl, but apart from that you can plugin your own implementation.</
 <h4 id="exclude-prefixes-now-work-on-actual-paths">Exclude prefixes now work on actual paths</h4>
 <p>Previously they only worked with angular paths, now they work
 with a combination of actual paths and angular url paths (e.g. /search/#/extract)</p>
-<h4 id="misc-changes_3">Misc Changes</h4>
+<h4 id="misc-changes_4">Misc Changes</h4>
 <p>Add the allow_add_patient and allow_edit_teams options to the patient lists.</p>
 <p>We added support for a <code>--file</code> or <code>-f</code> option for the <code>load_lookup_lists</code> command which
 allows the user to specify a particular file outside of the default locations.</p>
@@ -1012,7 +1049,7 @@ True by default.</p>
 <p>The context variables <code>brand_name</code> <code>settings</code> and <code>extra_application</code> in <code>opal.views.IndexView</code>
 are no longer helpful thanks to the settings context processor. These will be removed in
 0.9.0 and emit warnings until then.</p>
-<h4 id="misc-changes_4">Misc changes</h4>
+<h4 id="misc-changes_5">Misc changes</h4>
 <p>Adds a new filter - <code>underscore-to-spaces</code> for removing underscores from strings.</p>
 <p>The options for <code>SymptomComplex.duration</code> have moved from the default form template to a choices
 declaration on the model. These are scheduled to move again to a lookuplist.</p>
@@ -1050,7 +1087,7 @@ warning for the remainder of the 0.8.x branch, before being removed entirely in 
 <h4 id="subrecord-list-api">Subrecord List API</h4>
 <p>We have added a list method to the default Opal JSON API for subrecords - you may now obtain a list of all instances
 of a given subrecord from the API endpoint <code>/api/v0.1/$api_name/</code>.</p>
-<h4 id="misc-changes_5">Misc Changes</h4>
+<h4 id="misc-changes_6">Misc Changes</h4>
 <p>Updates the custom <code>UserAdmin</code> so that the email, first and last name fields from the Django <code>User</code> model
 are in the add user form not just the edit user form.</p>
 <p>The default test runner generated by plugin scaffolding now uses <code>opal.urls</code> as the default url conf in the test settings. This allows you to test urls generated by Opal - for instance default form or record templates, or simply raw templates from our generic template view.</p>
@@ -1143,7 +1180,7 @@ opal.core.api.LoginRequiredViewset, a standard DRF viewset that requires the use
 <li>The <code>static</code> argument from the forms <code>input</code> tag. Developers should move to the <code>static</code> tag.</li>
 <li>The _modal option to set on subrecords. This is because we now use large modals across the board.</li>
 </ul>
-<h4 id="misc-changes_6">Misc changes</h4>
+<h4 id="misc-changes_7">Misc changes</h4>
 <p>The opal.core.api.EpisodeViewSet.create now expects tagging to be an object rather than a list, similar to how it details with demographics and location.</p>
 <p>The API will no longer serialise the _ft or _fk_id fields of FreeTextOrForeignKey fields - these
 are internal implementation details of the server that are not useful on the client side.</p>
