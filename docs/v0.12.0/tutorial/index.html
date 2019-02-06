@@ -394,8 +394,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.11.2" target="_blank">
-                  <i class="fa fa-github"></i> v0.11.2
+                <a href="https://github.com/openhealthcare/opal/tree/v0.12.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.12.0
                 </a>
               </li>
                 <!-- <li > -->
@@ -537,7 +537,7 @@ looks a lot like this:</p>
 <h3 id="reference-data">Reference data</h3>
 <p>You will notice that the condition field has a custom field type - <code>ForeignKeyOrFreeText</code>.
 This is a custom field type that we use with Opal when we want to use a
-<a href="../guides/lookup_lists/">Lookup List</a>.</p>
+<a href="../guides/referencedata/">Lookup List</a>.</p>
 <p>Lookup Lists allow us to reference canonical lists of available terminology as a foreign key, while
 also allowing synonymous terms, and a free text override. That means that we can ensure that
 we record high quality coded data, while allowing users an easy way to enter unusual edge
@@ -650,7 +650,7 @@ need to tweak the templates they generate with whatever logic makes sense for yo
 application.</p>
 <p>For us, you'll notice that the value of <code>TODOItem.completed</code> simply displays as false -
 which is not particularly useful. So let's update that using the Opal
-<a href="../reference/javascript_helpers/">Boxed filter</a>. In <code>mynewapp/templates/records/todo_item.html</code>
+<a href="../reference/javascript/javascript_helpers/#boxed">Boxed filter</a>. In <code>mynewapp/templates/records/todo_item.html</code>
 change the last <code>span</code> to look like this:</p>
 <pre><code class="html">&lt;span ng-show=&quot;item.completed&quot;&gt;
   [[ item.completed | boxed ]]
@@ -672,7 +672,7 @@ or unique identifier:</p>
 <p>We also have a detail view for our patients, which you can access via search results. This
 view will typically allow for a more detailed display and editing of all the events
 comprising a patient's care than is available on the list page.</p>
-<p><img src="/img/detail.png" style="margin: 12px auto; border: 1px solid black; width: 600px;"/></p>
+<p><img src="/img/detail_1.png" style="margin: 12px auto; border: 1px solid black; width: 600px;"/></p>
 <h4 id="json-apis">JSON APIs</h4>
 <p>Opal automatically creates self-documenting JSON APIs for your interacting with the data
 in your application. You can inspect these APIs interactively at the url:</p>

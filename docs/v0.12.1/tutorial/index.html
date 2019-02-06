@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+
+	<title>Tutorial - Opal</title>
+
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+        <link href="../css/base.css" rel="stylesheet">
+        <link href="../opaldocs.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">
+              <img src="/img/opallogo.png" height="30"/>
+            </a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="..">Home</a>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../installation/">Installation</a>
+                </li>
+            
+            
+            
+                <li class="active">
+                    <a href="./">Tutorial</a>
+                </li>
+            
+            
+            
+                <!-- <li class="dropdown"> -->
+                <!--     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials <b class="caret"></b></a> -->
+                <!--     <ul class="dropdown-menu"> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../tutorials/pathway_tutorial/">Pathway tutorial</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../tutorials/theming_tutorial/">Theming tutorial</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--     </ul> -->
+                <!-- </li> -->
+            
+            
+            
+                <li >
+                    <a href="../guides/topic-guides/">Guides</a>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../reference/reference_guides/">Reference</a>
+                </li>
+            
+            
+            
+                <!-- <li class="dropdown"> -->
+                <!--     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Topic Guides <b class="caret"></b></a> -->
+                <!--     <ul class="dropdown-menu"> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../guides/components_overview/">Component Overview</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../guides/command_line_tool/">Command Line tool</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../guides/discoverable/">Discoverable Features</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../guides/plugins/">Plugins</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../guides/plugins_list/">Plugin List</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../guides/datamodel/">Data Model</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../guides/episodes/">Episodes</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../guides/archetypes/">Archetypes</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../guides/referencedata/">Referencedata</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../guides/metadata/">Metadata</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../guides/working_with_data_in_angular/">Angular Models</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../guides/flow/">Flow</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../guides/roles_and_permissions/">Roles & Permissions</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../guides/tagging/">Tagging</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../guides/json_api/">JSON API</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../guides/theming/">Theming</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../guides/templates/">Templates</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../guides/context_processors/">Context Processors</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../guides/static_files/">Static Files</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../guides/forms/">Forms</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../guides/patient_detail_views/">Patient Detail Views</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../guides/list_views/">Patient List Views</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../guides/search/">Search Overview</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../guides/pathways/">Pathway Overview</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../guides/django_admin/">Django Admin</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../guides/contributing/">Contributing</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../guides/development_environment/">Development environment</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../guides/releasing/">Releasing</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../guides/deployment/">Deployment</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--     </ul> -->
+                <!-- </li> -->
+            
+            
+            
+                <!-- <li class="dropdown"> -->
+                <!--     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reference <b class="caret"></b></a> -->
+                <!--     <ul class="dropdown-menu"> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/episode/">The Episode model</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/patient/">The Patient model</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/subrecords/">Subrecords</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/user_profile_model/">UserProfile</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/mixins/">Mixins</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/opal_application/">OpalApplication</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/detail_views/">Detail Views</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/episode_categories/">Episode Categories</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/schemas/">Schemas</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/patient_list/">Patient Lists</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/plugin/">OpalPlugin</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/core_views/">Core.Views</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/core_menus/">Menus</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/loggers/">Log</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/core_fields/">Fields</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/core_lookuplists/">Lookuplists</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/core_discoverable/">Discoverable</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/core_serialization/">Serialization</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/core_subrecords/">Subrecords</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/javascript/patient_service/">Patient service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/javascript/episode_service/">Episode service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/javascript/item_service/">Item service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/javascript/user_service/">User service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/javascript/patient_summary_service/">Patient summary service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/javascript/search_js_services/">Search JS Services</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/javascript/loaders/">Loaders</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/form_templatetags/">Form helpers</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/panels_templatetags/">Panel Template tags</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/menus_templatetags/">Menu Template tag</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/javascript/javascript_helpers/">Javascript helpers</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/utils/">Utils module</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/search_queries/">Search Queries</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/pathways/">Pathway</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/settings/">Settings</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/changelog/">Changelog</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/testing/">Testing</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/javascript/javascript_dependencies/">Javascript dependencies</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/upgrading/">Upgrading</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="../reference/management_commands/">Management commands</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--     </ul> -->
+                <!-- </li> -->
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <a href="https://github.com/openhealthcare/opal/tree/v0.12.1" target="_blank">
+                  <i class="fa fa-github"></i> v0.12.1
+                </a>
+              </li>
+                <!-- <li > -->
+                <!--     <a rel="next" href="../installation/"> -->
+                <!--         <i class="fa fa-arrow-left"></i> Previous -->
+                <!--     </a> -->
+                <!-- </li> -->
+                <!-- <li > -->
+                <!--     <a rel="prev" href="../tutorials/pathway_tutorial/"> -->
+                <!--         Next <i class="fa fa-arrow-right"></i> -->
+                <!--     </a> -->
+                <!-- </li> -->
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+  <h3>Contents</h3>
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#writing-a-clinical-service-with-opal">Writing a clinical service with Opal</a></li>
+        
+            <li><a href="#bootstrapping-a-new-project">Bootstrapping a new project</a></li>
+        
+            <li><a href="#test-it-out">Test it out</a></li>
+        
+            <li><a href="#team-lists">Team lists</a></li>
+        
+            <li><a href="#reference-data">Reference data</a></li>
+        
+            <li><a href="#add-your-own-data-models">Add your own data models</a></li>
+        
+            <li><a href="#tweaking-the-default-scaffolding">Tweaking the default scaffolding</a></li>
+        
+            <li><a href="#some-other-batteries-included">Some other batteries included</a></li>
+        
+            <li><a href="#what-next">What next?</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h2 id="writing-a-clinical-service-with-opal">Writing a clinical service with Opal</h2>
+<p>This tutorial will walk you through the creation of a new Opal service.</p>
+<p>The application we're going to be building will help clinical users to manage the patients on a ward in a hospital.</p>
+<blockquote class="custom-quote"><p><i class="fa fa-user-md fa-3x"></i>
+As a Doctor <br />
+I want to know what's going on with the patients under my care<br />
+So that I can treat them effectively and safely.
+</p></blockquote>
+
+<h3 id="bootstrapping-a-new-project">Bootstrapping a new project</h3>
+<p>We assume that you've already <a href="../installation/">Installed Opal</a>. You can tell which version of opal is installed
+by running this command</p>
+<pre><code>$ opal --version
+</code></pre>
+<p>At the start a new project, Opal will bootstrap the initial project structure, including
+a Django project, some core datamodels (complete with JSON APIs) and a general application structure.</p>
+<p>From the commandline:</p>
+<pre><code>$ opal startproject mynewapp
+</code></pre>
+<p>This will create a mynewapp directory where your new project lives.</p>
+<p>Let's have a look at what that created for you:</p>
+<pre><code>mynewapp/                   # Your project directory
+    LICENSE                 # A dummy LICENSE file
+    Procfile                # A procfile ready for deployment to e.g. Heroku
+    README.md
+    manage.py               # Django's manage.py script
+    requirements.txt        # Requirements file ready for your project
+
+    data/                   # A dummy directory for fixtures
+        lookuplists/        # A dummy directory for reference data
+
+    mynewapp/               # The actual python package for your application
+         __init__.py
+        models.py           # Data models for your application
+        settings.py         # Helpfully tweaked Django settings
+        tests.py            # Dummy unittests
+        urls.py             # Django Urlconf
+        wsgi.py
+
+        patient_lists.py    # these create the [lists](/guides/list_views/) for you application
+
+        assets/             # Your static files directory
+        templates/          # Your template directory
+        migrations/         # Your Database migrations directory
+
+        opal.sqlite         # The Sqlite development database
+</code></pre>
+<h3 id="test-it-out">Test it out</h3>
+<p>The scaffolding step has generated you a working project - so let's check that out</p>
+<pre><code class="bash">cd mynewapp
+python manage.py runserver
+</code></pre>
+
+<p>If you now visit <code>http://localhost:8000</code> in your browser, you should see the standard login screen:</p>
+<p><img src="/img/tutorial-login.png" style="margin: 12px auto; border: 1px solid black;"/></p>
+<p>The scaffolding step created you a superuser, so try logging in with the credentials:</p>
+<ul>
+<li>Username: <em>super</em></li>
+<li>Password:  <em>super1</em></li>
+</ul>
+<p>When you log in you should be presented with a welcome screen that shows you the three
+areas that are enabled by default - team lists, search and the admin area.</p>
+<p><img src="/img/tutorial-welcome.png" width="600" style="margin: 12px auto; border: 1px solid black;"/></p>
+<p>Opal applications are a collection of single page Angular apps that talk to the Django
+server-side layer via JSON APIs. The team lists and search options here are two examples of
+front-end Angular single page apps.</p>
+<h3 id="team-lists">Team lists</h3>
+<p>Most clinical services will need at some stage to generate a list of patients - so Opal provides
+this functionality enabled by default.</p>
+<p>The <a href="../guides/list_views/">list view</a> is a spreadsheet-style list of patients - try navigating
+to the list view and adding a patient with the <code>add patient</code> button.</p>
+<p><img src="/img/tutorial-list.png" width="600" style="margin: 12px auto; border: 1px solid black;"/></p>
+<p>Each column contains a different type of information about a patient, while each
+row represents one patient.</p>
+<blockquote><small>
+Strictly speaking each row is an <a href="/guides/datamodel/">episode</a>
+of care for a patient - but we'll come to that in a second.
+</small></blockquote>
+
+<p>The columns you see initially are just a few of the standard clinical models that come with
+Opal - for instance the Diagnosis model in your new application inherits from a model that
+looks a lot like this:</p>
+<pre><code class="python">class Diagnosis(EpisodeSubrecord):
+    condition         = ForeignKeyOrFreeText(Condition)
+    provisional       = models.BooleanField(default=False)
+    details           = models.CharField(max_length=255, blank=True)
+    date_of_diagnosis = models.DateField(blank=True, null=True)
+
+    class Meta:
+        abstract = True
+</code></pre>
+
+<h3 id="reference-data">Reference data</h3>
+<p>You will notice that the condition field has a custom field type - <code>ForeignKeyOrFreeText</code>.
+This is a custom field type that we use with Opal when we want to use a
+<a href="../guides/referencedata/">Lookup List</a>.</p>
+<p>Lookup Lists allow us to reference canonical lists of available terminology as a foreign key, while
+also allowing synonymous terms, and a free text override. That means that we can ensure that
+we record high quality coded data, while allowing users an easy way to enter unusual edge
+cases.</p>
+<p>Opal has a referencedata package which is installed by default for new applications.</p>
+<p>To see them in action, try adding a new diagnosis to your patient. As you start to type in
+the condition field, you'll see that the conditions we just imported appear as suggestions:</p>
+<p><img src="/img/tutorial-conditions.png" style="margin: 12px auto; border: 1px solid black;"/></p>
+<blockquote><small>
+You can add your own Lookup Lists to your application. <br />
+For more details consult the
+<a href="../guides/referencedata/#adding-a-lookup-list">Reference Data guide</a>.
+</small></blockquote>
+
+<h3 id="add-your-own-data-models">Add your own data models</h3>
+<p>So far we've begun to get a sense of the batteries-included parts of Opal,
+but before long, you're going to need to create models for your own needs.</p>
+<p>Most Opal models are <a href="../guides/datamodel/">Subrecords</a> - they relate to either a patient, or
+an episode (an episode is for example, an admission to hospital).</p>
+<p>Let's see how that works by creating a TODO list model that is assigned to
+episodes of care. In your <code>mynewapp/models.py</code> :</p>
+<pre><code>class TODOItem(models.EpisodeSubrecord):
+    job       = fields.CharField(max_length=200)
+    due_date  = fields.DateField(blank=True, null=True)
+    details   = fields.TextField(blank=True, null=True)
+    completed = fields.BooleanField(default=False)
+</code></pre>
+
+<p>This is simply a Django model, apart from the parent class <code>models.EpisodeSubrecord</code>
+which provides us with some extra functionality:</p>
+<ul>
+<li>A relationship to an episode, linked to a patient</li>
+<li>JSON APIs for creating, retrieving and updating it</li>
+<li>Ensuring that the Opal Angular layer knows it exists</li>
+<li>Some metadata fields, like created, updated, created_by, updated_by</li>
+</ul>
+<p>Next, we're going to let Opal take care of the boilerplate that we'll need to use this
+model in our application. From the commandline:</p>
+<pre><code class="sh">python manage.py scaffold mynewapp
+</code></pre>
+
+<p>Let's take a look at what that did:</p>
+<ul>
+<li>It created a Django migration</li>
+<li>It ran that migration for you</li>
+<li>It created a detail template <code>mynewapp/templates/records/todo_item.html</code></li>
+<li>It created a form template <code>mynewapp/templates/forms/todo_item_forml.html</code></li>
+</ul>
+<h4 id="detail-template">Detail template</h4>
+<p>The default detail template simply displays each field on a new line:</p>
+<pre><code>&lt;span ng-show="item.job"&gt;[[ item.job ]] &lt;br /&gt;&lt;/span&gt;
+&lt;span ng-show="item.due_date"&gt;[[ item.due_date  | shortDate ]] &lt;br /&gt;&lt;/span&gt;
+&lt;span ng-show="item.details"&gt;[[ item.details ]] &lt;br /&gt;&lt;/span&gt;
+&lt;span ng-show="item.completed"&gt;[[ item.completed ]] &lt;br /&gt;&lt;/span&gt;
+</code></pre>
+<h4 id="form-template">Form template</h4>
+<p>The default form template will display each field on a new line, with some basic
+appropriate form field types set.
+It uses the Opal form helpers templatetag library.</p>
+<pre><code class="html">{% load forms %}
+{% input  field=&quot;TODOItem.job&quot;  %}
+{% datepicker  field=&quot;TODOItem.due_date&quot;  %}
+{% textarea  field=&quot;TODOItem.details&quot;  %}
+{% checkbox  field=&quot;TODOItem.completed&quot;  %}
+</code></pre>
+
+<h4 id="adding-todos-to-our-team-lists">Adding TODOs to our Team Lists</h4>
+<p>Now let's add our TODO list model as a column in the Spreadsheet-like list view.</p>
+<p>Patient Lists in Opal are subclasses of <code>opal.core.patient_lists.PatientList</code>, and
+they live in <code>patient_lists.py</code> files of our Django apps.</p>
+<blockquote><small>
+Technically these can live anywhere you like - although if you put them in other places
+you're responsible for making sure that they're imported at startup.
+<br />Opal guarantees
+to autodiscover lists in `app.patient_list` modules.
+</small></blockquote>
+
+<p>You can see the basic list that the Opal application scaffold created for you in
+<code>yournewapp/patient_lists.py</code>.</p>
+<pre><code class="python">class AllPatientsList(core.patient_lists.PatientList):
+    display_name = 'All Patients'
+
+    schema = [
+        models.Demographics,
+        models.Diagnosis,
+        models.Treatment
+    ]
+
+    def get_queryset(self):
+        return Episode.objects.all()
+</code></pre>
+
+<p>The columns for lists are set in the <code>schema</code> property of the PatientList class. To add
+our TODO model to the list, just add the model to the schema:</p>
+<pre><code class="python">    schema = [
+        models.Demographics,
+        models.Diagnosis,
+        models.Treatment,
+        models.TODOItem
+    ]
+</code></pre>
+
+<p>Refresh the lists page in your browser, and you'll see your new column on the end - add a
+TODO item, noting how we automatically get appropriate form types like datepickers and
+checkboxes.</p>
+<p>You can edit any entry in the list view by double clicking on it.</p>
+<h3 id="tweaking-the-default-scaffolding">Tweaking the default scaffolding</h3>
+<p>The scaffolding templates are only really supposed to get you started - you'll often
+need to tweak the templates they generate with whatever logic makes sense for your
+application.</p>
+<p>For us, you'll notice that the value of <code>TODOItem.completed</code> simply displays as false -
+which is not particularly useful. So let's update that using the Opal
+<a href="../reference/javascript/javascript_helpers/#boxed">Boxed filter</a>. In <code>mynewapp/templates/records/todo_item.html</code>
+change the last <code>span</code> to look like this:</p>
+<pre><code class="html">&lt;span ng-show=&quot;item.completed&quot;&gt;
+  [[ item.completed | boxed ]]
+&lt;/span&gt;
+</code></pre>
+
+<h4 id="set-an-icon-for-your-model">Set an Icon for your model</h4>
+<p>You'll notice that your new column is the only one without an icon - we set the icon by
+adding the following property to your <code>TODOItem</code> class:</p>
+<pre><code>    _icon = 'fa fa-th-list'
+</code></pre>
+<h3 id="some-other-batteries-included">Some other batteries included</h3>
+<p>Let's take a look at some of the other core functionality that we now have out of the box:</p>
+<h4 id="search">Search</h4>
+<p>By default, we also enable the search module, which allows you to search by patient name
+or unique identifier:</p>
+<p><img src="/img/search.png" style="margin: 12px auto; border: 1px solid black;"/></p>
+<h4 id="detail-views">Detail views</h4>
+<p>We also have a detail view for our patients, which you can access via search results. This
+view will typically allow for a more detailed display and editing of all the events
+comprising a patient's care than is available on the list page.</p>
+<p><img src="/img/detail_1.png" style="margin: 12px auto; border: 1px solid black; width: 600px;"/></p>
+<h4 id="json-apis">JSON APIs</h4>
+<p>Opal automatically creates self-documenting JSON APIs for your interacting with the data
+in your application. You can inspect these APIs interactively at the url:</p>
+<pre><code>http://localhost:8000/api/v0.1/
+</code></pre>
+<p><img src="/img/tutorial-api.png" style="margin: 12px auto; border: 1px solid black;"/></p>
+<h3 id="what-next">What next?</h3>
+<p>This is just a glimpse at the full range of functionality that comes with Opal - there is
+much more to discover in the <a href="../guides/topic-guides/">Topic Guides</a>.</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <img src="/img/opallogo.png" class="pull-left"/>
+            <center>
+              <br />
+              Opal is an open source framework for building clinical applications from
+              <a href="http://openhealthcare.org.uk" target="_blank">Open Health Care UK</i></a>.
+            </center>
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script src="../js/base.js"></script>
+          <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35112560-5', 'openhealthcare.org.uk');
+  ga('send', 'pageview');
+          </script>
+
+    </body>
+</html>

@@ -237,7 +237,7 @@
         }, 
         {
             "location": "/reference/reference_guides/", 
-            "text": "Opal Reference material\n\n\nThe following reference guides are available:\n\n\nModels\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nopal.models.Episode\n\n\nThe central Episode model\n\n\n\n\n\n\nopal.models.Patient\n\n\nThe Patient model\n\n\n\n\n\n\nopal.models.Subrecord\n\n\nfor subrecords of Episodes or Patients\n\n\n\n\n\n\nopal.models.UserProfile\n\n\nThe Opal UserProfile model\n\n\n\n\n\n\nopal.models.*\n\n\nMixin helpers for useful functionality\n\n\n\n\n\n\n\n\nOpal Core\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nopal.core.application\n\n\nOpal Application objects\n\n\n\n\n\n\nopal.core.detail\n\n\nDetail Views - Custom views over one or many episodes.\n\n\n\n\n\n\nopal.core.episodes\n\n\nEpisode Categories - Controlling the behaviour of different types of episode\n\n\n\n\n\n\nopal.core.schemas\n\n\nSchemas - Dynamic columns for the table views\n\n\n\n\n\n\nopal.core.patient_lists\n\n\nPatient Lists - defining different types of list\n\n\n\n\n\n\nopal.core.plugin\n\n\nPlugins - defining plugins to package reusable functionality\n\n\n\n\n\n\nopal.core.menus\n\n\nMenus - declaring application menus\n\n\n\n\n\n\nopal.core.log\n\n\nLog Helpers - custom email error loggers\n\n\n\n\n\n\nopal.core.fields\n\n\nField helpers - custom field types and utility functions\n\n\n\n\n\n\nopal.core.lookuplists\n\n\nUtilities for working with lookuplists\n\n\n\n\n\n\nopal.core.discoverable\n\n\nReusable feature groups for plugins and applications\n\n\n\n\n\n\n\n\nAngular Services\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPatient\n\n\nPatient objects\n\n\n\n\n\n\nEpisode\n\n\nEpisode objects\n\n\n\n\n\n\nItem\n\n\nSubrecord objects\n\n\n\n\n\n\nUser\n\n\nUser objects\n\n\n\n\n\n\nPatientSummary\n\n\nPatient search result summaries\n\n\n\n\n\n\nSearch Services\n\n\nServices from the Search module\n\n\n\n\n\n\nLoaders\n\n\nJS Services that load in from patient list, episode and patient apis\n\n\n\n\n\n\n\n\nHelper libraries\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe forms Templatetag library\n\n\nThe building blocks for Opal forms\n\n\n\n\n\n\nThe panels Templatetag library\n\n\nRendering record panels\n\n\n\n\n\n\nThe menus Templatetag library\n\n\nRendering application menus\n\n\n\n\n\n\nJavascript Helpers\n\n\nAngular directives, filters and $rootScope methods\n\n\n\n\n\n\n\n\nOpal core modules\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMaking Search Queries\n\n\nSearch query backends and helper functions\n\n\n\n\n\n\nPathway\n\n\nSimple or complicated multilayed forms\n\n\n\n\n\n\n\n\nMiscellaneous documentation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSettings\n\n\nOpal settings\n\n\n\n\n\n\nChangelog\n\n\nOpal Changelog\n\n\n\n\n\n\nUpgrading\n\n\nUpgrading between Opal versions\n\n\n\n\n\n\nJavascript dependencies\n\n\nExternal javascript libraries available\n\n\n\n\n\n\nTesting\n\n\nTesting\n\n\n\n\n\n\nManagement commands\n\n\nDjango management commands", 
+            "text": "Opal Reference material\n\n\nThe following reference guides are available:\n\n\nModels\n\n\n|\n-|-\n\nopal.models.Episode\n| The central Episode model\n\nopal.models.Patient\n | The Patient model\n\nopal.models.Subrecord\n | for subrecords of Episodes or Patients\n\nopal.models.UserProfile\n | The Opal UserProfile model\n\nopal.models.*\n | Mixin helpers for useful functionality\n\n\nOpal Core\n\n\n|\n-|-\n\nopal.core.application\n | Opal Application objects|\n\nopal.core.detail\n|Detail Views - Custom views over one or many episodes.|\n\nopal.core.episodes\n|Episode Categories - Controlling the behaviour of different types of episode|\n\nopal.core.schemas\n|Schemas - Dynamic columns for the table views|\n\nopal.core.patient_lists\n|Patient Lists - defining different types of list|\n\nopal.core.plugin\n| Plugins - defining plugins to package reusable functionality\n\nopal.core.menus\n| Menus - declaring application menus\n\nopal.core.log\n| Log Helpers - custom email error loggers\n\nopal.core.fields\n| Field helpers - custom field types and utility functions|\n\nopal.core.lookuplists\n | Utilities for working with lookuplists |\n\nopal.core.discoverable\n | Reusable feature groups for plugins and applications |\n\n\nAngular Services\n\n\n|\n-|-\n\nPatient\n | Patient objects\n\nEpisode\n | Episode objects\n\nItem\n |  Subrecord objects\n\nUser\n | User objects\n\nPatientSummary\n | Patient search result summaries\n\nSearch Services\n | Services from the Search module|\n\nLoaders\n | JS Services that load in from patient list, episode and patient apis\n\n\nHelper libraries\n\n\n|\n-|-\n\nThe forms Templatetag library\n | The building blocks for Opal forms\n\nThe panels Templatetag library\n | Rendering record panels\n\nThe menus Templatetag library\n | Rendering application menus\n\nJavascript Helpers\n| Angular directives, filters and $rootScope methods\n\n\nOpal core modules\n\n\n|\n-|-\n\nMaking Search Queries\n | Search query backends and helper functions\n\nPathway\n|Simple or complicated multilayed forms|\n\n\nMiscellaneous documentation\n\n\n|\n-|-\n\nSettings\n | Opal settings|\n\nChangelog\n | Opal Changelog|\n\nUpgrading\n | Upgrading between Opal versions|\n\nJavascript dependencies\n| External javascript libraries available |\n\nTesting\n | Testing|\n\nManagement commands\n| Django management commands|", 
             "title": "Reference"
         }, 
         {
@@ -247,32 +247,32 @@
         }, 
         {
             "location": "/reference/reference_guides/#models", 
-            "text": "opal.models.Episode  The central Episode model    opal.models.Patient  The Patient model    opal.models.Subrecord  for subrecords of Episodes or Patients    opal.models.UserProfile  The Opal UserProfile model    opal.models.*  Mixin helpers for useful functionality", 
+            "text": "|\n-|- opal.models.Episode | The central Episode model opal.models.Patient  | The Patient model opal.models.Subrecord  | for subrecords of Episodes or Patients opal.models.UserProfile  | The Opal UserProfile model opal.models.*  | Mixin helpers for useful functionality", 
             "title": "Models"
         }, 
         {
             "location": "/reference/reference_guides/#opal-core", 
-            "text": "opal.core.application  Opal Application objects    opal.core.detail  Detail Views - Custom views over one or many episodes.    opal.core.episodes  Episode Categories - Controlling the behaviour of different types of episode    opal.core.schemas  Schemas - Dynamic columns for the table views    opal.core.patient_lists  Patient Lists - defining different types of list    opal.core.plugin  Plugins - defining plugins to package reusable functionality    opal.core.menus  Menus - declaring application menus    opal.core.log  Log Helpers - custom email error loggers    opal.core.fields  Field helpers - custom field types and utility functions    opal.core.lookuplists  Utilities for working with lookuplists    opal.core.discoverable  Reusable feature groups for plugins and applications", 
+            "text": "|\n-|- opal.core.application  | Opal Application objects| opal.core.detail |Detail Views - Custom views over one or many episodes.| opal.core.episodes |Episode Categories - Controlling the behaviour of different types of episode| opal.core.schemas |Schemas - Dynamic columns for the table views| opal.core.patient_lists |Patient Lists - defining different types of list| opal.core.plugin | Plugins - defining plugins to package reusable functionality opal.core.menus | Menus - declaring application menus opal.core.log | Log Helpers - custom email error loggers opal.core.fields | Field helpers - custom field types and utility functions| opal.core.lookuplists  | Utilities for working with lookuplists | opal.core.discoverable  | Reusable feature groups for plugins and applications |", 
             "title": "Opal Core"
         }, 
         {
             "location": "/reference/reference_guides/#angular-services", 
-            "text": "Patient  Patient objects    Episode  Episode objects    Item  Subrecord objects    User  User objects    PatientSummary  Patient search result summaries    Search Services  Services from the Search module    Loaders  JS Services that load in from patient list, episode and patient apis", 
+            "text": "|\n-|- Patient  | Patient objects Episode  | Episode objects Item  |  Subrecord objects User  | User objects PatientSummary  | Patient search result summaries Search Services  | Services from the Search module| Loaders  | JS Services that load in from patient list, episode and patient apis", 
             "title": "Angular Services"
         }, 
         {
             "location": "/reference/reference_guides/#helper-libraries", 
-            "text": "The forms Templatetag library  The building blocks for Opal forms    The panels Templatetag library  Rendering record panels    The menus Templatetag library  Rendering application menus    Javascript Helpers  Angular directives, filters and $rootScope methods", 
+            "text": "|\n-|- The forms Templatetag library  | The building blocks for Opal forms The panels Templatetag library  | Rendering record panels The menus Templatetag library  | Rendering application menus Javascript Helpers | Angular directives, filters and $rootScope methods", 
             "title": "Helper libraries"
         }, 
         {
             "location": "/reference/reference_guides/#opal-core-modules", 
-            "text": "Making Search Queries  Search query backends and helper functions    Pathway  Simple or complicated multilayed forms", 
+            "text": "|\n-|- Making Search Queries  | Search query backends and helper functions Pathway |Simple or complicated multilayed forms|", 
             "title": "Opal core modules"
         }, 
         {
             "location": "/reference/reference_guides/#miscellaneous-documentation", 
-            "text": "Settings  Opal settings    Changelog  Opal Changelog    Upgrading  Upgrading between Opal versions    Javascript dependencies  External javascript libraries available    Testing  Testing    Management commands  Django management commands", 
+            "text": "|\n-|- Settings  | Opal settings| Changelog  | Opal Changelog| Upgrading  | Upgrading between Opal versions| Javascript dependencies | External javascript libraries available | Testing  | Testing| Management commands | Django management commands|", 
             "title": "Miscellaneous documentation"
         }, 
         {
@@ -3422,12 +3422,12 @@
         }, 
         {
             "location": "/reference/javascript/javascript_dependencies/", 
-            "text": "Opal Javascript Dependencies\n\n\nOpal makes use of a number of upstream dependencies which are available for\ndevelopers to use in building applications.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nModernizr\n\n\nOpal has a custom modernizr build that detects touch events\n\n\n\n\n\n\nJquery\n\n\n1.11.3\n\n\n\n\n\n\nAngular\n\n\n1.5.8\n\n\n\n\n\n\nAngular-ui-select\n\n\n0.19.4\n\n\n\n\n\n\nUnderscore.js\n\n\n1.8.3\n\n\n\n\n\n\nD3\n\n\n3.5.6\n\n\n\n\n\n\nC3\n\n\n0.4.10", 
+            "text": "Opal Javascript Dependencies\n\n\nOpal makes use of a number of upstream dependencies which are available for\ndevelopers to use in building applications.\n\n\n|\n-|-\nModernizr | Opal has a custom modernizr build that detects touch events\nJquery | 1.11.3\nAngular | 1.5.8\nAngular-ui-select | 0.19.4\nUnderscore.js | 1.8.3\nD3 | 3.5.6\nC3 | 0.4.10", 
             "title": "Javascript dependencies"
         }, 
         {
             "location": "/reference/javascript/javascript_dependencies/#opal-javascript-dependencies", 
-            "text": "Opal makes use of a number of upstream dependencies which are available for\ndevelopers to use in building applications.           Modernizr  Opal has a custom modernizr build that detects touch events    Jquery  1.11.3    Angular  1.5.8    Angular-ui-select  0.19.4    Underscore.js  1.8.3    D3  3.5.6    C3  0.4.10", 
+            "text": "Opal makes use of a number of upstream dependencies which are available for\ndevelopers to use in building applications.  |\n-|-\nModernizr | Opal has a custom modernizr build that detects touch events\nJquery | 1.11.3\nAngular | 1.5.8\nAngular-ui-select | 0.19.4\nUnderscore.js | 1.8.3\nD3 | 3.5.6\nC3 | 0.4.10", 
             "title": "Opal Javascript Dependencies"
         }, 
         {
