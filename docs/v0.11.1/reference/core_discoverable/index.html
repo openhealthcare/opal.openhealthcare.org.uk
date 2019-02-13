@@ -8,433 +8,389 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-
-	<title>Discoverable - Opal</title>
-
+        <title>Discoverable - Opal</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
-        <link rel="stylesheet" href="../../css/highlight.css">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
-        <link href="../../opaldocs.css" rel="stylesheet">
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/purebasic.min.css">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-        
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
+            <div class="container">
 
-        <!-- Collapsed navigation -->
-        <div class="navbar-header">
-            <!-- Expander button -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">Opal</a>
+                </div>
 
-            <!-- Main title -->
-            <a class="navbar-brand" href="../..">
-              <img src="/img/opallogo.png" height="30"/>
-            </a>
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="../..">Home</a>
+                            </li>
+                            <li >
+                                <a href="../../installation/">Installation</a>
+                            </li>
+                            <li >
+                                <a href="../../tutorial/">Tutorial</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../tutorials/pathway_tutorial/">Tutorial: Creating forms with Opal</a>
+</li>
+                                    
+<li >
+    <a href="../../tutorials/theming_tutorial/">Customising the design of your application</a>
+</li>
+                                </ul>
+                            </li>
+                            <li >
+                                <a href="../../guides/topic-guides/">Guides</a>
+                            </li>
+                            <li >
+                                <a href="../reference_guides/">Reference</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Topic Guides <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../guides/components_overview/">Component Overview</a>
+</li>
+                                    
+<li >
+    <a href="../../guides/command_line_tool/">Command Line tool</a>
+</li>
+                                    
+<li >
+    <a href="../../guides/discoverable/">Discoverable Features</a>
+</li>
+                                    
+<li >
+    <a href="../../guides/plugins/">Plugins</a>
+</li>
+                                    
+<li >
+    <a href="../../guides/plugins_list/">Plugin List</a>
+</li>
+                                    
+<li >
+    <a href="../../guides/datamodel/">Data Model</a>
+</li>
+                                    
+<li >
+    <a href="../../guides/episodes/">Episodes</a>
+</li>
+                                    
+<li >
+    <a href="../../guides/archetypes/">Archetypes</a>
+</li>
+                                    
+<li >
+    <a href="../../guides/referencedata/">Referencedata</a>
+</li>
+                                    
+<li >
+    <a href="../../guides/metadata/">Metadata</a>
+</li>
+                                    
+<li >
+    <a href="../../guides/working_with_data_in_angular/">Angular Models</a>
+</li>
+                                    
+<li >
+    <a href="../../guides/flow/">Flow</a>
+</li>
+                                    
+<li >
+    <a href="../../guides/roles_and_permissions/">Roles & Permissions</a>
+</li>
+                                    
+<li >
+    <a href="../../guides/tagging/">Tagging</a>
+</li>
+                                    
+<li >
+    <a href="../../guides/json_api/">JSON API</a>
+</li>
+                                    
+<li >
+    <a href="../../guides/theming/">Theming</a>
+</li>
+                                    
+<li >
+    <a href="../../guides/templates/">Templates</a>
+</li>
+                                    
+<li >
+    <a href="../../guides/context_processors/">Context Processors</a>
+</li>
+                                    
+<li >
+    <a href="../../guides/static_files/">Static Files</a>
+</li>
+                                    
+<li >
+    <a href="../../guides/forms/">Forms</a>
+</li>
+                                    
+<li >
+    <a href="../../guides/patient_detail_views/">Patient Detail Views</a>
+</li>
+                                    
+<li >
+    <a href="../../guides/list_views/">Patient List Views</a>
+</li>
+                                    
+<li >
+    <a href="../../guides/search/">Search Overview</a>
+</li>
+                                    
+<li >
+    <a href="../../guides/pathways/">Pathway Overview</a>
+</li>
+                                    
+<li >
+    <a href="../../guides/django_admin/">Django Admin</a>
+</li>
+                                    
+<li >
+    <a href="../../guides/contributing/">Contributing</a>
+</li>
+                                    
+<li >
+    <a href="../../guides/development_environment/">Development environment</a>
+</li>
+                                    
+<li >
+    <a href="../../guides/releasing/">Releasing</a>
+</li>
+                                    
+<li >
+    <a href="../../guides/deployment/">Deployment</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reference <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../episode/">The Episode model</a>
+</li>
+                                    
+<li >
+    <a href="../patient/">The Patient model</a>
+</li>
+                                    
+<li >
+    <a href="../subrecords/">Subrecords</a>
+</li>
+                                    
+<li >
+    <a href="../user_profile_model/">UserProfile</a>
+</li>
+                                    
+<li >
+    <a href="../mixins/">Mixins</a>
+</li>
+                                    
+<li >
+    <a href="../opal_application/">OpalApplication</a>
+</li>
+                                    
+<li >
+    <a href="../detail_views/">Detail Views</a>
+</li>
+                                    
+<li >
+    <a href="../episode_categories/">Episode Categories</a>
+</li>
+                                    
+<li >
+    <a href="../schemas/">Schemas</a>
+</li>
+                                    
+<li >
+    <a href="../patient_list/">Patient Lists</a>
+</li>
+                                    
+<li >
+    <a href="../plugin/">OpalPlugin</a>
+</li>
+                                    
+<li >
+    <a href="../core_views/">Core.Views</a>
+</li>
+                                    
+<li >
+    <a href="../core_menus/">Menus</a>
+</li>
+                                    
+<li >
+    <a href="../loggers/">Log</a>
+</li>
+                                    
+<li >
+    <a href="../core_fields/">Fields</a>
+</li>
+                                    
+<li >
+    <a href="../core_lookuplists/">Lookuplists</a>
+</li>
+                                    
+<li class="active">
+    <a href="./">Discoverable</a>
+</li>
+                                    
+<li >
+    <a href="../core_serialization/">Serialization</a>
+</li>
+                                    
+<li >
+    <a href="../core_subrecords/">Subrecords</a>
+</li>
+                                    
+<li >
+    <a href="../javascript/patient_service/">Patient service</a>
+</li>
+                                    
+<li >
+    <a href="../javascript/episode_service/">Episode service</a>
+</li>
+                                    
+<li >
+    <a href="../javascript/item_service/">Item service</a>
+</li>
+                                    
+<li >
+    <a href="../javascript/user_service/">The User service</a>
+</li>
+                                    
+<li >
+    <a href="../javascript/patient_summary_service/">Patient summary service</a>
+</li>
+                                    
+<li >
+    <a href="../javascript/search_js_services/">Search JS Services</a>
+</li>
+                                    
+<li >
+    <a href="../javascript/loaders/">Loaders</a>
+</li>
+                                    
+<li >
+    <a href="../form_templatetags/">Form helpers</a>
+</li>
+                                    
+<li >
+    <a href="../panels_templatetags/">Panel Template tags</a>
+</li>
+                                    
+<li >
+    <a href="../menus_templatetags/">Menu Template tag</a>
+</li>
+                                    
+<li >
+    <a href="../javascript/javascript_helpers/">Javascript helpers</a>
+</li>
+                                    
+<li >
+    <a href="../utils/">Utils module</a>
+</li>
+                                    
+<li >
+    <a href="../search_queries/">Search Queries</a>
+</li>
+                                    
+<li >
+    <a href="../pathways/">Pathway</a>
+</li>
+                                    
+<li >
+    <a href="../settings/">Settings</a>
+</li>
+                                    
+<li >
+    <a href="../changelog/">Changelog</a>
+</li>
+                                    
+<li >
+    <a href="../testing/">Testing</a>
+</li>
+                                    
+<li >
+    <a href="../javascript/javascript_dependencies/">Javascript dependencies</a>
+</li>
+                                    
+<li >
+    <a href="../upgrading/">Upgrading</a>
+</li>
+                                    
+<li >
+    <a href="../management_commands/">Management commands</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../core_lookuplists/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../core_serialization/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-
-        <!-- Expanded navigation -->
-        <div class="navbar-collapse collapse">
-            <!-- Main navigation -->
-            <ul class="nav navbar-nav">
-            
-            
-                <li >
-                    <a href="../..">Home</a>
-                </li>
-            
-            
-            
-                <li >
-                    <a href="../../installation/">Installation</a>
-                </li>
-            
-            
-            
-                <li >
-                    <a href="../../tutorial/">Tutorial</a>
-                </li>
-            
-            
-            
-                <!-- <li class="dropdown"> -->
-                <!--     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials <b class="caret"></b></a> -->
-                <!--     <ul class="dropdown-menu"> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../../tutorials/pathway_tutorial/">Pathway tutorial</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../../tutorials/theming_tutorial/">Theming tutorial</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--     </ul> -->
-                <!-- </li> -->
-            
-            
-            
-                <li >
-                    <a href="../../guides/topic-guides/">Guides</a>
-                </li>
-            
-            
-            
-                <li >
-                    <a href="../reference_guides/">Reference</a>
-                </li>
-            
-            
-            
-                <!-- <li class="dropdown"> -->
-                <!--     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Topic Guides <b class="caret"></b></a> -->
-                <!--     <ul class="dropdown-menu"> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../../guides/components_overview/">Component Overview</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../../guides/command_line_tool/">Command Line tool</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../../guides/discoverable/">Discoverable Features</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../../guides/plugins/">Plugins</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../../guides/plugins_list/">Plugin List</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../../guides/datamodel/">Data Model</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../../guides/episodes/">Episodes</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../../guides/archetypes/">Archetypes</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../../guides/referencedata/">Referencedata</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../../guides/metadata/">Metadata</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../../guides/working_with_data_in_angular/">Angular Models</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../../guides/flow/">Flow</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../../guides/roles_and_permissions/">Roles & Permissions</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../../guides/tagging/">Tagging</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../../guides/json_api/">JSON API</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../../guides/theming/">Theming</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../../guides/templates/">Templates</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../../guides/context_processors/">Context Processors</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../../guides/static_files/">Static Files</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../../guides/forms/">Forms</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../../guides/patient_detail_views/">Patient Detail Views</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../../guides/list_views/">Patient List Views</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../../guides/search/">Search Overview</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../../guides/pathways/">Pathway Overview</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../../guides/django_admin/">Django Admin</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../../guides/contributing/">Contributing</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../../guides/development_environment/">Development environment</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../../guides/releasing/">Releasing</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../../guides/deployment/">Deployment</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--     </ul> -->
-                <!-- </li> -->
-            
-            
-            
-                <!-- <li class="dropdown active"> -->
-                <!--     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reference <b class="caret"></b></a> -->
-                <!--     <ul class="dropdown-menu"> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../episode/">The Episode model</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../patient/">The Patient model</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../subrecords/">Subrecords</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../user_profile_model/">UserProfile</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../mixins/">Mixins</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../opal_application/">OpalApplication</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../detail_views/">Detail Views</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../episode_categories/">Episode Categories</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../schemas/">Schemas</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../patient_list/">Patient Lists</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../plugin/">OpalPlugin</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../core_views/">Core.Views</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../core_menus/">Menus</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../loggers/">Log</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../core_fields/">Fields</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../core_lookuplists/">Lookuplists</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li class="active"> -->
-                <!--             <a href="./">Discoverable</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../core_serialization/">Serialization</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../core_subrecords/">Subrecords</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../javascript/patient_service/">Patient service</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../javascript/episode_service/">Episode service</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../javascript/item_service/">Item service</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../javascript/user_service/">User service</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../javascript/patient_summary_service/">Patient summary service</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../javascript/search_js_services/">Search JS Services</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../javascript/loaders/">Loaders</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../form_templatetags/">Form helpers</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../panels_templatetags/">Panel Template tags</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../menus_templatetags/">Menu Template tag</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../javascript/javascript_helpers/">Javascript helpers</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../utils/">Utils module</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../search_queries/">Search Queries</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../pathways/">Pathway</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../settings/">Settings</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../changelog/">Changelog</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../testing/">Testing</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../javascript/javascript_dependencies/">Javascript dependencies</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../upgrading/">Upgrading</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
-                <!--             <a href="../management_commands/">Management commands</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--     </ul> -->
-                <!-- </li> -->
-            
-            
-            </ul>
-
-            <!-- Search, Navigation and Repo links -->
-            <ul class="nav navbar-nav navbar-right">
-              <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.11.0" target="_blank">
-                  <i class="fa fa-github"></i> v0.11.0
-                </a>
-              </li>
-                <!-- <li > -->
-                <!--     <a rel="next" href="../core_lookuplists/"> -->
-                <!--         <i class="fa fa-arrow-left"></i> Previous -->
-                <!--     </a> -->
-                <!-- </li> -->
-                <!-- <li > -->
-                <!--     <a rel="prev" href="../core_serialization/"> -->
-                <!--         Next <i class="fa fa-arrow-right"></i> -->
-                <!--     </a> -->
-                <!-- </li> -->
-                
-            </ul>
-        </div>
-    </div>
-</div>
 
         <div class="container">
-            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
-  <h3>Contents</h3>
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-    
         <li class="main active"><a href="#opalcorediscoverable">opal.core.discoverable</a></li>
-        
             <li><a href="#discoverablefeature">DiscoverableFeature</a></li>
-        
             <li><a href="#sortablefeature">SortableFeature</a></li>
-        
             <li><a href="#restrictablefeature">RestrictableFeature</a></li>
-        
             <li><a href="#restrictablefeaturefor_useruser">RestrictableFeature.for_user(user)</a></li>
-        
             <li><a href="#restrictablefeaturevisible_touser">RestrictableFeature.visible_to(user)</a></li>
-        
-    
     </ul>
 </div></div>
-            <div class="col-md-9" role="main">
+                <div class="col-md-9" role="main">
 
 <h1 id="opalcorediscoverable">opal.core.discoverable</h1>
 <p>The <code>opal.core.discoverable</code> module contans base discoverable classes for creating
@@ -554,27 +510,78 @@ to a given user. Defaults to simply returning True.</p>
 
         <footer class="col-md-12">
             <hr>
-            <img src="/img/opallogo.png" class="pull-left"/>
-            <center>
-              <br />
-              Opal is an open source framework for building clinical applications from
-              <a href="http://openhealthcare.org.uk" target="_blank">Open Health Care UK</i></a>.
-            </center>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"search": 83, "next": 78, "help": 191, "previous": 80};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
 
-        <script src="../../js/jquery-1.10.2.min.js"></script>
-        <script src="../../js/bootstrap-3.0.3.min.js"></script>
-        <script src="../../js/highlight.pack.js"></script>
-        <script src="../../js/base.js"></script>
-          <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-35112560-5', 'openhealthcare.org.uk');
-  ga('send', 'pageview');
-          </script>
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
 
     </body>
 </html>

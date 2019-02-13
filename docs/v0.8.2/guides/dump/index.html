@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Your implementation - Opal</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/purebasic.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">Opal</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="../..">Home</a>
+                            </li>
+                            <li >
+                                <a href="../../installation/">Installation</a>
+                            </li>
+                            <li >
+                                <a href="../../tutorial/">Tutorial</a>
+                            </li>
+                            <li >
+                                <a href="../topic-guides/">Guides</a>
+                            </li>
+                            <li >
+                                <a href="../../reference/reference_guides/">Reference</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Topic Guides <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../components_overview/">Component Overview</a>
+</li>
+                                    
+<li >
+    <a href="../command_line_tool/">Command Line tool</a>
+</li>
+                                    
+<li >
+    <a href="../discoverable/">Discoverable Features</a>
+</li>
+                                    
+<li >
+    <a href="../plugins/">Plugins</a>
+</li>
+                                    
+<li >
+    <a href="../plugins_list/">Plugin List</a>
+</li>
+                                    
+<li >
+    <a href="../datamodel/">Data Model</a>
+</li>
+                                    
+<li >
+    <a href="../archetypes/">Archetypes</a>
+</li>
+                                    
+<li >
+    <a href="../referencedata/">Referencedata</a>
+</li>
+                                    
+<li >
+    <a href="../metadata/">Metadata</a>
+</li>
+                                    
+<li >
+    <a href="../working_with_data_in_angular/">Angular Models</a>
+</li>
+                                    
+<li >
+    <a href="../flow/">Flow</a>
+</li>
+                                    
+<li >
+    <a href="../roles_and_permissions/">Roles & Permissions</a>
+</li>
+                                    
+<li >
+    <a href="../tagging/">Tagging</a>
+</li>
+                                    
+<li >
+    <a href="../json_api/">JSON API</a>
+</li>
+                                    
+<li >
+    <a href="../templates/">Templates</a>
+</li>
+                                    
+<li >
+    <a href="../context_processors/">Context Processors</a>
+</li>
+                                    
+<li >
+    <a href="../static_files/">Static Files</a>
+</li>
+                                    
+<li >
+    <a href="../forms/">Forms</a>
+</li>
+                                    
+<li >
+    <a href="../patient_detail_views/">Patient Detail Views</a>
+</li>
+                                    
+<li >
+    <a href="../list_views/">Patient List Views</a>
+</li>
+                                    
+<li >
+    <a href="../search/">Search Overview</a>
+</li>
+                                    
+<li >
+    <a href="../django_admin/">Django Admin</a>
+</li>
+                                    
+<li >
+    <a href="../contributing.md">Contributing</a>
+</li>
+                                    
+<li >
+    <a href="../development_environment/">Development environment</a>
+</li>
+                                    
+<li >
+    <a href="../deployment/">Deployment</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reference <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../reference/episode/">The Episode model</a>
+</li>
+                                    
+<li >
+    <a href="../../reference/patient/">The Patient model</a>
+</li>
+                                    
+<li >
+    <a href="../../reference/subrecords/">Subrecords</a>
+</li>
+                                    
+<li >
+    <a href="../../reference/user_profile_model/">UserProfile</a>
+</li>
+                                    
+<li >
+    <a href="../../reference/mixins/">Mixins</a>
+</li>
+                                    
+<li >
+    <a href="../../reference/opal_application/">OpalApplication</a>
+</li>
+                                    
+<li >
+    <a href="../../reference/detail_views/">Detail Views</a>
+</li>
+                                    
+<li >
+    <a href="../../reference/episode_categories/">Episode Categories</a>
+</li>
+                                    
+<li >
+    <a href="../../reference/schemas/">Schemas</a>
+</li>
+                                    
+<li >
+    <a href="../../reference/patient_list/">Patient Lists</a>
+</li>
+                                    
+<li >
+    <a href="../../reference/plugin/">OpalPlugin</a>
+</li>
+                                    
+<li >
+    <a href="../../reference/core_views/">Core.Views</a>
+</li>
+                                    
+<li >
+    <a href="../../reference/core_menus/">Menus</a>
+</li>
+                                    
+<li >
+    <a href="../../reference/javascript/patient_service/">Patient service</a>
+</li>
+                                    
+<li >
+    <a href="../../reference/javascript/episode_service/">Episode service</a>
+</li>
+                                    
+<li >
+    <a href="../../reference/javascript/item_service/">Item service</a>
+</li>
+                                    
+<li >
+    <a href="../../reference/javascript/user_service/">The User service</a>
+</li>
+                                    
+<li >
+    <a href="../../reference/javascript/patient_summary_service/">Patient summary service</a>
+</li>
+                                    
+<li >
+    <a href="../../reference/javascript/search_js_services/">Search JS Services</a>
+</li>
+                                    
+<li >
+    <a href="../../reference/javascript/loaders/">Loaders</a>
+</li>
+                                    
+<li >
+    <a href="../../reference/form_templatetags/">Form helpers</a>
+</li>
+                                    
+<li >
+    <a href="../../reference/panels_templatetags/">Panel Template tags</a>
+</li>
+                                    
+<li >
+    <a href="../../reference/menus_templatetags/">Menu Template tag</a>
+</li>
+                                    
+<li >
+    <a href="../../reference/javascript/javascript_helpers/">Javascript helpers</a>
+</li>
+                                    
+<li >
+    <a href="../../reference/search_queries/">Search Queries</a>
+</li>
+                                    
+<li >
+    <a href="../../reference/settings/">Settings</a>
+</li>
+                                    
+<li >
+    <a href="../../reference/changelog.md">Changelog</a>
+</li>
+                                    
+<li >
+    <a href="../../reference/testing/">Testing</a>
+</li>
+                                    
+<li >
+    <a href="../../reference/javascript/javascript_dependencies/">Javascript dependencies</a>
+</li>
+                                    
+<li >
+    <a href="../../reference/upgrading/">Upgrading</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#your-implementation">Your implementation</a></li>
+            <li><a href="#opal-settings">Opal settings</a></li>
+            <li><a href="#defining-models">Defining Models</a></li>
+        <li class="main "><a href="#adding-a-controller">Adding a controller</a></li>
+        <li class="main "><a href="#creating-a-heroku-test-server">Creating a Heroku test server</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="your-implementation">Your implementation</h1>
+<p>Your implementation is a Django project with some extras.</p>
+<h2 id="opal-settings">Opal settings</h2>
+<p>OPAL_LOG_OUT_DURATION = The number of milliseconds after which to log out our user</p>
+<p>OPAL_BRAND_NAME = The branding to be displayed as the masthead</p>
+<p>OPAL_EXTRA_APPLICATION = A template to include in the HEAD</p>
+<p>OPAL_EXTRA_HEADER = A template to include above the main nav</p>
+<h2 id="defining-models">Defining Models</h2>
+<p>Models should be defined in your project.</p>
+<p>They should subclass opal.models.EpisodeSubrecord or opal.models.PatientSubrecord as appropriate.</p>
+<p>Subrecords have some extra entrypoints that are used by Opal.</p>
+<h3 id="_is_singleton">_is_singleton</h3>
+<p>_is_singleton is a boolean property that ensures that there is only one of this subrecord per patient/episode.</p>
+<p>Effectively this defaults to False.</p>
+<h3 id="_title">_title</h3>
+<p>_title sets the column headings in list view.</p>
+<p>Effectively this defaults to camel_case_to_underscore() on the class name.</p>
+<h3 id="_sort">_sort</h3>
+<p>_sort names a field by which we would like to sorth the display of subrecords.</p>
+<h3 id="_read_only">_read_only</h3>
+<p>Marks a field as read only if True</p>
+<h3 id="_batch_template">_batch_template</h3>
+<p>Allow the list/detail template access to the complete row, not just an item.
+Template is then responsible for registering click handlers.</p>
+<p>Will get cix as a variable representing the column index, column_name as the column name.</p>
+<h1 id="adding-a-controller">Adding a controller</h1>
+<p>Create the controller file in static/js/opal/controllers.
+Use the angular module opal.controllers
+Include this file in templates/opal.html
+Create a template url in the django layer</p>
+<h1 id="creating-a-heroku-test-server">Creating a Heroku test server</h1>
+<pre><code>$ heroku create $YOUR_APP_NAME
+</code></pre>
+<p>(Edit .git/config to give the remote a meaningful name)</p>
+<pre><code>$ heroku addons:create heroku-postgresql --app $YOUR_APP_NAME
+$ git push $YOUR_REMOTE_NAME $YOUR_BRANCH:master
+$ heroku run python manage.py syncdb --migrate --app $YOUR_APP_NAME
+$ heroku run python manage.py load_lookup_lists
+$ heroku run python manage.py createinitialrevisions --app $YOUR_APP_NAME
+</code></pre></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"search": 83, "next": 78, "help": 191, "previous": 80};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
