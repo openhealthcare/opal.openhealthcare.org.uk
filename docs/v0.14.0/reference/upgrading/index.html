@@ -423,7 +423,7 @@
     
         <li class="main active"><a href="#upgrading-your-opal-application">Upgrading Your Opal Application</a></li>
         
-            <li><a href="#0130-0120-0112">0.13.0 -&gt; 0.12.0 - 0.11.2</a></li>
+            <li><a href="#0120-0112-0130">0.12.0 - 0.11.2 -&gt; 0.13.0</a></li>
         
             <li><a href="#0111-0112">0.11.1 -&gt; 0.11.2</a></li>
         
@@ -459,7 +459,13 @@
             <div class="col-md-9" role="main"><h2 id="upgrading-your-opal-application">Upgrading Your Opal Application</h2>
 <p>This document provides instructions for specific steps required to upgrading your Opal
 application to a later version where there are extra steps required.</p>
-<h3 id="0130-0120-0112">0.13.0 -&gt; 0.12.0 - 0.11.2</h3>
+<h3 id="0120-0112-0130">0.12.0 - 0.11.2 -&gt; 0.13.0</h3>
+<h4 id="python-versions">Python versions</h4>
+<p>Opal 0.13.0 drops support for Python 2.x
+If you have not already done so, you will need to upgrade your application to Python 3
+in order to upgrade.</p>
+<p>You may also like to run the tests for your application with the 'show warnings'
+flag e.g.  <code>python -Wd manage.py test</code></p>
 <h4 id="upgrading-opal">Upgrading Opal</h4>
 <p>How you do this depends on how you have configured your application. You will need to
 update both the Opal version, and versions of upgraded dependencies if
@@ -468,6 +474,9 @@ you have specified them in for instance, a requirements.txt.</p>
 <code>opal startproject</code>)</p>
 <pre><code># requirements.txt
 opal==0.10.0
+django==2.0.9
+django-reversion==3.0.1
+djangorestframework==3.7.4
 letter==0.5
 psycopg==2.7.6.1
 python-dateutil==2.7.5

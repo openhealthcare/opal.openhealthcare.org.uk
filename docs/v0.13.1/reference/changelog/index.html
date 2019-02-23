@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+	<title></title>
+
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/purebasic.min.css">
+        <!-- <link href="../../css/bootstrap-custom.min.css" rel="stylesheet"> -->
+        <!-- <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet"> -->
+        <!-- <link rel="stylesheet" href="../../css/highlight.css"> -->
+        <!-- <link href="../../css/base.css" rel="stylesheet"> -->
+        <link href="../../opaldocs.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+
+    <body>
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="">
+              <img src="/img/opallogo.png" height="30"/>
+            </a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="../..">Home</a>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../../installation/">Installation</a>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../../tutorial/">Tutorial</a>
+                </li>
+            
+            
+            
+                <!-- <li class="dropdown"> -->
+                <!--     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials <b class="caret"></b></a> -->
+                <!--     <ul class="dropdown-menu"> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="tutorials/pathway_tutorial/">Tutorial: Creating forms with Opal</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="tutorials/theming_tutorial/">Customising the design of your application</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--     </ul> -->
+                <!-- </li> -->
+            
+            
+            
+                <li >
+                    <a href="../../guides/topic-guides/">Guides</a>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../reference_guides/">Reference</a>
+                </li>
+            
+            
+            
+                <!-- <li class="dropdown"> -->
+                <!--     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Topic Guides <b class="caret"></b></a> -->
+                <!--     <ul class="dropdown-menu"> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="guides/components_overview/">Component Overview</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="guides/command_line_tool/">Command Line tool</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="guides/discoverable/">Discoverable Features</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="guides/plugins/">Plugins</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="guides/plugins_list/">Plugin List</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="guides/datamodel/">Data Model</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="guides/episodes/">Episodes</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="guides/archetypes/">Archetypes</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="guides/referencedata/">Referencedata</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="guides/metadata/">Metadata</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="guides/working_with_data_in_angular/">Angular Models</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="guides/flow/">Flow</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="guides/roles_and_permissions/">Roles & Permissions</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="guides/tagging/">Tagging</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="guides/json_api/">JSON API</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="guides/theming/">Theming</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="guides/templates/">Templates</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="guides/context_processors/">Context Processors</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="guides/static_files/">Static Files</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="guides/forms/">Forms</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="guides/patient_detail_views/">Patient Detail Views</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="guides/list_views/">Patient List Views</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="guides/search/">Search Overview</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="guides/pathways/">Pathway Overview</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="guides/django_admin/">Django Admin</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="guides/contributing/">Contributing</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="guides/development_environment/">Development environment</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="guides/releasing/">Releasing</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="guides/deployment/">Deployment</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--     </ul> -->
+                <!-- </li> -->
+            
+            
+            
+                <!-- <li class="dropdown active"> -->
+                <!--     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reference <b class="caret"></b></a> -->
+                <!--     <ul class="dropdown-menu"> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="reference/episode/">The Episode model</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="reference/patient/">The Patient model</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="reference/subrecords/">Subrecords</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="reference/user_profile_model/">UserProfile</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="reference/mixins/">Mixins</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="reference/opal_application/">OpalApplication</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="reference/detail_views/">Detail Views</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="reference/episode_categories/">Episode Categories</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="reference/schemas/">Schemas</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="reference/patient_list/">Patient Lists</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="reference/plugin/">OpalPlugin</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="reference/core_views/">Core.Views</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="reference/core_menus/">Menus</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="reference/loggers/">Log</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="reference/core_fields/">Fields</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="reference/core_lookuplists/">Lookuplists</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="reference/core_discoverable/">Discoverable</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="reference/core_serialization/">Serialization</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="reference/core_subrecords/">Subrecords</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="reference/javascript/patient_service/">Patient service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="reference/javascript/episode_service/">Episode service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="reference/javascript/item_service/">Item service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="reference/javascript/user_service/">The User service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="reference/javascript/patient_summary_service/">Patient summary service</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="reference/javascript/search_js_services/">Search JS Services</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="reference/javascript/loaders/">Loaders</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="reference/form_templatetags/">Form helpers</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="reference/panels_templatetags/">Panel Template tags</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="reference/menus_templatetags/">Menu Template tag</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="reference/javascript/javascript_helpers/">Javascript helpers</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="reference/utils/">Utils module</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="reference/search_queries/">Search Queries</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="reference/pathways/">Pathway</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="reference/settings/">Settings</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li class="active"> -->
+                <!--             <a href="reference/changelog/">Changelog</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="reference/testing/">Testing</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="reference/javascript/javascript_dependencies/">Javascript dependencies</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="reference/upgrading/">Upgrading</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--         <li > -->
+                <!--             <a href="reference/management_commands/">Management commands</a> -->
+                <!--         </li> -->
+                <!--      -->
+                <!--     </ul> -->
+                <!-- </li> -->
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <a href="https://github.com/openhealthcare/opal/tree/v0.13.1" target="_blank">
+                  <i class="fa fa-github"></i> v0.13.1
+                </a>
+              </li>
+                <!-- <li class="disabled"> -->
+                <!--     <a rel="next" > -->
+                <!--         <i class="fa fa-arrow-left"></i> Previous -->
+                <!--     </a> -->
+                <!-- </li> -->
+                <!-- <li class="disabled"> -->
+                <!--     <a rel="prev" > -->
+                <!--         Next <i class="fa fa-arrow-right"></i> -->
+                <!--     </a> -->
+                <!-- </li> -->
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+  <h3>Contents</h3>
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#0131-minor-release">0.13.1 (Minor Release)</a></li>
+        
+    
+        <li class="main "><a href="#0130-major-release">0.13.0 (Major Release)</a></li>
+        
+            <li><a href="#removes-support-for-python-2x">Removes support for Python 2.x</a></li>
+        
+            <li><a href="#episodeactive">Episode.active</a></li>
+        
+            <li><a href="#coding-systems-for-lookuplists">Coding systems for lookuplists</a></li>
+        
+            <li><a href="#new-date-display-format-helpers">New date display format helpers</a></li>
+        
+            <li><a href="#removes-scopejumptoepisode-and-scopegetepisodeid-from-search-and-extract">Removes scope.jumpToEpisode and scope.getEpisodeId from Search and Extract</a></li>
+        
+            <li><a href="#removes-patientto_dictactive_episode_id">Removes Patient.to_dict().active_episode_id</a></li>
+        
+            <li><a href="#removes-copytocategory">Removes CopyToCategory</a></li>
+        
+            <li><a href="#lookuplist-data-format">Lookuplist data format</a></li>
+        
+            <li><a href="#taggedpatientlist-episode-serialisation">TaggedPatientList Episode serialisation</a></li>
+        
+            <li><a href="#removes-the-deprecated-model_title-property">Removes the deprecated Model._title property</a></li>
+        
+            <li><a href="#free-text-or-foreign-key-fields-are-now-by-default-case-insensitive">Free text or foreign key fields are now, by default case insensitive</a></li>
+        
+            <li><a href="#misc-changes">Misc Changes</a></li>
+        
+            <li><a href="#updates-to-the-dependency-graph">Updates to the Dependency Graph</a></li>
+        
+    
+        <li class="main "><a href="#0120-major-release">0.12.0 (Major Release)</a></li>
+        
+            <li><a href="#misc-changes_1">Misc Changes</a></li>
+        
+    
+        <li class="main "><a href="#0112-bugfix-release">0.11.2 (Bugfix Release)</a></li>
+        
+    
+        <li class="main "><a href="#0111-bugfix-release">0.11.1 (Bugfix Release)</a></li>
+        
+    
+        <li class="main "><a href="#0110-major-release">0.11.0 (Major Release)</a></li>
+        
+            <li><a href="#adds-options-of-today-and-yesterday-in-the-date-picker">Adds options of today and yesterday in the date picker</a></li>
+        
+            <li><a href="#adds-datehelper-to-the-rootscope">Adds dateHelper to the rootScope</a></li>
+        
+            <li><a href="#deprecates-the-_title-property">Deprecates the _title property</a></li>
+        
+            <li><a href="#core-api-registration">Core API registration</a></li>
+        
+            <li><a href="#helptextstep-can-now-use-a-custom-template">HelpTextStep can now use a custom template</a></li>
+        
+            <li><a href="#adds-in-a-radio_vertical-template-tag">Adds in a radio_vertical template tag</a></li>
+        
+            <li><a href="#opalcoreserialization">opal.core.serialization</a></li>
+        
+            <li><a href="#removes-episode_history-from-episode-serialization">Removes "episode_history" from episode serialization</a></li>
+        
+            <li><a href="#as_menuitem-helpers">as_menuitem helpers</a></li>
+        
+            <li><a href="#opal-serve-command">opal serve command</a></li>
+        
+            <li><a href="#misc-changes_2">Misc Changes</a></li>
+        
+            <li><a href="#template-removals">Template removals</a></li>
+        
+            <li><a href="#static-asset-minification">Static asset minification</a></li>
+        
+            <li><a href="#the-return-of-an-old-friend-ie-document-modes">The return of an old friend: IE Document modes</a></li>
+        
+            <li><a href="#misc-changes_3">Misc Changes</a></li>
+        
+            <li><a href="#updates-to-the-dependency-graph_1">Updates to the Dependency Graph</a></li>
+        
+    
+        <li class="main "><a href="#0101-minor-release">0.10.1 (Minor Release)</a></li>
+        
+            <li><a href="#plugin-api-end-points-can-now-override-application-end-points">Plugin API end points can now override application end points</a></li>
+        
+            <li><a href="#fonts-are-now-locally-sourced">Fonts are now locally sourced</a></li>
+        
+            <li><a href="#printscreen-stylesheets-have-been-collapsed-into-opalcss">print/screen stylesheets have been collapsed into opal.css</a></li>
+        
+            <li><a href="#google-analytics-is-now-deferred">Google Analytics is now deferred</a></li>
+        
+            <li><a href="#scaffold-version-control-failures">Scaffold version control failures</a></li>
+        
+            <li><a href="#episodeobjectsserialised-now-uses-select_related">Episode.objects.serialised now uses select_related</a></li>
+        
+    
+        <li class="main "><a href="#0100-major-release">0.10.0 (Major Release)</a></li>
+        
+            <li><a href="#referencedata-in-new-applications">Referencedata in new applications</a></li>
+        
+            <li><a href="#deletion-cascade-behaviour">Deletion cascade behaviour</a></li>
+        
+            <li><a href="#episode-category-stages">Episode Category stages</a></li>
+        
+            <li><a href="#lookuplistslookuplists">lookuplists.lookuplists</a></li>
+        
+            <li><a href="#discoverablefilter">Discoverable.filter()</a></li>
+        
+            <li><a href="#pathways-contextprocessor">Pathways ContextProcessor</a></li>
+        
+            <li><a href="#missing-consistency-token-errors">Missing consistency token errors</a></li>
+        
+            <li><a href="#dump_lookup_lists-many-files">dump_lookup_lists --many-files</a></li>
+        
+            <li><a href="#template-removals_1">Template removals</a></li>
+        
+            <li><a href="#removing-loginrequiredmixin">Removing LoginRequiredMixin</a></li>
+        
+            <li><a href="#testing-options">Testing options</a></li>
+        
+            <li><a href="#moves-scaffold-to-be-a-django-management-command">Moves scaffold to be a django management command</a></li>
+        
+            <li><a href="#deprecations-completed">Deprecations completed</a></li>
+        
+            <li><a href="#updates-to-the-dependency-graph_2">Updates to the Dependency Graph</a></li>
+        
+            <li><a href="#misc-changes_4">Misc Changes</a></li>
+        
+    
+        <li class="main "><a href="#090-major-release">0.9.0 (Major Release)</a></li>
+        
+            <li><a href="#good-bye-date_of_episode-discharge_date-date_of_admission">Good bye date_of_episode, discharge_date, date_of_admission</a></li>
+        
+            <li><a href="#pathway">Pathway</a></li>
+        
+            <li><a href="#weve-got-time-on-our-side">We've got time on our side</a></li>
+        
+            <li><a href="#removes-a-js-global-declaration-of-categories">Removes a js global declaration of categories</a></li>
+        
+            <li><a href="#order-order">Order Order</a></li>
+        
+            <li><a href="#theming-support">Theming support</a></li>
+        
+            <li><a href="#makes-search-fully-pluggable">Makes search fully pluggable</a></li>
+        
+            <li><a href="#exclude-prefixes-now-work-on-actual-paths">Exclude prefixes now work on actual paths</a></li>
+        
+            <li><a href="#misc-changes_5">Misc Changes</a></li>
+        
+            <li><a href="#removes-deprecated-functionality-in-referencedata-metadata-userprofile-and-recordloader">Removes Deprecated functionality in ReferenceData, Metadata, UserProfile and recordLoader</a></li>
+        
+    
+        <li class="main "><a href="#083-minor-release">0.8.3 (Minor Release)</a></li>
+        
+            <li><a href="#opallogconfidentialemailer">opal.log.ConfidentialEmailer</a></li>
+        
+    
+        <li class="main "><a href="#082-minor-release">0.8.2 (Minor Release)</a></li>
+        
+            <li><a href="#opal_location-is-added-as-a-system-variable-when-running-js-tests">OPAL_LOCATION is added as a system variable when running js tests</a></li>
+        
+            <li><a href="#a-data-dictionary-in-the-extract">A Data Dictionary In The Extract</a></li>
+        
+            <li><a href="#enhanced-application-menus">Enhanced Application menus</a></li>
+        
+            <li><a href="#put-to-the-episode-api-returns-the-episode-with-all-its-subrecords">PUT to the episode API returns the episode with all its subrecords</a></li>
+        
+            <li><a href="#episodepatient-links-in-admin">Episode/Patient links in admin</a></li>
+        
+            <li><a href="#user-data-for-the-client">User data for the client</a></li>
+        
+            <li><a href="#episodegetfullname">Episode.getFullName()</a></li>
+        
+            <li><a href="#pluginget_javascripts-pluginget_styles">Plugin.get_javascripts, Plugin.get_styles</a></li>
+        
+            <li><a href="#element_type-argument-for-the-form-template-tags">'element_type' argument for the form template tags</a></li>
+        
+            <li><a href="#opal_logo_path">OPAL_LOGO_PATH</a></li>
+        
+            <li><a href="#inactive-episodes-in-patientlists">Inactive episodes in PatientLists</a></li>
+        
+            <li><a href="#notice-of-future-removals">Notice of future removals</a></li>
+        
+            <li><a href="#misc-changes_6">Misc changes</a></li>
+        
+            <li><a href="#minor-fixes">Minor fixes</a></li>
+        
+            <li><a href="#updates-to-the-dependency-graph_3">Updates to the Dependency Graph</a></li>
+        
+    
+        <li class="main "><a href="#081-minor-release">0.8.1 (Minor Release)</a></li>
+        
+            <li><a href="#cookies-for-the-future">Cookies for the future</a></li>
+        
+            <li><a href="#patients-as-a-service">Patients as a service</a></li>
+        
+            <li><a href="#patientlistget_queryset-arguments">PatientList.get_queryset arguments</a></li>
+        
+            <li><a href="#overriding-default-menu-items-behaviour">Overriding default Menu Items behaviour</a></li>
+        
+            <li><a href="#removals">Removals</a></li>
+        
+            <li><a href="#pending-removals">Pending removals</a></li>
+        
+            <li><a href="#subrecord-list-api">Subrecord List API</a></li>
+        
+            <li><a href="#misc-changes_7">Misc Changes</a></li>
+        
+    
+        <li class="main "><a href="#080-major-release">0.8.0 (Major Release)</a></li>
+        
+            <li><a href="#plugins">Plugins</a></li>
+        
+            <li><a href="#opalcoreapipatient_from_pk">opal.core.api.patient_from_pk</a></li>
+        
+            <li><a href="#todictmixin_bulk_serialise">ToDictMixin._bulk_serialise</a></li>
+        
+            <li><a href="#fixes-bugs-in-add-many-subrecord-radio-buttons">Fixes bugs in add many subrecord radio buttons</a></li>
+        
+            <li><a href="#angular-ui-libraries">Angular UI Libraries</a></li>
+        
+            <li><a href="#defaults-for-client-side-subrecords">Defaults for Client Side subrecords</a></li>
+        
+            <li><a href="#choices-in-form-templatetags">Choices in form templatetags</a></li>
+        
+            <li><a href="#element-name-in-template-tags">element name in template tags</a></li>
+        
+            <li><a href="#model-removals">Model removals</a></li>
+        
+            <li><a href="#python-3">Python 3</a></li>
+        
+            <li><a href="#tabbed-patient-list-groups">Tabbed Patient List Groups</a></li>
+        
+            <li><a href="#patientlist-sort-order">PatientList sort order</a></li>
+        
+            <li><a href="#patientlist-arbitrary-columns">PatientList Arbitrary columns</a></li>
+        
+            <li><a href="#template-re-naming">Template re-naming</a></li>
+        
+            <li><a href="#authorization-and-permissions">Authorization and permissions</a></li>
+        
+            <li><a href="#form-validation">Form Validation</a></li>
+        
+            <li><a href="#removals_1">Removals</a></li>
+        
+            <li><a href="#misc-changes_8">Misc changes</a></li>
+        
+            <li><a href="#updates-to-the-dependency-graph_4">Updates to the Dependency Graph</a></li>
+        
+    
+        <li class="main "><a href="#075-minor-release">0.7.5 (Minor Release)</a></li>
+        
+    
+        <li class="main "><a href="#074-minor-release">0.7.4 (Minor Release)</a></li>
+        
+    
+        <li class="main "><a href="#073-minor-release">0.7.3 (Minor Release)</a></li>
+        
+    
+        <li class="main "><a href="#072-minor-release">0.7.2 (Minor Release)</a></li>
+        
+    
+        <li class="main "><a href="#071-minor-release">0.7.1 (Minor Release)</a></li>
+        
+            <li><a href="#updates-to-the-dependency-graph_5">Updates to the Dependency Graph</a></li>
+        
+    
+        <li class="main "><a href="#070-major-release">0.7.0 (Major Release)</a></li>
+        
+            <li><a href="#episode-categories">Episode Categories</a></li>
+        
+            <li><a href="#episode-json-api">Episode JSON API</a></li>
+        
+            <li><a href="#defaults-for-records-on-the-client-side">Defaults for records on the client side</a></li>
+        
+            <li><a href="#update-to-javascript-signatures">Update to Javascript Signatures</a></li>
+        
+            <li><a href="#maxlength-for-form-helpers">MaxLength for form helpers</a></li>
+        
+            <li><a href="#episodedetail-removed">EpisodeDetail removed</a></li>
+        
+            <li><a href="#additional-utilities">Additional utilities</a></li>
+        
+    
+        <li class="main "><a href="#060-major-release">0.6.0 (Major Release)</a></li>
+        
+    
+        <li class="main "><a href="#models-contextprocessor">Models ContextProcessor</a></li>
+        
+            <li><a href="#upgrade-instructions">Upgrade instructions:</a></li>
+        
+    
+        <li class="main "><a href="#055-minor-release">0.5.5 (Minor Release)</a></li>
+        
+    
+        <li class="main "><a href="#054-minor-release">0.5.4 (Minor Release)</a></li>
+        
+    
+        <li class="main "><a href="#053-minor-release">0.5.3 (Minor Release)</a></li>
+        
+    
+        <li class="main "><a href="#052-minor-release">0.5.2 (Minor Release)</a></li>
+        
+    
+        <li class="main "><a href="#051-minor-release">0.5.1 (Minor Release)</a></li>
+        
+    
+        <li class="main "><a href="#05-major-release">0.5 (Major release)</a></li>
+        
+    
+        <li class="main "><a href="#043-minor-release">0.4.3 (Minor release)</a></li>
+        
+    
+        <li class="main "><a href="#042-minor-release">0.4.2 (Minor release)</a></li>
+        
+    
+        <li class="main "><a href="#041-bugfix-release">0.4.1 (Bugfix release)</a></li>
+        
+    
+        <li class="main "><a href="#04-major-release">0.4 (Major release)</a></li>
+        
+    
+        <li class="main "><a href="#03-major-release">0.3 (Major release)</a></li>
+        
+    
+        <li class="main "><a href="#022-bugfix-release">0.2.2 (Bugfix release)</a></li>
+        
+    
+        <li class="main "><a href="#021">0.2.1</a></li>
+        
+    
+        <li class="main "><a href="#020">0.2.0</a></li>
+        
+    
+        <li class="main "><a href="#011">0.1.1</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main"><h3 id="0131-minor-release">0.13.1 (Minor Release)</h3>
+<p>Upgrades the setup.py Django version from 2.0.9 to 2.0.13. Removes the six library dependency from setup.py.</p>
+<h3 id="0130-major-release">0.13.0 (Major Release)</h3>
+<h4 id="removes-support-for-python-2x">Removes support for Python 2.x</h4>
+<p>Due to the upgrade to Django 2.x, Opal no longer supports Python 2.x.</p>
+<p>Opal is now tested against Python 3.5, 3.6</p>
+<h4 id="episodeactive">Episode.active</h4>
+<p>The field <code>Episode.active</code> was previously implicitly set when calling <code>.set_tag_names()</code> to
+something equivalent to the value of <code>bool(len(tag_names) &gt; 0)</code>.</p>
+<p>As of 0.13.0 the value of <code>Episode.active</code> is checked whenever <code>.save()</code> is called, prior
+to the database call. The correct value is looked up via <code>Episode.category.is_active()</code>.</p>
+<p>The default calculation of <code>.active</code> has also changed to be roughly equivalent to
+<code>bool(self.episode.end is None)</code>.</p>
+<p>Applications are now able to easily <em>change</em> this behaviour by overriding the <code>.is_active</code>
+method of the relevant <code>EpisodeCategory</code>.</p>
+<h4 id="coding-systems-for-lookuplists">Coding systems for lookuplists</h4>
+<p>Lookuplist entries may now have an associated coding system and code value stored against them.</p>
+<p>This enables applications to explicitly code entries against e.g. SNOMED value sets.</p>
+<p>Note: This will requires a migration to be created for all applications.</p>
+<h4 id="new-date-display-format-helpers">New date display format helpers</h4>
+<p>Introduces two new Angular filters: <code>displayDate</code> and <code>displayDateTime</code>. These format a date
+for display according to the setting <code>DATE_DISPLAY_FORMAT</code>. This defaults to <code>D MMM YYYY</code>.</p>
+<p>New applications will have this setting in their scaffold, existing applications may wish to add
+it.</p>
+<p>All core Opal templates that previously used <code>shortDate</code> or <code>shortDateTime</code> have been updated to
+use either <code>displayDate</code> or <code>displayDateTime</code>.</p>
+<h4 id="removes-scopejumptoepisode-and-scopegetepisodeid-from-search-and-extract">Removes scope.jumpToEpisode and scope.getEpisodeId from Search and Extract</h4>
+<p>We no longer use these functions, instead we use an HTML link to the patient detail view.</p>
+<h4 id="removes-patientto_dictactive_episode_id">Removes Patient.to_dict().active_episode_id</h4>
+<p>We no longer include a value for "active_episode_id" as part of the Patient to_dict serialisation.</p>
+<p>This is effectively meaningless since we moved to an episode model that allows for multiple
+concurrent episodes.</p>
+<h4 id="removes-copytocategory">Removes CopyToCategory</h4>
+<p>Removes the entire CopyToCategory flow from Opal Core. If applications continue to rely on it,
+they are advised to implement at application level.</p>
+<p>In general application developers are advised to find alternative ways to display subrecords
+from multiple episodes rather than copying them however, as this is known to cause duplication
+of data that is hard to trace back later on.</p>
+<p>This includes the API endpoint at <code>episode/$id/actions/copyto/$category/</code>, the template
+<code>copy_to_category.html</code>, the Angular controller <code>CopyToCategoryCtrl</code> and service
+<code>CopyToCategory</code> and Subrecord property <code>_clonable</code>.</p>
+<h4 id="lookuplist-data-format">Lookuplist data format</h4>
+<p>Lookuplist entries in data files are no longer required to have an empty synonyms list
+if the entry doesn't have a synonym. This reduces the file size and makes it easier to
+hand craft data files for new applications.</p>
+<h4 id="taggedpatientlist-episode-serialisation">TaggedPatientList Episode serialisation</h4>
+<p>Alters the default serialisation of TaggedPatientList serialisation to no longer filter out
+'inactive' episodes. Given that 'active' was always true when an episode had a tag, this
+was effectivly a no-op anyway unless applications were altering the <code>get_queryset</code> for
+these patient lists somehow.</p>
+<h4 id="removes-the-deprecated-model_title-property">Removes the deprecated Model._title property</h4>
+<p>Use of <code>Model._title</code> to set a display name of a subrecord has issued a warning for several
+releases - this has now been removed and will no longer work.</p>
+<h4 id="free-text-or-foreign-key-fields-are-now-by-default-case-insensitive">Free text or foreign key fields are now, by default case insensitive</h4>
+<p>This can be adjusted with a flag on the field.</p>
+<p>Existing fk_or_ft fields could therefore still have the field set as free text.</p>
+<p>This change is not accompanied by a retrospective migration so your existing fk_or_ft may be
+stored in a case sensitive manner. It is recommended you migrate all of your fk_or_ft fields
+as this will give you consistent behaviour.</p>
+<h5 id="for-example">For example</h5>
+<p>Prior to this change if I had an allergy for "paracetomol" but an entry in the models.Drug
+table of "Paracetomol", it would be stored as free text in the <code>Allergies.drug</code> field, because
+it was case sensitive. Going forward after this change it will be saved as a foreign key. This
+change will not be made retrospecively however so you would need to add a migration that resaved
+the Allergies.drug.</p>
+<h4 id="misc-changes">Misc Changes</h4>
+<ul>
+<li>
+<p>The undocumented Reopen Episode flow included in Opal &lt; 0.8.0 has now been completely removed,
+including the <code>reopen_episode_modal.html</code> template and the url/view at <code>templates/modals/reopen_episode.html/</code>.</p>
+</li>
+<li>
+<p>Removes the method <code>.deleteItem</code> from the <code>RecordEditor</code> service.</p>
+</li>
+<li>
+<p>Adds in a footer updated/created by to the form base template</p>
+</li>
+<li>
+<p>Changes the default value of <code>_ft</code> fields on <code>ForeignKeyOrFreeTextField</code> from b'' to ''. This requires a migration</p>
+</li>
+<li>
+<p><code>__unicode__</code> model methods have been renamed <code>__str__</code></p>
+</li>
+<li>
+<p>Adds an index argument to <code>PatientList.as_menuitem()</code> and <code>Pathway.as_menuitem()</code></p>
+</li>
+<li>
+<p>Adds a <code>get_absolute_url()</code> method to <code>Patient</code> and `Episode</p>
+</li>
+<li>
+<p>Adds <code>btn-cancel</code>, <code>btn-save</code> and <code>btn-delete</code> classes to the respective form buttons.</p>
+</li>
+<li>
+<p>Moves the cancel button by default to be left of the save button.</p>
+</li>
+<li>
+<p>Renames the (undocumented, internal) Angular service <code>FieldTranslater</code> to <code>FieldTranslator</code></p>
+</li>
+<li>
+<p>If an item is deleted from the edit item modal, RecordEditor.openEditItemModal will now resolve after
+  the delete item modal is closed with 'deleted'</p>
+</li>
+</ul>
+<h4 id="updates-to-the-dependency-graph">Updates to the Dependency Graph</h4>
+<ul>
+<li>Django: 1.10.8 -&gt; 2.0.9</li>
+<li>Django Rest Framework: 3.4.7 -&gt; 3.7.4</li>
+<li>Django Reversion: 1.10.2 -&gt; 3.0.1</li>
+<li>Letter: 0.4.1 -&gt; 0.5</li>
+<li>Requests: 2.18.4 -&gt; 2.20.1</li>
+<li>Psycopg2: 2.7 -&gt; 2.7.6.1</li>
+<li>Python Dateutil: 2.4.2 -&gt; 2.7.5</li>
+</ul>
+<h3 id="0120-major-release">0.12.0 (Major Release)</h3>
+<h4 id="misc-changes_1">Misc Changes</h4>
+<ul>
+<li>
+<p>Adds the {% block analytics %} in the base template (opal/templates/base.html) that by default contains the google analytics code.</p>
+</li>
+<li>
+<p>Adds the block {% block javascripts %} in the base template (opal/templates/base.html) that will compress all javascripts.</p>
+</li>
+<li>
+<p>Adds a method <code>.demographics()</code> to <code>opal.models.Patient</code> which returns the relevant demographics instance.</p>
+</li>
+<li>
+<p>Adds a <code>for_user</code> method on to the menu item. This method
+takes a user and by default returns True. Override this
+to decide if a menu item should be shown in the nav bar.</p>
+</li>
+</ul>
+<h3 id="0112-bugfix-release">0.11.2 (Bugfix Release)</h3>
+<p>Includes referencedata JSON files in Manifest.</p>
+<h3 id="0111-bugfix-release">0.11.1 (Bugfix Release)</h3>
+<p>Fixes the user_options in the date picker tag to display the options as part of the text input.</p>
+<h3 id="0110-major-release">0.11.0 (Major Release)</h3>
+<h4 id="adds-options-of-today-and-yesterday-in-the-date-picker">Adds options of <code>today</code> and <code>yesterday</code> in the date picker</h4>
+<p>If you pass in <code>user_options=True</code> to the date picker. You will be provided with
+options to select today or yesterday in the form tag.</p>
+<h4 id="adds-datehelper-to-the-rootscope">Adds <code>dateHelper</code> to the rootScope</h4>
+<p>The dateHelper has the functions <code>now</code> and <code>yesterday</code> that return javascript Dates for
+the current time and the current time - 1 day.</p>
+<h4 id="deprecates-the-_title-property">Deprecates the _title property</h4>
+<p>In future we will use the standard <code>verbose_name</code> property as the display name.
+The abstract models have been changed to account for this.</p>
+<h4 id="core-api-registration">Core API registration</h4>
+<p>A refactor in the way that the core APIs are registered by Opal means that
+importing <code>opal.core.api</code> in a plugin API no longer results in circular imports.</p>
+<p>Fixes a bug whereby episodes were serialising differently depending on whether
+the code path went via <code>.to_dict()</code> or <code>.objects.serialised()</code>.</p>
+<h4 id="helptextstep-can-now-use-a-custom-template">HelpTextStep can now use a custom template</h4>
+<p>The <code>opal.core.pathway.steps.HelpTextStep</code> can now have a <code>help_text_template</code> passed in.</p>
+<p>This is the template for what will be placed in the side bar.</p>
+<h4 id="adds-in-a-radio_vertical-template-tag">Adds in a radio_vertical template tag</h4>
+<p>This displays the label and then the radio
+buttons as a vertical list.</p>
+<h4 id="opalcoreserialization">opal.core.serialization</h4>
+<p>A number of helpers related to serialization and deserialization have been brought
+together in the new module <code>opal.core.serialization</code>.</p>
+<h4 id="removes-episode_history-from-episode-serialization">Removes "episode_history" from episode serialization</h4>
+<p>Serialised episodes previously contained a "shallow" copy of all other episodes in
+a property named <code>episode_history</code>. This was primarially useful before we switched
+from episode-oriented to patient-oriented detail views by default.</p>
+<p>This also includes a change to the signature of the <code>.serialised()</code> method of the
+Episode manager, which no longer accepts a <code>episode_history</code> kwarg.</p>
+<h4 id="as_menuitem-helpers">as_menuitem helpers</h4>
+<p>Applications using Opal Menuitems often wish to add menu items for Patient Lists and
+Pathways.</p>
+<p>To aid this, the <code>.as_menuitem()</code> method now creates one from the target class with
+sensible but overridable defaults.</p>
+<h4 id="opal-serve-command"><code>opal serve</code> command</h4>
+<p>We add <code>opal serve</code> to the Opal commandline tool. Currently this simply wraps the
+Django runserver management command. It is envisaged that in the future this will
+also initialize e.g. sass precompilers with a single command.</p>
+<h4 id="misc-changes_2">Misc Changes</h4>
+<p>Adds the utility function <code>opal.utils.get</code>. Similar to the <code>getattr</code> builtin, <code>get</code> looks
+for a method named <code>get_$attr</code> and will call that if it exists.</p>
+<p>Adds the method <code>.get_absolute_url()</code> to <code>opal.core.pathways.Pathway</code> and
+<code>opal.core.patient_lists.PatientList</code>.</p>
+<h4 id="template-removals">Template removals</h4>
+<p>We removed a number of superfluous templates:</p>
+<ul>
+<li>opal/templates/patient_lists/spreadsheet_list.html</li>
+<li>opal/templates/layouts/left-panel.html</li>
+</ul>
+<h4 id="static-asset-minification">Static asset minification</h4>
+<p>The Django upgrade in Opal 0.10 stopped compressor minifying files
+when DEBUG is set to False. This fixes that issue by upgrading Django compressor to
+a version that supports Django 1.10.</p>
+<h4 id="the-return-of-an-old-friend-ie-document-modes">The return of an old friend: IE Document modes</h4>
+<p>Users report that their system administrators sometimes configure Internet Explorer
+in such a way that it uses e.g. IE7 Document mode by default.</p>
+<p>This is problematical for Opal applications which do in fact make use of internet
+technologies that were in widespread use after say, 2006.</p>
+<p>We have altered <code>base.html</code> to specify <code>"X-UA-Compatible" content="IE=Edge"</code>. If you
+override <code>base.html</code>in your application we advise that you add this <code>&lt;meta&gt;</code> tag.</p>
+<h4 id="misc-changes_3">Misc Changes</h4>
+<ul>
+<li>Adds the utility function <code>opal.core.subrecords.singletons()</code> which returns
+a generator function which will yield all subrecord singletons.</li>
+<li>Fixes a URI encoding bug in the <code>Episode.findByHospitalNumber()</code> method that
+made hospital numbers including <code>#</code> or <code>/</code> raise an error.</li>
+<li>Adds the methods <code>.get_absolute_url()</code>, <code>.get_icon()</code> and <code>get_display_name()</code>
+to <code>opal.core.pathways.Pathway</code> and <code>opal.core.patient_lists.PatientList</code>.</li>
+</ul>
+<h4 id="updates-to-the-dependency-graph_1">Updates to the Dependency Graph</h4>
+<ul>
+<li>Django compressor: 1.5 -&gt; 2.2</li>
+</ul>
+<h3 id="0101-minor-release">0.10.1 (Minor Release)</h3>
+<h4 id="plugin-api-end-points-can-now-override-application-end-points">Plugin API end points can now override application end points</h4>
+<p>A change to the order that APIs are registered with Django Rest Framework allows
+plugins to now override the core Opal application APIs.</p>
+<h4 id="fonts-are-now-locally-sourced">Fonts are now locally sourced</h4>
+<p>Fonts are now served from Opal's static assets rather than from the Google CDN.</p>
+<h4 id="printscreen-stylesheets-have-been-collapsed-into-opalcss">print/screen stylesheets have been collapsed into opal.css</h4>
+<p>Print/screen differences are now in opal.css with media tags.</p>
+<h4 id="google-analytics-is-now-deferred">Google Analytics is now deferred</h4>
+<p>The loading in of Google Analytics is now deferred to the bottom of the body
+tag to allow the page to load without waiting on analytics scripts to load.</p>
+<h4 id="scaffold-version-control-failures">Scaffold version control failures</h4>
+<p>The <code>startplugin</code> and <code>startproject</code> commands initialize a git repository by
+default. If we (The <code>subprocess</code> module) cannot find the <code>git</code> command, we now
+continue with a message printed to screen rather than raising an exception.</p>
+<h4 id="episodeobjectsserialised-now-uses-select_related">Episode.objects.serialised now uses select_related</h4>
+<p><code>ForeignKeyOrFreeText</code> fields now have their ForeignKey items preselected when
+we use <code>Episode.objects.serialised</code>. This provides a speed boost for applications
+with moderately heavy <code>ForeignKeyOrFreeText</code> usage.</p>
+<p>(Approx 30-40% in our tests.)</p>
+<h3 id="0100-major-release">0.10.0 (Major Release)</h3>
+<p>This is a major release with breaking changes from upstream dependencies.
+You are almost certain to require changes to your application. Please see
+the upgrade guide for further details.</p>
+<h4 id="referencedata-in-new-applications">Referencedata in new applications</h4>
+<p>Opal now includes core lookuplist data in an <code>opal.core.referencedata</code> plugin
+which is installed and loaded by default by the <code>startproject</code> scaffolding.</p>
+<h4 id="deletion-cascade-behaviour">Deletion cascade behaviour</h4>
+<p>Opal 0.10 changes several behaviours related to cascading deletions which, despite
+being Django defaults, were confusing to users and developers in our use case.</p>
+<p>When we delete and look up list instance, we no longer delete all subrecords that use
+that instance. Instead we set the look up list instances name in the free text field on
+the subrecord.</p>
+<p>When you delete a user, it will no longer delete all related episodes and subrecords</p>
+<h4 id="episode-category-stages">Episode Category stages</h4>
+<p>Episode categories now enforce a set of valid <code>Episode.stage</code> values.
+<code>EpisodeCategory</code> now includes the <code>.get_stages()</code> and <code>.has_stage(stage)</code> methods,
+while <code>Episode</code> has a <code>set_stage</code> setter which is used by the UpdateFromDictMixin JSON API.</p>
+<h4 id="lookuplistslookuplists">lookuplists.lookuplists</h4>
+<p>Adds the utility generator <code>lookuplists.lookuplists()</code> which wil yield every lookuplist
+currently available.</p>
+<h4 id="discoverablefilter">Discoverable.filter()</h4>
+<p>Disoverable features now have a <code>filter</code> method which allows you to filter features
+with matching attributes.</p>
+<h4 id="pathways-contextprocessor">Pathways ContextProcessor</h4>
+<p>The 'opal.core.pathways.context_processors.pathways' Context Processor will allow you to
+access your pathways from templates without having to explicitly load them in a view. In
+turn, this allows patterns like:</p>
+<pre><code>{% include pathways.YourPathway.get_display_name %}
+</code></pre>
+<h4 id="missing-consistency-token-errors">Missing consistency token errors</h4>
+<p><code>.update_from_dict()</code> will now raise the new error
+<code>opal.core.errors.MissingConsistencyTokenError</code> if it is called without a consistency
+token when one is set on the model. Previously it would raise <code>APIError</code>.</p>
+<p>The JSON API will now return a more specific message in the response boday, explaining
+that the problem is a missing consistency token.</p>
+<h4 id="dump_lookup_lists-many-files">dump_lookup_lists --many-files</h4>
+<p>Adds the <code>--many-files</code> option to the <code>dump_lookup_lists</code> command which will write
+each installed lookup list to a separate file in the <code>./data/lookuplists</code> directory
+of the application.</p>
+<h4 id="template-removals_1">Template removals</h4>
+<p>We remove a number of stale unused templates:</p>
+<ul>
+<li>changelog.html</li>
+<li>contact.html</li>
+<li>extract_footer.html</li>
+<li>tagging_detail.html</li>
+<li>_helpers/inline_form.html</li>
+<li>responsive/_phone_episode_list.html'</li>
+<li>responsive/_tablet_episode_list.html</li>
+</ul>
+<h4 id="removing-loginrequiredmixin">Removing LoginRequiredMixin</h4>
+<p>As Django ships with a <code>LoginRequiredMixin</code> of its own we no longer roll our own
+in `opal.core.views.</p>
+<h4 id="testing-options">Testing options</h4>
+<p>Adds a <code>--failfast</code> option to the test harness to stop test runs on the first
+failure.</p>
+<p>If you are a plugin developer upgrading an existing plugin you will have to
+manually add support for <code>--failfast</code> passthrough to your <code>runtests.py</code>.</p>
+<p>If you are a plugin developer upgrading an existing plugin you will have to
+manually add support for <code>--failfast</code> passthrough to your <code>runtests.py</code>.</p>
+<h4 id="moves-scaffold-to-be-a-django-management-command">Moves scaffold to be a django management command</h4>
+<p>The rest of the api is still the same but now
+we run <code>python manage.py scaffold {my_app_name}</code></p>
+<h4 id="deprecations-completed">Deprecations completed</h4>
+<p>As previously noted in console warnings, the Angular Episode service no longer
+supports the <code>discharge_date</code>, <code>date_of_admission</code>, <code>date_of_episode</code> properties.
+These were replaced by <code>.start</code> and <code>.end</code>.</p>
+<h4 id="updates-to-the-dependency-graph_2">Updates to the Dependency Graph</h4>
+<ul>
+<li>Django: 1.8.13 -&gt; 1.10.8</li>
+<li>Django Reversion: 1.8.7 -&gt; 1.10.2</li>
+<li>Django Rest Framework: 3.2.2 -&gt; 3.4.7</li>
+<li>Psycopg2: 2.5 -&gt; 2.7</li>
+<li>Jinja2: 2.9.6 -&gt; 2.10</li>
+<li>Ffs: 0.0.8.1 -&gt; 0.0.8.2</li>
+<li>Requests: 2.7.0 -&gt; 2.18.4</li>
+<li>django-celery: 3.1.17 -&gt; 3.2.2</li>
+<li>celery: 3.1.19 -&gt; 3.1.25</li>
+</ul>
+<h4 id="misc-changes_4">Misc Changes</h4>
+<p>Removes the undocumented <code>collapsed_multisave</code> tag from the <code>pathways</code> templatetag
+library.</p>
+<p>Adds a setting <code>OPAL_FAVICON_PATH</code> to specify the application Favicon to use.</p>
+<p>Adds the <code>rows</code> option to the textarea template tag which just fills in the html textarea
+<code>rows</code> attribute. Text areas are defaulted to 5 rows (the same as before).</p>
+<p>Configures the setting <code>CSRF_FAILURE_VIEW</code> to use the bundled <code>opal.views.csrf_failure</code> view.</p>
+<p>Pathway slugs may now include hyphens as well as numbers, lower case letters and underscores.</p>
+<p>Bugfix: in edit_item.js $scope.episode_category is now set from episode.category_name
+as opposed to episode.category (which was always null)</p>
+<p>Fixes some instances of progressbars not being reset if unexpected error states
+occur.</p>
+<p>Improves the rendering of patient detail pages where no patient with the ID from
+route params exits. (Displays a polite message instead of erroring.)</p>
+<p>Incorrect pluralisation of subrecord names in the Admin view has been fixed. (Migrations
+will have to be run in all models which extend the changed core Opal models (this is due
+to a minor upstream Django bug)</p>
+<p>Minor change to the diagnosis form.</p>
+<h3 id="090-major-release">0.9.0 (Major Release)</h3>
+<h4 id="good-bye-date_of_episode-discharge_date-date_of_admission">Good bye date_of_episode, discharge_date, date_of_admission</h4>
+<p>And hello <code>episode.start</code> and <code>episode.end</code>. These fields on the <code>Episode</code> model
+replace the multiple ways of recording Episode duration in Opal.</p>
+<p>There is a migration that sets <code>start</code> to date_of_episode if it  exists, otherwise
+it uses date of admission.</p>
+<p><code>end</code> will be date_of_episode if it exists, otherwise it will use discharge_date.</p>
+<p>Note that this means we no longer refer to start and end properties on the
+Episode category. If you override <code>start</code> and <code>end</code> in a custom episode category
+you should update to use the Episode model fields. This logic should be moved into
+your flows and you'll need to put in a migration to populate existing
+episodes.</p>
+<p>We also remove the episode fields <code>date_of_episode</code> <code>discharge_date</code>, and
+<code>date_of_admission</code>.
+Warning: Backwards migrations will not migrate back to <code>date_of_episode</code> but to
+a admission and discharge. Take backups before running these migrations!</p>
+<p>The fields <code>start</code> and <code>end</code> are both cast to moments (rather than raw js Dates) on
+episode.initialisation</p>
+<h4 id="pathway">Pathway</h4>
+<p>Moves the opal-pathway module into the opal core. Pathways is an extensible way
+of creating forms that involve multiple subrecords.</p>
+<h4 id="weve-got-time-on-our-side">We've got time on our side</h4>
+<p>Adds in the {% timepicker %} template tag, that follows the same convention as
+the other template tags, ie {% timepicker field="Dinner.time" %}</p>
+<h4 id="removes-a-js-global-declaration-of-categories">Removes a js global declaration of categories</h4>
+<p>Previously we declared CATEGORIES globally. This has now been removed</p>
+<h4 id="order-order">Order Order</h4>
+<p>Episodes in the patient list are now ordered by start, first_name and surname</p>
+<h4 id="theming-support">Theming support</h4>
+<p>Improvements and better documentation and guides for theming applications. Particularly
+of note are changes to <code>opal.html</code> and <code>base.html</code>, as well as the addition of the
+<code>static_page.html</code> template.</p>
+<p>This version also includes extensive improved support for customising the templates that
+display patient lists, detail views, menus and forms amongst other things.</p>
+<p>For full documentation, consult the theming guide in the documentation.</p>
+<h4 id="makes-search-fully-pluggable">Makes search fully pluggable</h4>
+<p>Search is now completely pluggable, you need to have <em>some</em> angular controller
+called SearchCtrl, but apart from that you can plugin your own implementation.</p>
+<h4 id="exclude-prefixes-now-work-on-actual-paths">Exclude prefixes now work on actual paths</h4>
+<p>Previously they only worked with angular paths, now they work
+with a combination of actual paths and angular url paths (e.g. /search/#/extract)</p>
+<h4 id="misc-changes_5">Misc Changes</h4>
+<p>Add the allow_add_patient and allow_edit_teams options to the patient lists.</p>
+<p>We added support for a <code>--file</code> or <code>-f</code> option for the <code>load_lookup_lists</code> command which
+allows the user to specify a particular file outside of the default locations.</p>
+<p>The default <code>Location</code> record display template will no longer include references
+to <code>Episode.start</code>. and <code>Episode.stop</code> labelled as admisssion and discharge to support
+the majority case where an episode relates to something other than an inpatient episode!</p>
+<p>Applications wishing to retaint this functionality should update their own temaplates
+to display start/stop details.</p>
+<h4 id="removes-deprecated-functionality-in-referencedata-metadata-userprofile-and-recordloader">Removes Deprecated functionality in ReferenceData, Metadata, UserProfile and recordLoader</h4>
+<p>Previously these would make their http request when imported into a file. They now require you to call .load()
+for them to return the promise that loads in their respective data.</p>
+<h3 id="083-minor-release">0.8.3 (Minor Release)</h3>
+<h4 id="opallogconfidentialemailer">opal.log.ConfidentialEmailer</h4>
+<p>Adds a custom email logger. This enables Django error emails which remove any confidential patient data.</p>
+<p>Also adds in the karma config to the MANIFEST.in so that we include the karma configs on pip install. It also moves it
+to "opal/tests/js_config/karma_defaults.js".</p>
+<h3 id="082-minor-release">0.8.2 (Minor Release)</h3>
+<h4 id="opal_location-is-added-as-a-system-variable-when-running-js-tests">OPAL_LOCATION is added as a system variable when running js tests</h4>
+<p>If you run opal test js, your karma config is now run in an environment that has
+access to the OPAL_LOCATION variable which points to the opal parent directory.</p>
+<h4 id="a-data-dictionary-in-the-extract">A Data Dictionary In The Extract</h4>
+<p>The Extract zip file has a data dictionary with human readable metadata about each field.</p>
+<h4 id="enhanced-application-menus">Enhanced Application menus</h4>
+<p>The application menu API, previously python dicts stored in attributes on either plugin or
+application subclasses, now consists of the new <code>opal.core.menus.MenuItem</code> class, enabling
+enhanced customisation and flexibility.</p>
+<h4 id="put-to-the-episode-api-returns-the-episode-with-all-its-subrecords">PUT to the episode API returns the episode with all its subrecords</h4>
+<p>Previously it only returned the episode. Now it matches the episode create api end point</p>
+<h4 id="episodepatient-links-in-admin">Episode/Patient links in admin</h4>
+<p>In the admin, episodes and patients lists now have links to the patient detail pages.</p>
+<h4 id="user-data-for-the-client">User data for the client</h4>
+<p>Adds a <code>User</code> Angular service that enables applications to use user data.
+Also adds some directives to make it easy to render User names and avatars.</p>
+<h4 id="episodegetfullname">Episode.getFullName()</h4>
+<p>Adds a utility method to the <code>Episode</code> service that returns a human readable patient name.</p>
+<h4 id="pluginget_javascripts-pluginget_styles">Plugin.get_javascripts, Plugin.get_styles</h4>
+<p>Enhances the API available for plugins to include javascript and css by adding methods on
+<code>opal.core.plugins.OpalPlugin</code></p>
+<h4 id="element_type-argument-for-the-form-template-tags">'element_type' argument for the form template tags</h4>
+<p>Numeric database fields are now set as the html5 type="number" when rendering
+them with the forms templatetag library. This means on mobile devices it will
+bring up the numeric keypad. The element type can now be set via the template
+tag API with the 'element_type' argument.</p>
+<h4 id="opal_logo_path">OPAL_LOGO_PATH</h4>
+<p>This new setting allows applications to set the path at which the app logo is served.
+If <code>OPAL_LOGO_PATH</code> is set, the value is passed to the <code>{% static %}</code> templatetag to set
+the <code>src</code> atribute of an image in the default application header and login screen.</p>
+<h4 id="inactive-episodes-in-patientlists">Inactive episodes in PatientLists</h4>
+<p>Changes the behaviour of <code>opal.core.PatientList.to_dict</code> to serialise inactive
+episodes by default rather than filtering by Episode.active == True.</p>
+<p><code>opal.core.TaggedPatientList.to_dict</code> continues to filter by Episode.active ==
+True by default.</p>
+<h4 id="notice-of-future-removals">Notice of future removals</h4>
+<p>The context variables <code>brand_name</code> <code>settings</code> and <code>extra_application</code> in <code>opal.views.IndexView</code>
+are no longer helpful thanks to the settings context processor. These will be removed in
+0.9.0 and emit warnings until then.</p>
+<h4 id="misc-changes_6">Misc changes</h4>
+<p>Adds a new filter - <code>underscore-to-spaces</code> for removing underscores from strings.</p>
+<p>The options for <code>SymptomComplex.duration</code> have moved from the default form template to a choices
+declaration on the model. These are scheduled to move again to a lookuplist.</p>
+<p>The default value of <code>Subrecord.get_display_name</code> now uses Django <code>Meta.verbose_name</code>.</p>
+<h4 id="minor-fixes">Minor fixes</h4>
+<p>Fixes a bug where the allergies form rendered the provisional field twice</p>
+<h4 id="updates-to-the-dependency-graph_3">Updates to the Dependency Graph</h4>
+<p>Upgrades Font Awesome from 4.3.0 -&gt; 4.7.0
+Upgrades Jinja2 from 2.8 -&gt; 2.9.6</p>
+<h3 id="081-minor-release">0.8.1 (Minor Release)</h3>
+<h4 id="cookies-for-the-future">Cookies for the future</h4>
+<p>We now use the <code>$cookies</code> api as part of moving to angular v1.5.8.</p>
+<p>The default expiry of cookies is now a year in the future.</p>
+<p>The cookie name previously stored as <code>opal.lastPatientList</code> is now
+<code>opal.previousPatientList</code>.</p>
+<h4 id="patients-as-a-service">Patients as a service</h4>
+<p>Patient becomes a service in angular. This takes in a patient as loaded by the patient loader or another service. It casts the data to Episode or Item instances as appropriate.</p>
+<h4 id="patientlistget_queryset-arguments">PatientList.get_queryset arguments</h4>
+<p>PatientList.get_queryset() is now passed an extra keyword argument - <code>user</code>.
+This is the current <code>User</code> object.</p>
+<h4 id="overriding-default-menu-items-behaviour">Overriding default Menu Items behaviour</h4>
+<p>The <code>get_menu_items</code> method of Opal Application objects is now passed an extra keyword argument - <code>user</code>.
+This is the current <code>User</code> object.</p>
+<p>The templatetag application_menuitems now uses this method to render navigation menus, allowing dynamic
+customisation of menu contents based on user.</p>
+<h4 id="removals">Removals</h4>
+<p>Opal 0.8.1 removes some minor features which, to our knowledge are not used by any applications in active development.</p>
+<ul>
+<li>ReopenEpisodeCtrl - applications may implement their own 're-open' episode flow, but Opal no longer handles this out of the box.</li>
+<li>Subrecord._bulk_serialise - this flag has been removed</li>
+</ul>
+<h4 id="pending-removals">Pending removals</h4>
+<p>We have re-named <code>opal.core.views._build_json_response</code> to <code>opal.core.views.json_response</code>. This will issue a
+warning for the remainder of the 0.8.x branch, before being removed entirely in Opal 0.9.0.</p>
+<h4 id="subrecord-list-api">Subrecord List API</h4>
+<p>We have added a list method to the default Opal JSON API for subrecords - you may now obtain a list of all instances
+of a given subrecord from the API endpoint <code>/api/v0.1/$api_name/</code>.</p>
+<h4 id="misc-changes_7">Misc Changes</h4>
+<p>Updates the custom <code>UserAdmin</code> so that the email, first and last name fields from the Django <code>User</code> model
+are in the add user form not just the edit user form.</p>
+<p>The default test runner generated by plugin scaffolding now uses <code>opal.urls</code> as the default url conf in the test settings. This allows you to test urls generated by Opal - for instance default form or record templates, or simply raw templates from our generic template view.</p>
+<h3 id="080-major-release">0.8.0 (Major Release)</h3>
+<h4 id="plugins">Plugins</h4>
+<p>Plugins have been refactored and are now <code>DiscoverableFeatures</code>. This should have no impact on existing
+plugins, however the functions <code>opal.core.plugins.register</code> and <code>opal.core.plugins.plugins</code> are slated for
+removal in 0.9.0</p>
+<p>When creating new plugins we will place the plugin definition class in <code>plugin.py</code> rather than <code>__init__.py</code></p>
+<h4 id="opalcoreapipatient_from_pk">opal.core.api.patient_from_pk</h4>
+<p>A decorator that changes a method that is passed a pk, to a method that is passed a patient.</p>
+<h4 id="todictmixin_bulk_serialise">ToDictMixin._bulk_serialise</h4>
+<p>Adds a flag to the to dict mixin to determine whether the item is serialised as part of <code>Episode/Patient.to_dict</code>.</p>
+<h4 id="fixes-bugs-in-add-many-subrecord-radio-buttons">Fixes bugs in add many subrecord radio buttons</h4>
+<p>Previously multiple radio buttons for the same subrecord field on the same page would
+not appear to the user to update correctly. This has now been fixed.</p>
+<h4 id="angular-ui-libraries">Angular UI Libraries</h4>
+<p>0.8.0 consolidates Angular UI libraries bundled with Opal. We have removed Angular Strap, and
+switched all components using it to their Angular UI Bootstrap equivalents.</p>
+<p>This is a breaking change.</p>
+<p>Applications taking advantage of the <code>Forms</code> templatetag library should require no updates, but will see
+some minor differences in visual style of widgets.</p>
+<p>Detailed upgrade guides for the components affected (Typeahead, Popover,
+Tooltip, Datepicker, Timepicker) are available in the upgrade reference documentation.</p>
+<h4 id="defaults-for-client-side-subrecords">Defaults for Client Side subrecords</h4>
+<p>We pull through default values from subrecord fields into the Opal <code>Schema</code> and use those values when initializing the relevant
+Item instance for a new subrecord. This should greatly reduce the need to use custom Angular subrecord services to set defaults.</p>
+<h4 id="choices-in-form-templatetags">Choices in form templatetags</h4>
+<p>Template tags that use the 'field' attribute to point to a subrecord field will now infer a lookup list from the Choices of the field if it exists.</p>
+<p>Note unlike the traditional choices implementation only the last value of the choices is used and saved to the database</p>
+<pre><code class="python">  Colours = (
+    ('P', 'Purple'),
+    ('R', 'Red'),
+  )
+</code></pre>
+
+<p>What is displayed to the user and saved to the database is 'Purple' or 'Red' respectively.</p>
+<h4 id="element-name-in-template-tags">element name in template tags</h4>
+<p>The html attribute 'name' for form elements generated with the Opal <code>{% forms %}</code> templatetag library used to be inferred from the model name. Although this remains the default you can also set it with an angular expression:</p>
+<pre><code class="html">{% select field=&quot;Demographics.first_name&quot; element_name=&quot;...Your Angular expression...&quot; %}
+</code></pre>
+
+<h4 id="model-removals">Model removals</h4>
+<p>The models <code>Team</code>, <code>GP</code>, <code>CommunityNurse</code> and <code>LocatedModel</code> - marked for removal since 0.6.0
+have now been removed.</p>
+<p>As part of this change, the add episode modal previously available at
+<code>/templates/modals/add_episode.html/</code> is now not available at the url with a trailing slash.
+Any controllers attempting to open the modal e.g. custom list flows should update their
+<code>$modal.open</code> call to remove the trailing slash.</p>
+<h4 id="python-3">Python 3</h4>
+<p>Opal 0.8.0 is the first version of Opal to support Python 3. This has meant changing the default
+ordering of <code>PatientList</code> instances to 0 rather than None.</p>
+<p>Moving forwards we expect all new code in Opal to be compatible both Python 2.7 / 3.4 / 3.5 / 3.6.</p>
+<p>This introduces an explicit Opal dependency on the Six module for maintaining codebases that span
+Python 2.x and 3.x.</p>
+<h4 id="tabbed-patient-list-groups">Tabbed Patient List Groups</h4>
+<p>Adds the class <code>opal.core.patient_lists.TabbedPatientListGroup</code> which displays groups of related
+lists as tabs at the top of each member list.</p>
+<h4 id="patientlist-sort-order">PatientList sort order</h4>
+<p>To enable custom sort orders for individual <code>PatientList</code>s we introduce the <code>comparator_service</code> attribute.
+This names an Angular service which will return a list of comparator functions.</p>
+<h4 id="patientlist-arbitrary-columns">PatientList Arbitrary columns</h4>
+<p>We now explicitly enable columns in spreadhseet lists that are not tied to subrecords. These can be
+included in PatientList schema instances as explicit Column() entries.</p>
+<h4 id="template-re-naming">Template re-naming</h4>
+<p>Modal_base has now been moved into a folder called base_templates. Its also now got a form_modal_base and a two_column_form_modal_base.
+The latter two templates add validation around saving.</p>
+<p>The standard edit item models and others now inherit from the form_modal_base.</p>
+<h4 id="authorization-and-permissions">Authorization and permissions</h4>
+<p>All APIs should be permissioned with Django REST framework permission classes. The default implementation uses
+opal.core.api.LoginRequiredViewset, a standard DRF viewset that requires the user to be logged in.</p>
+<p>We now require the user to be logged in for any use of the search functionality.</p>
+<p>Added a custom interceptor that logs the user out if the we receive a 403 or 401 from the server</p>
+<h4 id="form-validation">Form Validation</h4>
+<p>Adds the checkForm directive</p>
+<p>e.g.</p>
+<pre><code class="html">&lt;button check-form=&quot;form&quot; ng-click=&quot;sendDataToTheServer&quot;&gt;click me&lt;/button&gt;
+</code></pre>
+
+<p>This adds default form submission behaviour to the a button. It will check if the form is valid, and if its not it will mark the button as disabled until it becomes valid.</p>
+<p>It will also set the form as submitted.</p>
+<p>We also now show the required error if the form has been submitted or if the field is dirty, so that the user doesn't get an ugly "fill this field in now" message when opening the modal/pathway but will get the error after they click submit.</p>
+<h4 id="removals_1">Removals</h4>
+<p>Opal 0.8.0 removes a number of un-used features that have been slated for removal for some time:</p>
+<ul>
+<li><code>Options</code> - both from the JSON API, and the Angular service.</li>
+<li>The legacy APIs <code>/api/v0.1/episode/admit</code> and <code>/api/v0.1/episode/refer</code>.</li>
+<li>The models <code>GP</code>, <code>CommunityNurse</code> and <code>LocatedModel</code>.</li>
+<li><code>opal.models.Tagging.import_from_reversion</code>. This one-off classmethod on tagging was introduced to aid with the upgrade from Opal 4.x to 5.0 and has no further utility.</li>
+<li>The <code>static</code> argument from the forms <code>input</code> tag. Developers should move to the <code>static</code> tag.</li>
+<li>The _modal option to set on subrecords. This is because we now use large modals across the board.</li>
+</ul>
+<h4 id="misc-changes_8">Misc changes</h4>
+<p>The opal.core.api.EpisodeViewSet.create now expects tagging to be an object rather than a list, similar to how it details with demographics and location.</p>
+<p>The API will no longer serialise the _ft or _fk_id fields of FreeTextOrForeignKey fields - these
+are internal implementation details of the server that are not useful on the client side.</p>
+<p>Adds a Unique Together constraint for (Tagging.user, Tagging.episode, Tagging.value)</p>
+<p>Look up lists now load in from individual apps. The look for a file at {{ app }}/data/lookuplists.json</p>
+<p>The default admin url is now <code>/admin/</code> - rather than <code>/admin/?</code> this results in more readable
+admin urls and is closer to what most applications do with the Django admin.</p>
+<p>The roles field <code>opal.models.UserProfile.roles</code> has been updated to be <code>blank=True</code>. This allows the editing
+of users without specific roles assigned in the Django admin. Although this introduces no changes at the
+database level, this does introduce a migration.</p>
+<h4 id="updates-to-the-dependency-graph_4">Updates to the Dependency Graph</h4>
+<p>Upgrades angular to v1.5.8 (from 1.3.11) you can see their change log <a href="https://github.com/angular/angular.js/blob/master/CHANGELOG.md">here</a></p>
+<p>Updates angular-cookies and angular-mocks to v1.5.8 (both from 1.3.11)</p>
+<p>Updates angular-ui-select to 0.19.4 from 0.13.2</p>
+<h3 id="075-minor-release">0.7.5 (Minor Release)</h3>
+<p>The flow enter and exif functions now take an optional context argument. When called from PatientList or PatientDetail controllers this is the parent scope when the flow has been entered.</p>
+<p>Note: The current Flow API is likely to undergo substantial revision in Opal 0.9 / 0.10 do contact us on the mailing list if you are relying heavily upon it or would like to let us know your needs.</p>
+<h3 id="074-minor-release">0.7.4 (Minor Release)</h3>
+<p>Adds  a past filter, future and past filters now take a
+boolean argument as to whether you should include today</p>
+<h3 id="073-minor-release">0.7.3 (Minor Release)</h3>
+<p>Fixes a bug whereby celery tasks are not autodiscovered - will have affected users of async extract functionality.</p>
+<h3 id="072-minor-release">0.7.2 (Minor Release)</h3>
+<p>Fixes a bug with the copy to category API not setting category name.</p>
+<p>Removes the hangover use of options in the list of teams per episode in the patient list</p>
+<h3 id="071-minor-release">0.7.1 (Minor Release)</h3>
+<p>Completes the refactor of front end data, no longer using the <code>/api/v0.1/options/</code> API internally.
+This is slated for removal in 0.8.0.</p>
+<p>Updates DRF APIs - we now expect either Token or DjangoSession auth.</p>
+<p>Fixes several small bugs with scaffolded applications -  the setting of <code>STATIC_ROOT</code> and
+<code>SECRET_KEY</code>, generating forms for NullBooleanFields, requirements.txt.</p>
+<p>Adds an <code>aligned_pair</code> templatetag to the <code>panels</code> library.</p>
+<p>Updates the label for <code>Demographics.birth_place</code> to indicate that this should be a country.</p>
+<p>Adds the <code>clipboard</code> directive to give the user one click copy to clipboard.</p>
+<p>Adds a <code>tag-select</code> directive that renders a widget for editing the tags for an episode.</p>
+<p>Adds metadata to the scope for patient detail views</p>
+<h4 id="updates-to-the-dependency-graph_5">Updates to the Dependency Graph</h4>
+<ul>
+<li>Django Axes 1.4.0 -&gt; 1.7.0</li>
+</ul>
+<h3 id="070-major-release">0.7.0 (Major Release)</h3>
+<h4 id="episode-categories">Episode Categories</h4>
+<p>Refactors EpisodeCategory to be a discoverable feature.</p>
+<p>Renames <code>Episode.category</code> -&gt; <code>Episode.category_name</code>.</p>
+<h4 id="episode-json-api">Episode JSON API</h4>
+<p>The Restful Episode JSON API previously available at <code>/episode/:pk/</code> is now moved into
+<code>/api/v0.1/episode/:pk/</code> for consistency with the rest of our JSON APIs.
+The Opal Angular layer has been updated to reflect this, and
+should handle the transition seamlessly, but code calling the API directly should update
+to reflect the new URL.</p>
+<h4 id="defaults-for-records-on-the-client-side">Defaults for records on the client side</h4>
+<p>Establishes a new way to define defaults for records initialized in Javascript without
+requiring that we hard-code API names to defaults in a global namespace.</p>
+<h4 id="update-to-javascript-signatures">Update to Javascript Signatures</h4>
+<p><code>Flow.enter()</code> and <code>Flow.exit()</code> now no longer take <code>options</code> positional arguments - instead
+the controllers they initialize have <code>Metadata</code> and <code>Referencedata</code> as optional resolves
+arguments.</p>
+<p>AddEpisodeCtrl now no longer requires options as a resolves() option, but requires Referencedata
+instead.</p>
+<h4 id="maxlength-for-form-helpers">MaxLength for form helpers</h4>
+<p>The <code>input</code> form helper will now infer the max length of char fields from the max length of the
+database field, and render relevant Angular directives.</p>
+<h4 id="episodedetail-removed">EpisodeDetail removed</h4>
+<p>The <code>EpisodeDetailCtrl</code> and <code>EpisodeDetailMixin</code> controller and service have been removed - these
+were not used anywhere other than in the Wardround plugin, and redundant after enhancements to
+Patient Detail and Custom DetailViews in 0.6.</p>
+<h4 id="additional-utilities">Additional utilities</h4>
+<p>Adds a datetimepicker templatetag that will render widgets for a Datetime field including time.</p>
+<p>Adds a <code>date_of_birth_field</code> templatetag that renders a date of birth field complete with inteligent
+validation. (Note this change also includes removing the old _partial/ template)</p>
+<p>Updates dependency graph:</p>
+<ul>
+<li>Django -&gt; 1.8.13</li>
+</ul>
+<h3 id="060-major-release">0.6.0 (Major Release)</h3>
+<p><strong>Detail views</strong></p>
+<p>Moves from episode oriented detail to patient oriented detail.
+(All episodes plus x-episode views are available from a patient detail screen)</p>
+<p><strong>Tagging</strong></p>
+<p>As a performance optimisation for the frequent access of historic tags, untagging
+an episode simply renders the tag inactive rather than deleting it and relying on
+Django-Reversion for access to historical data.</p>
+<p><strong>Date Formatting</strong></p>
+<p>We now expect 'd/m/y' date formatting by default.</p>
+<p><strong>Patient lists</strong></p>
+<p>Lists are now declarative, and separate from teams. They are implemented as
+subclasses of opal.core.patient_lists.PatientList.</p>
+<p><strong>Forms vs. Modals</strong></p>
+<p>Introduces a distinction between a form and a modal.
+By default, we now use forms for subrecords, only overriding the modal if there
+is something we want to do differently specifically in the modal.</p>
+<p><strong>Command line tools</strong></p>
+<p>Adds $opal checkout for switching between applications or application versions.</p>
+<h3 id="models-contextprocessor">Models ContextProcessor</h3>
+<p>The 'opal.context_processors.models' Context Processor will allow you to access your
+subrecords from templates without having to explicitly load them in a view. In turn,
+this allows patterns like:</p>
+<pre><code>{% include models.Demographics.get_detail_template %}
+</code></pre>
+<h4 id="upgrade-instructions">Upgrade instructions:</h4>
+<p>Full upgrade instructions to work through any backwards incompatible changes are
+provided in the Opal docs.</p>
+<h3 id="055-minor-release">0.5.5 (Minor Release)</h3>
+<p>Changes the way old tags are handled.</p>
+<p>Tags are no longer deleted episodes, rather they're marked as archived.</p>
+<h3 id="054-minor-release">0.5.4 (Minor Release)</h3>
+<ul>
+<li>Include local storage</li>
+</ul>
+<h3 id="053-minor-release">0.5.3 (Minor Release)</h3>
+<ul>
+<li>Speed up loading of the lookup lists</li>
+<li>Fix pagination issues in search</li>
+<li>Speed up loading of many to many fields</li>
+<li>Increase test coverage</li>
+<li>Add some extra help fields to {% forms %} helpers</li>
+<li>Fixes bug with $rootScope.open_modal() where keystrokes were being intercepted</li>
+</ul>
+<h3 id="052-minor-release">0.5.2 (Minor Release)</h3>
+<p>Speed improvements on page load
+allow us to only show record panels if a record of that type exists
+disable modal buttons while saving</p>
+<h3 id="051-minor-release">0.5.1 (Minor Release)</h3>
+<p>Minor bug fixes</p>
+<h3 id="05-major-release">0.5 (Major release)</h3>
+<p><strong>Search</strong></p>
+<p>Complete re-design of Search interface to provide a single search box on every page and pagination for resulta.
+Puts in place a pluggable interface that could be swapped out for e.g. ElasticSearch.
+New Service for PatientSummary()</p>
+<p><strong>Analytics</strong></p>
+<p>Moves Analytics integration into Opal core with the ability to blacklist pages that should never be reported</p>
+<p><strong>List view</strong></p>
+<p>Removed old spreadsheet-style cell based navigation and moved to row-wise nav with clearer highlighting of the active row.
+Updated scrolling and loading behaviour to snap to viewport and not display the page build.</p>
+<p><strong>Subrecord metadata</strong></p>
+<p>Added four new utility fields to Patient and Episode subrecords:</p>
+<p>created_by, updated_by, created, updated</p>
+<p><strong>Select2 and list fields</strong></p>
+<p>Added support for select2 as an input widget and Subrecord fields that can be lists of things.</p>
+<p><strong>Also</strong></p>
+<p>Numerous small bugfixes.
+Refactoring of the models package into a models module.
+Updated Underscore.js -&gt; 1.8.3
+Updated Angular.js -&gt; 1.3.11</p>
+<h3 id="043-minor-release">0.4.3 (Minor release)</h3>
+<p>Refactors opal.models to be a models.py file rather than a package.
+Adds several improvements to forms helpers -&gt; Help argument, other argument to select.</p>
+<p>Updates dependency graph:</p>
+<ul>
+<li>Angular-strap -&gt; 2.3.1</li>
+</ul>
+<h3 id="042-minor-release">0.4.2 (Minor release)</h3>
+<p>Upgrades dependency graph:</p>
+<ul>
+<li>Django -&gt; 1.8.3</li>
+<li>Django-reversion -&gt; 1.8.7</li>
+<li>jQuery -&gt; 1.11.3</li>
+<li>D3 -&gt; 3.5.6</li>
+<li>C4 -&gt; 0.4.10</li>
+</ul>
+<p>South has been removed, now using django migrations</p>
+<h3 id="041-bugfix-release">0.4.1 (Bugfix release)</h3>
+<p>Fixes some search results appearing duplicated.</p>
+<h3 id="04-major-release">0.4 (Major release)</h3>
+<p><strong>New Design</strong></p>
+<p>Completely re-designed UI following extensive user research and multiple iterations.</p>
+<p><strong>Managementcommands and scaffolding</strong></p>
+<p>Features the opal command line tool for common administrative tasks
+http://opal.openhealthcare.org.uk/docs/guides/command_line_tool/</p>
+<p><strong> Form helpers templatetag library</strong></p>
+<p>New template library for consistent form controls in line with our new interface guidelines
+http://opal.openhealthcare.org.uk/docs/reference/form_templatetags/</p>
+<p><strong>API Documentation</strong></p>
+<p>Opal JSON APIs are now fully self-documenting for all updated instances
+http://opal.openhealthcare.org.uk/docs/guides/json_api/</p>
+<h3 id="03-major-release">0.3 (Major release)</h3>
+<p>Bugfixes, significant flexibility in template customisability.</p>
+<p>Minor UI updates.</p>
+<h3 id="022-bugfix-release">0.2.2 (Bugfix release)</h3>
+<p>Numerous small bugfixes.</p>
+<p>Adds the concept of undischarging patients.</p>
+<h3 id="021">0.2.1</h3>
+<p>Numerous small bugfixes.</p>
+<h3 id="020">0.2.0</h3>
+<p>Search overhaul - introduces advanced searches.</p>
+<h3 id="011">0.1.1</h3>
+<p>Initial public release</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <img src="/img/opallogo.png" class="pull-left"/>
+            <center>
+              <br />
+              Opal is an open source framework for building clinical applications from
+              <a href="http://openhealthcare.org.uk" target="_blank">Open Health Care UK</i></a>.
+            </center>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"search": 83, "next": 78, "help": 191, "previous": 80};
+        </script>
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script src="../../search/main.js"></script>
+          <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35112560-5', 'openhealthcare.org.uk');
+  ga('send', 'pageview');
+          </script>
+
+    </body>
+</html>

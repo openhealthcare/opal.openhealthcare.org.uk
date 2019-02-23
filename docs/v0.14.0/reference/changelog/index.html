@@ -426,6 +426,8 @@
     
         <li class="main "><a href="#0130-major-release">0.13.0 (Major Release)</a></li>
         
+            <li><a href="#removes-support-for-python-2x">Removes support for Python 2.x</a></li>
+        
             <li><a href="#episodeactive">Episode.active</a></li>
         
             <li><a href="#coding-systems-for-lookuplists">Coding systems for lookuplists</a></li>
@@ -449,6 +451,9 @@
             <li><a href="#misc-changes">Misc Changes</a></li>
         
             <li><a href="#updates-to-the-dependency-graph">Updates to the Dependency Graph</a></li>
+        
+    
+        <li class="main "><a href="#0121-minor-release">0.12.1 (Minor Release)</a></li>
         
     
         <li class="main "><a href="#0120-major-release">0.12.0 (Major Release)</a></li>
@@ -757,6 +762,9 @@
 </div></div>
             <div class="col-md-9" role="main"><h3 id="0140-major-release">0.14.0 (Major Release)</h3>
 <h3 id="0130-major-release">0.13.0 (Major Release)</h3>
+<h4 id="removes-support-for-python-2x">Removes support for Python 2.x</h4>
+<p>Due to the upgrade to Django 2.x, Opal no longer supports Python 2.x.</p>
+<p>Opal is now tested against Python 3.5, 3.6</p>
 <h4 id="episodeactive">Episode.active</h4>
 <p>The field <code>Episode.active</code> was previously implicitly set when calling <code>.set_tag_names()</code> to
 something equivalent to the value of <code>bool(len(tag_names) &gt; 0)</code>.</p>
@@ -829,21 +837,49 @@ including the <code>reopen_episode_modal.html</code> template and the url/view a
 <p>Adds in a footer updated/created by to the form base template</p>
 </li>
 <li>
+<p>Changes the default value of <code>_ft</code> fields on <code>ForeignKeyOrFreeTextField</code> from b'' to ''. This requires a migration</p>
+</li>
+<li>
+<p><code>__unicode__</code> model methods have been renamed <code>__str__</code></p>
+</li>
+<li>
 <p>Adds an index argument to <code>PatientList.as_menuitem()</code> and <code>Pathway.as_menuitem()</code></p>
 </li>
 <li>
-<p>Adds a <code>get_absolute_url()</code> method to <code>Patient</code> and <code>Episode</code></p>
+<p>Adds a <code>get_absolute_url()</code> method to <code>Patient</code> and `Episode</p>
+</li>
+<li>
+<p>Adds <code>btn-cancel</code>, <code>btn-save</code> and <code>btn-delete</code> classes to the respective form buttons.</p>
+</li>
+<li>
+<p>Moves the cancel button by default to be left of the save button.</p>
 </li>
 <li>
 <p>Renames the (undocumented, internal) Angular service <code>FieldTranslater</code> to <code>FieldTranslator</code></p>
 </li>
+<li>
+<p>If an item is deleted from the edit item modal, RecordEditor.openEditItemModal will now resolve after
+  the delete item modal is closed with 'deleted'</p>
+</li>
 </ul>
 <h4 id="updates-to-the-dependency-graph">Updates to the Dependency Graph</h4>
 <ul>
+<li>Django: 1.10.8 -&gt; 2.0.9</li>
+<li>Django Rest Framework: 3.4.7 -&gt; 3.7.4</li>
+<li>Django Reversion: 1.10.2 -&gt; 3.0.1</li>
 <li>Letter: 0.4.1 -&gt; 0.5</li>
 <li>Requests: 2.18.4 -&gt; 2.20.1</li>
 <li>Psycopg2: 2.7 -&gt; 2.7.6.1</li>
 <li>Python Dateutil: 2.4.2 -&gt; 2.7.5</li>
+</ul>
+<h3 id="0121-minor-release">0.12.1 (Minor Release)</h3>
+<ul>
+<li>
+<p>If an item is deleted from the edit item modal, RecordEditor.openEditItemModal will now resolve after the delete item modal is closed with 'deleted'</p>
+</li>
+<li>
+<p>Fixes the default investigation modal</p>
+</li>
 </ul>
 <h3 id="0120-major-release">0.12.0 (Major Release)</h3>
 <h4 id="misc-changes_1">Misc Changes</h4>

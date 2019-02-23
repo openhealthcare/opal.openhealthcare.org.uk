@@ -396,8 +396,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.13.0" target="_blank">
-                  <i class="fa fa-github"></i> v0.13.0
+                <a href="https://github.com/openhealthcare/opal/tree/v0.13.1" target="_blank">
+                  <i class="fa fa-github"></i> v0.13.1
                 </a>
               </li>
                 <!-- <li class="disabled"> -->
@@ -422,6 +422,8 @@
     <ul class="nav bs-sidenav">
     
         <li class="main active"><a href="#upgrading-your-opal-application">Upgrading Your Opal Application</a></li>
+        
+            <li><a href="#0130-0131">0.13.0 -&gt; 0.13.1</a></li>
         
             <li><a href="#0120-0112-0130">0.12.0 - 0.11.2 -&gt; 0.13.0</a></li>
         
@@ -459,6 +461,17 @@
             <div class="col-md-9" role="main"><h2 id="upgrading-your-opal-application">Upgrading Your Opal Application</h2>
 <p>This document provides instructions for specific steps required to upgrading your Opal
 application to a later version where there are extra steps required.</p>
+<h3 id="0130-0131">0.13.0 -&gt; 0.13.1</h3>
+<p>Upgrades django (minor security upgrade).</p>
+<p>How you do this depends on how you have configured your application. You will need to
+update both the Opal version, and versions of upgraded dependencies if
+you have specified them in for instance, a requirements.txt.</p>
+<p>(This will be the case if you use the requirements.txt originally provided by
+<code>opal startproject</code>)</p>
+<pre><code># requirements.txt
+opal==0.13.1
+django==2.0.13
+</code></pre>
 <h3 id="0120-0112-0130">0.12.0 - 0.11.2 -&gt; 0.13.0</h3>
 <h4 id="python-versions">Python versions</h4>
 <p>Opal 0.13.0 drops support for Python 2.x
@@ -473,7 +486,7 @@ you have specified them in for instance, a requirements.txt.</p>
 <p>(This will be the case if you use the requirements.txt originally provided by
 <code>opal startproject</code>)</p>
 <pre><code># requirements.txt
-opal==0.10.0
+opal==0.13.0
 django==2.0.9
 django-reversion==3.0.1
 djangorestframework==3.7.4
