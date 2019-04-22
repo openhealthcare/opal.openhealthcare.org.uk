@@ -396,8 +396,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.13.1" target="_blank">
-                  <i class="fa fa-github"></i> v0.13.1
+                <a href="https://github.com/openhealthcare/opal/tree/v0.14.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.14.0
                 </a>
               </li>
                 <!-- <li class="disabled"> -->
@@ -421,7 +421,10 @@
   <h3>Contents</h3>
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#0131-minor-release">0.13.1 (Minor Release)</a></li>
+        <li class="main active"><a href="#0140-major-release">0.14.0 (Major Release)</a></li>
+        
+    
+        <li class="main "><a href="#0131-minor-release">0.13.1 (Minor Release)</a></li>
         
     
         <li class="main "><a href="#0130-major-release">0.13.0 (Major Release)</a></li>
@@ -760,7 +763,15 @@
     
     </ul>
 </div></div>
-            <div class="col-md-9" role="main"><h3 id="0131-minor-release">0.13.1 (Minor Release)</h3>
+            <div class="col-md-9" role="main"><h3 id="0140-major-release">0.14.0 (Major Release)</h3>
+<p>A User's UserProfile is now automatically created when you create a user in a post save signal.</p>
+<p>RecordEditor.editItem, RecordEditor.editItem and RecordEditor.openEditItemModal to take a url argument.
+This is the url of the template that should be opened with the edit item controller.</p>
+<p>RecordEditor.editItem also will now take an item or an index rather than just an index.
+Taking an index has been deprecated and will be removed in v0.15.0</p>
+<p>The PatientListCtrl now does the logic of whether to create a new item or edit an item within the
+controller before it calls the record editor.</p>
+<h3 id="0131-minor-release">0.13.1 (Minor Release)</h3>
 <p>Upgrades the setup.py Django version from 2.0.9 to 2.0.13. Removes the six library dependency from setup.py.</p>
 <h3 id="0130-major-release">0.13.0 (Major Release)</h3>
 <h4 id="removes-support-for-python-2x">Removes support for Python 2.x</h4>
@@ -1526,7 +1537,7 @@ http://opal.openhealthcare.org.uk/docs/guides/json_api/</p>
         </footer>
         <script>
             var base_url = "../..",
-                shortcuts = {"search": 83, "next": 78, "help": 191, "previous": 80};
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
 
         <script src="../../js/jquery-1.10.2.min.js" defer></script>
