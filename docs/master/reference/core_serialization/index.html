@@ -396,8 +396,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.14.2" target="_blank">
-                  <i class="fa fa-github"></i> v0.14.2
+                <a href="https://github.com/openhealthcare/opal/tree/v0.15.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.15.0
                 </a>
               </li>
                 <!-- <li class="disabled"> -->
@@ -423,6 +423,12 @@
     
         <li class="main active"><a href="#opalcoreserialization">opal.core.serialization</a></li>
         
+            <li><a href="#serialize_datevalue">serialize_date(value)</a></li>
+        
+            <li><a href="#serialize_datetimevalue">serialize_datetime(value)</a></li>
+        
+            <li><a href="#serialize_timevalue">serialize_time(value)</a></li>
+        
             <li><a href="#deserialize_datetimevalue">deserialize_datetime(value)</a></li>
         
             <li><a href="#deserialize_timevalue">deserialize_time(value)</a></li>
@@ -436,6 +442,24 @@
 </div></div>
             <div class="col-md-9" role="main"><h1 id="opalcoreserialization">opal.core.serialization</h1>
 <p>Helpers for serializing and deserializing data</p>
+<h2 id="serialize_datevalue"><code>serialize_date(value)</code></h2>
+<p>Given a date, serialize it to a string using the
+<code>settings.DATE_FORMAT</code></p>
+<pre><code class="python">    as_date_str = serialize_date(datetime.date(2019, 4, 1))
+</code></pre>
+
+<h2 id="serialize_datetimevalue"><code>serialize_datetime(value)</code></h2>
+<p>Given a datetime, serialize it to a string using the
+<code>settings.DATETIME_FORMAT</code></p>
+<pre><code class="python">    as_datetime_str = serialize_datetime(datetime.datetime(2019, 4, 1, 10, 30))
+</code></pre>
+
+<h2 id="serialize_timevalue"><code>serialize_time(value)</code></h2>
+<p>Given a time, serialize it to a string using the
+<code>settings.TIME_FORMAT</code></p>
+<pre><code class="python">    as_datetime_str = serialize_time(datetime.time(10, 30))
+</code></pre>
+
 <h2 id="deserialize_datetimevalue"><code>deserialize_datetime(value)</code></h2>
 <p>Given a string which represents a date time, deserialize it to a Python datetime
 object using the first value of <code>settings.DATETIME_INPUT_FORMATS</code>.</p>

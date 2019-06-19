@@ -396,8 +396,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.14.2" target="_blank">
-                  <i class="fa fa-github"></i> v0.14.2
+                <a href="https://github.com/openhealthcare/opal/tree/v0.15.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.15.0
                 </a>
               </li>
                 <!-- <li class="disabled"> -->
@@ -422,6 +422,8 @@
     <ul class="nav bs-sidenav">
     
         <li class="main active"><a href="#upgrading-your-opal-application">Upgrading Your Opal Application</a></li>
+        
+            <li><a href="#v0150-v0160">v0.15.0 -&gt; v0.16.0</a></li>
         
             <li><a href="#0131-0140">0.13.1 -&gt; 0.14.0</a></li>
         
@@ -463,6 +465,10 @@
             <div class="col-md-9" role="main"><h2 id="upgrading-your-opal-application">Upgrading Your Opal Application</h2>
 <p>This document provides instructions for specific steps required to upgrading your Opal
 application to a later version where there are extra steps required.</p>
+<h4 id="v0150-v0160">v0.15.0 -&gt; v0.16.0</h4>
+<p>Diagnosis.details is now a text field. Please make and run migrations if you are
+using it in your app.</p>
+<p>The record template for diagnosis now shows the details on the next row.</p>
 <h3 id="0131-0140">0.13.1 -&gt; 0.14.0</h3>
 <p>If you were creating a UserProfile, this will now fail as a UserProfile is created automatically after creating a user (by a signal).</p>
 <h3 id="0130-0131">0.13.0 -&gt; 0.13.1</h3>
