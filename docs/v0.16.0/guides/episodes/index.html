@@ -480,14 +480,14 @@ More detail on customising the rest of the detail tempalte is found in the detai
 <a href="../patient_detail_views/#template-selection">Template selection docs</a>.</p>
 <h2 id="default-category">Default Category</h2>
 <p>The default category of episodes in an Opal application is set by the
-<a href="../reference/opal_application">OpalApplication</a> object's default_episode_category
+<a href="../../reference/opal_application/">OpalApplication</a> object's default_episode_category
 property.</p>
 <pre><code class="python">class Application(application.OpalApplication):
     default_episode_category = MyCategory.display_name
 </code></pre>
 
 <h2 id="defining-your-own-episodecategory">Defining your own EpisodeCategory</h2>
-<p>As EpisodeCategory is a <a href="discoverable">discoverable</a> we can define our own to
+<p>As EpisodeCategory is a <a href="../discoverable/">discoverable</a> we can define our own to
 meet custom requirements.</p>
 <p>Episode categories should be defined in a file named <code>episode_categories</code> of
 your application or plugin.</p>
