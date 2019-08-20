@@ -151,10 +151,6 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="guides/flow/">Flow</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
                 <!--             <a href="guides/roles_and_permissions/">Roles & Permissions</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -396,8 +392,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.16.0" target="_blank">
-                  <i class="fa fa-github"></i> v0.16.0
+                <a href="https://github.com/openhealthcare/opal/tree/v0.17.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.17.0
                 </a>
               </li>
                 <!-- <li class="disabled"> -->
@@ -421,7 +417,18 @@
   <h3>Contents</h3>
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#0160-major-release">0.16.0 (Major Release)</a></li>
+        <li class="main active"><a href="#0170-major-release">0.17.0 (Major Release)</a></li>
+        
+            <li><a href="#javascript-api-removals">Javascript API removals</a></li>
+        
+            <li><a href="#miscelanious-changes">Miscelanious changes</a></li>
+        
+            <li><a href="#updates-to-the-dependency-graph">Updates to the Dependency Graph</a></li>
+        
+            <li><a href="#python3">python3</a></li>
+        
+    
+        <li class="main "><a href="#0160-major-release">0.16.0 (Major Release)</a></li>
         
     
         <li class="main "><a href="#0150-major-release">0.15.0 (Major Release)</a></li>
@@ -465,7 +472,7 @@
         
             <li><a href="#misc-changes">Misc Changes</a></li>
         
-            <li><a href="#updates-to-the-dependency-graph">Updates to the Dependency Graph</a></li>
+            <li><a href="#updates-to-the-dependency-graph_1">Updates to the Dependency Graph</a></li>
         
     
         <li class="main "><a href="#0121-minor-release">0.12.1 (Minor Release)</a></li>
@@ -514,7 +521,7 @@
         
             <li><a href="#misc-changes_3">Misc Changes</a></li>
         
-            <li><a href="#updates-to-the-dependency-graph_1">Updates to the Dependency Graph</a></li>
+            <li><a href="#updates-to-the-dependency-graph_2">Updates to the Dependency Graph</a></li>
         
     
         <li class="main "><a href="#0101-minor-release">0.10.1 (Minor Release)</a></li>
@@ -560,7 +567,7 @@
         
             <li><a href="#deprecations-completed">Deprecations completed</a></li>
         
-            <li><a href="#updates-to-the-dependency-graph_2">Updates to the Dependency Graph</a></li>
+            <li><a href="#updates-to-the-dependency-graph_3">Updates to the Dependency Graph</a></li>
         
             <li><a href="#misc-changes_4">Misc Changes</a></li>
         
@@ -623,7 +630,7 @@
         
             <li><a href="#minor-fixes">Minor fixes</a></li>
         
-            <li><a href="#updates-to-the-dependency-graph_3">Updates to the Dependency Graph</a></li>
+            <li><a href="#updates-to-the-dependency-graph_4">Updates to the Dependency Graph</a></li>
         
     
         <li class="main "><a href="#081-minor-release">0.8.1 (Minor Release)</a></li>
@@ -683,7 +690,7 @@
         
             <li><a href="#misc-changes_8">Misc changes</a></li>
         
-            <li><a href="#updates-to-the-dependency-graph_4">Updates to the Dependency Graph</a></li>
+            <li><a href="#updates-to-the-dependency-graph_5">Updates to the Dependency Graph</a></li>
         
     
         <li class="main "><a href="#075-minor-release">0.7.5 (Minor Release)</a></li>
@@ -700,7 +707,7 @@
     
         <li class="main "><a href="#071-minor-release">0.7.1 (Minor Release)</a></li>
         
-            <li><a href="#updates-to-the-dependency-graph_5">Updates to the Dependency Graph</a></li>
+            <li><a href="#updates-to-the-dependency-graph_6">Updates to the Dependency Graph</a></li>
         
     
         <li class="main "><a href="#070-major-release">0.7.0 (Major Release)</a></li>
@@ -775,7 +782,27 @@
     
     </ul>
 </div></div>
-            <div class="col-md-9" role="main"><h3 id="0160-major-release">0.16.0 (Major Release)</h3>
+            <div class="col-md-9" role="main"><h3 id="0170-major-release">0.17.0 (Major Release)</h3>
+<h4 id="javascript-api-removals">Javascript API removals</h4>
+<p>Removes the function Episode.isDischarged() (This was rarely if ever used,
+and no longer an accurate represenation of dischargedness.)</p>
+<p>Removes the Episode.getNumberOfItems method which is rarely used.</p>
+<p>Removes the methods PatientDetailCtrl.dischargeEpisode() and PatientListCtrl.dischargeEpisode()
+(However you're discharging episodes as of 0.17 it would be strongly unadvisable to do it this way.)</p>
+<p>Removes PatientList.removeFromMine()
+(The special casing of the 'Mine' list is strongly unadvised and set for complete removal.)</p>
+<p>Removes the front end Flow service</p>
+<h4 id="miscelanious-changes">Miscelanious changes</h4>
+<p>Bumps Flake8 version to 3.7.8 - new code will now be required to pass flake8 v3.7.8</p>
+<h4 id="updates-to-the-dependency-graph">Updates to the Dependency Graph</h4>
+<ul>
+<li>Jinja2: 2.10 -&gt; 2.10.1</li>
+<li>Psycopg2: 2.7.6.1 -&gt; 2.8.3</li>
+<li>Requests: 2.20.1 -&gt; 2.22.0</li>
+</ul>
+<h4 id="python3">python3</h4>
+<p>Opal now only supports python 3.5 - python 3.7</p>
+<h3 id="0160-major-release">0.16.0 (Major Release)</h3>
 <p>Adds serialize_date, serialize_datetime, serialize_time utility functions to serialize date/datetime/time to
 strings.</p>
 <p>Diagnosis.details is now a text field.</p>
@@ -899,7 +926,7 @@ including the <code>reopen_episode_modal.html</code> template and the url/view a
   the delete item modal is closed with 'deleted'</p>
 </li>
 </ul>
-<h4 id="updates-to-the-dependency-graph">Updates to the Dependency Graph</h4>
+<h4 id="updates-to-the-dependency-graph_1">Updates to the Dependency Graph</h4>
 <ul>
 <li>Django: 1.10.8 -&gt; 2.0.9</li>
 <li>Django Rest Framework: 3.4.7 -&gt; 3.7.4</li>
@@ -1010,7 +1037,7 @@ made hospital numbers including <code>#</code> or <code>/</code> raise an error.
 <li>Adds the methods <code>.get_absolute_url()</code>, <code>.get_icon()</code> and <code>get_display_name()</code>
 to <code>opal.core.pathways.Pathway</code> and <code>opal.core.patient_lists.PatientList</code>.</li>
 </ul>
-<h4 id="updates-to-the-dependency-graph_1">Updates to the Dependency Graph</h4>
+<h4 id="updates-to-the-dependency-graph_2">Updates to the Dependency Graph</h4>
 <ul>
 <li>Django compressor: 1.5 -&gt; 2.2</li>
 </ul>
@@ -1102,7 +1129,7 @@ we run <code>python manage.py scaffold {my_app_name}</code></p>
 <p>As previously noted in console warnings, the Angular Episode service no longer
 supports the <code>discharge_date</code>, <code>date_of_admission</code>, <code>date_of_episode</code> properties.
 These were replaced by <code>.start</code> and <code>.end</code>.</p>
-<h4 id="updates-to-the-dependency-graph_2">Updates to the Dependency Graph</h4>
+<h4 id="updates-to-the-dependency-graph_3">Updates to the Dependency Graph</h4>
 <ul>
 <li>Django: 1.8.13 -&gt; 1.10.8</li>
 <li>Django Reversion: 1.8.7 -&gt; 1.10.2</li>
@@ -1237,7 +1264,7 @@ declaration on the model. These are scheduled to move again to a lookuplist.</p>
 <p>The default value of <code>Subrecord.get_display_name</code> now uses Django <code>Meta.verbose_name</code>.</p>
 <h4 id="minor-fixes">Minor fixes</h4>
 <p>Fixes a bug where the allergies form rendered the provisional field twice</p>
-<h4 id="updates-to-the-dependency-graph_3">Updates to the Dependency Graph</h4>
+<h4 id="updates-to-the-dependency-graph_4">Updates to the Dependency Graph</h4>
 <p>Upgrades Font Awesome from 4.3.0 -&gt; 4.7.0
 Upgrades Jinja2 from 2.8 -&gt; 2.9.6</p>
 <h3 id="081-minor-release">0.8.1 (Minor Release)</h3>
@@ -1372,7 +1399,7 @@ admin urls and is closer to what most applications do with the Django admin.</p>
 <p>The roles field <code>opal.models.UserProfile.roles</code> has been updated to be <code>blank=True</code>. This allows the editing
 of users without specific roles assigned in the Django admin. Although this introduces no changes at the
 database level, this does introduce a migration.</p>
-<h4 id="updates-to-the-dependency-graph_4">Updates to the Dependency Graph</h4>
+<h4 id="updates-to-the-dependency-graph_5">Updates to the Dependency Graph</h4>
 <p>Upgrades angular to v1.5.8 (from 1.3.11) you can see their change log <a href="https://github.com/angular/angular.js/blob/master/CHANGELOG.md">here</a></p>
 <p>Updates angular-cookies and angular-mocks to v1.5.8 (both from 1.3.11)</p>
 <p>Updates angular-ui-select to 0.19.4 from 0.13.2</p>
@@ -1398,7 +1425,7 @@ This is slated for removal in 0.8.0.</p>
 <p>Adds the <code>clipboard</code> directive to give the user one click copy to clipboard.</p>
 <p>Adds a <code>tag-select</code> directive that renders a widget for editing the tags for an episode.</p>
 <p>Adds metadata to the scope for patient detail views</p>
-<h4 id="updates-to-the-dependency-graph_5">Updates to the Dependency Graph</h4>
+<h4 id="updates-to-the-dependency-graph_6">Updates to the Dependency Graph</h4>
 <ul>
 <li>Django Axes 1.4.0 -&gt; 1.7.0</li>
 </ul>
