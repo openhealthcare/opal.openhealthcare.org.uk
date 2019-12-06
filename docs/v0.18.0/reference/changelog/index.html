@@ -419,12 +419,45 @@
     
         <li class="main active"><a href="#0180-major-release">0.18.0 (Major Release)</a></li>
         
+            <li><a href="#load-lookuplist-data-format">Load lookuplist data format</a></li>
+        
+            <li><a href="#allow-extract-queries-for-falsy-values">Allow extract queries for 'falsy' values</a></li>
+        
+            <li><a href="#mentio-and-macro-removal">Ment.io and Macro removal</a></li>
+        
+            <li><a href="#remove-additional-episodecategories">Remove additional EpisodeCategories</a></li>
+        
+            <li><a href="#findpatientstep-removal">FindPatientStep removal</a></li>
+        
+            <li><a href="#profile-can_see_pid-removal">Profile can_see_pid removal</a></li>
+        
+            <li><a href="#micro-test-removals">Micro test removals</a></li>
+        
+            <li><a href="#line-lookuplist-removals">Line Lookuplist removals</a></li>
+        
+            <li><a href="#javascript-api-removals">Javascript API removals</a></li>
+        
+            <li><a href="#flow-based-controllers-removed">Flow based controllers removed</a></li>
+        
+            <li><a href="#allergies-sidebar">Allergies sidebar</a></li>
+        
+            <li><a href="#stories">Stories</a></li>
+        
+            <li><a href="#design-patterns">Design Patterns</a></li>
+        
+            <li><a href="#pluginapplication-stylesheet-media-atribute">Plugin/Application stylesheet media atribute</a></li>
+        
+            <li><a href="#minor-bugfixes">Minor Bugfixes</a></li>
+        
             <li><a href="#updates-to-the-dependency-graph">Updates to the Dependency Graph</a></li>
+        
+    
+        <li class="main "><a href="#0171-minor-release">0.17.1 (Minor Release)</a></li>
         
     
         <li class="main "><a href="#0170-major-release">0.17.0 (Major Release)</a></li>
         
-            <li><a href="#javascript-api-removals">Javascript API removals</a></li>
+            <li><a href="#javascript-api-removals_1">Javascript API removals</a></li>
         
             <li><a href="#miscelanious-changes">Miscelanious changes</a></li>
         
@@ -788,12 +821,76 @@
     </ul>
 </div></div>
             <div class="col-md-9" role="main"><h3 id="0180-major-release">0.18.0 (Major Release)</h3>
+<h4 id="load-lookuplist-data-format">Load lookuplist data format</h4>
+<p>Fixes a bug (1695) to ensure that the data keys inside a lookuplist data file are taken
+from the value of <code>.get_api_name()</code>.</p>
+<h4 id="allow-extract-queries-for-falsy-values">Allow extract queries for 'falsy' values</h4>
+<p>Fixes a bug in extract. When querying against 0 or false the ui stated that no query had been entered. Also queries on multiple fields that included a filter against a field with 0 or false would have that portion of the query ignored.</p>
+<h4 id="mentio-and-macro-removal">Ment.io and Macro removal</h4>
+<p>The Macro feature and related Ment.io library have been removed. (No known applications used these features.)</p>
+<h4 id="remove-additional-episodecategories">Remove additional EpisodeCategories</h4>
+<p>The Outpatient and Liaison episode categories have been removed from <code>opal.core.episodes</code>. Defining
+these here rather than expecting applications to define them in application land means that overriding
+templates can only be done via monkeypatching.</p>
+<h4 id="findpatientstep-removal">FindPatientStep removal</h4>
+<p>Removes the <code>FindPatientStep</code>. Every known application with this functionality has required custom logic
+and re-written this step. (If there is a common case, we don't know what it is yet.)</p>
+<h4 id="profile-can_see_pid-removal">Profile can_see_pid removal</h4>
+<p>The <code>can_see_pid</code> method of profiles on both the front and back end was tied to hard-coded roles which
+were impossible to override.</p>
+<h4 id="micro-test-removals">Micro test removals</h4>
+<p>A large number of microbiology specific models and lookuplists have been removed from this version of
+Opal along with the Investigation model. This code was rarely used and turned out to be incompatible
+wiht subsequent LIMS system integration. We would advise anyone using it to incorporate these models
+into their own applications, but consider moving away.</p>
+<h4 id="line-lookuplist-removals">Line Lookuplist removals</h4>
+<p>Removes line removal reason, complication, site and type lookuplists. These are rarely if used and
+would be better placed at present in an application rather than the core framework.</p>
+<h4 id="javascript-api-removals">Javascript API removals</h4>
+<p>Removes the undocumented <code>EditItemCtrl.prepopulate</code> method. Custom Pathway controllers are recommended
+for complex form interactions.</p>
+<p>Also removes a series of Angular filters which were deemed of limited re-use potential. Applications may
+add such filters themselves trivially.</p>
 <ul>
-<li>DjangoRESTFramework 3.7.4 -&gt; 3.10.2</li>
+<li>microresult</li>
+<li>boxed</li>
+<li>plural</li>
+</ul>
+<p>Removes the undocumented <code>UserProfile.can_edit</code> method. This made assumptions about specific named roles
+which were unconfigurable and was thus unlikely to be useful.</p>
+<h4 id="flow-based-controllers-removed">Flow based controllers removed</h4>
+<p>Removes the HospitalNumberCtrl and AddEpisodeCtrl along with related tests and templates. Pathways
+can perform thse operations significantly more flexibly.</p>
+<p>This has also resulted in removing the undocumented Episode method <code>findByHospitalNumber</code> which was
+used by the flow controllers.</p>
+<h4 id="allergies-sidebar">Allergies sidebar</h4>
+<p>Removed an undocumented template <code>modals/_allergies_sidebar.html</code> which was rarely used and more suited
+to being included in individual applications than the framework itself.</p>
+<h4 id="stories">Stories</h4>
+<p>The Stories functionality is not clearly more useful than simply having an html template file in an
+individual application. The pattern of having them as individual feature files which are not executalbe
+by e.g. Cucumber adds complexity but no value. Explicit acceptance tests are encouraged for applications,
+but no longer live as part of Opal core.</p>
+<h4 id="design-patterns">Design Patterns</h4>
+<p>Removes the design patterns library as this is incompatible with the new 'skinability' approach. Such
+patterns pages are encouraged for large applications or standalone themes.</p>
+<h4 id="pluginapplication-stylesheet-media-atribute">Plugin/Application stylesheet media atribute</h4>
+<p>Style sheets loaded via Opal Applicatin or Plugin objects are now included with the attribute <code>media="all"</code>
+rather than `media="screen".</p>
+<h4 id="minor-bugfixes">Minor Bugfixes</h4>
+<ul>
+<li>For some types, e.g. decimal the core serilizer would return <code>None</code>. This is now resolved.</li>
+<li>Deletes a directory previously left as an artifact of scaffolding at ../../js/app/ (1554)</li>
 </ul>
 <h4 id="updates-to-the-dependency-graph">Updates to the Dependency Graph</h4>
+<ul>
+<li>DjangoRESTFramework 3.7.4 -&gt; 3.10.2</li>
+<li>python-dateutil 2.7.5 -&gt; 2.8.0</li>
+</ul>
+<h3 id="0171-minor-release">0.17.1 (Minor Release)</h3>
+<p>Removes a now deleted file from the default application javascripts list</p>
 <h3 id="0170-major-release">0.17.0 (Major Release)</h3>
-<h4 id="javascript-api-removals">Javascript API removals</h4>
+<h4 id="javascript-api-removals_1">Javascript API removals</h4>
 <p>Removes the function Episode.isDischarged() (This was rarely if ever used,
 and no longer an accurate represenation of dischargedness.)</p>
 <p>Removes the Episode.getNumberOfItems method which is rarely used.</p>
@@ -1599,7 +1696,7 @@ http://opal.openhealthcare.org.uk/docs/guides/json_api/</p>
         </footer>
         <script>
             var base_url = "../..",
-                shortcuts = {"search": 83, "next": 78, "help": 191, "previous": 80};
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
 
         <script src="../../js/jquery-1.10.2.min.js" defer></script>
