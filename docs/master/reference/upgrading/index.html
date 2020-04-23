@@ -392,8 +392,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.18.1" target="_blank">
-                  <i class="fa fa-github"></i> v0.18.1
+                <a href="https://github.com/openhealthcare/opal/tree/v0.18.2" target="_blank">
+                  <i class="fa fa-github"></i> v0.18.2
                 </a>
               </li>
                 <!-- <li class="disabled"> -->
@@ -418,6 +418,8 @@
     <ul class="nav bs-sidenav">
     
         <li class="main active"><a href="#upgrading-your-opal-application">Upgrading Your Opal Application</a></li>
+        
+            <li><a href="#v0171-v0182">v0.17.1 -&gt; v0.18.2</a></li>
         
             <li><a href="#v0171-v0180">v0.17.1 -&gt; v0.18.0</a></li>
         
@@ -463,6 +465,8 @@
             <div class="col-md-9" role="main"><h2 id="upgrading-your-opal-application">Upgrading Your Opal Application</h2>
 <p>This document provides instructions for specific steps required to upgrading your Opal
 application to a later version where there are extra steps required.</p>
+<h4 id="v0171-v0182">v0.17.1 -&gt; v0.18.2</h4>
+<p><code>inpatient.html</code> is no longer in opal but created with startproject. If you are using the default episode category please create a template called  <code>{{ appname }}/templates/detail/inpatient.html</code> and add in the record panels that you need.</p>
 <h4 id="v0171-v0180">v0.17.1 -&gt; v0.18.0</h4>
 <p>Style sheets loaded via Opal Applicatin or Plugin objects are now included with the attribute <code>media="all"</code>
 rather than `media="screen".</p>
@@ -897,7 +901,7 @@ commands to upgrade your database:</p>
         </footer>
         <script>
             var base_url = "../..",
-                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+                shortcuts = {"search": 83, "next": 78, "help": 191, "previous": 80};
         </script>
 
         <script src="../../js/jquery-1.10.2.min.js" defer></script>
