@@ -9,6 +9,8 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://yourdomain.com" # the base hostname & protocol for your site
 twitter_username: ohcuk
 github_username:  jekyll
+current_version: 0.18.3 # without the `v`
+next_version: 0.18.4 # without the `v`
 
 # Build settings
 markdown: kramdown
