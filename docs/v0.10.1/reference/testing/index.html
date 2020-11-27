@@ -387,21 +387,21 @@
 <p>The <code>opal</code> command line tool has a <code>test</code> command which will run unittests for both the server
 and client side components of your application.</p>
 <h2 id="javascript-testing">Javascript testing</h2>
-<p>By default, we recommend using Jasmine and Karma to test your javascript code.
+<p>By default, we recommend using Jasmine and Karma to test your javascript code.</p>
 <blockquote><small>
 Of course you can use any test framework you choose, although Opal doesn't currently ship with
 helpers for any other frameworks.
-</small></blockquote></p>
+</small></blockquote>
+
 <h3 id="installing-javascript-testing-tools">Installing javascript testing tools</h3>
 <p>To installing Karma, Jasmine and Phantomjs in a local directory:</p>
-<pre><code class="bash">npm install jasmine-core karma karma-coverage karma-jasmine karma-phantomjs-launcher
+<pre><code class="language-bash">npm install jasmine-core karma karma-coverage karma-jasmine karma-phantomjs-launcher
 </code></pre>
-
 <h3 id="setting-up-the-karma-environment-for-your-application">Setting up the karma environment for your application</h3>
 <p>If you'd like to run karma tests, Opal ships with a function to give you a default karma config.</p>
 <p>In your karma config just <code>require('[[ path to opal ]]/config/karma_defaults.js')</code></p>
 <p>The function takes in the files you want to include and runs karma tests on them.</p>
-<pre><code class="js">// config/karma.config.js
+<pre><code class="language-js">// config/karma.config.js
 
 module.exports = function(config){
   var opalPath = '../../opal';
@@ -416,24 +416,21 @@ module.exports = function(config){
   config.set(defaultConfig);
 };
 </code></pre>
-
 <p>If run from opal test js, we set the path to opal as an env variable called
 OPAL_LOCATION</p>
 <h2 id="test-coverage">Test Coverage</h2>
 <p>The Opal test runner has a <code>-c</code> option which runs coverage reports for both Python and
 Javascript code:</p>
-<pre><code class="bash">opal test -c
+<pre><code class="language-bash">opal test -c
 </code></pre>
-
 <p>Python test coverage uses the <code>coverage</code> tool and you may want to set include/excludes in
 a <code>.coveragerc</code>.</p>
 <p>Javascript test files to be reported on should be passed as an extra argument to <code>karmaDefaults</code>:</p>
-<pre><code class="js">  var coverageFiles = [
+<pre><code class="language-js">  var coverageFiles = [
      ...
   ];
   var defaultConfig = karmaDefaults(includedFiles, baseDir, coverageFiles);
 </code></pre>
-
 <p>HTML test coverage reports will be output to the directory <code>htmlcov</code> and <code>htmlcov/js</code> at the
 root of your application.</p></div>
         </div>

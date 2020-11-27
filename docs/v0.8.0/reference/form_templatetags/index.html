@@ -351,9 +351,8 @@ your forms.</p>
 <h4 id="inputs-with-units">Inputs with units</h4>
 <p>We also often want to display the unit of a particular field to help our users - consistent styling for this is
 available by using the unit argument e.g.</p>
-<pre><code class="html">{% input label=&quot;Weight&quot; model=&quot;editing.weight&quot; unit=&quot;kg&quot; %}
+<pre><code class="language-html">{% input label=&quot;Weight&quot; model=&quot;editing.weight&quot; unit=&quot;kg&quot; %}
 </code></pre>
-
 <h3 id="radio">{% radio ... %}</h3>
 <p>Generates an inline radio input</p>
 <p>Keywords:</p>
@@ -397,21 +396,18 @@ available by using the unit argument e.g.</p>
 <p>If its required, it will set as a required field. If its a CharField with a max length it will set a validation rule accordingly.</p>
 <p>If the field is a free text or foreign key we will infer the lookup list.</p>
 <p>Alternatively if the field has choices attatched to it we will infer the choices into the field.</p>
-<pre><code class="html">{% input field=&quot;Allergies.drug&quot; %}
+<pre><code class="language-html">{% input field=&quot;Allergies.drug&quot; %}
 </code></pre>
-
 <p>Note unlike the traditional choices implementation only the last value of the choices is used and saved to the database</p>
-<pre><code class="python">  Colours = (
+<pre><code class="language-python">  Colours = (
     ('P', 'Purple'),
     ('R', 'Red'),
   )
 </code></pre>
-
 <p>What is displayed to the user and saved to the database is 'Purple' or 'Red' respectively.</p>
 <p>All inferences can be overridden by declarations in the template tag. For Example</p>
-<pre><code class="html">{% input field=&quot;Allergies.drug&quot; label=&quot;Something else&quot; %}
+<pre><code class="language-html">{% input field=&quot;Allergies.drug&quot; label=&quot;Something else&quot; %}
 </code></pre>
-
 <p>Will render the input with a different label.</p>
 <h3 id="static">{% static ... %}</h3>
 <p>Generates a bootstrap Static div (for displaying data from fields as uneditable but formatted nicely with appropriate styles).</p>

@@ -601,18 +601,16 @@ Item instance for a new subrecord. This should greatly reduce the need to use cu
 <h4 id="choices-in-form-templatetags">Choices in form templatetags</h4>
 <p>Template tags that use the 'field' attribute to point to a subrecord field will now infer a lookup list from the Choices of the field if it exists.</p>
 <p>Note unlike the traditional choices implementation only the last value of the choices is used and saved to the database</p>
-<pre><code class="python">  Colours = (
+<pre><code class="language-python">  Colours = (
     ('P', 'Purple'),
     ('R', 'Red'),
   )
 </code></pre>
-
 <p>What is displayed to the user and saved to the database is 'Purple' or 'Red' respectively.</p>
 <h4 id="element-name-in-template-tags">element name in template tags</h4>
 <p>The html attribute 'name' for form elements generated with the Opal <code>{% forms %}</code> templatetag library used to be inferred from the model name. Although this remains the default you can also set it with an angular expression:</p>
-<pre><code class="html">{% select field=&quot;Demographics.first_name&quot; element_name=&quot;...Your Angular expression...&quot; %}
+<pre><code class="language-html">{% select field=&quot;Demographics.first_name&quot; element_name=&quot;...Your Angular expression...&quot; %}
 </code></pre>
-
 <h4 id="model-removals">Model removals</h4>
 <p>The models <code>Team</code>, <code>GP</code>, <code>CommunityNurse</code> and <code>LocatedModel</code> - marked for removal since 0.6.0
 have now been removed.</p>
@@ -647,9 +645,8 @@ opal.core.api.LoginRequiredViewset, a standard DRF viewset that requires the use
 <h4 id="form-validation">Form Validation</h4>
 <p>Adds the checkForm directive</p>
 <p>e.g.</p>
-<pre><code class="html">&lt;button check-form=&quot;form&quot; ng-click=&quot;sendDataToTheServer&quot;&gt;click me&lt;/button&gt;
+<pre><code class="language-html">&lt;button check-form=&quot;form&quot; ng-click=&quot;sendDataToTheServer&quot;&gt;click me&lt;/button&gt;
 </code></pre>
-
 <p>This adds default form submission behaviour to the a button. It will check if the form is valid, and if its not it will mark the button as disabled until it becomes valid.</p>
 <p>It will also set the form as submitted.</p>
 <p>We also now show the required error if the form has been submitted or if the field is dirty, so that the user doesn't get an ugly "fill this field in now" message when opening the modal/pathway but will get the error after they click submit.</p>

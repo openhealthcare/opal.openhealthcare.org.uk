@@ -337,12 +337,11 @@ the Angular Controller <code>opal.controllers.EditItemCtrl</code> for doing just
 <p>Opal uses the <code>formController</code> attribute of an <code>Item</code> to determine which Angular Controller to use. This
 defaults to <code>opal.controllers.EditItemCtrl</code>. Individual Subrecords may customise this by implementing an Angualar record Service
 and overriding the formController attribute.</p>
-<pre><code class="python"># yourapp/models.py
+<pre><code class="language-python"># yourapp/models.py
 class Diagnosis(models.Diagnosis):
     _angular_service = 'Diagnosis'
 </code></pre>
-
-<pre><code class="js">// yourapp/static/js/diagnosis.js
+<pre><code class="language-js">// yourapp/static/js/diagnosis.js
 angular.module('opal.records').factory('Diagnosis', function(){
     return function(record){
         record.formController = 'MyCustomDiagnosisFormController';
@@ -351,7 +350,6 @@ angular.module('opal.records').factory('Diagnosis', function(){
 });
 
 </code></pre>
-
 <p>Custom form controllers can use the preSave(itemToBeSaved) hook to add their own custom logic before the item is saved</p>
 <h3 id="form-and-modal-templates">Form and modal templates</h3>
 <p>Subrecords have <code>get_form_template()</code> and <code>get_modal_template()</code> methods, which are used for

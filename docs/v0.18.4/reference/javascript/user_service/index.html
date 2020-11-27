@@ -123,10 +123,6 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="guides/plugins_list/">Plugin List</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
                 <!--             <a href="guides/datamodel/">Data Model</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -430,15 +426,14 @@ users of an application.</p>
 <h2 id="methods">Methods</h2>
 <h3 id="userall">User.all()</h3>
 <p>Fetches all users of the application as a list.</p>
-<pre><code class="javascript">User.all().then(function(users){
+<pre><code class="language-javascript">User.all().then(function(users){
     console.log(users[0]);
     // -&gt; The first user
 })
 </code></pre>
-
 <h3 id="usergetid">User.get(id)</h3>
 <p>Fetch one specific user by ID.</p>
-<pre><code class="javascript">User.get(1).then(function(user){
+<pre><code class="language-javascript">User.get(1).then(function(user){
     console.log(user);
     // -&gt; The user with ID 1
 });

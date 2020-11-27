@@ -123,10 +123,6 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="guides/plugins_list/">Plugin List</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
                 <!--             <a href="guides/datamodel/">Data Model</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -438,16 +434,15 @@
 <p>We can change the logo and favicon of our application by changing settings.
 Create a logo and a favicon, place them in <code>./yourapp/static/img/</code> and then
 update the following settings:</p>
-<pre><code class="python"># ./yourapp/settings.py
+<pre><code class="language-python"># ./yourapp/settings.py
 
 OPAL_FAVICON_PATH = 'img/yourapp.favicon.ico'
 OPAL_LOGO_PATH    = 'img/yourapp.logo.png'
 </code></pre>
-
 <p>Some platforms require favicons to be .ico format, however .png also works</p>
 <h2 id="adding-your-own-css-file-to-change-the-default-colours-fonts-layouts-and-more">Adding your own CSS file to change the default colours, fonts, layouts and more</h2>
 <p>To change the CSS used for the Opal interface, first create a CSS file with your custom application styling:</p>
-<pre><code class="css">/* ./yourapp/static/yourapp.css */
+<pre><code class="language-css">/* ./yourapp/static/yourapp.css */
 body {
   /*main text style*/
   font-family: 'Franklin Gothic Book', Arial;
@@ -459,16 +454,14 @@ body {
 .bg-secondary {
   background-color: #0084FF; }
 </code></pre>
-
 <p>Then include this CSS file in your Application definition:</p>
-<pre><code class="python"># ./yourapp/__init__.py
+<pre><code class="language-python"># ./yourapp/__init__.py
 class Application(application.OpalApplication):
 
     styles = [
         &quot;css/yourapp.css&quot;
     ]
 </code></pre>
-
 <p>Many of the classes are standard Bootstrap CSS classes, which can be identified in the Bootstrap documentation, or via the inspector in your browser's developer tools.</p>
 <h2 id="key-overrides-and-a-sass-template-to-reset-key-colours">Key overrides and a .sass template to reset key colours</h2>
 <p>WIP</p>

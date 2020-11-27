@@ -123,10 +123,6 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="guides/plugins_list/">Plugin List</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
                 <!--             <a href="guides/datamodel/">Data Model</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -392,8 +388,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.18.3" target="_blank">
-                  <i class="fa fa-github"></i> v0.18.3
+                <a href="https://github.com/openhealthcare/opal/tree/v0.20.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.20.0
                 </a>
               </li>
                 <!-- <li class="disabled"> -->
@@ -467,11 +463,10 @@ useful for subrecord types where the date is a key field.</p>
 <p>Render a key value pair in their own Bootstrap row using columns of width <code>md-4</code> each.
 Particularly useful for occasions when we have multiple entries that need to be presented one after
 another but the data is not naturally tabular.</p>
-<pre><code class="html">{% load panels %}
+<pre><code class="language-html">{% load panels %}
 {% aligned_pair model=&quot;episode.start_date | displayDate&quot; label=&quot;Start Date&quot; %}
 {% aligned_pair model=&quot;22&quot; label=&quot;Next Data Point&quot; %}
 </code></pre>
-
 <p>Arguments:</p>
 <ul>
 <li><code>label</code>: The left hand item, to be rendered bold.</li>

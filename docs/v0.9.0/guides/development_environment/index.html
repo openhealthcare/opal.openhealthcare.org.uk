@@ -362,24 +362,21 @@
 <p>If you're planning on working on Opal we recommend installing in a Virtualenv - to make that
 easy, we would suggest installing Virtualenvwrapper. To obtain the code, set up a virtualenv
 and install Opal and the dependencies you'll need, run the following:</p>
-<pre><code class="bash">git clone git@github.com:openhealthcare/opal
+<pre><code class="language-bash">git clone git@github.com:openhealthcare/opal
 cd opal
 mkvirtualenv -a $PWD opal
 python setup.py develop
 pip install -r test-requirements.txt
 </code></pre>
-
 <h3 id="running-the-tests">Running the tests</h3>
 <p>In order to run the Opal test suite you'll also need to install the Javascript test runner:</p>
-<pre><code class="bash">npm install jasmine-core karma karma-coverage karma-jasmine karma-phantomjs-launcher
+<pre><code class="language-bash">npm install jasmine-core karma karma-coverage karma-jasmine karma-phantomjs-launcher
 </code></pre>
-
 <p>To run the test suite:</p>
-<pre><code class="bash">opal test
+<pre><code class="language-bash">opal test
 </code></pre>
-
 <p>You can also run just one suite (Javascript or Python) individually:</p>
-<pre><code class="bash">opal test py
+<pre><code class="language-bash">opal test py
 opal test js
 </code></pre></div>
         </div>

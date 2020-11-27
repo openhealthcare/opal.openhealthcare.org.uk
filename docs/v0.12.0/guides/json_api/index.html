@@ -399,7 +399,7 @@ for these APIs.</p>
 <h3 id="adding-your-own-apis">Adding your own APIs</h3>
 <p>You can add your own APIs to the Opal API namespace <a href="../plugins/#adding-apis">from plugins</a> or
 by registering them directly with the router.</p>
-<pre><code class="python">from rest_framework.viewsets import ViewSet
+<pre><code class="language-python">from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from opal.core.api import router
 
@@ -409,17 +409,15 @@ class PingViewSet(ViewSet):
 
 router.register('ping', PingViewSet)
 </code></pre>
-
 <p>APIs can make use of method decorators <code>item_from_pk</code>, <code>episode_from_pk</code> and <code>patient_from_pk</code> that will replace a pk passed into a method with self.model, Episode or Patient respectively.</p>
 <p>e.g.</p>
-<pre><code class="python">class SomeBespokeViewset(viewsets.Viewset):
+<pre><code class="language-python">class SomeBespokeViewset(viewsets.Viewset):
   model = ClinicalInformation
 
   @item_from_pk
   def some_api_endpoint(self, request, clinical_information):
     # Some logic
 </code></pre>
-
 <h3 id="authentication">Authentication</h3>
 <p>Opal uses
 <a href="http://www.django-rest-framework.org/">Django Rest Framework</a> (DRF) to

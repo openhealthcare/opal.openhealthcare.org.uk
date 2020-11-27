@@ -439,7 +439,7 @@ this in your requirements.txt or similar accordingly.</p>
 classes in their <code>settings.py</code>.</p>
 <p>By default Opal now uses session and token auth, which will require a migration to install
 the DRF Token authentication app.</p>
-<pre><code class="python">INSTALLED_APPS = (
+<pre><code class="language-python">INSTALLED_APPS = (
     # ....
     'rest_framework',
     'rest_framework.authtoken',
@@ -453,7 +453,6 @@ REST_FRAMEWORK = {
     )
 }
 </code></pre>
-
 <h3 id="6x-7x">6.x -&gt; 7.x</h3>
 <h4 id="upgrading-opal_2">Upgrading Opal</h4>
 <p>How you do this depends on how you have configured your application, but updating your
@@ -523,12 +522,11 @@ Context Processor is available - you should add that to the <code>TEMPLATE_CONTE
 setting in your application's <code>settings.py</code></p>
 <p>The default date formats in Opal have changed - and so you should update your <code>DATE_X</code>
 settings to match:</p>
-<pre><code class="python">DATE_FORMAT = 'd/m/Y'
+<pre><code class="language-python">DATE_FORMAT = 'd/m/Y'
 DATE_INPUT_FORMATS = ['%d/%m/%Y']
 DATETIME_FORMAT = 'd/m/Y H:i:s'
 DATETIME_INPUT_FORMATS = ['%d/%m/%Y %H:%M:%S']
 </code></pre>
-
 <h4 id="upgrade-plugins">Upgrade plugins</h4>
 <p>A number of Opal plugins have new releases to work with the changes in Opal 0.6.x</p>
 <ul>
@@ -553,7 +551,7 @@ admin.site.register(Team, TeamAdmin)
 <p>Patient lists are now declarative. For instance, to replicate the following team:</p>
 <p><img src="/img/resp.team.png" style="margin: 12px auto; border: 1px solid black;"/></p>
 <p>We would convert that to:</p>
-<pre><code class="python"># yourapp/patient*lists.py
+<pre><code class="language-python"># yourapp/patient*lists.py
 from opal.core import patient_lists
 
 class RespiratoryList(patient_lists.TaggedPatientList):
@@ -562,7 +560,6 @@ class RespiratoryList(patient_lists.TaggedPatientList):
     order        = 4
     schema       = [models.Demographics, models.Treatment]
 </code></pre>
-
 <p>The schema property will likely be available to you in your application's <code>schema.py</code>
 file - which is now obsolete.</p>
 <p>See the <a href="../../guides/list_views/">full patient list documentation</a> for further details
@@ -576,22 +573,20 @@ relying on templates previously in Opal. To discover which these are, run</p>
 by running <code>$ opal scaffold</code>.</p>
 <p>Modal templates already in your application will likely be referencing invalid paths
 to their Angular variables. You should update these to include the record name - for example:</p>
-<pre><code class="html">&lt;!-- Was --&gt;
+<pre><code class="language-html">&lt;!-- Was --&gt;
 {% input  label=&quot;Drug&quot; model=&quot;editing.drug&quot; lookuplist=&quot;antimicrobial_list&quot; %}
 &lt;!-- Becomes --&gt;
 {% input  label=&quot;Drug&quot; model=&quot;editing.treatment.drug&quot; lookuplist=&quot;antimicrobial_list&quot; %}
 </code></pre>
-
 <h4 id="the-inpatient-episode-category">The Inpatient episode category</h4>
 <p>The default Episode Category - Inpatient episodes has updated it's database identifier
 from <code>inpatient</code> to <code>Inpatient</code>. To update your episodes run :</p>
-<pre><code class="python">&gt;&gt;&gt; from opal.models import Episode
+<pre><code class="language-python">&gt;&gt;&gt; from opal.models import Episode
 &gt;&gt;&gt; for e in Episode.objects.filter(category='inpatient'):
 ...   e.category='Inpatient'
 ...   e.save()
 ...
 </code></pre>
-
 <p>Any references to episode category in templates (for e.g. ng-hide) or controllers for logic
 will also require updates.</p>
 <h4 id="flow-is-now-defined-in-js">Flow is now defined in JS</h4>

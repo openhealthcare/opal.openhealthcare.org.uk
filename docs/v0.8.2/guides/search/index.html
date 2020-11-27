@@ -375,7 +375,7 @@ to the front end</p>
 <p>ie if you state the field is a string, the user will be provided with an
 equals/contains, which will be passed to the query as given_query["queryType"]</p>
 <p>For example</p>
-<pre><code class="python">class SomeField(SearchRuleField):
+<pre><code class="language-python">class SomeField(SearchRuleField):
     display_name = &quot;Some Field&quot; # the display name of the field
     description = &quot;A Description for the user to explain what this field means&quot;
     field_type = &quot;date_time&quot; # what kind of filter that is offered, datetime will off before and after

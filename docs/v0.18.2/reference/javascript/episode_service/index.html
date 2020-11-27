@@ -442,10 +442,9 @@ Episode JSON API.</p>
 </code></pre>
 <h4 id="episodegetfullname">Episode.getFullName</h4>
 <p>Return a human readable version of the Patient name suitable for rendering.</p>
-<pre><code class="javascript">episode.getFullName()
+<pre><code class="language-javascript">episode.getFullName()
 // -&gt; 'Jane Doe'
 </code></pre>
-
 <h4 id="episodehastag">Episode.hasTag</h4>
 <p>Predicate function that determines whether the episode is tagged with a given tag.</p>
 <p>Arguments:</p>
@@ -466,15 +465,14 @@ Episode JSON API.</p>
 <p>Takes a string, opens a modal from which the user can create a new subrecord of type <code>name</code>.</p>
 <p>It takes the optional argument of <code>url</code> which is the url of the template to be opened. This defaults
 to the modal form template for the subrecord of <code>name</code>.</p>
-<pre><code class="js">episode.recordEditor.newItem('diagnosis'):
+<pre><code class="language-js">episode.recordEditor.newItem('diagnosis'):
 // -&gt; Opens a modal with the diagnosis form and will create a new diagnosis on save
 </code></pre>
-
 <h4 id="episoderecordeditoredititemname-item">Episode.recordEditor.editItem(name, item)</h4>
 <p>Open a modal from which the user may edit the item of type <code>name</code>.</p>
 <p>It takes the optional argument of <code>url</code> which is the url of the template to be opened. This defaults
 to the modal form template for the subrecord of <code>name</code>.</p>
-<pre><code class="js">episode.recordEditor.editItem('diagnosis', 0);
+<pre><code class="language-js">episode.recordEditor.editItem('diagnosis', 0);
 // -&gt; Opens a modal that allows the user to edit the first diagnosis
 </code></pre></div>
         </div>

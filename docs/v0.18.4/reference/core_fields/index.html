@@ -123,10 +123,6 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="guides/plugins_list/">Plugin List</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
                 <!--             <a href="guides/datamodel/">Data Model</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -435,27 +431,25 @@ with fields, as well as custom Opal field definitions.</p>
 <p>A helper function that returns true if a field is numeric. For our
 purposes, Integers, Decimals, BigIntegers, Floats and Positive Integers
 are considered numeric.</p>
-<pre><code class="python">is_numeric(models.IntegerField())
+<pre><code class="language-python">is_numeric(models.IntegerField())
 # -&gt; True
 </code></pre>
-
 <h2 id="enum">enum</h2>
 <p>A helper function that returns a Django choices definition from star args.</p>
-<pre><code class="Python">enum('one', '2', 'III')
+<pre><code class="language-Python">enum('one', '2', 'III')
 # -&gt; (
 #     ('one', 'one'),
 #     ('2', '2'),
 #     ('III', 'III')
 #    )
 </code></pre>
-
 <h2 id="foreignkeyorfreetext">ForeignKeyOrFreeText</h2>
 <p>A field that stores it's value as a generic foreign key to an Opal LookupList
 or as the value in a CharField.</p>
 <p>By default this is case insensitive, pass in <code>case_sensitive=True</code> to make
 it case sensitive when matching against lookup lists or synonyms.</p>
 <p>e.g.</p>
-<pre><code class="python">class Duck(object):
+<pre><code class="language-python">class Duck(object):
   name = ForeignKeyOrFreeText(Name)
   show = ForiegnKeyOrFreeText(Show, case_sensitive=True)
 

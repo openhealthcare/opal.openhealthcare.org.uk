@@ -469,7 +469,7 @@ or inferred by passing models to the <code>steps</code> attribute of your pathwa
 <p>In the simplest case a pathway re-uses the forms for a sequence of subrecords, and we would
 create one by subclassing <code>opal.core.pathway.PagePathway</code> in a file called
 <code>{{ your app }}/pathways.py</code> like so:</p>
-<pre><code class="python">from opal.core import pathway
+<pre><code class="language-python">from opal.core import pathway
 from myapp import models
 
 class SimplePathway(pathway.PagePathway):
@@ -480,37 +480,33 @@ class SimplePathway(pathway.PagePathway):
         models.PastMedicalHistory
     )
 </code></pre>
-
 <p>This will give you form at <code>http://localhost:8000/pathway/#/simples</code> that
 lets the user create a patient with their demographics and past medical history</p>
 <h2 id="customising-steps">Customising Steps</h2>
 <p>When passed a model, a step will infer the details of form templates, display names et
 cetera from the subrecord. However a model is not required - you can also pass arbitrary
 chunks of html with the two required fields:</p>
-<pre><code class="python">Step(
+<pre><code class="language-python">Step(
   template=&quot;pathway/steps/my_step.html&quot;
   display_name=&quot;My Display Only Step&quot;
 )
 </code></pre>
-
 <p>Alternatively, you can override any fields that it would usually take from the model.
 The below example, will override the template and not just use the Demographics form template.</p>
-<pre><code class="python">Step(
+<pre><code class="language-python">Step(
   template=&quot;pathway/steps/my_step.html&quot;
   model=Demographics
 )
 </code></pre>
-
 <p>The <code>Step.base_template</code> wraps the form template for each step.</p>
 <p>By default this is a bootstrap panel,
 with the step display name and step icon in the header and the form template in the panel body.</p>
 <p>You can override this by overriding the <code>base_template</code>.</p>
-<pre><code class="python">Step(
+<pre><code class="language-python">Step(
   base_template=&quot;pathway/steps/addicted_to_base.html&quot;
   model=Demographics
 )
 </code></pre>
-
 <p>If you want to add any custom save logic for your step, you can put in a <code>pre_save</code> method.
 This is passed the full data dictionary that has been received from the client and the patient
 and episode that the pathways been saved for, if they exist (If you're saving a pathway for a
@@ -532,7 +528,7 @@ a multiple section that allows the user to add one or more models.</p>
 <p>By default, any subrecords that are deleted, or are not included in the data sent back
 to the server are deleted.</p>
 <p>If you don't wish this to happen, pass <code>delete_others=False</code> to the Step.</p>
-<pre><code class="python">from opal.core import pathway
+<pre><code class="language-python">from opal.core import pathway
 from myapp import models
 
 class SimplePathway(pathway.Pathway):
@@ -544,13 +540,12 @@ class SimplePathway(pathway.Pathway):
         models.PastMedicalHistory
     )
 </code></pre>
-
 <p>In this case, the pathway will delete any existing instances of the given Subrecord Model that
 are not sent back to the API in the JSON data.</p>
 <h2 id="complex-steps">Complex Steps</h2>
 <p>If we want to save multiple types of subrecords at the same step, we can do that by including the
 relevant form templates in a custom step template.</p>
-<pre><code class="python">from opal.core import pathway
+<pre><code class="language-python">from opal.core import pathway
 from myapp import models
 
 class SimplePathway(pathway.Pathway):
@@ -564,15 +559,13 @@ class SimplePathway(pathway.Pathway):
             ),
     )
 </code></pre>
-
 <p>The display name and icon are rendered in the header for this step in your pathway, which
 exist outside the scope of the step template itself. Then all we would need is the template
 itself:</p>
-<pre><code class="html">&lt;!-- pathways/demographics_and_diagnosis_step.html --&gt;
+<pre><code class="language-html">&lt;!-- pathways/demographics_and_diagnosis_step.html --&gt;
 {% include models.Demographics.get_form_template %}
 {% include models.Diagnosis.get_form_template %}
 </code></pre>
-
 <blockquote><small>
 Pathways created in this way will not add in the model defaults.
 </small></blockquote>
@@ -580,22 +573,20 @@ Pathways created in this way will not add in the model defaults.
 <h2 id="complex-step-logic">Complex step logic</h2>
 <p>Pathway steps can be rendered with a custom controller.
 You can do this by declaring an angular step in your controller.</p>
-<pre><code class="python">steps = (
+<pre><code class="language-python">steps = (
     Step(
         model=MyModel,
         step_controller=&quot;FindPatientCtrl&quot;,
     ),
 )
 </code></pre>
-
 <p>Your javascript controller should then look something like...</p>
-<pre><code class="js">angular.module('opal.controllers').controller('FindPatientCtrl',
+<pre><code class="language-js">angular.module('opal.controllers').controller('FindPatientCtrl',
     function(scope, step, episode) {
     &quot;use strict&quot;;
     // your custom logic
 });
 </code></pre>
-
 <p>oWe can pass in custom controllers to individual steps. Custom
 controllers are sandboxed, they share <code>scope.editing</code> with other scopes but
 nothing else.</p>
@@ -612,16 +603,15 @@ here if required to e.g. add implicit data points not contained in the form.</p>
 <h2 id="complex-steps-with-multiple-instances-per-subrecord">Complex Steps With Multiple Instances Per Subrecord</h2>
 <p>If we need to also save multiple types of the same subrecord e.g. <code>Treatment</code> in this step,
 we simply use the <code>multisave</code> template tag.</p>
-<pre><code class="html">{% load pathways %}
+<pre><code class="language-html">{% load pathways %}
 
 {% include models.Demographics.get_form_template %}
 {% include models.Diagnosis.get_form_template %}
 {% multisave models.Treatment %}
 </code></pre>
-
 <p>Alternatively you may want to create your own multisave step forms, you can use the
 directive <code>multi-save-wrapper</code> for this.</p>
-<pre><code class="html">
+<pre><code class="language-html">
 &lt;div save-multiple-wrapper=&quot;editing.treatment&quot;&gt;
   &lt;div ng-repeat=&quot;editing in model.subrecords&quot;&gt;
     {% input field=&quot;Treatment.drug&quot; %}
@@ -631,7 +621,6 @@ directive <code>multi-save-wrapper</code> for this.</p>
   &lt;button ng-click=&quot;addAnother()&quot;&gt;&lt;/button&gt;
 &lt;/div&gt;
 </code></pre>
-
 <h2 id="validation">Validation</h2>
 <p>If you want to add custom validation, the method <code>StepController.valid(form)</code> is
 called on each step controller.</p>
@@ -647,38 +636,35 @@ for you step class. You can set this with.</p>
 <p>Often, after successfully saving a pathway, we want to redirect the user to a different
 URL - we do this by overriding the <code>redirect_url</code> method on the pathway. For example -
 to create a pathway that always logged the user out after a successful save:</p>
-<pre><code class="python">class LogoutPathway(pathway.Pathway):
+<pre><code class="language-python">class LogoutPathway(pathway.Pathway):
     display_name = 'Logout-O-Matic'
     steps        = (...)
 
     def redirect_url(self, patient):
         return '/accounts/logout/'
 </code></pre>
-
 <h2 id="redirect-mixins">Redirect Mixins</h2>
 <p>By default any full page pathway (ie not a modal) will redirect to the episode
 detail view of that episode.</p>
 <p>If you do not wish this to be the case you can override the redirect_url.</p>
 <p>Pathways comes with the <code>RedirectsToPatientMixin</code>, which redirects to the Patient
 detail view and can be used as follows.</p>
-<pre><code class="python">from opal.core.pathway import RedirectsToPatientMixin
+<pre><code class="language-python">from opal.core.pathway import RedirectsToPatientMixin
 
 class PatientRedirectPathway(pathway.RedirectsToPatientMixin, pathway.PagePathway):
     display_name = 'Redirector example Pathway'
     steps = (...)
 </code></pre>
-
 <h2 id="modal-pathways">Modal Pathways</h2>
 <p>Pathways detect when you're opening a pathway from a modal.</p>
 <p>You can use a different template for your modal pathway by adding a modal_template attribute to your pathway</p>
 <p>Pathways ships with a no footer modal template, the same as the normal modal template but it doesn't display the section at the bottom with the save/cancel button.</p>
 <p>To open a modal pathway in a template you can use the open-pathway directive:</p>
-<pre><code class="html">&lt;a open-pathway=&quot;test_results&quot;&gt;open test results pathway&lt;/a&gt;
+<pre><code class="language-html">&lt;a open-pathway=&quot;test_results&quot;&gt;open test results pathway&lt;/a&gt;
 </code></pre>
-
 <p>The open-pathway directive also includes an optional callback, that is called with the context of the result of the modal.save method, ie episode_id, patient_id and redirect_url.</p>
 <p>By default the pathway is opened with whichever episode is on $scope.episode, you can use pathway-episode to define a different episode.</p>
-<pre><code class="html">&lt;a open-pathway=&quot;test_results&quot;
+<pre><code class="language-html">&lt;a open-pathway=&quot;test_results&quot;
    pathway-episode=&quot;someOtherEpisode&quot;
    pathway-callback=&quot;refreshEpisode(episode_id)&quot;&gt;
    open test results pathway

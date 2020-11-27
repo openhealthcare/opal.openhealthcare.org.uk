@@ -443,12 +443,11 @@ features which can be re-used and subcalssd.</p>
 discoverable. For instance in the following feature, Opal would look in every
 installed app at <code>app/ciao.py</code> for subclasses of <code>Greeting</code>, even if that module
 had not been directly imported already.</p>
-<pre><code class="python">from opal.core import discoverable
+<pre><code class="language-python">from opal.core import discoverable
 
 class Greeting(discoverable.DiscoverableFeature):
   module_name = 'ciao'
 </code></pre>
-
 <h3 id="discoverablefeaturedisplay_name">DiscoverableFeature.display_name</h3>
 <p>The human readable name for an instance of a discoverable. Use this in the UI
 when showing the discoverable to users.</p>
@@ -464,10 +463,9 @@ features. Expected to raise an exception if something is wrong.</p>
 <p>Return the slug for this feature. Defaults to returning the <code>slug</code> property if
 it is set, or running a slugify function on the <code>display_name</code>. If neither is
 set it will raise a ValueError.</p>
-<pre><code class="python">MyFeature.get_slug()
+<pre><code class="language-python">MyFeature.get_slug()
 # -&gt; &quot;my-feature&quot;
 </code></pre>
-
 <h3 id="discoverablefeaturelist">DiscoverableFeature.list()</h3>
 <p>Return a generator that yields all implementations of a discoverable.</p>
 <pre><code>for g in Greeting.list():
@@ -478,16 +476,14 @@ set it will raise a ValueError.</p>
 &quot;Namaste&quot;
 &quot;Salaam&quot;
 </code></pre>
-
 <h3 id="discoverablefeaturefilterkwargs">DiscoverableFeature.filter(**kwargs)</h3>
 <p>Find instances of a feature based on the value of their attributes. You may pass
 attributes of features as keyword arguments. Returns a list of matching features.</p>
-<pre><code class="python">Greeting.filter(module_name='ciao') # Essentially the same as .list()
+<pre><code class="language-python">Greeting.filter(module_name='ciao') # Essentially the same as .list()
 
 Greeting.filter(slug=&quot;bonjour&quot;, display_name=&quot;Bonjour&quot;)
 # -&gt; [BonjourGreeting]
 </code></pre>
-
 <h2 id="sortablefeature">SortableFeature</h2>
 <p>A mixin class that provides ordering for features which will be respected
 by both <code>list()</code> and <code>filter()</code>.</p>
@@ -497,7 +493,7 @@ by both <code>list()</code> and <code>filter()</code>.</p>
 <p><strong> SortableFeature classmethods </strong></p>
 <h3 id="sortablefeaturelist">SortableFeature.list()</h3>
 <p>Returns instances of the feature orderd by <code>.order</code></p>
-<pre><code class="python">class Greeting(discoverable.DiscoverableFeature,
+<pre><code class="language-python">class Greeting(discoverable.DiscoverableFeature,
                discoverable.SortableFeature):
     module_name='ciao'
 
@@ -518,16 +514,14 @@ for f in Greeting.list():
 # &lt;class '*.*.Hello'&gt;, 3
 
 </code></pre>
-
 <h2 id="restrictablefeature">RestrictableFeature</h2>
 <p>A mixin class that provides an interface for restricting access to features based on
 user.</p>
-<pre><code class="python">class Greeting(discoverable.DiscoverableFeature,
+<pre><code class="language-python">class Greeting(discoverable.DiscoverableFeature,
                discoverable.RestrictableFeature):
     module_name='ciao'
 
 </code></pre>
-
 <p><strong> RestrictableFeature classmethods </strong></p>
 <h2 id="restrictablefeaturefor_useruser">RestrictableFeature.for_user(user)</h2>
 <p>Generator method that yields all instances of this discoverable which are visible to
@@ -539,12 +533,11 @@ a given user.</p>
 # &lt;class '*.*.Namaste'&gt;
 # &lt;class '*.*.Hello'&gt;
 </code></pre>
-
 <h2 id="restrictablefeaturevisible_touser">RestrictableFeature.visible_to(user)</h2>
 <p>Predicate function used to determine whehter in individual feature should be visible
 to a given user. Defaults to simply returning True.</p>
 <p>Features may override this to provide restricted access as required.</p>
-<pre><code class="python">Hello.visible_to(user) # -&gt; True
+<pre><code class="language-python">Hello.visible_to(user) # -&gt; True
 </code></pre></div>
         </div>
 

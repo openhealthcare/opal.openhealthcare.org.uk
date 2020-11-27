@@ -318,7 +318,7 @@ class.</p>
 <p>The custom field type <code>opal.core.fields.ForeignKeyOrFreeText</code> allows you to build interfaces
 that cater for synonyms, and also allow the user to enter a free text string that is not in
 the lookup list.</p>
-<pre><code class="python"># yourapp.models
+<pre><code class="language-python"># yourapp.models
 from django.db import models
 from opal.core import lookuplists
 from opal.core.fields import ForeignKeyOrFreeText
@@ -330,13 +330,11 @@ class Treatment(EpisodeSubrecord):
     treatment = ForeignKeyOrFreeText(TreatmentType)
     notes     = models.CharField(max_length=200)
 </code></pre>
-
 <p>When you create your lookup list, you are creating a new model, so you will need a new migration
 to accompany it.</p>
-<pre><code class="bash">$ python manage.py schemamigration --atuo yourapp
+<pre><code class="language-bash">$ python manage.py schemamigration --atuo yourapp
 $ python manage.py migrate yourapp
 </code></pre>
-
 <p>The lookup list will automatically be added to the admin, where you can manually add entries.</p>
 <h3 id="reference-data-json-api">Reference data JSON API</h3>
 <p>Reference data is available over the Opal JSON API.</p>
@@ -347,29 +345,27 @@ canonical form is handled by the save mechanism of subrecords using <code>Foreig
 <h3 id="working-with-reference-data-on-the-front-end">Working with reference data on the front end</h3>
 <p>The Angular service <code>Referencedata</code> can be used to fetch all lookuplists at once - for instance
 loaded in the Angular routing for a controller in your application</p>
-<pre><code class="javascript">when('/my/route', {
+<pre><code class="language-javascript">when('/my/route', {
     controller: 'MyCtrl',
     resolve: {
            referencedata: function(Referencedata){ return Referencedata; }
          }
     }
 </code></pre>
-
 <p>Lookuplists will then be available either as properties of the <code>referencedata</code> object.</p>
 <h3 id="using-referencedata-in-forms">Using referencedata in forms</h3>
 <p>The Opal <a href="../../reference/form_templatetags/">form templatetag library</a> allow us to easily incorporate
 referencedata into the forms we build, eiether by detecting their use automatically when we have
 <code>ForeignKeyOrFreeText</code> fields, or explicitly by passing an argument.</p>
-<pre><code class="html">{% load forms %}
+<pre><code class="language-html">{% load forms %}
 {% input field=&quot;Diagnosis.condition&quot; %}
 {% select label=&quot;List of Conditions&quot; lookuplist=&quot;referencedata.diagnosis&quot; %}
 </code></pre>
-
 <h3 id="providing-data-for-lookuplists">Providing data for lookuplists</h3>
 <p>Reference data can be provided at application or plugin level in a file named <code>lookuplists.json</code> found in the
 <code>{{ app_or_plugin }}/data/lookuplists</code> directory. This data should be in the Opal JSON format. The name value
 of each lookuplist should be the return value of that lookuplist's <code>get_api_name()</code> method.</p>
-<pre><code class="JSON">{
+<pre><code class="language-JSON">{
     &quot;name_of_lookuplist&quot;: [
         {
             &quot;name&quot;: &quot;Value of lookuplist item&quot;,
@@ -379,11 +375,9 @@ of each lookuplist should be the return value of that lookuplist's <code>get_api
     ]
 }
 </code></pre>
-
 <p>Once this data is stored in the lookuplists file, we can batch load it into our application with the command</p>
-<pre><code class="bash">python manage.py load_lookup_lists
+<pre><code class="language-bash">python manage.py load_lookup_lists
 </code></pre>
-
 <h3 id="management-commands">Management commands</h3>
 <p>Opal ships with some managemnent commands for importing and exporting lookup lists</p>
 <h4 id="dump_lookup_lists">dump_lookup_lists</h4>

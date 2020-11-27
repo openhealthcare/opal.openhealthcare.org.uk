@@ -445,28 +445,24 @@
 <ul>
 <li><code>--number</code> - The number of patients to create. Defaults to 100.</li>
 </ul>
-<pre><code class="bash">python manage.py create_random_data --number 3000
+<pre><code class="language-bash">python manage.py create_random_data --number 3000
 </code></pre>
-
 <h2 id="create_singletons">create_singletons</h2>
 <p>Creates any subrecord singletons which are missing. This is useful when
 creating a new singleton subrecord to backfill existing patients or episodes.</p>
 <p>Will not create anything if singletons exist, so safe to be run as part of e.g. a
 deployment script.</p>
-<pre><code class="bash">python manage.py create_singletons
+<pre><code class="language-bash">python manage.py create_singletons
 </code></pre>
-
 <h2 id="delete_all_lookuplists">delete_all_lookuplists</h2>
 <p>Deletes all instances of lookuplist and synonym entries.</p>
-<pre><code class="bash">python manage.py delete_all_lookuplists
+<pre><code class="language-bash">python manage.py delete_all_lookuplists
 </code></pre>
-
 <h2 id="detect_duplicates">detect_duplicates</h2>
 <p>Examines patients in the system and looks for possible duplicates. Prints a report
 of patients with matching names, dates of birth or hospital numbers.</p>
-<pre><code class="bash">python manage.py detect_duplicates
+<pre><code class="language-bash">python manage.py detect_duplicates
 </code></pre>
-
 <h2 id="dump_lookup_lists">dump_lookup_lists</h2>
 <p><em>Arguments</em>:</p>
 <ul>
@@ -474,9 +470,8 @@ of patients with matching names, dates of birth or hospital numbers.</p>
 </ul>
 <p>Prints current lookuplist and synonym values as JSON to stdout. Suitable to be used
 as the input to <code>load_lookup_lists</code></p>
-<pre><code class="bash">python manage.py dump_lookup_lists
+<pre><code class="language-bash">python manage.py dump_lookup_lists
 </code></pre>
-
 <h2 id="load_lookup_lists">load_lookup_lists</h2>
 <p>Load lookuplists and synonym values.</p>
 <p><em>Arguments</em>:</p>
@@ -486,9 +481,8 @@ as the input to <code>load_lookup_lists</code></p>
 <p>By default this command will look in <code>./yourapp/data/lookuplists.json</code> as well as in
 <code>./yourapp/data/</code> for any files with a name matching the API name of a lookuplist
 (e.g. <code>./yourapp/data/conditions.json</code>)</p>
-<pre><code class="bash">python manage.py load_lookup_lists
+<pre><code class="language-bash">python manage.py load_lookup_lists
 </code></pre>
-
 <h2 id="serve-addrport">serve &lt;addrport&gt;</h2>
 <p>Run the development server.</p>
 <p>By default this will start a web server on <code>localhost:8000</code>. Users may specify either
@@ -497,7 +491,6 @@ a port or an addr port pair to change this.</p>
 opal serve 7798 # server on localhost:7798
 opal serve 0.0.0.0:8080 # server on 0.0.0.0:8080
 </code></pre>
-
 <h3 id="scaffold-appname">scaffold &lt;appname&gt;</h3>
 <p>Use with new record models.</p>
 <p>Creates and runs automatic migrations, creates display and form (modal) templates.</p>

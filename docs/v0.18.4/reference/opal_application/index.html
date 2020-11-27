@@ -123,10 +123,6 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="guides/plugins_list/">Plugin List</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
                 <!--             <a href="guides/datamodel/">Data Model</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -449,36 +445,32 @@ This allows you to add to the dependencies of the default opal application.</p>
 <h4 id="opalapplicationjavascripts">OpalApplication.javascripts</h4>
 <p>A list of javascripts that our application would like to include. These should be strings
 representing paths ready for staticfiles. Defaults to <code>[]</code>.</p>
-<pre><code class="python">class MyApplication(OpalApplication):
+<pre><code class="language-python">class MyApplication(OpalApplication):
     javascripts = ['js/one.js']
 </code></pre>
-
 <h4 id="opalapplicationmenuitems">OpalApplication.menuitems</h4>
 <p>A list of items to add to the top level menu</p>
 <h4 id="opalapplicationstyles">OpalApplication.styles</h4>
 <p>A list of stylesheets that our application would like to include. These should be strings
 representing paths ready for staticfiles. Defaults to <code>[]</code>. These styles are included after
 the default Opal styles.</p>
-<pre><code class="python">class MyApplication(OpalApplication):
+<pre><code class="language-python">class MyApplication(OpalApplication):
     styles = ['css/app.css']
 </code></pre>
-
 <h3 id="classmethods">Classmethods</h3>
 <p>Classmethod API for OpalApplication instances:</p>
 <h4 id="opalapplicationget_core_javascriptsnamespace">OpalApplication.get_core_javascripts(namespace)</h4>
 <p>Return a list of the core javascript files specified within a given namespace. These will be
 relative paths ready for staticfiles.</p>
-<pre><code class="python">application.get_core_javascripts('opal.utils')
+<pre><code class="language-python">application.get_core_javascripts('opal.utils')
 # -&gt; ['js/opal/utils.js', ...]
 </code></pre>
-
 <h4 id="opalapplicationget_javascripts">OpalApplication.get_javascripts()</h4>
 <p>Return a list of the application's javascripts as paths to them ready for staticfiles.
 Defaults to returning the <code>OpalApplication.javascripts</code> property.</p>
-<pre><code class="python">application.get_javascripts()
+<pre><code class="language-python">application.get_javascripts()
 # -&gt; ['js/one.js', 'js/two.js', ...]
 </code></pre>
-
 <h4 id="opalapplicationdirectory">OpalApplication.directory</h4>
 <p>Returns the file system location of the module.</p>
 <h4 id="opalapplicationget_menu_itemsusernone">OpalApplication.get_menu_items(user=None)</h4>
@@ -487,7 +479,7 @@ user.</p>
 <h4 id="opalapplicationget_styles">OpalApplication.get_styles()</h4>
 <p>Return a list of the application's stylesheets as paths to them ready for staticfiles.
 Defaults to returning the contents of <code>OpalApplication.styles</code>.</p>
-<pre><code class="python">application.get_styles()
+<pre><code class="language-python">application.get_styles()
 # -&gt; ['css/app.css', ...]
 </code></pre></div>
         </div>

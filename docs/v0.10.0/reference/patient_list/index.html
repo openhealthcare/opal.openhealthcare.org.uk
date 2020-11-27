@@ -407,12 +407,11 @@ Further information on Comparators can be found in the <a href="../../guides/lis
 <p>Further information is available in the <a href="../../guides/list_views/#slug">Guides section</a>.</p>
 <h4 id="patientlisttemplate_name">PatientList.template_name</h4>
 <p>If you want to over-ride the default Patient List template <code>opal/templates/patient_list/spreadsheet.html</code> with a custom template, or set the Card or Table PatientList templates, you can specify the path of the custom template (relative to <code>/myapp/templates/</code>) in this property.</p>
-<pre><code class="python"># myapp/patient_lists.py
+<pre><code class="language-python"># myapp/patient_lists.py
 
 class MyPatientList(PatientList):
     template_name = 'my_layout.html'
 </code></pre>
-
 <p>Will look for a template at <code>/myapp/templates/my_layout.html</code>.</p>
 <h4 id="patientlistvisible_to">PatientList.visible_to</h4>
 <p>Further information is available in the <a href="../../guides/list_views/#access-control">Guides section</a>.</p>

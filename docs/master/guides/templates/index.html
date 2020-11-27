@@ -123,10 +123,6 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="guides/plugins_list/">Plugin List</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
                 <!--             <a href="guides/datamodel/">Data Model</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -392,8 +388,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.18.3" target="_blank">
-                  <i class="fa fa-github"></i> v0.18.3
+                <a href="https://github.com/openhealthcare/opal/tree/v0.20.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.20.0
                 </a>
               </li>
                 <!-- <li class="disabled"> -->
@@ -437,7 +433,7 @@ interpolation, we use the <code>[[ ... ]]</code> notation for Angular interpolat
 the {{ ... }} syntax for Django interpolation, which allows us to include
 Django template interpolation in templates designed to be rendered by Angular on
 the client side.</p>
-<pre><code class="html">&lt;!-- app_details_snippet.html --&gt;
+<pre><code class="language-html">&lt;!-- app_details_snippet.html --&gt;
 
 &lt;!-- Django interpolation uses {{ ... }} --&gt;
 {{ OPAL_BRAND_NAME }}
@@ -445,16 +441,14 @@ the client side.</p>
 &lt;!-- Angular interpolation uses [[ ... ]] --&gt;
 [[ OPAL_BRAND_NAME ]]
 </code></pre>
-
 <h3 id="generic-template-url">Generic Template URL</h3>
 <p>On many occasions we want to fetch a template from the server in our Angular code
 without any further processing. Opal provides a default catchall HTML template url which
 will render .html files direct from disk.</p>
-<pre><code class="python"># opal.urls
+<pre><code class="language-python"># opal.urls
 
 url(r'templates/(?P&lt;template_name&gt;[a-z_/]+.html)', views.RawTemplateView.as_view())
 </code></pre>
-
 <p>So if our template is at <code>./myapp/templates/foo/bar.html</code>, then the url
 <code>/templates/foo/bar.html</code> will return it.</p>
 <h3 id="overriding-opal-templates">Overriding Opal templates</h3>
@@ -474,7 +468,6 @@ model, you create a new template:</p>
         forms/
             demographic_form.html
 </code></pre>
-
 <h4 id="how-do-i-know-which-template-i-need-to-override">How do I know which template I need to override?</h4>
 <p>You will need to look at the templates in the Opal source
 code and work out which one is being used.</p>

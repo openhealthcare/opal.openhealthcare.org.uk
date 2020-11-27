@@ -123,10 +123,6 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="guides/plugins_list/">Plugin List</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
                 <!--             <a href="guides/datamodel/">Data Model</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -417,7 +413,22 @@
   <h3>Contents</h3>
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#0183-minor-release">0.18.3 (Minor Release)</a></li>
+        <li class="main active"><a href="#0184-minor-release">0.18.4 (Minor Release)</a></li>
+        
+            <li><a href="#some-models-have-translations">Some models have translations</a></li>
+        
+            <li><a href="#patientlistctrlrefresh-and-patientdetailctrlrefresh-return-promises">PatientListCtrl.refresh and PatientDetailCtrl.refresh return promises</a></li>
+        
+            <li><a href="#removes-scroll-to-top">Removes scroll to top</a></li>
+        
+            <li><a href="#remove-shortdate-and-shortdatetime">Remove shortDate and shortDateTime</a></li>
+        
+            <li><a href="#stop-an-index-being-passed-to-recordeditoredititem">Stop an index being passed to recordEditor.editItem</a></li>
+        
+            <li><a href="#removes-the-account-page">Removes the account page</a></li>
+        
+    
+        <li class="main "><a href="#0183-minor-release">0.18.3 (Minor Release)</a></li>
         
             <li><a href="#complex-objects-are-now-serialized-in-the-extract-as-json">Complex objects are now serialized in the extract as json</a></li>
         
@@ -833,7 +844,21 @@
     
     </ul>
 </div></div>
-            <div class="col-md-9" role="main"><h3 id="0183-minor-release">0.18.3 (Minor Release)</h3>
+            <div class="col-md-9" role="main"><h3 id="0184-minor-release">0.18.4 (Minor Release)</h3>
+<h4 id="some-models-have-translations">Some models have translations</h4>
+<p>Episodes/Patients/Demographics now use use gettext_lazy on all their fields</p>
+<h4 id="patientlistctrlrefresh-and-patientdetailctrlrefresh-return-promises">PatientListCtrl.refresh and PatientDetailCtrl.refresh return promises</h4>
+<p>PatientListCtrl.refresh and PatientDetailCtrl.refresh now return a promise which resolves after the refresh is complete.</p>
+<h4 id="removes-scroll-to-top">Removes scroll to top</h4>
+<p>Removes the directory <code>scrolllto-top</code> as this is not commonly used. <code>go-to-top</code> is directive that is a a drop in replacement that will take the user up to the top of the page but without scrolling.</p>
+<h4 id="remove-shortdate-and-shortdatetime">Remove shortDate and shortDateTime</h4>
+<p>The angular filters shortDate and shortDateTime have been deprecated for some time.</p>
+<h4 id="stop-an-index-being-passed-to-recordeditoredititem">Stop an index being passed to recordEditor.editItem</h4>
+<p>recordEditor.editItem used to take either a number or an item (subrecord) as its second argument.
+Now it will only take an item.</p>
+<h4 id="removes-the-account-page">Removes the account page</h4>
+<p>Removes the user account detail page as this is not tested/used and can be easily created within an app.</p>
+<h3 id="0183-minor-release">0.18.3 (Minor Release)</h3>
 <h4 id="complex-objects-are-now-serialized-in-the-extract-as-json">Complex objects are now serialized in the extract as json</h4>
 <p>If you have a dictionary, or a list of dictionaries returned by Subrecord.to_dict, these will now be serialized into
 the dictionary as json, rather than str(dict)</p>
@@ -1457,18 +1482,16 @@ Item instance for a new subrecord. This should greatly reduce the need to use cu
 <h4 id="choices-in-form-templatetags">Choices in form templatetags</h4>
 <p>Template tags that use the 'field' attribute to point to a subrecord field will now infer a lookup list from the Choices of the field if it exists.</p>
 <p>Note unlike the traditional choices implementation only the last value of the choices is used and saved to the database</p>
-<pre><code class="python">  Colours = (
+<pre><code class="language-python">  Colours = (
     ('P', 'Purple'),
     ('R', 'Red'),
   )
 </code></pre>
-
 <p>What is displayed to the user and saved to the database is 'Purple' or 'Red' respectively.</p>
 <h4 id="element-name-in-template-tags">element name in template tags</h4>
 <p>The html attribute 'name' for form elements generated with the Opal <code>{% forms %}</code> templatetag library used to be inferred from the model name. Although this remains the default you can also set it with an angular expression:</p>
-<pre><code class="html">{% select field=&quot;Demographics.first_name&quot; element_name=&quot;...Your Angular expression...&quot; %}
+<pre><code class="language-html">{% select field=&quot;Demographics.first_name&quot; element_name=&quot;...Your Angular expression...&quot; %}
 </code></pre>
-
 <h4 id="model-removals">Model removals</h4>
 <p>The models <code>Team</code>, <code>GP</code>, <code>CommunityNurse</code> and <code>LocatedModel</code> - marked for removal since 0.6.0
 have now been removed.</p>
@@ -1503,9 +1526,8 @@ opal.core.api.LoginRequiredViewset, a standard DRF viewset that requires the use
 <h4 id="form-validation">Form Validation</h4>
 <p>Adds the checkForm directive</p>
 <p>e.g.</p>
-<pre><code class="html">&lt;button check-form=&quot;form&quot; ng-click=&quot;sendDataToTheServer&quot;&gt;click me&lt;/button&gt;
+<pre><code class="language-html">&lt;button check-form=&quot;form&quot; ng-click=&quot;sendDataToTheServer&quot;&gt;click me&lt;/button&gt;
 </code></pre>
-
 <p>This adds default form submission behaviour to the a button. It will check if the form is valid, and if its not it will mark the button as disabled until it becomes valid.</p>
 <p>It will also set the form as submitted.</p>
 <p>We also now show the required error if the form has been submitted or if the field is dirty, so that the user doesn't get an ugly "fill this field in now" message when opening the modal/pathway but will get the error after they click submit.</p>

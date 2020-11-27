@@ -404,7 +404,7 @@ subclass of <code>opal.core.episodes.EpisodeCategory</code> - such as <code>Inpa
 <p>You can access the current category of an episode via the <code>category</code> property, while
 it is represented in the database in the field <code>category_name</code> which will contain
 the <code>display_name</code> attribute of the relevant category.</p>
-<pre><code class="python">episode = patient.episode_set.first()
+<pre><code class="language-python">episode = patient.episode_set.first()
 print episode.category
 # &lt;opal.core.episode.InpatientEpisode object&gt;
 
@@ -414,27 +414,24 @@ print episode.category.display_name
 print episode.category_name
 # &quot;Inpatient&quot;
 </code></pre>
-
 <h2 id="detail-templates">Detail templates</h2>
 <p>The category of an episode determines which template will be used to display it
 on the detail page for the patient. This template is determined by looking up
 the <code>detail_template</code> attribute of the <code>EpisodeCategory</code>.</p>
-<pre><code class="python">episode.category
+<pre><code class="language-python">episode.category
 print episode.category
 # &lt;opal.core.episode.InpatientEpisode object&gt;
 
 print episode.category.detail_template
 # detail/inpatient.html
 </code></pre>
-
 <h2 id="default-category">Default Category</h2>
 <p>The default category of episodes in an Opal application is set by the
 <a href="../reference/opal_application">OpalApplication</a> object's default_episode_category
 property.</p>
-<pre><code class="python">class Application(application.OpalApplication):
+<pre><code class="language-python">class Application(application.OpalApplication):
     default_episode_category = MyCategory.display_name
 </code></pre>
-
 <h2 id="episode-stages">Episode stages</h2>
 <p>An Episode will frequently consist of a number of possible stages. For instance,
 for an inpatient episode, a patient will first be an inpatient, and then an
@@ -449,13 +446,12 @@ discharged but requrie further follow up.</p>
 episode.category.has_stage('Followup')
 # True
 </code></pre>
-
 <h2 id="defining-your-own-episodecategory">Defining your own EpisodeCategory</h2>
 <p>As EpisodeCategory is a <a href="discoverable">discoverable</a> we can define our own to
 meet custom requirements.</p>
 <p>Episode categories should be defined in a file named <code>episode_categories</code> of
 your application or plugin.</p>
-<pre><code class="python"># yourapp/episode_categories.py
+<pre><code class="language-python"># yourapp/episode_categories.py
 
 from opal.core import episodes
 

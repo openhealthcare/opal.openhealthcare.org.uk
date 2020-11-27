@@ -367,7 +367,7 @@ patient details</p>
 <h3 id="defining-metadata">Defining Metadata</h3>
 <p>Defining metadata uses the same pattern as all <a href="../discoverable/">discoverable</a> features, we
 define a subclass:</p>
-<pre><code class="python">from django.conf import settings
+<pre><code class="language-python">from django.conf import settings
 from opal.core import metadata
 
 class FavouriteColours(metadata.Metadata):
@@ -377,11 +377,10 @@ class FavouriteColours(metadata.Metadata):
     def to_dict(klass, **kwargs):
         return {'favourite_colour': settings.FAVOURITE_COLOUR}
 </code></pre>
-
 <p>The to_dict method will be passed the current user as a keyword argument.</p>
 <h3 id="accessing-metadata-on-the-front-end">Accessing Metadata on the front end</h3>
 <p>We can access our metadata with the Angular <code>Metadata</code> service.</p>
-<pre><code class="javascript">// yourapp/routes.js
+<pre><code class="language-javascript">// yourapp/routes.js
 when('/my/route', {
     controller: 'MyCtrl',
     resolve: {

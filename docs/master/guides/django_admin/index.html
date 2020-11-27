@@ -123,10 +123,6 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="guides/plugins_list/">Plugin List</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
                 <!--             <a href="guides/datamodel/">Data Model</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -392,8 +388,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.18.3" target="_blank">
-                  <i class="fa fa-github"></i> v0.18.3
+                <a href="https://github.com/openhealthcare/opal/tree/v0.20.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.20.0
                 </a>
               </li>
                 <!-- <li class="disabled"> -->
@@ -434,7 +430,7 @@ Django Admin for you.</p>
 <h2 id="customising-the-admin">Customising the Admin</h2>
 <p>If you need to customise the admin for a particular subrecord you will need to 'unregister' the
 admin class that Opal has registered it with.</p>
-<pre><code class="python"># myapp/admin.py
+<pre><code class="language-python"># myapp/admin.py
 from django.contrib import admin
 from opal.admin import EpisodeSubrecordAdmin
 from myapp import models
@@ -446,7 +442,6 @@ class DiagnosisAdmin(EpisodeSubrecordAdmin):
 
 admin.site.register(models.Diagnosis, DiagnosisAdmin)
 </code></pre>
-
 <p>It is strongly suggested that any custom Admin implementation inherits from the Django
 Reversion <code>ReversionAdmin</code> base class. It is through this registering step that our automatic
 audit trail is enabled for a particular model.</p>

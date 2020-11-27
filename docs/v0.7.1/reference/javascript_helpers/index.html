@@ -290,14 +290,12 @@ the url for the template, the size of the modal window (either 'sm' or 'lg').</p
 <p>Creates a multi select box where users can remove or add tags. Only tags set as <code>direct_add</code> tags can be set here.
 This property is set on individual <code>PatientList</code> subclasses, and passed to the front end with the <code>Metadata</code> service.</p>
 <p>We set the Angular model to be a copy of an episode's tagging.</p>
-<pre><code class="js">$scope.editing.tagging = episode.tagging[0].makeCopy();
+<pre><code class="language-js">$scope.editing.tagging = episode.tagging[0].makeCopy();
 </code></pre>
-
 <p>We can instantiate the tag-select widget in our markup as follows.</p>
-<pre><code class="html">&lt;div tag-select ng-model=&quot;editing.tagging&quot; metadata=&quot;metadata&quot; class=&quot;col-sm-8&quot;&gt;
+<pre><code class="language-html">&lt;div tag-select ng-model=&quot;editing.tagging&quot; metadata=&quot;metadata&quot; class=&quot;col-sm-8&quot;&gt;
 &lt;/div&gt;
 </code></pre>
-
 <p>Note: this directive will load the <code>Metadata</code> service over HTTP if it has not been loaded already.</p>
 <h4 id="one-click-only">one-click-only</h4>
 <p>A directive that if set with no arguments, or set to true, will only allow a button to be

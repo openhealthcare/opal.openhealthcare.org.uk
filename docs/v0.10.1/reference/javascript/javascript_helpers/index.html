@@ -399,14 +399,12 @@ parsing. It assumes no one is born in the future or is over 150 years old.</p>
 This property is set on individual <code>PatientList</code> subclasses, and passed to the front
 end with the <code>Metadata</code> service.</p>
 <p>We set the Angular model to be a copy of an episode's tagging.</p>
-<pre><code class="js">$scope.editing.tagging = episode.tagging[0].makeCopy();
+<pre><code class="language-js">$scope.editing.tagging = episode.tagging[0].makeCopy();
 </code></pre>
-
 <p>We can instantiate the tag-select widget in our markup as follows.</p>
-<pre><code class="html">&lt;div tag-select ng-model=&quot;editing.tagging&quot; metadata=&quot;metadata&quot; class=&quot;col-sm-8&quot;&gt;
+<pre><code class="language-html">&lt;div tag-select ng-model=&quot;editing.tagging&quot; metadata=&quot;metadata&quot; class=&quot;col-sm-8&quot;&gt;
 &lt;/div&gt;
 </code></pre>
-
 <p>Note: this directive will load the <code>Metadata</code> service over HTTP if it has not been loaded already.</p>
 <h4 id="one-click-only">one-click-only</h4>
 <p>A directive that if set with no arguments, or set to true, will only allow a button to be
@@ -415,9 +413,8 @@ accidentally triggered.</p>
 <h4 id="check-form">check-form</h4>
 <p>Similar to one click only but it takes the form in use as an argument</p>
 <p>e.g.</p>
-<pre><code class="html">&lt;button check-form=&quot;form&quot; ng-click=&quot;sendDataToTheServer&quot;&gt;click me&lt;/button&gt;
+<pre><code class="language-html">&lt;button check-form=&quot;form&quot; ng-click=&quot;sendDataToTheServer&quot;&gt;click me&lt;/button&gt;
 </code></pre>
-
 <p>This checks the form for valid on click.</p>
 <p>If the form is then not valid. It will not call the second function, but mark the form as submitted and disable the button.</p>
 <p>It will watch for the form to become valid and enable the button when that happens.</p>
@@ -430,28 +427,25 @@ form.$submitted variable.</p>
 <p>Similar to scroll-top, this moves the scroll bar to the top of the page but doesn't animate the transition.</p>
 <h4 id="copy-to-clipboard">copy to clipboard</h4>
 <h5 id="eg">e.g.</h5>
-<pre><code class="html">&lt;button clipboard data-clipboard-target=&quot;#content-to-copy&quot;&gt;
+<pre><code class="language-html">&lt;button clipboard data-clipboard-target=&quot;#content-to-copy&quot;&gt;
 Copy to Clipboard
 &lt;/button&gt;
 </code></pre>
-
 <p>This is a wrapper around clipboard.js, it lets the user copy text from an element that matches the selector you pass it. It will present a growl message saying that the text has been
 copied.</p>
 <h4 id="fullnameforuser">fullNameForUser</h4>
 <p>Given a User ID, inserts the full name of a user into the element the directive is on</p>
-<pre><code class="html">&lt;span full-name-for-user=&quot;2&quot;&gt;&lt;/span&gt;
+<pre><code class="language-html">&lt;span full-name-for-user=&quot;2&quot;&gt;&lt;/span&gt;
 &lt;!-- Becomes --&gt;
 &lt;span&gt;Jane Doe&lt;/span&gt;
 </code></pre>
-
 <h4 id="avatarforuser">avatarForUser</h4>
 <p>Intended for use on an <code>img</code> tag, given a User ID, sets the src attribute to the correct
 avatar URL.</p>
-<pre><code class="html">&lt;img avatar-for-user=&quot;1&quot; /&gt;
+<pre><code class="language-html">&lt;img avatar-for-user=&quot;1&quot; /&gt;
 &lt;!-- Becomes --&gt;
 &lt;img src=&quot;http://gravatar.com.....&quot; /&gt;
 </code></pre>
-
 <h3 id="angular-filters">Angular Filters</h3>
 <p>Opal provides some built-in Angular filters for your project to use.</p>
 <h4 id="age">Age</h4>
@@ -478,10 +472,9 @@ avatar URL.</p>
 <p>Converts a string to upper case</p>
 <h4 id="underscore-to-spaces">underscore-to-spaces</h4>
 <p>Converts strings with underscores (e.g. variable names etc) to words with spaces.</p>
-<pre><code class="html">[[ 'some_underscore_string' | underscore-to-spaces ]]
+<pre><code class="language-html">[[ 'some_underscore_string' | underscore-to-spaces ]]
 -&gt;&gt; some underscore string
 </code></pre>
-
 <h3 id="angular-http-interceptors">Angular HTTP Interceptors</h3>
 <p>Opal uses opal.services.LogoutInterceptor to intercept all failed responses from the server. If they're a 401 or a 403 we redirect the user to the login page, otherwise it passes them through.</p></div>
         </div>

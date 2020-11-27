@@ -431,16 +431,15 @@
 <h2 id="find_template-template_list">find_template( template_list )</h2>
 <p>Given an iterable of template paths, return the first one that
 exists on our template path or None.</p>
-<pre><code class="python">find_template(['not_a_real_template.html'])
+<pre><code class="language-python">find_template(['not_a_real_template.html'])
 None
 </code></pre>
-
 <h2 id="write-what">write( what )</h2>
 <p>Writes the argument to <code>sys.stdout</code> unless it detects an active test run.
 If run during tests, it should do nothing.</p>
 <p>Used by Opal for chatty commandline utilities that should be quieter during
 test runs.</p>
-<pre><code class="python">&gt;&gt;&gt; write('hai')
+<pre><code class="language-python">&gt;&gt;&gt; write('hai')
 hai
 </code></pre></div>
         </div>

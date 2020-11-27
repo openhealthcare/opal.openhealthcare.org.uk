@@ -305,7 +305,7 @@
 <li>icon: the icon class of this Subrecord if it exists</li>
 <li>angular_service: an Angular service used to initialize the <code>Item</code> in the Opal client side application.</li>
 </ul>
-<pre><code class="python">
+<pre><code class="language-python">
   class Colour(models.EpisodeSubrecord):
       _advanced_searchable = False
       _exclude_from_extract = True
@@ -328,7 +328,6 @@
    }
 
 </code></pre>
-
 <h3 id="subrecord-field-information">Subrecord Field information</h3>
 <p>Opal makes the most out of the rich Django model interface by delivering much of the derivable metadata about the structure of fields straight from the model.</p>
 <ul>
@@ -339,7 +338,7 @@
 <li>type: The type of field. Allows us to correctly cast fields into moments on the front end.</li>
 <li>name: the api name for the field</li>
 </ul>
-<pre><code class="python">class Birthday(models.PatientSubrecord):
+<pre><code class="language-python">class Birthday(models.PatientSubrecord):
     party = dmodels.DateTimeField(verbose_name=&quot;Party Time!&quot; blank=True)
     name = dmodels.CharField(default='Dave', blank=True, null=True)
 

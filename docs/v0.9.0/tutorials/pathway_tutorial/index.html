@@ -373,18 +373,17 @@ often want to also set a slug.</p>
 model forms on the same page, and a wizard pathway, a bunch of steps where the next step is
 only revealed after the step before it has been completed.</p>
 <p>Let's look at a page pathway definition.</p>
-<pre><code class="python"># yourapp/pathways.py
+<pre><code class="language-python"># yourapp/pathways.py
 from opal.core import pathway
 
 class MyPathway(pathway.PagePathway):
     display_name = 'My Awesome Pathway'
     slug         = 'awesomest-pathway'
 </code></pre>
-
 <h3 id="taking-our-first-steps">Taking Our First Steps</h3>
 <p>A Pathway should have at least one <code>Step</code> - a section within the form.</p>
 <p><code>Steps</code> are defined on the pathway class using the <code>Pathway.steps</code> tuple.</p>
-<pre><code class="python">from opal.core import pathway
+<pre><code class="language-python">from opal.core import pathway
 from myapp import models
 
 class SimplePathway(pathway.PagePathway):
@@ -393,13 +392,12 @@ class SimplePathway(pathway.PagePathway):
         pathways.Step(model=models.PastMedicalHistory)
     )
 </code></pre>
-
 <h3 id="model-steps">Model Steps</h3>
 <p>A common case is for steps to be simply a single Opal <code>Subrecord</code> using the subrecord form template.</p>
 <p>In fact we can simply add Opal <code>Subrecords</code> to the <code>steps</code> tuple to achieve the same effect.</p>
 <p>For instance, to create a pathway with three steps to record a
 patient's allergies, treatment and past medical history, we could use the following:</p>
-<pre><code class="python">from opal.core import pathway
+<pre><code class="language-python">from opal.core import pathway
 from myapp import models
 
 class SimplePathway(pathway.PagePathway):
@@ -411,7 +409,6 @@ class SimplePathway(pathway.PagePathway):
         models.PastMedicalHistory
     )
 </code></pre>
-
 <p>Pathways is smart enough to provide a single form step pathway if the model is a model or a pathway that allows a user to edit/add/remove multiple models if its not.</p>
 <h3 id="viewing-the-pathway">Viewing The Pathway</h3>
 <p>This pathway is then available from e.g. <code>http://localhost:8000/pathway/#/simples</code>.</p></div>

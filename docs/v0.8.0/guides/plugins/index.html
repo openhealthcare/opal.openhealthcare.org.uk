@@ -366,11 +366,10 @@ serve patient data are restricted to logged in users. Django Rest Framework <cod
 have an <a href="http://www.django-rest-framework.org/api-guide/permissions/">extensive permissioning system</a>.</p>
 <p>Opal ships with the base ViewSet class <code>opal.core.api.LoginRequiredViewset</code> which adds the Django
 Rest Framework permission class IsAuthenticated to your viewset.</p>
-<pre><code class="python">    class PingViewSet(LoginRequiredViewset):
+<pre><code class="language-python">    class PingViewSet(LoginRequiredViewset):
         def list(self, request):
             return Response('pong')
 </code></pre>
-
 <h3 id="adding-actions-to-the-sidebar">Adding Actions to the sidebar</h3>
 <p>Actions can be added to the sidebar by setting the <code>actions</code> attribute of your plugin.
 Actions is expected to be an iterable of strings which are templates to be included in

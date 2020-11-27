@@ -281,26 +281,24 @@ the front end.</p>
 <p>The <code>Episode</code> Service will return an Episode object that represents an individual
 episode of care, and provides various methods for interacting with both episodes and
 subrecords.</p>
-<pre><code class="js">var episode = new Episode(my_episode_data);
+<pre><code class="language-js">var episode = new Episode(my_episode_data);
 var editing = episode.makeCopy();
 editing.start_date = new Date();
 episode.save(editing);
 </code></pre>
-
 <h2 id="the-item-service">The Item Service</h2>
 <p>The <code>Item</code> Service returns Item objects that represent individual instances of
 subrecords. They must be initialised with an episode and a schema representing
 the available data fields for this subrecord type.</p>
-<pre><code class="js">var diagnosis = new Item({}, episode, $rootScope.fields.diagnosis);
+<pre><code class="language-js">var diagnosis = new Item({}, episode, $rootScope.fields.diagnosis);
 var editing = diagnosis.makeCopy();
 editing.date_of_diagnosis = new Date();
 diagnosis.save(editing);
 </code></pre>
-
 <h2 id="subrecord-crud-modals">Subrecord CRUD modals</h2>
 <p>The <code>Episode</code> service has a convenient API that allows you to open a modal to edit
 a new or existing subrecord.</p>
-<pre><code class="js">epiode.recordEditor.newItem('diagnosis'):
+<pre><code class="language-js">epiode.recordEditor.newItem('diagnosis'):
 // -&gt; Opens a modal with the diagnosis form and will create a new diagnosis on save
 
 episode.recordEditor.editItem('diagnosis', 0);
@@ -309,26 +307,23 @@ episode.recordEditor.editItem('diagnosis', 0);
 episode.recordEditor.deleteItem('diagnosis', 0);
 // -&gt; Prompts the user to confirm the deletion of the first diagnosis
 </code></pre>
-
 <h2 id="customising-subrecords">Customising Subrecords</h2>
 <p>Sometimes our application will wish to customise a subrecord of a particular type - for
 instance to set default values. We do this by setting a custom record service.</p>
 <p>First, we set the name of the service to use as a constructor for this record type as
 a property on the model.</p>
-<pre><code class="python"># yourapp/models.py
+<pre><code class="language-python"># yourapp/models.py
 class Diagnosis(models.Diagnosis):
     _angular_service = 'Diagnosis'
 </code></pre>
-
 <p>Next we must include the file with our new service in our application.</p>
-<pre><code class="python"># yourapp/__init__.py
+<pre><code class="language-python"># yourapp/__init__.py
 class YourApp(application.OpalApplication):
     javascripts = [..., 'js/diagnosis.js', ...]
 </code></pre>
-
 <p>Finally we define an Angular service which expects to be passed the record in order
 to set defaults.</p>
-<pre><code class="js">// yourapp/static/js/diagnosis.js
+<pre><code class="language-js">// yourapp/static/js/diagnosis.js
 angular.module('opal.records').factory('Diagnosis', function(){
     return function(record){
         if(!record.date_of_diagnosis){ record.date_of_diagnosis = moment()}

@@ -123,10 +123,6 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="guides/plugins_list/">Plugin List</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
                 <!--             <a href="guides/datamodel/">Data Model</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -392,8 +388,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.18.3" target="_blank">
-                  <i class="fa fa-github"></i> v0.18.3
+                <a href="https://github.com/openhealthcare/opal/tree/v0.20.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.20.0
                 </a>
               </li>
                 <!-- <li class="disabled"> -->
@@ -418,6 +414,8 @@
     <ul class="nav bs-sidenav">
     
         <li class="main active"><a href="#upgrading-your-opal-application">Upgrading Your Opal Application</a></li>
+        
+            <li><a href="#v0183-v0200">v0.18.3 -&gt; v0.20.0</a></li>
         
             <li><a href="#v0171-v0182">v0.17.1 -&gt; v0.18.2</a></li>
         
@@ -465,6 +463,50 @@
             <div class="col-md-9" role="main"><h2 id="upgrading-your-opal-application">Upgrading Your Opal Application</h2>
 <p>This document provides instructions for specific steps required to upgrading your Opal
 application to a later version where there are extra steps required.</p>
+<h4 id="v0183-v0200">v0.18.3 -&gt; v0.20.0</h4>
+<h5 id="dependency-upgrades">Dependency upgrades</h5>
+<p>How you do this depends on how you have configured your application. You will need to
+update both the Opal version, and versions of dependencies upgraded dependencies if
+you have specified them in for instance, a requirements.txt.</p>
+<p>(This will be the case if you use the requirements.txt originally provided by
+<code>opal startproject</code>)</p>
+<pre><code># requirements.txt
+opal==0.20.0
+django==2.2.16
+djangorestframework==3.12.2
+django-compressor==2.4
+six==1.15.0
+psycopg2==2.8.6
+requests==2.25.0
+python-dateutil==2.8.1
+</code></pre>
+<h5 id="api-api-changes-rest-framework">API API Changes (REST Framework)</h5>
+<p>Note that the Django REST Framework update includes a breaking change to their public 
+API which may affect your application. The <code>base_name</code> attribute of a ViewSet has been 
+renamed to <code>basename</code> (<a href="https://www.django-rest-framework.org/community/release-notes/#390">release notes</a>).</p>
+<p>Any APIs implemented in your application will likely need to rename this attribute as
+part of this upgrade.</p>
+<h5 id="episode-categories">Episode Categories</h5>
+<p><code>Inpatient</code> is no longer provided in <code>opal.core.episodes</code>. If you are using the
+Inpatient episode category you can add it in your <code>{{ appname }}/episode_categories.py</code></p>
+<pre><code>from opal.core.episodes import EpisodeCategory
+
+
+class InpatientEpisode(EpisodeCategory):
+    display_name    = 'Inpatient'
+    detail_template = 'detail/inpatient.html'
+    stages          = [
+        'Inpatient',
+        'Followup',
+        'Discharged'
+    ]
+</code></pre>
+<h5 id="django-axes">Django Axes</h5>
+<p>Opal has removed the built in dependency on Django Axes. If your application wishes to
+continue using it, then the relevant settings should already be in your settings file.
+If you were relying on the entry in the opal <code>setup.py</code> to install it at deployment time,
+you will need to ensure this via some other mechanism - for instance ensuring it is in your
+application <code>requirements.txt</code>.</p>
 <h4 id="v0171-v0182">v0.17.1 -&gt; v0.18.2</h4>
 <p><code>inpatient.html</code> is no longer in opal but created with startproject. If you are using the default episode category please create a template called  <code>{{ appname }}/templates/detail/inpatient.html</code> and add in the record panels that you need.</p>
 <h4 id="v0171-v0180">v0.17.1 -&gt; v0.18.0</h4>
@@ -574,7 +616,7 @@ outlined here.</p>
 <p><em>Django reversion</em></p>
 <p>Reversion has reorganized its package structure to avoid importing models.
 Specifically:</p>
-<pre><code class="python"># Old-style import for accessing the admin class.
+<pre><code class="language-python"># Old-style import for accessing the admin class.
 import reversion
 # New-style import for accesssing admin class.
 from reversion.admin import VersionAdmin
@@ -584,7 +626,6 @@ import reversion
 # New-style import for accesssing the low-level API.
 from reversion import revisions as reversion
 </code></pre>
-
 <p>You should examine your <code>admin.py</code> to see whether you do this.</p>
 <p><em>Urlpatterns</em></p>
 <p><code>django.conf.urls.patterns</code> is now removed rather than deprecated. The default urlconfs
@@ -689,7 +730,7 @@ this in your requirements.txt or similar accordingly.</p>
 classes in their <code>settings.py</code>.</p>
 <p>By default Opal now uses session and token auth, which will require a migration to install
 the DRF Token authentication app.</p>
-<pre><code class="python">INSTALLED_APPS = (
+<pre><code class="language-python">INSTALLED_APPS = (
     # ....
     'rest_framework',
     'rest_framework.authtoken',
@@ -703,7 +744,6 @@ REST_FRAMEWORK = {
     )
 }
 </code></pre>
-
 <h3 id="6x-7x">6.x -&gt; 7.x</h3>
 <h4 id="upgrading-opal_5">Upgrading Opal</h4>
 <p>How you do this depends on how you have configured your application, but updating your
@@ -773,12 +813,11 @@ Context Processor is available - you should add that to the <code>TEMPLATE_CONTE
 setting in your application's <code>settings.py</code></p>
 <p>The default date formats in Opal have changed - and so you should update your <code>DATE_X</code>
 settings to match:</p>
-<pre><code class="python">DATE_FORMAT = 'd/m/Y'
+<pre><code class="language-python">DATE_FORMAT = 'd/m/Y'
 DATE_INPUT_FORMATS = ['%d/%m/%Y']
 DATETIME_FORMAT = 'd/m/Y H:i:s'
 DATETIME_INPUT_FORMATS = ['%d/%m/%Y %H:%M:%S']
 </code></pre>
-
 <h4 id="upgrade-plugins">Upgrade plugins</h4>
 <p>A number of Opal plugins have new releases to work with the changes in Opal 0.6.x</p>
 <ul>
@@ -803,7 +842,7 @@ admin.site.register(Team, TeamAdmin)
 <p>Patient lists are now declarative. For instance, to replicate the following team:</p>
 <p><img src="/img/resp.team.png" style="margin: 12px auto; border: 1px solid black;"/></p>
 <p>We would convert that to:</p>
-<pre><code class="python"># yourapp/patient*lists.py
+<pre><code class="language-python"># yourapp/patient*lists.py
 from opal.core import patient_lists
 
 class RespiratoryList(patient_lists.TaggedPatientList):
@@ -812,7 +851,6 @@ class RespiratoryList(patient_lists.TaggedPatientList):
     order        = 4
     schema       = [models.Demographics, models.Treatment]
 </code></pre>
-
 <p>The schema property will likely be available to you in your application's <code>schema.py</code>
 file - which is now obsolete.</p>
 <p>See the <a href="../../guides/list_views/">full patient list documentation</a> for further details
@@ -826,22 +864,20 @@ relying on templates previously in Opal. To discover which these are, run</p>
 by running <code>$ opal scaffold</code>.</p>
 <p>Modal templates already in your application will likely be referencing invalid paths
 to their Angular variables. You should update these to include the record name - for example:</p>
-<pre><code class="html">&lt;!-- Was --&gt;
+<pre><code class="language-html">&lt;!-- Was --&gt;
 {% input  label=&quot;Drug&quot; model=&quot;editing.drug&quot; lookuplist=&quot;antimicrobial_list&quot; %}
 &lt;!-- Becomes --&gt;
 {% input  label=&quot;Drug&quot; model=&quot;editing.treatment.drug&quot; lookuplist=&quot;antimicrobial_list&quot; %}
 </code></pre>
-
 <h4 id="the-inpatient-episode-category">The Inpatient episode category</h4>
 <p>The default Episode Category - Inpatient episodes has updated it's database identifier
 from <code>inpatient</code> to <code>Inpatient</code>. To update your episodes run :</p>
-<pre><code class="python">&gt;&gt;&gt; from opal.models import Episode
+<pre><code class="language-python">&gt;&gt;&gt; from opal.models import Episode
 &gt;&gt;&gt; for e in Episode.objects.filter(category='inpatient'):
 ...   e.category='Inpatient'
 ...   e.save()
 ...
 </code></pre>
-
 <p>Any references to episode category in templates (for e.g. ng-hide) or controllers for logic
 will also require updates.</p>
 <h4 id="flow-is-now-defined-in-js">Flow is now defined in JS</h4>

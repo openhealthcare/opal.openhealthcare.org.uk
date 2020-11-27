@@ -123,10 +123,6 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="guides/plugins_list/">Plugin List</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
                 <!--             <a href="guides/datamodel/">Data Model</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -392,8 +388,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.18.3" target="_blank">
-                  <i class="fa fa-github"></i> v0.18.3
+                <a href="https://github.com/openhealthcare/opal/tree/v0.20.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.20.0
                 </a>
               </li>
                 <!-- <li class="disabled"> -->
@@ -472,42 +468,37 @@ Further information on Comparators can be found in the <a href="../../guides/lis
 <p>To override the default Patient List template <code>opal/templates/patient_list/layouts/spreadsheet_list.html</code>
 with a custom template specify the path of the custom template (relative to <code>/myapp/templates/</code>) with
 this property.</p>
-<pre><code class="python"># myapp/patient_lists.py
+<pre><code class="language-python"># myapp/patient_lists.py
 
 class MyPatientList(PatientList):
     template_name = 'my_layout.html'
 </code></pre>
-
 <p>Will look for a template at <code>/myapp/templates/my_layout.html</code>.</p>
 <p>Opal includes three patient lists out of the box: <code>spreadsheet_list.html</code>, <code>card_list.html</code>, and <code>table_list.html</code>. See <em>Built-in PatientList Templates</em> below for further details.</p>
 <p>All these patient list layout templates use Django <code>{% extends %}</code> syntax to extend their <code>base</code> templates respectively. Each of these <code>base</code> templates contains Django <code>{% block %}</code>s, so you can override selected parts of the base template by creating a new file in <code>patient_lists/layouts/</code> called, for example <code>spreadsheet_list.html</code>, and redefining the content of those blocks.</p>
-<pre><code class="html">&lt;!-- patient_lists/layouts/spreadsheet_list.html --&gt;
+<pre><code class="language-html">&lt;!-- patient_lists/layouts/spreadsheet_list.html --&gt;
 {% extends 'patient_lists/layouts/spreadsheet_list_base.html' %}
 
 {% block content %}
 ... my new block content ...
 {% endblock content %}
 </code></pre>
-
 <h3 id="classmethods">Classmethods</h3>
 <h4 id="patientlistget_absolute_url"><code>PatientList.get_absolute_url()</code></h4>
 <p>Returns a string which is the absolute URL of this list.</p>
-<pre><code class="python">MyList.get_absolute_url()
+<pre><code class="language-python">MyList.get_absolute_url()
 &quot;/#/list/my_list&quot;
 </code></pre>
-
 <h4 id="patientlistget_icon"><code>PatientList.get_icon()</code></h4>
 <p>Returns a string which is the icon for this list. Defaults to None.</p>
-<pre><code class="python">MyList.get_icon()
+<pre><code class="language-python">MyList.get_icon()
 &quot;fa-wave&quot;
 </code></pre>
-
 <h4 id="patientlistget_display_name"><code>PatientList.get_display_name()</code></h4>
 <p>Returns a string which is the display name for this list. Defaults to None</p>
-<pre><code class="python">MyList.get_display_name()
+<pre><code class="language-python">MyList.get_display_name()
 &quot;The List&quot;
 </code></pre>
-
 <h4 id="patientlistas_menuitemhrefnone-activepatternnone-iconnone-displaynone-indexnone"><code>PatientList.as_menuitem(href=None, activepattern=None, icon=None, display=None, index=None)</code></h4>
 <p>Return an instance of <code>opal.core.menus.MenuItem</code> that will direct the user to this
 patient list.</p>

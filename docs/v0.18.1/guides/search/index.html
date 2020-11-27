@@ -440,7 +440,6 @@
       'column': the model to be queried e.g. 'demographics'
 }
 </code></pre>
-
 <h2 id="the-advanced-search-interface">The Advanced search interface</h2>
 <p>The Opal advanced search interface at <code>/#/extract</code> allows users to specify rules
 by which to query for episodes.</p>
@@ -501,7 +500,7 @@ operators to the front end</p>
 <p>ie if you state the field is a string, the user will be provided with an
 equals/contains, which will be passed to the query as given_query["queryType"]</p>
 <p>For example</p>
-<pre><code class="python">class SomeField(SearchRuleField):
+<pre><code class="language-python">class SomeField(SearchRuleField):
     display_name = &quot;Some Field&quot; # the display name of the field
     description = &quot;A Description for the user to explain what this field means&quot;
     field_type = &quot;date_time&quot; # what kind of filter that is offered, datetime will off before and after
@@ -514,11 +513,10 @@ class MyCustomQuery(SearchRule):
     display_name = &quot;My Custom Query&quot;
     fields = (SomeField,)
 </code></pre>
-
 <h2 id="autocomplete-search">Autocomplete search</h2>
 <p>Opal contains autocomplete search functionality for the navbar search box.</p>
 <p>You can enable it with the setting <code>OPAL_AUTOCOMPLETE_SEARCH</code> (defaults to False).</p>
-<pre><code class="python"># yourapp/settings.py
+<pre><code class="language-python"># yourapp/settings.py
 OPAL_AUTOCOMPLETE_SEARCH = True
 </code></pre></div>
         </div>

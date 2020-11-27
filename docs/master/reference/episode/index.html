@@ -123,10 +123,6 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="guides/plugins_list/">Plugin List</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
                 <!--             <a href="guides/datamodel/">Data Model</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -392,8 +388,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.18.3" target="_blank">
-                  <i class="fa fa-github"></i> v0.18.3
+                <a href="https://github.com/openhealthcare/opal/tree/v0.20.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.20.0
                 </a>
               </li>
                 <!-- <li class="disabled"> -->
@@ -482,9 +478,8 @@ previous and subsequent episodes</li>
 <li><code>user</code> The user for whom we want the tag names.</li>
 </ul>
 <p>Set tags for this Episode.</p>
-<pre><code class="python">episode.set_tag_names(['mine', 'infectioncontrol'], user)
+<pre><code class="language-python">episode.set_tag_names(['mine', 'infectioncontrol'], user)
 </code></pre>
-
 <h3 id="episodeset_tag_names_from_tagging_dicttagging_dict-user">Episode.set_tag_names_from_tagging_dict(tagging_dict, user)</h3>
 <p>Arguments:</p>
 <ul>
@@ -492,17 +487,15 @@ previous and subsequent episodes</li>
 <li><code>user</code> The user for whom we want the tag names.</li>
 </ul>
 <p>Set tags for this Episode.</p>
-<pre><code class="python">episode.set_tag_names_from_tagging_dict({'inpatient': True}, user)
+<pre><code class="language-python">episode.set_tag_names_from_tagging_dict({'inpatient': True}, user)
 </code></pre>
-
 <h3 id="episodeset_stagestage-user-data">Episode.set_stage(stage, user, data)</h3>
 <p>Setter function for episode stage. Will validate that the stage given is
 valid for the current <code>EpisodeCategory</code> and raise <code>ValueError</code> if it is invalid.</p>
-<pre><code class="python">episode.set_stage('Discharged', user, {})
+<pre><code class="language-python">episode.set_stage('Discharged', user, {})
 episode.stage
 # -&gt; 'Discharged'
 </code></pre>
-
 <h2 id="manager">Manager</h2>
 <p>The custom manager for Episodes has the following methods:</p>
 <h3 id="episodeobjectsserialised">Episode.objects.serialised()</h3>

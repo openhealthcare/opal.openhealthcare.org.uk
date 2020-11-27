@@ -446,22 +446,19 @@ to any of them!)</p>
 <p>Firstly, <a href="https://signup.heroku.com/">sign up for Heroku</a>, and install their
 <a href="https://devcenter.heroku.com/articles/heroku-cli">command line tool</a>.</p>
 <p>We then need to create a new heroku application, and set up our database:</p>
-<pre><code class="bash">heroku create
+<pre><code class="language-bash">heroku create
 heroku addons:create heroku-postgresql
 </code></pre>
-
 <p>Next, we need to push our application code to the Heroku server with git:</p>
-<pre><code class="bash">git push heroku master
+<pre><code class="language-bash">git push heroku master
 </code></pre>
-
 <p>Then we can run our migrations, load our lookuplists and create a user:</p>
-<pre><code class="bash">heroku run python manage.py migrate
+<pre><code class="language-bash">heroku run python manage.py migrate
 heroku run python manage.py load_lookup_lists
 heroku run python manage.py createsuperuser
 </code></pre>
-
 <p>We should now be able to log in to our deployed app - to open it in a browser:</p>
-<pre><code class="bash">heroku open
+<pre><code class="language-bash">heroku open
 </code></pre></div>
         </div>
 

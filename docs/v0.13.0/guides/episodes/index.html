@@ -450,7 +450,7 @@ subclass of <code>opal.core.episodes.EpisodeCategory</code> - such as <code>Inpa
 <p>You can access the current category of an episode via the <code>category</code> property, while
 it is represented in the database in the field <code>category_name</code> which will contain
 the <code>display_name</code> attribute of the relevant category.</p>
-<pre><code class="python">episode = patient.episode_set.first()
+<pre><code class="language-python">episode = patient.episode_set.first()
 print episode.category
 # &lt;opal.core.episode.InpatientEpisode object&gt;
 
@@ -460,19 +460,17 @@ print episode.category.display_name
 print episode.category_name
 # &quot;Inpatient&quot;
 </code></pre>
-
 <h2 id="detail-templates">Detail templates</h2>
 <p>The category of an episode determines which template will be used to display it
 on the detail page for the patient. This template is determined by looking up
 the <code>detail_template</code> attribute of the <code>EpisodeCategory</code>.</p>
-<pre><code class="python">episode.category
+<pre><code class="language-python">episode.category
 print episode.category
 # &lt;opal.core.episode.InpatientEpisode object&gt;
 
 print episode.category.detail_template
 # detail/inpatient.html
 </code></pre>
-
 <p>The Episode Category template does not comprise the entire
 <a href="../patient_detail_views/">Patient detail view</a>. This is made of multiple episodes
 and by default will display some basic demographic details as well as other episodes.
@@ -482,16 +480,15 @@ More detail on customising the rest of the detail tempalte is found in the detai
 <p>The default category of episodes in an Opal application is set by the
 <a href="../reference/opal_application">OpalApplication</a> object's default_episode_category
 property.</p>
-<pre><code class="python">class Application(application.OpalApplication):
+<pre><code class="language-python">class Application(application.OpalApplication):
     default_episode_category = MyCategory.display_name
 </code></pre>
-
 <h2 id="defining-your-own-episodecategory">Defining your own EpisodeCategory</h2>
 <p>As EpisodeCategory is a <a href="discoverable">discoverable</a> we can define our own to
 meet custom requirements.</p>
 <p>Episode categories should be defined in a file named <code>episode_categories</code> of
 your application or plugin.</p>
-<pre><code class="python"># yourapp/episode_categories.py
+<pre><code class="language-python"># yourapp/episode_categories.py
 
 from opal.core import episodes
 
@@ -501,7 +498,6 @@ class DropInClinicEpisode(episodes.EpisodeCategory):
     detail_template = &quot;detail/drop_in.html&quot;
 
 </code></pre>
-
 <h2 id="episodeactive">Episode.active</h2>
 <p>The field <code>.active</code> is used to distinguish Episodes which are ongoing. This field
 is set implicitly by the <code>Episode.save()</code> method, and there will generally be no
@@ -513,7 +509,7 @@ and any Episode with one to be inactive.</p>
 <p>Applications may customise this behaviour by overriding the <code>.is_active()</code> method.</p>
 <p>For instance, to create a category which considered any Episode older than 2 weeks to
 be inactive, one might override the method as follows:</p>
-<pre><code class="python"># yourapp/episode_categories.py
+<pre><code class="language-python"># yourapp/episode_categories.py
 import datetime
 from opal.core import episodes
 
@@ -524,7 +520,6 @@ class TwoWeeksAndStopCaringEpisode(episodes.EpisodeCategory):
         return bool(delta &gt;= datetime.timedelta(days=14))
 
 </code></pre>
-
 <p>(Note that this would not alter the value in the database immediately after those 2
 weeks, but would alter the value the next time the <code>Episode.save()</code> method was called.)</p>
 <h2 id="episode-stages">Episode stages</h2>

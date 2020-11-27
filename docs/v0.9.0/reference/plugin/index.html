@@ -374,33 +374,30 @@ installed Django app.</p>
 <h3 id="opalpluginjavascripts">OpalPlugin.javascripts</h3>
 <p>A python dictionary containing namespaced sets of javascript files to include in our
 application. These will be included on every page by default.</p>
-<pre><code class="python">class MyPlugin(OpalPlugin):
+<pre><code class="language-python">class MyPlugin(OpalPlugin):
     javascripts = {
         'opal.services': [
             'js/myplugin/awesome_service.js'
         ]
     }
 </code></pre>
-
 <hr />
 <h4 id="opalpluginapis">OpalPlugin.apis</h4>
 <p>A python iterable of APIs to add to the Django Rest Framework APIs available.</p>
-<pre><code class="python">class MyPlugin(OpalPlugin):
+<pre><code class="language-python">class MyPlugin(OpalPlugin):
     apis = [
         ('ping', api.PingViewSet)
     ]
 </code></pre>
-
 <hr />
 <h4 id="opalpluginstylesheets">OpalPlugin.stylesheets</h4>
 <p>A python iterable of stylesheets to add to our application. These will be included on every
 page by default.</p>
-<pre><code class="python">class MyPlugin(OpalPlugin):
+<pre><code class="language-python">class MyPlugin(OpalPlugin):
     stylesheets =
         'css/myawesomestyles.css'
     ]
 </code></pre>
-
 <hr />
 <h3 id="opalpluginmenuitems">OpalPlugin.menuitems</h3>
 <p>A python iterable of items to add to the main menu of our application.</p>
@@ -424,17 +421,15 @@ returning the <code>apis</code> attribute.</p>
 <h4 id="opalpluginget_javascripts">OpalPlugin.get_javascripts()</h4>
 <p>Return a dictionary of namespaced javascript files as paths to them ready for staticfiles.
 Defaults to returning the <code>OpalPlugin.javascripts</code> property.</p>
-<pre><code class="python">plugin.get_javascripts()
+<pre><code class="language-python">plugin.get_javascripts()
 # -&gt; {'opal.test': ['js/test/notreal.js']}
 </code></pre>
-
 <h4 id="opalpluginget_styles">OpalPlugin.get_styles()</h4>
 <p>Return a list of the plugin's stylesheets as paths to them ready for staticfiles.
 Defaults to returning the contents of <code>OpalPlugin.styles</code>.</p>
-<pre><code class="python">plugin.get_styles()
+<pre><code class="language-python">plugin.get_styles()
 # -&gt; ['css/app.css', ...]
 </code></pre>
-
 <h4 id="opalpluginangular_module_deps">OpalPlugin.angular_module_deps</h4>
 <p>When you initialise an angular application you need to register dependencies
 This allows you to add to the dependencies of the default opal application</p></div>

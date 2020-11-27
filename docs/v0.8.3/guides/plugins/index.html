@@ -380,7 +380,7 @@ the file system location of the module.</p>
 By convention, APIs live in <code>yourplugin/api.py</code>. You are expected to provide a
 <code>rest_framework.viewsets.ViewSet</code> subclass, which you then detail as the <code>.apis</code> attribute
 of your plugin.</p>
-<pre><code class="python"># yourplugin/api.py
+<pre><code class="language-python"># yourplugin/api.py
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 
@@ -396,7 +396,6 @@ class YourPlugin(OpalPlugin):
         ('ping', api.PingViewSet)
     ]
 </code></pre>
-
 <p>These APIs will then be available and self-documenting from the standard Opal url <code>/api/v0.1/</code></p>
 <h3 id="permissioning">Permissioning</h3>
 <p>Developers are strongly encouraged to ensure that APIs which
@@ -404,20 +403,18 @@ serve patient data are restricted to logged in users. Django Rest Framework <cod
 have an <a href="http://www.django-rest-framework.org/api-guide/permissions/">extensive permissioning system</a>.</p>
 <p>Opal ships with the base ViewSet class <code>opal.core.api.LoginRequiredViewset</code> which adds the Django
 Rest Framework permission class IsAuthenticated to your viewset.</p>
-<pre><code class="python">    class PingViewSet(LoginRequiredViewset):
+<pre><code class="language-python">    class PingViewSet(LoginRequiredViewset):
         def list(self, request):
             return Response('pong')
 </code></pre>
-
 <h3 id="adding-actions-to-the-sidebar">Adding Actions to the sidebar</h3>
 <p>Actions can be added to the sidebar by setting the <code>actions</code> attribute of your plugin.
 Actions is expected to be an iterable of strings which are templates to be included in
 the sidebar. By convention, actions will live in <code>./templates/actions/</code> .</p>
-<pre><code class="python"># plugin.py:
+<pre><code class="language-python"># plugin.py:
 class Plugin(OpalPlugin):
     actions = ('actions/javascript_alert.html', 'actions/dummy_button.html')
 </code></pre>
-
 <p>And then in the template:</p>
 <pre><code>&lt;p ng-show="episode.category == 'YourEpisodeCategory'"&gt;
   &lt;button class="btn btn-primary" ng-click="alert('Boom!')"&gt;
@@ -433,14 +430,13 @@ won't for now.</p>
 <h3 id="adding-menu-items">Adding Menu items</h3>
 <p>Plugins may add items to the main Opal Menu by setting the <code>menuitems</code> attribute.
 This attribute should be an iterable of <a href="../../reference/core_menus/"><code>MenuItem</code></a> objects.</p>
-<pre><code class="python">from opal.core import menus
+<pre><code class="language-python">from opal.core import menus
 
 class YourPlugin(OpalPlugin):
     menuitems = [
         menus.MenuItem(href=&quot;/your-url&quot;, icon=&quot;fa-user&quot;)
     ]
 </code></pre>
-
 <h3 id="installing-plugins">Installing plugins</h3>
 <p>Add to installed apps
 Add to requirements if appropriate</p>

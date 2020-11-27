@@ -123,10 +123,6 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="guides/plugins_list/">Plugin List</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
                 <!--             <a href="guides/datamodel/">Data Model</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -434,11 +430,10 @@ implemented as subclasses of <code>opal.core.episodes.EpisodeCategory</code>. Th
 Discoverable API.</p>
 <p>The category of any episode can be accessed as the <code>.category</code> property of any <code>Episode</code> instance.</p>
 <p>An episode category must be initialized with an instance of an episode.</p>
-<pre><code class="python">from opal.core.episodes import InpatientEpisode
+<pre><code class="language-python">from opal.core.episodes import InpatientEpisode
 
 category = InpatientEpisode(episode)
 </code></pre>
-
 <p><strong> Properties </strong></p>
 <h3 id="episodecategorydetail_template">EpisodeCategory.detail_template</h3>
 <p>This is the template used within the <a href="../../guides/patient_detail_views/">Patient Detail View</a>
@@ -452,39 +447,34 @@ to a particular user.</p>
 <p>The default implementation will return True unless <code>UserProfile.restricted_only</code> is set to
 True. (In which case this user should not see any elements which are visible 'by default' for
 this application.)</p>
-<pre><code class="python">InpatientEpisode.episode_visible_to(episode, user)
+<pre><code class="language-python">InpatientEpisode.episode_visible_to(episode, user)
 
 # -&gt; True
 </code></pre>
-
 <p><strong> Methods </strong></p>
 <h3 id="episodecategoryget_stages">EpisodeCategory.get_stages()</h3>
 <p>Returns a list of stages for this category as strings.</p>
-<pre><code class="python">InpatientEpisode(episode).get_stages()
+<pre><code class="language-python">InpatientEpisode(episode).get_stages()
 # -&gt; ['Inpatient', 'Followup', 'Discharged']
 </code></pre>
-
 <h3 id="episodecategoryhas_stagestage">EpisodeCategory.has_stage(stage)</h3>
 <p>Predicate function to determine whether a string is a valid stage for this category.</p>
-<pre><code class="python">InpatientEpisode(episode).has_stage('Inpatient')
+<pre><code class="language-python">InpatientEpisode(episode).has_stage('Inpatient')
 # -&gt; True
 </code></pre>
-
 <h3 id="episodecategoryis_active">EpisodeCategory.is_active()</h3>
 <p>Predicate function to determine whether this episode is active.</p>
 <p>The default implementation looks to see whether an end date has
 been set on the episode.</p>
-<pre><code class="python">InpatientEpisode(Episode()).is_active()
+<pre><code class="language-python">InpatientEpisode(Episode()).is_active()
 # -&gt; True
 </code></pre>
-
 <h3 id="episodecategoryset_stagestage-user-data">EpisodeCategory.set_stage(stage, user, data)</h3>
 <p>Sets the stage on the episode. It gets passed the user, and the
 rest of the data that's been used to update the episode.</p>
-<pre><code class="python">InpatientEpisode(episode).set_stage('Discharged', user, data_dict)
+<pre><code class="language-python">InpatientEpisode(episode).set_stage('Discharged', user, data_dict)
 # -&gt; True
 </code></pre>
-
 <h2 id="inpatientepisode">InpatientEpisode</h2>
 <p>This is the default EpisodeCategory imlpementation - applications started with Opal's
 scaffolding scripts will use this as the <code>OpalApplication.default_episode_category</code>.

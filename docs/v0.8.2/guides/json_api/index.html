@@ -346,7 +346,7 @@ router.register('ping', PingViewSet)
 </code></pre>
 <p>APIs can make use of method decorators <code>item_from_pk</code>, <code>episode_from_pk</code> and <code>patient_from_pk</code> that will replace a pk passed into a method with self.model, Episode or Patient respectively.</p>
 <p>e.g.</p>
-<pre><code class="python">class SomeBespokeViewset(viewsets.Viewset):
+<pre><code class="language-python">class SomeBespokeViewset(viewsets.Viewset):
   model = ClinicialInformation
 
   @item_from_pk
@@ -354,7 +354,6 @@ router.register('ping', PingViewSet)
     # Some logic
 
 </code></pre>
-
 <h3 id="authentication">Authentication</h3>
 <p>Opal uses
 <a href="http://www.django-rest-framework.org/">Django Rest Framework</a> (DRF) to

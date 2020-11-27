@@ -279,12 +279,11 @@ Context Processor is available - you should add that to the <code>TEMPLATE_CONTE
 setting in your application's <code>settings.py</code></p>
 <p>The default date formats in OPAL have changed - and so you should update your <code>DATE_X</code>
 settings to match:</p>
-<pre><code class="python">DATE_FORMAT = 'd/m/Y'
+<pre><code class="language-python">DATE_FORMAT = 'd/m/Y'
 DATE_INPUT_FORMATS = ['%d/%m/%Y']
 DATETIME_FORMAT = 'd/m/Y H:i:s'
 DATETIME_INPUT_FORMATS = ['%d/%m/%Y %H:%M:%S']
 </code></pre>
-
 <h4 id="upgrade-plugins">Upgrade plugins</h4>
 <p>A number of OPAL plugins have new releases to work with the changes in OPAL 0.6.x</p>
 <ul>
@@ -309,7 +308,7 @@ admin.site.register(Team, TeamAdmin)
 <p>Patient lists are now declarative. For instance, to replicate the following team:</p>
 <p><img src="/img/resp.team.png" style="margin: 12px auto; border: 1px solid black;"/></p>
 <p>We would convert that to:</p>
-<pre><code class="python"># yourapp/patient*lists.py
+<pre><code class="language-python"># yourapp/patient*lists.py
 from opal.core import patient_lists
 
 class RespiratoryList(patient_lists.TaggedPatientList):
@@ -318,7 +317,6 @@ class RespiratoryList(patient_lists.TaggedPatientList):
     order        = 4
     schema       = [models.Demographics, models.Treatment]
 </code></pre>
-
 <p>The schema property will likely be available to you in your application's <code>schema.py</code>
 file - which is now obsolete.</p>
 <p>See the <a href="../../guides/list_views/">full patient list documentation</a> for further details
@@ -332,22 +330,20 @@ relying on templates previously in OPAL. To discover which these are, run</p>
 by running <code>$ opal scaffold</code>.</p>
 <p>Modal templates already in your application will likely be referencing invalid paths
 to their Angular variables. You should update these to include the record name - for example:</p>
-<pre><code class="html">&lt;!-- Was --&gt;
+<pre><code class="language-html">&lt;!-- Was --&gt;
 {% input  label=&quot;Drug&quot; model=&quot;editing.drug&quot; lookuplist=&quot;antimicrobial_list&quot; %}
 &lt;!-- Becomes --&gt;
 {% input  label=&quot;Drug&quot; model=&quot;editing.treatment.drug&quot; lookuplist=&quot;antimicrobial_list&quot; %}
 </code></pre>
-
 <h4 id="the-inpatient-episode-category">The Inpatient episode category</h4>
 <p>The default Episode Category - Inpatient episodes has updated it's database identifier
 from <code>inpatient</code> to <code>Inpatient</code>. To update your episodes run :</p>
-<pre><code class="python">&gt;&gt;&gt; from opal.models import Episode
+<pre><code class="language-python">&gt;&gt;&gt; from opal.models import Episode
 &gt;&gt;&gt; for e in Episode.objects.filter(category='inpatient'):
 ...   e.category='Inpatient'
 ...   e.save()
 ...
 </code></pre>
-
 <h3 id="4x-5x">4.X -&gt; 5.x</h3>
 <h4 id="migrations">Migrations</h4>
 <p>Before upgrading from 4.x to 5.x you should ensure that you have upgraded from South

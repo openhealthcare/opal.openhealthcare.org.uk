@@ -123,10 +123,6 @@
                 <!--         </li> -->
                 <!--      -->
                 <!--         <li > -->
-                <!--             <a href="guides/plugins_list/">Plugin List</a> -->
-                <!--         </li> -->
-                <!--      -->
-                <!--         <li > -->
                 <!--             <a href="guides/datamodel/">Data Model</a> -->
                 <!--         </li> -->
                 <!--      -->
@@ -392,8 +388,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.18.3" target="_blank">
-                  <i class="fa fa-github"></i> v0.18.3
+                <a href="https://github.com/openhealthcare/opal/tree/v0.20.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.20.0
                 </a>
               </li>
                 <!-- <li class="disabled"> -->
@@ -487,10 +483,9 @@ a Django project, some core datamodels (complete with JSON APIs) and a general a
 </code></pre>
 <h3 id="test-it-out">Test it out</h3>
 <p>The scaffolding step has generated you a working project - so let's check that out</p>
-<pre><code class="bash">cd mynewapp
+<pre><code class="language-bash">cd mynewapp
 python manage.py runserver
 </code></pre>
-
 <p>If you now visit <code>http://localhost:8000</code> in your browser, you should see the standard login screen:</p>
 <p><img src="/img/tutorial-login.png" style="margin: 12px auto; border: 1px solid black;"/></p>
 <p>The scaffolding step created you a superuser, so try logging in with the credentials:</p>
@@ -520,7 +515,7 @@ of care for a patient - but we'll come to that in a second.
 <p>The columns you see initially are just a few of the standard clinical models that come with
 Opal - for instance the Diagnosis model in your new application inherits from a model that
 looks a lot like this:</p>
-<pre><code class="python">class Diagnosis(EpisodeSubrecord):
+<pre><code class="language-python">class Diagnosis(EpisodeSubrecord):
     condition         = ForeignKeyOrFreeText(Condition)
     provisional       = models.BooleanField(default=False)
     details           = models.CharField(max_length=255, blank=True)
@@ -529,7 +524,6 @@ looks a lot like this:</p>
     class Meta:
         abstract = True
 </code></pre>
-
 <h3 id="reference-data">Reference data</h3>
 <p>You will notice that the condition field has a custom field type - <code>ForeignKeyOrFreeText</code>.
 This is a custom field type that we use with Opal when we want to use a
@@ -561,7 +555,6 @@ episodes of care. In your <code>mynewapp/models.py</code> :</p>
     details   = fields.TextField(blank=True, null=True)
     completed = fields.BooleanField(default=False)
 </code></pre>
-
 <p>This is simply a Django model, apart from the parent class <code>models.EpisodeSubrecord</code>
 which provides us with some extra functionality:</p>
 <ul>
@@ -572,9 +565,8 @@ which provides us with some extra functionality:</p>
 </ul>
 <p>Next, we're going to let Opal take care of the boilerplate that we'll need to use this
 model in our application. From the commandline:</p>
-<pre><code class="sh">python manage.py scaffold mynewapp
+<pre><code class="language-sh">python manage.py scaffold mynewapp
 </code></pre>
-
 <p>Let's take a look at what that did:</p>
 <ul>
 <li>It created a Django migration</li>
@@ -593,13 +585,12 @@ model in our application. From the commandline:</p>
 <p>The default form template will display each field on a new line, with some basic
 appropriate form field types set.
 It uses the Opal form helpers templatetag library.</p>
-<pre><code class="html">{% load forms %}
+<pre><code class="language-html">{% load forms %}
 {% input  field=&quot;TODOItem.job&quot;  %}
 {% datepicker  field=&quot;TODOItem.due_date&quot;  %}
 {% textarea  field=&quot;TODOItem.details&quot;  %}
 {% checkbox  field=&quot;TODOItem.completed&quot;  %}
 </code></pre>
-
 <h4 id="adding-todos-to-our-team-lists">Adding TODOs to our Team Lists</h4>
 <p>Now let's add our TODO list model as a column in the Spreadsheet-like list view.</p>
 <p>Patient Lists in Opal are subclasses of <code>opal.core.patient_lists.PatientList</code>, and
@@ -613,7 +604,7 @@ to autodiscover lists in `app.patient_list` modules.
 
 <p>You can see the basic list that the Opal application scaffold created for you in
 <code>yournewapp/patient_lists.py</code>.</p>
-<pre><code class="python">class AllPatientsList(core.patient_lists.PatientList):
+<pre><code class="language-python">class AllPatientsList(core.patient_lists.PatientList):
     display_name = 'All Patients'
 
     schema = [
@@ -625,17 +616,15 @@ to autodiscover lists in `app.patient_list` modules.
     def get_queryset(self):
         return Episode.objects.all()
 </code></pre>
-
 <p>The columns for lists are set in the <code>schema</code> property of the PatientList class. To add
 our TODO model to the list, just add the model to the schema:</p>
-<pre><code class="python">    schema = [
+<pre><code class="language-python">    schema = [
         models.Demographics,
         models.Diagnosis,
         models.Treatment,
         models.TODOItem
     ]
 </code></pre>
-
 <p>Refresh the lists page in your browser, and you'll see your new column on the end - add a
 TODO item, noting how we automatically get appropriate form types like datepickers and
 checkboxes.</p>
