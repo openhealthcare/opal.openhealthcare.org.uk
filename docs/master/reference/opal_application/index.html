@@ -388,8 +388,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.20.0" target="_blank">
-                  <i class="fa fa-github"></i> v0.20.0
+                <a href="https://github.com/openhealthcare/opal/tree/v0.21.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.21.0
                 </a>
               </li>
                 <!-- <li class="disabled"> -->
@@ -456,6 +456,31 @@ representing paths ready for staticfiles. Defaults to <code>[]</code>. These sty
 the default Opal styles.</p>
 <pre><code class="language-python">class MyApplication(OpalApplication):
     styles = ['css/app.css']
+</code></pre>
+<h4 id="opalapplicationmodify_extract">OpalApplication.modify_extract</h4>
+<p>A list of callables or string paths to functions that will be
+called after the files in an extract have been generated but 
+before it is zipped and returned to the user.</p>
+<pre><code class="language-python">class MyApplication(Application):
+    modify_extract = [
+      some_function_to_call_with_extract,
+      &quot;string_path_to_function_to_call_with_extract&quot;
+    ]
+</code></pre>
+<p>The callables are passed:</p>
+<ul>
+<li>An iterable of episodes in this extract</li>
+<li>The directory where the zip files for all the subrecords have been stored</li>
+<li>The user who made the query</li>
+<li>kwargs reserved for future API alterations</li>
+</ul>
+<pre><code class="language-python">def my_modifier(episodes, path, user, **kwargs):
+    if not user.is_superuser:
+        return
+    count = len(episodes)
+    with open(os.path.join(path, 'counter.txt', 'w') as fh:
+        fh.write(f&quot;{count} episodes\n&quot;)
+    return
 </code></pre>
 <h3 id="classmethods">Classmethods</h3>
 <p>Classmethod API for OpalApplication instances:</p>

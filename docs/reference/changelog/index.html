@@ -388,8 +388,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.20.0" target="_blank">
-                  <i class="fa fa-github"></i> v0.20.0
+                <a href="https://github.com/openhealthcare/opal/tree/v0.21.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.21.0
                 </a>
               </li>
                 <!-- <li class="disabled"> -->
@@ -413,7 +413,23 @@
   <h3>Contents</h3>
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#0200-major-release">0.20.0 (Major Release)</a></li>
+        <li class="main active"><a href="#0220-major-release">0.22.0 (Major Release)</a></li>
+        
+            <li><a href="#advanced-search-changes">Advanced search changes</a></li>
+        
+            <li><a href="#applicationmodify_extract">Application.modify_extract</a></li>
+        
+            <li><a href="#include-id-in-the-extract">Include ID in the extract</a></li>
+        
+    
+        <li class="main "><a href="#0210-major-release">0.21.0 (Major Release)</a></li>
+        
+            <li><a href="#celery-upgrade-and-django-celery-library-change">Celery upgrade and Django Celery library change.</a></li>
+        
+            <li><a href="#drops-support-for-python-35">Drops support for Python 3.5</a></li>
+        
+    
+        <li class="main "><a href="#0200-major-release">0.20.0 (Major Release)</a></li>
         
             <li><a href="#python-3-version-changes">Python 3 version changes.</a></li>
         
@@ -860,10 +876,24 @@
     
     </ul>
 </div></div>
-            <div class="col-md-9" role="main"><h3 id="0200-major-release">0.20.0 (Major Release)</h3>
+            <div class="col-md-9" role="main"><h3 id="0220-major-release">0.22.0 (Major Release)</h3>
+<h4 id="advanced-search-changes">Advanced search changes</h4>
+<p>Date and datetime fields now support <code>Equals</code> along with <code>Before</code> and <code>After</code></p>
+<h4 id="applicationmodify_extract">Application.modify_extract</h4>
+<p>A list of functions attached to the application object that
+enable the application to add, remove or alter files in an
+advanced search extract.</p>
+<h4 id="include-id-in-the-extract">Include ID in the extract</h4>
+<p>The model ID will no longer be excluded from its csv extract. If present, id will appear first, then patient id, then episode id.</p>
+<h3 id="0210-major-release">0.21.0 (Major Release)</h3>
+<h4 id="celery-upgrade-and-django-celery-library-change">Celery upgrade and Django Celery library change.</h4>
+<p><code>django-celery</code> only officially supports Python 3.5 which Opal no longer supports. It is also no longer the recommended solution for results by Celery. So we have removed this dependency and added the <code>django-celery-results</code> module that has a similar functionality.</p>
+<h4 id="drops-support-for-python-35">Drops support for Python 3.5</h4>
+<p>Opal now supports Python 3.6 - Python 3.8.</p>
+<h3 id="0200-major-release">0.20.0 (Major Release)</h3>
 <h4 id="python-3-version-changes">Python 3 version changes.</h4>
-<p>Opal now supports python 3.5 - python 3.8.
-Please note that the 0.21.0 release will drop support for python 3.5.</p>
+<p>Opal now supports Python 3.5 - Python 3.8.
+Please note that the 0.21.0 release will drop support for Python 3.5.</p>
 <h3 id="scaffold-application-episode-category">Scaffold application episode category</h3>
 <p>The scaffolded application created by <code>startproject</code> now creates a custom
 episode category class.</p>
@@ -873,7 +903,7 @@ log of all login attempts and was installed by default. It is now considered tha
 should be an application level choice rather than a framework choice. Installing it on a
 per application basis is simple, and requires only settings and requirements changes.</p>
 <h3 id="removes-letter">Removes Letter</h3>
-<p>The dependency on the letter python package has been removed from the Opal core application. If you wish to send emails, django ships with email wrappers to make this easy.</p>
+<p>The dependency on the letter python package has been removed from the Opal core application. If you wish to send emails, Django ships with email wrappers to make this easy.</p>
 <h4 id="updates-to-the-dependency-graph">Updates to the Dependency Graph</h4>
 <ul>
 <li>Django: 2.0.13 -&gt; 2.2.16</li>

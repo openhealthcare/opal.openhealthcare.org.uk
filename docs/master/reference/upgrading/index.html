@@ -388,8 +388,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.20.0" target="_blank">
-                  <i class="fa fa-github"></i> v0.20.0
+                <a href="https://github.com/openhealthcare/opal/tree/v0.21.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.21.0
                 </a>
               </li>
                 <!-- <li class="disabled"> -->
@@ -414,6 +414,10 @@
     <ul class="nav bs-sidenav">
     
         <li class="main active"><a href="#upgrading-your-opal-application">Upgrading Your Opal Application</a></li>
+        
+            <li><a href="#v0200-v0210">v0.20.0 -&gt; v0.21.0</a></li>
+        
+            <li><a href="#celery-changes">Celery changes</a></li>
         
             <li><a href="#v0183-v0200">v0.18.3 -&gt; v0.20.0</a></li>
         
@@ -463,6 +467,35 @@
             <div class="col-md-9" role="main"><h2 id="upgrading-your-opal-application">Upgrading Your Opal Application</h2>
 <p>This document provides instructions for specific steps required to upgrading your Opal
 application to a later version where there are extra steps required.</p>
+<h4 id="v0200-v0210">v0.20.0 -&gt; v0.21.0</h4>
+<p>Opal no longer supports Python 3.5. 
+You will need to use 3.6, 3.7 or 3.8 and therefore must make sure they are installed in your environment.</p>
+<h4 id="celery-changes">Celery changes</h4>
+<p>Opal does not require you to run Celery but we do pre-configure Opal applications for use with 
+Celery.</p>
+<p>If you don't have <code>celery</code> or <code>django-celery</code> in your requirements.txt this section can be ignored.</p>
+<p><code>django-celery</code> has been removed as a dependency. Please remove it from your requirements.</p>
+<p><strong>Note</strong> This means that old results from <code>django-celery</code> will no longer be visible from the admin.</p>
+<p><code>django-celery-results==2.0.0</code> replaces <code>django-celery</code>, please add it to your requirements. 
+This will show Celery task results in the admin and requires <code>python manage.py migrate</code> to be run.</p>
+<p>Celery has been upgraded to 5.0.2.</p>
+<p>So if you're using a requirements.txt for example it should now include.
+    # requirements.txt
+    opal==0.21.0
+    celery==5.0.2
+    django-celery-results==2.0.0</p>
+<p>The Django Celery management command has changed from
+<code>python manage.py celery worker -l info</code> to <code>celery -A opal.core worker -l INFO</code></p>
+<p>Add the below to your settings.py.</p>
+<pre><code>CELERY_RESULT_BACKEND = 'django-db'
+CELERY_CACHE_BACKEND = 'django-cache'
+</code></pre>
+<p>Remove <code>djcelery</code> from your <code>INSTALLED APPS</code> in settings and add <code>django_celery_results</code></p>
+<pre><code>INSTALLED_APPS = (
+    ...,
+    'django_celery_results',
+)
+</code></pre>
 <h4 id="v0183-v0200">v0.18.3 -&gt; v0.20.0</h4>
 <h5 id="dependency-upgrades">Dependency upgrades</h5>
 <p>How you do this depends on how you have configured your application. You will need to

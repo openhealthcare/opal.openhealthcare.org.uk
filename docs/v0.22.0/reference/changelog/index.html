@@ -413,7 +413,16 @@
   <h3>Contents</h3>
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#0210-major-release">0.21.0 (Major Release)</a></li>
+        <li class="main active"><a href="#0220-major-release">0.22.0 (Major Release)</a></li>
+        
+            <li><a href="#advanced-search-changes">Advanced search changes</a></li>
+        
+            <li><a href="#applicationmodify_extract">Application.modify_extract</a></li>
+        
+            <li><a href="#include-id-in-the-extract">Include ID in the extract</a></li>
+        
+    
+        <li class="main "><a href="#0210-major-release">0.21.0 (Major Release)</a></li>
         
             <li><a href="#celery-upgrade-and-django-celery-library-change">Celery upgrade and Django Celery library change.</a></li>
         
@@ -867,7 +876,16 @@
     
     </ul>
 </div></div>
-            <div class="col-md-9" role="main"><h3 id="0210-major-release">0.21.0 (Major Release)</h3>
+            <div class="col-md-9" role="main"><h3 id="0220-major-release">0.22.0 (Major Release)</h3>
+<h4 id="advanced-search-changes">Advanced search changes</h4>
+<p>Date and datetime fields now support <code>Equals</code> along with <code>Before</code> and <code>After</code></p>
+<h4 id="applicationmodify_extract">Application.modify_extract</h4>
+<p>A list of functions attached to the application object that
+enable the application to add, remove or alter files in an
+advanced search extract.</p>
+<h4 id="include-id-in-the-extract">Include ID in the extract</h4>
+<p>The model ID will no longer be excluded from its csv extract. If present, id will appear first, then patient id, then episode id.</p>
+<h3 id="0210-major-release">0.21.0 (Major Release)</h3>
 <h4 id="celery-upgrade-and-django-celery-library-change">Celery upgrade and Django Celery library change.</h4>
 <p><code>django-celery</code> only officially supports Python 3.5 which Opal no longer supports. It is also no longer the recommended solution for results by Celery. So we have removed this dependency and added the <code>django-celery-results</code> module that has a similar functionality.</p>
 <h4 id="drops-support-for-python-35">Drops support for Python 3.5</h4>
