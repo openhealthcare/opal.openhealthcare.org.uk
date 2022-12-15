@@ -424,10 +424,22 @@
 <p>The <code>PatientSummary</code> service in <code>opal.services</code> provides us with core
 functionality related to interacting with patient search results in the client.</p>
 <h3 id="constructor">Constructor</h3>
-<p>The PatientSummary service is instantiated with the Patient search result data
-that comes back from the Patient search JSON API.</p>
-<pre><code>var patient_summary = new PatientSummary(json_data);
-</code></pre></div>
+<p>The PatientSummary service is instantiated with the patient search result data
+that comes back from the patient search JSON API.</p>
+<pre><code class="language-javascript">var patientSummary = new PatientSummary(json_data);
+</code></pre>
+<p>The result object has the following properties by default:</p>
+<ul>
+<li><code>hospitalNumber</code></li>
+<li><code>patientId</code></li>
+<li><code>link</code> A link to the patients patient detail page</li>
+<li><code>dateOfBirth</code> The patient's date of birth cast to a moment</li>
+<li><code>startDate</code> The patient's earliest episode.start cast to a moment</li>
+<li><code>endDate</code> The patient's last episdoe.end cast to a moment</li>
+<li><code>years</code> The span of years between startDate and EndDate e.g. "2020-2023"</li>
+<li><code>categories</code> A comma joined string of the patient's episode categories, e.g. "Inpatient, ICU"</li>
+<li><code>data</code> the raw JSON data from the API</li>
+</ul></div>
         </div>
 
         <footer class="col-md-12">
