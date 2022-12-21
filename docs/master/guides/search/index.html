@@ -388,8 +388,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="https://github.com/openhealthcare/opal/tree/v0.22.2" target="_blank">
-                  <i class="fa fa-github"></i> v0.22.2
+                <a href="https://github.com/openhealthcare/opal/tree/v0.23.0" target="_blank">
+                  <i class="fa fa-github"></i> v0.23.0
                 </a>
               </li>
                 <!-- <li class="disabled"> -->
@@ -415,6 +415,8 @@
     
         <li class="main active"><a href="#opal-search-overview">Opal Search overview</a></li>
         
+            <li><a href="#customisation-of-search-results">Customisation of search results</a></li>
+        
             <li><a href="#the-advanced-search-interface">The Advanced search interface</a></li>
         
             <li><a href="#custom-search-rules">Custom Search Rules</a></li>
@@ -435,6 +437,33 @@
       'combine': whether the query is 'and' or 'or' in conjunction with other dictionaries
       'column': the model to be queried e.g. 'demographics'
 }
+</code></pre>
+<h2 id="customisation-of-search-results">Customisation of search results</h2>
+<p>Search results are rendered with the template <code>partials/_patient_summary_list.html</code>. To
+improve performance of serializing multiple patients, the backend returns a patient summary
+for the current page of search results.</p>
+<p>To add data to these results the application can implement a <code>PatientSummary</code> class.</p>
+<p>The following example adds the title to the data returned to the front end.</p>
+<pre><code class="language-python">from opal.core.search.queries import PatientSummary
+
+class MyPatientSummary(PatientSummary):
+    def __init__(self, patient, episodes):
+        super()__init__(patient, episodes)
+        self.patient_title = patient.demographics().title
+
+    def to_json(self):
+        as_json = super().to_json()
+        as_json['title'] = self.patient_title
+        return as_json
+
+
+class MyCustomBackend(DatabaseQueryBackend):
+    patient_summary_class = PatientSummary
+
+# change settings.py to include OPAL_SEARCH_BACKEND='{path to my backend}.MyCustomBackend'
+</code></pre>
+<p>The raw serialised data is available to the front end in a <code>.data</code> property.</p>
+<pre><code>[[ result.data.title ]] [[ result.first_name ]] [[ result.surname ]] [[ result.hospitalNumber ]]
 </code></pre>
 <h2 id="the-advanced-search-interface">The Advanced search interface</h2>
 <p>The Opal advanced search interface at <code>/#/extract</code> allows users to specify rules
